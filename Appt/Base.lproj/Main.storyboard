@@ -17,11 +17,46 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Handleidingen" image="tab_tutorials" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" title="Handleidingen" id="TjN-LN-ec4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1697" y="-295"/>
+        </scene>
+        <!--Handleidingen-->
+        <scene sceneID="Feu-fu-Kzn">
+            <objects>
+                <navigationController id="aLi-jG-u1q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Handleidingen" image="tab_tutorials" id="Hxa-if-wVs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1EF-Ws-y0k">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="NGk-Mo-NgV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc9-IK-LJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="-295"/>
+        </scene>
+        <!--Kennisbank-->
+        <scene sceneID="jxs-6j-Mo2">
+            <objects>
+                <navigationController id="6Zr-yC-6cu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Kennisbank" image="tab_knowledge" id="ZsM-Qc-Ia8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vWD-Rf-Q5r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="9Zw-5e-bzb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2y-mu-fxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="513"/>
         </scene>
         <!--Kennisbank-->
         <scene sceneID="wg7-f3-ORb">
@@ -33,11 +68,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kennisbank" image="tab_knowledge" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" title="Kennisbank" id="Eca-T4-Kgs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
+            <point key="canvasLocation" x="1625" y="513"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -49,13 +85,13 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="aLi-jG-u1q" kind="relationship" relationship="viewControllers" id="KMR-ep-wiS"/>
+                        <segue destination="6Zr-yC-6cu" kind="relationship" relationship="viewControllers" id="xIg-mz-BuT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-112" y="-17"/>
         </scene>
     </scenes>
     <resources>

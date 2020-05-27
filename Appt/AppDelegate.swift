@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 22)!,
+            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
             NSAttributedString.Key.foregroundColor : UIColor.black
         ]
         UINavigationBar.appearance().barTintColor = .white
@@ -32,12 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UISegmentedControl styles
         UISegmentedControl.appearance().tintColor = .primary
         UISegmentedControl.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 22)!,
+            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
             NSAttributedString.Key.foregroundColor: UIColor.black25
         ], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 22)!,
-            NSAttributedString.Key.foregroundColor: UIColor.white
+            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
+            NSAttributedString.Key.foregroundColor: UIColor.primary
         ], for: .selected)
         
         // UITabBar styles

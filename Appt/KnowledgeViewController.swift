@@ -13,6 +13,11 @@ class KnowledgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        API.shared.getPosts { (posts, error) in
+            print("Posts", posts)
+            print("Error", error)
+        }
     }
 
 
