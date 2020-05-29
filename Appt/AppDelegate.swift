@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20),
             NSAttributedString.Key.foregroundColor : UIColor.black
         ]
         UINavigationBar.appearance().barTintColor = .white
@@ -26,17 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UIBarButtonItem style
         UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-SemiBold", size: 18)!
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .semibold, size: 18)
         ], for: .normal)
         
         // UISegmentedControl styles
         UISegmentedControl.appearance().tintColor = .primary
         UISegmentedControl.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20),
             NSAttributedString.Key.foregroundColor: UIColor.black25
         ], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-Bold", size: 20)!,
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20),
             NSAttributedString.Key.foregroundColor: UIColor.primary
         ], for: .selected)
         
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UITabBarItem style
         UITabBarItem.appearance().setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "SourceSansPro-SemiBold", size: 14)!
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .semibold, size: 18)
         ], for: .normal)
         
         return true
