@@ -15,9 +15,8 @@ class ViewController: UIViewController {
         didSet {
             foreground {
                 if (self.isLoading) {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                    
                     let indicator = UIActivityIndicatorView(style: .large)
+                    indicator.accessibilityLabel = "Aan het laden"
                     indicator.color = .primary
                     indicator.tintColor = .primary
                     indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
@@ -37,7 +36,6 @@ class ViewController: UIViewController {
                     
                     self.loadingIndicator = indicator
                 } else {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.loadingIndicator?.removeFromSuperview()
                 }
             }

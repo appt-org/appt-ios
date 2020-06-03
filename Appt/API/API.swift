@@ -20,10 +20,16 @@ import Alamofire
         "Version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     ]
     
-    // MARK: - Get mapping
+    // MARK: - Get posts
     
     func getPosts(callback: @escaping ([Post]?, Error?) -> ()) {
-        getObject(path: "posts", parameters: nil, type: [Post].self, callback: callback)
+        getObject(path: "posts?per_page=10", parameters: ["_fields": "id,date,title"], type: [Post].self, callback: callback)
+    }
+    
+    // MARK: - Get post
+    
+    func getPost(id: Int, callback: @escaping (Post?, Error?) -> ()) {
+        getObject(path: "posts/\(id)", parameters: ["_fields": "id,date,modified,link,title,content,author,tags,categories"], type: Post.self, callback: callback)
     }
 }
 
@@ -68,6 +74,7 @@ extension API {
         ).validate(statusCode: 200..<300)
          .responseJSON { (response) in
             if response.result.isSuccess, let data = response.data {
+                print("JSON", String.init(data: data, encoding: .utf8))
                 callback(data, nil)
             } else if let error = response.result.error {
                 callback(nil, error)
@@ -78,7 +85,6 @@ extension API {
     }
     
     private func download(url: URL, destination: @escaping DownloadRequest.DownloadFileDestination, callback: @escaping (URL?, Error?) -> ()) {
-        
         Alamofire.download(url,
                            method: .get,
                            parameters: nil,

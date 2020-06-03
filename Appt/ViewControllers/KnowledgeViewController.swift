@@ -80,5 +80,9 @@ extension KnowledgeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let post = posts[indexPath.row]
+        let articleViewController = UIStoryboard.article(post)
+        navigationController?.pushViewController(articleViewController, animated: true)
     }
 }

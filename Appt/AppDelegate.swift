@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedString.Key.foregroundColor : UIColor.black
         ]
         UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().tintColor = .primary
         
         // UIBarButtonItem style
         UIBarButtonItem.appearance().setTitleTextAttributes([

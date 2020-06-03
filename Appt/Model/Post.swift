@@ -12,13 +12,13 @@ class Post: Codable {
     
     var id: Int
     var date: String
-    var modified: String
-    var link: String
+    var modified: String?
     var title: Content
-    var excerpt: Content
-    var author: Int
-    var tags: [Int]
-    var categories: [Int]
+    var content: Content?
+    var author: Int?
+    var tags: [Int]?
+    var categories: [Int]?
+    var link: String?
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -26,7 +26,7 @@ class Post: Codable {
         case modified
         case link
         case title
-        case excerpt
+        case content
         case author
         case tags
         case categories
