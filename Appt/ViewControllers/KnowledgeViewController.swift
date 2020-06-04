@@ -38,7 +38,10 @@ class KnowledgeViewController: ViewController {
     }
     
     private func getPosts() {
-        isLoading = true
+        if !refreshControl.isRefreshing {
+            isLoading = true
+        }
+        
         API.shared.getPosts { (posts, error) in
             self.refreshControl.endRefreshing()
             self.isLoading = false

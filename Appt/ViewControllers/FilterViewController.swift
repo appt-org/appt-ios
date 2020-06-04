@@ -35,7 +35,9 @@ class FilterViewController: ViewController {
     }
     
     private func getFilters() {
-        isLoading = true
+        if !refreshControl.isRefreshing {
+            isLoading = true
+        }
         
         API.shared.getFilters { (categories, tags, error) in
             self.refreshControl.endRefreshing()

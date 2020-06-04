@@ -23,13 +23,23 @@ import Alamofire
     // MARK: - Get posts
     
     func getPosts(callback: @escaping ([Post]?, Error?) -> ()) {
-        getObject(path: "posts?per_page=10", parameters: ["_fields": "id,date,title"], type: [Post].self, callback: callback)
+        getObject(path: "posts?per_page=20", parameters: ["_fields": "id,date,title"], type: [Post].self, callback: callback)
     }
-    
+
     // MARK: - Get post
     
     func getPost(id: Int, callback: @escaping (Post?, Error?) -> ()) {
         getObject(path: "posts/\(id)", parameters: ["_fields": "id,date,modified,link,title,content,author,tags,categories"], type: Post.self, callback: callback)
+    }
+    
+    func getPost(slug: String, callback: @escaping (Post?, Error?) -> ()) {
+        getObject(path: "posts?per_page=10", parameters: ["slug": slug, "_fields": "id,date,modified,link,title,content,author,tags,categories",], type: [Post].self) { (posts, error) in
+            if let post = posts?.first {
+                callback(post, nil)
+            } else {
+                callback(nil, error)
+            }
+        }
     }
     
     // MARK: - Get categories
@@ -90,8 +100,6 @@ extension API {
     private func retrieveData(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, callback: @escaping (Data?, Error?) -> ()) {
         guard let url = URL(string: Config.endpoint + path) else { return }
         
-        print("Retrieve JSON:", url.absoluteString)
-        
         Alamofire.request(url,
                           method: method,
                           parameters: parameters,
@@ -100,7 +108,7 @@ extension API {
         ).validate(statusCode: 200..<300)
          .responseJSON { (response) in
             if response.result.isSuccess, let data = response.data {
-                print("JSON", String.init(data: data, encoding: .utf8))
+                //print("JSON", String.init(data: data, encoding: .utf8))
                 callback(data, nil)
             } else if let error = response.result.error {
                 callback(nil, error)

@@ -101,7 +101,7 @@
         <!--Article View Controller-->
         <scene sceneID="lho-3g-jD1">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="M9J-A7-CSC" customClass="ArticleViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" hidesBottomBarWhenPushed="YES" id="M9J-A7-CSC" customClass="ArticleViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SafariServices
 
 class ArticleViewController: ViewController {
     
@@ -41,7 +42,8 @@ class ArticleViewController: ViewController {
         return webView
     }()
 
-    var id: Int!
+    var id: Int?
+    var slug: String?
     var post: Post?
     
     override func viewDidLoad() {
@@ -52,18 +54,26 @@ class ArticleViewController: ViewController {
     private func getPost() {
         isLoading = true
         
+        webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        API.shared.getPost(id: id) { (post, error) in
+        let callback = { (post: Post?, error: Error?) in
             if let post = post {
                 self.onPost(post)
             } else if let error = error {
                 self.onError(error)
             }
         }
+        
+        if let id = id {
+            API.shared.getPost(id: id, callback: callback)
+        } else if let slug = slug {
+            API.shared.getPost(slug: slug, callback: callback)
+        }
     }
     
     private func onPost(_ post: Post) {
+        print("onPost", post)
         self.post = post
         
 //        let label = UILabel()
@@ -85,7 +95,7 @@ class ArticleViewController: ViewController {
                 <html>
                     <head>
                         <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1"/>
-                        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+                        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
                         <style>
                             * {
                                 box-sizing: inherit;
@@ -99,8 +109,7 @@ class ArticleViewController: ViewController {
                             }
 
                             a {
-                                color: #FFA7DF;
-                                font-weight: bold;
+                                color: #E671D5;
                             }
 
                             figure {
@@ -154,6 +163,7 @@ class ArticleViewController: ViewController {
     }
     
     private func onError(_ error: Error) {
+        print("onError", error)
         self.isLoading = false
     }
     
@@ -182,5 +192,30 @@ class ArticleViewController: ViewController {
         // Restore the navigation bar to default
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
+    }
+}
+
+// MARK: - WKNavigationDelegate
+
+extension ArticleViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let url = navigationAction.request.url else {
+            return
+        }
+        
+        print("WebView url", url.absoluteString)
+        
+        if navigationAction.navigationType == .linkActivated {
+            if url.absoluteString.contains("appt.nl/kennisbank/") {
+                let articleViewController = UIStoryboard.article(slug: url.lastPathComponent)
+                navigationController?.pushViewController(articleViewController, animated: true)
+            } else {
+                openWebsite(url: url)
+            }
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
     }
 }
