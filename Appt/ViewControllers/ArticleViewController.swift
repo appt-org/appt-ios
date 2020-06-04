@@ -73,26 +73,14 @@ class ArticleViewController: ViewController {
     }
     
     private func onPost(_ post: Post) {
-        print("onPost", post)
         self.post = post
-        
-//        let label = UILabel()
-//        label.backgroundColor = .clear
-//        label.numberOfLines = 2
-//        label.font = UIFont.sourceSansPro(weight: .bold, size: 16)
-//        label.textAlignment = .center
-//        label.textColor = .black
-//        label.text = post.title.rendered.htmlDecoded
-//        navigationItem.titleView = label
-        
-        //self.title = post.title.rendered.htmlDecoded
-        
+
         guard let content = post.content?.rendered else {
             return
         }
         
         let html = """
-                <html>
+                <html lang="nl">
                     <head>
                         <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1"/>
                         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
@@ -167,31 +155,14 @@ class ArticleViewController: ViewController {
         self.isLoading = false
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
-            isLoading = false
-            view.addSubview(webView)
-            webView.constraintToSafeArea()
-            
-            UIAccessibility.focus(webView)
+    @IBAction private func onShareTapped(_ sender: Any) {
+        guard let title = post?.title.rendered.htmlDecoded, let url = post?.link else {
+            return
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // Make the navigation bar background clear
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        // Restore the navigation bar to default
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.shadowImage = nil
+        
+        let shareViewController = UIActivityViewController(activityItems: [title, url], applicationActivities: [])
+        shareViewController.popoverPresentationController?.sourceView = sender as? UIView
+        present(shareViewController, animated: true)
     }
 }
 
@@ -199,6 +170,16 @@ class ArticleViewController: ViewController {
 
 extension ArticleViewController: WKNavigationDelegate {
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
+            self.view.addSubview(webView)
+            webView.constraintToSafeArea()
+            self.view.bringSubviewToFront(webView)
+            
+            isLoading = false
+        }
+    }
+        
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else {
             return

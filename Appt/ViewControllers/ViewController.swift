@@ -17,6 +17,11 @@ class ViewController: UIViewController {
                 if (self.isLoading) {
                     let indicator = UIActivityIndicatorView(style: .large)
                     indicator.accessibilityLabel = "Aan het laden"
+                    
+                    if let navigationBar = self.navigationController?.navigationBar {
+                        indicator.accessibilityFrame = CGRect(x: navigationBar.frame.minX, y: navigationBar.frame.maxY, width: 40, height: 40)
+                    }
+                    
                     indicator.color = .primary
                     indicator.tintColor = .primary
                     indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
@@ -33,10 +38,13 @@ class ViewController: UIViewController {
                     indicator.widthAnchor.constraint(equalToConstant: 40).isActive = true
                     
                     self.view.bringSubviewToFront(indicator)
+                    UIAccessibility.focus(indicator)
                     
                     self.loadingIndicator = indicator
                 } else {
                     self.loadingIndicator?.removeFromSuperview()
+                    self.loadingIndicator = nil
+                    UIAccessibility.post(notification: .layoutChanged, argument: nil)
                 }
             }
         }

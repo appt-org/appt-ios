@@ -109,7 +109,11 @@
                         <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
                     </view>
                     <navigationItem key="navigationItem" id="0a9-EO-ZYJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="v1n-Il-5xE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="v1n-Il-5xE">
+                            <connections>
+                                <action selector="onShareTapped:" destination="M9J-A7-CSC" id="YPx-0C-sQL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSm-e6-Gnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
