@@ -42,6 +42,17 @@ class ViewController: UIViewController {
         }
     }
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .primary
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
+    @objc func refresh(_ refreshControl: UIRefreshControl) {
+        
+    }
+    
     // View did load: style
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +61,8 @@ class ViewController: UIViewController {
             self.isModalInPresentation = true
         }
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.accessibilityLabel = "Terug";
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
+//        navigationItem.backBarButtonItem?.accessibilityLabel = "Terug";
         
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false

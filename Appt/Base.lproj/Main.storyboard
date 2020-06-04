@@ -14,7 +14,7 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
@@ -56,7 +56,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2y-mu-fxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="513"/>
+            <point key="canvasLocation" x="787" y="706"/>
         </scene>
         <!--Kennisbank-->
         <scene sceneID="wg7-f3-ORb">
@@ -81,31 +81,77 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" title="Kennisbank" id="Eca-T4-Kgs"/>
+                    <navigationItem key="navigationItem" title="Kennisbank" id="Eca-T4-Kgs">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="NuM-BA-M8T">
+                            <connections>
+                                <action selector="doFilter:" destination="8rJ-Kc-sve" id="Gng-ZF-GpE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="yQ7-KK-qa2" id="bpi-2H-XBo"/>
+                        <segue destination="atb-WW-ou0" kind="show" identifier="filter" id="3K9-nh-VFn"/>
+                        <segue destination="M9J-A7-CSC" kind="show" identifier="article" id="FFz-wi-Zia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1624.6376811594205" y="512.94642857142856"/>
+            <point key="canvasLocation" x="1643" y="706"/>
         </scene>
         <!--Article View Controller-->
-        <scene sceneID="XTN-0n-nvT">
+        <scene sceneID="lho-3g-jD1">
             <objects>
-                <viewController storyboardIdentifier="ArticleViewController" hidesBottomBarWhenPushed="YES" id="29A-wy-295" customClass="ArticleViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ID4-CB-3Og">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="M9J-A7-CSC" customClass="ArticleViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="xp6-Od-i3l"/>
+                        <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eUe-CQ-FWM"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="0a9-EO-ZYJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="v1n-Il-5xE"/>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9n7-oi-57f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSm-e6-Gnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544.9275362318845" y="512.94642857142856"/>
+            <point key="canvasLocation" x="2480" y="283"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="AO4-V7-lVX">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" hidesBottomBarWhenPushed="YES" id="atb-WW-ou0" customClass="FilterViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ug1-0x-YXE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cjm-Pv-ci9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cjm-Pv-ci9" firstAttribute="top" secondItem="VnM-R3-Y2b" secondAttribute="top" id="6nv-Gf-eHm"/>
+                            <constraint firstItem="cjm-Pv-ci9" firstAttribute="trailing" secondItem="VnM-R3-Y2b" secondAttribute="trailing" id="9OU-8e-6hl"/>
+                            <constraint firstItem="cjm-Pv-ci9" firstAttribute="leading" secondItem="VnM-R3-Y2b" secondAttribute="leading" id="P3y-Zj-i5e"/>
+                            <constraint firstItem="cjm-Pv-ci9" firstAttribute="bottom" secondItem="VnM-R3-Y2b" secondAttribute="bottom" id="kIv-pI-UUp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VnM-R3-Y2b"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="sbV-8X-zOi">
+                        <barButtonItem key="rightBarButtonItem" title="Toepassen" id="fAe-56-Afw">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="atb-WW-ou0" id="4TR-z9-E9t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cjm-Pv-ci9" id="mEv-UD-Ynz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixZ-Gj-dLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2479.7101449275365" y="955.58035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

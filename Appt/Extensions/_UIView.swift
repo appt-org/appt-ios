@@ -14,9 +14,6 @@ extension UIView {
         return "\(String(describing: self))Identifier"
     }
     
- 
-    
-    
     @objc func hideKeyboard() {
         endEditing(true)
         

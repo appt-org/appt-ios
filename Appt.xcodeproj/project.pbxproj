@@ -37,6 +37,8 @@
 		28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C415247D8B33008B3CAD /* _Encodable.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
+		28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FilterViewController.swift */; };
+		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		A2C241D6634BC96ED520751D /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		28E0C415247D8B33008B3CAD /* _Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Encodable.swift; sourceTree = "<group>"; };
 		28E0C417247D8B46008B3CAD /* _NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NSObject.swift; sourceTree = "<group>"; };
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		28EFEBA12487E90A0070879A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.release.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.release.xcconfig"; sourceTree = "<group>"; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +107,9 @@
 		287468E3247E61740089BB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28E0C413247D8AB8008B3CAD /* Post.swift */,
 				287468E1247E60BB0089BB32 /* Content.swift */,
+				28E0C413247D8AB8008B3CAD /* Post.swift */,
+				28EFEBA32487E9AA0070879A /* Taxonomy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */,
 				2877F6D3247D6E9200605677 /* TutorialsViewController.swift */,
 				2899FFB52481125A009D8102 /* ArticleViewController.swift */,
+				28EFEBA12487E90A0070879A /* FilterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,10 +182,10 @@
 				287468EC247E64F90089BB32 /* _DispatchQueue.swift */,
 				28E0C415247D8B33008B3CAD /* _Encodable.swift */,
 				28E0C417247D8B46008B3CAD /* _NSObject.swift */,
+				287468F5247E675C0089BB32 /* _String.swift */,
 				2877F6E3247D71E600605677 /* _UIColor.swift */,
 				287468E4247E63A50089BB32 /* _UICollectionView.swift */,
 				287468E6247E63CD0089BB32 /* _UIFont.swift */,
-				287468F5247E675C0089BB32 /* _String.swift */,
 				2852CF052486AA820063F3E4 /* _UIAccessibility.swift */,
 				2899FFB7248112D6009D8102 /* _UIStoryboard.swift */,
 				287468EA247E64A60089BB32 /* _UITableView.swift */,
@@ -339,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
@@ -346,6 +353,7 @@
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TutorialsViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
+				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,

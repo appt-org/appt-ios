@@ -21,7 +21,7 @@ extension UIStoryboard {
     static func article(_ post: Post) -> ArticleViewController {
         let articleViewController = viewController("Main", identifier: "ArticleViewController") as! ArticleViewController
         articleViewController.id = post.id
-        articleViewController.title = post.title.rendered.htmlDecoded
+        //articleViewController.title = post.title.rendered.htmlDecoded
         return articleViewController
     }
 }

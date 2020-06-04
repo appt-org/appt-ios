@@ -65,7 +65,17 @@ class ArticleViewController: ViewController {
     
     private func onPost(_ post: Post) {
         self.post = post
-        self.title = post.title.rendered.htmlDecoded
+        
+//        let label = UILabel()
+//        label.backgroundColor = .clear
+//        label.numberOfLines = 2
+//        label.font = UIFont.sourceSansPro(weight: .bold, size: 16)
+//        label.textAlignment = .center
+//        label.textColor = .black
+//        label.text = post.title.rendered.htmlDecoded
+//        navigationItem.titleView = label
+        
+        //self.title = post.title.rendered.htmlDecoded
         
         guard let content = post.content?.rendered else {
             return
@@ -85,7 +95,7 @@ class ArticleViewController: ViewController {
                             }
 
                             body, html, table {
-                                font-size: 1.1rem;
+                                font-size: 1.05rem;
                             }
 
                             a {
@@ -132,6 +142,9 @@ class ArticleViewController: ViewController {
                         </style>
                     </head>
                 <body>
+                <h2>
+                """ + post.title.rendered + """
+                </h2>
                 """ + content + """
                 </body>
                 </html>
@@ -144,8 +157,6 @@ class ArticleViewController: ViewController {
         self.isLoading = false
     }
     
-    
-
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
             isLoading = false
@@ -154,5 +165,22 @@ class ArticleViewController: ViewController {
             
             UIAccessibility.focus(webView)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Make the navigation bar background clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Restore the navigation bar to default
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.shadowImage = nil
     }
 }

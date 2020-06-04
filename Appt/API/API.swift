@@ -31,6 +31,32 @@ import Alamofire
     func getPost(id: Int, callback: @escaping (Post?, Error?) -> ()) {
         getObject(path: "posts/\(id)", parameters: ["_fields": "id,date,modified,link,title,content,author,tags,categories"], type: Post.self, callback: callback)
     }
+    
+    // MARK: - Get categories
+    
+    func getCategories(callback: @escaping ([Category]?, Error?) -> ()) {
+        getObject(path: "categories", parameters: ["_fields": "id,count,description,name"], type: [Category].self, callback: callback)
+    }
+    
+    // MARK: - Get tags
+       
+    func getTags(callback: @escaping ([Tag]?, Error?) -> ()) {
+       getObject(path: "tags", parameters: ["_fields": "id,count,description,name"], type: [Tag].self, callback: callback)
+    }
+    
+    // MARK: - Get filters
+       
+    func getFilters(callback: @escaping ([Category]?, [Tag]?, Error?) -> ()) {
+        getCategories { (categories, error1) in
+            if let categories = categories {
+                self.getTags { (tags, error2) in
+                    callback(categories, tags, error2)
+                }
+            } else {
+                callback(nil, nil, error1)
+            }
+        }
+    }
 }
 
 // MARK: - Networking

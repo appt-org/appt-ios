@@ -12,6 +12,19 @@ class TitleTableViewCell: UITableViewCell {
     
     @IBOutlet private var titleLabel: UILabel!
     
+    var taxonomy: Taxonomy? {
+        didSet {
+            if taxonomy?.selected == true {
+                accessoryType = .checkmark
+            } else {
+                accessoryType = .none
+            }
+            if let title = taxonomy?.name {
+                setup(title)
+            }
+        }
+    }
+    
     func setup(_ title: String) {
         titleLabel.text = title
         accessibilityLabel = title

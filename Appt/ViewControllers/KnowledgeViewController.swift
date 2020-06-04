@@ -11,12 +11,6 @@ import UIKit
 class KnowledgeViewController: ViewController {
 
     @IBOutlet private var tableView: UITableView!
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .primary
-        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        return refreshControl
-    }()
     
     private var posts = [Post]()
     
@@ -35,23 +29,32 @@ class KnowledgeViewController: ViewController {
         getPosts()
     }
     
-    @objc private func refresh(_ refreshControl: UIRefreshControl) {
+    @IBAction func doFilter(_ sender: Any) {
+        performSegue(withIdentifier: "filter", sender: self)
+    }
+    
+    override func refresh(_ refreshControl: UIRefreshControl) {
         getPosts()
     }
     
     private func getPosts() {
         isLoading = true
         API.shared.getPosts { (posts, error) in
-            self.isLoading = false
             self.refreshControl.endRefreshing()
-            
-            print("Posts", posts)
-            print("Error", error)
+            self.isLoading = false
             
             if let posts = posts {
                 self.posts = posts
                 self.tableView.reloadData()
+            } else if let error = error {
+                
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
+            articleViewController.id = post.id
         }
     }
 }
@@ -82,7 +85,6 @@ extension KnowledgeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let post = posts[indexPath.row]
-        let articleViewController = UIStoryboard.article(post)
-        navigationController?.pushViewController(articleViewController, animated: true)
+        performSegue(withIdentifier: "article", sender: post)
     }
 }
