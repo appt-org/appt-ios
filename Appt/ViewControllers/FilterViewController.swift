@@ -35,6 +35,11 @@ class FilterViewController: ViewController {
     }
     
     private func getFilters() {
+        if let categories = categories, let tags = tags {
+            onFilters(categories, tags)
+            return
+        }
+        
         if !refreshControl.isRefreshing {
             isLoading = true
         }
@@ -52,7 +57,6 @@ class FilterViewController: ViewController {
     }
     
     private func onFilters(_ categories: [Category], _ tags: [Tag]) {
-        print("Categories", categories)
         self.categories = categories
         self.tags = tags
         tableView.reloadData()
@@ -63,8 +67,15 @@ class FilterViewController: ViewController {
     }
     
     @IBAction func onSaveTapped(_ sender: Any) {
-        // TODO: Save
-        navigationController?.popViewController(animated: true)
+        performSegue(withIdentifier: "applyFilters", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let knowledgeViewController = segue.destination as? KnowledgeViewController {
+            knowledgeViewController.categories = self.categories
+            knowledgeViewController.tags = self.tags
+            print("Passed filters")
+        }
     }
 }
 

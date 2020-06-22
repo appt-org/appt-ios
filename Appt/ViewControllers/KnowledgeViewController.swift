@@ -13,6 +13,8 @@ class KnowledgeViewController: ViewController {
     @IBOutlet private var tableView: UITableView!
     
     private var posts = [Post]()
+    var categories: [Category]?
+    var tags: [Tag]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,9 @@ class KnowledgeViewController: ViewController {
     }
     
     override func refresh(_ refreshControl: UIRefreshControl) {
+        posts.removeAll()
+        tableView.reloadData()
+        
         getPosts()
     }
     
@@ -42,23 +47,40 @@ class KnowledgeViewController: ViewController {
             isLoading = true
         }
         
-        API.shared.getPosts { (posts, error) in
+        API.shared.getPosts(categories: categories, tags: tags) { (posts, error) in
+            if let posts = posts {
+                self.onPosts(posts)
+            } else if let error = error {
+                self.onError(error)
+            }
             self.refreshControl.endRefreshing()
             self.isLoading = false
-            
-            if let posts = posts {
-                self.posts = posts
-                self.tableView.reloadData()
-            } else if let error = error {
-                
-            }
         }
     }
     
+    private func onPosts(_ posts: [Post]) {
+        self.posts = posts
+        self.tableView.reloadData()
+    }
+    
+    private func onError(_ error: Error) {
+        print("Error", error)
+    }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
             articleViewController.id = post.id
+        } else if let filterViewController = segue.destination as? FilterViewController {
+            filterViewController.categories = categories
+            filterViewController.tags = tags
         }
+    }
+    
+    @IBAction func applyFilters(_ segue: UIStoryboardSegue) {
+        posts.removeAll()
+        tableView.reloadData()
+        
+        getPosts()
     }
 }
 
@@ -74,7 +96,7 @@ extension KnowledgeViewController: UITableViewDataSource {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let post = posts[indexPath.row]
-        cell.setup(post.title.rendered.htmlDecoded)
+        cell.setup(post.title.decoded)
         
         return cell
     }

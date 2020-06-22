@@ -1,5 +1,5 @@
 //
-//  TutorialsViewController.swift
+//  TrainingViewController.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 26/05/2020.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class TutorialsViewController: ViewController {
+class TrainingViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-

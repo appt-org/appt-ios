@@ -26,3 +26,14 @@ class Taxonomy: Codable {
 
 typealias Category = Taxonomy
 typealias Tag = Taxonomy
+
+extension Array where Element == Taxonomy {
+    var selected: [Element] {
+        return filter { (element) -> Bool in
+            element.selected
+        }
+    }
+    var ids: [String] {
+        return map { String($0.id) }
+    }
+}

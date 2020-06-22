@@ -25,6 +25,22 @@ import Alamofire
     func getPosts(callback: @escaping ([Post]?, Error?) -> ()) {
         getObject(path: "posts?per_page=20", parameters: ["_fields": "id,date,title"], type: [Post].self, callback: callback)
     }
+    
+    func getPosts(categories: [Category]?, tags: [Tag]?, callback: @escaping ([Post]?, Error?) -> ()) {
+        var parameters = ["_fields": "id,date,title"]
+        
+        if let categories = categories?.selected.ids {
+            parameters["categories"] = categories.joined(separator: ",")
+        }
+        
+        if let tags = tags?.selected.ids {
+            parameters["tags"] = tags.joined(separator: ",")
+        }
+        
+        print("Parameters", parameters)
+        
+        getObject(path: "posts?per_page=20", parameters: parameters, type: [Post].self, callback: callback)
+    }
 
     // MARK: - Get post
     

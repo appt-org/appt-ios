@@ -2,15 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Handleidingen-->
+        <!--Trainingen-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="TutorialsViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="TrainingViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,17 +19,17 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="Handleidingen" id="TjN-LN-ec4"/>
+                    <navigationItem key="navigationItem" title="Trainingen" id="TjN-LN-ec4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1697" y="-295"/>
         </scene>
-        <!--Handleidingen-->
+        <!--Trainingen-->
         <scene sceneID="Feu-fu-Kzn">
             <objects>
                 <navigationController id="aLi-jG-u1q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Handleidingen" image="tab_tutorials" id="Hxa-if-wVs"/>
+                    <tabBarItem key="tabBarItem" title="Trainingen" image="tab_training" id="Hxa-if-wVs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1EF-Ws-y0k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,7 +110,7 @@
                         <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
                     </view>
                     <navigationItem key="navigationItem" id="0a9-EO-ZYJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="v1n-Il-5xE">
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="icon_share" id="v1n-Il-5xE">
                             <connections>
                                 <action selector="onShareTapped:" destination="M9J-A7-CSC" id="YPx-0C-sQL"/>
                             </connections>
@@ -151,9 +152,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cjm-Pv-ci9" id="mEv-UD-Ynz"/>
+                        <segue destination="yPk-cc-0a2" kind="unwind" identifier="applyFilters" unwindAction="applyFilters:" id="OuI-yd-aJd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixZ-Gj-dLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yPk-cc-0a2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2479.7101449275365" y="955.58035714285711"/>
         </scene>
@@ -177,7 +180,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_share" width="25" height="25"/>
         <image name="tab_knowledge" width="25" height="25"/>
-        <image name="tab_tutorials" width="25" height="25"/>
+        <image name="tab_training" width="25" height="25"/>
     </resources>
 </document>

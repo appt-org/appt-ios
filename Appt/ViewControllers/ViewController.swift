@@ -15,7 +15,12 @@ class ViewController: UIViewController {
         didSet {
             foreground {
                 if (self.isLoading) {
-                    let indicator = UIActivityIndicatorView(style: .large)
+                    let indicator = UIActivityIndicatorView()
+                    if #available(iOS 13.0, *) {
+                        indicator.style = .large
+                    } else {
+                        indicator.style = .whiteLarge
+                    }
                     indicator.accessibilityLabel = "Aan het laden"
                     
                     if let navigationBar = self.navigationController?.navigationBar {
@@ -66,11 +71,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if #available(iOS 13.0, *) {
-            self.isModalInPresentation = true
+            isModalInPresentation = true
         }
-        
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
-//        navigationItem.backBarButtonItem?.accessibilityLabel = "Terug";
         
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false

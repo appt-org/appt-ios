@@ -12,6 +12,19 @@ class Content: Codable {
     
     var rendered: String
     
+    private var _decoded: String? = nil
+    var decoded: String {
+        get {
+            if let decoded = _decoded {
+                return decoded
+            } else {
+                let decoded = rendered.htmlDecoded
+                self._decoded = decoded
+                return decoded
+            }
+        }
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case rendered
     }

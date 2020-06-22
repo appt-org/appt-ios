@@ -82,7 +82,7 @@ class ArticleViewController: ViewController {
         let html = """
                 <html lang="nl">
                     <head>
-                        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
                         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
                         <style>
                             * {
@@ -156,11 +156,11 @@ class ArticleViewController: ViewController {
     }
     
     @IBAction private func onShareTapped(_ sender: Any) {
-        guard let title = post?.title.rendered.htmlDecoded, let url = post?.link else {
+        guard let url = post?.link else {
             return
         }
         
-        let shareViewController = UIActivityViewController(activityItems: [title, url], applicationActivities: [])
+        let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
         shareViewController.popoverPresentationController?.sourceView = sender as? UIView
         present(shareViewController, animated: true)
     }
