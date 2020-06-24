@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SourceSansPro-SemiBold.ttf">
-            <string>SourceSansPro-SemiBold</string>
+        <array key="SourceSansPro.ttf">
+            <string>SourceSansPro-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -28,7 +28,7 @@
                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                             <bool key="isElement" value="NO"/>
                         </accessibility>
-                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>

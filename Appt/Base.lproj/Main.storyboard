@@ -15,15 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OfQ-Vc-5zq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OfQ-Vc-5zq" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="aeH-Y5-8Mp"/>
+                            <constraint firstItem="OfQ-Vc-5zq" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="n3w-3L-nUd"/>
+                            <constraint firstItem="OfQ-Vc-5zq" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="p0Q-AY-dw4"/>
+                            <constraint firstItem="OfQ-Vc-5zq" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="va1-OA-3IE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Trainingen" id="TjN-LN-ec4"/>
+                    <connections>
+                        <outlet property="tableView" destination="OfQ-Vc-5zq" id="pGU-ac-rH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-295"/>
+            <point key="canvasLocation" x="1695.6521739130435" y="-295.3125"/>
         </scene>
         <!--Trainingen-->
         <scene sceneID="Feu-fu-Kzn">
