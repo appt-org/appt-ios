@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
+		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
 		287468E2247E60BB0089BB32 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E1247E60BB0089BB32 /* Content.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
+		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		287468E1247E60BB0089BB32 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				2877F6D3247D6E9200605677 /* TrainingViewController.swift */,
 				2899FFB52481125A009D8102 /* ArticleViewController.swift */,
 				28EFEBA12487E90A0070879A /* FilterViewController.swift */,
+				287063C624A380F9004E87AF /* InformationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Post.swift in Sources */,
+				287063C724A380F9004E87AF /* InformationViewController.swift in Sources */,
 				287468F6247E675C0089BB32 /* _String.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
