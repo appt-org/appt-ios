@@ -12,7 +12,7 @@ class TrainingViewController: ViewController {
 
     @IBOutlet private var tableView: UITableView!
     
-    private var subjects: KeyValuePairs<String, [String]> {
+    private var gestures: KeyValuePairs<String, [String]> {
         return [
             "Verkennen": [
                 "Een onderdeel selecteren en uitspreken",
@@ -72,22 +72,22 @@ class TrainingViewController: ViewController {
 extension TrainingViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return subjects.count
+        return gestures.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return subjects[section].key
+        return gestures[section].key
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects[section].value.count
+        return gestures[section].value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let subject = subjects[indexPath.section].value[indexPath.row]
-        cell.setup(subject)
+        let gesture = gestures[indexPath.section].value[indexPath.row]
+        cell.setup(gesture)
         
         return cell
     }
@@ -99,5 +99,13 @@ extension TrainingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(.gesture, sender: gestures[indexPath.section].value[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gestureViewController = segue.destination as? GestureViewController, let gesture = sender as? String {
+            gestureViewController.gesture = gesture
+        }
     }
 }

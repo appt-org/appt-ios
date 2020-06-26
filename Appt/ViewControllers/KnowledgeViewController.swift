@@ -32,7 +32,7 @@ class KnowledgeViewController: ViewController {
     }
     
     @IBAction func doFilter(_ sender: Any) {
-        performSegue(withIdentifier: "filter", sender: self)
+        performSegue(.filter, sender: self)
     }
     
     override func refresh(_ refreshControl: UIRefreshControl) {
@@ -110,6 +110,6 @@ extension KnowledgeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let post = posts[indexPath.row]
-        performSegue(withIdentifier: "article", sender: post)
+        performSegue(.article, sender: post)
     }
 }

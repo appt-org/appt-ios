@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Trainingen-->
         <scene sceneID="hNz-n2-bh7">
@@ -34,11 +42,70 @@
                     <navigationItem key="navigationItem" title="Trainingen" id="TjN-LN-ec4"/>
                     <connections>
                         <outlet property="tableView" destination="OfQ-Vc-5zq" id="pGU-ac-rH2"/>
+                        <segue destination="lZX-T4-ImL" kind="show" identifier="gesture" id="4fZ-Mj-sJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="-853"/>
+            <point key="canvasLocation" x="1603" y="-1250"/>
+        </scene>
+        <!--Gesture View Controller-->
+        <scene sceneID="uRh-QN-TyU">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="lZX-T4-ImL" customClass="GestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zvq-rP-a3P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-qg-9NL">
+                                <rect key="frame" x="16" y="436.5" width="382" height="24"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Ez-osC">
+                                <rect key="frame" x="16" y="463.5" width="382" height="23"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-qe-xaQ" customClass="GestureView" customModule="appt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DoX-vc-bNz" firstAttribute="trailing" secondItem="K0k-Ez-osC" secondAttribute="trailing" constant="16" id="5Ed-L0-pb3"/>
+                            <constraint firstItem="YkS-qg-9NL" firstAttribute="centerX" secondItem="Zvq-rP-a3P" secondAttribute="centerX" id="FhQ-gw-2cB"/>
+                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" id="IkP-Md-kys"/>
+                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="trailing" secondItem="DoX-vc-bNz" secondAttribute="trailing" id="RDU-4T-RzG"/>
+                            <constraint firstItem="K0k-Ez-osC" firstAttribute="top" secondItem="YkS-qg-9NL" secondAttribute="bottom" constant="4" id="RqQ-07-S1w"/>
+                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="top" secondItem="DoX-vc-bNz" secondAttribute="top" id="TaJ-G5-hfp"/>
+                            <constraint firstItem="YkS-qg-9NL" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" constant="16" id="VTG-em-rVc"/>
+                            <constraint firstItem="YkS-qg-9NL" firstAttribute="centerY" secondItem="Zvq-rP-a3P" secondAttribute="centerY" id="fny-7t-iQV"/>
+                            <constraint firstItem="K0k-Ez-osC" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" constant="16" id="gq8-nu-4aS"/>
+                            <constraint firstAttribute="bottom" secondItem="ALh-qe-xaQ" secondAttribute="bottom" id="hC1-cv-ALd"/>
+                            <constraint firstItem="DoX-vc-bNz" firstAttribute="trailing" secondItem="YkS-qg-9NL" secondAttribute="trailing" constant="16" id="lkU-g3-zZb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DoX-vc-bNz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hIO-wc-ShB"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="K0k-Ez-osC" id="E6g-Xt-2HA"/>
+                        <outlet property="gestureView" destination="ALh-qe-xaQ" id="vYM-h1-HYg"/>
+                        <outlet property="headerLabel" destination="YkS-qg-9NL" id="Rz1-Pp-Q3t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1W-GU-fky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2437.68115942029" y="-1250.2232142857142"/>
         </scene>
         <!--Trainingen-->
         <scene sceneID="Feu-fu-Kzn">
@@ -55,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vc9-IK-LJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="-853"/>
+            <point key="canvasLocation" x="787" y="-1250"/>
         </scene>
         <!--Informatie-->
         <scene sceneID="OvS-NA-TMT">
@@ -72,7 +139,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3g-uQ-rHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="828"/>
+            <point key="canvasLocation" x="787" y="1188"/>
         </scene>
         <!--Informatie-->
         <scene sceneID="SbE-AX-sAz">
@@ -103,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkW-hB-RjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602.8985507246377" y="827.67857142857144"/>
+            <point key="canvasLocation" x="1603" y="1188"/>
         </scene>
         <!--Kennisbank-->
         <scene sceneID="jxs-6j-Mo2">
@@ -169,7 +236,7 @@
                     <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
                     </view>
                     <navigationItem key="navigationItem" id="0a9-EO-ZYJ">
@@ -182,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSm-e6-Gnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="-396"/>
+            <point key="canvasLocation" x="2439" y="-358"/>
         </scene>
         <!--Filter-->
         <scene sceneID="AO4-V7-lVX">
@@ -221,7 +288,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixZ-Gj-dLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="yPk-cc-0a2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="319"/>
+            <point key="canvasLocation" x="2441" y="358"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

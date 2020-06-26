@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282F607224A3E688005B1279 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F607124A3E688005B1279 /* GestureView.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
 		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
+		287063C924A38A37004E87AF /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* GestureViewController.swift */; };
 		287468E2247E60BB0089BB32 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E1247E60BB0089BB32 /* Content.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
@@ -38,6 +40,8 @@
 		28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C415247D8B33008B3CAD /* _Encodable.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
+		28E267A524A5FF360025215C /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A424A5FF360025215C /* Gesture.swift */; };
+		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
 		28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FilterViewController.swift */; };
 		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
@@ -46,8 +50,10 @@
 
 /* Begin PBXFileReference section */
 		0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		282F607124A3E688005B1279 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		287063C824A38A37004E87AF /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 		287468E1247E60BB0089BB32 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		28E0C415247D8B33008B3CAD /* _Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Encodable.swift; sourceTree = "<group>"; };
 		28E0C417247D8B46008B3CAD /* _NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NSObject.swift; sourceTree = "<group>"; };
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		28E267A424A5FF360025215C /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
+		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		28EFEBA12487E90A0070879A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				287468E1247E60BB0089BB32 /* Content.swift */,
+				28E267A424A5FF360025215C /* Gesture.swift */,
 				28E0C413247D8AB8008B3CAD /* Post.swift */,
 				28EFEBA32487E9AA0070879A /* Taxonomy.swift */,
 			);
@@ -121,6 +130,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				282F607124A3E688005B1279 /* GestureView.swift */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
 			path = Views;
@@ -135,6 +145,7 @@
 				2899FFB52481125A009D8102 /* ArticleViewController.swift */,
 				28EFEBA12487E90A0070879A /* FilterViewController.swift */,
 				287063C624A380F9004E87AF /* InformationViewController.swift */,
+				287063C824A38A37004E87AF /* GestureViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				287468E6247E63CD0089BB32 /* _UIFont.swift */,
 				2852CF052486AA820063F3E4 /* _UIAccessibility.swift */,
 				2899FFB7248112D6009D8102 /* _UIStoryboard.swift */,
+				28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */,
 				287468EA247E64A60089BB32 /* _UITableView.swift */,
 				287468E8247E64930089BB32 /* _UIView.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
@@ -356,12 +368,15 @@
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
+				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
+				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
+				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Post.swift in Sources */,
 				287063C724A380F9004E87AF /* InformationViewController.swift in Sources */,
@@ -370,6 +385,7 @@
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
 				2877F6F2247D7D9700605677 /* API.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
+				287063C924A38A37004E87AF /* GestureViewController.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
