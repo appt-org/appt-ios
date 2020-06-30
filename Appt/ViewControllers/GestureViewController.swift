@@ -7,27 +7,56 @@
 //
 
 import UIKit
+import AVKit
 
 class GestureViewController: ViewController {
     
     @IBOutlet private var headerLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
-    @IBOutlet private var gestureView: GestureView!
     
-    var gesture: String!
+    var gesture: Gesture!
+    var completed: Bool = false
+    
+    private lazy var gestureView: GestureView = {
+        let gestureView = GestureView.create(gesture)
+        gestureView.frame = view.frame
+        view.addSubview(gestureView)
+        view.bringSubviewToFront(gestureView)
+        return gestureView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Training"
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        headerLabel.text = gesture
-        descriptionLabel.text = "In deze training leer je \(gesture.lowercased())."
+        headerLabel.text = gesture.action
+        descriptionLabel.text = gesture.description
         gestureView.delegate = self
         
         view.accessibilityElements = [gestureView]
+        UIAccessibility.focus(gestureView)
         
-        UIAccessibility.announce("In deze training leer je \(gesture.lowercased())")
+        NotificationCenter.default.addObserver(self, selector: #selector(announcementDidFinishNotification(_:)), name: UIAccessibility.announcementDidFinishNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
+    }
+    
+    @objc func announcementDidFinishNotification(_ sender: Notification) {
+        print("announcementDidFinishNotification")
+        
+        guard let announcement = UIAccessibility.announcement(for: sender) else { return }
+        print("Announcement", announcement)
+        
+        guard let success = UIAccessibility.success(for: sender) else { return }
+        print("Success", success)
+    
+        if success, completed {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
 
@@ -36,8 +65,17 @@ class GestureViewController: ViewController {
 extension GestureViewController: GestureViewDelegate {
     
     func onGesture(_ gesture: Gesture) {
-        headerLabel.text = gesture.header
-        descriptionLabel.text = gesture.description
-        UIAccessibility.announce(gesture.announcement)
+        completed = true
+        
+        UIAccessibility.announce("Correct gebaar uitgevoerd!")
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        
+        delay(10.0) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func onTouchesEnded() {
+        UIAccessibility.announce("Foutief gebaar uitgevoerd.")
     }
 }

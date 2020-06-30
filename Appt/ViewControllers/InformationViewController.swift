@@ -28,7 +28,6 @@ class InformationViewController: ViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl = refreshControl
     }
 }
 

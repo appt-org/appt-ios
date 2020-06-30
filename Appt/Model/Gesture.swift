@@ -9,36 +9,32 @@
 import Foundation
 
 enum Gesture {
-    case tap
+    case singleTap
     case doubleTap
     case fourFingerTapTop
     case fourFingerTapBottom
     
-    private var info: (header: String, description: String) {
+    private var info: (action: String, description: String) {
         switch self {
-        case .tap:
-            return ("Aanraken", "Selecteer onderdeel onder je vinger")
+        case .singleTap:
+            return ("Een onderdeel selecteren en uitspreken", "Tik met één vinger op het scherm om een onderdeel te selecteren")
             
         case .doubleTap:
-            return ("Dubbel tikken", "Hiermee activeer je het geselecteerde onderdeel")
+            return ("Het geselecteerde onderdeel activeren", "Dubbeltik met één vinger op het scherm om het geselecteerde onderdeel te activeren")
         
         case .fourFingerTapTop:
-            return ("Met vier vingers boven aan scherm tikken", "Ga naar het eerste onderdeel")
+            return ("Naar het eerste onderdeel gaan", "Tik met vier vingers bovenaan het scherm, om naar het eerste onderdeel te gaan")
             
         case .fourFingerTapBottom:
-            return ("Met vier vingers onder aan scherm tikken", "Ga naar het laatste onderdeel")
+            return ("Naar het laatste onderdeel gaan", "Tik met vier vingers onderaan het scherm, om naar het laatste onderdeel te gaan")
         }
     }
     
-    var header: String {
-        return info.header
+    var action: String {
+        return info.action
     }
     
     var description: String {
         return info.description
-    }
-    
-    var announcement: String {
-        return String(format: "%@. %@", header, description)
     }
 }

@@ -25,6 +25,14 @@ class TitleTableViewCell: UITableViewCell {
         }
     }
     
+    var gesture: Gesture? {
+        didSet {
+            if let action = gesture?.action {
+                setup(action)
+            }
+        }
+    }
+    
     func setup(_ title: String) {
         titleLabel.text = title
         accessibilityLabel = title

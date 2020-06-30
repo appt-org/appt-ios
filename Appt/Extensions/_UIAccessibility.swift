@@ -32,4 +32,12 @@ extension UIAccessibility {
     static func mute(delay: Double = 0.0) {
         UIAccessibility.announce("  ", delay: delay)
     }
+    
+    static func announcement(for notification: Foundation.Notification) -> String? {
+        return notification.userInfo?[UIAccessibility.announcementStringValueUserInfoKey] as? String
+    }
+    
+    static func success(for notification: Foundation.Notification) -> Bool? {
+        return notification.userInfo?[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool
+    }
 }

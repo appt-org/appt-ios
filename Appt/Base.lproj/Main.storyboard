@@ -57,17 +57,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-qg-9NL">
-                                <rect key="frame" x="16" y="436.5" width="382" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-qg-9NL">
+                                <rect key="frame" x="16" y="435.5" width="382" height="25.5"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Ez-osC">
-                                <rect key="frame" x="16" y="463.5" width="382" height="23"/>
+                                <rect key="frame" x="16" y="465" width="382" height="23"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -75,23 +75,15 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-qe-xaQ" customClass="GestureView" customModule="appt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DoX-vc-bNz" firstAttribute="trailing" secondItem="K0k-Ez-osC" secondAttribute="trailing" constant="16" id="5Ed-L0-pb3"/>
                             <constraint firstItem="YkS-qg-9NL" firstAttribute="centerX" secondItem="Zvq-rP-a3P" secondAttribute="centerX" id="FhQ-gw-2cB"/>
-                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" id="IkP-Md-kys"/>
-                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="trailing" secondItem="DoX-vc-bNz" secondAttribute="trailing" id="RDU-4T-RzG"/>
                             <constraint firstItem="K0k-Ez-osC" firstAttribute="top" secondItem="YkS-qg-9NL" secondAttribute="bottom" constant="4" id="RqQ-07-S1w"/>
-                            <constraint firstItem="ALh-qe-xaQ" firstAttribute="top" secondItem="DoX-vc-bNz" secondAttribute="top" id="TaJ-G5-hfp"/>
                             <constraint firstItem="YkS-qg-9NL" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" constant="16" id="VTG-em-rVc"/>
                             <constraint firstItem="YkS-qg-9NL" firstAttribute="centerY" secondItem="Zvq-rP-a3P" secondAttribute="centerY" id="fny-7t-iQV"/>
                             <constraint firstItem="K0k-Ez-osC" firstAttribute="leading" secondItem="DoX-vc-bNz" secondAttribute="leading" constant="16" id="gq8-nu-4aS"/>
-                            <constraint firstAttribute="bottom" secondItem="ALh-qe-xaQ" secondAttribute="bottom" id="hC1-cv-ALd"/>
                             <constraint firstItem="DoX-vc-bNz" firstAttribute="trailing" secondItem="YkS-qg-9NL" secondAttribute="trailing" constant="16" id="lkU-g3-zZb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoX-vc-bNz"/>
@@ -99,7 +91,6 @@
                     <navigationItem key="navigationItem" id="hIO-wc-ShB"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="K0k-Ez-osC" id="E6g-Xt-2HA"/>
-                        <outlet property="gestureView" destination="ALh-qe-xaQ" id="vYM-h1-HYg"/>
                         <outlet property="headerLabel" destination="YkS-qg-9NL" id="Rz1-Pp-Q3t"/>
                     </connections>
                 </viewController>

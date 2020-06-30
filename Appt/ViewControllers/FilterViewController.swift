@@ -84,7 +84,11 @@ class FilterViewController: ViewController {
 extension FilterViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if let _ = categories, let _ = tags {
+            return 2
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

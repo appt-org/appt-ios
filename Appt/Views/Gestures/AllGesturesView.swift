@@ -1,18 +1,14 @@
 //
-//  GestureView.swift
+//  AllGesturesView.swift
 //  Appt
 //
-//  Created by Jan Jaap de Groot on 24/06/2020.
+//  Created by Jan Jaap de Groot on 26/06/2020.
 //  Copyright © 2020 Abra B.V. All rights reserved.
 //
 
 import UIKit
 
-protocol GestureViewDelegate {
-    func onGesture(_ gesture: Gesture)
-}
-
-class GestureView: UIView {
+class AllGesturesView: UIView {
     
     var delegate: GestureViewDelegate?
     
@@ -69,7 +65,7 @@ class GestureView: UIView {
     
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         print("onTap")
-        delegate?.onGesture(.tap)
+        delegate?.onGesture(.singleTap)
     }
     
     @objc func onDoubleTap(_ sender: UITapGestureRecognizer) {
@@ -88,7 +84,7 @@ class GestureView: UIView {
     }
 }
 
-extension GestureView: UIGestureRecognizerDelegate {
+extension AllGesturesView: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
 //        if (gestureRecognizer == tapRecognizer && otherGestureRecognizer == doubleTapRecognizer) {
@@ -99,7 +95,7 @@ extension GestureView: UIGestureRecognizerDelegate {
 }
 // MARK: - Notifications
 
-extension GestureView {
+extension AllGesturesView {
     
     @objc func announcementDidFinishNotification() {
         print("announcementDidFinishNotification")
@@ -116,7 +112,7 @@ extension GestureView {
 
 // MARK: - Touches
 
-extension GestureView {
+extension AllGesturesView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -141,7 +137,7 @@ extension GestureView {
 
 // MARK: - UIAccessibilityFocus
 
-extension GestureView {
+extension AllGesturesView {
     
     override func accessibilityElementDidBecomeFocused() {
         super.accessibilityElementDidBecomeFocused()
@@ -166,7 +162,7 @@ extension GestureView {
 
 // MARK: - UIAccessibilityAction
 
-extension GestureView {
+extension AllGesturesView {
     
     override func accessibilityActivate() -> Bool {
         print("accessibilityActivate")
