@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.tintColor = .primary
+        application.accessibilityLanguage = "nl"
         
         // States
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]

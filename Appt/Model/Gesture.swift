@@ -14,6 +14,11 @@ enum Gesture {
     case fourFingerTapTop
     case fourFingerTapBottom
     
+    case scrollUp
+    case scrollRight
+    case scrollDown
+    case scrollLeft
+    
     private var info: (action: String, description: String) {
         switch self {
         case .singleTap:
@@ -27,6 +32,18 @@ enum Gesture {
             
         case .fourFingerTapBottom:
             return ("Naar het laatste onderdeel gaan", "Tik met vier vingers onderaan het scherm, om naar het laatste onderdeel te gaan")
+        
+        case .scrollUp:
+            return ("Eén pagina omhoog scrollen", "Veeg met drie vingers omlaag, om één pagina omhoog te scrollen")
+            
+        case .scrollRight:
+            return ("Eén pagina naar rechts scrollen", "Veeg met drie vingers naar rechts, om één pagina naar rechts te scrollen")
+            
+        case .scrollDown:
+            return ("Eén pagina omlaag scrollen", "Veeg met drie vingers omhoog, om één pagina omlaag te scrollen")
+            
+        case .scrollLeft:
+            return ("Eén pagina naar links scrollen", "Veeg met drie vingers naar links, om één pagina naar links te scrollen")
         }
     }
     

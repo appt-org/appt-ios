@@ -75,7 +75,7 @@ extension GestureViewController: GestureViewDelegate {
         }
     }
     
-    func onTouchesEnded() {
+    func onInvalidGesture() {
         UIAccessibility.announce("Foutief gebaar uitgevoerd.")
     }
 }

@@ -62,10 +62,10 @@ class TrainingViewController: ViewController {
                 Gesture.fourFingerTapBottom
             ],
             "Scrollen": [
-                "Eén pagina omhoog scrollen",
-                "Eén pagina omlaag scrollen",
-                "Eén pagina naar links scrollen",
-                "Eén pagina naar rechts scrollen",
+                Gesture.scrollUp,
+                Gesture.scrollRight,
+                Gesture.scrollDown,
+                Gesture.scrollLeft
             ],
             "Handelingen": [
                 "Het geselecteerde onderdeel activeren",

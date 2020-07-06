@@ -10,7 +10,7 @@ import UIKit
 
 protocol GestureViewDelegate {
     func onGesture(_ gesture: Gesture)
-    func onTouchesEnded()
+    func onInvalidGesture()
 }
 
 class GestureView: UIView {
@@ -39,7 +39,7 @@ class GestureView: UIView {
     }
     
     func getGesture() -> Gesture {
-        fatalError("gesture() should be overridden")
+        fatalError("getGesture() should be overridden")
     }
     
     func setup() {
@@ -56,32 +56,14 @@ class GestureView: UIView {
             return FourTapBottomGestureView()
         case .fourFingerTapTop:
             return FourTapTopGestureView()
+        case .scrollUp:
+            return ScrollUpGestureView()
+        case .scrollRight:
+            return ScrollRightGestureView()
+        case .scrollDown:
+            return ScrollDownGestureView()
+        case .scrollLeft:
+            return ScrollLeftGestureView()
         }
-    }
-}
-
-// MARK: - Touches
-
-extension GestureView {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        print("Touches began")
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        print("Touches moved")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        print("Touches ended")
-        delegate?.onTouchesEnded()
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        print("Touches cancelled")
     }
 }

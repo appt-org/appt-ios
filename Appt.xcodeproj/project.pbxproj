@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,11 @@
 		287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F1247E65620089BB32 /* TitleTableViewCell.swift */; };
 		287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287468F3247E65C80089BB32 /* TitleTableViewCell.xib */; };
 		287468F6247E675C0089BB32 /* _String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F5247E675C0089BB32 /* _String.swift */; };
+		28768B7524AB7750001AB5B9 /* ScrollGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */; };
+		28768B7924AB77DE001AB5B9 /* ScrollLeftGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7824AB77DE001AB5B9 /* ScrollLeftGestureView.swift */; };
+		28768B7B24AB798C001AB5B9 /* ScrollUpGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7A24AB798C001AB5B9 /* ScrollUpGestureView.swift */; };
+		28768B7D24AB7994001AB5B9 /* ScrollDownGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7C24AB7994001AB5B9 /* ScrollDownGestureView.swift */; };
+		28768B7F24AB799D001AB5B9 /* ScrollRightGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7E24AB799D001AB5B9 /* ScrollRightGestureView.swift */; };
 		2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CD247D6E9200605677 /* AppDelegate.swift */; };
 		2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CF247D6E9200605677 /* SceneDelegate.swift */; };
 		2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */; };
@@ -51,11 +56,10 @@
 		28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FilterViewController.swift */; };
 		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
-		A2C241D6634BC96ED520751D /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */; };
+		804262508657FF412615E330 /* libPods-Appt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281BD7FD24A92DC100B556A7 /* DoubleTapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTapGestureView.swift; sourceTree = "<group>"; };
 		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281BD80124A92EDD00B556A7 /* FourTapBottomGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTapBottomGestureView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,11 @@
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
+		28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGestureView.swift; sourceTree = "<group>"; };
+		28768B7824AB77DE001AB5B9 /* ScrollLeftGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollLeftGestureView.swift; sourceTree = "<group>"; };
+		28768B7A24AB798C001AB5B9 /* ScrollUpGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollUpGestureView.swift; sourceTree = "<group>"; };
+		28768B7C24AB7994001AB5B9 /* ScrollDownGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDownGestureView.swift; sourceTree = "<group>"; };
+		28768B7E24AB799D001AB5B9 /* ScrollRightGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRightGestureView.swift; sourceTree = "<group>"; };
 		2877F6CA247D6E9200605677 /* appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +111,7 @@
 		28EFEBA12487E90A0070879A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
+		4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Appt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.release.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.release.xcconfig"; sourceTree = "<group>"; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,7 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */,
-				A2C241D6634BC96ED520751D /* Pods_Appt.framework in Frameworks */,
+				804262508657FF412615E330 /* libPods-Appt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2899FFB9248113E7009D8102 /* WebKit.framework */,
-				0D42A21A05C8EA2FFA34EB45 /* Pods_Appt.framework */,
+				4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +179,30 @@
 				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		28768B7624AB7754001AB5B9 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */,
+				28768B7A24AB798C001AB5B9 /* ScrollUpGestureView.swift */,
+				28768B7E24AB799D001AB5B9 /* ScrollRightGestureView.swift */,
+				28768B7824AB77DE001AB5B9 /* ScrollLeftGestureView.swift */,
+				28768B7C24AB7994001AB5B9 /* ScrollDownGestureView.swift */,
+			);
+			path = Scroll;
+			sourceTree = "<group>";
+		};
+		28768B7724AB775B001AB5B9 /* Tap */ = {
+			isa = PBXGroup;
+			children = (
+				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
+				28E267A824A622CA0025215C /* SingleTapGestureView.swift */,
+				281BD7FD24A92DC100B556A7 /* DoubleTapGestureView.swift */,
+				281BD80124A92EDD00B556A7 /* FourTapBottomGestureView.swift */,
+				281BD80324A92F3800B556A7 /* FourTapTopGestureView.swift */,
+			);
+			path = Tap;
 			sourceTree = "<group>";
 		};
 		2877F6C1247D6E9100605677 = {
@@ -252,11 +286,8 @@
 			children = (
 				28E267AB24A622E90025215C /* AllGesturesView.swift */,
 				282F607124A3E688005B1279 /* GestureView.swift */,
-				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
-				28E267A824A622CA0025215C /* SingleTapGestureView.swift */,
-				281BD7FD24A92DC100B556A7 /* DoubleTapGestureView.swift */,
-				281BD80124A92EDD00B556A7 /* FourTapBottomGestureView.swift */,
-				281BD80324A92F3800B556A7 /* FourTapTopGestureView.swift */,
+				28768B7724AB775B001AB5B9 /* Tap */,
+				28768B7624AB7754001AB5B9 /* Scroll */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -281,7 +312,6 @@
 				2877F6C6247D6E9200605677 /* Sources */,
 				2877F6C7247D6E9200605677 /* Frameworks */,
 				2877F6C8247D6E9200605677 /* Resources */,
-				B892EA49176292086B51AB32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,23 +395,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B892EA49176292086B51AB32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -393,9 +406,11 @@
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
+				28768B7F24AB799D001AB5B9 /* ScrollRightGestureView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
 				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
+				28768B7D24AB7994001AB5B9 /* ScrollDownGestureView.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				281BD80224A92EDD00B556A7 /* FourTapBottomGestureView.swift in Sources */,
@@ -416,13 +431,16 @@
 				281BD80424A92F3800B556A7 /* FourTapTopGestureView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
 				287063C924A38A37004E87AF /* GestureViewController.swift in Sources */,
+				28768B7B24AB798C001AB5B9 /* ScrollUpGestureView.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
+				28768B7924AB77DE001AB5B9 /* ScrollLeftGestureView.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
 				287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */,
 				2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */,
 				281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */,
 				28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */,
+				28768B7524AB7750001AB5B9 /* ScrollGestureView.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 				281BD7FE24A92DC100B556A7 /* DoubleTapGestureView.swift in Sources */,
 			);

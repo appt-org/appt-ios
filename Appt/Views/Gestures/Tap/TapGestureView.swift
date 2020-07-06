@@ -38,3 +38,11 @@ class TapGestureView: GestureView {
         delegate?.onGesture(gesture)
     }
 }
+
+extension TapGestureView {
+        
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        delegate?.onInvalidGesture()
+    }
+}
