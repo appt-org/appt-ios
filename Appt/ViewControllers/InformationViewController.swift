@@ -15,7 +15,8 @@ class InformationViewController: ViewController {
     private var subjects = [
         "Over de app",
         "Algemene voorwaarden",
-        "Privacybeleid"
+        "Privacybeleid",
+        "Toegankelijkheidsverklaring"
     ]
 
     override func viewDidLoad() {

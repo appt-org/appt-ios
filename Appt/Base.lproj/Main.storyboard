@@ -227,7 +227,7 @@
                     <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
                     </view>
                     <navigationItem key="navigationItem" id="0a9-EO-ZYJ">

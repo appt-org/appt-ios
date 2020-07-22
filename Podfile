@@ -9,4 +9,5 @@ target 'Appt' do
   pod 'Kingfisher'
   pod 'M13Checkbox'
   pod 'DeviceKit'
+  pod 'Accessibility'
 end

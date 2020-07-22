@@ -97,7 +97,8 @@ class ArticleViewController: ViewController {
                             }
 
                             a {
-                                color: #E671D5;
+                                color: #d023be;
+                                font-weight: 600;
                             }
 
                             figure {
@@ -123,18 +124,30 @@ class ArticleViewController: ViewController {
                                 height: 50vw !important;
                             }
                             
-                    
                             table {
                                 table-layout: fixed;
-                                border: 1px solid #dcd7ca;
+                                border: 1px solid #ddd;
                                 border-collapse: collapse;
                                 border-spacing: 0;
                             }
                             th, td {
                                 text-align: left;
-                                border: 1px solid #dcd7ca;
-                                border-color: #dbdbdb;
+                                border: 1px solid #ddd;
                                 padding: 3px 6px;
+                            }
+
+                            pre {
+                                font-family: monospace;
+                                display: block;
+                                max-width: 100%;
+                                overflow: auto;
+                                padding: 1em;
+                                page-break-inside: avoid;
+                                word-wrap: break-word;
+                                background: #f4f4f4;
+                                border: 1px solid #ddd;
+                                border-left: 3px solid #d023be;
+                                color: #666;
                             }
                         </style>
                     </head>
@@ -146,7 +159,7 @@ class ArticleViewController: ViewController {
                 </body>
                 </html>
         """
-        
+                
         webView.loadHTMLString(html, baseURL: nil)
     }
     
