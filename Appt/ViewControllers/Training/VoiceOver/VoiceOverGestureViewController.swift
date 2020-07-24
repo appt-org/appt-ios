@@ -43,6 +43,7 @@ class VoiceOverGestureViewController: ViewController {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         NotificationCenter.default.removeObserver(self)
@@ -68,18 +69,19 @@ class VoiceOverGestureViewController: ViewController {
 
 extension VoiceOverGestureViewController: GestureViewDelegate {
     
-    func onGesture(_ gesture: Gesture) {
+    func onCorrectGesture(_ gesture: Gesture) {
+        self.gesture.completed = true
         completed = true
         
         UIAccessibility.announce("Correct gebaar uitgevoerd!")
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         
-        delay(10.0) {
+        delay(5.0) {
             self.navigationController?.popViewController(animated: true)
         }
     }
     
-    func onInvalidGesture() {
+    func onIncorrectGesture() {
         UIAccessibility.announce("Foutief gebaar uitgevoerd.")
     }
 }

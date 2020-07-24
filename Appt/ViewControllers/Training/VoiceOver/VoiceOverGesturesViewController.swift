@@ -36,6 +36,8 @@ class VoiceOverGesturesViewController: ViewController {
             ]
         ]
     }
+    
+    private var lastSelectedRow: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,20 @@ class VoiceOverGesturesViewController: ViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexPath = lastSelectedRow {
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gestureViewController = segue.destination as? VoiceOverGestureViewController, let gesture = sender as? Gesture {
+            gestureViewController.gesture = gesture
+        }
     }
 }
 
@@ -69,12 +85,7 @@ extension VoiceOverGesturesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let object = gestures[indexPath.section].value[indexPath.row]
-        if let gesture = object as? Gesture {
-            cell.gesture = gesture
-        } else if let gesture = object as? String {
-            cell.setup(gesture)
-        }
+        cell.gesture = gestures[indexPath.section].value[indexPath.row]
         
         return cell
     }
@@ -85,19 +96,10 @@ extension VoiceOverGesturesViewController: UITableViewDataSource {
 extension VoiceOverGesturesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        lastSelectedRow = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let object = gestures[indexPath.section].value[indexPath.row]
-        if let gesture = object as? Gesture {
-            performSegue(.voiceOverGesture, sender: gesture)
-        } else {
-            performSegue(.voiceOverGesture, sender: Gesture.singleTap)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gestureViewController = segue.destination as? VoiceOverGestureViewController, let gesture = sender as? Gesture {
-            gestureViewController.gesture = gesture
-        }
+        let gesture = gestures[indexPath.section].value[indexPath.row]
+        performSegue(.voiceOverGesture, sender: gesture)
     }
 }

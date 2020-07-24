@@ -149,4 +149,13 @@ enum Gesture: String {
             return SwipeGestureView(gesture: self, direction: .down)
         }
     }
+    
+    var completed: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: self.rawValue)
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: self.rawValue)
+        }
+    }
 }

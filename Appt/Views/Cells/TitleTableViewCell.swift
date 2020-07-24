@@ -27,6 +27,11 @@ class TitleTableViewCell: UITableViewCell {
     
     var gesture: Gesture? {
         didSet {
+            if gesture?.completed == true {
+                accessoryType = .checkmark
+            } else {
+                accessoryType = .disclosureIndicator
+            }
             if let action = gesture?.action {
                 setup(action)
             }

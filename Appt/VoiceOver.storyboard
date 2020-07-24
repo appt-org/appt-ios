@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                <rect key="frame" x="60" y="172.5" width="776" height="25.5"/>
+                                <rect key="frame" x="16" y="391.5" width="382" height="25.5"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                <rect key="frame" x="60" y="202" width="776" height="23"/>
+                                <rect key="frame" x="16" y="421" width="382" height="23"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -59,9 +59,11 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
                         <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
+                        <segue destination="bcL-Kz-Vef" kind="unwind" identifier="gestureCompleted" unwindAction="gestureCompleted:" id="dEn-0e-Clx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlL-6I-2Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bcL-Kz-Vef" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3294" y="-1554"/>
         </scene>
@@ -70,11 +72,11 @@
             <objects>
                 <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dc-yG-7nt">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
