@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */; };
+		28051BD324CB1275008EEB1E /* SwipeLeftGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD224CB1275008EEB1E /* SwipeLeftGestureView.swift */; };
+		28051BD524CB1280008EEB1E /* SwipeRightGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD424CB1280008EEB1E /* SwipeRightGestureView.swift */; };
+		28051BD724CB128B008EEB1E /* SwipeUpGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD624CB128B008EEB1E /* SwipeUpGestureView.swift */; };
+		28051BD924CB1298008EEB1E /* SwipeDownGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD824CB1298008EEB1E /* SwipeDownGestureView.swift */; };
 		281BD7FE24A92DC100B556A7 /* DoubleTapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FD24A92DC100B556A7 /* DoubleTapGestureView.swift */; };
 		281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FF24A92DF500B556A7 /* TapGestureView.swift */; };
 		281BD80224A92EDD00B556A7 /* FourTapBottomGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD80124A92EDD00B556A7 /* FourTapBottomGestureView.swift */; };
@@ -63,6 +68,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureView.swift; sourceTree = "<group>"; };
+		28051BD224CB1275008EEB1E /* SwipeLeftGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeLeftGestureView.swift; sourceTree = "<group>"; };
+		28051BD424CB1280008EEB1E /* SwipeRightGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeRightGestureView.swift; sourceTree = "<group>"; };
+		28051BD624CB128B008EEB1E /* SwipeUpGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpGestureView.swift; sourceTree = "<group>"; };
+		28051BD824CB1298008EEB1E /* SwipeDownGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDownGestureView.swift; sourceTree = "<group>"; };
 		281BD7FD24A92DC100B556A7 /* DoubleTapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTapGestureView.swift; sourceTree = "<group>"; };
 		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281BD80124A92EDD00B556A7 /* FourTapBottomGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTapBottomGestureView.swift; sourceTree = "<group>"; };
@@ -142,6 +152,18 @@
 				4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28051BCF24CB1194008EEB1E /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */,
+				28051BD424CB1280008EEB1E /* SwipeRightGestureView.swift */,
+				28051BD224CB1275008EEB1E /* SwipeLeftGestureView.swift */,
+				28051BD624CB128B008EEB1E /* SwipeUpGestureView.swift */,
+				28051BD824CB1298008EEB1E /* SwipeDownGestureView.swift */,
+			);
+			path = Swipe;
 			sourceTree = "<group>";
 		};
 		287468E3247E61740089BB32 /* Model */ = {
@@ -329,6 +351,7 @@
 				282F607124A3E688005B1279 /* GestureView.swift */,
 				28768B7724AB775B001AB5B9 /* Tap */,
 				28768B7624AB7754001AB5B9 /* Scroll */,
+				28051BCF24CB1194008EEB1E /* Swipe */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -444,9 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28051BD524CB1280008EEB1E /* SwipeRightGestureView.swift in Sources */,
 				28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
+				28051BD724CB128B008EEB1E /* SwipeUpGestureView.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28768B7F24AB799D001AB5B9 /* ScrollRightGestureView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
@@ -456,6 +481,7 @@
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				281BD80224A92EDD00B556A7 /* FourTapBottomGestureView.swift in Sources */,
+				28051BD324CB1275008EEB1E /* SwipeLeftGestureView.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
@@ -463,6 +489,7 @@
 				28E267A924A622CA0025215C /* SingleTapGestureView.swift in Sources */,
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
 				2893227724C9844500EBB447 /* Subject.swift in Sources */,
+				28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Post.swift in Sources */,
 				287063C724A380F9004E87AF /* InformationViewController.swift in Sources */,
@@ -487,6 +514,7 @@
 				28768B7524AB7750001AB5B9 /* ScrollGestureView.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 				281BD7FE24A92DC100B556A7 /* DoubleTapGestureView.swift in Sources */,
+				28051BD924CB1298008EEB1E /* SwipeDownGestureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,11 @@ class VoiceOverGesturesViewController: ViewController {
 
     @IBOutlet private var tableView: UITableView!
         
-    private var gestures: KeyValuePairs<String, [Any]> {
+    private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "Verkennen": [
+                Gesture.swipeRight,
+                Gesture.swipeLeft,
                 Gesture.singleTap,
                 Gesture.doubleTap,
                 Gesture.fourFingerTapTop,
@@ -26,24 +28,9 @@ class VoiceOverGesturesViewController: ViewController {
                 Gesture.scrollDown,
                 Gesture.scrollLeft
             ],
-            "Handelingen": [
-                "Het geselecteerde onderdeel activeren",
-                "Dubbel tikken op het geselecteerde onderdeel",
-                "Een schuifknop slepen",
-                "De actuele handeling starten of stoppen, zoals muziek stoppen",
-                "Een melding sluiten of teruggaan naar het vorige scherm",
-                "Het label van een onderdeel wijzigen, zodat je het gemakkelijker kunt vinden"
-            ],
-            "Bediening": [
-                "Het geluid van VoiceOver in- of uitschakelen",
-                "Het schermgordijn in- of uitschakelen",
-                "Een standaardgebaar gebruiken",
-                "De onderdeelkiezer openen"
-            ],
             "Rotor": [
-                "Een rotorinstelling kiezen",
-                "Naar het vorige onderdeel gaan of verhogen",
-                "Naar het volgende onderdeel gaan of verlagen"
+                Gesture.swipeUp,
+                Gesture.swipeDown
             ]
         ]
     }
@@ -58,7 +45,6 @@ class VoiceOverGesturesViewController: ViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl = refreshControl
     }
 }
 

@@ -18,7 +18,7 @@ class VoiceOverGestureViewController: ViewController {
     private var completed: Bool = false
     
     private lazy var gestureView: GestureView = {
-        let gestureView = GestureView.create(gesture)
+        let gestureView = gesture.view
         gestureView.frame = view.frame
         view.addSubview(gestureView)
         view.bringSubviewToFront(gestureView)
@@ -28,7 +28,6 @@ class VoiceOverGestureViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Training"
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         headerLabel.text = gesture.action
         descriptionLabel.text = gesture.description
@@ -40,7 +39,12 @@ class VoiceOverGestureViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(announcementDidFinishNotification(_:)), name: UIAccessibility.announcementDidFinishNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
     override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         NotificationCenter.default.removeObserver(self)
         super.viewWillDisappear(animated)
     }

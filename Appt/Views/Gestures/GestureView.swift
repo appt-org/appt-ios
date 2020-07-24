@@ -45,25 +45,4 @@ class GestureView: UIView {
     func setup() {
         fatalError("setup() should be overridden")
     }
-    
-    class func create(_ gesture: Gesture) -> GestureView {
-        switch gesture {
-        case .singleTap:
-            return SingleTapGestureView()
-        case .doubleTap:
-            return DoubleTapGestureView()
-        case .fourFingerTapBottom:
-            return FourTapBottomGestureView()
-        case .fourFingerTapTop:
-            return FourTapTopGestureView()
-        case .scrollUp:
-            return ScrollUpGestureView()
-        case .scrollRight:
-            return ScrollRightGestureView()
-        case .scrollDown:
-            return ScrollDownGestureView()
-        case .scrollLeft:
-            return ScrollLeftGestureView()
-        }
-    }
 }
