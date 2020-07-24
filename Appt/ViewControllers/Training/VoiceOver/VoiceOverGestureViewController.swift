@@ -27,7 +27,7 @@ class VoiceOverGestureViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Training"
+        title = "VoiceOver training"
         
         headerLabel.text = gesture.action
         descriptionLabel.text = gesture.description

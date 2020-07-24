@@ -10,18 +10,27 @@ import UIKit
 
 class SwipeGestureView: GestureView {
     
-    override func setup() {
+    private var direction: UISwipeGestureRecognizer.Direction!
+    private var numberOfFingers: Int?
+    
+    convenience init(gesture: Gesture, direction: UISwipeGestureRecognizer.Direction, numberOfFingers: Int? = nil) {
+        self.init(gesture: gesture)
+        self.direction = direction
+        self.numberOfFingers = numberOfFingers
+        
         accessibilityTraits = .allowsDirectInteraction
         
         let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(onSwipe(_:)))
-        recognizer.direction = getDirection()
+        
+        recognizer.direction = self.direction
+        
+        if let touches = numberOfFingers {
+            recognizer.numberOfTouchesRequired = touches
+        }
+        
         addGestureRecognizer(recognizer)
     }
-    
-    func getDirection() -> UISwipeGestureRecognizer.Direction {
-        fatalError("getDirection() should be overridden")
-    }
-    
+
     @objc func onSwipe(_ sender: UISwipeGestureRecognizer) {
         print("onSwipe", sender.direction)
         
@@ -33,7 +42,7 @@ class SwipeGestureView: GestureView {
         default: print ("Unknown direction")
         }
         
-        if sender.direction == getDirection() {
+        if self.direction == sender.direction {
             delegate?.onGesture(gesture)
         } else {
             delegate?.onInvalidGesture()

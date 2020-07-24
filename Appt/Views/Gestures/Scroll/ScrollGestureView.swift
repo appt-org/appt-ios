@@ -10,16 +10,15 @@ import UIKit
 
 class ScrollGestureView: GestureView {
     
-    override func setup() {
-        // None
-    }
+    private var direction: UIAccessibilityScrollDirection!
     
-    func getDirection() -> UIAccessibilityScrollDirection {
-        fatalError("getDirection() should be overridden")
+    convenience init(gesture: Gesture, direction: UIAccessibilityScrollDirection) {
+        self.init(gesture: gesture)
+        self.direction = direction
     }
     
     override func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool {
-        if direction == getDirection() {
+        if self.direction == direction {
             delegate?.onGesture(gesture)
         } else {
             delegate?.onInvalidGesture()

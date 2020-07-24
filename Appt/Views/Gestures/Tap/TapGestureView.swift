@@ -10,32 +10,41 @@ import UIKit
 
 class TapGestureView: GestureView {
     
-    override func setup() {
+    private var numberOfTaps: Int?
+    private var numberOfFingers: Int?
+    private var position: Position?
+    
+    convenience init(gesture: Gesture, numberOfTaps: Int?, numberOfFingers: Int? = nil, position: Position? = nil) {
+        self.init(gesture: gesture)
+        self.numberOfTaps = numberOfTaps
+        self.numberOfFingers = numberOfFingers
+        self.position = position
+        
         accessibilityTraits = .allowsDirectInteraction
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
         
-        if let taps = tapsRequired() {
+        if let taps = numberOfTaps {
             recognizer.numberOfTapsRequired = taps
         }
         
-        if let touches = touchesRequired() {
+        if let touches = numberOfFingers {
             recognizer.numberOfTouchesRequired = touches
         }
         
         addGestureRecognizer(recognizer)
     }
-    
-    func tapsRequired() -> Int? {
-        return nil
-    }
-    
-    func touchesRequired() -> Int? {
-        return nil
-    }
-    
+
     @objc func onTap(_ sender: UITapGestureRecognizer) {
-        delegate?.onGesture(gesture)
+        if let position = position {
+            if position.matches(recognizer: sender, view: self) {
+                delegate?.onGesture(gesture)
+            } else {
+                delegate?.onInvalidGesture()
+            }
+        } else {
+            delegate?.onGesture(gesture)
+        }
     }
 }
 

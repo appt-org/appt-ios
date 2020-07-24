@@ -15,22 +15,24 @@ class VoiceOverGesturesViewController: ViewController {
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "Verkennen": [
-                Gesture.swipeRight,
-                Gesture.swipeLeft,
-                Gesture.singleTap,
-                Gesture.doubleTap,
-                Gesture.fourFingerTapTop,
-                Gesture.fourFingerTapBottom
+                .swipeRight,
+                .swipeLeft,
+                .singleTap,
+                .doubleTap,
+                .fourFingerTapTop,
+                .fourFingerTapBottom,
+                .twoFingerSwipeUp,
+                .twoFingerSwipeDown
             ],
             "Scrollen": [
-                Gesture.scrollUp,
-                Gesture.scrollRight,
-                Gesture.scrollDown,
-                Gesture.scrollLeft
+                .scrollUp,
+                .scrollRight,
+                .scrollDown,
+                .scrollLeft
             ],
             "Rotor": [
-                Gesture.swipeUp,
-                Gesture.swipeDown
+                .swipeUp,
+                .swipeDown
             ]
         ]
     }
