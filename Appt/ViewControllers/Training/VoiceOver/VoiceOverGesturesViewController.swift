@@ -1,58 +1,17 @@
 //
-//  TrainingViewController.swift
+//  VoiceOverGesturesViewController.swift
 //  Appt
 //
-//  Created by Jan Jaap de Groot on 26/05/2020.
+//  Created by Jan Jaap de Groot on 23/07/2020.
 //  Copyright © 2020 Abra B.V. All rights reserved.
 //
 
 import UIKit
 
-class TrainingViewController: ViewController {
+class VoiceOverGesturesViewController: ViewController {
 
     @IBOutlet private var tableView: UITableView!
-    
-//    private var gestures: KeyValuePairs<String, [String]> {
-//        return [
-//            "Verkennen": [
-//                "Een onderdeel selecteren en uitspreken",
-//                "Het volgende onderdeel selecteren",
-//                "Het vorige onderdeel selecteren",
-//                "Het eerste onderdeel op het scherm selecteren",
-//                "Het laatste onderdeel in het scherm selecteren",
-//                "Het volledige scherm van bovenaf laten voorlezen",
-//                "Het volledige scherm vanaf het geselecteerde onderdeel laten voorlezen",
-//                "Het voorlezen pauzeren of hervatten",
-//                "Extra informatie laten uitspreken, zoals de positie in een lijst en of er tekst is geselecteerd"
-//            ],
-//            "Scrollen": [
-//                "Eén pagina omhoog scrollen",
-//                "Eén pagina omlaag scrollen",
-//                "Eén pagina naar links scrollen",
-//                "Eén pagina naar rechts scrollen",
-//            ],
-//            "Handelingen": [
-//                "Het geselecteerde onderdeel activeren",
-//                "Dubbel tikken op het geselecteerde onderdeel",
-//                "Een schuifknop slepen",
-//                "De actuele handeling starten of stoppen, zoals muziek stoppen",
-//                "Een melding sluiten of teruggaan naar het vorige scherm",
-//                "Het label van een onderdeel wijzigen, zodat je het gemakkelijker kunt vinden"
-//            ],
-//            "Bediening": [
-//                "Het geluid van VoiceOver in- of uitschakelen",
-//                "Het schermgordijn in- of uitschakelen",
-//                "Een standaardgebaar gebruiken",
-//                "De onderdeelkiezer openen"
-//            ],
-//            "Rotor": [
-//                "Een rotorinstelling kiezen",
-//                "Naar het vorige onderdeel gaan of verhogen",
-//                "Naar het volgende onderdeel gaan of verlagen"
-//            ]
-//        ]
-//    }
-    
+        
     private var gestures: KeyValuePairs<String, [Any]> {
         return [
             "Verkennen": [
@@ -105,7 +64,7 @@ class TrainingViewController: ViewController {
 
 // MARK: - UITableViewDataSource
 
-extension TrainingViewController: UITableViewDataSource {
+extension VoiceOverGesturesViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return gestures.count
@@ -135,21 +94,21 @@ extension TrainingViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension TrainingViewController: UITableViewDelegate {
+extension VoiceOverGesturesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let object = gestures[indexPath.section].value[indexPath.row]
         if let gesture = object as? Gesture {
-            performSegue(.gesture, sender: gesture)
+            performSegue(.voiceOverGesture, sender: gesture)
         } else {
-            performSegue(.gesture, sender: Gesture.singleTap)
+            performSegue(.voiceOverGesture, sender: Gesture.singleTap)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gestureViewController = segue.destination as? GestureViewController, let gesture = sender as? Gesture {
+        if let gestureViewController = segue.destination as? VoiceOverGestureViewController, let gesture = sender as? Gesture {
             gestureViewController.gesture = gesture
         }
     }

@@ -12,6 +12,8 @@ extension UIStoryboardSegue {
     enum Identifier: String {
         case article
         case filter
-        case gesture
+        
+        case voiceOverGestures
+        case voiceOverGesture
     }
 }

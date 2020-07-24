@@ -76,6 +76,9 @@ class ViewController: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.accessibilityLabel = "Terug"
     }
     
     // View will appear: register notifications

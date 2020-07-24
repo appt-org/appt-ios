@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Voice Over Gesture View Controller-->
+        <scene sceneID="J8g-pz-9jk">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
+                                <rect key="frame" x="60" y="194.5" width="776" height="25.5"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                <rect key="frame" x="60" y="224" width="776" height="23"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="U2L-JA-94c" secondAttribute="trailing" constant="16" id="1fY-jC-8LF"/>
+                            <constraint firstItem="Oz8-fT-zLt" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="2tb-fV-Pxe"/>
+                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="Oz8-fT-zLt" secondAttribute="trailing" constant="16" id="52b-Pk-BBw"/>
+                            <constraint firstItem="U2L-JA-94c" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="d50-OJ-8t4"/>
+                            <constraint firstItem="U2L-JA-94c" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="orX-6A-blf"/>
+                            <constraint firstItem="Oz8-fT-zLt" firstAttribute="top" secondItem="U2L-JA-94c" secondAttribute="bottom" constant="4" id="pP8-5x-FB1"/>
+                            <constraint firstItem="U2L-JA-94c" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="yEo-K7-LQk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IwU-sV-rHn"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
+                        <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlL-6I-2Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3294" y="-1554"/>
+        </scene>
+        <!--VoiceOver gebaren-->
+        <scene sceneID="LZM-dz-pdJ">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dc-yG-7nt">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Dc-yG-7nt" secondAttribute="trailing" id="5Sr-Ms-DnU"/>
+                            <constraint firstItem="3Dc-yG-7nt" firstAttribute="leading" secondItem="B2M-mb-Zk6" secondAttribute="leading" id="6iU-fb-E0n"/>
+                            <constraint firstItem="3Dc-yG-7nt" firstAttribute="top" secondItem="dsD-Ap-a94" secondAttribute="top" id="Bn7-ci-JMh"/>
+                            <constraint firstAttribute="bottom" secondItem="3Dc-yG-7nt" secondAttribute="bottom" id="Vr6-M5-aDX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dsD-Ap-a94"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver gebaren" id="OVj-2A-VwP"/>
+                    <connections>
+                        <outlet property="tableView" destination="3Dc-yG-7nt" id="Rp0-KO-4zn"/>
+                        <segue destination="PB1-eq-lMR" kind="show" identifier="voiceOverGesture" id="zLM-Sa-MH9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCI-sV-fRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.2053571428569" y="-1555.072463768116"/>
+        </scene>
+    </scenes>
+</document>

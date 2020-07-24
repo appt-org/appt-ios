@@ -1,5 +1,5 @@
 //
-//  SubjectViewController.swift
+//  VoiceOverGestureViewController.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 24/06/2020.
@@ -9,13 +9,13 @@
 import UIKit
 import AVKit
 
-class GestureViewController: ViewController {
+class VoiceOverGestureViewController: ViewController {
     
     @IBOutlet private var headerLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     
     var gesture: Gesture!
-    var completed: Bool = false
+    private var completed: Bool = false
     
     private lazy var gestureView: GestureView = {
         let gestureView = GestureView.create(gesture)
@@ -62,7 +62,7 @@ class GestureViewController: ViewController {
 
 // MARK: - GestureViewDelegate
 
-extension GestureViewController: GestureViewDelegate {
+extension VoiceOverGestureViewController: GestureViewDelegate {
     
     func onGesture(_ gesture: Gesture) {
         completed = true
