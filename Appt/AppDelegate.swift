@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().tintColor = .primary
-        UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20),
-            NSAttributedString.Key.foregroundColor : UIColor.black
+            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20)
         ]
         
         // UIBarButtonItem style
@@ -36,30 +34,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ], for: state)
         }
         
+        // UITabBar styles
+        UITabBar.appearance().tintColor = .primary
+        states.forEach { (state) in
+            UITabBarItem.appearance().setTitleTextAttributes([
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
+            ], for: state)
+        }
+        
         // UISegmentedControl styles
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .bold, size: 20),
-                .foregroundColor: UIColor.black25
+                .font: UIFont.sourceSansPro(weight: .bold, size: 20)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
             .font: UIFont.sourceSansPro(weight: .bold, size: 20),
             .foregroundColor: UIColor.primary
         ], for: .selected)
-        
-        // UITabBar styles
-        UITabBar.appearance().tintColor = .primary
-        UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().unselectedItemTintColor = .black25
-        
-        // UITabBarItem style
-        states.forEach { (state) in
-            UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
-            ], for: state)
-        }
         
         return true
     }

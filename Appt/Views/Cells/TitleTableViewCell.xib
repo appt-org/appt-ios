@@ -29,7 +29,7 @@
                             <bool key="isElement" value="NO"/>
                         </accessibility>
                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -52,7 +52,7 @@
     </objects>
     <resources>
         <namedColor name="Primary">
-            <color red="0.90196078431372551" green="0.44313725490196076" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81568627450980391" green="0.13725490196078433" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
