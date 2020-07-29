@@ -57,11 +57,11 @@ enum Gesture: String {
             return "Scherm laten voorlezen vanaf geselecteerde onderdeel"
         
         case .scrollUp:
-            return "Eén pagina omhoog scrollen"
+            return "Eén pagina omlaag scrollen"
         case .scrollRight:
             return "Eén pagina naar rechts scrollen"
         case .scrollDown:
-            return "Eén pagina omlaag scrollen"
+            return "Eén pagina omhoog scrollen"
         case .scrollLeft:
             return "Eén pagina naar links scrollen"
             
@@ -96,11 +96,11 @@ enum Gesture: String {
             return "Veeg met twee vingers naar beneden, om het scherm vanaf het geselecteerde onderdeel voor te laten lezen."
         
         case .scrollUp:
-            return "Veeg met drie vingers omlaag, om één pagina omhoog te scrollen."
+            return "Veeg met drie vingers omhoog, om één pagina omlaag te scrollen."
         case .scrollRight:
             return "Veeg met drie vingers naar rechts, om één pagina naar rechts te scrollen."
         case .scrollDown:
-            return "Veeg met drie vingers omhoog, om één pagina omlaag te scrollen."
+            return "Veeg met drie vingers omlaag, om één pagina omhoog te scrollen."
         case .scrollLeft:
             return "Veeg met drie vingers naar links, om één pagina naar links te scrollen."
             
@@ -135,13 +135,13 @@ enum Gesture: String {
             return SwipeGestureView(gesture: self, direction: .down, numberOfFingers: 2)
         
         case .scrollUp:
-            return ScrollGestureView(gesture: self, direction: .up)
+            return SwipeGestureView(gesture: self, direction: .up, numberOfFingers: 3)
         case .scrollRight:
-            return ScrollGestureView(gesture: self, direction: .right)
+            return SwipeGestureView(gesture: self, direction: .right, numberOfFingers: 3)
         case .scrollDown:
-            return ScrollGestureView(gesture: self, direction: .down)
+            return SwipeGestureView(gesture: self, direction: .down, numberOfFingers: 3)
         case .scrollLeft:
-            return ScrollGestureView(gesture: self, direction: .left)
+            return SwipeGestureView(gesture: self, direction: .left, numberOfFingers: 3)
             
         case .swipeUp:
             return SwipeGestureView(gesture: self, direction: .up)
@@ -150,6 +150,7 @@ enum Gesture: String {
         }
     }
     
+    /** Completion state */
     var completed: Bool {
         set {
             UserDefaults.standard.set(newValue, forKey: self.rawValue)
