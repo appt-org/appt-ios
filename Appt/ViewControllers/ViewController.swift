@@ -54,18 +54,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .primary
-        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        return refreshControl
-    }()
-    
-    @objc func refresh(_ refreshControl: UIRefreshControl) {
         
-    }
-    
     // View did load: style
     override func viewDidLoad() {
         super.viewDidLoad()

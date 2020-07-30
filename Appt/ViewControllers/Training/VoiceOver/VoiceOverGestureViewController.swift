@@ -29,8 +29,12 @@ class VoiceOverGestureViewController: ViewController {
         super.viewDidLoad()
         title = "VoiceOver training"
         
+        headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         headerLabel.text = gesture.action
+        
+        descriptionLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .title2)
         descriptionLabel.text = gesture.description
+        
         gestureView.delegate = self
         
         view.accessibilityElements = [gestureView]

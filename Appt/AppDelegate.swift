@@ -23,14 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UINavigationBar styles
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20)
+            .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .headline)
         ]
         
         // UIBarButtonItem style
         UIBarButtonItem.appearance().tintColor = .primary
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
             ], for: state)
         }
         
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .primary
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
             ], for: state)
         }
         
@@ -46,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .bold, size: 20)
+                .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.sourceSansPro(weight: .bold, size: 20),
+            .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body),
             .foregroundColor: UIColor.primary
         ], for: .selected)
         

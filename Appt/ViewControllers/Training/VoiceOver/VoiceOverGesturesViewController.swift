@@ -8,10 +8,8 @@
 
 import UIKit
 
-class VoiceOverGesturesViewController: ViewController {
-
-    @IBOutlet private var tableView: UITableView!
-        
+class VoiceOverGesturesViewController: TableViewController {
+ 
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "Verkennen": [
@@ -44,11 +42,6 @@ class VoiceOverGesturesViewController: ViewController {
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.keyboardDismissMode = .onDrag
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,11 +59,11 @@ class VoiceOverGesturesViewController: ViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableView
 
-extension VoiceOverGesturesViewController: UITableViewDataSource {
+extension VoiceOverGesturesViewController {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return gestures.count
     }
     
@@ -78,11 +71,11 @@ extension VoiceOverGesturesViewController: UITableViewDataSource {
         return gestures[section].key
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gestures[section].value.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         cell.gesture = gestures[indexPath.section].value[indexPath.row]
@@ -93,9 +86,9 @@ extension VoiceOverGesturesViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension VoiceOverGesturesViewController: UITableViewDelegate {
+extension VoiceOverGesturesViewController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lastSelectedRow = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
         

@@ -8,10 +8,8 @@
 
 import UIKit
 
-class TrainingViewController: ViewController {
+class TrainingViewController: TableViewController {
 
-    @IBOutlet private var tableView: UITableView!
-    
     private var subjects: KeyValuePairs<String, [Subject]> {
         return [
             "VoiceOver": [
@@ -26,19 +24,14 @@ class TrainingViewController: ViewController {
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.keyboardDismissMode = .onDrag
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableView
 
-extension TrainingViewController: UITableViewDataSource {
+extension TrainingViewController {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return subjects.count
     }
     
@@ -46,11 +39,11 @@ extension TrainingViewController: UITableViewDataSource {
         return subjects[section].key
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subjects[section].value.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let subject = subjects[indexPath.section].value[indexPath.row]
@@ -58,13 +51,8 @@ extension TrainingViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-
-extension TrainingViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let subject = subjects[indexPath.section].value[indexPath.row]

@@ -8,10 +8,8 @@
 
 import UIKit
 
-class InformationViewController: ViewController {
+class InformationViewController: TableViewController {
 
-    @IBOutlet private var tableView: UITableView!
-    
     private var subjects = [
         "Over de app",
         "Algemene voorwaarden",
@@ -24,23 +22,18 @@ class InformationViewController: ViewController {
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.keyboardDismissMode = .onDrag
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableView
 
-extension InformationViewController: UITableViewDataSource {
+extension InformationViewController {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subjects.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let subject = subjects[indexPath.row]
@@ -55,14 +48,5 @@ extension InformationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "Mede mogelijk gemaakt door het SIDN fonds"
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension InformationViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

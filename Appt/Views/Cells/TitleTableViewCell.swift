@@ -39,7 +39,9 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ title: String) {
+        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
+        
         accessibilityLabel = title
     }
 }
