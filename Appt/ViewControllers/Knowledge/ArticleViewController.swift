@@ -13,32 +13,14 @@ import SafariServices
 class ArticleViewController: ViewController {
     
     private lazy var webView: WKWebView = {
-//        guard let path = Bundle.main.path(forResource: "style", ofType: "css") else {
-//            return WKWebView()
-//        }
-//
-//        let cssString = try! String(contentsOfFile: path).components(separatedBy: .newlines).joined()
-//        let source = """
-//          var style = document.createElement('style');
-//          style.innerHTML = '\(cssString)';
-//          document.head.appendChild(style);
-//        """
-//
-//        let userScript = WKUserScript(source: source,
-//                                      injectionTime: .atDocumentEnd,
-//                                      forMainFrameOnly: true)
-//
-//        let userContentController = WKUserContentController()
-//        userContentController.addUserScript(userScript)
-
         let configuration = WKWebViewConfiguration()
-        //configuration.userContentController = userContentController
 
         let webView = WKWebView(frame: view.frame, configuration: configuration)
         webView.scrollView.maximumZoomScale = 10.0
         webView.tintColor = .primary
         webView.isOpaque = true
         webView.backgroundColor = .clear
+        
         return webView
     }()
 
@@ -85,6 +67,12 @@ class ArticleViewController: ViewController {
                         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
                         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
                         <style>
+                            :root {
+                                color-scheme: light dark;
+                                --code-background-color: #ddd;
+                                --code-text-color: #666;
+                            }
+
                             * {
                                 box-sizing: inherit;
                                 -webkit-font-smoothing: antialiased;
@@ -94,6 +82,10 @@ class ArticleViewController: ViewController {
 
                             body, html, table {
                                 font-size: 1.05rem;
+                            }
+
+                            html {
+                                font: -apple-system-body;
                             }
 
                             a {
@@ -138,16 +130,24 @@ class ArticleViewController: ViewController {
 
                             pre {
                                 font-family: monospace;
+                                font-size: 0.9rem;
                                 display: block;
                                 max-width: 100%;
                                 overflow: auto;
                                 padding: 1em;
                                 page-break-inside: avoid;
                                 word-wrap: break-word;
-                                background: #f4f4f4;
-                                border: 1px solid #ddd;
+                                background: var(--code-background-color);
+                                border: 1px solid var(--code-background-color);
                                 border-left: 3px solid #d023be;
-                                color: #666;
+                                color: var(--code-text-color);
+                            }
+
+                            @media screen and (prefers-color-scheme: dark) {
+                                :root {
+                                    --code-background-color: #222;
+                                    --code-text-color: #999;
+                                }
                             }
                         </style>
                     </head>
@@ -174,7 +174,7 @@ class ArticleViewController: ViewController {
         }
         
         let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
-        shareViewController.popoverPresentationController?.sourceView = sender as? UIView
+        shareViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         present(shareViewController, animated: true)
     }
 }
