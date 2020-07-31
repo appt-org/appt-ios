@@ -32,16 +32,6 @@ class SwipeGestureView: GestureView {
     }
 
     @objc func onSwipe(_ sender: UISwipeGestureRecognizer) {
-        print("onSwipe", sender.direction)
-        
-        switch sender.direction {
-        case .down: print("Down swipe")
-        case .right: print("Right swipe")
-        case .left: print("Left swipe")
-        case .up: print("Up swipe")
-        default: print ("Unknown direction")
-        }
-        
         if self.direction == sender.direction {
             delegate?.onCorrectGesture(gesture)
         } else {
@@ -54,7 +44,6 @@ extension SwipeGestureView {
         
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print("onTouchesEnded")
         delegate?.onIncorrectGesture()
     }
 }

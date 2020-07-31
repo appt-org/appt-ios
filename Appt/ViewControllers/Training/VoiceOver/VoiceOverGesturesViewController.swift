@@ -32,6 +32,7 @@ class VoiceOverGesturesViewController: TableViewController {
                 .scrollLeft
             ],
             "Rotor": [
+                .rotor,
                 .swipeUp,
                 .swipeDown
             ]

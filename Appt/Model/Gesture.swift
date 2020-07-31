@@ -34,6 +34,7 @@ enum Gesture: String {
     case scrollLeft
     
     // Rotor
+    case rotor
     case swipeUp
     case swipeDown
     
@@ -76,10 +77,12 @@ enum Gesture: String {
         case .scrollLeft:
             return "Eén pagina naar links scrollen"
             
+        case .rotor:
+            return "Een rotorinstelling kiezen"
         case .swipeUp:
-            return "Naar het vorige rotor onderdeel gaan"
+            return "Rotoronderdeel omhoog aanpassen"
         case .swipeDown:
-            return "Naar het volgende rotor onderdeel gaan"
+            return "Rotoronderdeel omlaag aanpassen"
         }
     }
             
@@ -122,10 +125,12 @@ enum Gesture: String {
         case .scrollLeft:
             return "Veeg met drie vingers naar links, om één pagina naar links te scrollen."
             
+        case .rotor:
+            return "Draai met twee vingers, om de rotorinstelling te kiezen."
         case .swipeUp:
-            return "Veeg met één vinger omhoog, om naar het vorige rotor onderdeel te gaan."
+            return "Veeg met één vinger omhoog, om het rotoronderdeel omhoog aan te passen."
         case .swipeDown:
-            return "Veeg met één vinger omlaag, om naar het volgende rotor onderdeel te gaan."
+            return "Veeg met één vinger omlaag, om het rotoronderdeel omlaag aan te passen."
         }
     }
     
@@ -168,6 +173,8 @@ enum Gesture: String {
         case .scrollLeft:
             return SwipeGestureView(gesture: self, direction: .left, numberOfFingers: 3)
             
+        case .rotor:
+            return RotationGestureView(gesture: self, rotation: 0.5)
         case .swipeUp:
             return SwipeGestureView(gesture: self, direction: .up)
         case .swipeDown:
