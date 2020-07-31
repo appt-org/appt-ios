@@ -69,6 +69,7 @@ class ArticleViewController: ViewController {
                         <style>
                             :root {
                                 color-scheme: light dark;
+                                --color-primary: #d023be;
                                 --code-background-color: #ddd;
                                 --code-text-color: #666;
                             }
@@ -78,6 +79,7 @@ class ArticleViewController: ViewController {
                                 -webkit-font-smoothing: antialiased;
                                 word-break: break-word;
                                 font-family: 'Source Sans Pro', sans-serif;
+                                line-height: 1.5;
                             }
 
                             body, html, table {
@@ -89,8 +91,10 @@ class ArticleViewController: ViewController {
                             }
 
                             a {
-                                color: #d023be;
+                                color: var(--color-primary);
                                 font-weight: 600;
+                                text-decoration: none;
+                                border-bottom: .075rem solid var(--color-primary);
                             }
 
                             figure {
@@ -139,7 +143,7 @@ class ArticleViewController: ViewController {
                                 word-wrap: break-word;
                                 background: var(--code-background-color);
                                 border: 1px solid var(--code-background-color);
-                                border-left: 3px solid #d023be;
+                                border-left: 3px solid var(--color-primary);
                                 color: var(--code-text-color);
                             }
 

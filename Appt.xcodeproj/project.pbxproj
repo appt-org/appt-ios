@@ -12,6 +12,8 @@
 		281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FF24A92DF500B556A7 /* TapGestureView.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
 		282F607224A3E688005B1279 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F607124A3E688005B1279 /* GestureView.swift */; };
+		2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9C924D45808000FB3E6 /* TouchGestureView.swift */; };
+		2840D9CC24D45823000FB3E6 /* ScrollGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
 		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
 		287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */; };
@@ -24,7 +26,6 @@
 		287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F1247E65620089BB32 /* TitleTableViewCell.swift */; };
 		287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287468F3247E65C80089BB32 /* TitleTableViewCell.xib */; };
 		287468F6247E675C0089BB32 /* _String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F5247E675C0089BB32 /* _String.swift */; };
-		28768B7524AB7750001AB5B9 /* ScrollGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */; };
 		2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CD247D6E9200605677 /* AppDelegate.swift */; };
 		2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CF247D6E9200605677 /* SceneDelegate.swift */; };
 		2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */; };
@@ -63,6 +64,8 @@
 		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		282F607124A3E688005B1279 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
+		2840D9C924D45808000FB3E6 /* TouchGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureView.swift; sourceTree = "<group>"; };
+		2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollGestureView.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGestureViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
-		28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGestureView.swift; sourceTree = "<group>"; };
 		2877F6CA247D6E9200605677 /* appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,14 +136,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28051BCF24CB1194008EEB1E /* Swipe */ = {
-			isa = PBXGroup;
-			children = (
-				28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */,
-			);
-			path = Swipe;
-			sourceTree = "<group>";
-		};
 		287468E3247E61740089BB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,22 +177,6 @@
 				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		28768B7624AB7754001AB5B9 /* Scroll */ = {
-			isa = PBXGroup;
-			children = (
-				28768B7424AB7750001AB5B9 /* ScrollGestureView.swift */,
-			);
-			path = Scroll;
-			sourceTree = "<group>";
-		};
-		28768B7724AB775B001AB5B9 /* Tap */ = {
-			isa = PBXGroup;
-			children = (
-				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
-			);
-			path = Tap;
 			sourceTree = "<group>";
 		};
 		2877F6C1247D6E9100605677 = {
@@ -319,9 +297,10 @@
 			children = (
 				28E267AB24A622E90025215C /* AllGesturesView.swift */,
 				282F607124A3E688005B1279 /* GestureView.swift */,
-				28768B7724AB775B001AB5B9 /* Tap */,
-				28768B7624AB7754001AB5B9 /* Scroll */,
-				28051BCF24CB1194008EEB1E /* Swipe */,
+				2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */,
+				28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */,
+				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
+				2840D9C924D45808000FB3E6 /* TouchGestureView.swift */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -444,6 +423,7 @@
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
 				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
+				2840D9CC24D45823000FB3E6 /* ScrollGestureView.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
@@ -466,6 +446,7 @@
 				28E267AC24A622E90025215C /* AllGesturesView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
+				2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
@@ -473,7 +454,6 @@
 				2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */,
 				281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */,
 				28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */,
-				28768B7524AB7750001AB5B9 /* ScrollGestureView.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

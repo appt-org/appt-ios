@@ -15,12 +15,15 @@ class VoiceOverGesturesViewController: TableViewController {
             "Verkennen": [
                 .swipeRight,
                 .swipeLeft,
-                .singleTap,
+                .touch,
                 .doubleTap,
+                .tripleTap,
                 .fourFingerTapTop,
                 .fourFingerTapBottom,
                 .twoFingerSwipeUp,
-                .twoFingerSwipeDown
+                .twoFingerSwipeDown,
+                .twoFingerTap,
+                .threeFingerTap
             ],
             "Scrollen": [
                 .scrollUp,

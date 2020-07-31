@@ -65,7 +65,7 @@ class AllGesturesView: UIView {
     
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         print("onTap")
-        delegate?.onCorrectGesture(.singleTap)
+        delegate?.onCorrectGesture(.touch)
     }
     
     @objc func onDoubleTap(_ sender: UITapGestureRecognizer) {

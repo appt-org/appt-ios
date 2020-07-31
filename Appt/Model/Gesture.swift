@@ -14,14 +14,18 @@ enum Gesture: String {
     case swipeRight
     case swipeLeft
     
-    case singleTap
+    case touch
     case doubleTap
+    case tripleTap
     
     case fourFingerTapTop
     case fourFingerTapBottom
     
     case twoFingerSwipeDown
     case twoFingerSwipeUp
+    
+    case twoFingerTap
+    case threeFingerTap
     
     // Scrolling
     case scrollUp
@@ -41,10 +45,12 @@ enum Gesture: String {
         case .swipeLeft:
             return "Naar het vorige onderdeel navigeren"
     
-        case .singleTap:
-            return "Een onderdeel selecteren en uitspreken"
+        case .touch:
+            return "Een onderdeel selecteren"
         case .doubleTap:
             return "Het geselecteerde onderdeel activeren"
+        case .tripleTap:
+            return "Dubbeltikken op het geselecteerde onderdeel"
             
         case .fourFingerTapTop:
             return "Naar het eerste onderdeel gaan"
@@ -55,6 +61,11 @@ enum Gesture: String {
             return "Volledig scherm laten voorlezen"
         case .twoFingerSwipeDown:
             return "Scherm laten voorlezen vanaf geselecteerde onderdeel"
+        
+        case .twoFingerTap:
+            return "Het voorlezen pauzeren of hervatten"
+        case .threeFingerTap:
+            return "Extra informatie laten uitspreken"
         
         case .scrollUp:
             return "Eén pagina omlaag scrollen"
@@ -80,10 +91,12 @@ enum Gesture: String {
         case .swipeLeft:
             return "Veeg met één vinger naar links, om naar het vorige onderdeel te navigeren."
         
-        case .singleTap:
-            return "Tik met één vinger op het scherm om een onderdeel te selecteren."
+        case .touch:
+            return "Raak het scherm aan om een onderdeel te selecteren."
         case .doubleTap:
-            return "Dubbeltik met één vinger op het scherm om het geselecteerde onderdeel te activeren."
+            return "Tik tweemaal op het scherm om het geselecteerde onderdeel te activeren."
+        case .tripleTap:
+            return "Tik driemaal op het scherm om te dubbeltikken op het geselecteerde onderdeel."
             
         case .fourFingerTapTop:
             return "Tik met vier vingers bovenaan het scherm, om naar het eerste onderdeel te gaan."
@@ -95,6 +108,11 @@ enum Gesture: String {
         case .twoFingerSwipeDown:
             return "Veeg met twee vingers naar beneden, om het scherm vanaf het geselecteerde onderdeel voor te laten lezen."
         
+        case .twoFingerTap:
+            return "Tik met twee vingers op het scherm, om het voorlezen te pauzeren of te hervatten."
+        case .threeFingerTap:
+            return "Tik met drie vingers op het scherm, om extra informatie te laten voorlezen."
+            
         case .scrollUp:
             return "Veeg met drie vingers omhoog, om één pagina omlaag te scrollen."
         case .scrollRight:
@@ -119,10 +137,12 @@ enum Gesture: String {
         case .swipeLeft:
             return SwipeGestureView(gesture: self, direction: .left)
         
-        case .singleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 1)
+        case .touch:
+            return TouchGestureView(gesture: self, numberOfTaps: 1)
         case .doubleTap:
             return TapGestureView(gesture: self, numberOfTaps: 2)
+        case .tripleTap:
+            return TapGestureView(gesture: self, numberOfTaps: 3)
             
         case .fourFingerTapTop:
             return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 4, position: .top)
@@ -133,6 +153,11 @@ enum Gesture: String {
             return SwipeGestureView(gesture: self, direction: .up, numberOfFingers: 2)
         case .twoFingerSwipeDown:
             return SwipeGestureView(gesture: self, direction: .down, numberOfFingers: 2)
+        
+        case .twoFingerTap:
+            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 2)
+        case .threeFingerTap:
+            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 3)
         
         case .scrollUp:
             return SwipeGestureView(gesture: self, direction: .up, numberOfFingers: 3)
