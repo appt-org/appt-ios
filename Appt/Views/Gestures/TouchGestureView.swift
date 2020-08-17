@@ -14,11 +14,9 @@ class TouchGestureView: GestureView {
         self.init(gesture: gesture)
         accessibilityTraits = .allowsDirectInteraction
     }
-}
-
-extension TouchGestureView {
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.onCorrectGesture(gesture)
+        delegate?.correct(gesture)
     }
 }

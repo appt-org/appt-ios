@@ -39,6 +39,7 @@
 		2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */; };
 		2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */; };
 		2877F6F2247D7D9700605677 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6F1247D7D9700605677 /* API.swift */; };
+		2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317924EA951600ED006B /* SlideGestureView.swift */; };
 		2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */; };
 		2893227724C9844500EBB447 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227624C9844500EBB447 /* Subject.swift */; };
 		2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893227B24C9860400EBB447 /* VoiceOver.storyboard */; };
@@ -94,6 +95,7 @@
 		2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		2877F6F1247D7D9700605677 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2892317924EA951600ED006B /* SlideGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideGestureView.swift; sourceTree = "<group>"; };
 		2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGesturesViewController.swift; sourceTree = "<group>"; };
 		2893227624C9844500EBB447 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		2893227B24C9860400EBB447 /* VoiceOver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoiceOver.storyboard; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				282F607124A3E688005B1279 /* GestureView.swift */,
 				2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */,
 				2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */,
+				2892317924EA951600ED006B /* SlideGestureView.swift */,
 				28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */,
 				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
 				2840D9C924D45808000FB3E6 /* TouchGestureView.swift */,
@@ -450,6 +453,7 @@
 				28E267AC24A622E90025215C /* AllGesturesView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
+				2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */,
 				2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
@@ -603,17 +607,19 @@
 			baseConfigurationReference = D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V984472TP8;
+				DEVELOPMENT_TEAM = AJ2TAF85YF;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = appt;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -624,17 +630,19 @@
 			baseConfigurationReference = 7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V984472TP8;
+				DEVELOPMENT_TEAM = AJ2TAF85YF;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = appt;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

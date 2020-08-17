@@ -19,9 +19,9 @@ class ScrollGestureView: GestureView {
     
     override func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool {
         if self.direction == direction {
-            delegate?.onCorrectGesture(gesture)
+            delegate?.correct(gesture)
         } else {
-            delegate?.onIncorrectGesture()
+            delegate?.incorrect(gesture)
         }
         return false
     }

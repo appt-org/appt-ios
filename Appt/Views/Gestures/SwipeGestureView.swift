@@ -33,17 +33,14 @@ class SwipeGestureView: GestureView {
 
     @objc func onSwipe(_ sender: UISwipeGestureRecognizer) {
         if self.direction == sender.direction {
-            delegate?.onCorrectGesture(gesture)
+            delegate?.correct(gesture)
         } else {
-            delegate?.onIncorrectGesture()
+            delegate?.incorrect(gesture)
         }
     }
-}
-
-extension SwipeGestureView {
-        
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.onIncorrectGesture()
+        delegate?.incorrect(gesture)
     }
 }

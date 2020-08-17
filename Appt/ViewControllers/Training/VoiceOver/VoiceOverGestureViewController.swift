@@ -56,14 +56,8 @@ class VoiceOverGestureViewController: ViewController {
     
     @objc func announcementDidFinishNotification(_ sender: Notification) {
         print("announcementDidFinishNotification")
-        
-        guard let announcement = UIAccessibility.announcement(for: sender) else { return }
-        print("Announcement", announcement)
-        
-        guard let success = UIAccessibility.success(for: sender) else { return }
-        print("Success", success)
-    
-        if success, completed {
+
+        if sender.accessibility.successful == true, completed {
             navigationController?.popViewController(animated: true)
         }
     }
@@ -73,7 +67,7 @@ class VoiceOverGestureViewController: ViewController {
 
 extension VoiceOverGestureViewController: GestureViewDelegate {
     
-    func onCorrectGesture(_ gesture: Gesture) {
+    func correct(_ gesture: Gesture) {
         self.gesture.completed = true
         completed = true
         
@@ -85,7 +79,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         }
     }
     
-    func onIncorrectGesture() {
+    func incorrect(_ gesture: Gesture) {
         UIAccessibility.announce("Foutief gebaar uitgevoerd.")
     }
 }

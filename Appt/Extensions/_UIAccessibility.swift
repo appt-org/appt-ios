@@ -32,12 +32,39 @@ extension UIAccessibility {
     static func mute(delay: Double = 0.0) {
         UIAccessibility.announce("  ", delay: delay)
     }
+}
+
+/// This class contains accessibility helper methods for Notification.
+open class AccessibilityNotification {
+
+    private var notification: Notification
     
-    static func announcement(for notification: Foundation.Notification) -> String? {
-        return notification.userInfo?[UIAccessibility.announcementStringValueUserInfoKey] as? String
+    init(_ notification: Notification) {
+        self.notification = notification
     }
     
-    static func success(for notification: Foundation.Notification) -> Bool? {
-        return notification.userInfo?[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool
+    /// Announcement
+    open var announcement: String? {
+        get {
+            return notification.userInfo?[UIAccessibility.announcementStringValueUserInfoKey] as? String
+        }
+    }
+    
+    /// Successful state
+    open var successful: Bool? {
+        get {
+            return notification.userInfo?[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool
+        }
+    }
+}
+
+
+public extension Notification {
+    
+    /// Adds the `accessibility` field to all classes which inherit from Notification.
+    var accessibility: AccessibilityNotification {
+        get {
+            return AccessibilityNotification(self)
+        }
     }
 }

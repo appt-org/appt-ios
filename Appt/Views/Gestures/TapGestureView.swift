@@ -38,20 +38,17 @@ class TapGestureView: GestureView {
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         if let position = position {
             if position.matches(recognizer: sender, view: self) {
-                delegate?.onCorrectGesture(gesture)
+                delegate?.correct(gesture)
             } else {
-                delegate?.onIncorrectGesture()
+                delegate?.incorrect(gesture)
             }
         } else {
-            delegate?.onCorrectGesture(gesture)
+            delegate?.correct(gesture)
         }
     }
-}
-
-extension TapGestureView {
-        
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.onIncorrectGesture()
+        delegate?.incorrect(gesture)
     }
 }

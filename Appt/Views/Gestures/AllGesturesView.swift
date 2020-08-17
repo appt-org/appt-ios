@@ -65,21 +65,21 @@ class AllGesturesView: UIView {
     
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         print("onTap")
-        delegate?.onCorrectGesture(.touch)
+        delegate?.correct(.touch)
     }
     
     @objc func onDoubleTap(_ sender: UITapGestureRecognizer) {
         print("onDoubleTap")
-        delegate?.onCorrectGesture(.doubleTap)
+        delegate?.correct(.doubleTap)
     }
     
     @objc func onFourFingerTap(_ sender: UITapGestureRecognizer) {
         let location = sender.location(in: self)
         
         if location.y < frame.height/2 {
-            delegate?.onCorrectGesture(.fourFingerTapTop)
+            delegate?.correct(.fourFingerTapTop)
         } else {
-            delegate?.onCorrectGesture(.fourFingerTapBottom)
+            delegate?.correct(.fourFingerTapBottom)
         }
     }
 }

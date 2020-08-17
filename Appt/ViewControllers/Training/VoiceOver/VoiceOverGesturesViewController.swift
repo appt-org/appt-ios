@@ -13,11 +13,9 @@ class VoiceOverGesturesViewController: TableViewController {
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "Verkennen": [
+                .touch,
                 .swipeRight,
                 .swipeLeft,
-                .touch,
-                .doubleTap,
-                .tripleTap,
                 .fourFingerTapTop,
                 .fourFingerTapBottom,
                 .twoFingerSwipeUp,
@@ -30,6 +28,11 @@ class VoiceOverGesturesViewController: TableViewController {
                 .scrollRight,
                 .scrollDown,
                 .scrollLeft
+            ],
+            "Handelingen": [
+                .doubleTap,
+                .tripleTap,
+                .slide
             ],
             "Rotor": [
                 .rotor,

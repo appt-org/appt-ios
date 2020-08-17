@@ -9,8 +9,8 @@
 import UIKit
 
 protocol GestureViewDelegate {
-    func onCorrectGesture(_ gesture: Gesture)
-    func onIncorrectGesture()
+    func correct(_ gesture: Gesture)
+    func incorrect(_ gesture: Gesture)
 }
 
 class GestureView: UIView {

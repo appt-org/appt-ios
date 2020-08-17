@@ -25,16 +25,13 @@ class RotationGestureView: GestureView {
 
     @objc func onRotate(_ sender: UIRotationGestureRecognizer) {    
         if !detected && abs(sender.rotation) >= rotation {
-            delegate?.onCorrectGesture(gesture)
+            delegate?.correct(gesture)
             detected = true
         }
     }
-}
-
-extension RotationGestureView {
-        
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.onIncorrectGesture()
+        delegate?.incorrect(gesture)
     }
 }
