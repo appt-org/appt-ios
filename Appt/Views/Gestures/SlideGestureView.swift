@@ -26,7 +26,7 @@ class SlideGestureView: GestureView {
     }
 
     // Step 1: trigger long press
-    @objc func onLongPress(_ sender: UITapGestureRecognizer) {
+    @objc func onLongPress(_ sender: UILongPressGestureRecognizer) {
         guard !completed else { return }
         
         let location = sender.location(in: self)

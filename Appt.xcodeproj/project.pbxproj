@@ -40,6 +40,8 @@
 		2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */; };
 		2877F6F2247D7D9700605677 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6F1247D7D9700605677 /* API.swift */; };
 		2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317924EA951600ED006B /* SlideGestureView.swift */; };
+		2892317C24EAD90000ED006B /* EscapeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317B24EAD90000ED006B /* EscapeGestureView.swift */; };
+		2892317E24EBBEB000ED006B /* VoiceOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317D24EBBEB000ED006B /* VoiceOverViewController.swift */; };
 		2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */; };
 		2893227724C9844500EBB447 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227624C9844500EBB447 /* Subject.swift */; };
 		2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893227B24C9860400EBB447 /* VoiceOver.storyboard */; };
@@ -96,6 +98,8 @@
 		2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		2877F6F1247D7D9700605677 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2892317924EA951600ED006B /* SlideGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideGestureView.swift; sourceTree = "<group>"; };
+		2892317B24EAD90000ED006B /* EscapeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeGestureView.swift; sourceTree = "<group>"; };
+		2892317D24EBBEB000ED006B /* VoiceOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverViewController.swift; sourceTree = "<group>"; };
 		2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGesturesViewController.swift; sourceTree = "<group>"; };
 		2893227624C9844500EBB447 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		2893227B24C9860400EBB447 /* VoiceOver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoiceOver.storyboard; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 		2893227524C9830300EBB447 /* VoiceOver */ = {
 			isa = PBXGroup;
 			children = (
+				2892317D24EBBEB000ED006B /* VoiceOverViewController.swift */,
 				2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */,
 				287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */,
 			);
@@ -301,6 +306,7 @@
 			children = (
 				28E267AB24A622E90025215C /* AllGesturesView.swift */,
 				282F607124A3E688005B1279 /* GestureView.swift */,
+				2892317B24EAD90000ED006B /* EscapeGestureView.swift */,
 				2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */,
 				2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */,
 				2892317924EA951600ED006B /* SlideGestureView.swift */,
@@ -424,6 +430,7 @@
 			files = (
 				28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
+				2892317E24EBBEB000ED006B /* VoiceOverViewController.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
 				28051BDD24CB343D008EEB1E /* Position.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
@@ -455,6 +462,7 @@
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
 				2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */,
 				2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */,
+				2892317C24EAD90000ED006B /* EscapeGestureView.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,

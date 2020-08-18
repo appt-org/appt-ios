@@ -71,10 +71,11 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         self.gesture.completed = true
         completed = true
         
-        UIAccessibility.announce("Correct gebaar uitgevoerd!")
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         
-        delay(5.0) {
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.announce("Correct gebaar uitgevoerd!")
+        } else {
             self.navigationController?.popViewController(animated: true)
         }
     }

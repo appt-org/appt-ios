@@ -34,7 +34,8 @@ enum Gesture: String {
     case doubleTap
     case tripleTap
     case slide
-    case twoFingerDoubleTap
+    case magicTap
+    case escape
     
     // Rotor
     case rotor
@@ -78,8 +79,10 @@ enum Gesture: String {
             return "Dubbeltikken op het geselecteerde onderdeel"
         case .slide:
             return "Een schuifknop slepen"
-        case .twoFingerDoubleTap:
+        case .magicTap:
             return "De actuele handeling starten of stoppen"
+        case .escape:
+            return "Een melding sluiten of teruggaan naar het vorige scherm"
             
         case .rotor:
             return "Een rotorinstelling kiezen"
@@ -127,8 +130,10 @@ enum Gesture: String {
             return "Tik driemaal op het scherm om te dubbeltikken op het geselecteerde onderdeel."
         case .slide:
             return "Dubbeltik en houd je vinger op het scherm tot je een toon hoort. Beweeg vervolgens je vinger naar links of rechts om de waarde van de schuifknop aan te passen."
-        case .twoFingerDoubleTap:
+        case .magicTap:
             return "Tik tweemaal op het scherm met met twee vingers om de actuele handeling te starten of stoppen."
+        case .escape:
+             return "Zigzag met twee vingers in de vorm van een 'z', om een melding te sluiten of terug te gaan naar het vorige scherm."
             
         case .rotor:
             return "Draai met twee vingers, om de rotorinstelling te kiezen."
@@ -176,8 +181,10 @@ enum Gesture: String {
             return TapGestureView(gesture: self, numberOfTaps: 3)
         case .slide:
             return SlideGestureView(gesture: self, fingers: 1)
-        case .twoFingerDoubleTap:
+        case .magicTap:
             return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 2)
+        case .escape:
+            return EscapeGestureView(gesture: self)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
