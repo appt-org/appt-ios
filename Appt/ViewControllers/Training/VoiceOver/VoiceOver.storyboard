@@ -78,7 +78,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
                                 <rect key="frame" x="16" y="0.0" width="382" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Je kunt VoiceOver op twee manieren aanzetten.
+                                <mutableString key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
+
+Je kunt VoiceOver op twee manieren aanzetten.
 
 Manier 1:
 1. Open de Instellingen app

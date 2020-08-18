@@ -49,6 +49,7 @@
 		2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB52481125A009D8102 /* ArticleViewController.swift */; };
 		2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB7248112D6009D8102 /* _UIStoryboard.swift */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
+		28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C414247D8AB8008B3CAD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C413247D8AB8008B3CAD /* Post.swift */; };
 		28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C415247D8B33008B3CAD /* _Encodable.swift */; };
@@ -108,6 +109,7 @@
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureView.swift; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28E0C413247D8AB8008B3CAD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		28E0C415247D8B33008B3CAD /* _Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Encodable.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				28E267AB24A622E90025215C /* AllGesturesView.swift */,
 				282F607124A3E688005B1279 /* GestureView.swift */,
 				2892317B24EAD90000ED006B /* EscapeGestureView.swift */,
+				28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */,
 				2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */,
 				2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */,
 				2892317924EA951600ED006B /* SlideGestureView.swift */,
@@ -448,6 +451,7 @@
 				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
+				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,

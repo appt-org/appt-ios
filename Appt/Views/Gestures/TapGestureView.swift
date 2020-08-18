@@ -10,14 +10,10 @@ import UIKit
 
 class TapGestureView: GestureView {
     
-    private var numberOfTaps: Int?
-    private var numberOfFingers: Int?
     private var position: Position?
     
     convenience init(gesture: Gesture, numberOfTaps: Int?, numberOfFingers: Int? = nil, position: Position? = nil) {
         self.init(gesture: gesture)
-        self.numberOfTaps = numberOfTaps
-        self.numberOfFingers = numberOfFingers
         self.position = position
         
         accessibilityTraits = .allowsDirectInteraction
@@ -28,8 +24,8 @@ class TapGestureView: GestureView {
             recognizer.numberOfTapsRequired = taps
         }
         
-        if let touches = numberOfFingers {
-            recognizer.numberOfTouchesRequired = touches
+        if let fingers = numberOfFingers {
+            recognizer.numberOfTouchesRequired = fingers
         }
         
         addGestureRecognizer(recognizer)

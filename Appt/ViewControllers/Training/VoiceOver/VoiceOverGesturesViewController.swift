@@ -34,7 +34,8 @@ class VoiceOverGesturesViewController: TableViewController {
                 .tripleTap,
                 .slide,
                 .magicTap,
-                .escape
+                .escape,
+                .label
             ],
             "Rotor": [
                 .rotor,

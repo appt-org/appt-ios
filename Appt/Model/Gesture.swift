@@ -36,6 +36,7 @@ enum Gesture: String {
     case slide
     case magicTap
     case escape
+    case label
     
     // Rotor
     case rotor
@@ -83,6 +84,8 @@ enum Gesture: String {
             return "De actuele handeling starten of stoppen"
         case .escape:
             return "Een melding sluiten of teruggaan naar het vorige scherm"
+        case .label:
+            return "Het label van een onderdeel wijzigen"
             
         case .rotor:
             return "Een rotorinstelling kiezen"
@@ -134,7 +137,8 @@ enum Gesture: String {
             return "Tik tweemaal op het scherm met met twee vingers om de actuele handeling te starten of stoppen."
         case .escape:
              return "Zigzag met twee vingers in de vorm van een 'z', om een melding te sluiten of terug te gaan naar het vorige scherm."
-            
+        case .label:
+            return "Dubbeltik met twee vingers en houdt vast om het label van een onderdeel te wijzigen."
         case .rotor:
             return "Draai met twee vingers, om de rotorinstelling te kiezen."
         case .swipeUp:
@@ -185,6 +189,8 @@ enum Gesture: String {
             return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 2)
         case .escape:
             return EscapeGestureView(gesture: self)
+        case .label:
+            return LongPressGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 2, minimumDuration: 2.0)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
