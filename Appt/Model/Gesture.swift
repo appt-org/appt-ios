@@ -40,6 +40,7 @@ enum Gesture: String {
     
     // Controls
     case threeFingerDoubleTap
+    case threeFingerTripleTap
     
     // Rotor
     case rotor
@@ -92,6 +93,8 @@ enum Gesture: String {
             
         case .threeFingerDoubleTap:
             return "Het geluid van VoiceOver in- of uitschakelen"
+        case .threeFingerTripleTap:
+            return "Het schermgordijn in- of uitschakelen"
             
         case .rotor:
             return "Een rotorinstelling kiezen"
@@ -135,6 +138,8 @@ enum Gesture: String {
             
         case .threeFingerDoubleTap:
             return "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen"
+        case .threeFingerTripleTap:
+            return "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen"
             
         case .doubleTap:
             return "Tik tweemaal om het geselecteerde onderdeel te activeren."
@@ -203,6 +208,8 @@ enum Gesture: String {
             
         case .threeFingerDoubleTap:
             return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 3)
+        case .threeFingerTripleTap:
+            return TapGestureView(gesture: self, numberOfTaps: 3, numberOfFingers: 3)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
