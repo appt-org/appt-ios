@@ -38,6 +38,9 @@ enum Gesture: String {
     case escape
     case label
     
+    // Controls
+    case threeFingerDoubleTap
+    
     // Rotor
     case rotor
     case swipeUp
@@ -87,6 +90,9 @@ enum Gesture: String {
         case .label:
             return "Het label van een onderdeel wijzigen"
             
+        case .threeFingerDoubleTap:
+            return "Het geluid van VoiceOver in- of uitschakelen"
+            
         case .rotor:
             return "Een rotorinstelling kiezen"
         case .swipeUp:
@@ -127,14 +133,17 @@ enum Gesture: String {
         case .scrollLeft:
             return "Veeg met drie vingers naar links, om één pagina naar links te scrollen."
             
+        case .threeFingerDoubleTap:
+            return "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen"
+            
         case .doubleTap:
-            return "Tik tweemaal op het scherm om het geselecteerde onderdeel te activeren."
+            return "Tik tweemaal om het geselecteerde onderdeel te activeren."
         case .tripleTap:
-            return "Tik driemaal op het scherm om te dubbeltikken op het geselecteerde onderdeel."
+            return "Tik driemaal om te dubbeltikken op het geselecteerde onderdeel."
         case .slide:
-            return "Dubbeltik en houd je vinger op het scherm tot je een toon hoort. Beweeg vervolgens je vinger naar links of rechts om de waarde van de schuifknop aan te passen."
+            return "Dubbeltik en houd vast tot je een toon hoort. Beweeg vervolgens je vinger naar links of rechts om de waarde van de schuifknop aan te passen."
         case .magicTap:
-            return "Tik tweemaal op het scherm met met twee vingers om de actuele handeling te starten of stoppen."
+            return "Dubbeltik met twee vingers om de actuele handeling te starten of stoppen."
         case .escape:
              return "Zigzag met twee vingers in de vorm van een 'z', om een melding te sluiten of terug te gaan naar het vorige scherm."
         case .label:
@@ -191,6 +200,9 @@ enum Gesture: String {
             return EscapeGestureView(gesture: self)
         case .label:
             return LongPressGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 2, minimumDuration: 2.0)
+            
+        case .threeFingerDoubleTap:
+            return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 3)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
