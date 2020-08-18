@@ -40,7 +40,8 @@ class VoiceOverGesturesViewController: TableViewController {
             "Bediening": [
                 .threeFingerDoubleTap,
                 .threeFingerTripleTap,
-                .default,
+                .doubleTapLongPress,
+                .twoFingerTripleTap
             ],
             "Rotor": [
                 .rotor,

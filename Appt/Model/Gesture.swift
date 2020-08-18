@@ -42,6 +42,7 @@ enum Gesture: String {
     case threeFingerDoubleTap
     case threeFingerTripleTap
     case doubleTapLongPress
+    case twoFingerTripleTap
     
     // Rotor
     case rotor
@@ -98,6 +99,8 @@ enum Gesture: String {
             return "Het schermgordijn in- of uitschakelen"
         case .doubleTapLongPress:
             return "Een standaardgebaar gebruiken"
+        case .twoFingerTripleTap:
+            return "De onderdeelkiezer openen"
             
         case .rotor:
             return "Een rotorinstelling kiezen"
@@ -139,13 +142,6 @@ enum Gesture: String {
         case .scrollLeft:
             return "Veeg met drie vingers naar links, om één pagina naar links te scrollen."
             
-        case .threeFingerDoubleTap:
-            return "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen"
-        case .threeFingerTripleTap:
-            return "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen"
-        case .doubleTapLongPress:
-            return "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gewenste gebaar uit."
-            
         case .doubleTap:
             return "Tik tweemaal om het geselecteerde onderdeel te activeren."
         case .tripleTap:
@@ -158,6 +154,16 @@ enum Gesture: String {
              return "Zigzag met twee vingers in de vorm van een 'z', om een melding te sluiten of terug te gaan naar het vorige scherm."
         case .label:
             return "Dubbeltik met twee vingers en houdt vast om het label van een onderdeel te wijzigen."
+            
+        case .threeFingerDoubleTap:
+            return "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen"
+        case .threeFingerTripleTap:
+            return "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen"
+        case .doubleTapLongPress:
+            return "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gewenste gebaar uit."
+        case .twoFingerTripleTap:
+            return "Tik driemaal met twee vingers om de onderdeelkiezer te openen"
+            
         case .rotor:
             return "Draai met twee vingers, om de rotorinstelling te kiezen."
         case .swipeUp:
@@ -217,6 +223,8 @@ enum Gesture: String {
             return TapGestureView(gesture: self, numberOfTaps: 3, numberOfFingers: 3)
         case .doubleTapLongPress:
             return DefaultGestureView(gesture: self)
+        case .twoFingerTripleTap:
+            return TapGestureView(gesture: self, numberOfTaps: 3, numberOfFingers: 2)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
