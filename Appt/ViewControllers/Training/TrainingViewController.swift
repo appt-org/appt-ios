@@ -13,6 +13,7 @@ class TrainingViewController: TableViewController {
     private var subjects: KeyValuePairs<String, [Subject]> {
         return [
             "VoiceOver": [
+                .voiceOverEnable,
                 .voiceOverGestures,
                 .voiceOverActions,
             ]
@@ -47,7 +48,7 @@ extension TrainingViewController {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let subject = subjects[indexPath.section].value[indexPath.row]
-        cell.setup(subject.rawValue)
+        cell.setup(subject.description)
         
         return cell
     }
@@ -56,8 +57,6 @@ extension TrainingViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let subject = subjects[indexPath.section].value[indexPath.row]
-        if subject == .voiceOverGestures {
-            performSegue(.voiceOverGestures, sender: nil)
-        }
+        performSegue(withIdentifier: subject.rawValue, sender: self)
     }
 }

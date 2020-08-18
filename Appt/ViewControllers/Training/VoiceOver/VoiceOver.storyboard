@@ -67,6 +67,59 @@
             </objects>
             <point key="canvasLocation" x="3294" y="-1554"/>
         </scene>
+        <!--VoiceOver aanzetten-->
+        <scene sceneID="D2p-Em-UER">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverEnableViewController" hidesBottomBarWhenPushed="YES" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d6r-8O-cSD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
+                                <rect key="frame" x="16" y="0.0" width="382" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Je kunt VoiceOver op twee manieren aanzetten.
+
+Manier 1:
+1. Open de Instellingen app
+2. Tik op Toegankelijkheid
+3. Tik op VoiceOver
+4. Zet de schakelaar aan
+
+Manier 2:
+Zeg: "Hey Siri, zet VoiceOver aan"
+
+VoiceOver werkt als volgt:
+- Tik eenmaal om een onderdeel te selecteren
+- Tik dubbel om het geselecteerde onderdeel te activeren
+- Veeg met drie vingers om te scrollen
+- Om naar het beginscherm te gaan: schuif één vinger vanaf de onderrand totdat je de eerste trilling voelt en til je vinger op
+- Om de appkiezer te gebruiken: schuif je vinger verder omhoog vanaf de onderkant totdat je een tweede trilling voelt en til je vinger op
+</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uq7-Ys-yDR" firstAttribute="leading" secondItem="JtI-7F-fSi" secondAttribute="leading" constant="16" id="A80-MX-sjw"/>
+                            <constraint firstItem="JtI-7F-fSi" firstAttribute="trailing" secondItem="uq7-Ys-yDR" secondAttribute="trailing" constant="16" id="RnM-Z3-rKa"/>
+                            <constraint firstItem="uq7-Ys-yDR" firstAttribute="top" secondItem="JtI-7F-fSi" secondAttribute="top" id="WDx-RF-PNp"/>
+                            <constraint firstAttribute="bottom" secondItem="uq7-Ys-yDR" secondAttribute="bottom" id="eFK-fs-jFy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JtI-7F-fSi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver aanzetten" id="hDI-lM-GGf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="uq7-Ys-yDR" id="zk4-hD-Qyb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFz-cX-wpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518.840579710145" y="-2257.3660714285711"/>
+        </scene>
         <!--VoiceOver gebaren-->
         <scene sceneID="LZM-dz-pdJ">
             <objects>
@@ -99,6 +152,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCI-sV-fRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2521.2053571428569" y="-1555.072463768116"/>
+        </scene>
+        <!--VoiceOver acties-->
+        <scene sceneID="deJ-Du-teC">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver acties" hidesBottomBarWhenPushed="YES" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Oi-3d-ZmD"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oih-Yy-LFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="-854"/>
         </scene>
     </scenes>
 </document>

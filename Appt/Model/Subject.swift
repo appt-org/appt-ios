@@ -9,6 +9,18 @@
 import Foundation
 
 enum Subject: String {
-    case voiceOverGestures = "VoiceOver gebaren"
-    case voiceOverActions = "VoiceOver acties"
+    case voiceOverEnable
+    case voiceOverGestures
+    case voiceOverActions
+    
+    var description: String {
+        switch self {
+        case .voiceOverEnable:
+            return "VoiceOver aanzetten"
+        case .voiceOverGestures:
+            return "VoiceOver gebaren"
+        case .voiceOverActions:
+            return "VoiceOver acties"
+        }
+    }
 }

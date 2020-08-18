@@ -35,6 +35,8 @@
                     <connections>
                         <outlet property="tableView" destination="OfQ-Vc-5zq" id="tZb-bO-D2L"/>
                         <segue destination="c7N-P5-plx" kind="show" identifier="voiceOverGestures" id="YR1-I3-MpG"/>
+                        <segue destination="x1l-hO-lUj" kind="show" identifier="voiceOverEnable" id="gQu-YA-hhE"/>
+                        <segue destination="tt8-jJ-qA0" kind="show" identifier="voiceOverActions" id="doc-8V-EjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -49,7 +51,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amq-f7-OeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="-1250"/>
+            <point key="canvasLocation" x="2248" y="-1250"/>
+        </scene>
+        <!--VoiceOverActionsViewController-->
+        <scene sceneID="lue-mw-mo4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VoiceOver" referencedIdentifier="VoiceOverActionsViewController" id="tt8-jJ-qA0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="47v-2w-g1i"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="um1-HM-jFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2241" y="-1190"/>
+        </scene>
+        <!--VoiceOverEnableViewController-->
+        <scene sceneID="9Ug-Gt-Ed2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VoiceOver" referencedIdentifier="VoiceOverEnableViewController" id="x1l-hO-lUj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="u1f-TY-fs3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="By0-OP-hGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2238" y="-1315"/>
         </scene>
         <!--Trainingen-->
         <scene sceneID="Feu-fu-Kzn">

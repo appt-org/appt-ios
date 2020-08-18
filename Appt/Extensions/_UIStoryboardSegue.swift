@@ -13,7 +13,9 @@ extension UIStoryboardSegue {
         case article
         case filter
         
+        case voiceOverEnable
         case voiceOverGestures
         case voiceOverGesture
+        case voiceOverActions
     }
 }
