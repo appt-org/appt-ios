@@ -11,7 +11,7 @@ import AVKit
 
 class DefaultGestureView: LongPressGestureView {
 
-    private var THRESHOLD = 50
+    private var THRESHOLD = 25
     
     private var completed = false
     private var count = 0

@@ -14,13 +14,10 @@ enum Gesture: String {
     case touch
     case swipeRight
     case swipeLeft
-        
     case fourFingerTapTop
     case fourFingerTapBottom
-    
     case twoFingerSwipeDown
     case twoFingerSwipeUp
-    
     case twoFingerTap
     case threeFingerTap
     

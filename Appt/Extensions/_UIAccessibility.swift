@@ -8,32 +8,6 @@
 
 import UIKit
 
-extension UIAccessibility {
-    static func focus(_ argument: UIView, delay:Double = 0.0) {
-        if delay > 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: argument)
-            }
-        } else {
-            UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: argument)
-        }
-    }
-    
-    static func announce(_ argument: String, delay: Double = 0.0) {
-        if delay > 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: argument)
-            }
-        } else {
-            UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: argument)
-        }
-    }
-    
-    static func mute(delay: Double = 0.0) {
-        UIAccessibility.announce("  ", delay: delay)
-    }
-}
-
 /// This class contains accessibility helper methods for Notification.
 open class AccessibilityNotification {
 

@@ -21,6 +21,9 @@ class ArticleViewController: ViewController {
         webView.isOpaque = true
         webView.backgroundColor = .clear
         
+        webView.navigationDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        
         return webView
     }()
 
@@ -35,9 +38,6 @@ class ArticleViewController: ViewController {
     
     private func getPost() {
         isLoading = true
-        
-        webView.navigationDelegate = self
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         let callback = { (post: Post?, error: Error?) in
             if let post = post {

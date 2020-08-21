@@ -1,7 +1,6 @@
 PODS:
   - Accessibility (0.2.0)
   - Alamofire (4.9.1)
-  - DeviceKit (3.2.0)
   - Firebase/Analytics (6.27.1):
     - Firebase/Core
   - Firebase/Core (6.27.1):
@@ -74,7 +73,6 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
-  - M13Checkbox (3.4.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -85,17 +83,14 @@ PODS:
 DEPENDENCIES:
   - Accessibility
   - Alamofire (~> 4.9)
-  - DeviceKit
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Kingfisher
-  - M13Checkbox
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Accessibility
     - Alamofire
-    - DeviceKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -107,14 +102,12 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - Kingfisher
-    - M13Checkbox
     - nanopb
     - PromisesObjC
 
 SPEC CHECKSUMS:
   Accessibility: 031804cc35fc862ffb6a8b69a493b003be87082b
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  DeviceKit: d081659419cce07c0b5239dbc9fb39ed7413c7fe
   Firebase: 919186c8e119dd9372a45fd1dd17a8a942bc1892
   FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
   FirebaseCore: 8cd4f8ea22075e0ee582849b1cf79d8816506085
@@ -126,10 +119,9 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: df7224713c31845d3f1a74dcc0dea1b19814b8a5
+PODFILE CHECKSUM: 9deecd0d18f6660c499595726c644de50e95c8fe
 
 COCOAPODS: 1.9.3

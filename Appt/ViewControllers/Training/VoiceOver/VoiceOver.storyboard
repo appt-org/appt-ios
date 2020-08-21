@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,46 +17,55 @@
         </array>
     </customFonts>
     <scenes>
-        <!--VoiceOver training-->
+        <!--VoiceOver gebaar-->
         <scene sceneID="J8g-pz-9jk">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                <rect key="frame" x="16" y="391.5" width="382" height="25.5"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                <rect key="frame" x="16" y="421" width="382" height="23"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
+                                <rect key="frame" x="0.0" y="376" width="414" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
+                                        <rect key="frame" x="187" y="0.0" width="40.5" height="25.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="164" y="33.5" width="86.5" height="23"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="U2L-JA-94c" secondAttribute="trailing" constant="16" id="1fY-jC-8LF"/>
-                            <constraint firstItem="Oz8-fT-zLt" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="2tb-fV-Pxe"/>
-                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="Oz8-fT-zLt" secondAttribute="trailing" constant="16" id="52b-Pk-BBw"/>
-                            <constraint firstItem="U2L-JA-94c" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="d50-OJ-8t4"/>
-                            <constraint firstItem="U2L-JA-94c" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="orX-6A-blf"/>
-                            <constraint firstItem="Oz8-fT-zLt" firstAttribute="top" secondItem="U2L-JA-94c" secondAttribute="bottom" constant="4" id="pP8-5x-FB1"/>
-                            <constraint firstItem="U2L-JA-94c" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="yEo-K7-LQk"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="leading" secondItem="mik-Nu-glv" secondAttribute="leading" id="9HJ-Lm-sHW"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="J07-Wy-oxe"/>
+                            <constraint firstAttribute="trailing" secondItem="ZGs-5s-BAd" secondAttribute="trailing" id="Jdg-gd-ZZP"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="bgA-Pm-OQ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="VoiceOver training" id="IwU-sV-rHn"/>
+                    <navigationItem key="navigationItem" title="VoiceOver gebaar" id="IwU-sV-rHn">
+                        <barButtonItem key="rightBarButtonItem" title="Uitleg" id="Knw-mt-D6g">
+                            <connections>
+                                <action selector="onExplanationTapped:" destination="PB1-eq-lMR" id="5bF-1N-dBp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
                         <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
@@ -65,7 +75,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlL-6I-2Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bcL-Kz-Vef" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3294" y="-1554"/>
+            <point key="canvasLocation" x="3292.753623188406" y="-1554.2410714285713"/>
         </scene>
         <!--VoiceOver aanzetten-->
         <scene sceneID="D2p-Em-UER">
@@ -78,7 +88,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
                                 <rect key="frame" x="16" y="0.0" width="382" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
+                                <string key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
 
 Je kunt VoiceOver op twee manieren aanzetten.
 
@@ -97,7 +107,7 @@ VoiceOver werkt als volgt:
 - Veeg met drie vingers om te scrollen
 - Om naar het beginscherm te gaan: schuif één vinger vanaf de onderrand totdat je de eerste trilling voelt en til je vinger op
 - Om de appkiezer te gebruiken: schuif je vinger verder omhoog vanaf de onderkant totdat je een tweede trilling voelt en til je vinger op
-</mutableString>
+</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -144,7 +154,13 @@ VoiceOver werkt als volgt:
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dsD-Ap-a94"/>
                     </view>
-                    <navigationItem key="navigationItem" title="VoiceOver gebaren" id="OVj-2A-VwP"/>
+                    <navigationItem key="navigationItem" title="VoiceOver gebaren" id="OVj-2A-VwP">
+                        <barButtonItem key="rightBarButtonItem" title="Oefenen" id="Ze5-7R-LJc">
+                            <connections>
+                                <action selector="onPracticeTapped:" destination="lzE-O4-a6G" id="CdX-od-bjm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="3Dc-yG-7nt" id="NtG-Za-rv9"/>

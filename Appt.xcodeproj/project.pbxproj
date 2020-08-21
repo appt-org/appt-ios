@@ -15,6 +15,7 @@
 		2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9C924D45808000FB3E6 /* TouchGestureView.swift */; };
 		2840D9CC24D45823000FB3E6 /* ScrollGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */; };
 		2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */; };
+		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
 		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
 		287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */; };
@@ -74,6 +75,7 @@
 		2840D9C924D45808000FB3E6 /* TouchGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureView.swift; sourceTree = "<group>"; };
 		2840D9CB24D45823000FB3E6 /* ScrollGestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollGestureView.swift; sourceTree = "<group>"; };
 		2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
+		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGestureViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2843828024ED6D7A0015B2C5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2843827E24ED6D4F0015B2C5 /* Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		287468E3247E61740089BB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +228,7 @@
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
 				2877F6F0247D7D8E00605677 /* API */,
 				2877F6EC247D727D00605677 /* Extensions */,
+				2843828024ED6D7A0015B2C5 /* Helpers */,
 				287468E3247E61740089BB32 /* Model */,
 				2877F6ED247D72B200605677 /* Resources */,
 				287468EF247E65320089BB32 /* ViewControllers */,
@@ -455,6 +466,7 @@
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
+				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,

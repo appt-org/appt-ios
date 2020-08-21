@@ -39,4 +39,11 @@ extension UIStoryboard {
     static func voiceOverGestures() -> VoiceOverGesturesViewController {
         return viewController(.voiceOver, identifier: VoiceOverGesturesViewController.self)
     }
+    
+    static func voiceOverGesture(gesture: Gesture, gestures: [Gesture]?) -> VoiceOverGestureViewController {
+        let vc = viewController(.voiceOver, identifier: VoiceOverGestureViewController.self)
+        vc.gesture = gesture
+        vc.gestures = gestures
+        return vc
+    }
 }

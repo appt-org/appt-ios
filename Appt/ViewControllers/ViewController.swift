@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Accessibility
 
 class ViewController: UIViewController {
 
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
                     indicator.widthAnchor.constraint(equalToConstant: 40).isActive = true
                     
                     self.view.bringSubviewToFront(indicator)
-                    UIAccessibility.focus(indicator)
+                    Accessibility.layoutChanged(indicator)
                     
                     self.loadingIndicator = indicator
                 } else {

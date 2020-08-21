@@ -13,15 +13,14 @@ class VoiceOverActionsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !UIAccessibility.isVoiceOverRunning {
-            let alertController = UIAlertController (title: "VoiceOver staat uit", message: "Je moet VoiceOver aanzetten voordat je deze training kunt volgen.", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "Oké", style: .cancel) { (action) in
-                self.navigationController?.popViewController(animated: true)
-            }
-            alertController.addAction(okAction)
-
-            present(alertController, animated: true)
+        guard UIAccessibility.isVoiceOverRunning else {
+            Alert.Builder()
+                .title("VoiceOver staat uit")
+                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
+                .action("Oké") { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                }.present(in: self)
+            return
         }
     }
 }

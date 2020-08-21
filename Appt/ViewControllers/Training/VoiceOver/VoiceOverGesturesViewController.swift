@@ -69,9 +69,21 @@ class VoiceOverGesturesViewController: TableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gestureViewController = segue.destination as? VoiceOverGestureViewController, let gesture = sender as? Gesture {
-            gestureViewController.gesture = gesture
+        if let gestureViewController = segue.destination as? VoiceOverGestureViewController {
+            if let gesture = sender as? Gesture {
+                gestureViewController.gesture = gesture
+            } else if let gestures = sender as? [Gesture] {
+                gestureViewController.gesture = gestures.first
+                gestureViewController.gestures = gestures
+            }
         }
+    }
+    
+    @IBAction private func onPracticeTapped(_ sender: Any) {
+        let allGestures = gestures.flatMap { key, value -> [Gesture] in
+            return value
+        }
+        performSegue(.voiceOverGesture, sender: allGestures)
     }
 }
 

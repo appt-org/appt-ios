@@ -7,7 +7,5 @@ target 'Appt' do
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
   pod 'Kingfisher'
-  pod 'M13Checkbox'
-  pod 'DeviceKit'
   pod 'Accessibility'
 end

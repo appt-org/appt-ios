@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import Accessibility
 
 class VoiceOverGestureViewController: ViewController {
     
@@ -15,7 +16,7 @@ class VoiceOverGestureViewController: ViewController {
     @IBOutlet private var descriptionLabel: UILabel!
     
     var gesture: Gesture!
-    private var completed: Bool = false
+    var gestures: [Gesture]?
     
     private lazy var gestureView: GestureView = {
         let gestureView = gesture.view
@@ -27,7 +28,7 @@ class VoiceOverGestureViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "VoiceOver training"
+        title = "VoiceOver gebaar"
         
         headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         headerLabel.text = gesture.action
@@ -38,9 +39,7 @@ class VoiceOverGestureViewController: ViewController {
         gestureView.delegate = self
         
         view.accessibilityElements = [gestureView]
-        UIAccessibility.focus(gestureView)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(announcementDidFinishNotification(_:)), name: UIAccessibility.announcementDidFinishNotification, object: nil)
+        Accessibility.layoutChanged(gestureView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,12 +53,13 @@ class VoiceOverGestureViewController: ViewController {
         super.viewWillDisappear(animated)
     }
     
-    @objc func announcementDidFinishNotification(_ sender: Notification) {
-        print("announcementDidFinishNotification")
-
-        if sender.accessibility.successful == true, completed {
-            navigationController?.popViewController(animated: true)
-        }
+    @IBAction private func onExplanationTapped(_ sender: Any) {
+        Alert.Builder()
+            .title("Uitleg")
+            .message("Hier komt uitleg")
+            .action("Doorgaan") { (action) in
+                Accessibility.screenChanged(self.gestureView)
+            }.present(in: self)
     }
 }
 
@@ -69,18 +69,41 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
     
     func correct(_ gesture: Gesture) {
         self.gesture.completed = true
-        completed = true
         
-        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        // Check if single gesture
+        guard var gestures = self.gestures else {
+            Alert.toast("Correct gebaar!", duration: 2.5, viewController: self) {
+                self.navigationController?.popViewController(animated: true)
+            }
+            return
+        }
         
-        if UIAccessibility.isVoiceOverRunning {
-            UIAccessibility.announce("Correct gebaar uitgevoerd!")
-        } else {
-            self.navigationController?.popViewController(animated: true)
+        // Check if all gestures have been completed
+        guard gestures.count > 1 else {
+            Alert.Builder()
+                .title("Training afgerond")
+                .message("Je hebt alle gebaren succesvol uitgevoerd!")
+                .action("Afronden") { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                }.present(in: self)
+            return
+        }
+        
+        // Continue to next gesture
+        guard var viewControllers = self.navigationController?.viewControllers else {
+            return
+        }
+        
+        Alert.toast("Correct gebaar!", duration: 2.5, viewController: self) {
+            gestures.remove(at: 0)
+            viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[0], gestures: gestures)
+            self.navigationController?.setViewControllers(viewControllers, animated: true)
         }
     }
     
     func incorrect(_ gesture: Gesture) {
-        UIAccessibility.announce("Foutief gebaar uitgevoerd.")
+        Alert.toast("Fout gebaar", duration: 2.5, viewController: self) {
+            Accessibility.screenChanged(self.gestureView)
+        }
     }
 }

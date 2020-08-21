@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Accessibility
 
 class VoiceOverEnableViewController: ViewController {
     
@@ -14,7 +15,12 @@ class VoiceOverEnableViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         textView.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        Accessibility.layoutChanged(textView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textView.setContentOffset(CGPoint.zero, animated: false) // Avoids auto scroll to bottom
     }
 }
