@@ -31,7 +31,7 @@ class VoiceOverGestureViewController: ViewController {
         title = "VoiceOver gebaar"
         
         headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-        headerLabel.text = gesture.action
+        headerLabel.text = gesture.title
         
         descriptionLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .title2)
         descriptionLabel.text = gesture.description
@@ -55,8 +55,8 @@ class VoiceOverGestureViewController: ViewController {
     
     @IBAction private func onExplanationTapped(_ sender: Any) {
         Alert.Builder()
-            .title("Uitleg")
-            .message("Hier komt uitleg")
+            .title(gesture.title)
+            .message(gesture.explanation)
             .action("Doorgaan") { (action) in
                 Accessibility.screenChanged(self.gestureView)
             }.present(in: self)

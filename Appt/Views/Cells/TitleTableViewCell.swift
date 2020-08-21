@@ -37,9 +37,9 @@ class TitleTableViewCell: UITableViewCell {
             guard let gesture = gesture else { return }
             
             if gesture.completed {
-                setup(gesture.action, prefix: "Afgerond")
+                setup(gesture.title, prefix: "Afgerond")
             } else {
-                setup(gesture.action)
+                setup(gesture.title)
             }
         }
     }

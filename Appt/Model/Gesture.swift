@@ -46,8 +46,8 @@ enum Gesture: String {
     case swipeUp
     case swipeDown
     
-    /** Describes the action */
-    var action: String {
+    /** Title of the gesture */
+    var title: String {
         switch self {
         case .touch:
             return "Een onderdeel selecteren en uitspreken"
@@ -170,7 +170,69 @@ enum Gesture: String {
         }
     }
     
-    /** View to test the gesture */
+    /** Explanation of the gesture */
+    var explanation: String {
+        switch self {
+        case .touch:
+            return "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit."
+        case .swipeRight:
+            return "Door naar rechts te vegen verken je het scherm van boven naar beneden, van links naar rechts."
+        case .swipeLeft:
+            return "Door naar links te vegen verken je het scherm van rechts naar links, van beneden naar boven."
+        case .fourFingerTapTop:
+            return "Het kan handig zijn om naar de bovenkant van het scherm te verspringen. Meestal zit hier de terugknop.\n\nDit gebaar is lastig om uit te voeren op kleine schermen. Je hoeft niet de vingers van dezelfde hand te gebruiken. Je kunt ookt twee vingers van je linkerhand en twee vingers van je rechterhand gebruiken."
+        case .fourFingerTapBottom:
+            return "Het kan handig zijn om naar de onderkant van het scherm te verspringen. Meestal zit hier een manier om te navigeren.\n\nDit gebaar is lastig om uit te voeren op kleine schermen. Je hoeft niet de vingers van dezelfde hand te gebruiken. Je kunt ookt twee vingers van je linkerhand en twee vingers van je rechterhand gebruiken."
+        case .twoFingerSwipeUp:
+            return "Dit gebaar kan van pas komen als je bijvoorbeeld een webpagina in zijn geheel laten voorlezen. Tik met twee vingers om te scherm om het voorlezen te stoppen."
+        case .twoFingerSwipeDown:
+            return "Dit gebaar kan van pas komen als je de rest van de inhoud wilt laten voorlezen. Tik met twee vingers om te scherm om het voorlezen te stoppen."
+        case .twoFingerTap:
+            return "Dit gebaar is belangrijk om te onthouden, zodat je VoiceOver kan pauzeren wanneer je wilt."
+        case .threeFingerTap:
+            return "Dit gebaar kan handig zijn ter oriëntatie waar je op het scherm bent."
+            
+        case .scrollUp:
+            return "Gebruik dit gebaar wanner je omlaag wilt scrollen."
+        case .scrollRight:
+            return "Gebruik dit gebaar wanner je naar rechts wilt scrollen."
+        case .scrollDown:
+            return "Gebruik dit gebaar wanner je omhoog wilt scrollen."
+        case .scrollLeft:
+            return "Gebruik dit gebaar wanner je naar links wilt scrollen."
+            
+        case .doubleTap:
+            return "Dit gebaar gebruik je om bijvoorbeeld een knop te activeren."
+        case .tripleTap:
+            return "Dit gebaar wordt door sommige apps gebruikt om bijvoorbeeld een menu te tonen."
+        case .slide:
+            return "Met dit gebaar kun je bijvoorbeeld het volume op de exacte waarde instellen die je wilt.\n\nTip: je kunt ook omlaag of omhoog vegen om de waarde in stappen in te stellen."
+        case .magicTap:
+            return "Dit gebaar is ook bekend als Magic Tap. Hiermee kun je bijvoorbeeld muziek op de achtergrond starten of stoppen. Sommige apps gebruiken dit ook gebaar om de belangrijkste actie op het scherm uit te voeren."
+        case .escape:
+             return "Dit gebaar is superhandig. Je kunt namelijk vanaf elke plek in een app terug navigeren. Daarnaast kun je meldingen sluiten.\n\nHet is vaak even wennen hoe je dit gebaar precies uitvoert. Je moet met twee vingers zigzaggen in de vorm van een Z."
+        case .label:
+            return "Helaas zijn niet alle apps toegankelijk. Dankzij dit gebaar kun je je eigen labels toevoegen. Handig om bijvoorbeeld knoppen aan te geven.\n\nLet op: na elke app update zijn al je labels weg. De ontwikkelaar van de app kan hier niks aan doen."
+            
+        case .threeFingerDoubleTap:
+            return "Dit gebaar is belangrijk om te onthouden. Vaak wordt dit gebaar namelijk perongeluk gebruikt. Hoor je geen geluid meer? Tik dan tweemaal met drievingers om het geluid van VoiceOver weer aan te zetten!"
+        case .threeFingerTripleTap:
+            return "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken."
+        case .doubleTapLongPress:
+            return "Soms is het nodig om een standaardgebaar te maken. Hiermee wordt een gebaar bedoelt buiten VoiceOver om. Door dit gebaar te gebruiken, gaat de interactie direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om je handtekening te zetten."
+        case .twoFingerTripleTap:
+            return "De onderdeelkiezer kan het navigeren binnen een app makkelijker maken.\n\nTip: je kunt de onderdeelkiezer sluiten door met twee vingers te zigzaggen."
+            
+        case .rotor:
+            return "Plaats twee vingers een stukje uit elkaar op het scherm. Maak vervolgens een draai beweging. Maak nog een draai beweging om naar het volgende onderdeel te gaan.\n\nHet kan lastig zijn om dit gebaar onder de knie te krijgen. De rotor is heel uitgebreid, dus onthoud dit gebaar goed!"
+        case .swipeUp:
+            return "Afhankelijk van het type rotoronderdeel wordt de waarde verhoogt, of ga je naar het volgende onderdeel."
+        case .swipeDown:
+            return "Afhankelijk van het type rotoronderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel."
+        }
+    }
+    
+    /** View to execute the gesture */
     var view: GestureView {
         switch self {
         case .touch:
@@ -232,7 +294,7 @@ enum Gesture: String {
         }
     }
     
-    /** Completion state */
+    /** Completion state of the gesture */
     var completed: Bool {
         set {
             UserDefaults.standard.set(newValue, forKey: self.rawValue)
