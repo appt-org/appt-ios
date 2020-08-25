@@ -12,21 +12,48 @@ class TitleTableViewCell: UITableViewCell {
     
     @IBOutlet private var titleLabel: UILabel!
     
+    override open var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            return .button
+        } set {
+            // Ignored
+        }
+    }
+    
     var taxonomy: Taxonomy? {
         didSet {
-            if taxonomy?.selected == true {
-                accessoryType = .checkmark
+            guard let taxonomy = taxonomy else { return }
+
+            if taxonomy.selected {
+                setup(taxonomy.name, prefix: "Geselecteerd")
             } else {
-                accessoryType = .none
-            }
-            if let title = taxonomy?.name {
-                setup(title)
+                setup(taxonomy.name)
             }
         }
     }
     
-    func setup(_ title: String) {
+    var gesture: Gesture? {
+        didSet {
+            guard let gesture = gesture else { return }
+            
+            if gesture.completed {
+                setup(gesture.title, prefix: "Afgerond")
+            } else {
+                setup(gesture.title)
+            }
+        }
+    }
+    
+    func setup(_ title: String, prefix: String? = nil) {
+        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
-        accessibilityLabel = title
+        
+        if let prefix = prefix {
+            accessoryType = .checkmark
+            accessibilityLabel = String(format: "%@. %@", prefix, title)
+        } else {
+            accessoryType = .disclosureIndicator
+            accessibilityLabel = title
+        }
     }
 }

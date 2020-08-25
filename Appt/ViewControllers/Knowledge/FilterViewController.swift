@@ -8,9 +8,7 @@
 
 import UIKit
 
-class FilterViewController: ViewController {
-    
-    @IBOutlet private var tableView: UITableView!
+class FilterViewController: TableViewController {
     
     var categories: [Category]?
     var tags: [Tag]?
@@ -20,13 +18,9 @@ class FilterViewController: ViewController {
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.keyboardDismissMode = .onDrag
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl = refreshControl
         
+        // Get filters
         getFilters()
     }
     
@@ -81,10 +75,14 @@ class FilterViewController: ViewController {
 
 // MARK: - UITableViewDataSource
 
-extension FilterViewController: UITableViewDataSource {
+extension FilterViewController {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if let _ = categories, let _ = tags {
+            return 2
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -95,7 +93,7 @@ extension FilterViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return categories?.count ?? 0
         } else {
@@ -103,7 +101,7 @@ extension FilterViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         if indexPath.section == 0 {
@@ -120,13 +118,8 @@ extension FilterViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-
-extension FilterViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0, let category = categories?[indexPath.row] {
             category.selected = !category.selected
         } else if indexPath.section == 1, let tag = tags?[indexPath.row] {

@@ -8,28 +8,37 @@
 
 import UIKit
 
-extension UIAccessibility {
-    static func focus(_ argument: UIView, delay:Double = 0.0) {
-        if delay > 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: argument)
-            }
-        } else {
-            UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: argument)
+/// This class contains accessibility helper methods for Notification.
+open class AccessibilityNotification {
+
+    private var notification: Notification
+    
+    init(_ notification: Notification) {
+        self.notification = notification
+    }
+    
+    /// Announcement
+    open var announcement: String? {
+        get {
+            return notification.userInfo?[UIAccessibility.announcementStringValueUserInfoKey] as? String
         }
     }
     
-    static func announce(_ argument: String, delay: Double = 0.0) {
-        if delay > 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: argument)
-            }
-        } else {
-            UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: argument)
+    /// Successful state
+    open var successful: Bool? {
+        get {
+            return notification.userInfo?[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool
         }
     }
+}
+
+
+public extension Notification {
     
-    static func mute(delay: Double = 0.0) {
-        UIAccessibility.announce("  ", delay: delay)
+    /// Adds the `accessibility` field to all classes which inherit from Notification.
+    var accessibility: AccessibilityNotification {
+        get {
+            return AccessibilityNotification(self)
+        }
     }
 }

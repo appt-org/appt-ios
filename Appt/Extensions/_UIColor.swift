@@ -21,10 +21,4 @@ extension UIColor {
     }
 
     static let primary = UIColor(named: "Primary")!
-
-    static let black = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-    static let black25 = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.25)
-    
-    static let white = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
-    static let white25 = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.25)
 }

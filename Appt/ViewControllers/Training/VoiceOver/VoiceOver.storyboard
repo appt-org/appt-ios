@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--VoiceOver gebaar-->
+        <scene sceneID="J8g-pz-9jk">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
+                                <rect key="frame" x="0.0" y="376" width="414" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
+                                        <rect key="frame" x="187" y="0.0" width="40.5" height="25.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="164" y="33.5" width="86.5" height="23"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="leading" secondItem="mik-Nu-glv" secondAttribute="leading" id="9HJ-Lm-sHW"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="J07-Wy-oxe"/>
+                            <constraint firstAttribute="trailing" secondItem="ZGs-5s-BAd" secondAttribute="trailing" id="Jdg-gd-ZZP"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="bgA-Pm-OQ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver gebaar" id="IwU-sV-rHn">
+                        <barButtonItem key="rightBarButtonItem" title="Uitleg" id="Knw-mt-D6g">
+                            <connections>
+                                <action selector="onExplanationTapped:" destination="PB1-eq-lMR" id="5bF-1N-dBp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
+                        <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
+                        <segue destination="bcL-Kz-Vef" kind="unwind" identifier="gestureCompleted" unwindAction="gestureCompleted:" id="dEn-0e-Clx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlL-6I-2Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bcL-Kz-Vef" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3292.753623188406" y="-1554.2410714285713"/>
+        </scene>
+        <!--VoiceOver aanzetten-->
+        <scene sceneID="D2p-Em-UER">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverEnableViewController" hidesBottomBarWhenPushed="YES" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d6r-8O-cSD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
+                                <rect key="frame" x="16" y="0.0" width="382" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
+
+Je kunt VoiceOver op twee manieren aanzetten.
+
+Manier 1:
+1. Open de Instellingen app
+2. Tik op Toegankelijkheid
+3. Tik op VoiceOver
+4. Zet de schakelaar aan
+
+Manier 2:
+Zeg: "Hey Siri, zet VoiceOver aan"
+
+VoiceOver werkt als volgt:
+- Tik eenmaal om een onderdeel te selecteren
+- Tik dubbel om het geselecteerde onderdeel te activeren
+- Veeg met drie vingers om te scrollen
+- Om naar het beginscherm te gaan: schuif één vinger vanaf de onderrand totdat je de eerste trilling voelt en til je vinger op
+- Om de appkiezer te gebruiken: schuif je vinger verder omhoog vanaf de onderkant totdat je een tweede trilling voelt en til je vinger op
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uq7-Ys-yDR" firstAttribute="leading" secondItem="JtI-7F-fSi" secondAttribute="leading" constant="16" id="A80-MX-sjw"/>
+                            <constraint firstItem="JtI-7F-fSi" firstAttribute="trailing" secondItem="uq7-Ys-yDR" secondAttribute="trailing" constant="16" id="RnM-Z3-rKa"/>
+                            <constraint firstItem="uq7-Ys-yDR" firstAttribute="top" secondItem="JtI-7F-fSi" secondAttribute="top" id="WDx-RF-PNp"/>
+                            <constraint firstAttribute="bottom" secondItem="uq7-Ys-yDR" secondAttribute="bottom" id="eFK-fs-jFy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JtI-7F-fSi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver aanzetten" id="hDI-lM-GGf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="uq7-Ys-yDR" id="zk4-hD-Qyb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFz-cX-wpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518.840579710145" y="-2257.3660714285711"/>
+        </scene>
+        <!--VoiceOver gebaren-->
+        <scene sceneID="LZM-dz-pdJ">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dc-yG-7nt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Dc-yG-7nt" secondAttribute="trailing" id="5Sr-Ms-DnU"/>
+                            <constraint firstItem="3Dc-yG-7nt" firstAttribute="leading" secondItem="B2M-mb-Zk6" secondAttribute="leading" id="6iU-fb-E0n"/>
+                            <constraint firstItem="3Dc-yG-7nt" firstAttribute="top" secondItem="dsD-Ap-a94" secondAttribute="top" id="Bn7-ci-JMh"/>
+                            <constraint firstAttribute="bottom" secondItem="3Dc-yG-7nt" secondAttribute="bottom" id="Vr6-M5-aDX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dsD-Ap-a94"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver gebaren" id="OVj-2A-VwP">
+                        <barButtonItem key="rightBarButtonItem" title="Oefenen" id="Ze5-7R-LJc">
+                            <connections>
+                                <action selector="onPracticeTapped:" destination="lzE-O4-a6G" id="CdX-od-bjm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="3Dc-yG-7nt" id="NtG-Za-rv9"/>
+                        <segue destination="PB1-eq-lMR" kind="show" identifier="voiceOverGesture" id="zLM-Sa-MH9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCI-sV-fRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.2053571428569" y="-1555.072463768116"/>
+        </scene>
+        <!--VoiceOver acties-->
+        <scene sceneID="deJ-Du-teC">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver acties" hidesBottomBarWhenPushed="YES" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Oi-3d-ZmD"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oih-Yy-LFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="-854"/>
+        </scene>
+    </scenes>
+</document>

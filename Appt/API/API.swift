@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-@objc class API: NSObject {
+class API {
     
-    @objc static let shared = API()
+    static let shared = API()
     
     private let decoder = JSONDecoder()
     
@@ -19,6 +19,10 @@ import Alamofire
         "Platform": "iOS",
         "Version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     ]
+    
+    private init() {
+        // Access through shared property
+    }
     
     // MARK: - Get posts
     

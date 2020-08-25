@@ -15,23 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.tintColor = .primary
+        application.accessibilityLanguage = "nl"
         
         // States
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]
         
         // UINavigationBar styles
         UINavigationBar.appearance().tintColor = .primary
-        UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.sourceSansPro(weight: .bold, size: 20),
-            NSAttributedString.Key.foregroundColor : UIColor.black
+            .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .headline)
         ]
         
         // UIBarButtonItem style
         UIBarButtonItem.appearance().tintColor = .primary
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
+            ], for: state)
+        }
+        
+        // UITabBar styles
+        UITabBar.appearance().tintColor = .primary
+        states.forEach { (state) in
+            UITabBarItem.appearance().setTitleTextAttributes([
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
             ], for: state)
         }
         
@@ -39,26 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .bold, size: 20),
-                .foregroundColor: UIColor.black25
+                .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.sourceSansPro(weight: .bold, size: 20),
+            .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body),
             .foregroundColor: UIColor.primary
         ], for: .selected)
-        
-        // UITabBar styles
-        UITabBar.appearance().tintColor = .primary
-        UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().unselectedItemTintColor = .black25
-        
-        // UITabBarItem style
-        states.forEach { (state) in
-            UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18)
-            ], for: state)
-        }
         
         return true
     }

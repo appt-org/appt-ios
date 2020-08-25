@@ -8,10 +8,8 @@
 
 import UIKit
 
-class KnowledgeViewController: ViewController {
+class KnowledgeViewController: TableViewController {
 
-    @IBOutlet private var tableView: UITableView!
-    
     private var posts = [Post]()
     var categories: [Category]?
     var tags: [Tag]?
@@ -21,18 +19,14 @@ class KnowledgeViewController: ViewController {
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.keyboardDismissMode = .onDrag
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl = refreshControl
         
+        // Get posts
         getPosts()
     }
     
     @IBAction func doFilter(_ sender: Any) {
-        performSegue(withIdentifier: "filter", sender: self)
+        performSegue(.filter, sender: self)
     }
     
     override func refresh(_ refreshControl: UIRefreshControl) {
@@ -86,13 +80,13 @@ class KnowledgeViewController: ViewController {
 
 // MARK: - UITableViewDataSource
 
-extension KnowledgeViewController: UITableViewDataSource {
+extension KnowledgeViewController {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let post = posts[indexPath.row]
@@ -100,16 +94,11 @@ extension KnowledgeViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-
-extension KnowledgeViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let post = posts[indexPath.row]
-        performSegue(withIdentifier: "article", sender: post)
+        performSegue(.article, sender: post)
     }
 }

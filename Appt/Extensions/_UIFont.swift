@@ -10,23 +10,23 @@ import UIKit
 
 extension UIFont {
     
-    @objc static func sourceSansPro(weight: UIFont.Weight, size: CGFloat) -> UIFont {
+    static func sourceSansPro(weight: UIFont.Weight, size: CGFloat, style: TextStyle) -> UIFont {
         switch weight {
             case .regular:
-                return font(name: "SourceSansPro", size: size)
+                return font(name: "SourceSansPro-Regular", size: size, style: style)
             case .semibold:
-                return font(name: "SourceSansPro-SemiBold", size: size)
+                return font(name: "SourceSansPro-SemiBold", size: size, style: style)
             case .bold:
-                return font(name: "SourceSansPro-Bold", size: size)
+                return font(name: "SourceSansPro-Bold", size: size, style: style)
             default:
                 fatalError("Font weight \(weight) not supported")
         }
     }
     
-    private static func font(name: String, size: CGFloat) -> UIFont {
+    private static func font(name: String, size: CGFloat, style: TextStyle) -> UIFont {
         guard let font = UIFont(name: name, size: size) else {
-           fatalError("Font \(name) deos not exist")
+           fatalError("Font \(name) does not exist")
         }
-        return font
+        return UIFontMetrics(forTextStyle: style).scaledFont(for: font)
     }
 }

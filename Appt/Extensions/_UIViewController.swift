@@ -24,3 +24,9 @@ extension UIViewController {
         present(safariViewController, animated: true)
     }
 }
+
+extension UIViewController {
+    func performSegue(_ identifier: UIStoryboardSegue.Identifier, sender: Any?) {
+        performSegue(withIdentifier: identifier.rawValue, sender: sender)
+    }
+}

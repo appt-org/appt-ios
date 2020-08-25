@@ -10,23 +10,40 @@ import UIKit
 
 extension UIStoryboard {
     
-    private static func initialViewController(_ storyboard: String) -> UIViewController? {
-        return UIStoryboard(name: storyboard, bundle: nil).instantiateInitialViewController()
+    enum Name: String{
+        case main = "Main"
+        case voiceOver = "VoiceOver"
     }
     
-    private static func viewController(_ storyboard: String, identifier: String) -> UIViewController? {
-        return UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier)
+    private static func viewController<T: UIViewController>(_ storyboard: UIStoryboard.Name, identifier : T.Type? = nil) -> T {
+        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
+        if let identifier = identifier {
+            return storyboard.instantiateViewController(withIdentifier: String(describing: identifier)) as! T
+        } else {
+            return storyboard.instantiateInitialViewController() as! T
+        }
     }
     
     static func article(id: Int) -> ArticleViewController {
-        let articleViewController = viewController("Main", identifier: "ArticleViewController") as! ArticleViewController
+        let articleViewController = viewController(.main, identifier: ArticleViewController.self)
         articleViewController.id = id
         return articleViewController
     }
     
     static func article(slug: String) -> ArticleViewController {
-        let articleViewController = viewController("Main", identifier: "ArticleViewController") as! ArticleViewController
+        let articleViewController = viewController(.main, identifier: ArticleViewController.self)
         articleViewController.slug = slug
         return articleViewController
+    }
+    
+    static func voiceOverGestures() -> VoiceOverGesturesViewController {
+        return viewController(.voiceOver, identifier: VoiceOverGesturesViewController.self)
+    }
+    
+    static func voiceOverGesture(gesture: Gesture, gestures: [Gesture]?) -> VoiceOverGestureViewController {
+        let vc = viewController(.voiceOver, identifier: VoiceOverGestureViewController.self)
+        vc.gesture = gesture
+        vc.gestures = gestures
+        return vc
     }
 }
