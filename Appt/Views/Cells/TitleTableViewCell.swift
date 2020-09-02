@@ -44,6 +44,13 @@ class TitleTableViewCell: UITableViewCell {
         }
     }
     
+    var action: Action? {
+        didSet {
+            guard let action = action else { return }
+            setup(action.title)
+        }
+    }
+    
     func setup(_ title: String, prefix: String? = nil) {
         titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         titleLabel.text = title

@@ -17,6 +17,11 @@
 		2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */; };
 		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
+		2869ABFD24F7C503004962A7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2869ABFC24F7C503004962A7 /* style.css */; };
+		2869ABFF24F7C84E004962A7 /* VoiceOverHeadingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */; };
+		2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */; };
+		2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AC0224F7CE35004962A7 /* VoiceOverView.swift */; };
+		286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */; };
 		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
 		287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */; };
 		287468E2247E60BB0089BB32 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E1247E60BB0089BB32 /* Content.swift */; };
@@ -50,6 +55,7 @@
 		2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB52481125A009D8102 /* ArticleViewController.swift */; };
 		2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB7248112D6009D8102 /* _UIStoryboard.swift */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
+		28AB07BF24F530CA00CCD9D9 /* VoiceOverWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB07BE24F530CA00CCD9D9 /* VoiceOverWebViewController.swift */; };
 		28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */; };
 		28C5F82B24EC2A9000BA8F33 /* DefaultGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5F82A24EC2A9000BA8F33 /* DefaultGestureView.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
@@ -63,6 +69,7 @@
 		28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FilterViewController.swift */; };
 		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
+		28F42FAB24FF95860028E560 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F42FAA24FF95860028E560 /* Action.swift */; };
 		804262508657FF412615E330 /* libPods-Appt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +84,11 @@
 		2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
 		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
+		2869ABFC24F7C503004962A7 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverHeadingsView.swift; sourceTree = "<group>"; };
+		2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverHeadingsView.xib; sourceTree = "<group>"; };
+		2869AC0224F7CE35004962A7 /* VoiceOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverView.swift; sourceTree = "<group>"; };
+		286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverActionViewController.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGestureViewController.swift; sourceTree = "<group>"; };
 		287468E1247E60BB0089BB32 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -110,6 +122,7 @@
 		2899FFB52481125A009D8102 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		2899FFB7248112D6009D8102 /* _UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboard.swift; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		28AB07BE24F530CA00CCD9D9 /* VoiceOverWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverWebViewController.swift; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureView.swift; sourceTree = "<group>"; };
@@ -125,6 +138,7 @@
 		28EFEBA12487E90A0070879A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
+		28F42FAA24FF95860028E560 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4E9CF9A3E8ADA6FB6E8794EB /* libPods-Appt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Appt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.release.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.release.xcconfig"; sourceTree = "<group>"; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,9 +174,37 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		286A093724FD35D000B4DBBE /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */,
+				287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
+		286A093824FD35E600B4DBBE /* Enable */ = {
+			isa = PBXGroup;
+			children = (
+				2892317D24EBBEB000ED006B /* VoiceOverEnableViewController.swift */,
+			);
+			path = Enable;
+			sourceTree = "<group>";
+		};
+		286A093924FD35F300B4DBBE /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				2892317F24EC1BB900ED006B /* VoiceOverActionsViewController.swift */,
+				286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */,
+				28AB07BE24F530CA00CCD9D9 /* VoiceOverWebViewController.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		287468E3247E61740089BB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				28F42FAA24FF95860028E560 /* Action.swift */,
 				287468E1247E60BB0089BB32 /* Content.swift */,
 				28E267A424A5FF360025215C /* Gesture.swift */,
 				2893227624C9844500EBB447 /* Subject.swift */,
@@ -176,7 +218,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				28E267AA24A622D00025215C /* Gestures */,
+				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
 			path = Views;
@@ -267,6 +309,7 @@
 				2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */,
 				2877F6E5247D725C00605677 /* SourceSansPro-SemiBold.ttf */,
 				2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */,
+				2869ABFC24F7C503004962A7 /* style.css */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -284,10 +327,9 @@
 			isa = PBXGroup;
 			children = (
 				2893227B24C9860400EBB447 /* VoiceOver.storyboard */,
-				2892317D24EBBEB000ED006B /* VoiceOverEnableViewController.swift */,
-				2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */,
-				287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */,
-				2892317F24EC1BB900ED006B /* VoiceOverActionsViewController.swift */,
+				286A093924FD35F300B4DBBE /* Actions */,
+				286A093824FD35E600B4DBBE /* Enable */,
+				286A093724FD35D000B4DBBE /* Gestures */,
 			);
 			path = VoiceOver;
 			sourceTree = "<group>";
@@ -335,6 +377,25 @@
 				2840D9C924D45808000FB3E6 /* TouchGestureView.swift */,
 			);
 			path = Gestures;
+			sourceTree = "<group>";
+		};
+		28F42FA824FF91E50028E560 /* VoiceOver */ = {
+			isa = PBXGroup;
+			children = (
+				28F42FA924FF91EF0028E560 /* Actions */,
+				28E267AA24A622D00025215C /* Gestures */,
+			);
+			path = VoiceOver;
+			sourceTree = "<group>";
+		};
+		28F42FA924FF91EF0028E560 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				2869AC0224F7CE35004962A7 /* VoiceOverView.swift */,
+				2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */,
+				2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		5F963E37E0FF08E157AB9853 /* Pods */ = {
@@ -406,7 +467,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */,
 				2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */,
+				2869ABFD24F7C503004962A7 /* style.css in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				2877F6E8247D725C00605677 /* SourceSansPro-SemiBold.ttf in Resources */,
 				2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */,
@@ -450,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */,
+				28F42FAB24FF95860028E560 /* Action.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				2892317E24EBBEB000ED006B /* VoiceOverEnableViewController.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
@@ -464,24 +528,28 @@
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
+				286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */,
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
+				28AB07BF24F530CA00CCD9D9 /* VoiceOverWebViewController.swift in Sources */,
 				2893227724C9844500EBB447 /* Subject.swift in Sources */,
 				28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Post.swift in Sources */,
 				287063C724A380F9004E87AF /* InformationViewController.swift in Sources */,
 				287468F6247E675C0089BB32 /* _String.swift in Sources */,
+				2869ABFF24F7C84E004962A7 /* VoiceOverHeadingsView.swift in Sources */,
 				2892318024EC1BB900ED006B /* VoiceOverActionsViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				28C5F82B24EC2A9000BA8F33 /* DefaultGestureView.swift in Sources */,
 				2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
 				2877F6F2247D7D9700605677 /* API.swift in Sources */,
+				2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */,
 				28E267AC24A622E90025215C /* AllGesturesView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,

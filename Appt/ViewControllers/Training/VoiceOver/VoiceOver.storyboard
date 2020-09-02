@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -65,7 +65,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
                         <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
@@ -178,14 +177,62 @@ VoiceOver werkt als volgt:
                     <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NXp-JN-5F7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NXp-JN-5F7" firstAttribute="trailing" secondItem="96e-I0-Lme" secondAttribute="trailing" id="1gz-wN-Jnc"/>
+                            <constraint firstItem="NXp-JN-5F7" firstAttribute="leading" secondItem="96e-I0-Lme" secondAttribute="leading" id="67s-4f-fm5"/>
+                            <constraint firstAttribute="bottom" secondItem="NXp-JN-5F7" secondAttribute="bottom" id="7jO-fw-axI"/>
+                            <constraint firstItem="NXp-JN-5F7" firstAttribute="top" secondItem="2Oi-3d-ZmD" secondAttribute="top" id="HVa-3c-ixo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Oi-3d-ZmD"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="NXp-JN-5F7" id="lzd-3o-a1A"/>
+                        <segue destination="DPB-Il-NPT" kind="show" identifier="voiceOverAction" id="Vi2-Wk-Io4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oih-Yy-LFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2519" y="-854"/>
+            <point key="canvasLocation" x="2518.840579710145" y="-854.46428571428567"/>
+        </scene>
+        <!--VoiceOver actie-->
+        <scene sceneID="DvA-cr-CsQ">
+            <objects>
+                <viewController storyboardIdentifier="VoiceOverActionViewController" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ll-hW-NKm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-jd-bhL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="F2L-6x-4Og"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fR1-Ke-Yep"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RrL-jd-bhL" firstAttribute="leading" secondItem="SwO-cd-kHF" secondAttribute="leading" id="8aA-L3-QIu"/>
+                            <constraint firstItem="RrL-jd-bhL" firstAttribute="trailing" secondItem="SwO-cd-kHF" secondAttribute="trailing" id="DHd-DB-Hyb"/>
+                            <constraint firstAttribute="bottom" secondItem="RrL-jd-bhL" secondAttribute="bottom" id="Jpx-ZR-ULg"/>
+                            <constraint firstItem="RrL-jd-bhL" firstAttribute="top" secondItem="SwO-cd-kHF" secondAttribute="top" id="zfT-l1-h3O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SwO-cd-kHF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VoiceOver actie" id="xBc-la-aFd"/>
+                    <connections>
+                        <outlet property="scrollView" destination="RrL-jd-bhL" id="g89-Qo-2xB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xva-pc-EcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292.753623188406" y="-854.46428571428567"/>
         </scene>
     </scenes>
 </document>

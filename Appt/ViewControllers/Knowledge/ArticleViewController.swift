@@ -65,95 +65,7 @@ class ArticleViewController: ViewController {
                 <html lang="nl">
                     <head>
                         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-                        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-                        <style>
-                            :root {
-                                color-scheme: light dark;
-                                --color-primary: #d023be;
-                                --code-background-color: #ddd;
-                                --code-text-color: #666;
-                            }
-
-                            * {
-                                box-sizing: inherit;
-                                -webkit-font-smoothing: antialiased;
-                                word-break: break-word;
-                                font-family: 'Source Sans Pro', sans-serif;
-                                line-height: 1.5;
-                            }
-
-                            body, html, table {
-                                font-size: 1.05rem;
-                            }
-
-                            html {
-                                font: -apple-system-body;
-                            }
-
-                            a {
-                                color: var(--color-primary);
-                                font-weight: 600;
-                                text-decoration: none;
-                                border-bottom: .075rem solid var(--color-primary);
-                            }
-
-                            figure {
-                                display: block !important;
-                                width: 100%;
-                                margin: 0;
-                                padding: 0;
-                                text-align: center;
-                            }
-
-                            img {
-                                max-width: 100% !important;
-                                max-height: 90vh !important;
-                                width: auto !important;
-                            }
-
-                            figcaption {
-                                color: #6d6d6d;
-                            }
-                            
-                            iframe {
-                                width: 100% !important;
-                                height: 50vw !important;
-                            }
-                            
-                            table {
-                                table-layout: fixed;
-                                border: 1px solid #ddd;
-                                border-collapse: collapse;
-                                border-spacing: 0;
-                            }
-                            th, td {
-                                text-align: left;
-                                border: 1px solid #ddd;
-                                padding: 3px 6px;
-                            }
-
-                            pre {
-                                font-family: monospace;
-                                font-size: 0.9rem;
-                                display: block;
-                                max-width: 100%;
-                                overflow: auto;
-                                padding: 1em;
-                                page-break-inside: avoid;
-                                word-wrap: break-word;
-                                background: var(--code-background-color);
-                                border: 1px solid var(--code-background-color);
-                                border-left: 3px solid var(--color-primary);
-                                color: var(--code-text-color);
-                            }
-
-                            @media screen and (prefers-color-scheme: dark) {
-                                :root {
-                                    --code-background-color: #222;
-                                    --code-text-color: #999;
-                                }
-                            }
-                        </style>
+                        <link rel="stylesheet" type="text/css" href="style.css">
                     </head>
                 <body>
                 <h2>
@@ -164,7 +76,7 @@ class ArticleViewController: ViewController {
                 </html>
         """
                 
-        webView.loadHTMLString(html, baseURL: nil)
+        webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
     }
     
     private func onError(_ error: Error) {

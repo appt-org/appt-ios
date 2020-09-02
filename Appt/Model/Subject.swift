@@ -20,7 +20,7 @@ enum Subject: String {
         case .voiceOverGestures:
             return "VoiceOver gebaren"
         case .voiceOverActions:
-            return "VoiceOver acties"
+            return "VoiceOver handelingen"
         }
     }
 }
