@@ -33,6 +33,8 @@
 		287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F1247E65620089BB32 /* TitleTableViewCell.swift */; };
 		287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287468F3247E65C80089BB32 /* TitleTableViewCell.xib */; };
 		287468F6247E675C0089BB32 /* _String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F5247E675C0089BB32 /* _String.swift */; };
+		2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */; };
+		2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */; };
 		2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CD247D6E9200605677 /* AppDelegate.swift */; };
 		2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CF247D6E9200605677 /* SceneDelegate.swift */; };
 		2877F6D2247D6E9200605677 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */; };
@@ -100,6 +102,8 @@
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
+		2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverLinksView.swift; sourceTree = "<group>"; };
+		2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverLinksView.xib; sourceTree = "<group>"; };
 		2877F6CA247D6E9200605677 /* appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +398,8 @@
 				2869AC0224F7CE35004962A7 /* VoiceOverView.swift */,
 				2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */,
 				2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */,
+				2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */,
+				2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				2877F6E8247D725C00605677 /* SourceSansPro-SemiBold.ttf in Resources */,
 				2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */,
+				2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
@@ -530,6 +537,7 @@
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
+				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
@@ -717,7 +725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -740,7 +748,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";

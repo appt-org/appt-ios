@@ -69,12 +69,12 @@ class VoiceOverGesturesViewController: TableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gestureViewController = segue.destination as? VoiceOverGestureViewController {
+        if let vc = segue.destination as? VoiceOverGestureViewController {
             if let gesture = sender as? Gesture {
-                gestureViewController.gesture = gesture
+                vc.gesture = gesture
             } else if let gestures = sender as? [Gesture] {
-                gestureViewController.gesture = gestures.first
-                gestureViewController.gestures = gestures
+                vc.gesture = gestures.first
+                vc.gestures = gestures
             }
         }
     }

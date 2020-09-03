@@ -14,10 +14,8 @@ class VoiceOverActionsViewController: TableViewController {
         return [
             "Navigeren": [
                 .headings,
-            ],
-            "Bewerken": [
-                .copyPaste,
-            ],
+                .links
+            ]
         ]
     }
     
@@ -39,7 +37,11 @@ class VoiceOverActionsViewController: TableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let vc = segue.destination as? VoiceOverActionViewController {
+            if let action = sender as? Action {
+                vc.action = action
+            }
+        }
     }
 }
 
@@ -76,6 +78,7 @@ extension VoiceOverActionsViewController {
         lastSelectedRow = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
         
-        performSegue(.voiceOverAction, sender: self)
+        let action = actions[indexPath.section].value[indexPath.row]
+        performSegue(.voiceOverAction, sender: action)
     }
 }

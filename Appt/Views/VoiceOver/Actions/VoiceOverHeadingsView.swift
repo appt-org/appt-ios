@@ -22,28 +22,19 @@ class VoiceOverHeadingsView: VoiceOverView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        stackView.setCustomSpacing(32, after: instructions)
-        stackView.setCustomSpacing(32, after: text1)
-        stackView.setCustomSpacing(32, after: text2)
+        stackView.setCustomSpacing(16, after: instructions)
+        stackView.setCustomSpacing(16, after: text1)
+        stackView.setCustomSpacing(16, after: text2)
         
         instructions.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         
-        heading1.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        heading1.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         text1.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         
-        heading2.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        heading2.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         text2.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         
-        heading3.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        heading3.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         text3.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
-    }
-}
-
-extension UIView {
-    class func fromNib<T: UIView>() -> T {
-        //let nibName = String(describing: T.self)
-        let nibName = "VoiceOverHeadingsView"
-        print("Nib name: \(nibName)")
-        return Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)![0] as! T
     }
 }

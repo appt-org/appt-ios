@@ -14,12 +14,24 @@ import Accessibility
 class VoiceOverActionViewController: ViewController {
     
     @IBOutlet private var scrollView: UIScrollView!
+    
+    var action: Action!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "VoiceOver actie"
+        title = action.title
         
-        let view = VoiceOverHeadingsView.fromNib()
+        guard UIAccessibility.isVoiceOverRunning else {
+            Alert.Builder()
+                .title("VoiceOver staat uit")
+                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
+                .action("Oké") { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                }.present(in: self)
+            return
+        }
+        
+        let view = action.view
         view.translatesAutoresizingMaskIntoConstraints = false
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,8 +74,22 @@ class VoiceOverActionViewController: ViewController {
         print("Focused element", focusedElement)
         print("Unfocused element", unfocusedElement)
         
-        if focusedElement.accessibilityTraits.contains(.header) && unfocusedElement.accessibilityTraits.contains(.header) {
-            print("CORRECT!")
+        if action == .headings {
+            if focusedElement.accessibilityTraits.contains(.header) && unfocusedElement.accessibilityTraits.contains(.header) {
+                onCorrect()
+            }
+        } else if action == .links {
+            if focusedElement.accessibilityTraits.contains(.link) && unfocusedElement.accessibilityTraits.contains(.link) {
+                onCorrect()
+            }
+        }
+    }
+    
+    private func onCorrect() {
+        delay(1.0) {
+            Alert.toast("Actie succesvol uitgevoerd!", duration: 3.0, viewController: self) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

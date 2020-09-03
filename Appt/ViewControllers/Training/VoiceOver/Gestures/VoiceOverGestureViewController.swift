@@ -28,7 +28,7 @@ class VoiceOverGestureViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "VoiceOver gebaar"
+        title = gesture.title
         
         headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
         headerLabel.text = gesture.title
