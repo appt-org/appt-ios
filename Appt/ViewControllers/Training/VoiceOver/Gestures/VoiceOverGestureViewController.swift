@@ -18,6 +18,9 @@ class VoiceOverGestureViewController: ViewController {
     var gesture: Gesture!
     var gestures: [Gesture]?
     
+    private let ERROR_THRESHOLD = 3
+    private var errorCount = 0
+
     private lazy var gestureView: GestureView = {
         let gestureView = gesture.view
         gestureView.frame = view.frame
@@ -102,8 +105,22 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
     }
     
     func incorrect(_ gesture: Gesture) {
-        Alert.toast("Fout gebaar", duration: 2.5, viewController: self) {
-            Accessibility.screenChanged(self.gestureView)
+        if errorCount < ERROR_THRESHOLD {
+            Alert.toast("Fout gebaar", duration: 2.5, viewController: self) {
+                Accessibility.screenChanged(self.gestureView)
+            }
+        } else {
+            Alert.Builder()
+            .title("Fout gebaar")
+            .message("Je hebt het gebaar \(errorCount) keer fout uitgevoerd. Wil je doorgaan of stoppen?")
+            .action("Stoppen", style: .cancel) { (action) in
+                self.navigationController?.popViewController(animated: true)
+            }
+            .action("Doorgaan") { (action) in
+                Accessibility.screenChanged(self.gestureView)
+            }.present(in: self)
         }
+        
+        errorCount += 1
     }
 }
