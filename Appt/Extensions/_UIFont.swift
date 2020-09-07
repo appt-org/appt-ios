@@ -11,6 +11,10 @@ import UIKit
 extension UIFont {
     
     static func sourceSansPro(weight: UIFont.Weight, size: CGFloat, style: TextStyle) -> UIFont {
+        if UIAccessibility.isBoldTextEnabled {
+            return font(name: "SourceSansPro-Bold", size: size, style: style)
+        }
+        
         switch weight {
             case .regular:
                 return font(name: "SourceSansPro-Regular", size: size, style: style)

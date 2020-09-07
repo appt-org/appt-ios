@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]
         
         // UINavigationBar styles
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = .bar
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .headline)
@@ -35,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // UITabBar styles
+        UITabBar.appearance().barTintColor = .bar
         UITabBar.appearance().tintColor = .primary
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([

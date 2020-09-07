@@ -59,7 +59,9 @@ extension TableViewController: UITableViewDelegate {
         
      func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
-            header.textLabel?.font = .sourceSansPro(weight: .regular, size: 14, style: .headline)
+            header.textLabel?.text = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: section)
+            header.textLabel?.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
+            header.textLabel?.textColor = .text
         }
     }
     

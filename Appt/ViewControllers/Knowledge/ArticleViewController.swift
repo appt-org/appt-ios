@@ -18,7 +18,7 @@ class ArticleViewController: ViewController {
         let webView = WKWebView(frame: view.frame, configuration: configuration)
         webView.scrollView.maximumZoomScale = 10.0
         webView.tintColor = .primary
-        webView.isOpaque = true
+        webView.isOpaque = false
         webView.backgroundColor = .clear
         
         webView.navigationDelegate = self
@@ -64,7 +64,7 @@ class ArticleViewController: ViewController {
         let html = """
                 <html lang="nl">
                     <head>
-                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1"/>
                         <link rel="stylesheet" type="text/css" href="style.css">
                     </head>
                 <body>
