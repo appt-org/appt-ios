@@ -47,7 +47,12 @@ class TitleTableViewCell: UITableViewCell {
     var action: Action? {
         didSet {
             guard let action = action else { return }
-            setup(action.title)
+            
+            if action.completed {
+                setup(action.title, prefix: "Afgerond")
+            } else {
+                setup(action.title)
+            }
         }
     }
     

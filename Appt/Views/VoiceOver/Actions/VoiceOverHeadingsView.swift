@@ -10,31 +10,30 @@ import UIKit
 
 class VoiceOverHeadingsView: VoiceOverView {
     
-    @IBOutlet var stackView: UIStackView!
-    @IBOutlet var instructions: UILabel!
-    @IBOutlet var heading1: UILabel!
-    @IBOutlet var text1: UILabel!
-    @IBOutlet var heading2: UILabel!
-    @IBOutlet var text2: UILabel!
-    @IBOutlet var heading3: UILabel!
-    @IBOutlet var text3: UILabel!
+    @IBOutlet private var stackView: UIStackView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        stackView.setCustomSpacing(16, after: instructions)
-        stackView.setCustomSpacing(16, after: text1)
-        stackView.setCustomSpacing(16, after: text2)
+        stackView.subviews.forEach { (view) in
+            if let label = view as? UILabel {
+                if label.accessibilityTraits.contains(.header) {
+                    label.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
+                } else {
+                    label.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+                }
+            }
+        }
+    }
+
+    override func onFocusChanged(_ views: [UIView]) {
+        let count = views.count
         
-        instructions.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        guard count >= 3 else { return }
         
-        heading1.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-        text1.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
-        
-        heading2.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-        text2.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
-        
-        heading3.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-        text3.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        // Check if the last three views contain the `header` accessibility trait
+        if views.dropFirst(count-3).allSatisfy({ $0.accessibilityTraits.contains(.header) }) {
+            delegate?.correct(action)
+        }
     }
 }

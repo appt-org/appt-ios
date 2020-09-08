@@ -20,4 +20,15 @@ class VoiceOverLinksView: VoiceOverView {
 //        textView.sizeToFit()
 //        layoutIfNeeded()
     }
+    
+    override func onFocusChanged(_ elements: [UIAccessibilityElement]) {
+        let count = elements.count
+        
+        guard count >= 3 else { return }
+        
+        // Check if the last three elements contain the `link` accessibility trait
+        if elements.dropFirst(count-3).allSatisfy({ $0.accessibilityTraits.contains(.link) }) {
+            delegate?.correct(action)
+        }
+    }
 }

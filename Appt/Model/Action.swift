@@ -30,15 +30,24 @@ enum Action: String {
     }
     
     /* View for the action */
-    
-    var view: UIView {
+    var view: VoiceOverView {
     switch self {
         case .headings:
-            return VoiceOverHeadingsView.fromNib()
+            return VoiceOverHeadingsView.create(self)
         case .links:
-            return VoiceOverLinksView.fromNib()
+            return VoiceOverLinksView.create(self)
         case .copyPaste:
-            return VoiceOverLinksView.fromNib()
+            return VoiceOverLinksView.create(self)
         }
+    }
+    
+    /** Completion state of the action */
+    var completed: Bool {
+       set {
+           UserDefaults.standard.set(newValue, forKey: self.rawValue)
+       }
+       get {
+           return UserDefaults.standard.bool(forKey: self.rawValue)
+       }
     }
 }

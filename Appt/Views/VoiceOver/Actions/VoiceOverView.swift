@@ -8,25 +8,54 @@
 
 import UIKit
 
+protocol VoiceOverViewDelegate {
+    func correct(_ action: Action)
+    func incorrect(_ action: Action)
+}
+
 class VoiceOverView: UIView {
 
-    convenience init(voiceOver: Bool) {
-        self.init()
-        
-        isAccessibilityElement = true
+    var delegate: VoiceOverViewDelegate?
+    var action: Action!
+    
+    private var focusedElements = [UIAccessibilityElement]()
+    private var focusedViews = [UIView]()
+    
+    class func create<T: VoiceOverView>(_ action: Action) -> T {
+        let view:T = self.fromNib()
+        view.action = action
+        return view
     }
     
-    private func setup() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(voiceOverStatusDidChangeNotification), name: UIAccessibility.voiceOverStatusDidChangeNotification, object: nil)
     }
     
-    @objc func elementFocusedNotification() {
+    @objc func elementFocusedNotification(_ notification: Notification) {
         print("elementFocusedNotification")
+        
+        guard let object = notification.userInfo?[UIAccessibility.focusedElementUserInfoKey] else {
+            return
+        }
+        
+        if let element = object as? UIAccessibilityElement {
+            focusedElements.append(element)
+            onFocusChanged(focusedElements)
+        }
+        
+        if let view = object as? UIView {
+            focusedViews.append(view)
+            onFocusChanged(focusedViews)
+        }
     }
     
-    @objc func voiceOverStatusDidChangeNotification() {
-        print("voiceOverStatusDidChangeNotification")
+    func onFocusChanged(_ elements: [UIAccessibilityElement]) {
+        // Can be overridden in subclass
+    }
+    
+    func onFocusChanged(_ views: [UIView]) {
+        // Can be overridden in subclass
     }
 }
