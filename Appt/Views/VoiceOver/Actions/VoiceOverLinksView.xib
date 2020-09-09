@@ -51,9 +51,9 @@ Deze tekst sla je over als je navigeert via links.</string>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="0Fy-tS-kE7" firstAttribute="top" secondItem="YRD-Sw-9uc" secondAttribute="top" id="CiP-eq-Ubg"/>
-                <constraint firstItem="rWa-Cb-ent" firstAttribute="trailing" secondItem="0Fy-tS-kE7" secondAttribute="trailing" id="hDb-gx-dvV"/>
+                <constraint firstAttribute="trailing" secondItem="0Fy-tS-kE7" secondAttribute="trailing" id="hDb-gx-dvV"/>
                 <constraint firstAttribute="bottom" secondItem="0Fy-tS-kE7" secondAttribute="bottom" id="nkF-b5-8VK"/>
-                <constraint firstItem="0Fy-tS-kE7" firstAttribute="leading" secondItem="rWa-Cb-ent" secondAttribute="leading" id="tqR-ua-zsP"/>
+                <constraint firstItem="0Fy-tS-kE7" firstAttribute="leading" secondItem="YRD-Sw-9uc" secondAttribute="leading" id="tqR-ua-zsP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="rWa-Cb-ent"/>

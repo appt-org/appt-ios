@@ -104,7 +104,7 @@
 		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
 		2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverLinksView.swift; sourceTree = "<group>"; };
 		2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverLinksView.xib; sourceTree = "<group>"; };
-		2877F6CA247D6E9200605677 /* appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2877F6CA247D6E9200605677 /* Appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		2877F6CB247D6E9200605677 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2877F6CA247D6E9200605677 /* appt.app */,
+				2877F6CA247D6E9200605677 /* Appt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,7 +431,7 @@
 			);
 			name = Appt;
 			productName = Appt;
-			productReference = 2877F6CA247D6E9200605677 /* appt.app */;
+			productReference = 2877F6CA247D6E9200605677 /* Appt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -720,14 +720,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AJ2TAF85YF;
 				INFOPLIST_FILE = Appt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
-				PRODUCT_NAME = appt;
+				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -743,14 +743,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AJ2TAF85YF;
 				INFOPLIST_FILE = Appt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
-				PRODUCT_NAME = appt;
+				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

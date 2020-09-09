@@ -27,13 +27,8 @@ class VoiceOverView: UIView {
         return view
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
-    }
-    
-    @objc func elementFocusedNotification(_ notification: Notification) {
+    // Called from the ViewController
+    func elementFocusedNotification(_ notification: Notification) {
         print("elementFocusedNotification")
         
         guard let object = notification.userInfo?[UIAccessibility.focusedElementUserInfoKey] else {

@@ -20,7 +20,7 @@
         <!--VoiceOver gebaar-->
         <scene sceneID="J8g-pz-9jk">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--VoiceOver aanzetten-->
         <scene sceneID="D2p-Em-UER">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverEnableViewController" hidesBottomBarWhenPushed="YES" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverEnableViewController" hidesBottomBarWhenPushed="YES" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6r-8O-cSD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@ VoiceOver werkt als volgt:
         <!--VoiceOver gebaren-->
         <scene sceneID="LZM-dz-pdJ">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,10 +170,10 @@ VoiceOver werkt als volgt:
             </objects>
             <point key="canvasLocation" x="2521.2053571428569" y="-1555.072463768116"/>
         </scene>
-        <!--VoiceOver acties-->
+        <!--VoiceOver handelingen-->
         <scene sceneID="deJ-Du-teC">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver acties" hidesBottomBarWhenPushed="YES" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver handelingen" hidesBottomBarWhenPushed="YES" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,10 +202,10 @@ VoiceOver werkt als volgt:
             </objects>
             <point key="canvasLocation" x="2518.840579710145" y="-854.46428571428567"/>
         </scene>
-        <!--VoiceOver actie-->
+        <!--VoiceOver handeling-->
         <scene sceneID="DvA-cr-CsQ">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverActionViewController" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverActionViewController" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ll-hW-NKm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +225,7 @@ VoiceOver werkt als volgt:
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SwO-cd-kHF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="VoiceOver actie" id="xBc-la-aFd"/>
+                    <navigationItem key="navigationItem" title="VoiceOver handeling" id="xBc-la-aFd"/>
                     <connections>
                         <outlet property="scrollView" destination="RrL-jd-bhL" id="g89-Qo-2xB"/>
                     </connections>

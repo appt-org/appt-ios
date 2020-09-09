@@ -1,84 +1,81 @@
 PODS:
-  - Accessibility (0.2.0)
+  - Accessibility (0.2.1)
   - Alamofire (4.9.1)
-  - Firebase/Analytics (6.27.1):
+  - Firebase/Analytics (6.32.0):
     - Firebase/Core
-  - Firebase/Core (6.27.1):
+  - Firebase/Core (6.32.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.6.2)
-  - Firebase/CoreOnly (6.27.1):
-    - FirebaseCore (= 6.8.1)
-  - Firebase/Crashlytics (6.27.1):
+    - FirebaseAnalytics (= 6.8.1)
+  - Firebase/CoreOnly (6.32.0):
+    - FirebaseCore (= 6.10.2)
+  - Firebase/Crashlytics (6.32.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.2.0)
-  - FirebaseAnalytics (6.6.2):
-    - FirebaseCore (~> 6.8)
-    - FirebaseInstallations (~> 1.4)
-    - GoogleAppMeasurement (= 6.6.2)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (~> 1.30905.0)
-  - FirebaseCore (6.8.1):
-    - FirebaseCoreDiagnostics (~> 1.3)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.4.0):
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-    - nanopb (~> 1.30905.0)
-  - FirebaseCrashlytics (4.2.0):
-    - FirebaseCore (~> 6.8)
-    - FirebaseInstallations (~> 1.1)
-    - GoogleDataTransport (~> 6.1)
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - nanopb (~> 1.30905.0)
+    - FirebaseCrashlytics (~> 4.6.0)
+  - FirebaseAnalytics (6.8.1):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleAppMeasurement (= 6.8.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - FirebaseCore (6.10.2):
+    - FirebaseCoreDiagnostics (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+  - FirebaseCoreDiagnostics (1.6.0):
+    - GoogleDataTransport (~> 7.2)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+    - nanopb (~> 1.30906.0)
+  - FirebaseCrashlytics (4.6.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleDataTransport (~> 7.2)
+    - nanopb (~> 1.30906.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (1.4.0):
-    - FirebaseCore (~> 6.8)
-    - GoogleUtilities/Environment (~> 6.6)
-    - GoogleUtilities/UserDefaults (~> 6.6)
+  - FirebaseInstallations (1.7.0):
+    - FirebaseCore (~> 6.10)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
-  - GoogleAppMeasurement (6.6.2):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (~> 1.30905.0)
-  - GoogleDataTransport (6.2.1)
-  - GoogleDataTransportCCTSupport (3.2.0):
-    - GoogleDataTransport (~> 6.1)
-    - nanopb (~> 1.30905.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+  - GoogleAppMeasurement (6.8.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - GoogleDataTransport (7.3.0):
+    - nanopb (~> 1.30906.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.6.0):
+  - GoogleUtilities/Environment (6.7.2):
     - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.6.0):
+  - GoogleUtilities/Logger (6.7.2):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.6.0):
+  - GoogleUtilities/MethodSwizzler (6.7.2):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.6.0):
+  - GoogleUtilities/Network (6.7.2):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.6.0)"
-  - GoogleUtilities/Reachability (6.6.0):
+  - "GoogleUtilities/NSData+zlib (6.7.2)"
+  - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.6.0):
+  - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
-  - nanopb (1.30905.0):
-    - nanopb/decode (= 1.30905.0)
-    - nanopb/encode (= 1.30905.0)
-  - nanopb/decode (1.30905.0)
-  - nanopb/encode (1.30905.0)
-  - PromisesObjC (1.2.9)
+  - Kingfisher (5.15.0):
+    - Kingfisher/Core (= 5.15.0)
+  - Kingfisher/Core (5.15.0)
+  - nanopb (1.30906.0):
+    - nanopb/decode (= 1.30906.0)
+    - nanopb/encode (= 1.30906.0)
+  - nanopb/decode (1.30906.0)
+  - nanopb/encode (1.30906.0)
+  - PromisesObjC (1.2.10)
 
 DEPENDENCIES:
   - Accessibility
@@ -99,28 +96,26 @@ SPEC REPOS:
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - Kingfisher
     - nanopb
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  Accessibility: 031804cc35fc862ffb6a8b69a493b003be87082b
+  Accessibility: 8c43f92303cfa47764f0b59bfd37112257af75e9
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Firebase: 919186c8e119dd9372a45fd1dd17a8a942bc1892
-  FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
-  FirebaseCore: 8cd4f8ea22075e0ee582849b1cf79d8816506085
-  FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
-  FirebaseCrashlytics: 7d0fa02ea8842cc4b2ab07b0735edafde1ad77d6
-  FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
-  GoogleAppMeasurement: 8cd1f289d60e629cf16ab03363b9e89c776b9651
-  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
-  GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
-  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
+  Firebase: afa030f17f5421810f379a42b0e5d3302d27eb26
+  FirebaseAnalytics: a4d98464f455f5056063932123fa441025322f30
+  FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
+  FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
+  FirebaseCrashlytics: eea40d2a33f01b927b9f6f00ef305baa22a6a58e
+  FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  GoogleAppMeasurement: e3618c6e9f5166a6b320b03b759da3b04ec2a101
+  GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
+  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
+  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
 PODFILE CHECKSUM: 9deecd0d18f6660c499595726c644de50e95c8fe
 

@@ -16,9 +16,9 @@ class VoiceOverLinksView: VoiceOverView {
         super.layoutSubviews()
         
         textView.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
-//        textView.isScrollEnabled = false
-//        textView.sizeToFit()
-//        layoutIfNeeded()
+        textView.delegate = self
+        
+        
     }
     
     override func onFocusChanged(_ elements: [UIAccessibilityElement]) {
@@ -30,5 +30,19 @@ class VoiceOverLinksView: VoiceOverView {
         if elements.dropFirst(count-3).allSatisfy({ $0.accessibilityTraits.contains(.link) }) {
             delegate?.correct(action)
         }
+    }
+}
+
+// MARK: - VoiceOverLinksView
+
+extension VoiceOverLinksView: UITextViewDelegate {
+    
+    // Ignore interactions with links to avoid unwanted actions
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        if let viewController = UIApplication.shared.keyWindow?.rootViewController {
+            Alert.toast("Interactie is uitgeschakeld", duration: 2.0, viewController: viewController)
+        }
+        
+        return false
     }
 }

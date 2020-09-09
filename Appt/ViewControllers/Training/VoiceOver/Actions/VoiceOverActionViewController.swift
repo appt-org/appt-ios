@@ -16,6 +16,7 @@ class VoiceOverActionViewController: ViewController {
     @IBOutlet private var scrollView: UIScrollView!
     
     var action: Action!
+    var actionView: VoiceOverView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,20 +32,36 @@ class VoiceOverActionViewController: ViewController {
             return
         }
         
-        let view = action.view
-        view.delegate = self
-        view.translatesAutoresizingMaskIntoConstraints = false
+        actionView = action.view
+        actionView.delegate = self
+        actionView.translatesAutoresizingMaskIntoConstraints = false
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(view)
+        scrollView.addSubview(actionView)
         
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            view.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            scrollView.leadingAnchor.constraint(equalTo: actionView.leadingAnchor),
+            scrollView.topAnchor.constraint(equalTo: actionView.topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: actionView.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: actionView.bottomAnchor),
+            actionView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
+        
+        Accessibility.layoutChanged(actionView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
+    }
+    
+    @objc func elementFocusedNotification(_ notification: Notification) {
+        actionView.elementFocusedNotification(notification)
     }
 }
 
