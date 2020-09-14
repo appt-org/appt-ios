@@ -79,7 +79,7 @@
         <!--VoiceOver aanzetten-->
         <scene sceneID="D2p-Em-UER">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverEnableViewController" hidesBottomBarWhenPushed="YES" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverEnableViewController" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6r-8O-cSD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@ VoiceOver werkt als volgt:
         <!--VoiceOver gebaren-->
         <scene sceneID="LZM-dz-pdJ">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverGesturesViewController" hidesBottomBarWhenPushed="YES" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverGesturesViewController" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +173,7 @@ VoiceOver werkt als volgt:
         <!--VoiceOver handelingen-->
         <scene sceneID="deJ-Du-teC">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver handelingen" hidesBottomBarWhenPushed="YES" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver handelingen" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

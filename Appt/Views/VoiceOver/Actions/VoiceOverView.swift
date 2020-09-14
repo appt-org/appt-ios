@@ -53,4 +53,15 @@ class VoiceOverView: UIView {
     func onFocusChanged(_ views: [UIView]) {
         // Can be overridden in subclass
     }
+    
+    // Called from ViewController
+    func pasteboarChangedNotification(_ notification: Notification) {
+        print("pasteboarChangedNotification")
+        
+        onPasteboardChanged(UIPasteboard.general.string)
+    }
+    
+    func onPasteboardChanged(_ content: String?) {
+        // Can be overridden in subclass
+    }
 }

@@ -22,15 +22,15 @@ class VoiceOverActionViewController: ViewController {
         super.viewDidLoad()
         title = action.title
         
-        guard UIAccessibility.isVoiceOverRunning else {
-            Alert.Builder()
-                .title("VoiceOver staat uit")
-                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
-                .action("Oké") { (action) in
-                    self.navigationController?.popViewController(animated: true)
-                }.present(in: self)
-            return
-        }
+//        guard UIAccessibility.isVoiceOverRunning else {
+//            Alert.Builder()
+//                .title("VoiceOver staat uit")
+//                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
+//                .action("Oké") { (action) in
+//                    self.navigationController?.popViewController(animated: true)
+//                }.present(in: self)
+//            return
+//        }
         
         actionView = action.view
         actionView.delegate = self
@@ -53,6 +53,7 @@ class VoiceOverActionViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteboarChangedNotification), name: UIPasteboard.changedNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,6 +63,10 @@ class VoiceOverActionViewController: ViewController {
     
     @objc func elementFocusedNotification(_ notification: Notification) {
         actionView.elementFocusedNotification(notification)
+    }
+    
+    @objc func pasteboarChangedNotification(_ notification: Notification){
+        actionView.pasteboarChangedNotification(notification)
     }
 }
 

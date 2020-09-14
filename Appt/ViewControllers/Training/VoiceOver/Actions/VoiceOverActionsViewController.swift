@@ -15,6 +15,10 @@ class VoiceOverActionsViewController: TableViewController {
             "Navigeren": [
                 .headings,
                 .links
+            ],
+            "Bewerken": [
+                .copy,
+                .paste
             ]
         ]
     }

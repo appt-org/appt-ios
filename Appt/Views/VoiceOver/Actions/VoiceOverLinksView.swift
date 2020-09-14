@@ -10,15 +10,13 @@ import UIKit
 
 class VoiceOverLinksView: VoiceOverView {
     
-    @IBOutlet var textView: UITextView!
+    @IBOutlet private var textView: UITextView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         textView.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         textView.delegate = self
-        
-        
     }
     
     override func onFocusChanged(_ elements: [UIAccessibilityElement]) {
