@@ -55,9 +55,7 @@ class VoiceOverView: UIView {
     }
     
     // Called from ViewController
-    func pasteboarChangedNotification(_ notification: Notification) {
-        print("pasteboarChangedNotification")
-        
+    func pasteboardChangedNotification(_ notification: Notification) {
         onPasteboardChanged(UIPasteboard.general.string)
     }
     

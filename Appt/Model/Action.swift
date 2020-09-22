@@ -15,6 +15,7 @@ enum Action: String {
     case links
     
     // Modify
+    case selection
     case copy
     case paste
     
@@ -26,6 +27,8 @@ enum Action: String {
         case .links:
             return "Navigeren via links"
             
+        case .selection:
+            return "Tekst selecteren"
         case .copy:
             return "Kopiëren"
         case .paste:
@@ -41,6 +44,8 @@ enum Action: String {
         case .links:
             return VoiceOverLinksView.create(self)
         
+        case .selection:
+            return VoiceOverSelectionView.create(self)
         case .copy:
             return VoiceOverCopyView.create(self)
         case .paste:

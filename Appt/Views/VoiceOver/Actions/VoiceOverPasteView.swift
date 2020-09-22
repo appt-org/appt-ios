@@ -23,11 +23,12 @@ class VoiceOverPasteView: VoiceOverView {
         }
         
         textField.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        textField.inputView = UIView()
         textField.delegate = self
     }
 }
 
-// MARK: - VoiceOverLinksView
+// MARK: - UITextFieldDelegate
 
 extension VoiceOverPasteView: UITextFieldDelegate {
     

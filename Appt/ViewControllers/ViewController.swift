@@ -89,8 +89,6 @@ extension ViewController {
     
     // State: register notifications
     func registerStateNotifications() {
-        print("registerStateNotifications")
-        
         NotificationCenter.default.addObserver(self, selector: #selector(onStateForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onStateActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onStateBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -100,8 +98,6 @@ extension ViewController {
     
     // State: deregister notifications
     func deregisterStateNotifications() {
-        print("deregisterStateNotifications")
-
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -128,5 +124,38 @@ extension ViewController {
     // State: will terminate
     @objc func onStateTerminate() {
         print("onStateTerminate")
+    }
+}
+
+// MARK: - Keyboard notifications
+
+extension ViewController {
+    
+    // Keyboard: register notifications
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // Keyboard: deregister notificaitons
+    func deregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // Keyboard: will show (notification)
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardWillShow(frame: keyboardFrame.cgRectValue)
+        }
+    }
+    
+    // Keyboard: will show (frame)
+    @objc func keyboardWillShow(frame: CGRect) {
+         print("keyboardWillShow", frame)
+    }
+    
+    // Keyboard: will hide
+    @objc func keyboardWillHide() {
+        print("keyboardWillHide")
     }
 }

@@ -21,6 +21,6 @@ extension UIColor {
     }
 
     static let primary = UIColor(named: "Primary")!
-    static let bar = UIColor(named: "Bar")!
-    static let text = UIColor(named: "Text")!
+    static let background = UIColor(named: "Background")!
+    static let foreground = UIColor(named: "Foreground")!
 }

@@ -17,6 +17,7 @@ class VoiceOverActionsViewController: TableViewController {
                 .links
             ],
             "Bewerken": [
+                .selection,
                 .copy,
                 .paste
             ]

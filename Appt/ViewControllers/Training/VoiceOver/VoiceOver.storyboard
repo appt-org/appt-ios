@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,14 +50,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZGs-5s-BAd" firstAttribute="leading" secondItem="mik-Nu-glv" secondAttribute="leading" id="9HJ-Lm-sHW"/>
                             <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="J07-Wy-oxe"/>
                             <constraint firstAttribute="trailing" secondItem="ZGs-5s-BAd" secondAttribute="trailing" id="Jdg-gd-ZZP"/>
                             <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="bgA-Pm-OQ0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoiceOver gebaar" id="IwU-sV-rHn">
                         <barButtonItem key="rightBarButtonItem" title="Uitleg" id="Knw-mt-D6g">
@@ -86,10 +87,10 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
                                 <rect key="frame" x="16" y="0.0" width="382" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
 
-Je kunt VoiceOver op twee manieren aanzetten.
+Je kunt VoiceOver op drie manieren aanzetten.
 
 Manier 1:
 1. Open de Instellingen app
@@ -100,26 +101,25 @@ Manier 1:
 Manier 2:
 Zeg: "Hey Siri, zet VoiceOver aan"
 
-VoiceOver werkt als volgt:
-- Tik eenmaal om een onderdeel te selecteren
-- Tik dubbel om het geselecteerde onderdeel te activeren
-- Veeg met drie vingers om te scrollen
-- Om naar het beginscherm te gaan: schuif één vinger vanaf de onderrand totdat je de eerste trilling voelt en til je vinger op
-- Om de appkiezer te gebruiken: schuif je vinger verder omhoog vanaf de onderkant totdat je een tweede trilling voelt en til je vinger op
-</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+Manier 3:
+1. Open de Instellingen-app
+2. Tik op Toegankelijkheid
+3. Scroll naar de onderkant, tik op Activeringsknop
+4. Tik op VoiceOver
+5. Druk driemaal op de zijknop of thuisknop</string>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JtI-7F-fSi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uq7-Ys-yDR" firstAttribute="leading" secondItem="JtI-7F-fSi" secondAttribute="leading" constant="16" id="A80-MX-sjw"/>
                             <constraint firstItem="JtI-7F-fSi" firstAttribute="trailing" secondItem="uq7-Ys-yDR" secondAttribute="trailing" constant="16" id="RnM-Z3-rKa"/>
                             <constraint firstItem="uq7-Ys-yDR" firstAttribute="top" secondItem="JtI-7F-fSi" secondAttribute="top" id="WDx-RF-PNp"/>
                             <constraint firstAttribute="bottom" secondItem="uq7-Ys-yDR" secondAttribute="bottom" id="eFK-fs-jFy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JtI-7F-fSi"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoiceOver aanzetten" id="hDI-lM-GGf"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -144,14 +144,14 @@ VoiceOver werkt als volgt:
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="dsD-Ap-a94"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Dc-yG-7nt" secondAttribute="trailing" id="5Sr-Ms-DnU"/>
                             <constraint firstItem="3Dc-yG-7nt" firstAttribute="leading" secondItem="B2M-mb-Zk6" secondAttribute="leading" id="6iU-fb-E0n"/>
                             <constraint firstItem="3Dc-yG-7nt" firstAttribute="top" secondItem="dsD-Ap-a94" secondAttribute="top" id="Bn7-ci-JMh"/>
                             <constraint firstAttribute="bottom" secondItem="3Dc-yG-7nt" secondAttribute="bottom" id="Vr6-M5-aDX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dsD-Ap-a94"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoiceOver gebaren" id="OVj-2A-VwP">
                         <barButtonItem key="rightBarButtonItem" title="Oefenen" id="Ze5-7R-LJc">
@@ -183,14 +183,14 @@ VoiceOver werkt als volgt:
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Oi-3d-ZmD"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NXp-JN-5F7" firstAttribute="trailing" secondItem="96e-I0-Lme" secondAttribute="trailing" id="1gz-wN-Jnc"/>
                             <constraint firstItem="NXp-JN-5F7" firstAttribute="leading" secondItem="96e-I0-Lme" secondAttribute="leading" id="67s-4f-fm5"/>
                             <constraint firstAttribute="bottom" secondItem="NXp-JN-5F7" secondAttribute="bottom" id="7jO-fw-axI"/>
                             <constraint firstItem="NXp-JN-5F7" firstAttribute="top" secondItem="2Oi-3d-ZmD" secondAttribute="top" id="HVa-3c-ixo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2Oi-3d-ZmD"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -205,29 +205,29 @@ VoiceOver werkt als volgt:
         <!--VoiceOver handeling-->
         <scene sceneID="DvA-cr-CsQ">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverActionViewController" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverActionViewController" hidesBottomBarWhenPushed="YES" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ll-hW-NKm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-jd-bhL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-jd-bhL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="F2L-6x-4Og"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="fR1-Ke-Yep"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SwO-cd-kHF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RrL-jd-bhL" firstAttribute="leading" secondItem="SwO-cd-kHF" secondAttribute="leading" id="8aA-L3-QIu"/>
                             <constraint firstItem="RrL-jd-bhL" firstAttribute="trailing" secondItem="SwO-cd-kHF" secondAttribute="trailing" id="DHd-DB-Hyb"/>
                             <constraint firstAttribute="bottom" secondItem="RrL-jd-bhL" secondAttribute="bottom" id="Jpx-ZR-ULg"/>
                             <constraint firstItem="RrL-jd-bhL" firstAttribute="top" secondItem="SwO-cd-kHF" secondAttribute="top" id="zfT-l1-h3O"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SwO-cd-kHF"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoiceOver handeling" id="xBc-la-aFd"/>
                     <connections>
-                        <outlet property="scrollView" destination="RrL-jd-bhL" id="g89-Qo-2xB"/>
+                        <outlet property="scrollView" destination="RrL-jd-bhL" id="7uL-b9-Lrb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xva-pc-EcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,4 +235,21 @@ VoiceOver werkt als volgt:
             <point key="canvasLocation" x="3292.753623188406" y="-854.46428571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

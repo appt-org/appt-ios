@@ -31,7 +31,7 @@ class VoiceOverLinksView: VoiceOverView {
     }
 }
 
-// MARK: - VoiceOverLinksView
+// MARK: - UITextViewDelegate
 
 extension VoiceOverLinksView: UITextViewDelegate {
     

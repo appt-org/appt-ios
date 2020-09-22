@@ -11,7 +11,7 @@ import UIKit
 class VoiceOverCopyView: VoiceOverView {
     
     @IBOutlet private var stackView: UIStackView!
-    @IBOutlet private var textView: UITextView!
+    @IBOutlet private var textField: UITextField!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -22,11 +22,12 @@ class VoiceOverCopyView: VoiceOverView {
             }
         }
         
-        textView.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        textField.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        textField.inputView = UIView()
     }
     
     override func onPasteboardChanged(_ content: String?) {
-        if let content = content, textView.text.contains(content) {
+        if let content = content, let text = textField.text, text.contains(content) {
             delegate?.correct(action)
         }
     }

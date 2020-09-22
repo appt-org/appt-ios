@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .bar
+        UINavigationBar.appearance().barTintColor = .background
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .headline)
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // UITabBar styles
-        UITabBar.appearance().barTintColor = .bar
+        UITabBar.appearance().barTintColor = .background
         UITabBar.appearance().tintColor = .primary
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([

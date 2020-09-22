@@ -61,7 +61,7 @@ extension TableViewController: UITableViewDelegate {
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.text = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: section)
             header.textLabel?.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-            header.textLabel?.textColor = .text
+            header.textLabel?.textColor = .foreground
         }
     }
     

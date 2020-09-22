@@ -11,62 +11,58 @@ import UIKit
 import AVKit
 import Accessibility
 
-class VoiceOverActionViewController: ViewController {
-    
-    @IBOutlet private var scrollView: UIScrollView!
+class VoiceOverActionViewController: ScrollViewController {
     
     var action: Action!
-    var actionView: VoiceOverView!
-
+    
+    override func getView() -> UIView {
+        return action.view
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = action.title
-        
-//        guard UIAccessibility.isVoiceOverRunning else {
-//            Alert.Builder()
-//                .title("VoiceOver staat uit")
-//                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
-//                .action("Oké") { (action) in
-//                    self.navigationController?.popViewController(animated: true)
-//                }.present(in: self)
-//            return
-//        }
-        
-        actionView = action.view
-        actionView.delegate = self
-        actionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(actionView)
-        
-        NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: actionView.leadingAnchor),
-            scrollView.topAnchor.constraint(equalTo: actionView.topAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: actionView.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: actionView.bottomAnchor),
-            actionView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-        
-        Accessibility.layoutChanged(actionView)
+        action.view.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(pasteboarChangedNotification), name: UIPasteboard.changedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteboardChangedNotification), name: UIPasteboard.changedNotification, object: nil)
+        
+        registerKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
+        deregisterKeyboardNotifications()
         super.viewWillDisappear(animated)
     }
     
     @objc func elementFocusedNotification(_ notification: Notification) {
-        actionView.elementFocusedNotification(notification)
+        action.view.elementFocusedNotification(notification)
     }
     
-    @objc func pasteboarChangedNotification(_ notification: Notification){
-        actionView.pasteboarChangedNotification(notification)
+    @objc func pasteboardChangedNotification(_ notification: Notification){
+        action.view.pasteboardChangedNotification(notification)
+    }
+}
+
+// MARK: - Keyboard
+
+extension VoiceOverActionViewController {
+    
+    override func keyboardWillShow(frame: CGRect) {
+        var contentInset = scrollView.contentInset
+        contentInset.bottom = frame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    override func keyboardWillHide() {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
     }
 }
 
