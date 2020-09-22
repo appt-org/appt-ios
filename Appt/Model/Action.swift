@@ -21,19 +21,7 @@ enum Action: String {
     
     /** Title of the action */
     var title: String {
-        switch self {
-        case .headings:
-            return "Navigeren via koppen"
-        case .links:
-            return "Navigeren via links"
-            
-        case .selection:
-            return "Tekst selecteren"
-        case .copy:
-            return "Kopiëren"
-        case .paste:
-            return "Plakken"
-        }
+        return NSLocalizedString("action_"+rawValue+"_title", comment: "")
     }
     
     /* View for the action */
@@ -56,10 +44,10 @@ enum Action: String {
     /** Completion state of the action */
     var completed: Bool {
        set {
-           UserDefaults.standard.set(newValue, forKey: self.rawValue)
+           UserDefaults.standard.set(newValue, forKey: rawValue)
        }
        get {
-           return UserDefaults.standard.bool(forKey: self.rawValue)
+           return UserDefaults.standard.bool(forKey: rawValue)
        }
     }
 }

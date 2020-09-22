@@ -126,10 +126,10 @@ enum Gesture: String {
     /** Completion state of the gesture */
     var completed: Bool {
         set {
-            UserDefaults.standard.set(newValue, forKey: self.rawValue)
+            UserDefaults.standard.set(newValue, forKey: rawValue)
         }
         get {
-            return UserDefaults.standard.bool(forKey: self.rawValue)
+            return UserDefaults.standard.bool(forKey: rawValue)
         }
     }
 }

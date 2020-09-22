@@ -6,6 +6,7 @@
   Copyright © 2020 Abra B.V. All rights reserved.
 */
 
+/* Gestures */
 "gesture_touch_title" = "Een onderdeel selecteren en uitspreken";
 "gesture_touch_description" = "Raak het scherm aan om een onderdeel te selecteren en uit te spreken.";
 "gesture_touch_explanation" = "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit.";
@@ -109,3 +110,10 @@
 "gesture_swipeDown_title" = "Rotoronderdeel omlaag aanpassen";
 "gesture_swipeDown_description" = "Veeg met één vinger omlaag, om het rotoronderdeel omlaag aan te passen.";
 "gesture_swipeDown_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel.";
+
+/* Actions */
+"action_headings_title" = "Navigeren via koppen";
+"action_links_title" = "Navigeren via links";
+"action_selection_title" = "Tekst selecteren";
+"action_copy_title" = "Kopiëren";
+"action_paste_title" = "Plakken";

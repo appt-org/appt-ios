@@ -14,16 +14,19 @@ import Accessibility
 class VoiceOverActionViewController: ScrollViewController {
     
     var action: Action!
+    lazy var actionView: VoiceOverView = {
+        return action.view
+    }()
     
     override func getView() -> UIView {
-        return action.view
+        return actionView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = action.title
-        action.view.delegate = self
+        actionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +45,11 @@ class VoiceOverActionViewController: ScrollViewController {
     }
     
     @objc func elementFocusedNotification(_ notification: Notification) {
-        action.view.elementFocusedNotification(notification)
+        actionView.elementFocusedNotification(notification)
     }
     
     @objc func pasteboardChangedNotification(_ notification: Notification){
-        action.view.pasteboardChangedNotification(notification)
+        actionView.pasteboardChangedNotification(notification)
     }
 }
 
