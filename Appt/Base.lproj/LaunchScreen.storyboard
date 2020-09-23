@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="132" height="40"/>
+        <image name="Logo" width="2924" height="880"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
