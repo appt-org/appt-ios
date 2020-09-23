@@ -17,4 +17,13 @@ extension String {
 
         return decoded ?? self
     }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "Localized")
+    }
+    
+    func localized(_ arguments: CVarArg...) -> String {
+        //String.localizedStringWithFormat(NSLocalizedString("feedback_fingers", comment: ""), fingers, fingerCount)
+        return String(format: self.localized, locale: .current, arguments: arguments)
+    }
 }

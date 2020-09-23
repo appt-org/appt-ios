@@ -17,7 +17,7 @@ class DefaultGestureView: LongPressGestureView {
     private var count = 0
     
     convenience init(gesture: Gesture) {
-        self.init(gesture: gesture, numberOfTaps: 1, numberOfFingers: 1, minimumDuration: 2.0)
+        self.init(gesture: gesture, taps: 2, fingers: 1)
     }
     
     override func onLongPress(_ sender: UILongPressGestureRecognizer) {
@@ -36,6 +36,7 @@ class DefaultGestureView: LongPressGestureView {
             }
         } else if sender.state == .ended {
             count = 0
+            incorrect("feedback_gesture".localized)
         }
     }
 }

@@ -65,61 +65,61 @@ enum Gesture: String {
     var view: GestureView {
         switch self {
         case .touch:
-            return TouchGestureView(gesture: self, numberOfTaps: 1)
+            return TouchGestureView(gesture: self)
         case .swipeRight:
-            return SwipeGestureView(gesture: self, direction: .right)
+            return SwipeGestureView(gesture: self, direction: .right, fingers: 1)
         case .swipeLeft:
-            return SwipeGestureView(gesture: self, direction: .left)
+            return SwipeGestureView(gesture: self, direction: .left, fingers: 1)
         case .fourFingerTapTop:
-            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 4, position: .top)
+            return TapGestureView(gesture: self, taps: 1, fingers: 4, position: .top)
         case .fourFingerTapBottom:
-            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 4, position: .bottom)
+            return TapGestureView(gesture: self, taps: 1, fingers: 4, position: .bottom)
         case .twoFingerSwipeUp:
-            return SwipeGestureView(gesture: self, direction: .up, numberOfFingers: 2)
+            return SwipeGestureView(gesture: self, direction: .up, fingers: 2)
         case .twoFingerSwipeDown:
-            return SwipeGestureView(gesture: self, direction: .down, numberOfFingers: 2)
+            return SwipeGestureView(gesture: self, direction: .down, fingers: 2)
         case .twoFingerTap:
-            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 2)
+            return TapGestureView(gesture: self, taps: 1, fingers: 2)
         case .threeFingerTap:
-            return TapGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 3)
+            return TapGestureView(gesture: self, taps: 1, fingers: 3)
         
         case .scrollUp:
-            return SwipeGestureView(gesture: self, direction: .up, numberOfFingers: 3)
+            return SwipeGestureView(gesture: self, direction: .up, fingers: 3)
         case .scrollRight:
-            return SwipeGestureView(gesture: self, direction: .right, numberOfFingers: 3)
+            return SwipeGestureView(gesture: self, direction: .right, fingers: 3)
         case .scrollDown:
-            return SwipeGestureView(gesture: self, direction: .down, numberOfFingers: 3)
+            return SwipeGestureView(gesture: self, direction: .down, fingers: 3)
         case .scrollLeft:
-            return SwipeGestureView(gesture: self, direction: .left, numberOfFingers: 3)
+            return SwipeGestureView(gesture: self, direction: .left, fingers: 3)
             
         case .doubleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 2)
+            return TapGestureView(gesture: self, taps: 2, fingers: 1)
         case .tripleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 3)
+            return TapGestureView(gesture: self, taps: 3, fingers: 1)
         case .slide:
             return SlideGestureView(gesture: self)
         case .magicTap:
-            return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 2)
+            return TapGestureView(gesture: self, taps: 2, fingers: 2)
         case .escape:
             return EscapeGestureView(gesture: self)
         case .label:
-            return LongPressGestureView(gesture: self, numberOfTaps: 1, numberOfFingers: 2, minimumDuration: 2.0)
+            return LongPressGestureView(gesture: self, taps: 2, fingers: 2)
             
         case .threeFingerDoubleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 2, numberOfFingers: 3)
+            return TapGestureView(gesture: self, taps: 2, fingers: 3)
         case .threeFingerTripleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 3, numberOfFingers: 3)
+            return TapGestureView(gesture: self, taps: 3, fingers: 3)
         case .doubleTapLongPress:
             return DefaultGestureView(gesture: self)
         case .twoFingerTripleTap:
-            return TapGestureView(gesture: self, numberOfTaps: 3, numberOfFingers: 2)
+            return TapGestureView(gesture: self, taps: 3, fingers: 2)
             
         case .rotor:
             return RotationGestureView(gesture: self, rotation: 0.5)
         case .swipeUp:
-            return SwipeGestureView(gesture: self, direction: .up)
+            return SwipeGestureView(gesture: self, direction: .up, fingers: 1)
         case .swipeDown:
-            return SwipeGestureView(gesture: self, direction: .down)
+            return SwipeGestureView(gesture: self, direction: .down, fingers: 1)
         }
     }
     

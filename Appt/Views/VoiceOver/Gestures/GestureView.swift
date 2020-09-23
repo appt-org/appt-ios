@@ -10,7 +10,7 @@ import UIKit
 
 protocol GestureViewDelegate {
     func correct(_ gesture: Gesture)
-    func incorrect(_ gesture: Gesture)
+    func incorrect(_ gesture: Gesture, feedback: String?)
 }
 
 class GestureView: UIView {
@@ -24,5 +24,13 @@ class GestureView: UIView {
         
         isAccessibilityElement = true
         accessibilityLabel = gesture.description
+    }
+    
+    func correct() {
+        delegate?.correct(gesture)
+    }
+    
+    func incorrect(_ feedback: String?) {
+        delegate?.incorrect(gesture, feedback: feedback)
     }
 }

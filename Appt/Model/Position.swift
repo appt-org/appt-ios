@@ -13,14 +13,21 @@ enum Position {
     case top
     case bottom
 
-    func matches(recognizer: UIGestureRecognizer, view: UIView) -> Bool {
+    var name: String {
+        if self == .top {
+            return "position_top".localized
+        } else {
+            return "position_bottom".localized
+        }
+    }
+        
+    public static func from(recognizer: UIGestureRecognizer, view: UIView) -> Position {
         let location = recognizer.location(in: view)
         
-        switch self {
-        case .top:
-            return location.y < view.frame.height / 2
-        case .bottom:
-            return location.y > view.frame.height / 2
+        if location.y < (view.frame.height / 2) {
+            return .top
+        } else {
+            return .bottom
         }
     }
 }

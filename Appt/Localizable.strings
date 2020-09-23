@@ -91,9 +91,9 @@
 "gesture_threeFingerTripleTap_description" = "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen";
 "gesture_threeFingerTripleTap_explanation" = "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken.";
 
-"gesture_doubleTapLongPress_title" = "Een standaardgebaar gebruiken";
-"gesture_doubleTapLongPress_description" = "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gewenste gebaar uit.";
-"gesture_doubleTapLongPress_explanation" = "Soms is het nodig om een standaardgebaar te maken. Hiermee wordt een gebaar bedoelt buiten VoiceOver om. Door dit gebaar te gebruiken, gaat de interactie direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om je handtekening te zetten.";
+"gesture_doubleTapLongPress_title" = "Een direct gebaar maken";
+"gesture_doubleTapLongPress_description" = "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gebaar uit.";
+"gesture_doubleTapLongPress_explanation" = "Soms is het nodig om een direct gebaar te maken. Hiermee wordt een gebaar buiten VoiceOver om bedoeld. Door dit gebaar te gebruiken, gaat de interactie direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten.";
 
 "gesture_twoFingerTripleTap_title" = "De onderdeelkiezer openen";
 "gesture_twoFingerTripleTap_description" = "Tik driemaal met twee vingers om de onderdeelkiezer te openen";
@@ -117,3 +117,21 @@
 "action_selection_title" = "Tekst selecteren";
 "action_copy_title" = "Kopiëren";
 "action_paste_title" = "Plakken";
+
+/* Directions */
+"direction_up" = "omhoog";
+"direction_right" = "naar rechts";
+"direction_down" = "omlaag";
+"direction_left" = "naar links";
+
+/* Positions */
+"position_top" = "bovenaan";
+"position_bottom" = "onderaan";
+
+/* Feedback */
+"feedback_swipe" = "Maak een veegbeweging in plaats van een aanraking";
+"feedback_tap" = "Tik op het scherm in plaats van te vegen";
+"feedback_distance" = "Beweeg je vinger verder";
+"feedback_direction" = "Veeg %@ in plaats van %@";
+"feedback_position" = "Tik %@ het scherm in plaats van %@";
+"feedback_gesture" = "Maak een willekeurig gebaar";

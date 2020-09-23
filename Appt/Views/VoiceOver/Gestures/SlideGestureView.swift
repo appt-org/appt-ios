@@ -17,11 +17,14 @@ class SlideGestureView: LongPressGestureView {
     private var completed = false
     
     convenience init(gesture: Gesture) {
-        self.init(gesture: gesture, numberOfTaps: 1, numberOfFingers: 1, minimumDuration: 2.0)
+        self.init(gesture: gesture, taps: 2, fingers: 1)
     }
     
+    // Step 1: long press
     override func onLongPress(_ sender: UILongPressGestureRecognizer) {
-        guard !completed else { return }
+        guard !completed else {
+            return
+        }
         
         let location = sender.location(in: self)
         
@@ -37,7 +40,7 @@ class SlideGestureView: LongPressGestureView {
             }
         } else if !completed {
             startLocation = nil
-            delegate?.incorrect(gesture)
+            delegate?.incorrect(gesture, feedback: "feedback_distance".localized(fingers))
         }
     }
 }
