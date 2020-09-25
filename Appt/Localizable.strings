@@ -84,12 +84,12 @@
 "gesture_label_explanation" = "Helaas zijn niet alle apps toegankelijk. Dankzij dit gebaar kun je je eigen labels toevoegen. Handig om bijvoorbeeld knoppen aan te geven.\n\nLet op: na elke app update zijn al je labels weg. De ontwikkelaar van de app kan hier niks aan doen.";
 
 "gesture_threeFingerDoubleTap_title" = "Het geluid van VoiceOver in- of uitschakelen";
-"gesture_threeFingerDoubleTap_description" = "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen";
-"gesture_threeFingerDoubleTap_explanation" = "Dit gebaar is belangrijk om te onthouden. Vaak wordt dit gebaar namelijk perongeluk gebruikt. Hoor je geen geluid meer? Tik dan tweemaal met drievingers om het geluid van VoiceOver weer aan te zetten!";
+"gesture_threeFingerDoubleTap_description" = "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen.\n\nLet op: als de zoomfunctie is ingeschakeld kan de app het gebaar helaas niet herkennen.";
+"gesture_threeFingerDoubleTap_explanation" = "Dit gebaar is belangrijk om te onthouden. Vaak wordt dit gebaar namelijk perongeluk gebruikt. Hoor je geen geluid meer? Tik dan tweemaal met drie vingers om het geluid van VoiceOver weer aan te zetten!";
 
 "gesture_threeFingerTripleTap_title" = "Het schermgordijn in- of uitschakelen";
-"gesture_threeFingerTripleTap_description" = "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen";
-"gesture_threeFingerTripleTap_explanation" = "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken.";
+"gesture_threeFingerTripleTap_description" = "Tik driemaal met drie vingers om het schermgordijn in- of uit te schakelen.\n\nLet op: als de zoomfunctie is ingeschakeld kan de app het gebaar helaas niet herkennen.";
+"gesture_threeFingerTripleTap_explanation" = "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken.";
 
 "gesture_doubleTapLongPress_title" = "Een direct gebaar maken";
 "gesture_doubleTapLongPress_description" = "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gebaar uit.";

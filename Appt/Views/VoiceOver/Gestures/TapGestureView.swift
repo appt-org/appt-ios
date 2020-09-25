@@ -31,6 +31,10 @@ class TapGestureView: GestureView {
                 addGestureRecognizer(recognizer)
             }
         }
+        
+        if fingers == 3 && taps >= 2 {
+            UIAccessibility.registerGestureConflictWithZoom()
+        }
     }
          
     @objc func onTap(_ sender: UITapGestureRecognizer) {
@@ -62,7 +66,7 @@ class TapGestureView: GestureView {
         // Correct position
         correct()
     }
-    
+        
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         incorrect("feedback_tap".localized)
