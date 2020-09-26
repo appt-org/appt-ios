@@ -1,8 +1,8 @@
 //
-//  VoiceOverActionViewController.swift
+//  WebViewController.swift
 //  Appt
 //
-//  Created by Jan Jaap de Groot on 25/08/2020.
+//  Created by Jan Jaap de Groot on 26/09/2020.
 //  Copyright © 2020 Abra B.V. All rights reserved.
 //
 
@@ -10,29 +10,9 @@ import UIKit
 import WebKit
 import Accessibility
 
-class VoiceOverWebViewController: ViewController {
+class WebViewController: ViewController {
  
-    private var webView: WKWebView!
-       
-    @objc func elementFocusedNotification(_ notification: Notification) {
-       print("elementFocusedNotification")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
-        
-//        guard UIAccessibility.isVoiceOverRunning else {
-//            Alert.Builder()
-//                .title("VoiceOver staat uit")
-//                .message("Je moet VoiceOver aanzetten voordat je deze training kunt volgen.")
-//                .action("Oké") { (action) in
-//                    self.navigationController?.popViewController(animated: true)
-//                }.present(in: self)
-//            return
-//        }
-        
+    private lazy var webView: WKWebView = {
         let contentController = WKUserContentController()
         
         // Capture console.log
@@ -78,8 +58,15 @@ class VoiceOverWebViewController: ViewController {
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = contentController
         
-        self.webView = WKWebView(frame: .zero, configuration: configuration)
-        webView.backgroundColor = .none
+        let webView = WKWebView(frame: view.frame, configuration: configuration)
+        webView.scrollView.maximumZoomScale = 10.0
+        webView.tintColor = .primary
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
+        
+        webView.navigationDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        
         view.addSubview(webView)
 
         let layoutGuide = view.safeAreaLayoutGuide
@@ -89,57 +76,70 @@ class VoiceOverWebViewController: ViewController {
         webView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
         webView.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
-
-        let content = """
-            <p>Via de VoiceOver rotor kun je via de koppen navigeren.</p>
-            <input/><input/><input/>
-            <ol>
-                <li>Activeer de VoiceOver rotor door met twee vingers te draaien.</li>
-                <li>Draai met twee vingers naar links of rechts tot de optie 'Kopregels' is geselecteerd.</li>
-                <li>Veeg met één vinger omlaag om naar de volgende kop te gaan.</li>
-                <li>Veeg met één vinger omhoog om naar de vorige kop te gaan.</li>
-            </ol>
-            <h1 tabindex="0" id="h1">Kop 1</h1>
-            <p>Deze informatie over kop 1 sla je over.</p>
-            <h1 tabindex="1">Kop 2</h1>
-            <p>Deze informatie over kop 2 sla je over.</p>
-            <h1 tabindex="2">Kop 3</h1>
-            <p>Deze informatie over kop 3 sla je over.</p>
-        """
         
+        return webView
+    }()
+
+    func load(_ content: String, title: String) {
         let html = """
-            <html lang="nl">
-                <head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                    <link rel="stylesheet" type="text/css" href="style.css">
-                    </style>
-                </head>
-            <body>
-            """ + content + """
-            </body>
-            </html>
+                <html lang="nl">
+                    <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                        <link rel="stylesheet" type="text/css" href="style.css">
+                    </head>
+                <body>
+                <h1>
+                """ + title + """
+                </h1>
+                """ + content + """
+                </body>
+                </html>
         """
+
         webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
         
         Accessibility.layoutChanged(webView)
-        
-        
-        let element = UIAccessibility.focusedElement(using: .notificationVoiceOver)
-        print("Focused element", element)
-        
-        delay(5.0) {
-            let element = UIAccessibility.focusedElement(using: .notificationVoiceOver)
-            print("Focused element after 5 seconds", element)
-            
-            
-        }
-        
     }
 }
 
+// MARK: - WKNavigationDelegate
+
+extension WebViewController: WKNavigationDelegate {
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
+            self.view.addSubview(webView)
+            webView.constraintToSafeArea()
+            self.view.bringSubviewToFront(webView)
+            
+            isLoading = false
+        }
+    }
+        
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let url = navigationAction.request.url else {
+            return
+        }
+        
+        if navigationAction.navigationType == .linkActivated {
+            if url.absoluteString.contains("appt.nl/kennisbank/") {
+                let articleViewController = UIStoryboard.article(type: .post, slug: url.lastPathComponent)
+                navigationController?.pushViewController(articleViewController, animated: true)
+            } else {
+                openWebsite(url)
+            }
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
+    }
+}
+
+
 /// MARK: - WKScriptMessageHandler
 
-extension VoiceOverWebViewController: WKScriptMessageHandler {
+extension WebViewController: WKScriptMessageHandler {
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if let dictionary = message.body as? Dictionary<String, AnyObject> {
             print("didReceive dictionary", dictionary)

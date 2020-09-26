@@ -11,7 +11,13 @@ import SafariServices
 
 extension UIViewController {
     
-    func openWebsite(url: URL, delegate: SFSafariViewControllerDelegate? = nil) {
+    func openWebsite(_ urlString: String, delegate: SFSafariViewControllerDelegate? = nil) {
+        if let url = URL(string: urlString) {
+            openWebsite(url, delegate: delegate)
+        }
+    }
+    
+    func openWebsite(_ url: URL, delegate: SFSafariViewControllerDelegate? = nil) {
         let configuration = SFSafariViewController.Configuration()
         configuration.barCollapsingEnabled = false
         configuration.entersReaderIfAvailable = false

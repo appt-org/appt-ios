@@ -10,7 +10,7 @@ import UIKit
 
 class TrainingViewController: TableViewController {
 
-    private var subjects: KeyValuePairs<String, [Subject]> {
+    private var courses: KeyValuePairs<String, [Course]> {
         return [
             "VoiceOver": [
                 .voiceOverEnable,
@@ -33,22 +33,22 @@ class TrainingViewController: TableViewController {
 extension TrainingViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return subjects.count
+        return courses.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return subjects[section].key
+        return courses[section].key
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects[section].value.count
+        return courses[section].value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let subject = subjects[indexPath.section].value[indexPath.row]
-        cell.setup(subject.description)
+        let course = courses[indexPath.section].value[indexPath.row]
+        cell.setup(course.title)
         
         return cell
     }
@@ -56,7 +56,7 @@ extension TrainingViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let subject = subjects[indexPath.section].value[indexPath.row]
-        performSegue(withIdentifier: subject.rawValue, sender: self)
+        let course = courses[indexPath.section].value[indexPath.row]
+        performSegue(withIdentifier: course.rawValue, sender: self)
     }
 }

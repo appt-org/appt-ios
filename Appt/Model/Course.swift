@@ -1,5 +1,5 @@
 //
-//  Subject.swift
+//  Course.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 23/07/2020.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-enum Subject: String {
+enum Course: String {
     case voiceOverEnable
     case voiceOverGestures
     case voiceOverActions
     
-    var description: String {
+    /* Title */
+    var title: String {
         switch self {
         case .voiceOverEnable:
             return "VoiceOver aanzetten"

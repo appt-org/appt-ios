@@ -13,6 +13,7 @@ enum Position {
     case top
     case bottom
 
+    /* Name */
     var name: String {
         if self == .top {
             return "position_top".localized

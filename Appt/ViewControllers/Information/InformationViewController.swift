@@ -10,11 +10,10 @@ import UIKit
 
 class InformationViewController: TableViewController {
 
-    private var subjects = [
-        "Over de app",
-        "Algemene voorwaarden",
-        "Privacybeleid",
-        "Toegankelijkheidsverklaring"
+    private var topics: [Topic] = [
+        .terms,
+        .privacy,
+        .accessibility
     ]
 
     override func viewDidLoad() {
@@ -29,15 +28,27 @@ class InformationViewController: TableViewController {
 
 extension InformationViewController {
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
+        if section == 0 {
+            return topics.count
+        } else {
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let subject = subjects[indexPath.row]
-        cell.setup(subject)
+        if indexPath.section == 0 {
+            let topic = topics[indexPath.row]
+            cell.setup(topic.title)
+        } else {
+            cell.setup("Ondersteund door het SIDN fonds")
+        }
         
         return cell
     }
@@ -45,8 +56,16 @@ extension InformationViewController {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Mede mogelijk gemaakt door het SIDN fonds"
+        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 {
+            let topic = topics[indexPath.row]
+            let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
+            navigationController?.pushViewController(articleViewController, animated: true)
+        } else {
+            openWebsite("https://www.sidnfonds.nl")
+        }
     }
 }

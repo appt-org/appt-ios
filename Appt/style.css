@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: normal;
-    src: url(SourceSansPro-Regular.ttf);
+    src: url('SourceSansPro-Regular.ttf');
 }
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 600;
-    src: url(SourceSansPro-SemiBold.ttf);
+    src: url('SourceSansPro-SemiBold.ttf');
 }
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: bold;
-    src: url(SourceSansPro-Bold.ttf);
+    src: url('SourceSansPro-Bold.ttf');
 }
 
 :root {
@@ -58,6 +58,13 @@ a[href*="//"]:not([href*="appt.nl/kennisbank"]):after {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0.5em 0;
+    font-size: 1.25rem;
+}
+h1 {
+    font-size: 1.75rem;
+}
+h2 {
+    font-size: 1.5rem;
 }
 
 p {
@@ -113,6 +120,13 @@ pre {
     border: 1px solid var(--code-background-color);
     border-left: 3px solid var(--color-primary);
     color: var(--code-text-color);
+}
+
+blockquote {
+    font-style: italic;
+}
+cite {
+    text-transform: uppercase;
 }
 
 @media screen and (prefers-color-scheme: dark) {

@@ -24,14 +24,14 @@ class API {
         // Access through shared property
     }
     
-    // MARK: - Get posts
+    // MARK: - Get articles
     
-    func getPosts(callback: @escaping ([Post]?, Error?) -> ()) {
-        getObject(path: "posts?per_page=20", parameters: ["_fields": "id,date,title"], type: [Post].self, callback: callback)
+    func getArticles<T: Article>(type: ArticleType, callback: @escaping ([T]?, Error?) -> ()) {
+        getObject(path: "\(type.path)s?per_page=20", parameters: ["_fields": "type, id,date,title"], type: [T].self, callback: callback)
     }
     
-    func getPosts(categories: [Category]?, tags: [Tag]?, callback: @escaping ([Post]?, Error?) -> ()) {
-        var parameters = ["_fields": "id,date,title"]
+    func getArticles<T: Article>(type: ArticleType, categories: [Category]?, tags: [Tag]?, callback: @escaping ([T]?, Error?) -> ()) {
+        var parameters = ["_fields": "type,id,date,title"]
         
         if let categories = categories?.selected.ids {
             parameters["categories"] = categories.joined(separator: ",")
@@ -41,19 +41,15 @@ class API {
             parameters["tags"] = tags.joined(separator: ",")
         }
         
-        print("Parameters", parameters)
-        
-        getObject(path: "posts?per_page=20", parameters: parameters, type: [Post].self, callback: callback)
-    }
-
-    // MARK: - Get post
-    
-    func getPost(id: Int, callback: @escaping (Post?, Error?) -> ()) {
-        getObject(path: "posts/\(id)", parameters: ["_fields": "id,date,modified,link,title,content,author,tags,categories"], type: Post.self, callback: callback)
+        getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
     }
     
-    func getPost(slug: String, callback: @escaping (Post?, Error?) -> ()) {
-        getObject(path: "posts?per_page=10", parameters: ["slug": slug, "_fields": "id,date,modified,link,title,content,author,tags,categories",], type: [Post].self) { (posts, error) in
+    func getArticle<T: Article>(type: ArticleType, id: Int, callback: @escaping (T?, Error?) -> ()) {
+        getObject(path: "\(type.path)/\(id)", parameters: ["_fields": "type,id,date,modified,link,title,content,author,tags,categories"], type: T.self, callback: callback)
+    }
+    
+    func getArticle<T: Article>(type: ArticleType, slug: String, callback: @escaping (T?, Error?) -> ()) {
+        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories",], type: [T].self) { (posts, error) in
             if let post = posts?.first {
                 callback(post, nil)
             } else {
@@ -61,7 +57,7 @@ class API {
             }
         }
     }
-    
+
     // MARK: - Get categories
     
     func getCategories(callback: @escaping ([Category]?, Error?) -> ()) {

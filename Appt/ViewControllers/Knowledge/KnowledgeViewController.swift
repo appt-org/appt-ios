@@ -41,7 +41,7 @@ class KnowledgeViewController: TableViewController {
             isLoading = true
         }
         
-        API.shared.getPosts(categories: categories, tags: tags) { (posts, error) in
+        API.shared.getArticles(type: .post, categories: categories, tags: tags) { (posts, error) in
             if let posts = posts {
                 self.onPosts(posts)
             } else if let error = error {
@@ -63,6 +63,7 @@ class KnowledgeViewController: TableViewController {
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
+            articleViewController.type = post.type
             articleViewController.id = post.id
         } else if let filterViewController = segue.destination as? FilterViewController {
             filterViewController.categories = categories
@@ -78,7 +79,7 @@ class KnowledgeViewController: TableViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableView
 
 extension KnowledgeViewController {
 

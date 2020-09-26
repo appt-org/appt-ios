@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  Article.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 26/05/2020.
@@ -8,8 +8,18 @@
 
 import Foundation
 
-class Post: Codable {
+enum ArticleType: String, Codable {
+    case page = "page"
+    case post = "post"
     
+    var path: String {
+        return rawValue + "s"
+    }
+}
+
+class Article: Codable {
+    
+    var type: ArticleType
     var id: Int
     var date: String
     var modified: String?
@@ -19,8 +29,9 @@ class Post: Codable {
     var tags: [Int]?
     var categories: [Int]?
     var link: String?
-    
+        
     private enum CodingKeys: String, CodingKey {
+        case type
         case id
         case date
         case modified
@@ -32,3 +43,6 @@ class Post: Codable {
         case categories
     }
 }
+
+typealias Page = Article
+typealias Post = Article
