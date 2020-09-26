@@ -33,4 +33,14 @@ class GestureView: UIView {
     func incorrect(_ feedback: String?) {
         delegate?.incorrect(gesture, feedback: feedback)
     }
+    
+    override class func accessibilityPerformEscape() -> Bool {
+        // This gesture is ignored to avoid unwanted behaviour.
+        return true
+    }
+    
+    override class func accessibilityPerformMagicTap() -> Bool {
+        // This gesture is ignored to avoid unwanted behaviour.
+        return true
+    }
 }

@@ -17,6 +17,6 @@ class EscapeGestureView: GestureView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.incorrect(gesture, feedback: "")
+        delegate?.incorrect(gesture, feedback: nil)
     }
 }

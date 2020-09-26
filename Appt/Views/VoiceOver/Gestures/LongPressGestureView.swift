@@ -50,7 +50,7 @@ class LongPressGestureView: GestureView {
         }
     }
     
-    private func onEvent(amountOfTaps: Int, amountOfFingers: Int, longPress: Bool) {
+    func onEvent(amountOfTaps: Int, amountOfFingers: Int, longPress: Bool) {
         guard fingers == amountOfFingers else {
             // Incorrect amount of fingers
             incorrect("feedback_fingers".localized(fingers, amountOfFingers))
