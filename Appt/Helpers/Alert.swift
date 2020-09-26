@@ -27,6 +27,15 @@ class Alert {
         }
     }
     
+    public static func error(_ message: String, viewController: UIViewController) {
+        let alert = Builder()
+            .title("error".localized)
+            .message(message)
+            .build()
+        
+        viewController.present(alert, animated: true)
+    }
+    
     class Builder {
         
         private var title: String?

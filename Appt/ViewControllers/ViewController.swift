@@ -15,17 +15,17 @@ class ViewController: UIViewController {
     var isLoading: Bool = false {
         didSet {
             foreground {
-                if (self.isLoading) {
+                if self.isLoading {
                     let indicator = UIActivityIndicatorView()
                     if #available(iOS 13.0, *) {
                         indicator.style = .large
                     } else {
                         indicator.style = .whiteLarge
                     }
-                    indicator.accessibilityLabel = "Aan het laden"
+                    indicator.accessibilityLabel = "loading".localized
                     
                     if let navigationBar = self.navigationController?.navigationBar {
-                        indicator.accessibilityFrame = CGRect(x: navigationBar.frame.minX, y: navigationBar.frame.maxY, width: 40, height: 40)
+                        indicator.accessibilityFrame = CGRect(x: navigationBar.frame.minX + 10, y: navigationBar.frame.maxY + 10, width: 40, height: 40)
                     }
                     
                     indicator.color = .primary
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                     indicator.widthAnchor.constraint(equalToConstant: 40).isActive = true
                     
                     self.view.bringSubviewToFront(indicator)
-                    Accessibility.layoutChanged(indicator)
+                    UIAccessibility.post(notification: .layoutChanged, argument: indicator)
                     
                     self.loadingIndicator = indicator
                 } else {

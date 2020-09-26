@@ -36,11 +36,11 @@ class SlideGestureView: LongPressGestureView {
             // Step 3: check if dragged horizontally
             if let startLocation = startLocation, abs(location.x - startLocation.x) > THRESHOLD {
                 completed = true
-                delegate?.correct(gesture)
+                correct()
             }
         } else if !completed {
             startLocation = nil
-            delegate?.incorrect(gesture, feedback: "feedback_distance".localized(fingers))
+            incorrect("feedback_distance".localized(fingers))
         }
     }
 }

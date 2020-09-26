@@ -32,7 +32,7 @@ class DefaultGestureView: LongPressGestureView {
             
             if count > THRESHOLD {
                 completed = true
-                delegate?.correct(gesture)
+                correct()
             }
         } else if sender.state == .ended {
             count = 0

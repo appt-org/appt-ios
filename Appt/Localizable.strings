@@ -6,6 +6,10 @@
   Copyright © 2020 Abra B.V. All rights reserved.
 */
 
+/* General */
+"loading" = "Aan het laden";
+"error" = "Foutmelding";
+
 /* Gestures */
 "gesture_touch_title" = "Een onderdeel selecteren en uitspreken";
 "gesture_touch_description" = "Raak het scherm aan om een onderdeel te selecteren en uit te spreken.";
@@ -129,6 +133,7 @@
 "position_bottom" = "onderaan";
 
 /* Feedback */
+"feedback_touch" = "Tik op het scherm met één vinger";
 "feedback_swipe" = "Maak een veegbeweging in plaats van een aanraking";
 "feedback_tap" = "Tik op het scherm in plaats van te vegen";
 "feedback_distance" = "Beweeg je vinger verder";

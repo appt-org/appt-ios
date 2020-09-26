@@ -10,7 +10,7 @@ import UIKit
 
 protocol GestureViewDelegate {
     func correct(_ gesture: Gesture)
-    func incorrect(_ gesture: Gesture, feedback: String?)
+    func incorrect(_ gesture: Gesture, feedback: String)
 }
 
 class GestureView: UIView {
@@ -30,7 +30,7 @@ class GestureView: UIView {
         delegate?.correct(gesture)
     }
     
-    func incorrect(_ feedback: String?) {
+    func incorrect(_ feedback: String) {
         delegate?.incorrect(gesture, feedback: feedback)
     }
     

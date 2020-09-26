@@ -16,6 +16,8 @@ class VoiceOverEnableViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        
+        view.accessibilityElements = [textView]
         Accessibility.layoutChanged(textView)
     }
     

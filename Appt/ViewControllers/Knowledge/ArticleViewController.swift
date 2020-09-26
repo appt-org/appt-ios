@@ -51,8 +51,8 @@ class ArticleViewController: WebViewController {
     }
     
     private func onError(_ error: Error) {
-        print("onError", error)
-        self.isLoading = false
+        isLoading = false
+        Alert.error(error.localizedDescription, viewController: self)
     }
     
     @IBAction private func onShareTapped(_ sender: Any) {

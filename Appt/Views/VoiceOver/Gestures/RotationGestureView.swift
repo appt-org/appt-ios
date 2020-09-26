@@ -34,28 +34,24 @@ class RotationGestureView: GestureView {
         
         guard rotated >= rotation else {
             if sender.state == .ended {
-                delegate?.incorrect(gesture, feedback: "feedback_degrees".localized(rotation.degrees, rotated.degrees))
+                incorrect("feedback_degrees".localized(rotation.degrees, rotated.degrees))
             }
             return
         }
 
         detected = true
-        delegate?.correct(gesture)
+        correct()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
-        var feedback: String? = nil
-
         if let fingerCount = event?.allTouches?.count {
             if fingerCount == fingers {
-                feedback = "Maak een draaibeweging in plaats van een aanraking"
+                incorrect("Maak een draaibeweging in plaats van een aanraking")
             } else {
-                feedback = "feedback_fingers".localized(fingers, fingerCount)
+                incorrect("feedback_fingers".localized(fingers, fingerCount))
             }
         }
-
-        delegate?.incorrect(gesture, feedback: feedback)
     }
 }

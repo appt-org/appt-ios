@@ -8,15 +8,14 @@
 
 import UIKit
 
-class TouchGestureView: GestureView {
+class TouchGestureView: TapGestureView {
 
-    convenience init(gesture: Gesture, numberOfTaps: Int) {
-        self.init(gesture: gesture)
-        accessibilityTraits = .allowsDirectInteraction
-    }
+    private var taps: Int = 1
+    private var fingers: Int = 1
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.correct(gesture)
+        
+        correct()
     }
 }

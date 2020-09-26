@@ -65,7 +65,7 @@ enum Gesture: String {
     var view: GestureView {
         switch self {
         case .touch:
-            return TouchGestureView(gesture: self)
+            return TouchGestureView(gesture: self, taps: 1, fingers: 1)
         case .swipeRight:
             return SwipeGestureView(gesture: self, direction: .right, fingers: 1)
         case .swipeLeft:

@@ -11,12 +11,12 @@ import UIKit
 class EscapeGestureView: GestureView {
 
     override func accessibilityPerformEscape() -> Bool {
-        delegate?.correct(gesture)
+        correct()
         return true
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        delegate?.incorrect(gesture, feedback: nil)
+        incorrect("Fout gebaar")
     }
 }
