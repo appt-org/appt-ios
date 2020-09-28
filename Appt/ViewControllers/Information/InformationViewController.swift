@@ -12,11 +12,19 @@ class InformationViewController: TableViewController {
     
     @IBOutlet private var shareItem: UIBarButtonItem!
     
-    private var topics: [Topic] = [
-        .terms,
-        .privacy,
-        .accessibility
-    ]
+    private var topics: KeyValuePairs<String, [Topic]> {
+        return [
+            "Juridisch": [
+                .terms,
+                .privacy,
+                .accessibility
+            ],
+            "Overig": [
+                .source,
+                .sidnfonds
+            ]
+        ]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,43 +50,35 @@ class InformationViewController: TableViewController {
 extension InformationViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return topics.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return topics[section].key
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return topics.count
-        } else {
-            return 1
-        }
+        return topics[section].value.count
     }
-    
+        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        if indexPath.section == 0 {
-            let topic = topics[indexPath.row]
-            cell.title = topic.title
-        } else {
-            cell.title = "Ondersteund door het SIDN fonds"
-        }
+        cell.topic = topics[indexPath.section].value[indexPath.row]
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-        
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let topic = topics[indexPath.section].value[indexPath.row]
+        
         if indexPath.section == 0 {
-            let topic = topics[indexPath.row]
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)
         } else {
-            openWebsite("https://www.sidnfonds.nl")
+            openWebsite(topic.slug)
         }
     }
 }

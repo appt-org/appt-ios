@@ -14,6 +14,9 @@ enum Topic: String {
     case privacy
     case accessibility
     
+    case source
+    case sidnfonds
+    
     /** Title */
     var title: String {
         switch self {
@@ -23,6 +26,10 @@ enum Topic: String {
             return "Privacybeleid"
         case .accessibility:
             return "Toegankelijkheidsverklaring"
+        case .source:
+            return "Bekijk de broncode"
+        case .sidnfonds:
+            return "Ondersteund door het SIDN fonds"
         }
     }
 
@@ -35,6 +42,10 @@ enum Topic: String {
             return "privacybeleid"
         case .accessibility:
             return "toegankelijkheidsverklaring"
+        case .source:
+            return "https://github.com/appt-nl/appt-ios"
+        case .sidnfonds:
+            return "https://www.sidnfonds.nl"
         }
     }
 }

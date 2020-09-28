@@ -82,4 +82,12 @@ class TitleTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    var topic: Topic? {
+        didSet {
+            guard let topic = topic else { return }
+            
+            title = topic.title
+        }
+    }
 }
