@@ -31,6 +31,7 @@ class Alert {
         let alert = Builder()
             .title("error".localized)
             .message(message)
+            .action("ok".localized)
             .build()
         
         viewController.present(alert, animated: true)

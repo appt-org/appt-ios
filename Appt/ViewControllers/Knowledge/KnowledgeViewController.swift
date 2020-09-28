@@ -10,12 +10,15 @@ import UIKit
 
 class KnowledgeViewController: TableViewController {
 
+    @IBOutlet private var filterItem: UIBarButtonItem!
+    
     private var posts = [Post]()
     var categories: [Category]?
     var tags: [Tag]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterItem.title = "article_filter".localized
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
@@ -41,26 +44,18 @@ class KnowledgeViewController: TableViewController {
             isLoading = true
         }
         
-        API.shared.getArticles(type: .post, categories: categories, tags: tags) { (posts, error) in
-            if let posts = posts {
-                self.onPosts(posts)
-            } else if let error = error {
-                self.onError(error)
+        API.shared.getArticles(type: .post, categories: categories, tags: tags) { (response) in
+            if let posts = response.result {
+                self.posts = posts
+                self.tableView.reloadData()
+            } else if let error = response.error {
+                self.showError(error)
             }
             self.refreshControl.endRefreshing()
             self.isLoading = false
         }
     }
     
-    private func onPosts(_ posts: [Post]) {
-        self.posts = posts
-        self.tableView.reloadData()
-    }
-    
-    private func onError(_ error: Error) {
-        print("Error", error)
-    }
-        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
             articleViewController.type = post.type

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +22,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OfQ-Vc-5zq" secondAttribute="trailing" id="SZw-66-h31"/>
                             <constraint firstItem="OfQ-Vc-5zq" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="p0Q-AY-dw4"/>
                             <constraint firstItem="OfQ-Vc-5zq" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="rf3-ga-rdP"/>
                             <constraint firstItem="OfQ-Vc-5zq" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="va1-OA-3IE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Trainingen" id="TjN-LN-ec4"/>
@@ -120,17 +121,24 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Cmp-mH-dB3"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="bottom" secondItem="Cmp-mH-dB3" secondAttribute="bottom" id="5FU-49-tzQ"/>
                             <constraint firstAttribute="trailing" secondItem="H7A-DJ-NIb" secondAttribute="trailing" id="Wdn-PO-V7x"/>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="Y0q-fq-zUg"/>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="leading" secondItem="7ZC-mj-Xf6" secondAttribute="leading" id="ci4-Zd-lRv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Cmp-mH-dB3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Informatie" id="j1G-uk-QOi"/>
+                    <navigationItem key="navigationItem" title="Informatie" id="j1G-uk-QOi">
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="icon_share" id="s04-b1-5ak">
+                            <connections>
+                                <action selector="onShareTapped:" destination="9ka-Zl-jpa" id="BI3-os-pfu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="shareItem" destination="s04-b1-5ak" id="tHz-lU-bjP"/>
                         <outlet property="tableView" destination="H7A-DJ-NIb" id="naI-1F-9T4"/>
                     </connections>
                 </viewController>
@@ -168,24 +176,25 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="JsZ-rN-lEj"/>
                             <constraint firstAttribute="trailing" secondItem="yQ7-KK-qa2" secondAttribute="trailing" id="hHA-zZ-EAA"/>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="hYS-qp-JZF"/>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="kFH-ge-phE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Kennisbank" id="Eca-T4-Kgs">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="NuM-BA-M8T">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" image="icon_filter" id="NuM-BA-M8T">
                             <connections>
                                 <action selector="doFilter:" destination="8rJ-Kc-sve" id="Gng-ZF-GpE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterItem" destination="NuM-BA-M8T" id="MgI-gN-ks8"/>
                         <outlet property="tableView" destination="yQ7-KK-qa2" id="Sir-OM-mfv"/>
                         <segue destination="atb-WW-ou0" kind="show" identifier="filter" id="3K9-nh-VFn"/>
                         <segue destination="M9J-A7-CSC" kind="show" identifier="article" id="FFz-wi-Zia"/>
@@ -202,8 +211,8 @@
                     <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3vx-lt-Y3v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0a9-EO-ZYJ">
                         <barButtonItem key="rightBarButtonItem" title="Share" image="icon_share" id="v1n-Il-5xE">
@@ -212,6 +221,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="shareItem" destination="v1n-Il-5xE" id="wAQ-Ul-sij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSm-e6-Gnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,14 +242,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="VnM-R3-Y2b"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cjm-Pv-ci9" firstAttribute="top" secondItem="VnM-R3-Y2b" secondAttribute="top" id="6nv-Gf-eHm"/>
                             <constraint firstAttribute="bottom" secondItem="cjm-Pv-ci9" secondAttribute="bottom" id="Hpy-TU-yoC"/>
                             <constraint firstAttribute="trailing" secondItem="cjm-Pv-ci9" secondAttribute="trailing" id="S18-xW-Yx2"/>
                             <constraint firstItem="cjm-Pv-ci9" firstAttribute="leading" secondItem="Ug1-0x-YXE" secondAttribute="leading" id="ehr-wL-afA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VnM-R3-Y2b"/>
                     </view>
                     <navigationItem key="navigationItem" title="Filter" id="sbV-8X-zOi">
                         <barButtonItem key="rightBarButtonItem" title="Toepassen" id="fAe-56-Afw">
@@ -277,9 +289,25 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_filter" width="25" height="25"/>
         <image name="icon_share" width="25" height="25"/>
         <image name="tab_info" width="25" height="25"/>
         <image name="tab_knowledge" width="25" height="25"/>
         <image name="tab_training" width="25" height="25"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

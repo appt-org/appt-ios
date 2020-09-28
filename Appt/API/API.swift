@@ -26,11 +26,11 @@ class API {
     
     // MARK: - Get articles
     
-    func getArticles<T: Article>(type: ArticleType, callback: @escaping ([T]?, Error?) -> ()) {
-        getObject(path: "\(type.path)s?per_page=20", parameters: ["_fields": "type, id,date,title"], type: [T].self, callback: callback)
+    func getArticles<T: Article>(type: ArticleType, callback: @escaping (Response<[T]>) -> ()) {
+        getObject(path: "\(type.path)?per_page=20", parameters: ["_fields": "type, id,date,title"], type: [T].self, callback: callback)
     }
     
-    func getArticles<T: Article>(type: ArticleType, categories: [Category]?, tags: [Tag]?, callback: @escaping ([T]?, Error?) -> ()) {
+    func getArticles<T: Article>(type: ArticleType, categories: [Category]?, tags: [Tag]?, callback: @escaping (Response<[T]>) -> ()) {
         var parameters = ["_fields": "type,id,date,title"]
         
         if let categories = categories?.selected.ids {
@@ -44,42 +44,46 @@ class API {
         getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
     }
     
-    func getArticle<T: Article>(type: ArticleType, id: Int, callback: @escaping (T?, Error?) -> ()) {
+    func getArticle<T: Article>(type: ArticleType, id: Int, callback: @escaping (Response<T>) -> ()) {
         getObject(path: "\(type.path)/\(id)", parameters: ["_fields": "type,id,date,modified,link,title,content,author,tags,categories"], type: T.self, callback: callback)
     }
     
-    func getArticle<T: Article>(type: ArticleType, slug: String, callback: @escaping (T?, Error?) -> ()) {
-        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories",], type: [T].self) { (posts, error) in
-            if let post = posts?.first {
-                callback(post, nil)
+    func getArticle<T: Article>(type: ArticleType, slug: String, callback: @escaping (Response<T>) -> ()) {
+        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories",], type: [T].self) { (response) in
+            if let article = response.result?.first {
+                callback(Response(result: article, total: response.total, pages: response.pages, error: response.error))
             } else {
-                callback(nil, error)
+                callback(Response(error: response.error))
             }
         }
     }
 
     // MARK: - Get categories
     
-    func getCategories(callback: @escaping ([Category]?, Error?) -> ()) {
+    func getCategories(callback: @escaping (Response<[Category]>) -> ()) {
         getObject(path: "categories", parameters: ["_fields": "id,count,description,name"], type: [Category].self, callback: callback)
     }
     
     // MARK: - Get tags
        
-    func getTags(callback: @escaping ([Tag]?, Error?) -> ()) {
+    func getTags(callback: @escaping (Response<[Tag]>) -> ()) {
        getObject(path: "tags", parameters: ["_fields": "id,count,description,name"], type: [Tag].self, callback: callback)
     }
     
     // MARK: - Get filters
        
     func getFilters(callback: @escaping ([Category]?, [Tag]?, Error?) -> ()) {
-        getCategories { (categories, error1) in
-            if let categories = categories {
-                self.getTags { (tags, error2) in
-                    callback(categories, tags, error2)
+        getCategories { (response1) in
+            if let categories = response1.result {
+                self.getTags { (response2) in
+                    if let tags = response2.result {
+                        callback(categories, tags, nil)
+                    } else {
+                        callback(nil, nil, response2.error)
+                    }
                 }
             } else {
-                callback(nil, nil, error1)
+                callback(nil, nil, response1.error)
             }
         }
     }
@@ -89,31 +93,16 @@ class API {
 
 extension API {
     
-    private func postObject<T: Decodable>(path: String, data: Encodable?, type: T.Type, callback: @escaping(T?, Error?) -> ()) {
+    private func postObject<T: Decodable>(path: String, data: Encodable?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
         let parameters = data?.asDictionary ?? nil
         retrieveObject(path: path, method: .post, parameters: parameters, encoding: JSONEncoding.default, type: type, callback: callback)
     }
     
-    private func getObject<T: Decodable>(path: String, parameters: Parameters?, type: T.Type, callback:   @escaping(T?, Error?) -> ()) {
+    private func getObject<T: Decodable>(path: String, parameters: Parameters?, type: T.Type, callback:   @escaping(Response<T>) -> ()) {
         retrieveObject(path: path, method: .get, parameters: parameters, encoding: URLEncoding.default, type: type, callback: callback)
     }
     
-    private func retrieveObject<T: Decodable>(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, type: T.Type, callback: @escaping(T?, Error?) -> ()) {
-        retrieveData(path: path, method: method, parameters: parameters, encoding: encoding) { (data, error) in
-            if let data = data {
-              do {
-                  let object = try self.decoder.decode(type.self, from: data)
-                  callback(object, nil)
-              } catch {
-                  callback(nil, error)
-              }
-            } else {
-                callback(nil, error)
-            }
-        }
-    }
-    
-    private func retrieveData(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, callback: @escaping (Data?, Error?) -> ()) {
+    private func retrieveObject<T: Decodable>(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, type: T.Type, callback: @escaping(Response<T>) -> ()) {
         guard let url = URL(string: Config.endpoint + path) else { return }
         
         Alamofire.request(url,
@@ -123,30 +112,8 @@ extension API {
                           headers: self.headers
         ).validate(statusCode: 200..<300)
          .responseJSON { (response) in
-            if response.result.isSuccess, let data = response.data {
-                //print("JSON", String.init(data: data, encoding: .utf8))
-                callback(data, nil)
-            } else if let error = response.result.error {
-                callback(nil, error)
-            } else {
-                callback(nil, response.error)
-            }
-        }
-    }
-    
-    private func download(url: URL, destination: @escaping DownloadRequest.DownloadFileDestination, callback: @escaping (URL?, Error?) -> ()) {
-        Alamofire.download(url,
-                           method: .get,
-                           parameters: nil,
-                           encoding: JSONEncoding.default,
-                           headers: headers,
-                           to: destination
-        ).response { response in
-            if response.error == nil, let filePath = response.destinationURL?.path, let url = URL(string: "file://\(filePath)") {
-                callback(url, nil)
-            } else {
-                callback(nil, response.error)
-            }
+            let response = Response<T>(response)
+            callback(response)
         }
     }
 }

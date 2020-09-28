@@ -12,6 +12,8 @@ import SafariServices
 
 class ArticleViewController: WebViewController {
     
+    @IBOutlet private var shareItem: UIBarButtonItem!
+    
     var type: ArticleType!
     var id: Int?
     var slug: String?
@@ -19,17 +21,27 @@ class ArticleViewController: WebViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shareItem.isEnabled = false
+        shareItem.title = "article_share".localized
+        
         getArticle()
     }
     
     private func getArticle() {
         isLoading = true
         
-        let callback = { (article: Article?, error: Error?) in
-            if let article = article {
-                self.onArticle(article)
-            } else if let error = error {
-                self.onError(error)
+        let callback = { (response: Response<Article>) in
+            if let article = response.result {
+                self.article = article
+                self.shareItem.isEnabled = true
+                guard let content = article.content?.rendered else {
+                    return
+                }
+                self.load(content, title: article.title.rendered)
+            } else if let error = response.error {
+                self.isLoading = false
+                self.showError(error)
             }
         }
         
@@ -40,27 +52,11 @@ class ArticleViewController: WebViewController {
         }
     }
     
-    private func onArticle(_ article: Article) {
-        self.article = article
-
-        guard let content = article.content?.rendered else {
-            return
-        }
-        
-        load(content, title: article.title.rendered)
-    }
-    
-    private func onError(_ error: Error) {
-        isLoading = false
-        Alert.error(error.localizedDescription, viewController: self)
-    }
-    
     @IBAction private func onShareTapped(_ sender: Any) {
-        guard let link = article?.link else {
+        guard let link = article?.link, let url = URL(string: link) else {
             return
         }
-        
-        let shareViewController = UIActivityViewController(activityItems: [link], applicationActivities: [])
+        let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
         shareViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         present(shareViewController, animated: true)
     }

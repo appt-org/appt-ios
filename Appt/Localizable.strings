@@ -9,6 +9,11 @@
 /* General */
 "loading" = "Aan het laden";
 "error" = "Foutmelding";
+"ok" = "Oké";
+"cancel" = "Annuleren";
+"article_share" = "Deel artikel";
+"article_filter" = "Filter artikelen";
+"app_share" = "Deel app";
 
 /* Gestures */
 "gesture_touch_title" = "Een onderdeel selecteren en uitspreken";

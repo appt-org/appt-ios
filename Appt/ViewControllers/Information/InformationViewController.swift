@@ -9,7 +9,9 @@
 import UIKit
 
 class InformationViewController: TableViewController {
-
+    
+    @IBOutlet private var shareItem: UIBarButtonItem!
+    
     private var topics: [Topic] = [
         .terms,
         .privacy,
@@ -19,8 +21,19 @@ class InformationViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        shareItem.title = "app_share".localized
+        
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
+    }
+    
+    @IBAction private func onShareTapped(_ sender: Any) {
+        guard let url = URL(string: "https://appt.nl/app") else {
+            return
+        }
+        let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
+        shareViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
+        present(shareViewController, animated: true)
     }
 }
 

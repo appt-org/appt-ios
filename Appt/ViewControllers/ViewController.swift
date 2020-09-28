@@ -159,3 +159,12 @@ extension ViewController {
         print("keyboardWillHide")
     }
 }
+
+// MARK: - Alerts
+
+extension ViewController {
+    
+    func showError(_ error: Error) {
+        Alert.error(error.localizedDescription, viewController: self)
+    }
+}
