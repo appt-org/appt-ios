@@ -18,68 +18,84 @@
 			<string>%d vingers</string>
 		</dict>
 	</dict>
-    <key>feedback_taps</key>
+	<key>feedback_taps</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Tik %#@taps@ in plaats van %#@taps@</string>
+		<key>taps</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 keer</string>
+			<key>other</key>
+			<string>%d keer</string>
+		</dict>
+	</dict>
+	<key>feedback_longpress</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Houd je %#@fingers@ langer op het scherm</string>
+		<key>fingers</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>vinger</string>
+			<key>other</key>
+			<string>vingers</string>
+		</dict>
+	</dict>
+	<key>feedback_distance</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Beweeg je %#@fingers@ op het scherm</string>
+		<key>fingers</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>vinger</string>
+			<key>other</key>
+			<string>vingers</string>
+		</dict>
+	</dict>
+	<key>feedback_degrees</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>Draai meer dan %#@degrees@, je draaide %#@degrees@</string>
+		<key>degrees</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d graad</string>
+			<key>other</key>
+			<string>%d graden</string>
+		</dict>
+	</dict>
+    <key>articles_loaded</key>
     <dict>
         <key>NSStringLocalizedFormatKey</key>
-        <string>Tik %#@taps@ in plaats van %#@taps@</string>
-        <key>taps</key>
+        <string>Er zijn %#@articles@ geladen</string>
+        <key>articles</key>
         <dict>
             <key>NSStringFormatSpecTypeKey</key>
             <string>NSStringPluralRuleType</string>
             <key>NSStringFormatValueTypeKey</key>
             <string>d</string>
             <key>one</key>
-            <string>1 keer</string>
+            <string>%d artikel</string>
             <key>other</key>
-            <string>%d keer</string>
-        </dict>
-    </dict>
-    <key>feedback_longpress</key>
-    <dict>
-        <key>NSStringLocalizedFormatKey</key>
-        <string>Houd je %#@fingers@ langer op het scherm</string>
-        <key>fingers</key>
-        <dict>
-            <key>NSStringFormatSpecTypeKey</key>
-            <string>NSStringPluralRuleType</string>
-            <key>NSStringFormatValueTypeKey</key>
-            <string>d</string>
-            <key>one</key>
-            <string>vinger</string>
-            <key>other</key>
-            <string>vingers</string>
-        </dict>
-    </dict>
-    <key>feedback_distance</key>
-    <dict>
-        <key>NSStringLocalizedFormatKey</key>
-        <string>Beweeg je %#@fingers@ op het scherm</string>
-        <key>fingers</key>
-        <dict>
-            <key>NSStringFormatSpecTypeKey</key>
-            <string>NSStringPluralRuleType</string>
-            <key>NSStringFormatValueTypeKey</key>
-            <string>d</string>
-            <key>one</key>
-            <string>vinger</string>
-            <key>other</key>
-            <string>vingers</string>
-        </dict>
-    </dict>
-    <key>feedback_degrees</key>
-    <dict>
-        <key>NSStringLocalizedFormatKey</key>
-        <string>Draai meer dan %#@degrees@, je draaide %#@degrees@</string>
-        <key>degrees</key>
-        <dict>
-            <key>NSStringFormatSpecTypeKey</key>
-            <string>NSStringPluralRuleType</string>
-            <key>NSStringFormatValueTypeKey</key>
-            <string>d</string>
-            <key>one</key>
-            <string>%d graad</string>
-            <key>other</key>
-            <string>%d graden</string>
+            <string>%d artikelen</string>
         </dict>
     </dict>
 </dict>

@@ -78,7 +78,7 @@
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
 		28E267A524A5FF360025215C /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A424A5FF360025215C /* Gesture.swift */; };
 		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
-		28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FilterViewController.swift */; };
+		28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FiltersViewController.swift */; };
 		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
 		28F42FAB24FF95860028E560 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F42FAA24FF95860028E560 /* Action.swift */; };
@@ -161,7 +161,7 @@
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		28E267A424A5FF360025215C /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
-		28EFEBA12487E90A0070879A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		28EFEBA12487E90A0070879A /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
 		28F42FAA24FF95860028E560 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				2899FFB52481125A009D8102 /* ArticleViewController.swift */,
-				28EFEBA12487E90A0070879A /* FilterViewController.swift */,
+				28EFEBA12487E90A0070879A /* FiltersViewController.swift */,
 				2877F6D1247D6E9200605677 /* KnowledgeViewController.swift */,
 			);
 			path = Knowledge;
@@ -578,7 +578,7 @@
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28FBED96251F6094009CA3FA /* Topic.swift in Sources */,
-				28EFEBA22487E90A0070879A /* FilterViewController.swift in Sources */,
+				28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,

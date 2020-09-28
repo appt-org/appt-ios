@@ -44,6 +44,10 @@ class WebViewController: ViewController {
 
         webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
     }
+    
+    func onLoaded() {
+        // Can be overridden
+    }
 }
 
 // MARK: - WKNavigationDelegate
@@ -52,14 +56,16 @@ extension WebViewController: WKNavigationDelegate {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
+            isLoading = false
+            
             view.addSubview(webView)
             webView.constraintToSafeArea()
             view.bringSubviewToFront(webView)
             
-            isLoading = false
+            onLoaded()
         }
     }
-        
+            
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else {
             return

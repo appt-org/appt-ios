@@ -26,21 +26,20 @@ class API {
     
     // MARK: - Get articles
     
-    func getArticles<T: Article>(type: ArticleType, callback: @escaping (Response<[T]>) -> ()) {
-        getObject(path: "\(type.path)?per_page=20", parameters: ["_fields": "type, id,date,title"], type: [T].self, callback: callback)
-    }
+    func getArticles<T: Article>(type: ArticleType, page: Int, categories: [Category]? = nil, tags: [Tag]? = nil, callback: @escaping (Response<[T]>) -> ()) {
+        var parameters: [String: Any] = [
+            "_fields": "type,id,date,title",
+            "page": page
+        ]
     
-    func getArticles<T: Article>(type: ArticleType, categories: [Category]?, tags: [Tag]?, callback: @escaping (Response<[T]>) -> ()) {
-        var parameters = ["_fields": "type,id,date,title"]
-        
-        if let categories = categories?.selected.ids {
-            parameters["categories"] = categories.joined(separator: ",")
+        if let categoryIDs = categories?.selected.ids {
+            parameters["categories"] = categoryIDs.joined(separator: ",")
         }
         
-        if let tags = tags?.selected.ids {
-            parameters["tags"] = tags.joined(separator: ",")
+        if let tagIDs = tags?.selected.ids {
+            parameters["tags"] = tagIDs.joined(separator: ",")
         }
-        
+       
         getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
     }
     
@@ -49,7 +48,7 @@ class API {
     }
     
     func getArticle<T: Article>(type: ArticleType, slug: String, callback: @escaping (Response<T>) -> ()) {
-        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories",], type: [T].self) { (response) in
+        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories"], type: [T].self) { (response) in
             if let article = response.result?.first {
                 callback(Response(result: article, total: response.total, pages: response.pages, error: response.error))
             } else {

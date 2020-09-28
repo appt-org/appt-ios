@@ -1,14 +1,15 @@
 //
-//  FilterViewController.swift
+//  FiltersViewController.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 03/06/2020.
 //  Copyright © 2020 Abra B.V. All rights reserved.
 //
 
+import Accessibility
 import UIKit
 
-class FilterViewController: TableViewController {
+class FiltersViewController: TableViewController {
     
     var categories: [Category]?
     var tags: [Tag]?
@@ -61,6 +62,15 @@ class FilterViewController: TableViewController {
     }
     
     @IBAction func onSaveTapped(_ sender: Any) {
+        apply()
+    }
+    
+    override func accessibilityPerformMagicTap() -> Bool {
+        apply()
+        return true
+    }
+    
+    private func apply() {
         performSegue(withIdentifier: "applyFilters", sender: self)
     }
     
@@ -68,14 +78,13 @@ class FilterViewController: TableViewController {
         if let knowledgeViewController = segue.destination as? KnowledgeViewController {
             knowledgeViewController.categories = self.categories
             knowledgeViewController.tags = self.tags
-            print("Passed filters")
         }
     }
 }
 
 // MARK: - UITableViewDataSource
 
-extension FilterViewController {
+extension FiltersViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let _ = categories, let _ = tags {

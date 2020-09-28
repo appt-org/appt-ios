@@ -12,7 +12,7 @@
 "ok" = "Oké";
 "cancel" = "Annuleren";
 "article_share" = "Deel artikel";
-"article_filter" = "Filter artikelen";
+"articles_filter" = "Filter artikelen";
 "app_share" = "Deel app";
 
 /* Gestures */

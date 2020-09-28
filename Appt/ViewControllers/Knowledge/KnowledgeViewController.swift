@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Accessibility
 
 class KnowledgeViewController: TableViewController {
 
     @IBOutlet private var filterItem: UIBarButtonItem!
     
     private var posts = [Post]()
+    private var page = 1
+    private var pages: Int?
+    
     var categories: [Category]?
     var tags: [Tag]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterItem.title = "article_filter".localized
+        filterItem.title = "articles_filter".localized
         
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
@@ -27,26 +31,54 @@ class KnowledgeViewController: TableViewController {
         // Get posts
         getPosts()
     }
+        
+    private func reset() {
+        page = 1
+        pages = nil
+        posts.removeAll()
+        tableView.reloadData()
+    }
     
-    @IBAction func doFilter(_ sender: Any) {
+    @IBAction private func doFilter(_ sender: Any) {
         performSegue(.filter, sender: self)
     }
     
-    override func refresh(_ refreshControl: UIRefreshControl) {
-        posts.removeAll()
-        tableView.reloadData()
+    @IBAction private func applyFilters(_ segue: UIStoryboardSegue) {
+        reset()
+        getPosts()
+    }
         
+    override func refresh(_ refreshControl: UIRefreshControl) {
+        reset()
         getPosts()
     }
     
+    override func loadMore() {
+        if let pages = pages, page <= pages {
+            getPosts()
+        }
+    }
+    
     private func getPosts() {
-        if !refreshControl.isRefreshing {
-            isLoading = true
+        if isLoading {
+            return
         }
         
-        API.shared.getArticles(type: .post, categories: categories, tags: tags) { (response) in
+        isLoading = true
+        
+        API.shared.getArticles(type: .post, page: page, categories: categories, tags: tags) { (response) in
+            self.page += 1
+            self.pages = response.pages
+            
             if let posts = response.result {
-                self.posts = posts
+                Accessibility.announce("articles_loaded".localized(posts.count))
+                
+                if self.page > 1 {
+                    self.posts.append(contentsOf: posts)
+                } else {
+                    self.posts = posts
+                }
+                
                 self.tableView.reloadData()
             } else if let error = response.error {
                 self.showError(error)
@@ -60,17 +92,10 @@ class KnowledgeViewController: TableViewController {
         if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
             articleViewController.type = post.type
             articleViewController.id = post.id
-        } else if let filterViewController = segue.destination as? FilterViewController {
-            filterViewController.categories = categories
-            filterViewController.tags = tags
+        } else if let filtersViewController = segue.destination as? FiltersViewController {
+            filtersViewController.categories = categories
+            filtersViewController.tags = tags
         }
-    }
-    
-    @IBAction func applyFilters(_ segue: UIStoryboardSegue) {
-        posts.removeAll()
-        tableView.reloadData()
-        
-        getPosts()
     }
 }
 
@@ -86,7 +111,7 @@ extension KnowledgeViewController {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let post = posts[indexPath.row]
-        cell.setup(post.title.decoded)
+        cell.title = post.title.decoded
         
         return cell
     }

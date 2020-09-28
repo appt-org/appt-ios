@@ -58,9 +58,9 @@ extension InformationViewController {
         
         if indexPath.section == 0 {
             let topic = topics[indexPath.row]
-            cell.setup(topic.title)
+            cell.title = topic.title
         } else {
-            cell.setup("Ondersteund door het SIDN fonds")
+            cell.title = "Ondersteund door het SIDN fonds"
         }
         
         return cell

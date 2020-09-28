@@ -229,10 +229,10 @@
             </objects>
             <point key="canvasLocation" x="2439" y="-358"/>
         </scene>
-        <!--Filter-->
+        <!--Filters-->
         <scene sceneID="AO4-V7-lVX">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="atb-WW-ou0" customClass="FilterViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" id="atb-WW-ou0" customClass="FiltersViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug1-0x-YXE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +251,7 @@
                             <constraint firstItem="cjm-Pv-ci9" firstAttribute="leading" secondItem="Ug1-0x-YXE" secondAttribute="leading" id="ehr-wL-afA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Filter" id="sbV-8X-zOi">
+                    <navigationItem key="navigationItem" title="Filters" id="sbV-8X-zOi">
                         <barButtonItem key="rightBarButtonItem" title="Toepassen" id="fAe-56-Afw">
                             <connections>
                                 <action selector="onSaveTapped:" destination="atb-WW-ou0" id="4TR-z9-E9t"/>
@@ -260,7 +260,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cjm-Pv-ci9" id="UAN-xP-uA7"/>
-                        <segue destination="yPk-cc-0a2" kind="unwind" identifier="applyFilters" unwindAction="applyFilters:" id="OuI-yd-aJd"/>
+                        <segue destination="yPk-cc-0a2" kind="unwind" identifier="applyFilters" unwindAction="applyFilters:" id="WcY-TQ-ckD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixZ-Gj-dLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

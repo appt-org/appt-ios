@@ -6,6 +6,7 @@
 //  Copyright © 2020 Abra B.V. All rights reserved.
 //
 
+import Accessibility
 import UIKit
 import WebKit
 import SafariServices
@@ -50,6 +51,10 @@ class ArticleViewController: WebViewController {
         } else if let slug = slug {
             API.shared.getArticle(type: type, slug: slug, callback: callback)
         }
+    }
+    
+    override func onLoaded() {
+        Accessibility.announce("Het artikel is geladen")
     }
     
     @IBAction private func onShareTapped(_ sender: Any) {

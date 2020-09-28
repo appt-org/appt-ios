@@ -31,7 +31,11 @@ class TableViewController: ViewController {
     }()
     
     @objc func refresh(_ refreshControl: UIRefreshControl) {
-        
+        // Should be overridden to handle refresh logic
+    }
+    
+    func loadMore() {
+        // Can be overridden to implement 'infinite scrolling'
     }
 }
 
@@ -56,6 +60,12 @@ extension TableViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension TableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == tableView.numberOfSections - 1, indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            loadMore()
+        }
+    }
         
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView, let label = header.textLabel {
