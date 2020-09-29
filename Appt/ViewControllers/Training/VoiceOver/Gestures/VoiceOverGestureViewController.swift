@@ -13,12 +13,12 @@ import Accessibility
 class VoiceOverGestureViewController: ViewController {
     
     @IBOutlet private var headerLabel: UILabel!
-    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var feedbackLabel: UILabel!
     
     var gesture: Gesture!
     var gestures: [Gesture]?
     
-    private let ERROR_THRESHOLD = 3
+    private var errorLimit = 5
     private var errorCount = 0
 
     private lazy var gestureView: GestureView = {
@@ -34,13 +34,12 @@ class VoiceOverGestureViewController: ViewController {
         title = gesture.title
         
         headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
-        headerLabel.text = gesture.title
+        headerLabel.text = gesture.description
         
-        descriptionLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .title2)
-        descriptionLabel.text = gesture.description
+        feedbackLabel.font = .sourceSansPro(weight: .semibold, size: 18, style: .title2)
+        feedbackLabel.text = nil
         
         gestureView.delegate = self
-        
         view.accessibilityElements = [gestureView]
         Accessibility.layoutChanged(gestureView)
     }
@@ -60,7 +59,7 @@ class VoiceOverGestureViewController: ViewController {
         Alert.Builder()
             .title(gesture.title)
             .message(gesture.explanation)
-            .action("Doorgaan") { (action) in
+            .action("continue".localized) { (action) in
                 Accessibility.screenChanged(self.gestureView)
             }.present(in: self)
     }
@@ -75,7 +74,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         
         // Check if single gesture
         guard var gestures = self.gestures else {
-            Alert.toast("Correct gebaar!", duration: 2.5, viewController: self) {
+            Alert.toast("gesture_correct".localized, duration: 3.0, viewController: self) {
                 self.navigationController?.popViewController(animated: true)
             }
             return
@@ -84,9 +83,8 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         // Check if all gestures have been completed
         guard gestures.count > 1 else {
             Alert.Builder()
-                .title("Training afgerond")
-                .message("Je hebt alle gebaren succesvol uitgevoerd!")
-                .action("Afronden") { (action) in
+                .title("gesture_completed".localized)
+                .action("finish".localized) { (action) in
                     self.navigationController?.popViewController(animated: true)
                 }.present(in: self)
             return
@@ -97,30 +95,45 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             return
         }
         
-        Alert.toast("Correct gebaar!", duration: 2.5, viewController: self) {
+        Alert.toast("gesture_correct".localized, duration: 3.0, viewController: self) {
             gestures.remove(at: 0)
             viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[0], gestures: gestures)
             self.navigationController?.setViewControllers(viewControllers, animated: true)
         }
     }
     
-    func incorrect(_ gesture: Gesture, feedback: String = "Fout gebaar") {
-        if errorCount < ERROR_THRESHOLD {
-            Alert.toast(feedback, duration: 2.5, viewController: self) {
-                Accessibility.screenChanged(self.gestureView)
-            }
-        } else {
-            Alert.Builder()
-            .title(feedback)
-            .message("Je hebt het gebaar \(errorCount) keer fout uitgevoerd. Wil je doorgaan of stoppen?")
-            .action("Stoppen", style: .cancel) { (action) in
-                self.navigationController?.popViewController(animated: true)
-            }
-            .action("Doorgaan") { (action) in
-                Accessibility.screenChanged(self.gestureView)
-            }.present(in: self)
-        }
-        
+    func incorrect(_ gesture: Gesture, feedback: String) {
         errorCount += 1
+        
+        if errorCount >= errorLimit {
+            // Provide an option to stop because it is hard to exit the screen with direct interaction enabled
+            Alert.Builder()
+                .title("gesture_incorrect".localized(errorCount))
+                .action("stop".localized, style: .cancel) { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                .action("continue".localized) { (action) in
+                    self.errorLimit += 5
+                    Accessibility.screenChanged(self.gestureView)
+                }.present(in: self)
+            
+        } else {
+            // Show feedback and announce it to VoiceOver users
+            Accessibility.announce(feedback)
+
+            if feedbackLabel.text != nil {
+                // Update text with fade effect for attention purposes
+                UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    self.feedbackLabel.alpha = 0.1
+                }, completion: { _ in
+                    UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                        self.feedbackLabel.text = feedback
+                        self.feedbackLabel.alpha = 1.0
+                    })
+                })
+            } else {
+                feedbackLabel.text = feedback
+            }
+        }
     }
 }

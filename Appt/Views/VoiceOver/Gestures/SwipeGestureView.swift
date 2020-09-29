@@ -36,7 +36,7 @@ class SwipeGestureView: GestureView {
     @objc func onSwipe(_ sender: UISwipeGestureRecognizer) {
         guard fingers == sender.numberOfTouchesRequired else {
             // Incorrect amount of fingers
-            incorrect("feedback_fingers".localized(fingers, sender.numberOfTouchesRequired))
+            incorrect("feedback_swipe_fingers".localized(fingers, sender.numberOfTouchesRequired))
             return
         }
         

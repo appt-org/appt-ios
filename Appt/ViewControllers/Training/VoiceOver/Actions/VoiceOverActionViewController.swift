@@ -34,14 +34,6 @@ class VoiceOverActionViewController: ScrollViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pasteboardChangedNotification), name: UIPasteboard.changedNotification, object: nil)
-        
-        registerKeyboardNotifications()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-        deregisterKeyboardNotifications()
-        super.viewWillDisappear(animated)
     }
     
     @objc func elementFocusedNotification(_ notification: Notification) {

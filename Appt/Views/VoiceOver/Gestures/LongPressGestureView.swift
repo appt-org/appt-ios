@@ -59,7 +59,7 @@ class LongPressGestureView: GestureView {
         
         guard taps == amountOfTaps else {
             // Incorrect amount of taps
-            incorrect("feedback_taps".localized(taps, amountOfTaps))
+            incorrect("feedback_taps_amount".localized(taps, amountOfTaps))
             return
         }
         

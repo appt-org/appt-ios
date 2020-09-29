@@ -35,7 +35,6 @@ class ArticleViewController: WebViewController {
         let callback = { (response: Response<Article>) in
             if let article = response.result {
                 self.article = article
-                self.shareItem.isEnabled = true
                 guard let content = article.content?.rendered else {
                     return
                 }
@@ -54,6 +53,7 @@ class ArticleViewController: WebViewController {
     }
     
     override func onLoaded() {
+        shareItem.isEnabled = true
         Accessibility.announce("Het artikel is geladen")
     }
     

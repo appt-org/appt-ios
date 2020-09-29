@@ -71,6 +71,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerStateNotifications()
+        registerKeyboardNotifications()
+        registerAccessibilityNotifications()
     }
     
     // View will disappear: deregister notifications
@@ -84,42 +86,57 @@ class ViewController: UIViewController {
 extension ViewController {
     
     // State: register notifications
-    func registerStateNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(onStateForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onStateActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onStateBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onStateResign), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onStateTerminate), name: UIApplication.willTerminateNotification, object: nil)
-    }
-    
-    // State: deregister notifications
-    func deregisterStateNotifications() {
-        NotificationCenter.default.removeObserver(self)
+    private func registerStateNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onStateForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onStateActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onStateBackground(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onStateResign(_:)), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onStateTerminate(_:)), name: UIApplication.willTerminateNotification, object: nil)
     }
     
     // State: entered foreground
+    @objc private func onStateForeground(_ notification: Notification) {
+        onStateForeground()
+    }
+    
     @objc func onStateForeground() {
-        print("onStateForeground")
+        // Can be overridden
     }
     
     // State: became active
+    @objc private func onStateActive(_ notification: Notification) {
+        onStateActive()
+    }
+    
     @objc func onStateActive() {
-        print("onStateActive")
+        // Can be overridden
     }
     
     // State: entered background
+    @objc private func onStateBackground(_ notification: Notification) {
+        onStateBackground()
+    }
+    
     @objc func onStateBackground() {
-        print("onStateBackground")
+        // Can be overridden
     }
     
     // State: will resign
+    @objc private func onStateResign(_ notification: Notification) {
+        onStateResign()
+    }
+    
     @objc func onStateResign() {
-        print("onStateResign")
+        // Can be overridden
     }
     
     // State: will terminate
+    @objc private func onStateTerminate(_ notification: Notification) {
+        onStateTerminate()
+    }
+    
     @objc func onStateTerminate() {
-        print("onStateTerminate")
+        // Can be overridden
     }
 }
 
@@ -128,31 +145,50 @@ extension ViewController {
 extension ViewController {
     
     // Keyboard: register notifications
-    func registerKeyboardNotifications() {
+    private func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    // Keyboard: deregister notificaitons
-    func deregisterKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    // Keyboard: will show (notification)
+    // Keyboard: will show
     @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            keyboardWillShow(frame: keyboardFrame.cgRectValue)
-        }
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        keyboardWillShow(frame: keyboardFrame.cgRectValue)
     }
     
-    // Keyboard: will show (frame)
     @objc func keyboardWillShow(frame: CGRect) {
-         print("keyboardWillShow", frame)
+        // Can be overridden
     }
     
     // Keyboard: will hide
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        keyboardWillHide()
+    }
+
     @objc func keyboardWillHide() {
         print("keyboardWillHide")
+    }
+}
+
+// MARK: - Accessibility notifications
+
+extension ViewController {
+    
+    // Accessibility: register notifications
+    private func registerAccessibilityNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(announcementFinished(_:)),name: UIAccessibility.announcementDidFinishNotification, object: nil)
+    }
+    
+    @objc private func announcementFinished(_ notification: Notification) {
+        guard let info = notification.userInfo else { return }
+        guard let announcement = info[UIAccessibility.announcementStringValueUserInfoKey] as? String else { return }
+        guard let success = info[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool else { return }
+        
+        announcementFinished(success: success, announcement: announcement)
+    }
+    
+    @objc func announcementFinished(success: Bool, announcement: String) {
+        print("Announcement finished, success: \(success), announcement: \(announcement)")
     }
 }
 

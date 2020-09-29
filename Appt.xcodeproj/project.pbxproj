@@ -338,8 +338,9 @@
 			children = (
 				2877F6D8247D6E9600605677 /* Assets.xcassets */,
 				2877F6DD247D6E9600605677 /* Info.plist */,
-				2877F6D5247D6E9200605677 /* Main.storyboard */,
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
+				2877F6D5247D6E9200605677 /* Main.storyboard */,
+				2893227B24C9860400EBB447 /* VoiceOver.storyboard */,
 				288554FC251A01EE00392FC3 /* Localizable.strings */,
 				2885551C251B491500392FC3 /* Localizable.stringsdict */,
 				2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */,
@@ -362,7 +363,6 @@
 		2893227524C9830300EBB447 /* VoiceOver */ = {
 			isa = PBXGroup;
 			children = (
-				2893227B24C9860400EBB447 /* VoiceOver.storyboard */,
 				286A093924FD35F300B4DBBE /* Actions */,
 				286A093824FD35E600B4DBBE /* Enable */,
 				286A093724FD35D000B4DBBE /* Gestures */,

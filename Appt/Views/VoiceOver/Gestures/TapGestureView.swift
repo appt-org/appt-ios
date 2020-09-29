@@ -40,13 +40,13 @@ class TapGestureView: GestureView {
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         guard fingers == sender.numberOfTouchesRequired else {
             // Incorrect amount of fingers
-            incorrect("feedback_fingers".localized(fingers, sender.numberOfTouchesRequired))
+            incorrect("feedback_taps_fingers".localized(fingers, sender.numberOfTouchesRequired))
             return
         }
         
         guard taps == sender.numberOfTapsRequired else {
             // Incorrect amount of taps
-            incorrect("feedback_taps".localized(taps, sender.numberOfTapsRequired))
+            incorrect("feedback_taps_amount".localized(taps, sender.numberOfTapsRequired))
             return
         }
         

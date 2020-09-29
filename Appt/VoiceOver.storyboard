@@ -16,6 +16,9 @@
         <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--VoiceOver gebaar-->
@@ -30,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="376" width="414" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                        <rect key="frame" x="187" y="0.0" width="40.5" height="25.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="382" height="25.5"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -38,16 +41,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                        <rect key="frame" x="164" y="33.5" width="86.5" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="16" y="33.5" width="382" height="23"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
-                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="U2L-JA-94c" firstAttribute="leading" secondItem="ZGs-5s-BAd" secondAttribute="leading" constant="16" id="1V7-Bx-aJw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oz8-fT-zLt" secondAttribute="trailing" constant="16" id="3bJ-xS-6pm"/>
+                                    <constraint firstAttribute="trailing" secondItem="U2L-JA-94c" secondAttribute="trailing" constant="16" id="B9V-U8-tfs"/>
+                                    <constraint firstItem="Oz8-fT-zLt" firstAttribute="leading" secondItem="ZGs-5s-BAd" secondAttribute="leading" constant="16" id="rki-Gj-Di1"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
@@ -67,7 +76,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionLabel" destination="Oz8-fT-zLt" id="L6l-G5-kKq"/>
+                        <outlet property="feedbackLabel" destination="Oz8-fT-zLt" id="Jit-Kh-1eZ"/>
                         <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
                         <segue destination="bcL-Kz-Vef" kind="unwind" identifier="gestureCompleted" unwindAction="gestureCompleted:" id="dEn-0e-Clx"/>
                     </connections>
@@ -250,6 +259,9 @@ Manier 3:
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
