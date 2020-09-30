@@ -166,7 +166,7 @@ extension ViewController {
     }
 
     @objc func keyboardWillHide() {
-        print("keyboardWillHide")
+        // Can be overridden
     }
 }
 
@@ -188,7 +188,7 @@ extension ViewController {
     }
     
     @objc func announcementFinished(success: Bool, announcement: String) {
-        print("Announcement finished, success: \(success), announcement: \(announcement)")
+        // Can be overridden
     }
 }
 

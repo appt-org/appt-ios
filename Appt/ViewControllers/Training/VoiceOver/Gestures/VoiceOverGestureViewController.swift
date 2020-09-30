@@ -33,11 +33,11 @@ class VoiceOverGestureViewController: ViewController {
         super.viewDidLoad()
         title = gesture.title
         
-        headerLabel.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
+        headerLabel.font = .sourceSansPro(weight: .semibold, size: 20, style: .body)
         headerLabel.text = gesture.description
         
-        feedbackLabel.font = .sourceSansPro(weight: .semibold, size: 18, style: .title2)
-        feedbackLabel.text = nil
+        feedbackLabel.font = .sourceSansPro(weight: .semibold, size: 18, style: .body)
+        feedbackLabel.isHidden = true
         
         gestureView.delegate = self
         view.accessibilityElements = [gestureView]
@@ -74,7 +74,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         
         // Check if single gesture
         guard var gestures = self.gestures else {
-            Alert.toast("gesture_correct".localized, duration: 3.0, viewController: self) {
+            Alert.toast("gesture_correct".localized, duration: 2.5, viewController: self) {
                 self.navigationController?.popViewController(animated: true)
             }
             return
@@ -95,7 +95,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             return
         }
         
-        Alert.toast("gesture_correct".localized, duration: 3.0, viewController: self) {
+        Alert.toast("gesture_correct".localized, duration: 2.5, viewController: self) {
             gestures.remove(at: 0)
             viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[0], gestures: gestures)
             self.navigationController?.setViewControllers(viewControllers, animated: true)
@@ -121,8 +121,8 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             // Show feedback and announce it to VoiceOver users
             Accessibility.announce(feedback)
 
-            if feedbackLabel.text != nil {
-                // Update text with fade effect for attention purposes
+            if errorCount > 1 {
+                // Update text with fade effect to gain attention
                 UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
                     self.feedbackLabel.alpha = 0.1
                 }, completion: { _ in
@@ -133,6 +133,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
                 })
             } else {
                 feedbackLabel.text = feedback
+                feedbackLabel.isHidden = false
             }
         }
     }

@@ -58,7 +58,7 @@ class FiltersViewController: TableViewController {
     }
     
     private func onError(_ error: Error) {
-        print("Error", error)
+        showError(error)
     }
     
     @IBAction func onSaveTapped(_ sender: Any) {
@@ -71,7 +71,7 @@ class FiltersViewController: TableViewController {
     }
     
     private func apply() {
-        performSegue(withIdentifier: "applyFilters", sender: self)
+        performSegue(.applyFilters, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -96,9 +96,9 @@ extension FiltersViewController {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Categorieën"
+            return "filter_categories".localized
         } else {
-            return "Tags"
+            return "filter_tags".localized
         }
     }
     

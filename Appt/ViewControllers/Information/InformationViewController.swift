@@ -14,12 +14,12 @@ class InformationViewController: TableViewController {
     
     private var topics: KeyValuePairs<String, [Topic]> {
         return [
-            "Juridisch": [
+            "topic_legal".localized: [
                 .terms,
                 .privacy,
                 .accessibility
             ],
-            "Overig": [
+            "topic_other".localized: [
                 .source,
                 .sidnfonds
             ]

@@ -48,7 +48,7 @@ class RotationGestureView: GestureView {
         
         if let fingerCount = event?.allTouches?.count {
             if fingerCount == fingers {
-                incorrect("Maak een draaibeweging in plaats van een aanraking")
+                incorrect("feedback_rotate".localized)
             } else {
                 incorrect("feedback_fingers".localized(fingers, fingerCount))
             }

@@ -12,7 +12,7 @@ class TrainingViewController: TableViewController {
 
     private var courses: KeyValuePairs<String, [Course]> {
         return [
-            "VoiceOver": [
+            "training_voiceover".localized: [
                 .voiceOverEnable,
                 .voiceOverGestures,
                 .voiceOverActions,

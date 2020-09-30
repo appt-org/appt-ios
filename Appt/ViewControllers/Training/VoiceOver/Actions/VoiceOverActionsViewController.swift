@@ -12,11 +12,11 @@ class VoiceOverActionsViewController: TableViewController {
  
     private var actions: KeyValuePairs<String, [Action]> {
         return [
-            "Navigeren": [
+            "actions_navigate".localized: [
                 .headings,
                 .links
             ],
-            "Bewerken": [
+            "actions_edit".localized: [
                 .selection,
                 .copy,
                 .paste

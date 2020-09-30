@@ -14,14 +14,37 @@
 "finish" = "Afronden";
 "stop" = "Stoppen";
 "cancel" = "Annuleren";
-"article_share" = "Deel artikel";
-"articles_filter" = "Filter artikelen";
+
 "app_share" = "Deel app";
 
-/* Gestures */
+/* Articles */
+"articles_filter" = "Filter artikelen";
+
+/* Article */
+"article_share" = "Deel artikel";
+"article_loaded" = "Het artikel is geladen";
+
+/* Training */
+"training_voiceover" = "VoiceOver";
+
+/* Filter */
+"filter_categories" = "Categorieën";
+"filter_tags" = "Trefwoorden";
+
+/* Topic */
+"topic_legal" = "Juridisch";
+"topic_other" = "Overig";
+
+/* Gesture */
 "gesture_correct" = "Gebaar correct uitgevoerd!";
 "gesture_incorrect" = "Je hebt het gebaar %d keer fout uitgevoerd. Wil je doorgaan of stoppen?";
 "gesture_completed" = "Je hebt alle gebaren succesvol uitgevoerd!";
+
+"gestures_explore" = "Verkennen";
+"gestures_scroll" = "Scrollen";
+"gestures_actions" = "Handelingen";
+"gestures_controls" = "Bediening";
+"gestures_rotor" = "Rotor";
 
 "gesture_touch_title" = "Een onderdeel selecteren en uitspreken";
 "gesture_touch_description" = "Raak het scherm aan om een onderdeel te selecteren en uit te spreken.";
@@ -44,7 +67,7 @@
 "gesture_fourFingerTapBottom_explanation" = "Het kan handig zijn om naar de onderkant van het scherm te verspringen. Meestal zit hier een manier om te navigeren.\n\nDit gebaar is lastig om uit te voeren op kleine schermen. Je hoeft niet de vingers van dezelfde hand te gebruiken. Je kunt ookt twee vingers van je linkerhand en twee vingers van je rechterhand gebruiken.";
 
 "gesture_twoFingerSwipeUp_title" = "Volledig scherm laten voorlezen";
-"gesture_twoFingerSwipeUp_description" = "Veeg met twee vingers omhoog, om het volledig scherm voor te laten lezen.";
+"gesture_twoFingerSwipeUp_description" = "Veeg met twee vingers omhoog, om het volledige scherm voor te laten lezen.";
 "gesture_twoFingerSwipeUp_explanation" = "Dit gebaar kan van pas komen als je bijvoorbeeld een webpagina in zijn geheel laten voorlezen. Tik met twee vingers om te scherm om het voorlezen te stoppen.";
 
 "gesture_twoFingerSwipeDown_title" = "Scherm laten voorlezen vanaf geselecteerde onderdeel";
@@ -61,19 +84,19 @@
 
 "gesture_scrollUp_title" = "Eén pagina omlaag scrollen";
 "gesture_scrollUp_description" = "Veeg met drie vingers omhoog, om één pagina omlaag te scrollen.";
-"gesture_scrollUp_explanation" = "Gebruik dit gebaar wanner je omlaag wilt scrollen.";
+"gesture_scrollUp_explanation" = "Gebruik dit gebaar wanneer je omlaag wilt scrollen.";
 
 "gesture_scrollRight_title" = "Eén pagina naar rechts scrollen";
 "gesture_scrollRight_description" = "Veeg met drie vingers naar rechts, om één pagina naar rechts te scrollen.";
-"gesture_scrollRight_explanation" = "Gebruik dit gebaar wanner je naar rechts wilt scrollen.";
+"gesture_scrollRight_explanation" = "Gebruik dit gebaar wanneer je naar rechts wilt scrollen.";
 
 "gesture_scrollDown_title" = "Eén pagina omhoog scrollen";
 "gesture_scrollDown_description" = "Veeg met drie vingers omlaag, om één pagina omhoog te scrollen.";
-"gesture_scrollDown_explanation" = "Gebruik dit gebaar wanner je omhoog wilt scrollen.";
+"gesture_scrollDown_explanation" = "Gebruik dit gebaar wanneer je omhoog wilt scrollen.";
 
 "gesture_scrollLeft_title" = "Eén pagina naar links scrollen";
 "gesture_scrollLeft_description" = "Veeg met drie vingers naar links, om één pagina naar links te scrollen.";
-"gesture_scrollLeft_explanation" = "Gebruik dit gebaar wanner je naar links wilt scrollen.";
+"gesture_scrollLeft_explanation" = "Gebruik dit gebaar wanneer je naar links wilt scrollen.";
 
 "gesture_doubleTap_title" = "Het geselecteerde onderdeel activeren";
 "gesture_doubleTap_description" = "Tik tweemaal om het geselecteerde onderdeel te activeren.";
@@ -127,12 +150,21 @@
 "gesture_swipeDown_description" = "Veeg met één vinger omlaag, om het rotoronderdeel omlaag aan te passen.";
 "gesture_swipeDown_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel.";
 
-/* Actions */
+/* Action */
 "action_headings_title" = "Navigeren via koppen";
 "action_links_title" = "Navigeren via links";
 "action_selection_title" = "Tekst selecteren";
 "action_copy_title" = "Kopiëren";
 "action_paste_title" = "Plakken";
+
+"action_voiceover_disabled" = "VoiceOver staat uit";
+"action_voiceover_enable" = "Je moet VoiceOver aanzetten voordat je deze training kunt volgen.";
+"action_interaction_disabled" = "Interactie is uitgeschakeld";
+"action_completed" = "Training succesvol afgerond!";
+
+/* Actions */
+"actions_navigate" = "Navigeren";
+"actions_edit" = "Bewerken";
 
 /* Directions */
 "direction_up" = "omhoog";
@@ -147,6 +179,7 @@
 /* Feedback */
 "feedback_touch" = "Tik op het scherm met één vinger.";
 "feedback_swipe" = "Maak een veegbeweging in plaats van een aanraking.";
+"feedback_rotate" = "Maak een draaibeweging in plaats van een aanraking";
 "feedback_direction" = "Veeg %@ in plaats van %@.";
 "feedback_tap" = "Tik op het scherm in plaats van te vegen.";
 "feedback_distance" = "Beweeg je vinger verder.";

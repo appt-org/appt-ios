@@ -52,7 +52,7 @@ extension TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Override cellForRowAt")
+        fatalError("cellForRowAt() must be implemented")
     }
 }
 

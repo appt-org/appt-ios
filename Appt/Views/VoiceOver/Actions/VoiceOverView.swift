@@ -29,8 +29,6 @@ class VoiceOverView: UIView {
     
     // Called from the ViewController
     func elementFocusedNotification(_ notification: Notification) {
-        print("elementFocusedNotification")
-        
         guard let object = notification.userInfo?[UIAccessibility.focusedElementUserInfoKey] else {
             return
         }

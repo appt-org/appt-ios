@@ -32,6 +32,16 @@ class VoiceOverActionViewController: ScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        guard UIAccessibility.isVoiceOverRunning else {
+            Alert.Builder()
+                .title("action_voiceover_disabled".localized)
+                .message("action_voiceover_enable".localized)
+                .action("ok".localized) { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                }.present(in: self)
+            return
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(elementFocusedNotification), name: UIAccessibility.elementFocusedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pasteboardChangedNotification), name: UIPasteboard.changedNotification, object: nil)
     }
@@ -67,7 +77,7 @@ extension VoiceOverActionViewController: VoiceOverViewDelegate {
     func correct(_ action: Action) {
         self.action.completed = true
         
-        Alert.toast("Training succesvol afgerond!", duration: 3.0, viewController: self) {
+        Alert.toast("action_completed".localized, duration: 3.0, viewController: self) {
             self.navigationController?.popViewController(animated: true)
         }
     }

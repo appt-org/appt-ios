@@ -38,9 +38,8 @@ extension VoiceOverLinksView: UITextViewDelegate {
     // Ignore interactions with links to avoid unwanted actions
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if let viewController = UIApplication.shared.keyWindow?.rootViewController {
-            Alert.toast("Interactie is uitgeschakeld", duration: 2.0, viewController: viewController)
+            Alert.toast("action_interaction_disabled".localized, duration: 2.5, viewController: viewController)
         }
-        
         return false
     }
 }
