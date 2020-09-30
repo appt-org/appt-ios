@@ -23,6 +23,7 @@ class GestureView: UIView {
         self.gesture = gesture
         
         isAccessibilityElement = true
+        isMultipleTouchEnabled = true
         accessibilityLabel = gesture.description
     }
     

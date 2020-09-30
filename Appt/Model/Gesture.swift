@@ -101,7 +101,7 @@ enum Gesture: String {
         case .magicTap:
             return TapGestureView(gesture: self, taps: 2, fingers: 2)
         case .escape:
-            return EscapeGestureView(gesture: self)
+            return EscapeGestureView(gesture: self, fingers: 2)
         case .label:
             return LongPressGestureView(gesture: self, taps: 2, fingers: 2)
             

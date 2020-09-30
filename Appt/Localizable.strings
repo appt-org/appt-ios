@@ -182,6 +182,7 @@
 "feedback_touch" = "Tik op het scherm met één vinger.";
 "feedback_swipe" = "Maak een veegbeweging in plaats van een aanraking.";
 "feedback_rotate" = "Maak een draaibeweging in plaats van een aanraking";
+"feedback_zigzag" = "Maak een zigzaggende beweging.";
 "feedback_direction" = "Veeg %@ in plaats van %@.";
 "feedback_tap" = "Tik op het scherm in plaats van te vegen.";
 "feedback_distance" = "Beweeg je vinger verder.";
