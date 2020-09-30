@@ -48,7 +48,7 @@ extension TrainingViewController {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let course = courses[indexPath.section].value[indexPath.row]
-        cell.title = course.title
+        cell.setup(course.title)
         
         return cell
     }

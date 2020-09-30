@@ -117,12 +117,12 @@ extension FiltersViewController {
             guard let category = categories?[indexPath.row] else {
                 fatalError()
             }
-            cell.taxonomy = category
+            cell.setup(category)
         } else {
             guard let tag = tags?[indexPath.row] else {
                 fatalError()
             }
-            cell.taxonomy = tag
+            cell.setup(tag)
         }
         
         return cell

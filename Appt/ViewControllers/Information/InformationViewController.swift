@@ -64,7 +64,8 @@ extension InformationViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        cell.topic = topics[indexPath.section].value[indexPath.row]
+        let topic = topics[indexPath.section].value[indexPath.row]
+        cell.setup(topic.title)
         
         return cell
     }

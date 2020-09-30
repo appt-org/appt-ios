@@ -17,8 +17,8 @@
 :root {
     color-scheme: light dark;
     --color-primary: #d023be;
-    --code-background-color: #ddd;
-    --code-text-color: #000;
+    --color-secondary: #ddd;
+    --color-text: #000;
 }
 
 ::-moz-selection {
@@ -31,6 +31,7 @@
 * {
     box-sizing: inherit;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
     word-break: break-word;
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
@@ -38,6 +39,7 @@
 
 body, html, table {
     font-size: 1.05rem;
+    color: var(--color-text);
 }
 
 html {
@@ -75,7 +77,7 @@ figure {
     display: block !important;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
@@ -87,7 +89,7 @@ img {
 }
 
 figcaption {
-    color: #6d6d6d;
+    font-style: italic;
 }
 
 iframe {
@@ -116,10 +118,10 @@ pre {
     padding: 1em;
     page-break-inside: avoid;
     word-wrap: break-word;
-    background: var(--code-background-color);
-    border: 1px solid var(--code-background-color);
+    background: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
     border-left: 3px solid var(--color-primary);
-    color: var(--code-text-color);
+    color: var(--color-text);
 }
 
 blockquote {
@@ -131,7 +133,7 @@ cite {
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --code-background-color: #222;
-        --code-text-color: #fff;
+        --color-text: #fff;
+        --color-secondary: #222;
     }
 }

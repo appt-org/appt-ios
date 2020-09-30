@@ -103,7 +103,8 @@ extension VoiceOverGesturesViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        cell.gesture = gestures[indexPath.section].value[indexPath.row]
+        let gesture = gestures[indexPath.section].value[indexPath.row]
+        cell.setup(gesture)
         
         return cell
     }

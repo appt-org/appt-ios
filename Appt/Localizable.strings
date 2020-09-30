@@ -6,6 +6,8 @@
   Copyright © 2020 Abra B.V. All rights reserved.
 */
 
+"language" = "nl";
+
 /* General */
 "loading" = "Aan het laden";
 "error" = "Foutmelding";

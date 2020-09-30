@@ -111,7 +111,7 @@ extension KnowledgeViewController {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
         let post = posts[indexPath.row]
-        cell.title = post.title.decoded
+        cell.setup(post.title.decoded)
         
         return cell
     }

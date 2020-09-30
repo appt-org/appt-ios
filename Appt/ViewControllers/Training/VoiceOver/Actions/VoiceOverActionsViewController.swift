@@ -69,7 +69,8 @@ extension VoiceOverActionsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        cell.action = actions[indexPath.section].value[indexPath.row]
+        let action = actions[indexPath.section].value[indexPath.row]
+        cell.setup(action)
         
         return cell
     }

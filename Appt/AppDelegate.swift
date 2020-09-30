@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.tintColor = .primary
-        application.accessibilityLanguage = "nl"
+        application.accessibilityLanguage = "language".localized
         
         // States
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]
@@ -25,14 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = .background
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .headline)
+            .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .title1)
         ]
         
         // UIBarButtonItem style
         UIBarButtonItem.appearance().tintColor = .primary
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title1)
             ], for: state)
         }
         
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .primary
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title2)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title1)
             ], for: state)
         }
         
