@@ -27,11 +27,11 @@ class Alert {
         }
     }
     
-    public static func error(_ message: String, viewController: UIViewController) {
+    public static func error(_ message: String, viewController: UIViewController, callback: (() -> Void)? = nil) {
         let alert = Builder()
             .title("error".localized)
             .message(message)
-            .action("ok".localized)
+            .action("ok".localized, callback: callback)
             .build()
         
         viewController.present(alert, animated: true)
@@ -100,20 +100,22 @@ class Alert {
         }
         
         
-        func defaultAction(_ title: String = "Oké", handler: ((UIAlertAction) -> Void)? = nil) -> Builder {
-            return action(title, style: .default, handler: handler)
+        func defaultAction(_ title: String = "Oké", callback: (() -> Void)? = nil) -> Builder {
+            return action(title, style: .default, callback: callback)
         }
         
-        func cancelAction(_ title: String = "Annuleren", handler: ((UIAlertAction) -> Void)? = nil) -> Builder {
-            return action(title, style: .cancel, handler: handler)
+        func cancelAction(_ title: String = "Annuleren", callback: (() -> Void)? = nil) -> Builder {
+            return action(title, style: .cancel, callback: callback)
         }
         
-        func destructiveAction(_ title: String = "Verwijderen", handler: ((UIAlertAction) -> Void)? = nil) -> Builder {
-            return action(title, style: .destructive, handler: handler)
+        func destructiveAction(_ title: String = "Verwijderen", callback: (() -> Void)? = nil) -> Builder {
+            return action(title, style: .destructive, callback: callback)
         }
         
-        func action(_ title: String, style: UIAlertAction.Style = .default, handler: ((UIAlertAction) -> Void)? = nil) -> Builder {
-            let action = UIAlertAction(title: title, style: style, handler: handler)
+        func action(_ title: String, style: UIAlertAction.Style = .default, callback: (() -> Void)? = nil) -> Builder {
+            let action = UIAlertAction(title: title, style: style) { (action) in
+                callback?()
+            }
             actions.append(action)
             return self
         }

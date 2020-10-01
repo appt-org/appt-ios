@@ -39,9 +39,18 @@ class ArticleViewController: WebViewController {
                     return
                 }
                 self.load(content, title: article.title.rendered)
-            } else if let error = response.error {
+            } else {
                 self.isLoading = false
-                self.showError(error)
+                
+                if let error = response.error {
+                    self.showError(error) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else{
+                    self.showError("error_network".localized) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
             }
         }
         

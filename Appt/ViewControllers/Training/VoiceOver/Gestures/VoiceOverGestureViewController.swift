@@ -59,7 +59,7 @@ class VoiceOverGestureViewController: ViewController {
         Alert.Builder()
             .title(gesture.title)
             .message(gesture.explanation)
-            .action("continue".localized) { (action) in
+            .action("continue".localized) {
                 Accessibility.screenChanged(self.gestureView)
             }.present(in: self)
     }
@@ -84,7 +84,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         guard gestures.count > 1 else {
             Alert.Builder()
                 .title("gesture_completed".localized)
-                .action("finish".localized) { (action) in
+                .action("finish".localized) {
                     self.navigationController?.popViewController(animated: true)
                 }.present(in: self)
             return
@@ -109,10 +109,10 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             // Provide an option to stop because it is hard to exit the screen with direct interaction enabled
             Alert.Builder()
                 .title("gesture_incorrect".localized(errorCount))
-                .action("stop".localized, style: .cancel) { (action) in
+                .action("stop".localized, style: .cancel) {
                     self.navigationController?.popViewController(animated: true)
                 }
-                .action("continue".localized) { (action) in
+                .action("continue".localized) {
                     self.errorLimit += 5
                     Accessibility.screenChanged(self.gestureView)
                 }.present(in: self)

@@ -196,7 +196,11 @@ extension ViewController {
 
 extension ViewController {
     
-    func showError(_ error: Error) {
-        Alert.error(error.localizedDescription, viewController: self)
+    func showError(_ error: Error, callback: (() -> Void)? = nil) {
+        showError(error.localizedDescription, callback: callback)
+    }
+    
+    func showError(_ error: String, callback: (() -> Void)? = nil) {
+        Alert.error(error, viewController: self, callback: callback)
     }
 }

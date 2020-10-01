@@ -64,7 +64,9 @@ class KnowledgeViewController: TableViewController {
             return
         }
         
-        isLoading = true
+        if !refreshControl.isRefreshing {
+            isLoading = true
+        }
         
         API.shared.getArticles(type: .post, page: page, categories: categories, tags: tags) { (response) in
             self.page += 1

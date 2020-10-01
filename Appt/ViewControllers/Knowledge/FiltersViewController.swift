@@ -31,6 +31,8 @@ class FiltersViewController: TableViewController {
     
     private func getFilters() {
         if let categories = categories, let tags = tags {
+            refreshControl.endRefreshing()
+            isLoading = false
             onFilters(categories, tags)
             return
         }
