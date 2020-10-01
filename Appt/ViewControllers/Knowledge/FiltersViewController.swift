@@ -73,6 +73,10 @@ class FiltersViewController: TableViewController {
     }
     
     private func apply() {
+        Events.log(.filters, object: [
+            "categories": categories?.selected.names,
+            "tags": tags?.selected.names
+        ])
         performSegue(.applyFilters, sender: self)
     }
     

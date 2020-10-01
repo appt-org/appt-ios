@@ -17,6 +17,7 @@ class GestureView: UIView {
     
     var delegate: GestureViewDelegate?
     var gesture: Gesture!
+    var completed = false
     
     convenience init(gesture: Gesture) {
         self.init()
@@ -29,11 +30,16 @@ class GestureView: UIView {
     }
     
     func correct() {
-        delegate?.correct(gesture)
+        if !completed {
+            completed = true
+            delegate?.correct(gesture)
+        }
     }
     
     func incorrect(_ feedback: String) {
-        delegate?.incorrect(gesture, feedback: feedback)
+        if !completed {
+            delegate?.incorrect(gesture, feedback: feedback)
+        }
     }
     
     override func accessibilityPerformEscape() -> Bool {

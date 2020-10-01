@@ -13,7 +13,7 @@ enum Position {
     case top
     case bottom
 
-    /* Name */
+    /** Name */
     var name: String {
         if self == .top {
             return "position_top".localized
@@ -21,7 +21,8 @@ enum Position {
             return "position_bottom".localized
         }
     }
-        
+    
+    /** Determine position based on a recognizer and it's view */
     public static func from(recognizer: UIGestureRecognizer, view: UIView) -> Position {
         let location = recognizer.location(in: view)
         

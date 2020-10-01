@@ -33,7 +33,7 @@ enum Topic: String {
         }
     }
 
-    /* Slug */
+    /** Slug */
     var slug: String {
         switch self {
         case .terms:

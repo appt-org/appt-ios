@@ -16,6 +16,7 @@
 
 :root {
     color-scheme: light dark;
+    --color-background: #fff;
     --color-primary: #d023be;
     --color-secondary: #ddd;
     --color-text: #000;
@@ -40,6 +41,7 @@
 body, html, table {
     font-size: 1.05rem;
     color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 html {
@@ -131,8 +133,17 @@ cite {
     text-transform: uppercase;
 }
 
+hr {
+    margin: 2rem 0;
+    height: 2px;
+    border: 0;
+    background: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
 @media screen and (prefers-color-scheme: dark) {
     :root {
+        --color-background: #000;
         --color-text: #fff;
         --color-secondary: #222;
     }

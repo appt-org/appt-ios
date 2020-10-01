@@ -36,4 +36,7 @@ extension Array where Element == Taxonomy {
     var ids: [String] {
         return map { String($0.id) }
     }
+    var names: [String] {
+        return map { String($0.name) }
+    }
 }

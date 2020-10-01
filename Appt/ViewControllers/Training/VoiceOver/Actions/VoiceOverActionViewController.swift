@@ -18,6 +18,8 @@ class VoiceOverActionViewController: ScrollViewController {
         return action.view
     }()
     
+    private var focusedElements = 0
+    
     override func getView() -> UIView {
         return actionView
     }
@@ -47,6 +49,7 @@ class VoiceOverActionViewController: ScrollViewController {
     }
     
     @objc func elementFocusedNotification(_ notification: Notification) {
+        focusedElements += 1
         actionView.elementFocusedNotification(notification)
     }
     
@@ -76,6 +79,7 @@ extension VoiceOverActionViewController {
 extension VoiceOverActionViewController: VoiceOverViewDelegate {
     func correct(_ action: Action) {
         self.action.completed = true
+        Events.log(.actionCompleted, identifier: action.id, value: focusedElements)
         
         Alert.toast("action_completed".localized, duration: 3.0, viewController: self) {
             self.navigationController?.popViewController(animated: true)

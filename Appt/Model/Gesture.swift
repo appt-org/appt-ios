@@ -46,22 +46,27 @@ enum Gesture: String {
     case swipeUp
     case swipeDown
     
-    /** Title of the gesture */
+    /** Identifier */
+    var id: String {
+        return rawValue
+    }
+    
+    /** Title */
     var title: String {
         return NSLocalizedString("gesture_"+rawValue+"_title", comment: "")
     }
             
-    /** Description of the gesture */
+    /** Description */
     var description: String {
         return NSLocalizedString("gesture_"+rawValue+"_description", comment: "")
     }
     
-    /** Explanation of the gesture */
+    /** Explanation */
     var explanation: String {
         return NSLocalizedString("gesture_"+rawValue+"_explanation", comment: "")
     }
     
-    /** View to execute the gesture */
+    /** View */
     var view: GestureView {
         switch self {
         case .touch:
@@ -123,13 +128,13 @@ enum Gesture: String {
         }
     }
     
-    /** Completion state of the gesture */
+    /** Completion state */
     var completed: Bool {
         set {
-            UserDefaults.standard.set(newValue, forKey: rawValue)
+            UserDefaults.standard.set(newValue, forKey: id)
         }
         get {
-            return UserDefaults.standard.bool(forKey: rawValue)
+            return UserDefaults.standard.bool(forKey: id)
         }
     }
 }

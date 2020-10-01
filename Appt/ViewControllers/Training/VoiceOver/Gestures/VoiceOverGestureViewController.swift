@@ -71,6 +71,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
     
     func correct(_ gesture: Gesture) {
         self.gesture.completed = true
+        Events.log(.gestureCompleted, identifier: gesture.id, value: errorCount)
         
         // Check if single gesture
         guard var gestures = self.gestures else {

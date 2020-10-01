@@ -10,12 +10,15 @@ import Foundation
 
 extension String {
     var htmlDecoded: String {
-        let decoded = try? NSAttributedString(data: Data(utf8), options: [
-            .documentType: NSAttributedString.DocumentType.html,
-            .characterEncoding: String.Encoding.utf8.rawValue
-        ], documentAttributes: nil).string
-
-        return decoded ?? self
+        do {
+            return try NSAttributedString(data: Data(utf8), options: [
+                .documentType: NSAttributedString.DocumentType.html,
+                .characterEncoding: String.Encoding.utf8.rawValue
+            ], documentAttributes: nil).string
+        } catch {
+            print("Error decoding HTML: \(error)")
+        }
+        return self
     }
     
     var localized: String {
@@ -23,7 +26,6 @@ extension String {
     }
     
     func localized(_ arguments: CVarArg...) -> String {
-        //String.localizedStringWithFormat(NSLocalizedString("feedback_fingers", comment: ""), fingers, fingerCount)
         return String(format: self.localized, locale: .current, arguments: arguments)
     }
 }

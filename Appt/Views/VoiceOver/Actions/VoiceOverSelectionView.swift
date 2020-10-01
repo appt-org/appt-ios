@@ -11,7 +11,7 @@ import UIKit
 class VoiceOverSelectionView: VoiceOverView {
     
     @IBOutlet private var stackView: UIStackView!
-    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var textField: TextField!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -28,16 +28,16 @@ class VoiceOverSelectionView: VoiceOverView {
         
         textField.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
         textField.inputView = UIView()
-        textField.delegate = self
+        textField.selection = self
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - TextFieldDelegate
 
-extension VoiceOverSelectionView: UITextFieldDelegate {
+extension VoiceOverSelectionView: TextFieldDelegate {
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if let range = textField.selectedTextRange {
+    func textFieldDidChangeSelection(_ textField: TextField, range: UITextRange?) {
+        if let range = range {
             let length = textField.offset(from: range.start, to: range.end)
             
             if length > 0 {

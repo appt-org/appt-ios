@@ -8,6 +8,7 @@
 
 import UIKit
 import Accessibility
+import FirebaseAnalytics
 
 class ViewController: UIViewController {
 

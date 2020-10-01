@@ -13,7 +13,7 @@ enum Course: String {
     case voiceOverGestures
     case voiceOverActions
     
-    /* Title */
+    /** Title */
     var title: String {
         switch self {
         case .voiceOverEnable:

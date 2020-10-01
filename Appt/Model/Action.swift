@@ -19,12 +19,17 @@ enum Action: String {
     case copy
     case paste
     
+    /** Identifier */
+    var id: String {
+        return rawValue
+    }
+    
     /** Title */
     var title: String {
         return NSLocalizedString("action_"+rawValue+"_title", comment: "")
     }
     
-    /* View */
+    /** View */
     var view: VoiceOverView {
     switch self {
         case .headings:
@@ -44,10 +49,10 @@ enum Action: String {
     /** Completed? */
     var completed: Bool {
        set {
-           UserDefaults.standard.set(newValue, forKey: rawValue)
+           UserDefaults.standard.set(newValue, forKey: id)
        }
        get {
-           return UserDefaults.standard.bool(forKey: rawValue)
+           return UserDefaults.standard.bool(forKey: id)
        }
     }
 }

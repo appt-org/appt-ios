@@ -17,6 +17,7 @@
 		2835A05E2524B47D0011C788 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835A05D2524B47D0011C788 /* Direction.swift */; };
 		2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9C924D45808000FB3E6 /* TouchGestureView.swift */; };
 		2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */; };
+		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
 		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
 		2869ABFD24F7C503004962A7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2869ABFC24F7C503004962A7 /* style.css */; };
@@ -26,6 +27,7 @@
 		286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */; };
 		287063C724A380F9004E87AF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* InformationViewController.swift */; };
 		287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */; };
+		2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2870FF1B2525FC0F00377B44 /* TextField.swift */; };
 		287468E2247E60BB0089BB32 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E1247E60BB0089BB32 /* Content.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
@@ -77,6 +79,7 @@
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
+		28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E1A0842525D6C300604CFF /* GoogleService-Info.plist */; };
 		28E267A524A5FF360025215C /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A424A5FF360025215C /* Gesture.swift */; };
 		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
 		28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB52732524E41D00DE4DE9 /* _CGPoint.swift */; };
@@ -100,6 +103,7 @@
 		2835A05D2524B47D0011C788 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		2840D9C924D45808000FB3E6 /* TouchGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureView.swift; sourceTree = "<group>"; };
 		2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
+		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
 		2869ABFC24F7C503004962A7 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverActionViewController.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGestureViewController.swift; sourceTree = "<group>"; };
+		2870FF1B2525FC0F00377B44 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		287468E1247E60BB0089BB32 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		28E0C417247D8B46008B3CAD /* _NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NSObject.swift; sourceTree = "<group>"; };
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		28E1A06F2525CC6100604CFF /* _URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _URL.swift; sourceTree = "<group>"; };
+		28E1A0842525D6C300604CFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E267A424A5FF360025215C /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		28EB52732524E41D00DE4DE9 /* _CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CGPoint.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				2843827E24ED6D4F0015B2C5 /* Alert.swift */,
+				2841518D2525DAE100CB3750 /* Events.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2870FF1B2525FC0F00377B44 /* TextField.swift */,
 				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
@@ -343,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				2877F6D8247D6E9600605677 /* Assets.xcassets */,
+				28E1A0842525D6C300604CFF /* GoogleService-Info.plist */,
 				2877F6DD247D6E9600605677 /* Info.plist */,
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
 				2877F6D5247D6E9200605677 /* Main.storyboard */,
@@ -466,6 +475,7 @@
 				2877F6C6247D6E9200605677 /* Sources */,
 				2877F6C7247D6E9200605677 /* Frameworks */,
 				2877F6C8247D6E9200605677 /* Resources */,
+				28E1A0972525D7C100604CFF /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -483,7 +493,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Abra B.V.";
 				TargetAttributes = {
 					2877F6C9247D6E9200605677 = {
@@ -527,6 +537,7 @@
 				2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
 				288554FD251A01EE00392FC3 /* Localizable.strings in Resources */,
+				28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */,
 				2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */,
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
@@ -537,6 +548,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28E1A0972525D7C100604CFF /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		569406FEA48E95CE3D6B6218 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,6 +638,7 @@
 				2869ABFF24F7C84E004962A7 /* VoiceOverHeadingsView.swift in Sources */,
 				2892318024EC1BB900ED006B /* VoiceOverActionsViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
+				2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */,
 				28C5F82B24EC2A9000BA8F33 /* DefaultGestureView.swift in Sources */,
 				2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
@@ -626,6 +658,7 @@
 				2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */,
 				281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */,
 				28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */,
+				2841518E2525DAE100CB3750 /* Events.swift in Sources */,
 				288554F62519EFD300392FC3 /* ScrollViewController.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 			);
@@ -657,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -679,6 +713,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -703,7 +738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -717,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -739,6 +775,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -757,7 +794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

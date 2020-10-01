@@ -27,6 +27,8 @@ class WebViewController: ViewController {
     }()
 
     func load(_ content: String, title: String) {
+        Events.log(.article, identifier: title)
+        
         let html = """
                 <html lang="nl">
                     <head>
@@ -81,20 +83,6 @@ extension WebViewController: WKNavigationDelegate {
             decisionHandler(.cancel)
         } else {
             decisionHandler(.allow)
-        }
-    }
-}
-
-
-// MARK: - WKScriptMessageHandler
-
-extension WebViewController: WKScriptMessageHandler {
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if let dictionary = message.body as? Dictionary<String, AnyObject> {
-            print("didReceive dictionary", dictionary)
-        } else {
-            print("didReceive", message.body)
         }
     }
 }

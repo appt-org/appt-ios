@@ -12,8 +12,6 @@ import AVKit
 class DefaultGestureView: LongPressGestureView {
 
     private var THRESHOLD = 25
-    
-    private var completed = false
     private var count = 0
     
     convenience init(gesture: Gesture) {
@@ -21,7 +19,9 @@ class DefaultGestureView: LongPressGestureView {
     }
     
     override func onLongPress(_ sender: UILongPressGestureRecognizer) {
-        guard !completed else { return }
+        if completed {
+            return
+        }
         
         if sender.state == .began {
             // Step 1: double tap long press
@@ -31,7 +31,6 @@ class DefaultGestureView: LongPressGestureView {
             count += 1
             
             if count > THRESHOLD {
-                completed = true
                 correct()
             }
         } else if sender.state == .ended {

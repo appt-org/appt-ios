@@ -73,10 +73,6 @@ class EscapeGestureView: GestureView {
     }
     
     private func onPanDirections(_ directions: [Direction]) {
-        for direction in directions {
-            print(direction)
-        }
-
         if directions == [.right, .bottomRight, .bottom, .bottomRight] {
             correct()
         } else {

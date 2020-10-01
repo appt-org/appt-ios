@@ -12,9 +12,7 @@ import AVFoundation
 class SlideGestureView: LongPressGestureView {
 
     private var THRESHOLD:CGFloat = 50
-    
     private var startLocation: CGPoint?
-    private var completed = false
     
     convenience init(gesture: Gesture) {
         self.init(gesture: gesture, taps: 2, fingers: 1)
@@ -22,7 +20,7 @@ class SlideGestureView: LongPressGestureView {
     
     // Step 1: long press
     override func onLongPress(_ sender: UILongPressGestureRecognizer) {
-        guard !completed else {
+        if completed {
             return
         }
         
@@ -35,10 +33,9 @@ class SlideGestureView: LongPressGestureView {
         } else if sender.state == .changed {
             // Step 3: check if dragged horizontally
             if let startLocation = startLocation, abs(location.x - startLocation.x) > THRESHOLD {
-                completed = true
                 correct()
             }
-        } else if !completed {
+        } else {
             startLocation = nil
             incorrect("feedback_distance".localized(fingers))
         }

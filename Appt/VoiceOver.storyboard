@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -26,14 +26,14 @@
             <objects>
                 <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mik-Nu-glv">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
-                                <rect key="frame" x="60" y="157" width="776" height="56.5"/>
+                                <rect key="frame" x="16" y="391.5" width="382" height="25.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                        <rect key="frame" x="368" y="0.0" width="40.5" height="25.5"/>
+                                        <rect key="frame" x="171" y="0.0" width="40.5" height="25.5"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -41,8 +41,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                        <rect key="frame" x="351" y="33.5" width="74.5" height="23"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="191" y="0.0" width="0.0" height="0.0"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -85,11 +85,11 @@
             <objects>
                 <viewController storyboardIdentifier="VoiceOverEnableViewController" id="s6D-mk-tDH" customClass="VoiceOverEnableViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6r-8O-cSD">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ys-yDR">
-                                <rect key="frame" x="60" y="0.0" width="776" height="370"/>
+                                <rect key="frame" x="16" y="0.0" width="382" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Voordat je VoiceOver aanzet is het verstandig om eerst de gebaren te leren.
 
@@ -139,11 +139,11 @@ Manier 3:
             <objects>
                 <viewController storyboardIdentifier="VoiceOverGesturesViewController" id="lzE-O4-a6G" customClass="VoiceOverGesturesViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2M-mb-Zk6">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dc-yG-7nt">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -178,11 +178,11 @@ Manier 3:
             <objects>
                 <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver handelingen" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NXp-JN-5F7">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -210,7 +210,7 @@ Manier 3:
             <objects>
                 <viewController storyboardIdentifier="VoiceOverActionViewController" hidesBottomBarWhenPushed="YES" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ll-hW-NKm">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-jd-bhL">
