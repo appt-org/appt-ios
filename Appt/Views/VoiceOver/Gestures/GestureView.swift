@@ -24,6 +24,7 @@ class GestureView: UIView {
         
         isAccessibilityElement = true
         isMultipleTouchEnabled = true
+        accessibilityTraits = .allowsDirectInteraction
         accessibilityLabel = gesture.description
     }
     
@@ -35,12 +36,12 @@ class GestureView: UIView {
         delegate?.incorrect(gesture, feedback: feedback)
     }
     
-    override class func accessibilityPerformEscape() -> Bool {
+    override func accessibilityPerformEscape() -> Bool {
         // This gesture is ignored to avoid unwanted behaviour.
         return true
     }
     
-    override class func accessibilityPerformMagicTap() -> Bool {
+    override func accessibilityPerformMagicTap() -> Bool {
         // This gesture is ignored to avoid unwanted behaviour.
         return true
     }

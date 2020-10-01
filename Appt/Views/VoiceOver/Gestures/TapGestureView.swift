@@ -19,7 +19,6 @@ class TapGestureView: GestureView {
         self.taps = taps
         self.fingers = fingers
         self.position = position
-        accessibilityTraits = .allowsDirectInteraction
         
         // Recognize multiple amount of fingers and multiple amount of taps for improved feedback
         for tapsRequired in 1...4 {

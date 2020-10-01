@@ -19,8 +19,6 @@ class LongPressGestureView: GestureView {
         self.taps = taps
         self.fingers = fingers
         
-        accessibilityTraits = .allowsDirectInteraction
-        
         for tapsRequired in 1...4 {
             for fingersRequired in 1...4 {
                 let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))

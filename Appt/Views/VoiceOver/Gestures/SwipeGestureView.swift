@@ -18,8 +18,6 @@ class SwipeGestureView: GestureView {
         self.direction = direction
         self.fingers = fingers
         
-        accessibilityTraits = .allowsDirectInteraction
-        
         // Recognize all directions and multiple amount of fingers for improved feedback
         let directions: [UISwipeGestureRecognizer.Direction] = [.up, .right, .down, .left]
         for direction in directions {

@@ -17,8 +17,6 @@ class RotationGestureView: GestureView {
     convenience init(gesture: Gesture, rotation: CGFloat) {
         self.init(gesture: gesture)
         self.rotation = rotation
-        
-        accessibilityTraits = .allowsDirectInteraction
 
         let recognizer = UIRotationGestureRecognizer(target: self, action: #selector(onRotate(_:)))
         addGestureRecognizer(recognizer)

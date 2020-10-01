@@ -11,6 +11,7 @@
 /* General */
 "loading" = "Aan het laden";
 "error" = "Foutmelding";
+"error_network" = "Het is niet gelukt om het artikel te laden. Controleer je internetverbinding en probeer het opnieuw.";
 "ok" = "Oké";
 "continue" = "Doorgaan";
 "finish" = "Afronden";

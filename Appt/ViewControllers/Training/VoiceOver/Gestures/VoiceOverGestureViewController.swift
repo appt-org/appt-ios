@@ -105,36 +105,31 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
     func incorrect(_ gesture: Gesture, feedback: String) {
         errorCount += 1
         
+        // Announce & display feedback
+        Accessibility.announce(feedback)
+
+        UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.feedbackLabel.isHidden = false
+            self.feedbackLabel.alpha = 0.1
+        }, completion: { _ in
+            UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.feedbackLabel.text = feedback
+                self.feedbackLabel.alpha = 1.0
+            })
+        })
+
+        // Provide an option to stop after each five attempts
         if errorCount >= errorLimit {
-            // Provide an option to stop because it is hard to exit the screen with direct interaction enabled
             Alert.Builder()
                 .title("gesture_incorrect".localized(errorCount))
                 .action("stop".localized, style: .cancel) {
                     self.navigationController?.popViewController(animated: true)
                 }
                 .action("continue".localized) {
-                    self.errorLimit += 5
+                    self.errorLimit = self.errorLimit * 2
                     Accessibility.screenChanged(self.gestureView)
                 }.present(in: self)
             
-        } else {
-            // Show feedback and announce it to VoiceOver users
-            Accessibility.announce(feedback)
-
-            if errorCount > 1 {
-                // Update text with fade effect to gain attention
-                UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                    self.feedbackLabel.alpha = 0.1
-                }, completion: { _ in
-                    UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                        self.feedbackLabel.text = feedback
-                        self.feedbackLabel.alpha = 1.0
-                    })
-                })
-            } else {
-                feedbackLabel.text = feedback
-                feedbackLabel.isHidden = false
-            }
         }
     }
 }
