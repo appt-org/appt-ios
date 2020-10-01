@@ -76,6 +76,7 @@
 		28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C415247D8B33008B3CAD /* _Encodable.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
+		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
 		28E267A524A5FF360025215C /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A424A5FF360025215C /* Gesture.swift */; };
 		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
 		28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB52732524E41D00DE4DE9 /* _CGPoint.swift */; };
@@ -160,6 +161,7 @@
 		28E0C415247D8B33008B3CAD /* _Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Encodable.swift; sourceTree = "<group>"; };
 		28E0C417247D8B46008B3CAD /* _NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NSObject.swift; sourceTree = "<group>"; };
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		28E1A06F2525CC6100604CFF /* _URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _URL.swift; sourceTree = "<group>"; };
 		28E267A424A5FF360025215C /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		28EB52732524E41D00DE4DE9 /* _CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CGPoint.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				287468EA247E64A60089BB32 /* _UITableView.swift */,
 				287468E8247E64930089BB32 /* _UIView.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
+				28E1A06F2525CC6100604CFF /* _URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
 				2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */,
 				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
+				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,

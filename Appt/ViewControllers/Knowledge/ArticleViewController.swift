@@ -63,11 +63,11 @@ class ArticleViewController: WebViewController {
     
     override func onLoaded() {
         shareItem.isEnabled = true
-        Accessibility.announce("Het artikel is geladen")
+        Accessibility.announce("article_loaded".localized)
     }
     
     @IBAction private func onShareTapped(_ sender: Any) {
-        guard let link = article?.link, let url = URL(string: link) else {
+        guard let url = article?.url else {
             return
         }
         let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])

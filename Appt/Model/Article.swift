@@ -29,6 +29,16 @@ class Article: Codable {
     var tags: [Int]?
     var categories: [Int]?
     var link: String?
+    
+    var url: URL? {
+        get {
+            if let link = link, var url = URL(string: link) {
+                url.appendQueryItem(name: "utm_source", value: "ios")
+                return url
+            }
+            return nil
+        }
+    }
         
     private enum CodingKeys: String, CodingKey {
         case type
