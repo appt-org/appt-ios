@@ -3,7 +3,7 @@
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 27/08/2020.
-//  Copyright © 2020 Abra B.V. All rights reserved.
+//  Copyright © 2020 Stichting Appt All rights reserved.
 //
 
 import UIKit
