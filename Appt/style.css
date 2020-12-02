@@ -19,14 +19,15 @@
     --color-background: #fff;
     --color-primary: #d023be;
     --color-secondary: #ddd;
+    --color-selection: #d023be80;
     --color-text: #000;
 }
 
 ::-moz-selection {
-    background-color: rgba(var(--color-primary), 0.1);
+    background-color: var(--color-selection);
 }
 ::selection {
-    background-color: rgba(var(--color-primary), 0.1);
+    background-color: var(--color-selection);
 }
 
 * {
@@ -36,6 +37,12 @@
     word-break: break-word;
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
+}
+*:focus {
+    outline: dotted;
+    outline-color: var(--color-primary);
+    outline-width: .2rem;
+    outline-offset: .2rem;
 }
 
 body, html, table {
@@ -54,10 +61,12 @@ a {
     text-decoration: none;
     border-bottom: .1rem solid var(--color-primary);
 }
-a[href*="//"]:not([href*="appt.nl/kennisbank"]):after {
-     content: " " url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTEgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+ZXh0ZXJuYWw8L3RpdGxlPgogICAgPGcgaWQ9ImV4dGVybmFsIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAiIGZpbGw9IiNEMDIzQkUiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC4zMTg2OTM3LDAgTDYuMzY3MTE3MTIsMCBDNS45NTgzMzMzMywwIDUuNjg1ODEwODEsMC4yODIzNTI5NDEgNS42ODU4MTA4MSwwLjcwNTg4MjM1MyBDNS42ODU4MTA4MSwxLjEyOTQxMTc2IDUuOTU4MzMzMzMsMS40MTE3NjQ3MSA2LjM2NzExNzEyLDEuNDExNzY0NzEgTDguNjgzNTU4NTYsMS40MTE3NjQ3MSBMMy40Mzc1LDYuNzc2NDcwNTkgTDQuNDU5NDU5NDYsNy43NjQ3MDU4OCBMOS42MzczODczOSwyLjQgTDkuNjM3Mzg3MzksNC44IEM5LjYzNzM4NzM5LDUuMjIzNTI5NDEgOS45MDk5MDk5MSw1LjUwNTg4MjM1IDEwLjMxODY5MzcsNS41MDU4ODIzNSBDMTAuNzI3NDc3NSw1LjUwNTg4MjM1IDExLDUuMjIzNTI5NDEgMTEsNC44IEwxMSwwLjcwNTg4MjM1MyBDMTEsMC4yODIzNTI5NDEgMTAuNjU5MzQ2OCwwIDEwLjMxODY5MzcsMCBaIiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aCIgcG9pbnRzPSI4LjkzNzUgMTIgMCAxMiAwIDIuODIzNTI5NDEgNC4zMzEyNSAyLjgyMzUyOTQxIDQuMzMxMjUgNC4yMzUyOTQxMiAxLjM3NSA0LjIzNTI5NDEyIDEuMzc1IDEwLjU4ODIzNTMgNy41NjI1IDEwLjU4ODIzNTMgNy41NjI1IDcuMDU4ODIzNTMgOC45Mzc1IDcuMDU4ODIzNTMiPjwvcG9seWdvbj4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);
-    padding-right: 2px;
-    margin-left: -1px;
+a[href*="//"]:not([href*="appt.nl/kennisbank"]) {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTEgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+ZXh0ZXJuYWw8L3RpdGxlPgogICAgPGcgaWQ9ImV4dGVybmFsIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAiIGZpbGw9IiNEMDIzQkUiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC4zMTg2OTM3LDAgTDYuMzY3MTE3MTIsMCBDNS45NTgzMzMzMywwIDUuNjg1ODEwODEsMC4yODIzNTI5NDEgNS42ODU4MTA4MSwwLjcwNTg4MjM1MyBDNS42ODU4MTA4MSwxLjEyOTQxMTc2IDUuOTU4MzMzMzMsMS40MTE3NjQ3MSA2LjM2NzExNzEyLDEuNDExNzY0NzEgTDguNjgzNTU4NTYsMS40MTE3NjQ3MSBMMy40Mzc1LDYuNzc2NDcwNTkgTDQuNDU5NDU5NDYsNy43NjQ3MDU4OCBMOS42MzczODczOSwyLjQgTDkuNjM3Mzg3MzksNC44IEM5LjYzNzM4NzM5LDUuMjIzNTI5NDEgOS45MDk5MDk5MSw1LjUwNTg4MjM1IDEwLjMxODY5MzcsNS41MDU4ODIzNSBDMTAuNzI3NDc3NSw1LjUwNTg4MjM1IDExLDUuMjIzNTI5NDEgMTEsNC44IEwxMSwwLjcwNTg4MjM1MyBDMTEsMC4yODIzNTI5NDEgMTAuNjU5MzQ2OCwwIDEwLjMxODY5MzcsMCBaIiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aCIgcG9pbnRzPSI4LjkzNzUgMTIgMCAxMiAwIDIuODIzNTI5NDEgNC4zMzEyNSAyLjgyMzUyOTQxIDQuMzMxMjUgNC4yMzUyOTQxMiAxLjM3NSA0LjIzNTI5NDEyIDEuMzc1IDEwLjU4ODIzNTMgNy41NjI1IDEwLjU4ODIzNTMgNy41NjI1IDcuMDU4ODIzNTMgOC45Mzc1IDcuMDU4ODIzNTMiPjwvcG9seWdvbj4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);
+    background-size: 0.75em 0.75em;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,7 +153,7 @@ hr {
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --color-background: #000;
-        --color-text: #fff;
         --color-secondary: #222;
+        --color-text: #fff;
     }
 }

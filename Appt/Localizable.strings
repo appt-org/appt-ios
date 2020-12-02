@@ -55,11 +55,11 @@
 
 "gesture_swipeRight_title" = "Naar het volgende onderdeel navigeren";
 "gesture_swipeRight_description" = "Veeg met één vinger naar rechts, om naar het volgende onderdeel te navigeren.";
-"gesture_swipeRight_explanation" = "Door naar rechts te vegen verken je het scherm van boven naar beneden, van links naar rechts.";
+"gesture_swipeRight_explanation" = "Door naar rechts te vegen verken je het scherm van links naar rechts en van boven naar beneden.";
 
 "gesture_swipeLeft_title" = "Naar het vorige onderdeel navigeren";
 "gesture_swipeLeft_description" = "Veeg met één vinger naar links, om naar het vorige onderdeel te navigeren.";
-"gesture_swipeLeft_explanation" = "Door naar links te vegen verken je het scherm van rechts naar links, van beneden naar boven.";
+"gesture_swipeLeft_explanation" = "Door naar links te vegen verken je het scherm van rechts naar links en van beneden naar boven.";
 
 "gesture_fourFingerTapTop_title" = "Naar het eerste onderdeel gaan";
 "gesture_fourFingerTapTop_description" = "Tik met vier vingers bovenaan het scherm, om naar het eerste onderdeel te gaan.";
