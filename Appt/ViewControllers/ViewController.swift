@@ -12,8 +12,6 @@ import FirebaseAnalytics
 
 class ViewController: UIViewController {
     
-    var prefersLargeTitles = false
-    
     var loadingIndicator: UIActivityIndicatorView?
     var isLoading: Bool = false {
         didSet {
@@ -59,9 +57,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
-        navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
-        
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
         
@@ -90,16 +85,12 @@ class ViewController: UIViewController {
                 navigationBar.scrollEdgeAppearance = appearance
             }
         }
-        
-        navigationController?.navigationBar.sizeToFit()
     }
     
     // View will appear: register notifications
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        
-        
         registerStateNotifications()
         registerKeyboardNotifications()
         registerAccessibilityNotifications()

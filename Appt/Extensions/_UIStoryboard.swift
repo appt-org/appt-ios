@@ -24,17 +24,27 @@ extension UIStoryboard {
         }
     }
     
-    static func article(type: ArticleType, id: Int) -> ArticleViewController {
+    private static func article(type: ArticleType) -> ArticleViewController {
         let articleViewController = viewController(.main, identifier: ArticleViewController.self)
         articleViewController.type = type
+        return articleViewController
+    }
+    
+    static func article(type: ArticleType, id: Int) -> ArticleViewController {
+        let articleViewController = article(type: type)
         articleViewController.id = id
         return articleViewController
     }
     
     static func article(type: ArticleType, slug: String) -> ArticleViewController {
-        let articleViewController = viewController(.main, identifier: ArticleViewController.self)
-        articleViewController.type = type
+        let articleViewController = article(type: type)
         articleViewController.slug = slug
+        return articleViewController
+    }
+    
+    static func article(type: ArticleType, url: URL) -> ArticleViewController {
+        let articleViewController = article(type: type)
+        articleViewController.url = url
         return articleViewController
     }
     

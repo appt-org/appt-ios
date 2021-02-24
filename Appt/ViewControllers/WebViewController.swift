@@ -20,6 +20,7 @@ class WebViewController: ViewController {
         webView.tintColor = .primary
         webView.isOpaque = false
         webView.backgroundColor = .clear
+        webView.allowsLinkPreview = false
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
@@ -30,18 +31,18 @@ class WebViewController: ViewController {
         Events.log(.article, identifier: title)
         
         let html = """
-                <html lang="nl">
-                    <head>
-                        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                        <link rel="stylesheet" type="text/css" href="style.css">
-                    </head>
-                <body>
-                <h1>
-                """ + title + """
-                </h1>
-                """ + content + """
-                </body>
-                </html>
+            <html lang="nl">
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                    <link rel="stylesheet" type="text/css" href="style.css">
+                </head>
+            <body>
+            <h1>
+            """ + title + """
+            </h1>
+            """ + content + """
+            </body>
+            </html>
         """
 
         webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
@@ -75,7 +76,7 @@ extension WebViewController: WKNavigationDelegate {
         
         if navigationAction.navigationType == .linkActivated {
             if url.absoluteString.contains("appt.nl/kennisbank/") {
-                let articleViewController = UIStoryboard.article(type: .page, slug: url.lastPathComponent)
+                let articleViewController = UIStoryboard.article(type: .page, url: url)
                 navigationController?.pushViewController(articleViewController, animated: true)
             } else {
                 openWebsite(url)

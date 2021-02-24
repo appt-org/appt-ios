@@ -25,7 +25,7 @@ class TableViewController: ViewController {
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .primary
+        refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()

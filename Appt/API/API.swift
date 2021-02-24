@@ -30,9 +30,9 @@ class API {
         getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
     }
     
-    func getArticles<T: Article>(type: ArticleType, page: Int = 1, categories: [Category]? = nil, tags: [Tag]? = nil, parentId: Int? = nil, callback: @escaping (Response<[T]>) -> ()) {
+    func getArticles<T: Article>(type: ArticleType, page: Int = 1, categories: [Category]? = nil, tags: [Tag]? = nil, parentId: Int? = nil, slug: String? = nil, callback: @escaping (Response<[T]>) -> ()) {
         var parameters: [String: Any] = [
-            "_fields": "type,id,date,title",
+            "_fields": "type,id,date,title,link",
             "page": page
         ]
     
@@ -46,6 +46,10 @@ class API {
         
         if let parentId = parentId {
             parameters["parent"] = parentId
+        }
+        
+        if let slug = slug {
+            parameters["slug"] = slug
         }
         
         if type == .page {
@@ -64,9 +68,26 @@ class API {
     }
     
     func getArticle<T: Article>(type: ArticleType, slug: String, callback: @escaping (Response<T>) -> ()) {
-        getObject(path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories"], type: [T].self) { (response) in
+        getObject(
+            path: "\(type.path)?per_page=1", parameters: ["slug": slug, "_fields": "type,id,date,modified,link,title,content,author,tags,categories"], type: [T].self) { (response) in
             if let article = response.result?.first {
                 callback(Response(result: article, total: response.total, pages: response.pages, error: response.error))
+            } else {
+                callback(Response(error: response.error))
+            }
+        }
+    }
+    
+    func getArticle<T: Article>(type: ArticleType, url: URL, callback: @escaping (Response<T>) -> ()) {
+        getArticles(type: type, slug: url.lastPathComponent) { (response) in
+            if let articles = response.result {
+                let matches = articles.filter { $0.link?.contains(url.absoluteString) ?? false }
+                
+                if let article = matches.first {
+                    return self.getArticle(type: article.type, id: article.id, callback: callback)
+                } else {
+                    callback(Response(error: response.error))
+                }
             } else {
                 callback(Response(error: response.error))
             }

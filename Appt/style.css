@@ -109,6 +109,9 @@ iframe {
 }
 
 table {
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
     table-layout: fixed;
     border: 1px solid var(--color-secondary);
     border-collapse: collapse;
@@ -118,9 +121,10 @@ th, td {
     text-align: left;
     border: 1px solid var(--color-secondary);
     padding: 3px 6px;
+    white-space: nowrap;
 }
 
-pre {
+pre, blockquote {
     font-family: monospace;
     font-size: 0.9rem;
     display: block;
@@ -136,10 +140,7 @@ pre {
 }
 
 blockquote {
-    font-style: italic;
-}
-cite {
-    text-transform: uppercase;
+    margin: 1em;
 }
 
 hr {

@@ -18,6 +18,8 @@ class ArticleViewController: WebViewController {
     var type: ArticleType!
     var id: Int?
     var slug: String?
+    var url: URL?
+    
     var article: Article?
     
     override func viewDidLoad() {
@@ -58,6 +60,8 @@ class ArticleViewController: WebViewController {
             API.shared.getArticle(type: type, id: id, callback: callback)
         } else if let slug = slug {
             API.shared.getArticle(type: type, slug: slug, callback: callback)
+        } else if let url = url {
+            API.shared.getArticle(type: type, url: url, callback: callback)
         }
     }
     
