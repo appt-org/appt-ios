@@ -170,10 +170,25 @@
                     <view key="view" contentMode="scaleToFill" id="xxg-El-ppV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TC5-0k-QSG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nCb-uP-w70"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TC5-0k-QSG" firstAttribute="top" secondItem="nCb-uP-w70" secondAttribute="top" id="7Tm-JP-lDy"/>
+                            <constraint firstItem="nCb-uP-w70" firstAttribute="bottom" secondItem="TC5-0k-QSG" secondAttribute="bottom" id="Vzt-WC-xuN"/>
+                            <constraint firstItem="TC5-0k-QSG" firstAttribute="leading" secondItem="xxg-El-ppV" secondAttribute="leading" id="nZH-9s-HdJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TC5-0k-QSG" secondAttribute="trailing" id="pDg-QC-DvF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kennisbank" id="e63-75-o0N"/>
+                    <connections>
+                        <outlet property="tableView" destination="TC5-0k-QSG" id="Jm0-nB-dRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrd-SI-LW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +225,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="JsZ-rN-lEj"/>
                             <constraint firstAttribute="trailing" secondItem="yQ7-KK-qa2" secondAttribute="trailing" id="hHA-zZ-EAA"/>
@@ -230,7 +245,6 @@
                         <outlet property="filterItem" destination="NuM-BA-M8T" id="MgI-gN-ks8"/>
                         <outlet property="tableView" destination="yQ7-KK-qa2" id="Sir-OM-mfv"/>
                         <segue destination="atb-WW-ou0" kind="show" identifier="filter" id="3K9-nh-VFn"/>
-                        <segue destination="M9J-A7-CSC" kind="show" identifier="article" id="FFz-wi-Zia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -260,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSm-e6-Gnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="289"/>
+            <point key="canvasLocation" x="3617" y="-107"/>
         </scene>
         <!--Filters-->
         <scene sceneID="AO4-V7-lVX">
@@ -299,7 +313,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixZ-Gj-dLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="yPk-cc-0a2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2429" y="1002"/>
+            <point key="canvasLocation" x="2377" y="629"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -334,6 +348,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

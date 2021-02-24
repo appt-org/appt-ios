@@ -75,7 +75,7 @@ extension WebViewController: WKNavigationDelegate {
         
         if navigationAction.navigationType == .linkActivated {
             if url.absoluteString.contains("appt.nl/kennisbank/") {
-                let articleViewController = UIStoryboard.article(type: .post, slug: url.lastPathComponent)
+                let articleViewController = UIStoryboard.article(type: .page, slug: url.lastPathComponent)
                 navigationController?.pushViewController(articleViewController, animated: true)
             } else {
                 openWebsite(url)

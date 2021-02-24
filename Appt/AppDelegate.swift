@@ -51,6 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UITabBar styles
         UITabBar.appearance().barTintColor = .background
         UITabBar.appearance().tintColor = .primary
+        UITabBar.appearance().unselectedItemTintColor = .disabled
+        
+        // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
                 .font: UIFont.sourceSansPro(weight: .semibold, size: 14, style: .title1)

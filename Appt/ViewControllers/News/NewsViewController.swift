@@ -20,11 +20,6 @@ class NewsViewController: TableViewController {
     var categories: [Category]?
     var tags: [Tag]?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,11 +70,14 @@ class NewsViewController: TableViewController {
         }
         
         API.shared.getArticles(type: .post, page: page, categories: categories, tags: tags) { (response) in
-            self.page += 1
-            self.pages = response.pages
-            
+            self.refreshControl.endRefreshing()
+            self.isLoading = false
+                        
             if let posts = response.result {
                 Accessibility.announce("articles_loaded".localized(posts.count))
+                
+                self.page += 1
+                self.pages = response.pages
                 
                 if self.page > 1 {
                     self.posts.append(contentsOf: posts)
@@ -91,16 +89,11 @@ class NewsViewController: TableViewController {
             } else if let error = response.error {
                 self.showError(error)
             }
-            self.refreshControl.endRefreshing()
-            self.isLoading = false
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let articleViewController = segue.destination as? ArticleViewController, let post = sender as? Post {
-            articleViewController.type = post.type
-            articleViewController.id = post.id
-        } else if let filtersViewController = segue.destination as? FiltersViewController {
+        if let filtersViewController = segue.destination as? FiltersViewController {
             filtersViewController.categories = categories
             filtersViewController.tags = tags
         }
@@ -128,6 +121,8 @@ extension NewsViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let post = posts[indexPath.row]
-        performSegue(.article, sender: post)
+        
+        let articleViewController = UIStoryboard.article(type: post.type, id: post.id)
+        navigationController?.pushViewController(articleViewController, animated: true)
     }
 }

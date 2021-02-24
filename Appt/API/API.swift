@@ -26,7 +26,11 @@ class API {
     
     // MARK: - Get articles
     
-    func getArticles<T: Article>(type: ArticleType, page: Int, categories: [Category]? = nil, tags: [Tag]? = nil, callback: @escaping (Response<[T]>) -> ()) {
+    func getArticles<T: Article>(type: ArticleType, parameters: [String: Any], callback: @escaping (Response<[T]>) -> ()) {
+        getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
+    }
+    
+    func getArticles<T: Article>(type: ArticleType, page: Int = 1, categories: [Category]? = nil, tags: [Tag]? = nil, parentId: Int? = nil, callback: @escaping (Response<[T]>) -> ()) {
         var parameters: [String: Any] = [
             "_fields": "type,id,date,title",
             "page": page
@@ -38,6 +42,18 @@ class API {
         
         if let tagIDs = tags?.selected.ids {
             parameters["tags"] = tagIDs.joined(separator: ",")
+        }
+        
+        if let parentId = parentId {
+            parameters["parent"] = parentId
+        }
+        
+        if type == .page {
+            parameters["orderby"] = "title"
+            parameters["order"] = "asc"
+        } else if type == .post {
+            parameters["orderby"] = "date"
+            parameters["order"] = "desc"
         }
        
         getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
