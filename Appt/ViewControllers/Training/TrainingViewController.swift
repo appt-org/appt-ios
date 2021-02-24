@@ -19,7 +19,7 @@ class TrainingViewController: TableViewController {
             ]
         ]
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

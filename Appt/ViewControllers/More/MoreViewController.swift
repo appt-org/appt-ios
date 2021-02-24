@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InformationViewController: TableViewController {
+class MoreViewController: TableViewController {
     
     @IBOutlet private var shareItem: UIBarButtonItem!
     
@@ -24,6 +24,11 @@ class InformationViewController: TableViewController {
                 .sidnfonds
             ]
         ]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func viewDidLoad() {
@@ -47,7 +52,7 @@ class InformationViewController: TableViewController {
 
 // MARK: - UITableView
 
-extension InformationViewController {
+extension MoreViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return topics.count

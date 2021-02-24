@@ -28,17 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .background
-        UINavigationBar.appearance().tintColor = .primary
+        UINavigationBar.appearance().barTintColor = .primary
+        UINavigationBar.appearance().backgroundColor = .primary
+        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: UIFont.sourceSansPro(weight: .bold, size: 20, style: .title1)
+            .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .title1),
+            .foregroundColor: UIColor.white
+        ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont.sourceSansPro(weight: .bold, size: 27, style: .title1),
+            .foregroundColor: UIColor.white
         ]
         
         // UIBarButtonItem style
-        UIBarButtonItem.appearance().tintColor = .primary
+        UIBarButtonItem.appearance().tintColor = .white
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title1)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 16, style: .title1)
             ], for: state)
         }
         
@@ -47,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .primary
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 18, style: .title1)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 14, style: .title1)
             ], for: state)
         }
         

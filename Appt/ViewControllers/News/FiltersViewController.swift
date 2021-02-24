@@ -81,9 +81,9 @@ class FiltersViewController: TableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let knowledgeViewController = segue.destination as? KnowledgeViewController {
-            knowledgeViewController.categories = self.categories
-            knowledgeViewController.tags = self.tags
+        if let newsViewController = segue.destination as? NewsViewController {
+            newsViewController.categories = self.categories
+            newsViewController.tags = self.tags
         }
     }
 }

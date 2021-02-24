@@ -11,7 +11,9 @@ import Accessibility
 import FirebaseAnalytics
 
 class ViewController: UIViewController {
-
+    
+    var prefersLargeTitles = false
+    
     var loadingIndicator: UIActivityIndicatorView?
     var isLoading: Bool = false {
         didSet {
@@ -57,20 +59,47 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            isModalInPresentation = true
-        }
+        navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
+        navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
         
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.accessibilityLabel = "Terug"
+                
+        if #available(iOS 13.0, *) {
+            isModalInPresentation = true
+            
+            let button = UIBarButtonItemAppearance()
+            button.disabled.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .disabled) ?? [:]
+            button.focused.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .focused) ?? [:]
+            button.highlighted.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .highlighted) ?? [:]
+            button.normal.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .normal) ?? [:]
+            
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UINavigationBar.appearance().backgroundColor
+            appearance.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes ?? [:]
+            appearance.largeTitleTextAttributes = UINavigationBar.appearance().largeTitleTextAttributes ?? [:]
+            appearance.buttonAppearance = button
+            
+            if let navigationBar = navigationController?.navigationBar {
+                navigationBar.compactAppearance = appearance
+                navigationBar.standardAppearance = appearance
+                navigationBar.scrollEdgeAppearance = appearance
+            }
+        }
+        
+        navigationController?.navigationBar.sizeToFit()
     }
     
     // View will appear: register notifications
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        
+        
         registerStateNotifications()
         registerKeyboardNotifications()
         registerAccessibilityNotifications()
