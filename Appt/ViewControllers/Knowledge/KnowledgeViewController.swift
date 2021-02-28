@@ -11,7 +11,7 @@ import Accessibility
 
 class KnowledgeViewController: TableViewController {
     
-    private let parentId = 676 // Kennisbank page ID
+    private let KENNISBANK_ID = 676
     private var pages = [Page]()
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class KnowledgeViewController: TableViewController {
             isLoading = true
         }
         
-        API.shared.getArticles(type: .page, parentId: parentId) { (response) in
+        API.shared.getArticles(type: .page, parentId: KENNISBANK_ID) { (response) in
             self.refreshControl.endRefreshing()
             self.isLoading = false
             

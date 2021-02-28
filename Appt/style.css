@@ -109,19 +109,23 @@ iframe {
 }
 
 table {
-    max-width: 100%;
     display: block;
+    max-width: fit-content;
+    margin: 0 auto;
     overflow-x: auto;
-    table-layout: fixed;
     border: 1px solid var(--color-secondary);
     border-collapse: collapse;
     border-spacing: 0;
 }
+th {
+    white-space: nowrap;
+    background-color: var(--color-secondary);
+}
 th, td {
+    min-width: 100px;
     text-align: left;
     border: 1px solid var(--color-secondary);
     padding: 3px 6px;
-    white-space: nowrap;
 }
 
 pre, blockquote {

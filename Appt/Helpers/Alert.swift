@@ -31,7 +31,7 @@ class Alert {
         let alert = Builder()
             .title("error".localized)
             .message(message)
-            .action("ok".localized, callback: callback)
+            .okAction(callback: callback)
             .build()
         
         viewController.present(alert, animated: true)
@@ -42,7 +42,7 @@ class Alert {
         private var title: String?
         private var message: String?
         private var preferredStyle: UIAlertController.Style = .alert
-        private var tintColor: UIColor = .primary
+        private var tintColor: UIColor = .foreground
         private var backgroundColor: UIColor = .clear
         private var alpha: CGFloat = 1.0
         private var cornerRadius:CGFloat = 0.0
@@ -100,15 +100,15 @@ class Alert {
         }
         
         
-        func defaultAction(_ title: String = "Oké", callback: (() -> Void)? = nil) -> Builder {
+        func okAction(_ title: String = "ok".localized, callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .default, callback: callback)
         }
         
-        func cancelAction(_ title: String = "Annuleren", callback: (() -> Void)? = nil) -> Builder {
+        func cancelAction(_ title: String = "cancel".localized, callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .cancel, callback: callback)
         }
         
-        func destructiveAction(_ title: String = "Verwijderen", callback: (() -> Void)? = nil) -> Builder {
+        func destructiveAction(_ title: String = "delete".localized, callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .destructive, callback: callback)
         }
         
@@ -119,7 +119,7 @@ class Alert {
             actions.append(action)
             return self
         }
-        
+
         
         func build() -> UIAlertController {
             let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
