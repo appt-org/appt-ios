@@ -12,7 +12,7 @@ import Accessibility
 class KnowledgeViewController: TableViewController {
     
     private let KENNISBANK_ID = 676
-    private var pages = [Page]()
+    private var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,14 @@ class KnowledgeViewController: TableViewController {
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
         tableView.refreshControl = refreshControl
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        getArticles()
+        if articles.isEmpty {
+            getArticles()
+        }
     }
     
     override func refresh(_ refreshControl: UIRefreshControl) {
@@ -41,8 +47,8 @@ class KnowledgeViewController: TableViewController {
             self.refreshControl.endRefreshing()
             self.isLoading = false
             
-            if let pages = response.result {
-                self.pages = pages
+            if let articles = response.result {
+                self.articles = articles
                 self.tableView.reloadData()
             } else if let error = response.error {
                 self.showError(error)
@@ -51,9 +57,9 @@ class KnowledgeViewController: TableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let articleViewController = segue.destination as? ArticleViewController, let page = sender as? Page {
-            articleViewController.type = page.type
-            articleViewController.id = page.id
+        if let articleViewController = segue.destination as? ArticleViewController, let article = sender as? Article {
+            articleViewController.type = article.type
+            articleViewController.id = article.id
         }
     }
 }
@@ -63,14 +69,14 @@ class KnowledgeViewController: TableViewController {
 extension KnowledgeViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pages.count
+        return articles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let page = pages[indexPath.row]
-        cell.setup(page.title.decoded)
+        let article = articles[indexPath.row]
+        cell.setup(article.title.decoded)
         
         return cell
     }
@@ -78,9 +84,9 @@ extension KnowledgeViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let page = pages[indexPath.row]
+        let article = articles[indexPath.row]
         
-        let articleViewController = UIStoryboard.article(type: page.type, id: page.id)
+        let articleViewController = UIStoryboard.article(type: article.type, id: article.id)
         navigationController?.pushViewController(articleViewController, animated: true)
     }
 }

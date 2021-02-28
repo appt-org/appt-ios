@@ -48,7 +48,9 @@ class FiltersViewController: TableViewController {
             if let categories = categories, let tags = tags {
                 self.onFilters(categories, tags)
             } else if let error = error {
-                self.onError(error)
+                self.showError(error) {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }
@@ -57,10 +59,6 @@ class FiltersViewController: TableViewController {
         self.categories = categories
         self.tags = tags
         tableView.reloadData()
-    }
-    
-    private func onError(_ error: Error) {
-        showError(error)
     }
     
     @IBAction func onSaveTapped(_ sender: Any) {

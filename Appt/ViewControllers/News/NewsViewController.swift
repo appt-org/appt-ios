@@ -13,7 +13,7 @@ class NewsViewController: TableViewController {
 
     @IBOutlet private var filterItem: UIBarButtonItem!
     
-    private var posts = [Post]()
+    private var articles = [Article]()
     private var page = 1
     private var pages: Int?
     
@@ -28,15 +28,20 @@ class NewsViewController: TableViewController {
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
         tableView.refreshControl = refreshControl
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // Get posts
-        getPosts()
+        if articles.isEmpty {
+            getArticles()
+        }
     }
         
     private func reset() {
         page = 1
         pages = nil
-        posts.removeAll()
+        articles.removeAll()
         tableView.reloadData()
     }
     
@@ -46,21 +51,21 @@ class NewsViewController: TableViewController {
     
     @IBAction private func applyFilters(_ segue: UIStoryboardSegue) {
         reset()
-        getPosts()
+        getArticles()
     }
         
     override func refresh(_ refreshControl: UIRefreshControl) {
         reset()
-        getPosts()
+        getArticles()
     }
     
     override func loadMore() {
         if let pages = pages, page <= pages {
-            getPosts()
+            getArticles()
         }
     }
     
-    private func getPosts() {
+    private func getArticles() {
         if isLoading {
             return
         }
@@ -73,16 +78,16 @@ class NewsViewController: TableViewController {
             self.refreshControl.endRefreshing()
             self.isLoading = false
                         
-            if let posts = response.result {
-                Accessibility.announce("articles_loaded".localized(posts.count))
+            if let articles = response.result {
+                Accessibility.announce("articles_loaded".localized(articles.count))
                 
                 self.page += 1
                 self.pages = response.pages
                 
                 if self.page > 1 {
-                    self.posts.append(contentsOf: posts)
+                    self.articles.append(contentsOf: articles)
                 } else {
-                    self.posts = posts
+                    self.articles = articles
                 }
                 
                 self.tableView.reloadData()
@@ -105,14 +110,14 @@ class NewsViewController: TableViewController {
 extension NewsViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return articles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
         
-        let post = posts[indexPath.row]
-        cell.setup(post.title.decoded)
+        let article = articles[indexPath.row]
+        cell.setup(article.title.decoded)
         
         return cell
     }
@@ -120,9 +125,9 @@ extension NewsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let post = posts[indexPath.row]
+        let article = articles[indexPath.row]
         
-        let articleViewController = UIStoryboard.article(type: post.type, id: post.id)
+        let articleViewController = UIStoryboard.article(type: article.type, id: article.id)
         navigationController?.pushViewController(articleViewController, animated: true)
     }
 }
