@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ILh-tw-0N1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="rPb-oG-Nzi">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="rlL-4S-wry" customClass="WelcomeViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PIM-i2-Qep">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCa-UE-fbf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-lU-LWB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welkom!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIw-Th-Yu0">
+                                                <rect key="frame" x="16" y="11" width="382" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-DF-xNr">
+                                                <rect key="frame" x="16" y="44.5" width="382" height="119"/>
+                                                <string key="text">Appt is het platform voor toegankelijkheid.
+
+
+Maak een gratis account aan om toegang tot onze community te krijgen, onze trainingen te volgen en meer over toegankelijkheid te leren.</string>
+                                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_hands_up" translatesAutoresizingMaskIntoConstraints="NO" id="1jm-vd-GpC">
+                                                <rect key="frame" x="175" y="199.5" width="64" height="86"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="86" id="iYL-1n-zXe"/>
+                                                    <constraint firstAttribute="width" constant="64" id="yME-g2-eHN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-qz-b4d" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="334.5" width="366" height="50"/>
+                                                <color key="backgroundColor" name="Foreground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rdi-Dd-AAr"/>
+                                                </constraints>
+                                                <state key="normal" title="Account aanmaken">
+                                                    <color key="titleColor" name="Background"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="createButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="FBW-ji-Wh5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-wG-W2h" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="399.5" width="366" height="50"/>
+                                                <color key="backgroundColor" name="Background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="u4j-UE-ZLD"/>
+                                                </constraints>
+                                                <state key="normal" title="Ik heb al een account">
+                                                    <color key="titleColor" name="Foreground"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="g5S-oW-Xac"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-BJ-oem" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="461.5" width="366" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEr-Pk-Dpm"/>
+                                                </constraints>
+                                                <state key="normal" title="Wachtwoord vergeten?">
+                                                    <color key="titleColor" name="Primary"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetPasswordButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="UMm-TE-Zd3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZTi-wG-W2h" secondAttribute="trailing" constant="24" id="172-Ah-Jo5"/>
+                                            <constraint firstItem="1jm-vd-GpC" firstAttribute="centerX" secondItem="yr8-lU-LWB" secondAttribute="centerX" id="2AY-aM-T54"/>
+                                            <constraint firstAttribute="trailing" secondItem="UIw-Th-Yu0" secondAttribute="trailing" constant="16" id="41O-Xo-bQc"/>
+                                            <constraint firstAttribute="trailing" secondItem="EEe-DF-xNr" secondAttribute="trailing" constant="16" id="5x1-JI-0xV"/>
+                                            <constraint firstItem="Jam-BJ-oem" firstAttribute="top" secondItem="ZTi-wG-W2h" secondAttribute="bottom" constant="12" id="AaT-CJ-2yz"/>
+                                            <constraint firstItem="EEe-DF-xNr" firstAttribute="leading" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="16" id="LES-H6-dCQ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1jm-vd-GpC" secondAttribute="trailing" constant="20" id="Oe3-cb-lei"/>
+                                            <constraint firstItem="EEe-DF-xNr" firstAttribute="top" secondItem="UIw-Th-Yu0" secondAttribute="bottom" constant="11" id="PQb-cg-Axm"/>
+                                            <constraint firstItem="ZTi-wG-W2h" firstAttribute="top" secondItem="hty-qz-b4d" secondAttribute="bottom" constant="15" id="TUf-j8-jVR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jam-BJ-oem" secondAttribute="trailing" constant="24" id="YSV-dN-hv5"/>
+                                            <constraint firstItem="hty-qz-b4d" firstAttribute="leading" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="24" id="bvW-iZ-YD1"/>
+                                            <constraint firstItem="hty-qz-b4d" firstAttribute="top" secondItem="1jm-vd-GpC" secondAttribute="bottom" constant="49" id="cyC-bj-8xv"/>
+                                            <constraint firstItem="Jam-BJ-oem" firstAttribute="leading" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="24" id="dpa-3M-ede"/>
+                                            <constraint firstItem="1jm-vd-GpC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="20" id="f0H-JM-noa"/>
+                                            <constraint firstItem="1jm-vd-GpC" firstAttribute="top" secondItem="EEe-DF-xNr" secondAttribute="bottom" constant="36" id="f6g-Zk-7P5"/>
+                                            <constraint firstAttribute="trailing" secondItem="hty-qz-b4d" secondAttribute="trailing" constant="24" id="fHz-qg-fEV"/>
+                                            <constraint firstItem="UIw-Th-Yu0" firstAttribute="top" secondItem="yr8-lU-LWB" secondAttribute="top" constant="11" id="hsa-C0-p2R"/>
+                                            <constraint firstItem="ZTi-wG-W2h" firstAttribute="leading" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="24" id="lQV-vQ-kiJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jam-BJ-oem" secondAttribute="bottom" constant="12" id="onD-4V-2PJ"/>
+                                            <constraint firstItem="UIw-Th-Yu0" firstAttribute="leading" secondItem="yr8-lU-LWB" secondAttribute="leading" constant="16" id="pdg-go-lHu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yr8-lU-LWB" firstAttribute="width" secondItem="YCa-UE-fbf" secondAttribute="width" id="Gvu-ti-X62"/>
+                                    <constraint firstAttribute="trailing" secondItem="yr8-lU-LWB" secondAttribute="trailing" id="SSK-oa-nwl"/>
+                                    <constraint firstAttribute="bottom" secondItem="yr8-lU-LWB" secondAttribute="bottom" id="Y3C-tf-4iQ"/>
+                                    <constraint firstItem="yr8-lU-LWB" firstAttribute="top" secondItem="YCa-UE-fbf" secondAttribute="top" id="oLb-MJ-wrU"/>
+                                    <constraint firstItem="yr8-lU-LWB" firstAttribute="leading" secondItem="YCa-UE-fbf" secondAttribute="leading" id="rpn-fD-MPh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hsQ-bp-Tcz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YCa-UE-fbf" firstAttribute="top" secondItem="hsQ-bp-Tcz" secondAttribute="top" id="5wa-5u-1Cd"/>
+                            <constraint firstItem="YCa-UE-fbf" firstAttribute="leading" secondItem="hsQ-bp-Tcz" secondAttribute="leading" id="MhJ-58-HFv"/>
+                            <constraint firstAttribute="bottom" secondItem="YCa-UE-fbf" secondAttribute="bottom" id="edQ-AO-rzp"/>
+                            <constraint firstItem="hsQ-bp-Tcz" firstAttribute="trailing" secondItem="YCa-UE-fbf" secondAttribute="trailing" id="pCE-F6-CP0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BQB-Zm-F0D"/>
+                    <connections>
+                        <outlet property="createAccountButton" destination="hty-qz-b4d" id="7hr-ZL-XTv"/>
+                        <outlet property="loginButton" destination="ZTi-wG-W2h" id="OBG-G9-o5W"/>
+                        <outlet property="resetPasswordButton" destination="Jam-BJ-oem" id="lVM-Wg-LSl"/>
+                        <outlet property="welcomeDescriptionLabel" destination="EEe-DF-xNr" id="JHR-af-lDe"/>
+                        <outlet property="welcomeLabel" destination="UIw-Th-Yu0" id="nF1-9u-ckR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAh-AT-dOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="146.65178571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bgh-Q4-p7g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILh-tw-0N1" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ux-YW-Xcd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rlL-4S-wry" kind="relationship" relationship="rootViewController" id="kWT-Mw-xGR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpu-eE-1Zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291.304347826087" y="146.65178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_hands_up" width="64" height="86"/>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.81568627450980391" green="0.13725490196078433" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

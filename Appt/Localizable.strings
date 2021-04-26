@@ -189,3 +189,10 @@
 "feedback_distance" = "Beweeg je vinger verder.";
 "feedback_position" = "Tik %@ het scherm in plaats van %@.";
 "feedback_gesture" = "Beweeg je vinger om een gebaar te maken.";
+
+/* WelcomeViewController */
+"welcome_text" = "Welkom!";
+"welcome_description_text" = "Appt is het platform voor toegankelijkheid.\n\nMaak een gratis account aan om toegang tot onze community te krijgen, onze trainingen te volgen en meer over toegankelijkheid te leren.";
+"create_account_text" = "Account aanmaken";
+"login_account" = "Ik heb al een account";
+"forgot_password" = "Wachtwoord vergeten?";

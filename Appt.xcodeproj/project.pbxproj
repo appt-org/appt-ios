@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230BE9AD2636EEFE0026A90B /* MultilineTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */; };
+		234059A82636C4E500C06463 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234059A72636C4E500C06463 /* Authentication.storyboard */; };
+		234059B12636C65300C06463 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234059B02636C65300C06463 /* WelcomeViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
 		2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */; };
 		28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */; };
@@ -95,6 +98,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTitleButton.swift; sourceTree = "<group>"; };
+		234059A72636C4E500C06463 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		234059B02636C65300C06463 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
 		2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverSelectionView.xib; sourceTree = "<group>"; };
 		28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureView.swift; sourceTree = "<group>"; };
@@ -208,6 +214,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		234059AA2636C50F00C06463 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				234059B02636C65300C06463 /* WelcomeViewController.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
 		2843828024ED6D7A0015B2C5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				2870FF1B2525FC0F00377B44 /* TextField.swift */,
+				230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */,
 				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
@@ -286,6 +301,7 @@
 				288554F52519EFD300392FC3 /* ScrollViewController.swift */,
 				281F87FB24D172B5004AABC2 /* TableViewController.swift */,
 				28FBED8E251F5304009CA3FA /* WebViewController.swift */,
+				234059AA2636C50F00C06463 /* Authentification */,
 				2893227824C984CE00EBB447 /* Training */,
 				28639F4F25E3F9E000C29BB5 /* Knowledge */,
 				2893227924C984D700EBB447 /* News */,
@@ -370,6 +386,7 @@
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
 				2877F6D5247D6E9200605677 /* Main.storyboard */,
 				2893227B24C9860400EBB447 /* VoiceOver.storyboard */,
+				234059A72636C4E500C06463 /* Authentication.storyboard */,
 				288554FC251A01EE00392FC3 /* Localizable.strings */,
 				2885551C251B491500392FC3 /* Localizable.stringsdict */,
 				2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */,
@@ -556,6 +573,7 @@
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
+				234059A82636C4E500C06463 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +659,7 @@
 				2877F6D2247D6E9200605677 /* NewsViewController.swift in Sources */,
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
 				287FFBB525090A0C0022CD5F /* VoiceOverCopyView.swift in Sources */,
+				234059B12636C65300C06463 /* WelcomeViewController.swift in Sources */,
 				2893227724C9844500EBB447 /* Course.swift in Sources */,
 				28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */,
 				28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */,
@@ -660,6 +679,7 @@
 				2877F6F2247D7D9700605677 /* API.swift in Sources */,
 				2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
+				230BE9AD2636EEFE0026A90B /* MultilineTitleButton.swift in Sources */,
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
 				28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */,
 				2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */,

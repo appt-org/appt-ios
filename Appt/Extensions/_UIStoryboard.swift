@@ -13,6 +13,7 @@ extension UIStoryboard {
     enum Name: String{
         case main = "Main"
         case voiceOver = "VoiceOver"
+        case authentication = "Authentication"
     }
     
     private static func viewController<T: UIViewController>(_ storyboard: UIStoryboard.Name, identifier : T.Type? = nil) -> T {
