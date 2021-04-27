@@ -17,6 +17,7 @@
 "finish" = "Afronden";
 "stop" = "Stoppen";
 "cancel" = "Annuleren";
+"next" = "Volgende";
 
 "app_share" = "Deel app";
 
@@ -196,3 +197,7 @@
 "create_account_text" = "Account aanmaken";
 "login_account" = "Ik heb al een account";
 "forgot_password" = "Wachtwoord vergeten?";
+
+/* UserTypeViewController */
+"account_creation_vc_title" = "Account aanmaken";
+"account_creation_role_text" = "Wat is jouw rol?";
