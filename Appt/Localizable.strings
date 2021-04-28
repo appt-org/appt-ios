@@ -201,3 +201,16 @@
 /* UserTypeViewController */
 "account_creation_vc_title" = "Account aanmaken";
 "account_creation_role_text" = "Wat is jouw rol?";
+
+/* RegistrationViewController */
+"registration_vc_title" = "Account aanmaken";
+"registration_vc_description_text" = "Onze missie is om apps voor iedereen toegankelijk te maken. Dit bereiken we door kennis te delen, diensten te verlenen en gebruikers met een beperking te helpen.";
+"email_label_text" = "E-mailadres";
+"email_textfield_placeholder_text" = "E-mailadres";
+"email_textfield_hint_text" = "Voer een geldig e-mailadres in";
+"password_label_text" = "Wachtwoord";
+"password_textfield_placeholder_text" = "Wachtwoord";
+"password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
+"privacy_policy_label_text" = "Ik ga akkoord met Privacy Verklaring";
+"terms_and_conditions_label_text" = "Ik ga akkoord met Algemene Voorwaarden";
+"complete_registration_button_title_text" = "Registratie voltooien";

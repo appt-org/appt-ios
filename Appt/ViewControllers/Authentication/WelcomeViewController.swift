@@ -17,26 +17,27 @@ final class WelcomeViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Appt"
 
+        self.welcomeLabel.text = "welcome_text".localized
         self.welcomeLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+
+        self.welcomeDescriptionLabel.text = "welcome_description_text".localized
         self.welcomeDescriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
-        self.createAccountButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
         self.loginButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
+        self.resetPasswordButton.setTitle("forgot_password".localized, for: .normal)
         self.resetPasswordButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
 
         self.createAccountButton.layer.cornerRadius = 17
+        self.createAccountButton.setTitle("create_account_text".localized, for: .normal)
+        self.createAccountButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
+
+        self.loginButton.setTitle("login_account".localized, for: .normal)
         self.loginButton.layer.cornerRadius = 17
         self.loginButton.layer.borderWidth = 2
         self.loginButton.layer.borderColor = UIColor.foreground.cgColor
-
-        self.welcomeLabel.text = "welcome_text".localized
-        self.welcomeDescriptionLabel.text = "welcome_description_text".localized
-        self.createAccountButton.setTitle("create_account_text".localized, for: .normal)
-        self.loginButton.setTitle("login_account".localized, for: .normal)
-        self.resetPasswordButton.setTitle("forgot_password".localized, for: .normal)
-
-        self.title = "Appt"
     }
 
     @IBAction func createButtonPressed(_ sender: UIButton) {

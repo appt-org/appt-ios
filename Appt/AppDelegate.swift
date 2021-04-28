@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -71,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body),
             .foregroundColor: UIColor.primary
         ], for: .selected)
+
+        // IQKeyboardManager
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

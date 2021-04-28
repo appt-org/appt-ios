@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-lU-LWB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="528.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welkom!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIw-Th-Yu0">
                                                 <rect key="frame" x="16" y="11" width="382" height="24"/>
@@ -39,24 +39,24 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-DF-xNr">
-                                                <rect key="frame" x="16" y="46" width="382" height="128.5"/>
+                                                <rect key="frame" x="16" y="46" width="382" height="122"/>
                                                 <string key="text">Appt is het platform voor toegankelijkheid.
 
 
 Maak een gratis account aan om toegang tot onze community te krijgen, onze trainingen te volgen en meer over toegankelijkheid te leren.</string>
-                                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_hands_up" translatesAutoresizingMaskIntoConstraints="NO" id="1jm-vd-GpC">
-                                                <rect key="frame" x="175" y="210.5" width="64" height="86"/>
+                                                <rect key="frame" x="175" y="204" width="64" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="iYL-1n-zXe"/>
                                                     <constraint firstAttribute="width" constant="64" id="yME-g2-eHN"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-qz-b4d" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="345.5" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="339" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rdi-Dd-AAr"/>
@@ -70,7 +70,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-wG-W2h" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="410.5" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="404" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="u4j-UE-ZLD"/>
@@ -83,7 +83,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-BJ-oem" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="472.5" width="366" height="44"/>
+                                                <rect key="frame" x="24" y="466" width="366" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEr-Pk-Dpm"/>
@@ -161,19 +161,20 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-6S-5uV">
-                                <rect key="frame" x="0.0" y="128.5" width="414" height="639.5"/>
+                                <rect key="frame" x="0.0" y="128.5" width="414" height="633.5"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-Mh-pHL" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
-                                <rect key="frame" x="24" y="804" width="366" height="42"/>
+                                <rect key="frame" x="24" y="798" width="366" height="48"/>
                                 <color key="backgroundColor" name="Foreground"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="g2Z-t6-UUQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="g2Z-t6-UUQ"/>
                                 </constraints>
                                 <state key="normal" title="Volgende">
                                     <color key="titleColor" name="Background"/>
                                 </state>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="qrX-3H-BRS" eventType="touchUpInside" id="uV5-ee-4x4"/>
+                                    <segue destination="Oq3-Cr-7NY" kind="show" id="Dp5-CB-6c9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wat is jouw rol?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qen-Rg-mlP">
@@ -211,6 +212,223 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
             </objects>
             <point key="canvasLocation" x="1489.8550724637682" y="148.66071428571428"/>
         </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="PFG-aH-Axg">
+            <objects>
+                <viewController id="Oq3-Cr-7NY" customClass="RegistrationViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bvl-Wc-SbH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqS-UI-Kmb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvl-KS-Ppn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-7r-eoZ">
+                                                <rect key="frame" x="20" y="24" width="374" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="f83-c0-VTE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHn-NH-xdo">
+                                                <rect key="frame" x="16" y="81" width="382" height="81.5"/>
+                                                <string key="text">Onze missie is om apps voor iedereen toegankelijk te maken. Dit bereiken we door kennis te delen, diensten te verlenen en gebruikers met een beperking te helpen.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Foreground"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ltj-b7-mpB">
+                                                <rect key="frame" x="16" y="186.5" width="382" height="82.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mailadres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdS-fy-GpA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Foreground"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mailadres" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rFH-hP-lGY" customClass="AuthenticationTextField" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30.5" width="382" height="52"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="3xl-mB-7YS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXP-bx-wFx" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="82.5" width="382" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" name="Primary"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-lT-cd1">
+                                                <rect key="frame" x="16" y="293" width="382" height="83.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-gv-f0H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                                        <color key="textColor" name="Foreground"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wachtwoord" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xVc-ex-PoU" customClass="AuthenticationTextField" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="31.5" width="382" height="52"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="shc-gp-zqz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvn-ym-zIU" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
+                                                        <color key="textColor" name="Primary"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met Privacy Verklaring" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xde-m6-dD4">
+                                                <rect key="frame" x="16" y="413" width="313" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Foreground"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-9N-irL">
+                                                <rect key="frame" x="349" y="408" width="51" height="31"/>
+                                                <color key="onTintColor" name="Primary"/>
+                                                <connections>
+                                                    <action selector="privacyPolicyValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="DEd-pk-LkC"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met Algemene Voorwaarden" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-Yw-5z0">
+                                                <rect key="frame" x="16" y="458.5" width="313" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Foreground"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-s9-JZu">
+                                                <rect key="frame" x="349" y="463.5" width="51" height="31"/>
+                                                <color key="onTintColor" name="Primary"/>
+                                                <connections>
+                                                    <action selector="termsAndConditionsValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="2ir-gm-Z5Z"/>
+                                                </connections>
+                                            </switch>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-bu-n9W">
+                                                <rect key="frame" x="0.0" y="705.5" width="414" height="0.5"/>
+                                                <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="BBM-4q-fVy"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuD-wL-1Ea" customClass="MultilineTitleButton" customModule="Appt" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="710" width="366" height="48"/>
+                                                <color key="backgroundColor" name="Foreground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="ko1-F1-btc"/>
+                                                </constraints>
+                                                <state key="normal" title="Registratie voltooien">
+                                                    <color key="titleColor" name="Background"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" name="Disabled"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerButtonPressed:" destination="Oq3-Cr-7NY" eventType="touchUpInside" id="eU7-pk-epm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="leading" secondItem="IeB-Yw-5z0" secondAttribute="trailing" constant="20" id="1yX-RE-DOy"/>
+                                            <constraint firstAttribute="trailing" secondItem="cS1-bu-n9W" secondAttribute="trailing" id="2WZ-JE-ATT"/>
+                                            <constraint firstAttribute="trailing" secondItem="GVL-s9-JZu" secondAttribute="trailing" constant="16" id="2lZ-7n-zGe"/>
+                                            <constraint firstItem="cHn-NH-xdo" firstAttribute="top" secondItem="Vo6-7r-eoZ" secondAttribute="bottom" constant="24" id="3rs-fv-skI"/>
+                                            <constraint firstItem="ywo-9N-irL" firstAttribute="leading" secondItem="xde-m6-dD4" secondAttribute="trailing" constant="20" id="7VE-04-Xcx"/>
+                                            <constraint firstItem="Vo6-7r-eoZ" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="20" id="7tP-Jo-Y5c"/>
+                                            <constraint firstItem="cHn-NH-xdo" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="8B0-Mt-pry"/>
+                                            <constraint firstItem="xde-m6-dD4" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="C21-Gl-oKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vo6-7r-eoZ" secondAttribute="trailing" constant="20" id="Cin-dH-TU5"/>
+                                            <constraint firstItem="ywo-9N-irL" firstAttribute="centerY" secondItem="xde-m6-dD4" secondAttribute="centerY" id="F8E-HE-Ggh"/>
+                                            <constraint firstItem="vuD-wL-1Ea" firstAttribute="top" secondItem="cS1-bu-n9W" secondAttribute="bottom" constant="4" id="LhQ-9M-VTH"/>
+                                            <constraint firstAttribute="bottom" secondItem="vuD-wL-1Ea" secondAttribute="bottom" constant="16" id="Qok-Zn-HX0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Scq-lT-cd1" secondAttribute="trailing" constant="16" id="Sot-h6-d0v"/>
+                                            <constraint firstItem="Scq-lT-cd1" firstAttribute="top" secondItem="Ltj-b7-mpB" secondAttribute="bottom" constant="24" id="SpW-0n-eze"/>
+                                            <constraint firstItem="Ltj-b7-mpB" firstAttribute="top" secondItem="cHn-NH-xdo" secondAttribute="bottom" constant="24" id="WPY-1E-Zbb"/>
+                                            <constraint firstAttribute="trailing" secondItem="vuD-wL-1Ea" secondAttribute="trailing" constant="24" id="Xev-e7-D0H"/>
+                                            <constraint firstItem="Scq-lT-cd1" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="bP7-TE-648"/>
+                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" id="gYS-z6-kfI"/>
+                                            <constraint firstItem="xde-m6-dD4" firstAttribute="top" secondItem="Scq-lT-cd1" secondAttribute="bottom" constant="36.5" id="hAz-vq-SYK"/>
+                                            <constraint firstItem="Ltj-b7-mpB" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="hvb-Hp-eCR"/>
+                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="centerY" secondItem="IeB-Yw-5z0" secondAttribute="centerY" id="ipH-Uv-ZUT"/>
+                                            <constraint firstItem="Vo6-7r-eoZ" firstAttribute="centerX" secondItem="nvl-KS-Ppn" secondAttribute="centerX" id="k8F-wk-aww"/>
+                                            <constraint firstAttribute="trailing" secondItem="ywo-9N-irL" secondAttribute="trailing" constant="16" id="oKh-sd-o8B"/>
+                                            <constraint firstItem="IeB-Yw-5z0" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="oWa-t7-kKU"/>
+                                            <constraint firstItem="IeB-Yw-5z0" firstAttribute="top" secondItem="xde-m6-dD4" secondAttribute="bottom" constant="25" id="ojp-Rs-hDu"/>
+                                            <constraint firstAttribute="trailing" secondItem="cHn-NH-xdo" secondAttribute="trailing" constant="16" id="ujl-lo-vCh"/>
+                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IeB-Yw-5z0" secondAttribute="bottom" constant="20" id="wKM-Vl-sMk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ltj-b7-mpB" secondAttribute="trailing" constant="16" id="xYd-Jp-wfg"/>
+                                            <constraint firstItem="vuD-wL-1Ea" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="24" id="xyT-gU-PHD"/>
+                                            <constraint firstItem="Vo6-7r-eoZ" firstAttribute="top" secondItem="nvl-KS-Ppn" secondAttribute="top" constant="24" id="y2w-sN-ZZr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nvl-KS-Ppn" secondAttribute="trailing" id="ArG-I8-x1O"/>
+                                    <constraint firstItem="nvl-KS-Ppn" firstAttribute="width" secondItem="jqS-UI-Kmb" secondAttribute="width" id="FhW-RG-W5A"/>
+                                    <constraint firstItem="nvl-KS-Ppn" firstAttribute="leading" secondItem="jqS-UI-Kmb" secondAttribute="leading" id="KRO-Nn-CPR"/>
+                                    <constraint firstItem="nvl-KS-Ppn" firstAttribute="top" secondItem="jqS-UI-Kmb" secondAttribute="top" id="Nrx-W6-0UH"/>
+                                    <constraint firstAttribute="bottom" secondItem="nvl-KS-Ppn" secondAttribute="bottom" id="Set-f4-IEE"/>
+                                    <constraint firstItem="nvl-KS-Ppn" firstAttribute="height" secondItem="jqS-UI-Kmb" secondAttribute="height" priority="250" id="e1i-1a-KO5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mmx-mT-mjz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mmx-mT-mjz" firstAttribute="bottom" secondItem="jqS-UI-Kmb" secondAttribute="bottom" id="6AE-IQ-0d4"/>
+                            <constraint firstItem="jqS-UI-Kmb" firstAttribute="leading" secondItem="Bvl-Wc-SbH" secondAttribute="leading" id="RUf-sI-rIk"/>
+                            <constraint firstItem="jqS-UI-Kmb" firstAttribute="top" secondItem="mmx-mT-mjz" secondAttribute="top" id="fU7-6b-3WY"/>
+                            <constraint firstAttribute="trailing" secondItem="jqS-UI-Kmb" secondAttribute="trailing" id="tIV-Ff-cel"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KUG-dS-ydb"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="cHn-NH-xdo" id="Rkl-5g-FlT"/>
+                        <outlet property="emailHintLabel" destination="BXP-bx-wFx" id="s1o-Ch-HLO"/>
+                        <outlet property="emailLabel" destination="HdS-fy-GpA" id="aWp-kj-UfW"/>
+                        <outlet property="emailTextField" destination="rFH-hP-lGY" id="qMN-gi-xIn"/>
+                        <outlet property="passwordHintLabel" destination="gvn-ym-zIU" id="xok-fP-3Rg"/>
+                        <outlet property="passwordLabel" destination="Llc-gv-f0H" id="jGV-uh-dh9"/>
+                        <outlet property="passwordTextField" destination="xVc-ex-PoU" id="JXY-rU-Rl8"/>
+                        <outlet property="privacyPolicyLabel" destination="xde-m6-dD4" id="IH4-Rg-Qm7"/>
+                        <outlet property="privacyPolicySwitch" destination="ywo-9N-irL" id="LRn-1I-yH6"/>
+                        <outlet property="registerButton" destination="vuD-wL-1Ea" id="tJ8-0o-FNu"/>
+                        <outlet property="termsAndConditionsLabel" destination="IeB-Yw-5z0" id="yXU-Db-BYX"/>
+                        <outlet property="termsAndConditionsSwitch" destination="GVL-s9-JZu" id="jSc-W5-WgK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6d-b3-6QE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="147"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgh-Q4-p7g">
             <objects>
@@ -230,10 +448,22 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
             <point key="canvasLocation" x="-291.304347826087" y="146.65178571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="BXP-bx-wFx">
+            <size key="intrinsicContentSize" width="407" height="18"/>
+        </designable>
+        <designable name="gvn-ym-zIU">
+            <size key="intrinsicContentSize" width="378.5" height="19"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="Logo" width="2924" height="880"/>
         <image name="ic_hands_up" width="64" height="86"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Disabled">
+            <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Foreground">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

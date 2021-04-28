@@ -8,4 +8,5 @@ target 'Appt' do
   pod 'Firebase/Analytics'
   pod 'Kingfisher'
   pod 'Accessibility'
+  pod 'IQKeyboardManagerSwift'
 end
