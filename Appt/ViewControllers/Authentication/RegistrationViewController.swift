@@ -81,7 +81,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     }
     
     @IBAction private func registerButtonPressed(_ sender: Any) {
-        debugPrint("REGISTER")
+        self.showConfirmationAlert()
     }
     
     @IBAction private  func privacyPolicyValueChanged(_ sender: UISwitch) {
@@ -102,6 +102,15 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             self.emailTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
             self.passwordTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         }
+    }
+
+    private func showConfirmationAlert() {
+        Alert.Builder()
+            .title("confirmation_alert_title".localized)
+            .message("confirmation_alert_message".localized)
+            .action("ok".localized) {
+                debugPrint("Ok button pressed")
+            }.present(in: self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
