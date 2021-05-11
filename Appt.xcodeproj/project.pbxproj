@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		230BE9AD2636EEFE0026A90B /* MultilineTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */; };
+		230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineButton.swift */; };
 		233FB2342639782E0031E58C /* _UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB2332639782E0031E58C /* _UITextField.swift */; };
 		233FB236263991150031E58C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB235263991150031E58C /* PaddingLabel.swift */; };
 		233FB2382639914D0031E58C /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB2372639914D0031E58C /* AuthenticationTextField.swift */; };
 		233FB23A263994990031E58C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB239263994990031E58C /* Constants.swift */; };
 		234059A82636C4E500C06463 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234059A72636C4E500C06463 /* Authentication.storyboard */; };
 		234059B12636C65300C06463 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234059B02636C65300C06463 /* WelcomeViewController.swift */; };
+		2362C2FA264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */; };
+		2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */; };
+		2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
@@ -104,13 +107,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTitleButton.swift; sourceTree = "<group>"; };
+		230BE9AC2636EEFE0026A90B /* MultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineButton.swift; sourceTree = "<group>"; };
 		233FB2332639782E0031E58C /* _UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UITextField.swift; sourceTree = "<group>"; };
 		233FB235263991150031E58C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		233FB2372639914D0031E58C /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
 		233FB239263994990031E58C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		234059A72636C4E500C06463 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		234059B02636C65300C06463 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryMultilineButton.swift; sourceTree = "<group>"; };
+		2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMultilineButton.swift; sourceTree = "<group>"; };
+		2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 				234059B02636C65300C06463 /* WelcomeViewController.swift */,
 				23FD95F526394CBB0029F77B /* RegistrationViewController.swift */,
 				23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */,
+				2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -303,7 +310,9 @@
 				2870FF1B2525FC0F00377B44 /* TextField.swift */,
 				233FB235263991150031E58C /* PaddingLabel.swift */,
 				233FB2372639914D0031E58C /* AuthenticationTextField.swift */,
-				230BE9AC2636EEFE0026A90B /* MultilineTitleButton.swift */,
+				230BE9AC2636EEFE0026A90B /* MultilineButton.swift */,
+				2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */,
+				2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */,
 				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
@@ -668,10 +677,13 @@
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28FBED96251F6094009CA3FA /* Topic.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */,
+				2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */,
+				2362C2FA264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift in Sources */,
 				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
 				23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */,
+				2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */,
 				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
@@ -702,7 +714,7 @@
 				2877F6F2247D7D9700605677 /* API.swift in Sources */,
 				2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
-				230BE9AD2636EEFE0026A90B /* MultilineTitleButton.swift in Sources */,
+				230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */,
 				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
 				28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */,
 				2892317A24EA951600ED006B /* SlideGestureView.swift in Sources */,

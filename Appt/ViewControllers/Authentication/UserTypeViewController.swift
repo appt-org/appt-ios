@@ -15,7 +15,7 @@ fileprivate enum UserTypeSections: Int, CaseIterable {
 
 final class UserTypeViewController: TableViewController {
     @IBOutlet private var screenHeaderLabel: UILabel!
-    @IBOutlet private var nextButton: MultilineTitleButton!
+    @IBOutlet private var nextButton: PrimaryMultilineButton!
 
     private var firstSectionSelectionIndexPath: IndexPath?
     private var secondSectionSelectionIndexPath: IndexPath?
@@ -27,8 +27,6 @@ final class UserTypeViewController: TableViewController {
         self.screenHeaderLabel.text = "account_creation_role_text".localized
 
         self.nextButton.setTitle("next".localized, for: .normal)
-        self.nextButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
-        self.nextButton.layer.cornerRadius = 14
         self.screenHeaderLabel.font = .sourceSansPro(weight: .bold, size: 17, style: .headline)
 
         self.tableView.sectionHeaderHeight = UITableView.automaticDimension
@@ -37,7 +35,7 @@ final class UserTypeViewController: TableViewController {
         self.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: UITableViewHeaderFooterView.identifier)
     }
 
-    @IBAction private func nextButtonPressed(_ sender: MultilineTitleButton) {
+    @IBAction private func nextButtonPressed(_ sender: PrimaryMultilineButton) {
     }
 
 
@@ -146,14 +144,6 @@ final class UserTypeViewController: TableViewController {
             self.secondSectionSelectionIndexPath = indexPath
         case .userType:
             self.firstSectionSelectionIndexPath = indexPath
-        }
-    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-                self.nextButton.layer.borderColor = UIColor.foreground.cgColor
-            }
         }
     }
 }

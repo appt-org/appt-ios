@@ -25,7 +25,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var termsAndConditionsLabel: UILabel!
     @IBOutlet private var termsAndConditionsSwitch: UISwitch!
     
-    @IBOutlet private var registerButton: MultilineTitleButton!
+    @IBOutlet private var registerButton: PrimaryMultilineButton!
     
     private var isRegistrationDataFilledIn: Bool {
         self.emailTextField.text?.isValidEmail == true && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) == true && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
@@ -44,11 +44,9 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         
         self.emailTextField.delegate = self
         self.emailTextField.placeholder = "email_textfield_placeholder_text".localized
-        self.emailTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
-        
+
         self.passwordTextField.delegate = self
         self.passwordTextField.placeholder = "password_textfield_placeholder_text".localized
-        self.passwordTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         self.emailHintLabel.text = "email_textfield_hint_text".localized
         self.emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
@@ -68,10 +66,6 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         self.registerButton.setTitle("complete_registration_button_title_text".localized, for: .normal)
         self.registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
         
-        
-        self.registerButton.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
-        self.registerButton.layer.cornerRadius = 14
-        
         self.passwordTextField.setSecureTextEntry()
         
     }
@@ -84,24 +78,12 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         self.showConfirmationAlert()
     }
     
-    @IBAction private  func privacyPolicyValueChanged(_ sender: UISwitch) {
-        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
-        
-    }
-    
-    @IBAction private  func termsAndConditionsValueChanged(_ sender: UISwitch) {
+    @IBAction private func privacyPolicyValueChanged(_ sender: UISwitch) {
         self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-                self.registerButton.layer.borderColor = UIColor.foreground.cgColor
-            }
-            
-            self.emailTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
-            self.passwordTextField.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
-        }
+    @IBAction private func termsAndConditionsValueChanged(_ sender: UISwitch) {
+        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
     }
 
     private func showConfirmationAlert() {
@@ -112,10 +94,15 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
                 debugPrint("Ok button pressed")
             }.present(in: self)
     }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.primary.cgColor
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
+        textField.layer.borderColor = UIColor.textFieldDisabled.cgColor
         
+        guard let text = textField.text else { return }
         switch textField {
         case self.emailTextField:
             self.emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
@@ -123,7 +110,6 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             self.passwordHintLabel.isHidden = text.isValidPassword(numberOfSymbols: Constants.passwordMinLength) || text.isEmpty
         default: break
         }
-        
         self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
     }
     

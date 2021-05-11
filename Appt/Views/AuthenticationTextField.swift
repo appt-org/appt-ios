@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AuthenticationTextField: UITextField, UITextFieldDelegate {
+final class AuthenticationTextField: UITextField {
     private let rightButton = UIButton(type: .custom)
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,11 +24,10 @@ final class AuthenticationTextField: UITextField, UITextFieldDelegate {
     }
 
     func commonInit() {
-        self.delegate = self
-
         self.layer.cornerRadius = 14
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.textFieldDisabled.cgColor
+        self.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
     }
 
     func setSecureTextEntry() {
@@ -74,14 +73,6 @@ final class AuthenticationTextField: UITextField, UITextFieldDelegate {
         return rect
     }
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.layer.borderColor = UIColor.primary.cgColor
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.layer.borderColor = UIColor.disabled.cgColor
-    }
-
     let genericTextPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     let secureTextPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 45)
 
@@ -99,6 +90,8 @@ final class AuthenticationTextField: UITextField, UITextFieldDelegate {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if #available(iOS 13.0, *) {
+            self.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+
             if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
                 if !self.isEditing {
                     self.layer.borderColor = UIColor.textFieldDisabled.cgColor

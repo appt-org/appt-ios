@@ -1,5 +1,5 @@
 //
-//  MultilineTitleButton.swift
+//  MultilineButton.swift
 //  Appt
 //
 //  Created by Yurii Kozlov on 4/26/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MultilineTitleButton: UIButton {
+class MultilineButton: UIButton {
     private var usedFont: UIFont?
 
     required init?(coder aDecoder: NSCoder) {
@@ -27,6 +27,8 @@ class MultilineTitleButton: UIButton {
         self.titleLabel?.numberOfLines = 0
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.adjustsFontForContentSizeCategory = true
+
+        self.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
     }
 
     override var intrinsicContentSize: CGSize {
@@ -55,7 +57,7 @@ class MultilineTitleButton: UIButton {
 
     @objc private func setButtonDynamicFontSize() {
         guard let font = self.usedFont else {
-            fatalError("Font is needed to update sizings")
+            fatalError("Font is needed to update sizing")
         }
 
         self.titleLabel?.font = font

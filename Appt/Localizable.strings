@@ -218,3 +218,8 @@
 /* Registration confirmation alert */
 "confirmation_alert_title" = "Bedankt!";
 "confirmation_alert_message" = "Een activatielink was gestuurd op jouw e-mailadres. Je profiel wordt verifieerd nadat je op de activatielink klikt.";
+
+/* LoginViewController */
+"login_vc_title" = "Inloggen";
+"login_button_title" = "Inloggen";
+"reset_password_button_title" = "Wachtwoord vergeten?";
