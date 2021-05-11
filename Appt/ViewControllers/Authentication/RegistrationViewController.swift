@@ -28,7 +28,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var registerButton: PrimaryMultilineButton!
     
     private var isRegistrationDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail == true && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) == true && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+        self.emailTextField.text?.isValidEmail ?? false && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
     }
     
     override func viewDidLoad() {

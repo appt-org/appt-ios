@@ -17,6 +17,7 @@
 		2362C2FA264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */; };
 		2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */; };
 		2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */; };
+		2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
@@ -117,6 +118,7 @@
 		2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryMultilineButton.swift; sourceTree = "<group>"; };
 		2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMultilineButton.swift; sourceTree = "<group>"; };
 		2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEntryViewController.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				23FD95F526394CBB0029F77B /* RegistrationViewController.swift */,
 				23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */,
 				2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */,
+				2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				2835A05E2524B47D0011C788 /* Direction.swift in Sources */,
 				233FB2342639782E0031E58C /* _UITextField.swift in Sources */,
+				2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */,
 				287FFBBB25092B1D0022CD5F /* VoiceOverPasteView.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Article.swift in Sources */,
 				287063C724A380F9004E87AF /* MoreViewController.swift in Sources */,

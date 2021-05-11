@@ -223,3 +223,9 @@
 "login_vc_title" = "Inloggen";
 "login_button_title" = "Inloggen";
 "reset_password_button_title" = "Wachtwoord vergeten?";
+
+/* EmailEntryViewController */
+"email_entry_vc_title" = "Wachtwoord herstel";
+"email_entry_forgot_password_text" = "Wachtwoord vergeten?";
+"email_entry_description_text" = "Vul hier je e-mailadres in en wij sturen een e-mail met een link waarmee je je wachtwoord kan wijzigen";
+"create_new_password_button_title" = "Nieuw wachtwoord aanvragen";

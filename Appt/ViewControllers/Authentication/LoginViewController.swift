@@ -18,8 +18,8 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var loginButton: PrimaryMultilineButton!
     @IBOutlet private var resetPasswordButton: MultilineButton!
 
-    private var isRegistrationDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail == true
+    private var isLoginDataFilledIn: Bool {
+        self.emailTextField.text?.isValidEmail ?? false
     }
 
     override func viewDidLoad() {
@@ -29,8 +29,12 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
 
         self.title = "login_vc_title".localized
+
         self.emailLabel.text = "email_label_text".localized
+        self.emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+
         self.passwordLabel.text = "password_label_text".localized
+        self.passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
         self.emailHintLabel.text = "email_textfield_hint_text".localized
         self.emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
@@ -65,7 +69,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         default: break
         }
 
-        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
+        self.configureLoginButtonState(isDataFilledIn: self.isLoginDataFilledIn)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -77,7 +81,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         return true
     }
 
-    private func configureRegisterButtonState(isDataFilledIn: Bool) {
+    private func configureLoginButtonState(isDataFilledIn: Bool) {
         self.loginButton.isEnabled = isDataFilledIn
     }
 
