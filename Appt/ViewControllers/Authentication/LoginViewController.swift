@@ -15,12 +15,9 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
 
     @IBOutlet private var passwordLabel: UILabel!
     @IBOutlet private var passwordTextField: AuthenticationTextField!
+
     @IBOutlet private var loginButton: PrimaryMultilineButton!
     @IBOutlet private var resetPasswordButton: MultilineButton!
-
-    private var isLoginDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail ?? false
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +45,31 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         self.resetPasswordButton.setTitle("reset_password_button_title".localized, for: .normal)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.emailTextField.becomeFirstResponder()
+    }
+    
+
+    @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
+        guard let email = sender.text, let password = self.passwordTextField.text else {
+            self.loginButton.isEnabled = false
+            return
+        }
+
+        self.loginButton.isEnabled = email.isValidEmail && !password.isEmpty
+    }
+
+    @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
+        guard let password = sender.text, let email = self.emailTextField.text else {
+            self.loginButton.isEnabled = false
+            return
+        }
+
+        self.loginButton.isEnabled = !password.isEmpty && email.isValidEmail
+    }
+
     @IBAction func loginButtonPressed(_ sender: PrimaryMultilineButton) {
 
     }
@@ -68,8 +90,6 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
             self.emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
         default: break
         }
-
-        self.configureLoginButtonState(isDataFilledIn: self.isLoginDataFilledIn)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -81,8 +101,14 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         return true
     }
 
-    private func configureLoginButtonState(isDataFilledIn: Bool) {
-        self.loginButton.isEnabled = isDataFilledIn
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case emailTextField:
+            return string != " "
+        case passwordTextField:
+            return true
+        default:
+            return true
+        }
     }
-
 }

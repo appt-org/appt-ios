@@ -9,7 +9,14 @@
 import UIKit
 
 class MultilineButton: UIButton {
-    private var usedFont: UIFont?
+    private var usedFont: UIFont? {
+        get {
+            return titleLabel?.font
+        }
+        set {
+            titleLabel?.font = newValue
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,7 +35,7 @@ class MultilineButton: UIButton {
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.adjustsFontForContentSizeCategory = true
 
-        self.setDynamicFontSize(font: .sourceSansPro(weight: .semibold, size: 17, style: .body))
+        self.usedFont = .sourceSansPro(weight: .semibold, size: 17, style: .body)
     }
 
     override var intrinsicContentSize: CGSize {
@@ -44,22 +51,5 @@ class MultilineButton: UIButton {
         super.layoutSubviews()
 
         titleLabel?.preferredMaxLayoutWidth = self.titleLabel!.frame.size.width
-    }
-
-    func setDynamicFontSize(font: UIFont) {
-        self.usedFont = font
-        self.titleLabel?.font = font
-
-        NotificationCenter.default.addObserver(self, selector: #selector(setButtonDynamicFontSize),
-                                               name: UIContentSizeCategory.didChangeNotification,
-                                               object: nil)
-    }
-
-    @objc private func setButtonDynamicFontSize() {
-        guard let font = self.usedFont else {
-            fatalError("Font is needed to update sizing")
-        }
-
-        self.titleLabel?.font = font
     }
 }

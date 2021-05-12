@@ -16,10 +16,6 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
     @IBOutlet var emailHintLabel: PaddingLabel!
     @IBOutlet var continueButton: PrimaryMultilineButton!
 
-    private var isResetPasswordDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail ?? false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +38,12 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         
         self.continueButton.setTitle("create_new_password_button_title".localized, for: .normal)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.emailTextField.becomeFirstResponder()
+    }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
     }
@@ -56,7 +58,6 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         guard let text = textField.text else { return }
 
         self.emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
-        self.configureContinueButtonState(isDataFilledIn: self.isResetPasswordDataFilledIn)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -65,8 +66,16 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         return true
     }
 
-    private func configureContinueButtonState(isDataFilledIn: Bool) {
-        self.continueButton.isEnabled = isDataFilledIn
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 
+    @IBAction func editingChanged(_ sender: AuthenticationTextField) {
+        guard let text = sender.text, !text.isEmpty else {
+            self.continueButton.isEnabled = false
+            return
+        }
+
+        self.continueButton.isEnabled = text.isValidEmail
+    }
 }

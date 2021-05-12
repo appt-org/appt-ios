@@ -27,10 +27,6 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     
     @IBOutlet private var registerButton: PrimaryMultilineButton!
     
-    private var isRegistrationDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail ?? false && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,23 +63,49 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         self.registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
         
         self.passwordTextField.setSecureTextEntry()
-        
     }
-    
-    private func configureRegisterButtonState(isDataFilledIn: Bool) {
-        self.registerButton.isEnabled = isDataFilledIn
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.emailTextField.becomeFirstResponder()
     }
-    
+
+    private var isRegistrationDataFilledIn: Bool {
+        self.emailTextField.text?.isValidEmail ?? false && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+    }
+
+    @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
+        guard let email = sender.text, let password = self.passwordTextField.text else {
+            self.registerButton.isEnabled = false
+            return
+        }
+
+        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+
+        self.registerButton.isEnabled = canRegister
+    }
+
+    @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
+        guard let password = sender.text, let email = self.emailTextField.text else {
+            self.registerButton.isEnabled = false
+            return
+        }
+
+        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+
+        self.registerButton.isEnabled = canRegister
+    }
     @IBAction private func registerButtonPressed(_ sender: Any) {
         self.showConfirmationAlert()
     }
     
     @IBAction private func privacyPolicyValueChanged(_ sender: UISwitch) {
-        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
+        self.registerButton.isEnabled = self.isRegistrationDataFilledIn
     }
     
     @IBAction private func termsAndConditionsValueChanged(_ sender: UISwitch) {
-        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
+        self.registerButton.isEnabled = self.isRegistrationDataFilledIn
     }
 
     private func showConfirmationAlert() {
@@ -110,7 +132,17 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             self.passwordHintLabel.isHidden = text.isValidPassword(numberOfSymbols: Constants.passwordMinLength) || text.isEmpty
         default: break
         }
-        self.configureRegisterButtonState(isDataFilledIn: self.isRegistrationDataFilledIn)
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case emailTextField:
+            return string != " "
+        case passwordTextField:
+            return true
+        default:
+            return true
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

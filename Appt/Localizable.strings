@@ -229,3 +229,11 @@
 "email_entry_forgot_password_text" = "Wachtwoord vergeten?";
 "email_entry_description_text" = "Vul hier je e-mailadres in en wij sturen een e-mail met een link waarmee je je wachtwoord kan wijzigen";
 "create_new_password_button_title" = "Nieuw wachtwoord aanvragen";
+
+/* NewPasswordViewController */
+"change_password_label_text" = "Wachtwoord wijzigen";
+"new_password_vc_title" = "Nieuw paswoord";
+"new_password_label_text" = "Nieuw wachtwoord";
+"new_password_textfield_placeholder_text" = "Nieuw wachtwoord";
+"login_password_button_title" = "Inloggen";
+"new_password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
