@@ -202,6 +202,19 @@
 "account_creation_vc_title" = "Account aanmaken";
 "account_creation_role_text" = "Wat is jouw rol?";
 
+"account_creation_user_type_section0_title_text" = "App gebruiker";
+"account_creation_user_type_section0_row0_title_text" = "Ervaringsdeskundige";
+"account_creation_user_type_section0_row1_title_text" = "Geïnteresseerde";
+"account_creation_user_type_section0_row2_title_text" = "Ambassadeur";
+
+"account_creation_user_type_section1_title_text" = "Professional";
+"account_creation_user_type_section1_row0_title_text" = "Designer";
+"account_creation_user_type_section1_row1_title_text" = "Tester";
+"account_creation_user_type_section1_row2_title_text" = "Ontwikkelaar";
+"account_creation_user_type_section1_row3_title_text" = "Manager";
+"account_creation_user_type_section1_row4_title_text" = "Toegankelijkheidsexpert";
+"account_creation_user_type_section1_row5_title_text" = "Auditor";
+
 /* RegistrationViewController */
 "registration_vc_title" = "Account aanmaken";
 "registration_vc_description_text" = "Onze missie is om apps voor iedereen toegankelijk te maken. Dit bereiken we door kennis te delen, diensten te verlenen en gebruikers met een beperking te helpen.";

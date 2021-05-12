@@ -26,6 +26,8 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var termsAndConditionsSwitch: UISwitch!
     
     @IBOutlet private var registerButton: PrimaryMultilineButton!
+
+    var userRegistrationData: UserRegistrationData?
     
     override func viewDidLoad() {
         super.viewDidLoad()

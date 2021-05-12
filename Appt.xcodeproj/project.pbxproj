@@ -19,6 +19,7 @@
 		2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */; };
 		2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */; };
 		238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */; };
+		239BF6FE264C2E490068EC13 /* UserTypeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BF6FD264C2E490068EC13 /* UserTypeSection.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
@@ -121,6 +122,7 @@
 		2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEntryViewController.swift; sourceTree = "<group>"; };
 		238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		239BF6FD264C2E490068EC13 /* UserTypeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeSection.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				28FBED95251F6094009CA3FA /* Topic.swift */,
 				28051BDC24CB343D008EEB1E /* Position.swift */,
 				28EFEBA32487E9AA0070879A /* Taxonomy.swift */,
+				239BF6FD264C2E490068EC13 /* UserTypeSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				2892318024EC1BB900ED006B /* VoiceOverActionsViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */,
+				239BF6FE264C2E490068EC13 /* UserTypeSection.swift in Sources */,
 				28C5F82B24EC2A9000BA8F33 /* DefaultGestureView.swift in Sources */,
 				2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
