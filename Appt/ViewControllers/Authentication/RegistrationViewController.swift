@@ -115,7 +115,18 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             .title("confirmation_alert_title".localized)
             .message("confirmation_alert_message".localized)
             .action("ok".localized) {
-                debugPrint("Ok button pressed")
+                UserRegistrationData.isUserLoggedIn = true
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                if #available(iOS 13.0, *) {
+                    self.navigationController?.dismiss(animated: true) {
+                        UIApplication.shared.windows.first?.rootViewController = viewController
+                    }
+                } else {
+                    let window = UIWindow()
+                    window.rootViewController = viewController
+                    (UIApplication.shared.delegate as? AppDelegate)?.window = window
+                    window.makeKeyAndVisible()
+                }
             }.present(in: self)
     }
 

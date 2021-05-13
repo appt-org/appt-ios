@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Crashlytics
         FirebaseApp.configure()
         Events.property(.voiceover, value: UIAccessibility.isVoiceOverRunning)
-        
+
+        if #available(iOS 13.0, *) {} else {
+            self.configureWindow()
+        }
+
         // Global tint & language
         window?.tintColor = .primary
         application.accessibilityLanguage = "language".localized
@@ -77,6 +81,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         
         return true
+    }
+
+    private func configureWindow() {
+        let viewController = UIStoryboard(name: UserRegistrationData.isUserLoggedIn ? "Main" : "Authentication", bundle: nil).instantiateInitialViewController()
+
+        let window = UIWindow()
+        window.rootViewController = viewController
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     // MARK: UISceneSession Lifecycle

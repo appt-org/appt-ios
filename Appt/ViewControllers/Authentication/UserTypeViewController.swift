@@ -11,6 +11,15 @@ import UIKit
 struct UserRegistrationData {
     let userType: String
     let professtion: String
+
+    static var isUserLoggedIn: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "isUserLoggedIn")
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        }
+    }
 }
 
 final class UserTypeViewController: TableViewController {
@@ -43,10 +52,6 @@ final class UserTypeViewController: TableViewController {
             registrationVC.userRegistrationData = registrationData
         }
     }
-
-    @IBAction private func nextButtonPressed(_ sender: PrimaryMultilineButton) {
-    }
-
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         UserTypeSection.allCases.count

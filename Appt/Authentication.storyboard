@@ -65,7 +65,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <color key="titleColor" name="Background"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="createButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="FBW-ji-Wh5"/>
                                                     <segue destination="qrX-3H-BRS" kind="show" id="BA4-EO-eeJ"/>
                                                 </connections>
                                             </button>
@@ -79,7 +78,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <color key="titleColor" name="Foreground"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="loginButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="g5S-oW-Xac"/>
                                                     <segue destination="ZNq-3c-DoV" kind="show" id="EpN-3o-Wsj"/>
                                                 </connections>
                                             </button>
@@ -93,7 +91,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <color key="titleColor" name="Primary"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="resetPasswordButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="UMm-TE-Zd3"/>
                                                     <segue destination="dRB-kl-WH5" kind="show" id="SZW-i5-TdK"/>
                                                 </connections>
                                             </button>
@@ -141,7 +138,9 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                             <constraint firstItem="hsQ-bp-Tcz" firstAttribute="trailing" secondItem="YCa-UE-fbf" secondAttribute="trailing" id="pCE-F6-CP0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BQB-Zm-F0D"/>
+                    <navigationItem key="navigationItem" id="BQB-Zm-F0D">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="createAccountButton" destination="hty-qz-b4d" id="7hr-ZL-XTv"/>
                         <outlet property="loginButton" destination="ZTi-wG-W2h" id="OBG-G9-o5W"/>
@@ -273,8 +272,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <color key="titleColor" name="Primary"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="resetPasswordButtonPressed:" destination="rlL-4S-wry" eventType="touchUpInside" id="QRS-zJ-Ovk"/>
-                                                    <action selector="resetPasswordPressed:" destination="ZNq-3c-DoV" eventType="touchUpInside" id="iG0-lo-85g"/>
                                                     <segue destination="dRB-kl-WH5" kind="show" id="jiE-hO-UVD"/>
                                                 </connections>
                                             </button>
@@ -326,7 +323,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                         <outlet property="loginButton" destination="LTH-tE-1Uv" id="UbQ-0X-dPK"/>
                         <outlet property="passwordLabel" destination="YxB-CL-PXP" id="TTY-YB-ccS"/>
                         <outlet property="passwordTextField" destination="2ZU-7E-vKN" id="KQU-w9-v6f"/>
-                        <outlet property="resetPasswordButton" destination="qmH-BF-yte" id="goe-UP-jzc"/>
+                        <outlet property="resetPasswordButton" destination="qmH-BF-yte" id="R0C-c5-dyy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Iz-Ks-Zp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -608,7 +605,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                     <color key="titleColor" name="Background"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="qrX-3H-BRS" eventType="touchUpInside" id="uV5-ee-4x4"/>
                                     <segue destination="Oq3-Cr-7NY" kind="show" id="Dp5-CB-6c9"/>
                                 </connections>
                             </button>
@@ -636,7 +632,9 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                             <constraint firstItem="Noj-6S-5uV" firstAttribute="leading" secondItem="bd7-jG-yR1" secondAttribute="leading" id="vrj-eo-uMp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tzH-va-ky6"/>
+                    <navigationItem key="navigationItem" id="tzH-va-ky6">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nextButton" destination="kgw-Mh-pHL" id="zT2-Dd-PRr"/>
                         <outlet property="screenHeaderLabel" destination="qen-Rg-mlP" id="Cr5-4d-phE"/>
@@ -910,7 +908,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="jiE-hO-UVD"/>
+        <segue reference="SZW-i5-TdK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="2924" height="880"/>

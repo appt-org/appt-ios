@@ -28,14 +28,5 @@ final class WelcomeViewController: ViewController {
         self.createAccountButton.setTitle("create_account_text".localized, for: .normal)
         self.loginButton.setTitle("login_account".localized, for: .normal)
     }
-
-    @IBAction func createButtonPressed(_ sender: UIButton) {
-    }
-
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-    }
-
-    @IBAction func resetPasswordButtonPressed(_ sender: UIButton) {
-    }
 }
 

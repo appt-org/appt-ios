@@ -66,6 +66,18 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
+        UserRegistrationData.isUserLoggedIn = true
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        if #available(iOS 13.0, *) {
+            self.navigationController?.dismiss(animated: true) {
+                UIApplication.shared.windows.first?.rootViewController = viewController
+            }
+        } else {
+            let window = UIWindow()
+            window.rootViewController = viewController
+            (UIApplication.shared.delegate as? AppDelegate)?.window = window
+            window.makeKeyAndVisible()
+        }
     }
 
     @IBAction func editingChanged(_ sender: AuthenticationTextField) {
