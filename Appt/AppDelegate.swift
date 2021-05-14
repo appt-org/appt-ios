@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import IQKeyboardManagerSwift
+import SDWebImage
+import SDWebImageSVGKitPlugin
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -66,19 +69,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // UISegmentedControl styles
-        UISegmentedControl.appearance().tintColor = .primary
+        UISegmentedControl.appearance().backgroundColor = .background
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body)
+                .font: UIFont.sourceSansPro(weight: .regular, size: 14, style: .body)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.sourceSansPro(weight: .bold, size: 18, style: .body),
-            .foregroundColor: UIColor.primary
+            .font: UIFont.sourceSansPro(weight: .bold, size: 14, style: .body),
         ], for: .selected)
 
         // IQKeyboardManager
         IQKeyboardManager.shared.enable = true
+
+        let svgCoder = SDImageSVGKCoder.shared
+        SDImageCodersManager.shared.addCoder(svgCoder)
         
         return true
     }

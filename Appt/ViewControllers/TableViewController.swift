@@ -9,7 +9,6 @@
 import UIKit
 
 class TableViewController: ViewController {
-    
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {

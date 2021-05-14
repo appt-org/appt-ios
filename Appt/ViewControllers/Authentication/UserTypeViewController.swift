@@ -54,11 +54,11 @@ final class UserTypeViewController: TableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        UserTypeSection.allCases.count
+        UserType.allCases.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let userTypeSection = UserTypeSection(rawValue: section) else {
+        guard let userTypeSection = UserType(rawValue: section) else {
             fatalError("Unable to get datasource for tableView")
         }
 
@@ -66,11 +66,11 @@ final class UserTypeViewController: TableViewController {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let userTypeSection = UserTypeSection(rawValue: section) else {
+        guard let userTypeSection = UserType(rawValue: section) else {
             fatalError("Unable to get datasource for tableView")
         }
 
-        return userTypeSection.sectionTitle.uppercased()
+        return userTypeSection.title.uppercased()
     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -85,8 +85,8 @@ final class UserTypeViewController: TableViewController {
             fatalError("Unable to dequeue required cell type - \(TitleTableViewCell.self)")
         }
 
-        guard let section = UserTypeSection(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserTypeSection.self)")
+        guard let section = UserType(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section type - \(UserType.self)")
         }
 
         let rowValue = section.dataSource[indexPath.row]
@@ -95,7 +95,7 @@ final class UserTypeViewController: TableViewController {
         cell.selectionStyle = .none
 
         switch section {
-        case .userType:
+        case .user:
             if self.userType == nil, indexPath.row == 0 {
                 self.userType = rowValue
                 self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
@@ -104,7 +104,7 @@ final class UserTypeViewController: TableViewController {
             } else {
                 cell.accessoryType = self.userType == rowValue ? .checkmark : .none
             }
-        case .profession:
+        case .professional:
             if self.profession == nil, indexPath.row == 0 {
                 self.profession = rowValue
                 self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
@@ -119,22 +119,22 @@ final class UserTypeViewController: TableViewController {
     }
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let section = UserTypeSection(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserTypeSection.self)")
+        guard let section = UserType(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section type - \(UserType.self)")
         }
 
         let rowValue = section.dataSource[indexPath.row]
 
         switch section {
-        case .userType:
-            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserTypeSection.userType.rawValue })
+        case .user:
+            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.user.rawValue })
             if let userType = self.userType, userType != rowValue, let selectedIndexPath = selectedIndexPath {
                 let cell = tableView.cellForRow(at: selectedIndexPath)
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
                 cell?.accessoryType = .none
             }
-        case .profession:
-            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserTypeSection.profession.rawValue })
+        case .professional:
+            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.professional.rawValue })
             if let profession = self.profession, profession != rowValue, let selectedIndexPath = selectedIndexPath {
                 let cell = tableView.cellForRow(at: selectedIndexPath)
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
@@ -147,23 +147,23 @@ final class UserTypeViewController: TableViewController {
     }
 
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let section = UserTypeSection(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserTypeSection.self)")
+        guard let section = UserType(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section type - \(UserType.self)")
         }
 
         let rowValue = section.dataSource[indexPath.row]
 
         switch section {
-        case .userType:
+        case .user:
             return self.userType != rowValue ? indexPath : nil
-        case .profession:
+        case .professional:
             return self.profession != rowValue ? indexPath : nil
         }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = UserTypeSection(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserTypeSection.self)")
+        guard let section = UserType(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section type - \(UserType.self)")
         }
 
         let cell = tableView.cellForRow(at: indexPath)
@@ -172,9 +172,9 @@ final class UserTypeViewController: TableViewController {
         let rowValue = section.dataSource[indexPath.row]
 
         switch section {
-        case .profession:
+        case .professional:
             self.profession = rowValue
-        case .userType:
+        case .user:
             self.userType = rowValue
         }
     }

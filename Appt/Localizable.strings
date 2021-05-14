@@ -250,3 +250,7 @@
 "new_password_textfield_placeholder_text" = "Nieuw wachtwoord";
 "login_password_button_title" = "Inloggen";
 "new_password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
+
+/* HomeViewController */
+"home_vc_title" = "Home";
+

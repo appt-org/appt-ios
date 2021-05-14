@@ -1,6 +1,9 @@
 PODS:
   - Accessibility (0.2.1)
   - Alamofire (4.9.1)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
   - Firebase/Analytics (6.33.0):
     - Firebase/Core
   - Firebase/Core (6.33.0):
@@ -77,6 +80,14 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.10)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+  - SDWebImageSVGKitPlugin (1.3.0):
+    - SDWebImage/Core (~> 5.10)
+    - SVGKit (>= 2.1)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - Accessibility
@@ -85,11 +96,14 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - IQKeyboardManagerSwift
   - Kingfisher
+  - SDWebImage
+  - SDWebImageSVGKitPlugin
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Accessibility
     - Alamofire
+    - CocoaLumberjack
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -103,10 +117,14 @@ SPEC REPOS:
     - Kingfisher
     - nanopb
     - PromisesObjC
+    - SDWebImage
+    - SDWebImageSVGKitPlugin
+    - SVGKit
 
 SPEC CHECKSUMS:
   Accessibility: 8c43f92303cfa47764f0b59bfd37112257af75e9
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Firebase: 8db6f2d1b2c5e2984efba4949a145875a8f65fe5
   FirebaseAnalytics: 5dd088bd2e67bb9d13dbf792d1164ceaf3052193
   FirebaseCore: d889d9e12535b7f36ac8bfbf1713a0836a3012cd
@@ -120,7 +138,10 @@ SPEC CHECKSUMS:
   Kingfisher: e3ec347a5ab8817b7585ef46923a2d2b9a7d8fbe
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  SDWebImageSVGKitPlugin: 8797e1c9b9baf80bd50d28e673e16a12359af1c9
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: b1ef64b03f0b5e23955076f804e9b332ee3ba3ff
+PODFILE CHECKSUM: 3402aa2e7d7e836a00fa4e3297237a70fc58cc72
 
 COCOAPODS: 1.10.1
