@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d4j-GA-6Fz" firstAttribute="top" secondItem="9Ib-16-MWf" secondAttribute="bottom" id="6id-Ya-fgO"/>
                             <constraint firstAttribute="trailing" secondItem="9Ib-16-MWf" secondAttribute="trailing" constant="37" id="Jrc-ev-zaD"/>
@@ -65,7 +65,7 @@
     </objects>
     <resources>
         <image name="ic_hands_up" width="64" height="86"/>
-        <systemColor name="systemBackgroundColor">
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>

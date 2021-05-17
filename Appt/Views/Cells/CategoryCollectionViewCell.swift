@@ -25,7 +25,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
 
         self.background.layer.cornerRadius = 20
-        self.background.backgroundColor = .background
         self.categoryLabel.textColor = .foreground
         self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
     }
