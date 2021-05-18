@@ -52,6 +52,8 @@ extension HomeViewController: UITableViewDelegate {
         if section == 0 {
             let view = tableView.cell(ListTableTopSectionHeaderView.self)
 
+            view.setup(self.subject)
+            
             return view.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel).height
