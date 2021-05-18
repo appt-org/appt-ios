@@ -49,13 +49,29 @@ final class HomeViewController: ViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        self.tableViewCellSpacing
+        if section == 0 {
+            let view = tableView.cell(ListTableTopSectionHeaderView.self)
+
+            return view.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: UIView.layoutFittingExpandedSize.height),
+                                                      withHorizontalFittingPriority: .required,
+                                                      verticalFittingPriority: .fittingSizeLevel).height
+        } else {
+            return self.tableViewCellSpacing
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .clear
-        return headerView
+        if section == 0 {
+            let view = tableView.cell(ListTableTopSectionHeaderView.self)
+            
+            view.setup(self.subject)
+            
+            return view
+        } else {
+            let headerView = UIView()
+            headerView.backgroundColor = .clear
+            return headerView
+        }
     }
 }
 

@@ -13,6 +13,7 @@ final class SubjectListViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.registerNib(ListTableTopSectionHeaderView.self)
         self.tableView.registerNib(ImageTitleTableViewCell.self)
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.separatorStyle = .none
