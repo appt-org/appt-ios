@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -131,21 +131,129 @@
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="leading" secondItem="7ZC-mj-Xf6" secondAttribute="leading" id="ci4-Zd-lRv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Meer" id="j1G-uk-QOi">
-                        <barButtonItem key="rightBarButtonItem" title="Share" image="icon_share" id="s04-b1-5ak">
-                            <connections>
-                                <action selector="onShareTapped:" destination="9ka-Zl-jpa" id="BI3-os-pfu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Meer" id="j1G-uk-QOi"/>
                     <connections>
-                        <outlet property="shareItem" destination="s04-b1-5ak" id="tHz-lU-bjP"/>
                         <outlet property="tableView" destination="H7A-DJ-NIb" id="naI-1F-9T4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkW-hB-RjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362" y="1983"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="nvy-xL-Wp1">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="52r-63-a9n" customClass="ProfileViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GMA-eH-bAN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz7-Wb-ma1" customClass="SecondaryMultilineButton" customModule="Appt" customModuleProvider="target">
+                                <rect key="frame" x="24" y="196" width="366" height="50"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="VcQ-Q2-hgC"/>
+                                </constraints>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" name="Foreground"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="52r-63-a9n" eventType="touchUpInside" id="CCk-kC-Rlh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-jL-5m9" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                <rect key="frame" x="24" y="137" width="366" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="egw-jX-fZG"/>
+                                </constraints>
+                                <state key="normal" title="Change my password">
+                                    <color key="titleColor" name="Primary"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeMyPasswordButtonAction:" destination="52r-63-a9n" eventType="touchUpInside" id="4If-bG-imy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-2F-OWW" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
+                                <rect key="frame" x="24" y="802" width="366" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="QNp-be-huu"/>
+                                </constraints>
+                                <state key="normal" title="Delete my account">
+                                    <color key="titleColor" name="Foreground"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteMyAccountButtonAction:" destination="52r-63-a9n" eventType="touchUpInside" id="VE6-AR-IN0"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZ6-k0-Lhr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="77"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFu-wr-ajc">
+                                        <rect key="frame" x="0.0" y="66" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Cc5-wN-e1N"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mailadres" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-rj-gW9">
+                                        <rect key="frame" x="16" y="39" width="91" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mailadres" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-9L-kgJ">
+                                        <rect key="frame" x="16" y="19" width="382" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="Disabled"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ULJ-9L-kgJ" secondAttribute="trailing" constant="16" id="7r2-WC-UwD"/>
+                                    <constraint firstItem="uFu-wr-ajc" firstAttribute="top" secondItem="vGy-rj-gW9" secondAttribute="bottom" constant="6.5" id="9cG-bI-hfS"/>
+                                    <constraint firstAttribute="trailing" secondItem="uFu-wr-ajc" secondAttribute="trailing" id="GSR-ek-Wv5"/>
+                                    <constraint firstItem="ULJ-9L-kgJ" firstAttribute="leading" secondItem="bZ6-k0-Lhr" secondAttribute="leading" constant="16" id="PdC-gn-dUH"/>
+                                    <constraint firstItem="vGy-rj-gW9" firstAttribute="top" secondItem="ULJ-9L-kgJ" secondAttribute="bottom" constant="2" id="UPv-uH-kj6"/>
+                                    <constraint firstItem="uFu-wr-ajc" firstAttribute="leading" secondItem="bZ6-k0-Lhr" secondAttribute="leading" id="alT-IT-dHe"/>
+                                    <constraint firstItem="ULJ-9L-kgJ" firstAttribute="top" secondItem="bZ6-k0-Lhr" secondAttribute="top" constant="19" id="nLM-bM-Y40"/>
+                                    <constraint firstItem="vGy-rj-gW9" firstAttribute="leading" secondItem="ULJ-9L-kgJ" secondAttribute="leading" id="q8L-Tl-e7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="uFu-wr-ajc" secondAttribute="bottom" constant="10" id="xpE-aR-S5Z"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vGy-rj-gW9" secondAttribute="trailing" constant="20" symbolic="YES" id="ywh-V5-akY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Szm-1k-y11"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oz7-Wb-ma1" firstAttribute="top" secondItem="kFV-jL-5m9" secondAttribute="bottom" constant="15" id="0sF-qq-mWw"/>
+                            <constraint firstItem="Oz7-Wb-ma1" firstAttribute="leading" secondItem="Szm-1k-y11" secondAttribute="leading" constant="24" id="2rC-vn-cJf"/>
+                            <constraint firstItem="bZ6-k0-Lhr" firstAttribute="leading" secondItem="Szm-1k-y11" secondAttribute="leading" id="6s4-0T-fkA"/>
+                            <constraint firstItem="Szm-1k-y11" firstAttribute="trailing" secondItem="Oz7-Wb-ma1" secondAttribute="trailing" constant="24" id="CIZ-MR-eR5"/>
+                            <constraint firstItem="Szm-1k-y11" firstAttribute="trailing" secondItem="ezW-2F-OWW" secondAttribute="trailing" constant="24" id="E3M-2H-690"/>
+                            <constraint firstItem="Szm-1k-y11" firstAttribute="bottom" secondItem="ezW-2F-OWW" secondAttribute="bottom" constant="16" id="EH9-OR-ldf"/>
+                            <constraint firstItem="ezW-2F-OWW" firstAttribute="leading" secondItem="Szm-1k-y11" secondAttribute="leading" constant="24" id="NJJ-B0-BRq"/>
+                            <constraint firstItem="kFV-jL-5m9" firstAttribute="top" secondItem="bZ6-k0-Lhr" secondAttribute="bottom" constant="16" id="XcT-y0-Ncm"/>
+                            <constraint firstItem="bZ6-k0-Lhr" firstAttribute="top" secondItem="Szm-1k-y11" secondAttribute="top" id="k7C-9y-Lvz"/>
+                            <constraint firstItem="Szm-1k-y11" firstAttribute="trailing" secondItem="kFV-jL-5m9" secondAttribute="trailing" constant="24" id="rB2-OA-HSj"/>
+                            <constraint firstItem="kFV-jL-5m9" firstAttribute="leading" secondItem="Szm-1k-y11" secondAttribute="leading" constant="24" id="wPF-rN-4uW"/>
+                            <constraint firstItem="Szm-1k-y11" firstAttribute="trailing" secondItem="bZ6-k0-Lhr" secondAttribute="trailing" id="xWh-in-gqj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v01-i1-MW1"/>
+                    <connections>
+                        <outlet property="changePasswordButton" destination="kFV-jL-5m9" id="D5u-p6-QDG"/>
+                        <outlet property="deleteMyAccountButton" destination="ezW-2F-OWW" id="Jfi-dx-TRf"/>
+                        <outlet property="emailAddressLabel" destination="vGy-rj-gW9" id="rwE-Gw-Ffg"/>
+                        <outlet property="emailAddressTitleLabel" destination="ULJ-9L-kgJ" id="TLQ-Hj-jUZ"/>
+                        <outlet property="logoutButton" destination="Oz7-Wb-ma1" id="FGv-Rj-Msz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25N-Yp-0gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198.5507246376815" y="1982.8125"/>
         </scene>
         <!--Kennisbank-->
         <scene sceneID="B0v-g0-n9B">
@@ -516,8 +624,23 @@
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Disabled">
+            <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.81568627450980391" green="0.13725490196078433" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

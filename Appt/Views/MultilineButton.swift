@@ -53,3 +53,18 @@ class MultilineButton: UIButton {
         titleLabel?.preferredMaxLayoutWidth = self.titleLabel!.frame.size.width
     }
 }
+
+class UnderlinedMultilineButton: MultilineButton {
+    override func setTitle(_ title: String?, for state: UIControl.State) {
+        guard let title = title else {
+            super.setTitle(title, for: state)
+            return
+        }
+        
+        let attrs = [NSAttributedString.Key.font : UIFont.sourceSansPro(weight: .semibold, size: 17, style: .body),
+                     NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue] as [NSAttributedString.Key : Any]
+        let attributedTitle = NSMutableAttributedString(string: title, attributes:attrs)
+        
+        setAttributedTitle(attributedTitle, for: state)
+    }
+}

@@ -35,10 +35,6 @@
 "filter_categories" = "Categorieën";
 "filter_tags" = "Trefwoorden";
 
-/* Topic */
-"topic_legal" = "Juridisch";
-"topic_other" = "Overig";
-
 /* Gesture */
 "gesture_correct" = "Gebaar correct uitgevoerd!";
 "gesture_incorrect" = "Je hebt het gebaar %d keer fout uitgevoerd. Wil je doorgaan of stoppen?";
@@ -254,3 +250,19 @@
 /* HomeViewController */
 "home_vc_title" = "Home";
 
+/* MoreViewController */
+"more_vc_title" = "Meer";
+"my_profile_title" = "Mijn profiel";
+"source_title" = "Broncode";
+"sidn_fonds_title" = "SIDN fonds";
+"contact_title" = "Contact";
+"privacy_title" = "Privacy Verklaring";
+"accessability_title" = "Toegankelijkheidsverklaring";
+"terms_title" = "Algemene Voorwaarden";
+"legal_title" = "Juridisch";
+"about_title" = "Over deze app";
+
+/* ProfileViewController */
+"delete_my_account_title" = "Delete my account";
+"log_out_title" = "Log out";
+"change_my_password_title" = "Change my password";

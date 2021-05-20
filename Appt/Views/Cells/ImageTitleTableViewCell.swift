@@ -36,4 +36,13 @@ final class ImageTitleTableViewCell: UITableViewCell {
 
         self.imgView.sd_setImage(with: subject.imgURL)
     }
+    
+    func setup(withTitle title: String, image: UIImage) {
+        self.accessoryType = .disclosureIndicator
+        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.text = title
+        accessibilityLabel = title
+
+        self.imgView.image = image
+    }
 }

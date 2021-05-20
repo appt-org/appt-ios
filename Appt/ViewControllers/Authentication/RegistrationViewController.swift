@@ -116,6 +116,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             .message("confirmation_alert_message".localized)
             .action("ok".localized) {
                 UserRegistrationData.isUserLoggedIn = true
+                UserRegistrationData.userEmail = self.emailTextField.text
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                 if #available(iOS 13.0, *) {
                     self.navigationController?.dismiss(animated: true) {

@@ -9,19 +9,22 @@
 import UIKit
 
 class MoreViewController: TableViewController {
-    
-    @IBOutlet private var shareItem: UIBarButtonItem!
+    let tableViewTopHeaderHeight: CGFloat = 8
     
     private var topics: KeyValuePairs<String, [Topic]> {
         return [
-            "topic_legal".localized: [
-                .terms,
-                .privacy,
-                .accessibility
+            "": [
+                .myprofile
             ],
-            "topic_other".localized: [
+            "about_title".localized.uppercased(): [
                 .source,
-                .sidnfonds
+                .sidnfonds,
+                .contact
+            ],
+            "legal_title".localized.uppercased(): [
+                .privacy,
+                .accessibility,
+                .terms
             ]
         ]
     }
@@ -29,19 +32,10 @@ class MoreViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shareItem.title = "app_share".localized
+        self.title = "more_vc_title".localized
         
         // Set-up UITableView
-        tableView.registerNib(TitleTableViewCell.self)
-    }
-    
-    @IBAction private func onShareTapped(_ sender: Any) {
-        guard let url = URL(string: "https://appt.nl/app") else {
-            return
-        }
-        let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
-        shareViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
-        present(shareViewController, animated: true)
+        tableView.registerNib(ImageTitleTableViewCell.self)
     }
 }
 
@@ -52,9 +46,20 @@ extension MoreViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return topics.count
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return topics[section].key
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+
+        headerView.textLabel?.font = .sourceSansPro(weight: .regular, size: 15, style: .headline)
+        headerView.textLabel?.text = self.tableView(tableView, titleForHeaderInSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension - 16
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,10 +67,10 @@ extension MoreViewController {
     }
         
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.cell(TitleTableViewCell.self, at: indexPath)
+        let cell = tableView.cell(ImageTitleTableViewCell.self, at: indexPath)
         
         let topic = topics[indexPath.section].value[indexPath.row]
-        cell.setup(topic.title)
+        cell.setup(withTitle: topic.title, image: topic.image)
         
         return cell
     }
@@ -76,10 +81,13 @@ extension MoreViewController {
         let topic = topics[indexPath.section].value[indexPath.row]
         
         if indexPath.section == 0 {
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        } else if indexPath.section == 1 {
+            openWebsite(topic.slug)
+        } else if indexPath.section == 2 {
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)
-        } else {
-            openWebsite(topic.slug)
         }
     }
 }

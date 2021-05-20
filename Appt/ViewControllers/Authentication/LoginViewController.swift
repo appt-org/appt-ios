@@ -72,6 +72,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
 
     @IBAction func loginButtonPressed(_ sender: PrimaryMultilineButton) {
         UserRegistrationData.isUserLoggedIn = true
+        UserRegistrationData.userEmail = self.emailTextField.text
         
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         if #available(iOS 13.0, *) {

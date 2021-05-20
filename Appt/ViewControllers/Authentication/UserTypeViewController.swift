@@ -10,7 +10,16 @@ import UIKit
 
 struct UserRegistrationData {
     let userType: String
-    let professtion: String
+    let profession: String
+    
+    static var userEmail: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userEmail")
+        }
+        get {
+            return UserDefaults.standard.string(forKey: "userEmail")
+        }
+    }
 
     static var isUserLoggedIn: Bool {
         set {
@@ -48,7 +57,7 @@ final class UserTypeViewController: TableViewController {
         if let registrationVC = segue.destination as? RegistrationViewController,
            let userType = self.userType,
            let profession = self.profession {
-            let registrationData = UserRegistrationData(userType: userType, professtion: profession)
+            let registrationData = UserRegistrationData(userType: userType, profession: profession)
             registrationVC.userRegistrationData = registrationData
         }
     }

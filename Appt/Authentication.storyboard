@@ -30,16 +30,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-lU-LWB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="520.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welkom!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIw-Th-Yu0">
-                                                <rect key="frame" x="16" y="11" width="382" height="22.5"/>
+                                                <rect key="frame" x="16" y="11" width="382" height="24"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-DF-xNr">
-                                                <rect key="frame" x="16" y="44.5" width="382" height="122"/>
+                                                <rect key="frame" x="16" y="46" width="382" height="122"/>
                                                 <string key="text">Appt is het platform voor toegankelijkheid.
 
 
@@ -49,14 +49,14 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_hands_up" translatesAutoresizingMaskIntoConstraints="NO" id="1jm-vd-GpC">
-                                                <rect key="frame" x="175" y="202.5" width="64" height="86"/>
+                                                <rect key="frame" x="175" y="204" width="64" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="iYL-1n-zXe"/>
                                                     <constraint firstAttribute="width" constant="64" id="yME-g2-eHN"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-qz-b4d" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="337.5" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="339" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rdi-Dd-AAr"/>
@@ -69,7 +69,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-wG-W2h" customClass="SecondaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="402.5" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="404" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="u4j-UE-ZLD"/>
@@ -82,7 +82,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-BJ-oem" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="464.5" width="366" height="44"/>
+                                                <rect key="frame" x="24" y="466" width="366" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEr-Pk-Dpm"/>
@@ -465,7 +465,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         <!--New Password View Controller-->
         <scene sceneID="bKi-ZJ-7AN">
             <objects>
-                <viewController id="ItN-Lk-iKG" customClass="NewPasswordViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPasswordViewController" hidesBottomBarWhenPushed="YES" id="ItN-Lk-iKG" customClass="NewPasswordViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V2s-D3-Cdn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
