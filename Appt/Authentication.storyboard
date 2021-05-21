@@ -196,7 +196,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-Nv-LOp" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="82.5" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" name="Primary"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
@@ -379,7 +379,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAX-W7-6d4" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="82.5" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" name="Primary"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
@@ -505,7 +505,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmh-Cl-EJ2" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
-                                                        <color key="textColor" name="Primary"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
@@ -695,7 +695,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXP-bx-wFx" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="82.5" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" name="Primary"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
@@ -731,7 +731,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvn-ym-zIU" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
-                                                        <color key="textColor" name="Primary"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
@@ -908,7 +908,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="SZW-i5-TdK"/>
+        <segue reference="jiE-hO-UVD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="2924" height="880"/>
@@ -927,6 +927,9 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
