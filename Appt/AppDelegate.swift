@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureWindow() {
-        let viewController = UIStoryboard(name: UserRegistrationData.isUserLoggedIn ? "Main" : "Authentication", bundle: nil).instantiateInitialViewController()
+        let viewController = UserRegistrationData.isUserLoggedIn ? UIStoryboard.main() : UIStoryboard.welcome()
 
         let window = UIWindow()
         window.rootViewController = viewController

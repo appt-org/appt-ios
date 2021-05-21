@@ -119,8 +119,7 @@ extension HomeViewController: UICollectionViewDelegate {
             self.navigationController?.pushViewController(articleViewController, animated: true)
 
         } else {
-            guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
-            viewController.subject = model
+            let viewController = UIStoryboard.home(subject: model)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
@@ -145,8 +144,7 @@ extension HomeViewController: UICollectionViewDataSource {
             self.navigationController?.pushViewController(articleViewController, animated: true)
 
         } else {
-            guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
-            viewController.subject = model
+            let viewController = UIStoryboard.home(subject: model)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }

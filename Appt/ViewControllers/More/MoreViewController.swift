@@ -81,7 +81,7 @@ extension MoreViewController {
         let topic = topics[indexPath.section].value[indexPath.row]
         
         if indexPath.section == 0 {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
+            let viewController = UIStoryboard.profile()
             navigationController?.pushViewController(viewController, animated: true)
         } else if indexPath.section == 1 {
             openWebsite(topic.slug)

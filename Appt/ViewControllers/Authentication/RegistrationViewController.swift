@@ -117,7 +117,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             .action("ok".localized) {
                 UserRegistrationData.isUserLoggedIn = true
                 UserRegistrationData.userEmail = self.emailTextField.text
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                let viewController = UIStoryboard.main()
                 if #available(iOS 13.0, *) {
                     self.navigationController?.dismiss(animated: true) {
                         UIApplication.shared.windows.first?.rootViewController = viewController

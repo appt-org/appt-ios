@@ -59,4 +59,38 @@ extension UIStoryboard {
         vc.gestures = gestures
         return vc
     }
+    
+    static func welcome() -> UIViewController? {
+        let storyboard = UIStoryboard(name: Name.authentication.rawValue, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        
+        return vc
+    }
+    
+    static func main() -> UIViewController? {
+        let storyboard = UIStoryboard(name: Name.main.rawValue, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        
+        return vc
+    }
+    
+    static func newPassword() -> NewPasswordViewController {
+        let vc = viewController(.authentication, identifier: NewPasswordViewController.self)
+        
+        return vc
+    }
+    
+    static func profile() -> ProfileViewController {
+        let vc = viewController(.main, identifier: ProfileViewController.self)
+        
+        return vc
+    }
+    
+    static func home(subject: Subject) -> HomeViewController {
+        let vc = viewController(.main, identifier: HomeViewController.self)
+        
+        vc.subject = subject
+        
+        return vc
+    }
 }

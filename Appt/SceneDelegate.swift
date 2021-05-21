@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        let viewController = UIStoryboard(name: UserRegistrationData.isUserLoggedIn ? "Main" : "Authentication", bundle: nil).instantiateInitialViewController()
+        let viewController = UserRegistrationData.isUserLoggedIn ? UIStoryboard.main() : UIStoryboard.welcome()
 
         window.rootViewController = viewController
         self.window = window

@@ -32,7 +32,8 @@ final class ProfileViewController: UIViewController {
     }
     
     @IBAction func changeMyPasswordButtonAction(_ sender: Any) {
-        guard let viewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(withIdentifier: "NewPasswordViewController") as? NewPasswordViewController else { return }
+        let viewController = UIStoryboard.newPassword()
+        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -50,7 +51,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private func goToAuthenticationFlow() {
-        let viewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()
+        let viewController = UIStoryboard.welcome()
         if #available(iOS 13.0, *) {
             self.navigationController?.dismiss(animated: true) {
                 UIApplication.shared.windows.first?.rootViewController = viewController
