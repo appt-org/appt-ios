@@ -14,7 +14,11 @@ class TitleTableViewCell: UITableViewCell {
     
     override open var accessibilityTraits: UIAccessibilityTraits {
         get {
-            return .button
+            if self.isSelected {
+                return [.button, .selected]
+            } else {
+                return .button
+            }
         } set {
             // Ignored to maintain `button` trait at all times.
         }
