@@ -20,7 +20,25 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
             // Ignored to maintain `button` trait at all times.
         }
     }
-
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if self.isHighlighted {
+                if #available(iOS 13.0, *) {
+                    background.backgroundColor = UIColor.separator
+                } else {
+                    background.backgroundColor = UIColor.lightGray
+                }
+            } else {
+                if #available(iOS 13.0, *) {
+                    background.backgroundColor = UIColor.systemBackground
+                } else {
+                    background.backgroundColor = UIColor.white
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
