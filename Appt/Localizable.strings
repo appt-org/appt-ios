@@ -220,7 +220,7 @@
 "password_label_text" = "Wachtwoord";
 "password_textfield_placeholder_text" = "Wachtwoord";
 "password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
-"privacy_policy_label_text" = "Ik ga akkoord met Privacy Verklaring";
+"privacy_policy_label_text" = "Ik ga akkoord met de privacyverklaring";
 "terms_and_conditions_label_text" = "Ik ga akkoord met Algemene Voorwaarden";
 "complete_registration_button_title_text" = "Registratie voltooien";
 "toggle_password_visible_accessibility_title" = "Show password";
