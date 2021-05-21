@@ -32,6 +32,7 @@ final class AuthenticationTextField: UITextField {
 
     func setSecureTextEntry() {
         rightButton.setImage(UIImage(named: "ic_hidden"), for: .normal)
+        rightButton.accessibilityLabel = "toggle_password_visible_accessibility_title".localized
         rightButton.addTarget(self, action: #selector(toggleShowHide), for: .touchUpInside)
         rightButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 
@@ -59,8 +60,10 @@ final class AuthenticationTextField: UITextField {
 
         if isSecureTextEntry {
             rightButton.setImage(UIImage(named: "ic_hidden"), for: .normal)
+            rightButton.accessibilityLabel = "toggle_password_visible_accessibility_title".localized
         } else {
             rightButton.setImage(UIImage(named: "ic_visible"), for: .normal)
+            rightButton.accessibilityLabel = "toggle_password_hidden_accessibility_title".localized
         }
 
         self.layoutIfNeeded()

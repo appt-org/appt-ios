@@ -223,6 +223,8 @@
 "privacy_policy_label_text" = "Ik ga akkoord met Privacy Verklaring";
 "terms_and_conditions_label_text" = "Ik ga akkoord met Algemene Voorwaarden";
 "complete_registration_button_title_text" = "Registratie voltooien";
+"toggle_password_visible_accessibility_title" = "Show password";
+"toggle_password_hidden_accessibility_title" = "Hide password";
 
 /* Registration confirmation alert */
 "confirmation_alert_title" = "Bedankt!";
