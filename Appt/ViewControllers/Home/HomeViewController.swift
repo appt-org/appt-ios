@@ -22,6 +22,8 @@ final class HomeViewController: ViewController {
 
         self.title = "home_vc_title".localized
 
+        userProfSegmentedControl.isHidden = self.navigationController?.viewControllers.count ?? 0 > 1
+        
         ViewEmbedder.embed(
             withIdentifier: self.subject.subjectType == .blocks ? "SubjectBlocksViewController" : "SubjectListViewController", // Storyboard ID
             parent: self,
