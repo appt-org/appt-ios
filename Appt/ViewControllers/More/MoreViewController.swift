@@ -32,7 +32,7 @@ class MoreViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "more_vc_title".localized
+        title = "more_vc_title".localized
         
         // Set-up UITableView
         tableView.registerNib(ImageTitleTableViewCell.self)

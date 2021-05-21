@@ -18,42 +18,42 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "my_profile_title".localized
+        title = "my_profile_title".localized
         
-        self.emailAddressTitleLabel.text = "email_label_text".localized
-        self.emailAddressLabel.text = UserRegistrationData.userEmail
+        emailAddressTitleLabel.text = "email_label_text".localized
+        emailAddressLabel.text = UserRegistrationData.userEmail
 
-        self.changePasswordButton.setTitle("change_my_password_title".localized, for: .normal)
-        self.logoutButton.setTitle("log_out_title".localized, for: .normal)
-        self.deleteMyAccountButton.setTitle("delete_my_account_title".localized, for: .normal)
+        changePasswordButton.setTitle("change_my_password_title".localized, for: .normal)
+        logoutButton.setTitle("log_out_title".localized, for: .normal)
+        deleteMyAccountButton.setTitle("delete_my_account_title".localized, for: .normal)
         
-        self.emailAddressTitleLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .headline)
-        self.emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailAddressTitleLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .headline)
+        emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
     }
     
     @IBAction func changeMyPasswordButtonAction(_ sender: Any) {
         let viewController = UIStoryboard.newPassword()
         
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = false
         UserRegistrationData.userEmail = nil
         
-        self.goToAuthenticationFlow()
+        goToAuthenticationFlow()
     }
     @IBAction func deleteMyAccountButtonAction(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = false
         UserRegistrationData.userEmail = nil
         
-        self.goToAuthenticationFlow()
+        goToAuthenticationFlow()
     }
     
     private func goToAuthenticationFlow() {
         let viewController = UIStoryboard.welcome()
         if #available(iOS 13.0, *) {
-            self.navigationController?.dismiss(animated: true) {
+            navigationController?.dismiss(animated: true) {
                 UIApplication.shared.windows.first?.rootViewController = viewController
             }
         } else {

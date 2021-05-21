@@ -14,7 +14,7 @@ class SubjectBlocksViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.registerNib(CategoryCollectionViewCell.self)
+        collectionView.registerNib(CategoryCollectionViewCell.self)
     }
 
     lazy var refreshControl: UIRefreshControl = {

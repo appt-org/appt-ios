@@ -18,29 +18,29 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "new_password_vc_title".localized
+        title = "new_password_vc_title".localized
 
-        self.newPasswordLabel.text = "change_password_label_text".localized
-        self.changePasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        newPasswordLabel.text = "change_password_label_text".localized
+        changePasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
 
-        self.newPasswordLabel.text = "new_password_label_text".localized
-        self.newPasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        newPasswordLabel.text = "new_password_label_text".localized
+        newPasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
 
-        self.newPasswordTextField.delegate = self
-        self.newPasswordTextField.placeholder = "new_password_textfield_placeholder_text".localized
-        self.newPasswordTextField.setSecureTextEntry()
+        newPasswordTextField.delegate = self
+        newPasswordTextField.placeholder = "new_password_textfield_placeholder_text".localized
+        newPasswordTextField.setSecureTextEntry()
 
-        self.passwordHintLabel.text = "new_password_textfield_hint_text".localized
-        self.passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        passwordHintLabel.text = "new_password_textfield_hint_text".localized
+        passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
 
-        self.loginButton.setTitle("login_password_button_title".localized, for: .normal)
+        loginButton.setTitle("login_password_button_title".localized, for: .normal)
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.newPasswordTextField.becomeFirstResponder()
+        newPasswordTextField.becomeFirstResponder()
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -52,7 +52,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
 
         guard let text = textField.text else { return }
 
-        self.passwordHintLabel.isHidden = text.count >= Constants.passwordMinLength || text.isEmpty
+        passwordHintLabel.isHidden = text.count >= Constants.passwordMinLength || text.isEmpty
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -62,14 +62,14 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     }
 
     private func configureLoginButtonState(isDataFilledIn: Bool) {
-        self.loginButton.isEnabled = isDataFilledIn
+        loginButton.isEnabled = isDataFilledIn
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = true
         let viewController = UIStoryboard.main()
         if #available(iOS 13.0, *) {
-            self.navigationController?.dismiss(animated: true) {
+            navigationController?.dismiss(animated: true) {
                 UIApplication.shared.windows.first?.rootViewController = viewController
             }
         } else {
@@ -82,10 +82,10 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
 
     @IBAction func editingChanged(_ sender: AuthenticationTextField) {
         guard let text = sender.text, !text.isEmpty else {
-            self.loginButton.isEnabled = false
+            loginButton.isEnabled = false
             return
         }
 
-        self.loginButton.isEnabled = text.count >= Constants.passwordMinLength
+        loginButton.isEnabled = text.count >= Constants.passwordMinLength
     }
 }

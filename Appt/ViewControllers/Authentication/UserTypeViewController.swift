@@ -41,22 +41,22 @@ final class UserTypeViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "account_creation_vc_title".localized
-        self.screenHeaderLabel.text = "account_creation_role_text".localized
+        title = "account_creation_vc_title".localized
+        screenHeaderLabel.text = "account_creation_role_text".localized
 
-        self.nextButton.setTitle("next".localized, for: .normal)
-        self.screenHeaderLabel.font = .sourceSansPro(weight: .bold, size: 17, style: .headline)
+        nextButton.setTitle("next".localized, for: .normal)
+        screenHeaderLabel.font = .sourceSansPro(weight: .bold, size: 17, style: .headline)
 
-        self.tableView.sectionHeaderHeight = UITableView.automaticDimension
-        self.tableView.estimatedSectionHeaderHeight = 25
-        self.tableView.registerNib(TitleTableViewCell.self)
-        self.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: UITableViewHeaderFooterView.identifier)
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
+        tableView.registerNib(TitleTableViewCell.self)
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: UITableViewHeaderFooterView.identifier)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let registrationVC = segue.destination as? RegistrationViewController,
-           let userType = self.userType,
-           let profession = self.profession {
+           let userType = userType,
+           let profession = profession {
             let registrationData = UserRegistrationData(userType: userType, profession: profession)
             registrationVC.userRegistrationData = registrationData
         }
@@ -105,22 +105,22 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .user:
-            if self.userType == nil, indexPath.row == 0 {
-                self.userType = rowValue
-                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            if userType == nil, indexPath.row == 0 {
+                userType = rowValue
+                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                 cell.accessoryType = .checkmark
                 return cell
             } else {
-                cell.accessoryType = self.userType == rowValue ? .checkmark : .none
+                cell.accessoryType = userType == rowValue ? .checkmark : .none
             }
         case .professional:
-            if self.profession == nil, indexPath.row == 0 {
-                self.profession = rowValue
-                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            if profession == nil, indexPath.row == 0 {
+                profession = rowValue
+                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                 cell.accessoryType = .checkmark
                 return cell
             } else {
-                cell.accessoryType = self.profession == rowValue ? .checkmark : .none
+                cell.accessoryType = profession == rowValue ? .checkmark : .none
             }
         }
 
@@ -136,15 +136,15 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .user:
-            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.user.rawValue })
-            if let userType = self.userType, userType != rowValue, let selectedIndexPath = selectedIndexPath {
+            let selectedIndexPath = tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.user.rawValue })
+            if let userType = userType, userType != rowValue, let selectedIndexPath = selectedIndexPath {
                 let cell = tableView.cellForRow(at: selectedIndexPath)
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
                 cell?.accessoryType = .none
             }
         case .professional:
-            let selectedIndexPath = self.tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.professional.rawValue })
-            if let profession = self.profession, profession != rowValue, let selectedIndexPath = selectedIndexPath {
+            let selectedIndexPath = tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.professional.rawValue })
+            if let profession = profession, profession != rowValue, let selectedIndexPath = selectedIndexPath {
                 let cell = tableView.cellForRow(at: selectedIndexPath)
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
                 cell?.accessoryType = .none
@@ -164,9 +164,9 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .user:
-            return self.userType != rowValue ? indexPath : nil
+            return userType != rowValue ? indexPath : nil
         case .professional:
-            return self.profession != rowValue ? indexPath : nil
+            return profession != rowValue ? indexPath : nil
         }
     }
 
@@ -182,9 +182,9 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .professional:
-            self.profession = rowValue
+            profession = rowValue
         case .user:
-            self.userType = rowValue
+            userType = rowValue
         }
     }
 }

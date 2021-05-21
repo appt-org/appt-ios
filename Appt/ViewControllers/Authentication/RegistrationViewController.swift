@@ -32,82 +32,82 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "account_creation_vc_title".localized
+        title = "account_creation_vc_title".localized
         
-        self.descriptionLabel.text = "registration_vc_description_text".localized
-        self.descriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        descriptionLabel.text = "registration_vc_description_text".localized
+        descriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
-        self.emailLabel.text = "email_label_text".localized
-        self.emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailLabel.text = "email_label_text".localized
+        emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
-        self.emailTextField.delegate = self
-        self.emailTextField.placeholder = "email_textfield_placeholder_text".localized
+        emailTextField.delegate = self
+        emailTextField.placeholder = "email_textfield_placeholder_text".localized
 
-        self.passwordTextField.delegate = self
-        self.passwordTextField.placeholder = "password_textfield_placeholder_text".localized
+        passwordTextField.delegate = self
+        passwordTextField.placeholder = "password_textfield_placeholder_text".localized
         
-        self.emailHintLabel.text = "email_textfield_hint_text".localized
-        self.emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        emailHintLabel.text = "email_textfield_hint_text".localized
+        emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
         
-        self.passwordLabel.text = "password_label_text".localized
-        self.passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        passwordLabel.text = "password_label_text".localized
+        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
-        self.passwordHintLabel.text = "password_textfield_hint_text".localized
-        self.passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        passwordHintLabel.text = "password_textfield_hint_text".localized
+        passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
         
-        self.privacyPolicyLabel.text = "privacy_policy_label_text".localized
-        self.privacyPolicyLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        privacyPolicyLabel.text = "privacy_policy_label_text".localized
+        privacyPolicyLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
-        self.termsAndConditionsLabel.text = "terms_and_conditions_label_text".localized
-        self.termsAndConditionsLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        termsAndConditionsLabel.text = "terms_and_conditions_label_text".localized
+        termsAndConditionsLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
-        self.registerButton.setTitle("complete_registration_button_title_text".localized, for: .normal)
-        self.registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
+        registerButton.setTitle("complete_registration_button_title_text".localized, for: .normal)
+        registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
         
-        self.passwordTextField.setSecureTextEntry()
+        passwordTextField.setSecureTextEntry()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.emailTextField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
     }
 
     private var isRegistrationDataFilledIn: Bool {
-        self.emailTextField.text?.isValidEmail ?? false && self.passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+        emailTextField.text?.isValidEmail ?? false && passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && privacyPolicySwitch.isOn && termsAndConditionsSwitch.isOn
     }
 
     @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
-        guard let email = sender.text, let password = self.passwordTextField.text else {
-            self.registerButton.isEnabled = false
+        guard let email = sender.text, let password = passwordTextField.text else {
+            registerButton.isEnabled = false
             return
         }
 
-        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && privacyPolicySwitch.isOn && termsAndConditionsSwitch.isOn
 
-        self.registerButton.isEnabled = canRegister
+        registerButton.isEnabled = canRegister
     }
 
     @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
-        guard let password = sender.text, let email = self.emailTextField.text else {
-            self.registerButton.isEnabled = false
+        guard let password = sender.text, let email = emailTextField.text else {
+            registerButton.isEnabled = false
             return
         }
 
-        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && self.privacyPolicySwitch.isOn && self.termsAndConditionsSwitch.isOn
+        let canRegister = email.isValidEmail && password.count >= Constants.passwordMinLength && privacyPolicySwitch.isOn && termsAndConditionsSwitch.isOn
 
-        self.registerButton.isEnabled = canRegister
+        registerButton.isEnabled = canRegister
     }
     @IBAction private func registerButtonPressed(_ sender: Any) {
-        self.showConfirmationAlert()
+        showConfirmationAlert()
     }
     
     @IBAction private func privacyPolicyValueChanged(_ sender: UISwitch) {
-        self.registerButton.isEnabled = self.isRegistrationDataFilledIn
+        registerButton.isEnabled = isRegistrationDataFilledIn
     }
     
     @IBAction private func termsAndConditionsValueChanged(_ sender: UISwitch) {
-        self.registerButton.isEnabled = self.isRegistrationDataFilledIn
+        registerButton.isEnabled = isRegistrationDataFilledIn
     }
 
     private func showConfirmationAlert() {
@@ -140,10 +140,10 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         
         guard let text = textField.text else { return }
         switch textField {
-        case self.emailTextField:
-            self.emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
-        case self.passwordTextField:
-            self.passwordHintLabel.isHidden = text.isValidPassword(numberOfSymbols: Constants.passwordMinLength) || text.isEmpty
+        case emailTextField:
+            emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
+        case passwordTextField:
+            passwordHintLabel.isHidden = text.isValidPassword(numberOfSymbols: Constants.passwordMinLength) || text.isEmpty
         default: break
         }
     }
@@ -160,10 +160,10 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField === self.emailTextField {
-            self.passwordTextField.becomeFirstResponder()
-        } else if textField === self.passwordTextField {
-            self.passwordTextField.resignFirstResponder()
+        if textField === emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField === passwordTextField {
+            passwordTextField.resignFirstResponder()
         }
         return true
     }

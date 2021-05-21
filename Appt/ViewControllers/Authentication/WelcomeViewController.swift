@@ -18,15 +18,15 @@ final class WelcomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Appt"
+        title = "Appt"
 
-        self.welcomeLabel.text = "welcome_text".localized
-        self.welcomeLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
-        self.welcomeDescriptionLabel.text = "welcome_description_text".localized
-        self.welcomeDescriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
-        self.resetPasswordButton.setTitle("forgot_password".localized, for: .normal)
-        self.createAccountButton.setTitle("create_account_text".localized, for: .normal)
-        self.loginButton.setTitle("login_account".localized, for: .normal)
+        welcomeLabel.text = "welcome_text".localized
+        welcomeLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        welcomeDescriptionLabel.text = "welcome_description_text".localized
+        welcomeDescriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        resetPasswordButton.setTitle("forgot_password".localized, for: .normal)
+        createAccountButton.setTitle("create_account_text".localized, for: .normal)
+        loginButton.setTitle("login_account".localized, for: .normal)
     }
 }
 

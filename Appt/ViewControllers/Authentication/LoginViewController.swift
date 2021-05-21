@@ -22,61 +22,61 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 
-        self.title = "login_vc_title".localized
+        title = "login_vc_title".localized
 
-        self.emailLabel.text = "email_label_text".localized
-        self.emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailLabel.text = "email_label_text".localized
+        emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
-        self.passwordLabel.text = "password_label_text".localized
-        self.passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        passwordLabel.text = "password_label_text".localized
+        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
-        self.emailHintLabel.text = "email_textfield_hint_text".localized
-        self.emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        emailHintLabel.text = "email_textfield_hint_text".localized
+        emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
 
-        self.emailTextField.placeholder = "email_textfield_placeholder_text".localized
+        emailTextField.placeholder = "email_textfield_placeholder_text".localized
 
-        self.passwordTextField.placeholder = "password_textfield_placeholder_text".localized
-        self.passwordTextField.setSecureTextEntry()
+        passwordTextField.placeholder = "password_textfield_placeholder_text".localized
+        passwordTextField.setSecureTextEntry()
 
-        self.loginButton.setTitle("login_button_title".localized, for: .normal)
-        self.resetPasswordButton.setTitle("reset_password_button_title".localized, for: .normal)
+        loginButton.setTitle("login_button_title".localized, for: .normal)
+        resetPasswordButton.setTitle("reset_password_button_title".localized, for: .normal)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.emailTextField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
     }
     
 
     @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
-        guard let email = sender.text, let password = self.passwordTextField.text else {
-            self.loginButton.isEnabled = false
+        guard let email = sender.text, let password = passwordTextField.text else {
+            loginButton.isEnabled = false
             return
         }
 
-        self.loginButton.isEnabled = email.isValidEmail && !password.isEmpty
+        loginButton.isEnabled = email.isValidEmail && !password.isEmpty
     }
 
     @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
-        guard let password = sender.text, let email = self.emailTextField.text else {
-            self.loginButton.isEnabled = false
+        guard let password = sender.text, let email = emailTextField.text else {
+            loginButton.isEnabled = false
             return
         }
 
-        self.loginButton.isEnabled = !password.isEmpty && email.isValidEmail
+        loginButton.isEnabled = !password.isEmpty && email.isValidEmail
     }
 
     @IBAction func loginButtonPressed(_ sender: PrimaryMultilineButton) {
         UserRegistrationData.isUserLoggedIn = true
-        UserRegistrationData.userEmail = self.emailTextField.text
+        UserRegistrationData.userEmail = emailTextField.text
         
         let viewController = UIStoryboard.main()
         if #available(iOS 13.0, *) {
-            self.navigationController?.dismiss(animated: true) {
+            navigationController?.dismiss(animated: true) {
                 UIApplication.shared.windows.first?.rootViewController = viewController
             }
         } else {
@@ -99,17 +99,17 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
 
         guard let text = textField.text else { return }
         switch textField {
-        case self.emailTextField:
-            self.emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
+        case emailTextField:
+            emailHintLabel.isHidden = text.isValidEmail || text.isEmpty
         default: break
         }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField === self.emailTextField {
-            self.passwordTextField.becomeFirstResponder()
-        } else if textField === self.passwordTextField {
-            self.passwordTextField.resignFirstResponder()
+        if textField === emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField === passwordTextField {
+            passwordTextField.resignFirstResponder()
         }
         return true
     }

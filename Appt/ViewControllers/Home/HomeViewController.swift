@@ -20,9 +20,9 @@ final class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "home_vc_title".localized
+        title = "home_vc_title".localized
 
-        userProfSegmentedControl.isHidden = self.navigationController?.viewControllers.count ?? 0 > 1
+        userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
         
         ViewEmbedder.embed(
             withIdentifier: self.subject.subjectType == .blocks ? "SubjectBlocksViewController" : "SubjectListViewController", // Storyboard ID
@@ -54,13 +54,13 @@ extension HomeViewController: UITableViewDelegate {
         if section == 0 {
             let view = tableView.cell(ListTableTopSectionHeaderView.self)
 
-            view.setup(self.subject)
+            view.setup(subject)
             
             return view.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel).height
         } else {
-            return self.tableViewCellSpacing
+            return tableViewCellSpacing
         }
     }
 
@@ -68,7 +68,7 @@ extension HomeViewController: UITableViewDelegate {
         if section == 0 {
             let view = tableView.cell(ListTableTopSectionHeaderView.self)
             
-            view.setup(self.subject)
+            view.setup(subject)
             
             return view
         } else {
@@ -86,13 +86,13 @@ extension HomeViewController: UITableViewDataSource {
             fatalError("unable to dequeue ImageTitleTableViewCell")
         }
 
-        let model = self.subject.children[indexPath.section]
+        let model = subject.children[indexPath.section]
         cell.setup(model)
         return cell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        self.subject.children.count
+        subject.children.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,21 +106,21 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.subject.children.count
+        subject.children.count
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let model = self.subject.children[indexPath.section]
+        let model = subject.children[indexPath.section]
 
         if model.children.isEmpty, let url = model.webURL {
             let articleViewController = UIStoryboard.article(type: .page, url: url)
-            self.navigationController?.pushViewController(articleViewController, animated: true)
+            navigationController?.pushViewController(articleViewController, animated: true)
 
         } else {
             let viewController = UIStoryboard.home(subject: model)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
@@ -131,21 +131,21 @@ extension HomeViewController: UICollectionViewDataSource {
             fatalError("unable to dequeue CategoryCollectionViewCell")
         }
 
-        let model = self.subject.children[indexPath.row]
+        let model = subject.children[indexPath.row]
         cell.setup(model)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let model = self.subject.children[indexPath.row]
+        let model = subject.children[indexPath.row]
 
         if model.children.isEmpty, let url = model.webURL {
             let articleViewController = UIStoryboard.article(type: .page, url: url)
-            self.navigationController?.pushViewController(articleViewController, animated: true)
+            navigationController?.pushViewController(articleViewController, animated: true)
 
         } else {
             let viewController = UIStoryboard.home(subject: model)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
@@ -176,7 +176,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                 fatalError()
             }
 
-            headerView.setup(self.subject)
+            headerView.setup(subject)
 
             return headerView
 
