@@ -52,7 +52,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
     }
     
 
-    @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private func emailEditingChanged(_ sender: AuthenticationTextField) {
         guard let email = sender.text, let password = passwordTextField.text else {
             loginButton.isEnabled = false
             return
@@ -61,7 +61,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         loginButton.isEnabled = email.isValidEmail && !password.isEmpty
     }
 
-    @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private func passwordEditingChanged(_ sender: AuthenticationTextField) {
         guard let password = sender.text, let email = emailTextField.text else {
             loginButton.isEnabled = false
             return
@@ -70,7 +70,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         loginButton.isEnabled = !password.isEmpty && email.isValidEmail
     }
 
-    @IBAction func loginButtonPressed(_ sender: PrimaryMultilineButton) {
+    @IBAction private func loginButtonPressed(_ sender: PrimaryMultilineButton) {
         UserRegistrationData.isUserLoggedIn = true
         UserRegistrationData.userEmail = emailTextField.text
         
@@ -86,7 +86,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
             window.makeKeyAndVisible()
         }
     }
-    @IBAction func resetPasswordPressed(_ sender: MultilineButton) {
+    @IBAction private func resetPasswordPressed(_ sender: MultilineButton) {
 
     }
 

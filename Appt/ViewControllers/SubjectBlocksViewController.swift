@@ -17,14 +17,14 @@ class SubjectBlocksViewController: ViewController {
         collectionView.registerNib(CategoryCollectionViewCell.self)
     }
 
-    lazy var refreshControl: UIRefreshControl = {
+    lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()
 
-    @objc func refresh(_ refreshControl: UIRefreshControl) {
+    @objc private func refresh(_ refreshControl: UIRefreshControl) {
         // Should be overridden to handle refresh logic
     }
 

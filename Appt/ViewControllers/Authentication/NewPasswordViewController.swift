@@ -9,11 +9,11 @@
 import UIKit
 
 final class NewPasswordViewController: ViewController, UITextFieldDelegate {
-    @IBOutlet var changePasswordLabel: UILabel!
-    @IBOutlet var newPasswordLabel: UILabel!
-    @IBOutlet var newPasswordTextField: AuthenticationTextField!
-    @IBOutlet var passwordHintLabel: PaddingLabel!
-    @IBOutlet var loginButton: PrimaryMultilineButton!
+    @IBOutlet private var changePasswordLabel: UILabel!
+    @IBOutlet private var newPasswordLabel: UILabel!
+    @IBOutlet private var newPasswordTextField: AuthenticationTextField!
+    @IBOutlet private var passwordHintLabel: PaddingLabel!
+    @IBOutlet private var loginButton: PrimaryMultilineButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         loginButton.isEnabled = isDataFilledIn
     }
 
-    @IBAction func loginButtonPressed(_ sender: Any) {
+    @IBAction private  func loginButtonPressed(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = true
         let viewController = UIStoryboard.main()
         if #available(iOS 13.0, *) {
@@ -80,7 +80,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func editingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private  func editingChanged(_ sender: AuthenticationTextField) {
         guard let text = sender.text, !text.isEmpty else {
             loginButton.isEnabled = false
             return

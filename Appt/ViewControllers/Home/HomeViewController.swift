@@ -40,7 +40,7 @@ final class HomeViewController: ViewController {
         }
     }
     
-    @IBAction func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
+    @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
         guard let _ = UserType(rawValue: sender.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
         }

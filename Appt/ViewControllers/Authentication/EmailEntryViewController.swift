@@ -45,7 +45,7 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         emailTextField.becomeFirstResponder()
     }
     
-    @IBAction func continueButtonPressed(_ sender: Any) {
+    @IBAction private func continueButtonPressed(_ sender: Any) {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -70,7 +70,7 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         return string != " "
     }
 
-    @IBAction func editingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private func editingChanged(_ sender: AuthenticationTextField) {
         guard let text = sender.text, !text.isEmpty else {
             continueButton.isEnabled = false
             return

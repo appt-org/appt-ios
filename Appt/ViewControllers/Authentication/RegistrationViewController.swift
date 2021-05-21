@@ -77,7 +77,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         emailTextField.text?.isValidEmail ?? false && passwordTextField.text?.isValidPassword(numberOfSymbols: Constants.passwordMinLength) ?? false && privacyPolicySwitch.isOn && termsAndConditionsSwitch.isOn
     }
 
-    @IBAction func emailEditingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private  func emailEditingChanged(_ sender: AuthenticationTextField) {
         guard let email = sender.text, let password = passwordTextField.text else {
             registerButton.isEnabled = false
             return
@@ -88,7 +88,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         registerButton.isEnabled = canRegister
     }
 
-    @IBAction func passwordEditingChanged(_ sender: AuthenticationTextField) {
+    @IBAction private func passwordEditingChanged(_ sender: AuthenticationTextField) {
         guard let password = sender.text, let email = emailTextField.text else {
             registerButton.isEnabled = false
             return

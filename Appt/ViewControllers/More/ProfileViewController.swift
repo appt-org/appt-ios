@@ -31,19 +31,19 @@ final class ProfileViewController: UIViewController {
         emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
     }
     
-    @IBAction func changeMyPasswordButtonAction(_ sender: Any) {
+    @IBAction private func changeMyPasswordButtonAction(_ sender: Any) {
         let viewController = UIStoryboard.newPassword()
         
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBAction func logoutButtonAction(_ sender: Any) {
+    @IBAction private func logoutButtonAction(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = false
         UserRegistrationData.userEmail = nil
         
         goToAuthenticationFlow()
     }
-    @IBAction func deleteMyAccountButtonAction(_ sender: Any) {
+    @IBAction private func deleteMyAccountButtonAction(_ sender: Any) {
         UserRegistrationData.isUserLoggedIn = false
         UserRegistrationData.userEmail = nil
         
