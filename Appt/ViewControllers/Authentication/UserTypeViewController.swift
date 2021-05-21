@@ -14,19 +14,19 @@ struct UserRegistrationData {
     
     static var userEmail: String? {
         set {
-            UserDefaults.standard.set(newValue, forKey: "userEmail")
+            UserDefaults.standard.set(newValue, forKey: String.userEmailDefaultsKey)
         }
         get {
-            return UserDefaults.standard.string(forKey: "userEmail")
+            return UserDefaults.standard.string(forKey: String.userEmailDefaultsKey)
         }
     }
 
     static var isUserLoggedIn: Bool {
         set {
-            UserDefaults.standard.set(newValue, forKey: "isUserLoggedIn")
+            UserDefaults.standard.set(newValue, forKey: String.isUserLoggedInDefaultsKey)
         }
         get {
-            return UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+            return UserDefaults.standard.bool(forKey: String.isUserLoggedInDefaultsKey)
         }
     }
 }

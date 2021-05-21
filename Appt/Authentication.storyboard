@@ -892,7 +892,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
             <size key="intrinsicContentSize" width="407" height="18"/>
         </designable>
         <designable name="BXP-bx-wFx">
-            <size key="intrinsicContentSize" width="375" height="18"/>
+            <size key="intrinsicContentSize" width="407" height="18"/>
         </designable>
         <designable name="TAX-W7-6d4">
             <size key="intrinsicContentSize" width="407" height="18"/>
@@ -904,7 +904,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
             <size key="intrinsicContentSize" width="378.5" height="19"/>
         </designable>
         <designable name="gvn-ym-zIU">
-            <size key="intrinsicContentSize" width="346.5" height="19"/>
+            <size key="intrinsicContentSize" width="378.5" height="19"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

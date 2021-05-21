@@ -28,4 +28,8 @@ extension String {
     func localized(_ arguments: CVarArg...) -> String {
         return String(format: self.localized, locale: .current, arguments: arguments)
     }
+    
+    
+    static var isUserLoggedInDefaultsKey = "isUserLoggedIn"
+    static var userEmailDefaultsKey = "userEmail"
 }
