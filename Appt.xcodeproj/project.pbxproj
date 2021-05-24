@@ -122,6 +122,7 @@
 		A82ACD142653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */; };
 		A82ACD1626550D6A00BBE8FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */; };
 		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
+		A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44D265C0121006ED9EE /* ServicesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +243,7 @@
 		A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableTopSectionHeaderView.xib; sourceTree = "<group>"; };
 		A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A89FD44A265BE43C006ED9EE /* _UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIImage.swift; sourceTree = "<group>"; };
+		A89FD44D265C0121006ED9EE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -371,6 +373,7 @@
 		287468EF247E65320089BB32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A89FD44C265C010F006ED9EE /* Services */,
 				28DF7C912480175700CB467A /* ViewController.swift */,
 				28639F7225E4047C00C29BB5 /* NavigationController.swift */,
 				288554F52519EFD300392FC3 /* ScrollViewController.swift */,
@@ -584,6 +587,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A89FD44C265C010F006ED9EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A89FD44D265C0121006ED9EE /* ServicesViewController.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -774,6 +785,7 @@
 				2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */,
 				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
+				A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */,

@@ -268,3 +268,6 @@
 "delete_my_account_title" = "Delete my account";
 "log_out_title" = "Log out";
 "change_my_password_title" = "Change my password";
+
+/* HomeViewController */
+"services_vc_title" = "Diensten";
