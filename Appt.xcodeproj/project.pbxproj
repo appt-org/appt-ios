@@ -121,6 +121,7 @@
 		A82ACD122653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */; };
 		A82ACD142653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */; };
 		A82ACD1626550D6A00BBE8FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */; };
+		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +241,7 @@
 		A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableTopSectionHeaderView.swift; sourceTree = "<group>"; };
 		A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableTopSectionHeaderView.xib; sourceTree = "<group>"; };
 		A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A89FD44A265BE43C006ED9EE /* _UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIImage.swift; sourceTree = "<group>"; };
 		BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -457,6 +459,7 @@
 				233FB2332639782E0031E58C /* _UITextField.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
 				28E1A06F2525CC6100604CFF /* _URL.swift */,
+				A89FD44A265BE43C006ED9EE /* _UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
 				2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */,
 				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
+				A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				2338B34C264D7F3200D47FC7 /* Subject.swift in Sources */,

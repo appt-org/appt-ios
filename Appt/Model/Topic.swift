@@ -69,21 +69,21 @@ enum Topic: String {
     var image: UIImage {
         switch self {
         case .myprofile:
-            return UIImage(named: "ic_my_profile")!
+            return .myprofile
             
         case .source:
-            return UIImage(named: "ic_source")!
+            return .sourceCode
         case .sidnfonds:
-            return UIImage(named: "ic_sidnfonds")!
+            return .sidnfonds
         case .contact:
-            return UIImage(named: "ic_contact")!
+            return .contact
             
         case .privacy:
-            return UIImage(named: "ic_privacy")!
+            return .privacy
         case .accessibility:
-            return UIImage(named: "ic_accessibility")!
+            return .accessibility
         case .terms:
-            return UIImage(named: "ic_terms")!
+            return .terms
         }
     }
 }
