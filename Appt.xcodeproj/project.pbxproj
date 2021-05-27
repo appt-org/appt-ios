@@ -123,6 +123,8 @@
 		A82ACD1626550D6A00BBE8FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */; };
 		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
 		A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44D265C0121006ED9EE /* ServicesViewController.swift */; };
+		A89FD450265D66A4006ED9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44F265D66A4006ED9EE /* User.swift */; };
+		A8BDCF77265E8815007D7126 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDCF76265E8815007D7126 /* UserDefaultsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +246,8 @@
 		A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A89FD44A265BE43C006ED9EE /* _UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIImage.swift; sourceTree = "<group>"; };
 		A89FD44D265C0121006ED9EE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		A89FD44F265D66A4006ED9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8BDCF76265E8815007D7126 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,6 +355,7 @@
 				28051BDC24CB343D008EEB1E /* Position.swift */,
 				28EFEBA32487E9AA0070879A /* Taxonomy.swift */,
 				239BF6FD264C2E490068EC13 /* UserType.swift */,
+				A89FD44F265D66A4006ED9EE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 			children = (
 				2877F6CD247D6E9200605677 /* AppDelegate.swift */,
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
+				A8BDCF75265E87FE007D7126 /* Storage */,
 				2877F6F0247D7D8E00605677 /* API */,
 				2877F6EC247D727D00605677 /* Extensions */,
 				2843828024ED6D7A0015B2C5 /* Helpers */,
@@ -593,6 +599,14 @@
 				A89FD44D265C0121006ED9EE /* ServicesViewController.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A8BDCF75265E87FE007D7126 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A8BDCF76265E8815007D7126 /* UserDefaultsStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -786,6 +800,7 @@
 				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */,
+				A89FD450265D66A4006ED9EE /* User.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */,
@@ -793,6 +808,7 @@
 				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
 				287FFBB525090A0C0022CD5F /* VoiceOverCopyView.swift in Sources */,
 				233FB2382639914D0031E58C /* AuthenticationTextField.swift in Sources */,
+				A8BDCF77265E8815007D7126 /* UserDefaultsStorage.swift in Sources */,
 				234059B12636C65300C06463 /* WelcomeViewController.swift in Sources */,
 				2893227724C9844500EBB447 /* Course.swift in Sources */,
 				A82ACD1626550D6A00BBE8FA /* ProfileViewController.swift in Sources */,

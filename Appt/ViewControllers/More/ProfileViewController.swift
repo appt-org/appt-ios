@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
+final class ProfileViewController: ViewController {
     @IBOutlet private var emailAddressTitleLabel: UILabel!
     @IBOutlet private var emailAddressLabel: UILabel!
     @IBOutlet private var changePasswordButton: MultilineButton!
@@ -21,7 +21,7 @@ final class ProfileViewController: UIViewController {
         title = "my_profile_title".localized
         
         emailAddressTitleLabel.text = "email_label_text".localized
-        emailAddressLabel.text = UserRegistrationData.userEmail
+        emailAddressLabel.text = UserDefaultsStorage.shared.restoreUser()?.email ?? ""
 
         changePasswordButton.setTitle("change_my_password_title".localized, for: .normal)
         logoutButton.setTitle("log_out_title".localized, for: .normal)
@@ -38,16 +38,39 @@ final class ProfileViewController: UIViewController {
     }
     
     @IBAction private func logoutButtonAction(_ sender: Any) {
-        UserRegistrationData.isUserLoggedIn = false
-        UserRegistrationData.userEmail = nil
-        
-        goToAuthenticationFlow()
+        showLogoutAlert()
     }
     @IBAction private func deleteMyAccountButtonAction(_ sender: Any) {
-        UserRegistrationData.isUserLoggedIn = false
-        UserRegistrationData.userEmail = nil
-        
-        goToAuthenticationFlow()
+        showDeleteAccountAlert()
+    }
+    
+    private func showLogoutAlert() {
+        Alert.Builder()
+            .title("logout_alert_title".localized)
+            .cancelAction("cancel".localized)
+            .action("ok".localized) {
+                UserDefaultsStorage.shared.storeUser(nil)
+                self.goToAuthenticationFlow()
+            }
+            .present(in: self)
+    }
+    
+    private func showDeleteAccountAlert() {
+        Alert.Builder()
+            .title("delete_account_alert_title".localized)
+            .cancelAction("cancel".localized)
+            .action("ok".localized) {
+                self.isLoading = true
+                API.shared.deleteUser { succeed, error in
+                    self.isLoading = false
+                    if succeed {
+                        self.goToAuthenticationFlow()
+                    } else if let error = error {
+                        Alert.error(error, viewController: self)
+                    }
+                }
+            }
+            .present(in: self)
     }
     
     private func goToAuthenticationFlow() {

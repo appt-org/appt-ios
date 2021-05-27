@@ -99,7 +99,20 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         registerButton.isEnabled = canRegister
     }
     @IBAction private func registerButtonPressed(_ sender: Any) {
-        showConfirmationAlert()
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        let username = String(email.prefix(while: { $0 != "@" }))
+        
+        isLoading = true
+        
+        API.shared.createUser(username: username, email: email, password: password) { user, errorString in
+            self.isLoading = false
+            if let error = errorString {
+                Alert.error(error, viewController: self)
+            } else {
+                self.showConfirmationAlert()
+            }
+        }
     }
     
     @IBAction private func privacyPolicyValueChanged(_ sender: UISwitch) {
@@ -115,8 +128,6 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             .title("confirmation_alert_title".localized)
             .message("confirmation_alert_message".localized)
             .action("ok".localized) {
-                UserRegistrationData.isUserLoggedIn = true
-                UserRegistrationData.userEmail = self.emailTextField.text
                 let viewController = UIStoryboard.main()
                 if #available(iOS 13.0, *) {
                     self.navigationController?.dismiss(animated: true) {

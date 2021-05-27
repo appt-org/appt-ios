@@ -66,7 +66,6 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     }
 
     @IBAction private  func loginButtonPressed(_ sender: Any) {
-        UserRegistrationData.isUserLoggedIn = true
         let viewController = UIStoryboard.main()
         if #available(iOS 13.0, *) {
             navigationController?.dismiss(animated: true) {

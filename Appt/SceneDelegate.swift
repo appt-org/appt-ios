@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        let viewController = UserRegistrationData.isUserLoggedIn ? UIStoryboard.main() : UIStoryboard.welcome()
+        let viewController = UserDefaultsStorage.shared.restoreUser() != nil ? UIStoryboard.main() : UIStoryboard.welcome()
 
         window.rootViewController = viewController
         self.window = window

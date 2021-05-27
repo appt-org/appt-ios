@@ -70,10 +70,7 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         loginButton.isEnabled = !password.isEmpty && email.isValidEmail
     }
 
-    @IBAction private func loginButtonPressed(_ sender: PrimaryMultilineButton) {
-        UserRegistrationData.isUserLoggedIn = true
-        UserRegistrationData.userEmail = emailTextField.text
-        
+    @IBAction private func loginButtonPressed(_ sender: PrimaryMultilineButton) {        
         let viewController = UIStoryboard.main()
         if #available(iOS 13.0, *) {
             navigationController?.dismiss(animated: true) {

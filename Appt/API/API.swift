@@ -15,9 +15,13 @@ class API {
     
     private let decoder = JSONDecoder()
     
-    private lazy var headers: [String: String] = [
+    private lazy var defaultHeaders: [String: String] = [
         "Platform": "iOS",
         "Version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    ]
+    
+    private lazy var superUserHeaders: [String: String] = [
+        "Authorization": "Basic Ym9kaWExOTk0c2h2QGdtYWlsLmNvbTprYlNrSkdeeUlFTURTUUUmNygyS152MVQ="
     ]
     
     private init() {
@@ -123,14 +127,53 @@ class API {
             }
         }
     }
+    
+    // MARK: - User requests
+    
+    func createUser(username: String, email: String, password: String, callback: @escaping (User?, String?) -> ()) {
+        userRequest(path: "users", method: .post, parameters: ["username": username, "email": email, "password": password], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
+            
+            if response.error != nil {
+                callback(nil, response.error?.localizedDescription)
+            } else if let data = response.data {
+                if let user = try? self.decoder.decode(User.self, from: data) {
+                    UserDefaultsStorage.shared.storeUser(user)
+                    callback(user, nil)
+                } else {
+                    callback(nil, nil)
+                }
+            } else {
+                callback(nil, nil)
+            }
+        }
+    }
+    
+    func deleteUser(callback: @escaping (Bool, String?) -> ()) {
+        guard let user = UserDefaultsStorage.shared.restoreUser() else {
+            callback(false, nil)
+            return
+        }
+        
+        userRequest(path: "users/\(user.id)", method: .delete, parameters: ["reassign": "", "force": "true"], headers: superUserHeaders, encoding: URLEncoding.queryString) { response in
+            if response.error != nil {
+                callback(false, response.error?.localizedDescription)
+            } else {
+                UserDefaultsStorage.shared.storeUser(nil)
+                callback(true, nil)
+            }
+        }
+    }
 }
 
 // MARK: - Networking
 
 extension API {
-    
-    private func postObject<T: Decodable>(path: String, data: Encodable?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
+    private func postObject<T: Decodable>(path: String, data: Encodable?, headers: [String: String]?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
         let parameters = data?.asDictionary ?? nil
+        postObject(path: path, parameters: parameters, headers: headers, type: type, callback: callback)
+    }
+    
+    private func postObject<T: Decodable>(path: String, parameters: [String: Any]?, headers: [String: String]?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
         retrieveObject(path: path, method: .post, parameters: parameters, encoding: JSONEncoding.default, type: type, callback: callback)
     }
     
@@ -138,17 +181,35 @@ extension API {
         retrieveObject(path: path, method: .get, parameters: parameters, encoding: URLEncoding.default, type: type, callback: callback)
     }
     
-    private func retrieveObject<T: Decodable>(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, type: T.Type, callback: @escaping(Response<T>) -> ()) {
+    private func retrieveObject<T: Decodable>(path: String, method: HTTPMethod, parameters: Parameters?, headers: [String: String]? = nil, encoding: ParameterEncoding, type: T.Type, callback: @escaping(Response<T>) -> ()) {
         guard let url = URL(string: Config.endpoint + path) else { return }
+        
+        let allHeaders = defaultHeaders.merging(headers ?? [:]) { (_, new) in new }
         
         Alamofire.request(url,
                           method: method,
                           parameters: parameters,
                           encoding: encoding,
-                          headers: self.headers
+                          headers: allHeaders
         ).validate(statusCode: 200..<300)
          .responseJSON { (response) in
             let response = Response<T>(response)
+            callback(response)
+        }
+    }
+    
+    private func userRequest(path: String, method: HTTPMethod, parameters: Parameters?, headers: [String: String]? = nil, encoding: ParameterEncoding, callback: @escaping((DataResponse<Any>) -> ())) {
+        guard let url = URL(string: Config.endpoint + path) else { return }
+        
+        let allHeaders = defaultHeaders.merging(headers ?? [:]) { (_, new) in new }
+        
+        Alamofire.request(url,
+                          method: method,
+                          parameters: parameters,
+                          encoding: encoding,
+                          headers: allHeaders
+        ).validate(statusCode: 200..<300)
+        .responseJSON { (response) in
             callback(response)
         }
     }

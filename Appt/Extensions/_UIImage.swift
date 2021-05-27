@@ -20,5 +20,5 @@ extension UIImage {
     static var terms = UIImage(named: "ic_terms")!
     
     static var passwordHidden = UIImage(named: "ic_hidden")!
-    static var passwordVisible = UIImage(named: "ic_terms")!
+    static var passwordVisible = UIImage(named: "ic_visible")!
 }
