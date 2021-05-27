@@ -251,6 +251,15 @@
 
 /* HomeViewController */
 "home_vc_title" = "Home";
+"user_header_title" = "Wij helpen je hoe je apps kunt gebruiken als je een beperking hebt";
+"professional_header_title" = "Wij helpen je hoe je apps kunt verbeteren";
+"training_home_title" = "Training";
+"meldpunt_home_title" = "Meldpunt";
+"community_home_title" = "Community";
+"over_appt_home_title" = "Over Appt";
+"kennisbank_appt_home_title" = "Kennisbank";
+"aanpak_home_title" = "Aanpak";
+"services_home_title" = "Diensten";
 
 /* MoreViewController */
 "more_vc_title" = "Meer";
@@ -271,5 +280,5 @@
 "logout_alert_title" = "Do you really want to logout?";
 "delete_account_alert_title" = "Do you really want to delete your account?";
 
-/* HomeViewController */
+/* ServicesViewController */
 "services_vc_title" = "Diensten";

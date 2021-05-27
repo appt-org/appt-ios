@@ -21,4 +21,13 @@ extension UIImage {
     
     static var passwordHidden = UIImage(named: "ic_hidden")!
     static var passwordVisible = UIImage(named: "ic_visible")!
+    
+    static var homeApptLogo = UIImage(named: "ic_logo")!
+    static var homeTraining = UIImage(named: "ic_training")!
+    static var homeMeldpunt = UIImage(named: "ic_meldpunt")!
+    static var homeCommunity = UIImage(named: "ic_community")!
+    static var homeOverAppt = UIImage(named: "ic_over_appt")!
+    static var homeKnowledgeBase = UIImage(named: "ic_knowledge_base")!
+    static var homeAanpak = UIImage(named: "ic_aanpak")!
+    static var homeServices = UIImage(named: "ic_services")!
 }

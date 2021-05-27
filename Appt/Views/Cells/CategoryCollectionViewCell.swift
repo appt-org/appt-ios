@@ -53,4 +53,11 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
 
         self.imgView.sd_setImage(with: subject.imgURL)
     }
+    
+    func setup(withTitle title: String, image: UIImage) {
+        self.categoryLabel.text = title
+        self.accessibilityLabel = title
+
+        self.imgView.image = image
+    }
 }

@@ -10,13 +10,32 @@ import UIKit
 
 final class HomeViewController: ViewController {
     @IBOutlet private var userProfSegmentedControl: UISegmentedControl!
-    @IBOutlet private var container: UIView!
+    @IBOutlet var collectionView: UICollectionView!
 
-    //MARK: - Replace with API Download
-    var subject = Subject.loadJson()
-
-    let tableViewCellSpacing: CGFloat = 8
-
+    private var dataSource: [HomeItem] {
+        guard let userType = UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
+            fatalError("Unable to determine UserType")
+        }
+        
+        switch userType {
+        case .user:
+            return [
+                .training,
+                .meldpunt,
+                .community,
+                .overAppt
+            ]
+        case .professional:
+            return [
+                .knowledgeBase,
+                .aanpak,
+                .training,
+                .services,
+                .overAppt
+            ]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,20 +43,10 @@ final class HomeViewController: ViewController {
 
         userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
         
-        ViewEmbedder.embed(
-            withIdentifier: self.subject.subjectType == .blocks ? "SubjectBlocksViewController" : "SubjectListViewController", // Storyboard ID
-            parent: self,
-            container: self.container) { vc in
-
-            switch self.subject.subjectType {
-            case .blocks:
-                (self.children.first as? SubjectBlocksViewController)?.collectionView.delegate = self
-                (self.children.first as? SubjectBlocksViewController)?.collectionView.dataSource = self
-            case .list:
-                (self.children.first as? SubjectListViewController)?.tableView.delegate = self
-                (self.children.first as? SubjectListViewController)?.tableView.dataSource = self
-            }
-        }
+        collectionView.registerNib(CategoryCollectionViewCell.self)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -45,58 +54,7 @@ final class HomeViewController: ViewController {
             fatalError("Unable to determine UserType")
         }
 
-        //MARK: - reload data source here
-    }
-}
-
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            let view = tableView.cell(ListTableTopSectionHeaderView.self)
-
-            view.setup(subject)
-            
-            return view.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-                                                      withHorizontalFittingPriority: .required,
-                                                      verticalFittingPriority: .fittingSizeLevel).height
-        } else {
-            return tableViewCellSpacing
-        }
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let view = tableView.cell(ListTableTopSectionHeaderView.self)
-            
-            view.setup(subject)
-            
-            return view
-        } else {
-            let headerView = UIView()
-            headerView.backgroundColor = .clear
-            return headerView
-        }
-    }
-}
-
-extension HomeViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTitleTableViewCell.identifier, for: indexPath) as? ImageTitleTableViewCell else {
-            fatalError("unable to dequeue ImageTitleTableViewCell")
-        }
-
-        let model = subject.children[indexPath.section]
-        cell.setup(model)
-        return cell
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        subject.children.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        self.collectionView.reloadData()
     }
 }
 
@@ -106,22 +64,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        subject.children.count
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        let model = subject.children[indexPath.section]
-
-        if model.children.isEmpty, let url = model.webURL {
-            let articleViewController = UIStoryboard.article(type: .page, url: url)
-            navigationController?.pushViewController(articleViewController, animated: true)
-
-        } else {
-            let viewController = UIStoryboard.home(subject: model)
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+        dataSource.count
     }
 }
 
@@ -131,21 +74,32 @@ extension HomeViewController: UICollectionViewDataSource {
             fatalError("unable to dequeue CategoryCollectionViewCell")
         }
 
-        let model = subject.children[indexPath.row]
-        cell.setup(model)
+        let item = dataSource[indexPath.item]
+        cell.setup(withTitle: item.title, image: item.image)
+        
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let model = subject.children[indexPath.row]
+        let item = dataSource[indexPath.item]
 
-        if model.children.isEmpty, let url = model.webURL {
-            let articleViewController = UIStoryboard.article(type: .page, url: url)
-            navigationController?.pushViewController(articleViewController, animated: true)
-
-        } else {
-            let viewController = UIStoryboard.home(subject: model)
+        switch item {
+        
+        case .training:
+            let viewController = UIStoryboard.training()
             navigationController?.pushViewController(viewController, animated: true)
+        case .meldpunt:
+            openWebsite(item.slug)
+        case .community:
+            openWebsite(item.slug)
+        case .overAppt:
+            openWebsite(item.slug)
+        case .knowledgeBase:
+            self.tabBarController?.selectedIndex = 1
+        case .aanpak:
+            openWebsite(item.slug)
+        case .services:
+            self.tabBarController?.selectedIndex = 3
         }
     }
 }
@@ -170,13 +124,24 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
         switch kind {
-
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {
                 fatalError()
             }
 
-            headerView.setup(subject)
+            guard let userType = UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
+                fatalError("Unable to determine UserType")
+            }
+            
+            var title = ""
+            switch userType {
+            case .user:
+                title = "user_header_title".localized
+            case .professional:
+                title = "professional_header_title".localized
+            }
+            
+            headerView.setup(withTitle: title, image: .homeApptLogo)
 
             return headerView
 

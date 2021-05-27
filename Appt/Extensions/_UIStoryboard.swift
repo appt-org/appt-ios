@@ -86,11 +86,17 @@ extension UIStoryboard {
         return vc
     }
     
-    static func home(subject: Subject) -> HomeViewController {
-        let vc = viewController(.main, identifier: HomeViewController.self)
-        
-        vc.subject = subject
+    static func training() -> TrainingViewController {
+        let vc = viewController(.main, identifier: TrainingViewController.self)
         
         return vc
     }
+    
+//    static func home(subject: Subject) -> HomeViewController {
+//        let vc = viewController(.main, identifier: HomeViewController.self)
+//        
+//        vc.subject = subject
+//        
+//        return vc
+//    }
 }
