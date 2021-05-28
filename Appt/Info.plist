@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>BASE_URL</key>
-	<string>http://appt.crio-server.com/wp-json/wp/v2/</string>
+	<string>http://appt.crio-server.com/</string>
+	<key>BASE_API_PATH</key>
+	<string>wp-json/wp/v2/</string>
+	<key>BASE_CONTENT_PATH</key>
+	<string>wp-content/themes/appt/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -102,10 +106,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

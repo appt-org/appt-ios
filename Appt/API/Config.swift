@@ -9,17 +9,35 @@
 import Foundation
 
 class Config {
-    
-    static var endpoint: String = {
+    private static var infoPlistDictionary: NSDictionary = {
         guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {
             fatalError("Missing Info.plist")
         }
         guard let dictionary = NSDictionary(contentsOfFile: path) else {
             fatalError("Unable to convert Info.plist at \(path) to NSDictionary")
         }
-        guard let baseUrl = dictionary["BASE_URL"] as? String else {
+        
+        return dictionary
+    }()
+    
+    private static var baseUrl: String = {
+        guard let baseUrl = infoPlistDictionary["BASE_URL"] as? String else {
             fatalError("Missing BASE_URL property in Info.plist")
         }
         return baseUrl
+    }()
+    
+    static var endpoint: String = {
+        guard let baseApiPath = infoPlistDictionary["BASE_API_PATH"] as? String else {
+            fatalError("Missing BASE_API_PATH property in Info.plist")
+        }
+        return baseUrl + baseApiPath
+    }()
+    
+    static var contentEndpoint: String = {
+        guard let baseApiPath = infoPlistDictionary["BASE_CONTENT_PATH"] as? String else {
+            fatalError("Missing BASE_CONTENT_PATH property in Info.plist")
+        }
+        return baseUrl + baseApiPath
     }()
 }

@@ -6,13 +6,12 @@
 //  Copyright © 2021 Stichting Appt. All rights reserved.
 //
 
-import UIKit
-
-class ServicesViewController: UIViewController {
-
+final class ServicesViewController: SubjectsViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "services_vc_title".localized
+        viewControllerType = .services
+        title = viewControllerType.title
     }
 }

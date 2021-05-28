@@ -10,6 +10,19 @@ import Foundation
 import Alamofire
 
 class API {
+    enum ContentType {
+        case knowledgeBase
+        case services
+        
+        var path: String {
+            switch self {
+            case .knowledgeBase:
+                return "knowledgeBase.json"
+            case .services:
+                return "services.json"
+            }
+        }
+    }
     
     static let shared = API()
     
@@ -163,6 +176,16 @@ class API {
             }
         }
     }
+    
+    // MARK: - Get content
+    
+    func getKnowledgeBase(_ callback: @escaping(Subject?, String?) -> ()) {
+        getContent(type: .knowledgeBase, callback: callback)
+    }
+    
+    func getServices(_ callback: @escaping(Subject?, String?) -> ()) {
+        getContent(type: .services, callback: callback)
+    }
 }
 
 // MARK: - Networking
@@ -211,6 +234,25 @@ extension API {
         ).validate(statusCode: 200..<300)
         .responseJSON { (response) in
             callback(response)
+        }
+    }
+    
+    private func getContent(type: ContentType, callback: @escaping(Subject?, String?) -> ()) {
+        guard let url = URL(string: Config.contentEndpoint + type.path) else { return }
+        
+        Alamofire.request(url,
+                          method: .get,
+                          parameters: nil,
+                          encoding: URLEncoding.default,
+                          headers: nil
+        ).validate(statusCode: 200..<300)
+        .response { (response) in
+            if response.error != nil {
+                callback(nil, response.error?.localizedDescription)
+            } else if let data = response.data {
+                let subject = try? self.decoder.decode(Subject.self, from: data)
+                callback(subject, nil)
+            }
         }
     }
 }
