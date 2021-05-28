@@ -30,7 +30,6 @@
 		2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */; };
 		2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */; };
 		238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */; };
-		238C8193264E711C00417477 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 238C8192264E711C00417477 /* data.json */; };
 		239BF6FE264C2E490068EC13 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BF6FD264C2E490068EC13 /* UserType.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
@@ -152,7 +151,6 @@
 		2362C2FD264AAFE800C4FEE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEntryViewController.swift; sourceTree = "<group>"; };
 		238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
-		238C8192264E711C00417477 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		239BF6FD264C2E490068EC13 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -482,7 +480,6 @@
 		2877F6ED247D72B200605677 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				238C8192264E711C00417477 /* data.json */,
 				2877F6D8247D6E9600605677 /* Assets.xcassets */,
 				28E1A0842525D6C300604CFF /* GoogleService-Info.plist */,
 				2877F6DD247D6E9600605677 /* Info.plist */,
@@ -681,7 +678,6 @@
 				2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */,
 				287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */,
 				232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */,
-				238C8193264E711C00417477 /* data.json in Resources */,
 				2869ABFD24F7C503004962A7 /* style.css in Resources */,
 				2338B34A264D569C00D47FC7 /* CategoryCollectionViewCell.xib in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
