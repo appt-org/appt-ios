@@ -11,24 +11,6 @@ import UIKit
 struct UserRegistrationData {
     let userType: String
     let profession: String
-    
-    static var userEmail: String? {
-        set {
-            UserDefaults.standard.set(newValue, forKey: String.userEmailDefaultsKey)
-        }
-        get {
-            return UserDefaults.standard.string(forKey: String.userEmailDefaultsKey)
-        }
-    }
-
-    static var isUserLoggedIn: Bool {
-        set {
-            UserDefaults.standard.set(newValue, forKey: String.isUserLoggedInDefaultsKey)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: String.isUserLoggedInDefaultsKey)
-        }
-    }
 }
 
 final class UserTypeViewController: TableViewController {
