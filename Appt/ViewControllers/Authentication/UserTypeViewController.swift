@@ -9,16 +9,24 @@
 import UIKit
 
 struct UserRegistrationData {
-    let userType: String
-    let profession: String
+    var userTypes: Set<String>
+    var professions: Set<String>
+    
+    var allRoles: Set<String> {
+        var allRoles = userTypes
+        professions.forEach {
+            allRoles.insert($0)
+        }
+        
+        return allRoles
+    }
 }
 
 final class UserTypeViewController: TableViewController {
     @IBOutlet private var screenHeaderLabel: UILabel!
     @IBOutlet private var nextButton: PrimaryMultilineButton!
 
-    private var userType: String?
-    private var profession: String?
+    private var userRegistrationData = UserRegistrationData(userTypes: [], professions: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +44,8 @@ final class UserTypeViewController: TableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let registrationVC = segue.destination as? RegistrationViewController,
-           let userType = userType,
-           let profession = profession {
-            let registrationData = UserRegistrationData(userType: userType, profession: profession)
-            registrationVC.userRegistrationData = registrationData
+        if let registrationVC = segue.destination as? RegistrationViewController {
+            registrationVC.userRegistrationData = userRegistrationData
         }
     }
 
@@ -87,68 +92,27 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .user:
-            if userType == nil, indexPath.row == 0 {
-                userType = rowValue
+            if userRegistrationData.allRoles.count == 0, indexPath.row == 0 {
+                userRegistrationData.userTypes.insert(rowValue)
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                 cell.accessoryType = .checkmark
                 return cell
             } else {
-                cell.accessoryType = userType == rowValue ? .checkmark : .none
+                cell.accessoryType = userRegistrationData.userTypes.contains(rowValue) ? .checkmark : .none
             }
         case .professional:
-            if profession == nil, indexPath.row == 0 {
-                profession = rowValue
-                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                cell.accessoryType = .checkmark
-                return cell
-            } else {
-                cell.accessoryType = profession == rowValue ? .checkmark : .none
-            }
+            cell.accessoryType = userRegistrationData.professions.contains(rowValue) ? .checkmark : .none
         }
 
         return cell
     }
-
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let section = UserType(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserType.self)")
-        }
-
-        let rowValue = section.dataSource[indexPath.row]
-
-        switch section {
-        case .user:
-            let selectedIndexPath = tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.user.rawValue })
-            if let userType = userType, userType != rowValue, let selectedIndexPath = selectedIndexPath {
-                let cell = tableView.cellForRow(at: selectedIndexPath)
-                tableView.deselectRow(at: selectedIndexPath, animated: true)
-                cell?.accessoryType = .none
-            }
-        case .professional:
-            let selectedIndexPath = tableView.indexPathsForSelectedRows?.first(where: { $0.section == UserType.professional.rawValue })
-            if let profession = profession, profession != rowValue, let selectedIndexPath = selectedIndexPath {
-                let cell = tableView.cellForRow(at: selectedIndexPath)
-                tableView.deselectRow(at: selectedIndexPath, animated: true)
-                cell?.accessoryType = .none
-            }
-
-        }
-
-        return indexPath
-    }
-
+ 
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let section = UserType(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserType.self)")
-        }
-
-        let rowValue = section.dataSource[indexPath.row]
-
-        switch section {
-        case .user:
-            return userType != rowValue ? indexPath : nil
-        case .professional:
-            return profession != rowValue ? indexPath : nil
+        if userRegistrationData.allRoles.count > 1 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            return indexPath
+        } else {
+            return nil
         }
     }
 
@@ -164,9 +128,27 @@ final class UserTypeViewController: TableViewController {
 
         switch section {
         case .professional:
-            profession = rowValue
+            userRegistrationData.professions.insert(rowValue)
         case .user:
-            userType = rowValue
+            userRegistrationData.userTypes.insert(rowValue)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let section = UserType(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section type - \(UserType.self)")
+        }
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .none
+        
+        let rowValue = section.dataSource[indexPath.row]
+
+        switch section {
+        case .professional:
+            userRegistrationData.professions.remove(rowValue)
+        case .user:
+            userRegistrationData.userTypes.remove(rowValue)
         }
     }
 }

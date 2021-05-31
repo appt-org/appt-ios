@@ -99,13 +99,13 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         registerButton.isEnabled = canRegister
     }
     @IBAction private func registerButtonPressed(_ sender: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, let userRegistrationData = userRegistrationData else { return }
         
         let username = String(email.prefix(while: { $0 != "@" }))
         
         isLoading = true
         
-        API.shared.createUser(username: username, email: email, password: password) { user, errorString in
+        API.shared.createUser(username: username, email: email, password: password, userRegistrationData: userRegistrationData) { user, errorString in
             self.isLoading = false
             if let error = errorString {
                 Alert.error(error, viewController: self)
