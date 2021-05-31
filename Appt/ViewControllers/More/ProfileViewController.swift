@@ -49,8 +49,15 @@ final class ProfileViewController: ViewController {
             .title("logout_alert_title".localized)
             .cancelAction("cancel".localized)
             .action("ok".localized) {
-                UserDefaultsStorage.shared.storeUser(nil)
-                self.goToAuthenticationFlow()
+                self.isLoading = true
+                API.shared.logout { succeed, error in
+                    self.isLoading = false
+                    if succeed {
+                        self.goToAuthenticationFlow()
+                    } else if let error = error {
+                        Alert.error(error, viewController: self)
+                    }
+                }
             }
             .present(in: self)
     }

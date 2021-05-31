@@ -70,19 +70,31 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         loginButton.isEnabled = !password.isEmpty && email.isValidEmail
     }
 
-    @IBAction private func loginButtonPressed(_ sender: PrimaryMultilineButton) {        
-        let viewController = UIStoryboard.main()
-        if #available(iOS 13.0, *) {
-            navigationController?.dismiss(animated: true) {
-                UIApplication.shared.windows.first?.rootViewController = viewController
+    @IBAction private func loginButtonPressed(_ sender: PrimaryMultilineButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        isLoading = true
+        
+        API.shared.login(email: email, password: password) { user, errorString in
+            self.isLoading = false
+            if let error = errorString {
+                Alert.error(error, viewController: self)
+            } else {
+                let viewController = UIStoryboard.main()
+                if #available(iOS 13.0, *) {
+                    self.navigationController?.dismiss(animated: true) {
+                        UIApplication.shared.windows.first?.rootViewController = viewController
+                    }
+                } else {
+                    let window = UIWindow()
+                    window.rootViewController = viewController
+                    (UIApplication.shared.delegate as? AppDelegate)?.window = window
+                    window.makeKeyAndVisible()
+                }
             }
-        } else {
-            let window = UIWindow()
-            window.rootViewController = viewController
-            (UIApplication.shared.delegate as? AppDelegate)?.window = window
-            window.makeKeyAndVisible()
         }
     }
+    
     @IBAction private func resetPasswordPressed(_ sender: MultilineButton) {
 
     }

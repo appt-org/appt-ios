@@ -142,6 +142,38 @@ class API {
     }
     
     // MARK: - User requests
+    func login(email: String, password: String, callback: @escaping (User?, String?) -> ()) {
+        userRequest(path: "login", method: .post, parameters: ["username": email, "password": password], headers: nil, encoding: JSONEncoding.default) { response in
+            
+            if response.error != nil {
+                callback(nil, response.error?.localizedDescription)
+            } else if let data = response.data {
+                if let user = try? self.decoder.decode(User.self, from: data) {
+                    UserDefaultsStorage.shared.storeUser(user)
+                    callback(user, nil)
+                } else {
+                    callback(nil, nil)
+                }
+            } else {
+                callback(nil, nil)
+            }
+        }
+    }
+    
+    func logout(callback: @escaping (Bool, String?) -> ()) {
+        guard let user = UserDefaultsStorage.shared.restoreUser() else {
+            callback(false, nil)
+            return
+        }
+        userRequest(path: "logout", method: .get, parameters: ["id": user.id], headers: nil, encoding: URLEncoding.default) { response in
+            if response.error != nil {
+                callback(false, response.error?.localizedDescription)
+            } else {
+                UserDefaultsStorage.shared.storeUser(nil)
+                callback(true, nil)
+            }
+        }
+    }
     
     func createUser(username: String, email: String, password: String, callback: @escaping (User?, String?) -> ()) {
         userRequest(path: "users", method: .post, parameters: ["username": username, "email": email, "password": password], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
