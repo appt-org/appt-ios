@@ -31,12 +31,6 @@ class SubjectsViewController: ViewController {
     var subject: Subject?
 
     let tableViewCellSpacing: CGFloat = 8
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = "services_vc_title".localized
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

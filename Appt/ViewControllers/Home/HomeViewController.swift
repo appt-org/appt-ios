@@ -10,8 +10,10 @@ import UIKit
 
 final class HomeViewController: ViewController {
     @IBOutlet private var userProfSegmentedControl: UISegmentedControl!
-    @IBOutlet var collectionView: UICollectionView!
-
+    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private var emailVerificationView: EmailVerificationView!
+    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
+    
     private var dataSource: [HomeItem] {
         guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
@@ -51,6 +53,9 @@ final class HomeViewController: ViewController {
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
         
         userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
+        
+        emailVerificationView.isHidden = user.isVerified
+        emailVerificationView.delegate = self
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -164,5 +169,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                   withHorizontalFittingPriority: .required, // Width is fixed
                                                   verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
+    }
+}
+
+extension HomeViewController: EmailVerificationViewDelegate {
+    func okViewAction() {
+        emailVerificationViewheight.constant = 0.0
     }
 }

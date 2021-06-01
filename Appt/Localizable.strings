@@ -282,3 +282,6 @@
 
 /* ServicesViewController */
 "services_vc_title" = "Diensten";
+
+/* EmailVerificationView */
+"email_verification_view_title" = "Je hebt jouw account nog niet geverifieerd. Ga naar je e-mail om account te verifiëren.";

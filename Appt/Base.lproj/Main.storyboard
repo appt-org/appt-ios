@@ -469,8 +469,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
+                                <rect key="frame" x="0.0" y="168" width="414" height="645"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX">
                                     <size key="itemSize" width="155" height="155"/>
@@ -513,14 +513,24 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="XSy-5E-kaI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3d-OJ-pDs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="z3d-OJ-pDs" firstAttribute="bottom" secondItem="hyp-3f-UtT" secondAttribute="bottom" id="8Ki-xg-LT0"/>
-                            <constraint firstItem="hyp-3f-UtT" firstAttribute="leading" secondItem="z3d-OJ-pDs" secondAttribute="leading" id="KVd-qs-FAG"/>
-                            <constraint firstItem="hyp-3f-UtT" firstAttribute="top" secondItem="z3d-OJ-pDs" secondAttribute="top" id="W8b-4e-nQI"/>
-                            <constraint firstItem="z3d-OJ-pDs" firstAttribute="trailing" secondItem="hyp-3f-UtT" secondAttribute="trailing" id="aDw-af-lhB"/>
+                            <constraint firstItem="hyp-3f-UtT" firstAttribute="leading" secondItem="z3d-OJ-pDs" secondAttribute="leading" id="E53-ck-E7N"/>
+                            <constraint firstItem="2An-YQ-fJo" firstAttribute="top" secondItem="z3d-OJ-pDs" secondAttribute="top" id="OIM-XC-TUQ"/>
+                            <constraint firstItem="hyp-3f-UtT" firstAttribute="trailing" secondItem="z3d-OJ-pDs" secondAttribute="trailing" id="Qx8-Bc-XPm"/>
+                            <constraint firstItem="hyp-3f-UtT" firstAttribute="top" secondItem="2An-YQ-fJo" secondAttribute="bottom" id="cog-Nd-wsm"/>
+                            <constraint firstItem="2An-YQ-fJo" firstAttribute="leading" secondItem="z3d-OJ-pDs" secondAttribute="leading" id="gCm-bk-qEP"/>
+                            <constraint firstItem="2An-YQ-fJo" firstAttribute="trailing" secondItem="z3d-OJ-pDs" secondAttribute="trailing" id="p1l-M2-oSz"/>
+                            <constraint firstItem="z3d-OJ-pDs" firstAttribute="bottom" secondItem="hyp-3f-UtT" secondAttribute="bottom" id="x87-bO-wcc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
@@ -540,6 +550,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hyp-3f-UtT" id="Ec2-fY-0xW"/>
+                        <outlet property="emailVerificationView" destination="2An-YQ-fJo" id="VSr-Uf-ixs"/>
+                        <outlet property="emailVerificationViewheight" destination="XSy-5E-kaI" id="Dte-5J-2pp"/>
                         <outlet property="userProfSegmentedControl" destination="9rP-Of-Ksb" id="Cax-kh-Nh7"/>
                     </connections>
                 </viewController>

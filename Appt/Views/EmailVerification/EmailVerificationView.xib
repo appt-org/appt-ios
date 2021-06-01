@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+            <connections>
+                <outlet property="okLabel" destination="iTx-ow-yeN" id="zRI-qJ-8kb"/>
+                <outlet property="okView" destination="6hu-aL-j7r" id="udi-1o-nGq"/>
+                <outlet property="titleLabel" destination="GSV-zU-f1u" id="dGg-TV-Lg2"/>
+                <outlet property="view" destination="iN0-l3-epB" id="UGf-d0-Duj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgv-mG-TAm">
+                    <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je hebt jouw account nog niet geverifieerd. Ga naar je e-mail om account te verifiëren." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSV-zU-f1u">
+                            <rect key="frame" x="16" y="6" width="247" height="68"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgY-cH-oCn">
+                            <rect key="frame" x="279" y="0.0" width="1" height="80"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="ffc-Gi-0xA"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTx-ow-yeN">
+                            <rect key="frame" x="296" y="29.5" width="41" height="21.5"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-aL-j7r">
+                            <rect key="frame" x="280" y="0.0" width="73" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="tgY-cH-oCn" firstAttribute="leading" secondItem="GSV-zU-f1u" secondAttribute="trailing" constant="16" id="11q-wa-yKc"/>
+                        <constraint firstItem="6hu-aL-j7r" firstAttribute="leading" secondItem="tgY-cH-oCn" secondAttribute="trailing" id="2t2-af-HrL"/>
+                        <constraint firstItem="tgY-cH-oCn" firstAttribute="top" secondItem="Tgv-mG-TAm" secondAttribute="top" id="4k4-VJ-QzT"/>
+                        <constraint firstAttribute="trailing" secondItem="tgY-cH-oCn" secondAttribute="trailing" constant="73" id="HVF-CI-iqK"/>
+                        <constraint firstAttribute="bottom" secondItem="6hu-aL-j7r" secondAttribute="bottom" id="KLf-Df-5J6"/>
+                        <constraint firstAttribute="bottom" secondItem="tgY-cH-oCn" secondAttribute="bottom" id="RLQ-7p-ggs"/>
+                        <constraint firstAttribute="trailing" secondItem="6hu-aL-j7r" secondAttribute="trailing" id="RnS-Pe-kxg"/>
+                        <constraint firstItem="6hu-aL-j7r" firstAttribute="top" secondItem="Tgv-mG-TAm" secondAttribute="top" id="SAU-94-mH9"/>
+                        <constraint firstItem="GSV-zU-f1u" firstAttribute="top" secondItem="Tgv-mG-TAm" secondAttribute="top" constant="6" id="Xl7-bK-1xX"/>
+                        <constraint firstAttribute="trailing" secondItem="iTx-ow-yeN" secondAttribute="trailing" constant="16" id="abh-vo-F8G"/>
+                        <constraint firstAttribute="bottom" secondItem="GSV-zU-f1u" secondAttribute="bottom" constant="6" id="bGU-vw-1xC"/>
+                        <constraint firstItem="GSV-zU-f1u" firstAttribute="leading" secondItem="Tgv-mG-TAm" secondAttribute="leading" constant="16" id="dCS-ej-qb5"/>
+                        <constraint firstItem="iTx-ow-yeN" firstAttribute="centerY" secondItem="Tgv-mG-TAm" secondAttribute="centerY" id="gr0-KM-aMV"/>
+                        <constraint firstItem="iTx-ow-yeN" firstAttribute="leading" secondItem="tgY-cH-oCn" secondAttribute="trailing" constant="16" id="rtJ-6c-Zg5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tgv-mG-TAm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Gj3-Tg-A28"/>
+                <constraint firstItem="Tgv-mG-TAm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QwQ-Br-TSL"/>
+                <constraint firstAttribute="trailing" secondItem="Tgv-mG-TAm" secondAttribute="trailing" id="goR-kY-KSJ"/>
+                <constraint firstAttribute="bottom" secondItem="Tgv-mG-TAm" secondAttribute="bottom" id="lTg-yF-xoy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="88.799999999999997" y="-196.10194902548727"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

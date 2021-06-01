@@ -120,6 +120,8 @@
 		A82ACD122653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */; };
 		A82ACD142653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */; };
 		A82ACD1626550D6A00BBE8FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */; };
+		A83B07C126665BB500EDCBD8 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B07C026665BB500EDCBD8 /* EmailVerificationView.swift */; };
+		A83B07C326665BC100EDCBD8 /* EmailVerificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83B07C226665BC100EDCBD8 /* EmailVerificationView.xib */; };
 		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
 		A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44D265C0121006ED9EE /* ServicesViewController.swift */; };
 		A89FD450265D66A4006ED9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44F265D66A4006ED9EE /* User.swift */; };
@@ -244,6 +246,8 @@
 		A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableTopSectionHeaderView.swift; sourceTree = "<group>"; };
 		A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableTopSectionHeaderView.xib; sourceTree = "<group>"; };
 		A82ACD1526550D6A00BBE8FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A83B07C026665BB500EDCBD8 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		A83B07C226665BC100EDCBD8 /* EmailVerificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailVerificationView.xib; sourceTree = "<group>"; };
 		A89FD44A265BE43C006ED9EE /* _UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIImage.swift; sourceTree = "<group>"; };
 		A89FD44D265C0121006ED9EE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		A89FD44F265D66A4006ED9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A83B07BF26665B9500EDCBD8 /* EmailVerification */,
 				2870FF1B2525FC0F00377B44 /* TextField.swift */,
 				233FB235263991150031E58C /* PaddingLabel.swift */,
 				233FB2372639914D0031E58C /* AuthenticationTextField.swift */,
@@ -596,6 +601,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A83B07BF26665B9500EDCBD8 /* EmailVerification */ = {
+			isa = PBXGroup;
+			children = (
+				A83B07C026665BB500EDCBD8 /* EmailVerificationView.swift */,
+				A83B07C226665BC100EDCBD8 /* EmailVerificationView.xib */,
+			);
+			path = EmailVerification;
+			sourceTree = "<group>";
+		};
 		A89FD44C265C010F006ED9EE /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,6 +708,7 @@
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
+				A83B07C326665BC100EDCBD8 /* EmailVerificationView.xib in Resources */,
 				234059A82636C4E500C06463 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,6 +805,7 @@
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
+				A83B07C126665BB500EDCBD8 /* EmailVerificationView.swift in Sources */,
 				232D74F4264E979800937E0D /* BlocksCollectionSectionHeaderView.swift in Sources */,
 				28FBED96251F6094009CA3FA /* Topic.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */,
