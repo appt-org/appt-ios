@@ -38,4 +38,24 @@ enum UserType: Int, CaseIterable {
             ]
         }
     }
+    
+    var ids: [String] {
+        switch self {
+        case .user:
+            return [
+                "ervaringsdeskundige",
+                "geinteresseerde",
+                "ambassadeur"
+            ]
+        case .professional:
+            return [
+                "designer",
+                "tester",
+                "ontwikkelaar",
+                "manager",
+                "toegankelijkheidsexpert",
+                "auditor"
+            ]
+        }
+    }
 }

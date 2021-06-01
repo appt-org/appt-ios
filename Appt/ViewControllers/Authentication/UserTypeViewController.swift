@@ -86,6 +86,7 @@ final class UserTypeViewController: TableViewController {
         }
 
         let rowValue = section.dataSource[indexPath.row]
+        let rowId = section.ids[indexPath.row]
 
         cell.setup(rowValue)
         cell.selectionStyle = .none
@@ -93,15 +94,15 @@ final class UserTypeViewController: TableViewController {
         switch section {
         case .user:
             if userRegistrationData.allRoles.count == 0, indexPath.row == 0 {
-                userRegistrationData.userTypes.insert(rowValue)
+                userRegistrationData.userTypes.insert(rowId)
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                 cell.accessoryType = .checkmark
                 return cell
             } else {
-                cell.accessoryType = userRegistrationData.userTypes.contains(rowValue) ? .checkmark : .none
+                cell.accessoryType = userRegistrationData.userTypes.contains(rowId) ? .checkmark : .none
             }
         case .professional:
-            cell.accessoryType = userRegistrationData.professions.contains(rowValue) ? .checkmark : .none
+            cell.accessoryType = userRegistrationData.professions.contains(rowId) ? .checkmark : .none
         }
 
         return cell
@@ -124,13 +125,13 @@ final class UserTypeViewController: TableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
 
-        let rowValue = section.dataSource[indexPath.row]
+        let rowId = section.ids[indexPath.row]
 
         switch section {
         case .professional:
-            userRegistrationData.professions.insert(rowValue)
+            userRegistrationData.professions.insert(rowId)
         case .user:
-            userRegistrationData.userTypes.insert(rowValue)
+            userRegistrationData.userTypes.insert(rowId)
         }
     }
     
@@ -142,13 +143,13 @@ final class UserTypeViewController: TableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
         
-        let rowValue = section.dataSource[indexPath.row]
+        let rowId = section.ids[indexPath.row]
 
         switch section {
         case .professional:
-            userRegistrationData.professions.remove(rowValue)
+            userRegistrationData.professions.remove(rowId)
         case .user:
-            userRegistrationData.userTypes.remove(rowValue)
+            userRegistrationData.userTypes.remove(rowId)
         }
     }
 }
