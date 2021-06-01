@@ -8,25 +8,31 @@
 
 import UIKit
 
-struct UserRegistrationData {
-    var userTypes: Set<String>
-    var professions: Set<String>
-    
-    var allRoles: Set<String> {
-        var allRoles = userTypes
-        professions.forEach {
-            allRoles.insert($0)
-        }
-        
-        return allRoles
-    }
-}
-
 final class UserTypeViewController: TableViewController {
     @IBOutlet private var screenHeaderLabel: UILabel!
     @IBOutlet private var nextButton: PrimaryMultilineButton!
-
-    private var userRegistrationData = UserRegistrationData(userTypes: [], professions: [])
+    
+    enum Section: Int, CaseIterable {
+        case user
+        case professional
+    }
+    
+    var userTypeDataSource: [Section: [Role]] {
+        [.user:
+            [Role(withId: "ervaringsdeskundige")!,
+             Role(withId: "geinteresseerde")!,
+             Role(withId: "ambassadeur")!],
+         .professional:
+            [Role(withId: "designer")!,
+             Role(withId: "tester")!,
+             Role(withId: "ontwikkelaar")!,
+             Role(withId: "manager")!,
+             Role(withId: "toegankelijkheidsexpert")!,
+             Role(withId: "auditor")!]
+        ]
+    }
+    
+    var selectedRoles: Set<Role> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,28 +51,32 @@ final class UserTypeViewController: TableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let registrationVC = segue.destination as? RegistrationViewController {
-            registrationVC.userRegistrationData = userRegistrationData
+            registrationVC.userRoles = selectedRoles
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        UserType.allCases.count
+        userTypeDataSource.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let userTypeSection = UserType(rawValue: section) else {
-            fatalError("Unable to get datasource for tableView")
+        guard let section = Section(rawValue: section) else {
+            fatalError("Unable to get current section")
         }
-
-        return userTypeSection.dataSource.count
+        return userTypeDataSource[section]?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let userTypeSection = UserType(rawValue: section) else {
-            fatalError("Unable to get datasource for tableView")
+        guard let section = Section(rawValue: section) else {
+            fatalError("Unable to get current section")
         }
-
-        return userTypeSection.title.uppercased()
+        
+        switch section {
+        case .user:
+            return "account_creation_user_type_section0_title_text".localized.uppercased()
+        case .professional:
+            return "account_creation_user_type_section1_title_text".localized.uppercased()
+        }
     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -80,36 +90,39 @@ final class UserTypeViewController: TableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
             fatalError("Unable to dequeue required cell type - \(TitleTableViewCell.self)")
         }
-
-        guard let section = UserType(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserType.self)")
+        
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section")
         }
+        
+        guard let sectionDataSource = userTypeDataSource[section] else {
+            fatalError("Unable to get current section")
+        }
+        
+        let role = sectionDataSource[indexPath.row]
 
-        let rowValue = section.dataSource[indexPath.row]
-        let rowId = section.ids[indexPath.row]
-
-        cell.setup(rowValue)
+        cell.setup(role.title)
         cell.selectionStyle = .none
 
         switch section {
         case .user:
-            if userRegistrationData.allRoles.count == 0, indexPath.row == 0 {
-                userRegistrationData.userTypes.insert(rowId)
+            if selectedRoles.count == 0, indexPath.row == 0 {
+                selectedRoles.insert(role)
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                 cell.accessoryType = .checkmark
                 return cell
             } else {
-                cell.accessoryType = userRegistrationData.userTypes.contains(rowId) ? .checkmark : .none
+                cell.accessoryType = selectedRoles.contains(role) ? .checkmark : .none
             }
         case .professional:
-            cell.accessoryType = userRegistrationData.professions.contains(rowId) ? .checkmark : .none
+            cell.accessoryType = selectedRoles.contains(role) ? .checkmark : .none
         }
 
         return cell
     }
  
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-        if userRegistrationData.allRoles.count > 1 {
+        if selectedRoles.count > 1 {
             tableView.deselectRow(at: indexPath, animated: true)
             return indexPath
         } else {
@@ -118,38 +131,34 @@ final class UserTypeViewController: TableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = UserType(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserType.self)")
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section")
+        }
+        
+        guard let sectionDataSource = userTypeDataSource[section] else {
+            fatalError("Unable to get current section")
         }
 
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
 
-        let rowId = section.ids[indexPath.row]
-
-        switch section {
-        case .professional:
-            userRegistrationData.professions.insert(rowId)
-        case .user:
-            userRegistrationData.userTypes.insert(rowId)
-        }
+        let role = sectionDataSource[indexPath.row]
+        selectedRoles.insert(role)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let section = UserType(rawValue: indexPath.section) else {
-            fatalError("Unable to get current section type - \(UserType.self)")
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError("Unable to get current section")
         }
         
+        guard let sectionDataSource = userTypeDataSource[section] else {
+            fatalError("Unable to get current section")
+        }
+
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
         
-        let rowId = section.ids[indexPath.row]
-
-        switch section {
-        case .professional:
-            userRegistrationData.professions.remove(rowId)
-        case .user:
-            userRegistrationData.userTypes.remove(rowId)
-        }
+        let role = sectionDataSource[indexPath.row]
+        selectedRoles.remove(role)
     }
 }

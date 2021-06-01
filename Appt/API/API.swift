@@ -175,8 +175,8 @@ class API {
         }
     }
     
-    func createUser(username: String, email: String, password: String, userRegistrationData: UserRegistrationData, callback: @escaping (User?, String?) -> ()) {
-        userRequest(path: "users", method: .post, parameters: ["username": username, "email": email, "password": password, "roles": userRegistrationData.allRoles.joined(separator: ",")], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
+    func createUser(username: String, email: String, password: String, userRolesIds: [String], callback: @escaping (User?, String?) -> ()) {
+        userRequest(path: "users", method: .post, parameters: ["username": username, "email": email, "password": password, "roles": userRolesIds.joined(separator: ",")], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
             
             if response.error != nil {
                 callback(nil, response.error?.localizedDescription)

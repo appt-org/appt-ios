@@ -28,13 +28,27 @@ class User: Codable {
     var id: Int
     var username: String
     var email: String
-    var userMeta: UserMeta
+    private var userMeta: UserMeta
+    private var rolesIds: [String]
+    
+    var roles: [Role] {
+        rolesIds.compactMap { Role(withId: $0) }
+    }
+    
+    var isVerified: Bool {
+        userMeta.verificationState
+    }
+    
+    var isProfessional: Bool {
+        !(roles.map { $0.type }.filter {$0 == .professional}.isEmpty)
+    }
         
     private enum CodingKeys: String, CodingKey {
         case id
         case username
         case email
         case userMeta = "user_meta"
+        case rolesIds = "roles"
     }
 }
 

@@ -13,7 +13,7 @@ final class HomeViewController: ViewController {
     @IBOutlet var collectionView: UICollectionView!
 
     private var dataSource: [HomeItem] {
-        guard let userType = UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
+        guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
         }
         
@@ -47,14 +47,20 @@ final class HomeViewController: ViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+        
+        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
-        guard let _ = UserType(rawValue: sender.selectedSegmentIndex) else {
+        guard let _ = Role.UserType(rawValue: sender.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
         }
 
-        self.collectionView.reloadData()
+        let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
+        let indexSet = IndexSet(integersIn: range)
+        collectionView.reloadSections(indexSet)
     }
 }
 
@@ -129,7 +135,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                 fatalError()
             }
 
-            guard let userType = UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
+            guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
                 fatalError("Unable to determine UserType")
             }
             
