@@ -50,12 +50,17 @@ final class HomeViewController: ViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        emailVerificationView.delegate = self
+        
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
         
         userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
         
-        emailVerificationView.isHidden = user.isVerified
-        emailVerificationView.delegate = self
+        if user.isVerified {
+            hideVerificationView()
+        }
+        
+        getUser()
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -66,6 +71,19 @@ final class HomeViewController: ViewController {
         let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
         let indexSet = IndexSet(integersIn: range)
         collectionView.reloadSections(indexSet)
+    }
+    
+    private func hideVerificationView() {
+        emailVerificationViewheight.constant = 0.0
+        emailVerificationView.isHidden = true
+    }
+    
+    private func getUser() {
+        API.shared.getUser { user, error in
+            if let user = user, user.isVerified {
+                self.hideVerificationView()
+            }
+        }
     }
 }
 
@@ -174,6 +192,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        emailVerificationViewheight.constant = 0.0
+        hideVerificationView()
     }
 }

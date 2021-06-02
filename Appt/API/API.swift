@@ -193,6 +193,28 @@ class API {
         }
     }
     
+    func getUser(callback: @escaping (User?, String?) -> ()) {
+        guard let user = UserDefaultsStorage.shared.restoreUser() else {
+            callback(nil, nil)
+            return
+        }
+        
+        userRequest(path: "users/\(user.id)", method: .get, parameters: ["context":"edit"], headers: superUserHeaders, encoding: URLEncoding.default) { response in
+            if response.error != nil {
+                callback(nil, response.error?.localizedDescription)
+            } else if let data = response.data {
+                if let user = try? self.decoder.decode(User.self, from: data) {
+                    UserDefaultsStorage.shared.storeUser(user)
+                    callback(user, nil)
+                } else {
+                    callback(nil, nil)
+                }
+            } else {
+                callback(nil, nil)
+            }
+        }
+    }
+    
     func deleteUser(callback: @escaping (Bool, String?) -> ()) {
         guard let user = UserDefaultsStorage.shared.restoreUser() else {
             callback(false, nil)
