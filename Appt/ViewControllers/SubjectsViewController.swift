@@ -65,6 +65,8 @@ class SubjectsViewController: ViewController {
     private func embedViewController() {
         guard let subject = self.subject else { return }
         
+        title = subject.title ?? self.viewControllerType.title
+        
         ViewEmbedder.embed(
             withIdentifier: subject.subjectType == .blocks ? "SubjectBlocksViewController" : "SubjectListViewController", // Storyboard ID
             parent: self,
