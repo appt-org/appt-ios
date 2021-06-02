@@ -37,7 +37,7 @@ enum Topic: String {
         case .privacy:
             return "privacy_title".localized
         case .accessibility:
-            return "privacy_title".localized
+            return "accessability_title".localized
         case .terms:
             return "terms_title".localized
         }
