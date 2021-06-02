@@ -294,6 +294,8 @@ extension API {
     private func getContent(type: ContentType, callback: @escaping(Subject?, String?) -> ()) {
         guard let url = URL(string: Config.contentEndpoint + type.path) else { return }
         
+        URLCache.shared.removeAllCachedResponses()
+        
         Alamofire.request(url,
                           method: .get,
                           parameters: nil,

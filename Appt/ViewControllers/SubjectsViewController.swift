@@ -43,8 +43,7 @@ class SubjectsViewController: ViewController {
     }
     
     private func loadSubject() {
-        self.isLoading = true
-        API.shared.getServices { subject, errorString in
+        let callback: (Subject?, String?) -> () = { subject, errorString in
             self.isLoading = false
             if let error = errorString {
                 Alert.error(error, viewController: self)
@@ -52,6 +51,14 @@ class SubjectsViewController: ViewController {
                 self.subject = subject
                 self.embedViewController()
             }
+        }
+        
+        self.isLoading = true
+        switch viewControllerType {
+        case .knowledgeBase:
+            API.shared.getKnowledgeBase(callback)
+        case .services:
+            API.shared.getServices(callback)
         }
     }
     
