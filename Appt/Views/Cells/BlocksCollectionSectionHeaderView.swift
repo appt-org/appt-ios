@@ -25,7 +25,6 @@ class BlocksCollectionSectionHeaderView: UICollectionReusableView {
 
         self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = subject.description
-        self.imgView.sd_setImage(with: subject.imgURL)
     }
     
     func setup(withTitle title: String, image: UIImage) {

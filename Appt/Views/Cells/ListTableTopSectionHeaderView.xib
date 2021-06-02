@@ -19,27 +19,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="418" height="278"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3b-zN-DVm">
-                            <rect key="frame" x="20" y="128" width="378" height="138"/>
+                            <rect key="frame" x="16" y="24" width="386" height="230"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-wv-3a6">
-                            <rect key="frame" x="24" y="16" width="378" height="100"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="9SA-53-Iet"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="seZ-wv-3a6" firstAttribute="top" secondItem="bOW-uV-FPr" secondAttribute="top" constant="16" id="5Ee-Qr-46X"/>
-                        <constraint firstItem="P3b-zN-DVm" firstAttribute="top" secondItem="seZ-wv-3a6" secondAttribute="bottom" constant="12" id="A4T-9O-NnK"/>
-                        <constraint firstAttribute="bottom" secondItem="P3b-zN-DVm" secondAttribute="bottom" constant="12" id="FwS-91-NU7"/>
-                        <constraint firstAttribute="trailing" secondItem="seZ-wv-3a6" secondAttribute="trailing" constant="16" id="Hmk-5S-HSY"/>
-                        <constraint firstAttribute="trailing" secondItem="P3b-zN-DVm" secondAttribute="trailing" constant="20" id="Ibl-H2-9HA"/>
-                        <constraint firstItem="seZ-wv-3a6" firstAttribute="leading" secondItem="bOW-uV-FPr" secondAttribute="leading" constant="24" id="dfA-r4-1ch"/>
-                        <constraint firstItem="P3b-zN-DVm" firstAttribute="leading" secondItem="bOW-uV-FPr" secondAttribute="leading" constant="20" id="v78-03-R2y"/>
+                        <constraint firstAttribute="bottom" secondItem="P3b-zN-DVm" secondAttribute="bottom" constant="24" id="FwS-91-NU7"/>
+                        <constraint firstAttribute="trailing" secondItem="P3b-zN-DVm" secondAttribute="trailing" constant="16" id="Ibl-H2-9HA"/>
+                        <constraint firstItem="P3b-zN-DVm" firstAttribute="top" secondItem="bOW-uV-FPr" secondAttribute="top" constant="24" id="awD-OY-CvU"/>
+                        <constraint firstItem="P3b-zN-DVm" firstAttribute="leading" secondItem="bOW-uV-FPr" secondAttribute="leading" constant="16" id="v78-03-R2y"/>
                     </constraints>
                 </view>
             </subviews>
@@ -52,7 +43,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="imgView" destination="seZ-wv-3a6" id="TBe-bv-rQD"/>
                 <outlet property="titleLabel" destination="P3b-zN-DVm" id="722-m3-Imp"/>
             </connections>
             <point key="canvasLocation" x="94.400000000000006" y="-87.256371814092958"/>

@@ -484,13 +484,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L63-iL-s4h">
-                                            <rect key="frame" x="16" y="24" width="382" height="33"/>
+                                            <rect key="frame" x="16" y="24" width="382" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="D3b-KI-3Kl"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF0-FE-WsH">
-                                            <rect key="frame" x="12" y="69" width="390" height="8"/>
+                                            <rect key="frame" x="16" y="65" width="382" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -498,14 +498,14 @@
                                     </subviews>
                                     <color key="backgroundColor" name="Background"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="rF0-FE-WsH" secondAttribute="trailing" constant="12" id="4C9-NR-lZ4"/>
+                                        <constraint firstAttribute="trailing" secondItem="rF0-FE-WsH" secondAttribute="trailing" constant="16" id="4C9-NR-lZ4"/>
                                         <constraint firstItem="L63-iL-s4h" firstAttribute="top" secondItem="gka-n2-rQY" secondAttribute="top" constant="24" id="4Ll-0U-pR7"/>
                                         <constraint firstAttribute="trailing" secondItem="L63-iL-s4h" secondAttribute="trailing" constant="16" id="4e2-7z-Qzg"/>
                                         <constraint firstItem="rF0-FE-WsH" firstAttribute="top" secondItem="L63-iL-s4h" secondAttribute="bottom" constant="12" id="DQY-V8-xfj"/>
                                         <constraint firstItem="L63-iL-s4h" firstAttribute="centerX" secondItem="gka-n2-rQY" secondAttribute="centerX" id="GvQ-Xo-REL"/>
                                         <constraint firstItem="L63-iL-s4h" firstAttribute="leading" secondItem="gka-n2-rQY" secondAttribute="leading" constant="16" id="J1O-Qn-ZBF"/>
-                                        <constraint firstItem="rF0-FE-WsH" firstAttribute="leading" secondItem="gka-n2-rQY" secondAttribute="leading" constant="12" id="YIo-n5-QcQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="rF0-FE-WsH" secondAttribute="bottom" constant="12" id="x0s-LV-J5U"/>
+                                        <constraint firstItem="rF0-FE-WsH" firstAttribute="leading" secondItem="gka-n2-rQY" secondAttribute="leading" constant="16" id="YIo-n5-QcQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="rF0-FE-WsH" secondAttribute="bottom" constant="24" id="x0s-LV-J5U"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="imgView" destination="L63-iL-s4h" id="hM9-hE-eHl"/>
@@ -612,13 +612,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-FR-KVr">
-                                            <rect key="frame" x="16" y="16" width="382" height="97"/>
+                                            <rect key="frame" x="16" y="12" width="382" height="0.0"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="ovY-UO-iVx"/>
+                                                <constraint firstAttribute="height" id="ovY-UO-iVx"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b19-cf-gUE">
-                                            <rect key="frame" x="12" y="125" width="390" height="0.0"/>
+                                            <rect key="frame" x="16" y="24" width="382" height="89"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -626,11 +626,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="Background"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="b19-cf-gUE" secondAttribute="trailing" constant="12" id="5Mu-Mf-SWw"/>
-                                        <constraint firstAttribute="bottom" secondItem="b19-cf-gUE" secondAttribute="bottom" constant="12" id="9fW-HG-wAT"/>
+                                        <constraint firstAttribute="trailing" secondItem="b19-cf-gUE" secondAttribute="trailing" constant="16" id="5Mu-Mf-SWw"/>
+                                        <constraint firstAttribute="bottom" secondItem="b19-cf-gUE" secondAttribute="bottom" constant="24" id="9fW-HG-wAT"/>
                                         <constraint firstItem="b19-cf-gUE" firstAttribute="top" secondItem="J3d-FR-KVr" secondAttribute="bottom" constant="12" id="XNe-oE-kc2"/>
-                                        <constraint firstItem="J3d-FR-KVr" firstAttribute="top" secondItem="lH2-cC-J6o" secondAttribute="top" constant="16" id="beT-dF-kbx"/>
-                                        <constraint firstItem="b19-cf-gUE" firstAttribute="leading" secondItem="lH2-cC-J6o" secondAttribute="leading" constant="12" id="fXp-Oo-UgP"/>
+                                        <constraint firstItem="J3d-FR-KVr" firstAttribute="top" secondItem="lH2-cC-J6o" secondAttribute="top" constant="12" id="beT-dF-kbx"/>
+                                        <constraint firstItem="b19-cf-gUE" firstAttribute="leading" secondItem="lH2-cC-J6o" secondAttribute="leading" constant="16" id="fXp-Oo-UgP"/>
                                         <constraint firstAttribute="trailing" secondItem="J3d-FR-KVr" secondAttribute="trailing" constant="16" id="nw2-ko-YtG"/>
                                         <constraint firstItem="J3d-FR-KVr" firstAttribute="leading" secondItem="lH2-cC-J6o" secondAttribute="leading" constant="16" id="pE3-0x-Idh"/>
                                         <constraint firstItem="J3d-FR-KVr" firstAttribute="centerX" secondItem="lH2-cC-J6o" secondAttribute="centerX" id="sVu-ea-iTC"/>

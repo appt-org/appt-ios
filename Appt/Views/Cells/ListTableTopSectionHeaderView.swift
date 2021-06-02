@@ -9,7 +9,6 @@
 import UIKit
 
 class ListTableTopSectionHeaderView: UITableViewHeaderFooterView {
-    @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     
     override var accessibilityTraits: UIAccessibilityTraits {
@@ -28,6 +27,5 @@ class ListTableTopSectionHeaderView: UITableViewHeaderFooterView {
 
         self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = subject.description
-        self.imgView.sd_setImage(with: subject.imgURL)
     }
 }
