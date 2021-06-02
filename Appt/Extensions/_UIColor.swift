@@ -25,4 +25,5 @@ extension UIColor {
     static let foreground = UIColor(named: "Foreground")!
     static let disabled = UIColor(named: "Disabled")!
     static let textFieldDisabled = UIColor(named: "TextFieldDisabled")!
+    static let categoryCellBackground = UIColor(named: "CategoryCellBackground")!
 }

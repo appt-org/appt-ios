@@ -170,7 +170,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                 title = "professional_header_title".localized
             }
             
-            headerView.setup(withTitle: title, image: .homeApptLogo)
+            headerView.setup(withTitle: title, image: .apptLogo)
 
             return headerView
 

@@ -31,7 +31,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
                 }
             } else {
                 if #available(iOS 13.0, *) {
-                    background.backgroundColor = UIColor.systemBackground
+                    background.backgroundColor = UIColor.categoryCellBackground
                 } else {
                     background.backgroundColor = UIColor.white
                 }
@@ -45,6 +45,12 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         self.background.layer.cornerRadius = 20
         self.categoryLabel.textColor = .foreground
         self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        
+        if #available(iOS 13.0, *) {
+            background.backgroundColor = UIColor.categoryCellBackground
+        } else {
+            background.backgroundColor = UIColor.white
+        }
     }
 
     func setup(_ subject: Subject) {
