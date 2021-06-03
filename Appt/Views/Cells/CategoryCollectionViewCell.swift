@@ -45,6 +45,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         self.background.layer.cornerRadius = 20
         self.categoryLabel.textColor = .foreground
         self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.isAccessibilityElement = true
         
         if #available(iOS 13.0, *) {
             background.backgroundColor = UIColor.categoryCellBackground
