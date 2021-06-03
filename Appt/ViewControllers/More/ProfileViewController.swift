@@ -65,8 +65,8 @@ final class ProfileViewController: ViewController {
     private func showDeleteAccountAlert() {
         Alert.Builder()
             .title("delete_account_alert_title".localized)
-            .cancelAction("cancel".localized)
-            .action("ok".localized) {
+            .cancelAction("delete_account_alert_cancel_button_text".localized)
+            .action("delete_account_alert_delete_button_text".localized) {
                 self.isLoading = true
                 API.shared.deleteUser { succeed, error in
                     self.isLoading = false

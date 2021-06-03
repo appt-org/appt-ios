@@ -274,11 +274,13 @@
 "about_title" = "Over deze app";
 
 /* ProfileViewController */
-"delete_my_account_title" = "Delete my account";
-"log_out_title" = "Log out";
-"change_my_password_title" = "Change my password";
+"delete_my_account_title" = "Account verwijderen";
+"log_out_title" = "Uitloggen";
+"change_my_password_title" = "Verander mijn wachtwoord";
 "logout_alert_title" = "Do you really want to logout?";
-"delete_account_alert_title" = "Do you really want to delete your account?";
+"delete_account_alert_title" = "Weet je zeker dat je je account wilt verwijderen?";
+"delete_account_alert_delete_button_text" = "Ja, verwijder mijn account";
+"delete_account_alert_cancel_button_text" = "Annuleren";
 
 /* ServicesViewController */
 "services_vc_title" = "Diensten";
