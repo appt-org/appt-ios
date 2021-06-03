@@ -59,6 +59,10 @@ enum HomeItem: String {
             return ""
         }
     }
+
+    var slugURL: URL? {
+        URL(string: self.slug)
+    }
     
     /** Image */
     var image: UIImage {

@@ -44,7 +44,7 @@ final class HomeViewController: ViewController {
         title = "home_vc_title".localized
 
         userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
-        
+
         collectionView.registerNib(CategoryCollectionViewCell.self)
         
         collectionView.delegate = self
@@ -61,6 +61,12 @@ final class HomeViewController: ViewController {
         }
         
         getUser()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -117,16 +123,12 @@ extension HomeViewController: UICollectionViewDataSource {
         case .training:
             let viewController = UIStoryboard.training()
             navigationController?.pushViewController(viewController, animated: true)
-        case .meldpunt:
-            openWebsite(item.slug)
-        case .community:
-            openWebsite(item.slug)
-        case .overAppt:
-            openWebsite(item.slug)
+        case .meldpunt, .community, .overAppt, .aanpak:
+            guard let url = item.slugURL else { return }
+            let articleViewController = UIStoryboard.article(type: .page, completeUrl: url)
+            navigationController?.pushViewController(articleViewController, animated: true)
         case .knowledgeBase:
             self.tabBarController?.selectedIndex = 1
-        case .aanpak:
-            openWebsite(item.slug)
         case .services:
             self.tabBarController?.selectedIndex = 3
         }
