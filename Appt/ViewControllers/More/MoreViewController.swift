@@ -9,6 +9,9 @@
 import UIKit
 
 class MoreViewController: TableViewController {
+    @IBOutlet private var emailVerificationView: EmailVerificationView!
+    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
+
     let tableViewTopHeaderHeight: CGFloat = 8
     
     private var topics: KeyValuePairs<String, [Topic]> {
@@ -36,6 +39,19 @@ class MoreViewController: TableViewController {
         
         // Set-up UITableView
         tableView.registerNib(ImageTitleTableViewCell.self)
+
+        emailVerificationView.delegate = self
+
+        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+        
+        if user.isVerified {
+            hideVerificationView()
+        }
+    }
+
+    private func hideVerificationView() {
+        emailVerificationViewheight.constant = 0.0
+        emailVerificationView.isHidden = true
     }
 }
 
@@ -89,5 +105,11 @@ extension MoreViewController {
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)
         }
+    }
+}
+
+extension MoreViewController: EmailVerificationViewDelegate {
+    func okViewAction() {
+        hideVerificationView()
     }
 }

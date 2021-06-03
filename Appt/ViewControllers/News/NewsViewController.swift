@@ -10,6 +10,8 @@ import UIKit
 import Accessibility
 
 class NewsViewController: TableViewController {
+    @IBOutlet private var emailVerificationView: EmailVerificationView!
+    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
 
     @IBOutlet private var filterItem: UIBarButtonItem!
     
@@ -28,6 +30,16 @@ class NewsViewController: TableViewController {
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
         tableView.refreshControl = refreshControl
+
+        emailVerificationView.delegate = self
+
+        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+
+        if !user.isVerified && self.navigationController?.viewControllers.count != 1 {
+            hideVerificationView()
+        } else if user.isVerified {
+            hideVerificationView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +48,11 @@ class NewsViewController: TableViewController {
         if articles.isEmpty {
             getArticles()
         }
+    }
+
+    private func hideVerificationView() {
+        emailVerificationViewheight.constant = 0.0
+        emailVerificationView.isHidden = true
     }
         
     private func reset() {
@@ -129,5 +146,11 @@ extension NewsViewController {
         
         let articleViewController = UIStoryboard.article(type: article.type, id: article.id)
         navigationController?.pushViewController(articleViewController, animated: true)
+    }
+}
+
+extension NewsViewController: EmailVerificationViewDelegate {
+    func okViewAction() {
+        hideVerificationView()
     }
 }
