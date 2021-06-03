@@ -47,6 +47,11 @@ class WebViewController: ViewController {
 
         webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
     }
+
+    func load(_ url: URL) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
     
     func onLoaded() {
         // Can be overridden

@@ -19,6 +19,7 @@ class ArticleViewController: WebViewController {
     var id: Int?
     var slug: String?
     var url: URL?
+    var completeURL: URL?
     
     var article: Article?
     
@@ -62,6 +63,8 @@ class ArticleViewController: WebViewController {
             API.shared.getArticle(type: type, slug: slug, callback: callback)
         } else if let url = url {
             API.shared.getArticle(type: type, url: url, callback: callback)
+        } else if let completeURL = completeURL {
+            self.load(completeURL)
         }
     }
     
