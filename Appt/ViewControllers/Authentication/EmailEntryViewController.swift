@@ -46,6 +46,26 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
     }
     
     @IBAction private func continueButtonPressed(_ sender: Any) {
+        guard let email = self.emailTextField.text else { return }
+
+        self.isLoading = true
+
+        API.shared.initiatePasswordRetrieval(email: email) { succeed, message in
+            self.isLoading = false
+
+            switch succeed {
+            case true:
+                Alert.Builder()
+                    .title("email_entry_vc_title".localized)
+                    .message(message ?? "")
+                    .action("ok".localized) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    .present(in: self)
+            case false:
+                Alert.error(message ?? "", viewController: self)
+            }
+        }
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {

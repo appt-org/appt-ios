@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1863A164E9AC782E06E10985 /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */; };
 		230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineButton.swift */; };
+		231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 231F1FE7266A0194002524F0 /* apple-app-site-association */; };
 		232D74EA264E771200937E0D /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74E9264E771200937E0D /* SubjectListViewController.swift */; };
 		232D74ED264E779400937E0D /* ImageTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */; };
 		232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */; };
@@ -132,6 +133,8 @@
 
 /* Begin PBXFileReference section */
 		230BE9AC2636EEFE0026A90B /* MultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineButton.swift; sourceTree = "<group>"; };
+		231F1FE7266A0194002524F0 /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
+		231F1FE9266A0604002524F0 /* Appt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appt.entitlements; sourceTree = "<group>"; };
 		232D74E9264E771200937E0D /* SubjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = Home/SubjectListViewController.swift; sourceTree = "<group>"; };
 		232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleTableViewCell.swift; sourceTree = "<group>"; };
 		232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTitleTableViewCell.xib; sourceTree = "<group>"; };
@@ -442,6 +445,7 @@
 		2877F6CC247D6E9200605677 /* Appt */ = {
 			isa = PBXGroup;
 			children = (
+				231F1FE9266A0604002524F0 /* Appt.entitlements */,
 				2877F6CD247D6E9200605677 /* AppDelegate.swift */,
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
 				A8BDCF75265E87FE007D7126 /* Storage */,
@@ -486,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				2877F6D8247D6E9600605677 /* Assets.xcassets */,
+				231F1FE7266A0194002524F0 /* apple-app-site-association */,
 				28E1A0842525D6C300604CFF /* GoogleService-Info.plist */,
 				2877F6DD247D6E9600605677 /* Info.plist */,
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
@@ -699,6 +704,7 @@
 				2885551D251B491500392FC3 /* Localizable.stringsdict in Resources */,
 				287FFBB925092B130022CD5F /* VoiceOverPasteView.xib in Resources */,
 				2877F6E8247D725C00605677 /* SourceSansPro-SemiBold.ttf in Resources */,
+				231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */,
 				2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */,
 				2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
@@ -1027,6 +1033,7 @@
 			baseConfigurationReference = D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -1053,6 +1060,7 @@
 			baseConfigurationReference = 7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;

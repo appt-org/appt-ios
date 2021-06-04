@@ -192,6 +192,24 @@ class API {
             }
         }
     }
+
+    func initiatePasswordRetrieval(email: String, callback: @escaping (Bool, String?) -> ()) {
+        userRequest(path: "1/user/retrieve_password", method: .get, parameters: ["user_login": email, "insecure": "cool"], headers: superUserHeaders, encoding: URLEncoding.queryString) { response in
+            if let error = response.error {
+                callback(false, error.localizedDescription)
+            } else if let data = response.data {
+                do {
+                    let json = try self.decoder.decode([String: String].self, from: data)
+                    let message = json["msg"] ?? ""
+                    callback(true, message)
+                } catch {
+                    callback(false, error.localizedDescription)
+                }
+            } else {
+                callback(false, nil)
+            }
+        }
+    }
     
     func getUser(callback: @escaping (User?, String?) -> ()) {
         guard let user = UserDefaultsStorage.shared.restoreUser() else {
