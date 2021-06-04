@@ -21,10 +21,12 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     
     @IBOutlet private var privacyPolicyLabel: UILabel!
     @IBOutlet private var privacyPolicySwitch: UISwitch!
-    
+    @IBOutlet private var privacyPolicyButton: MultilineButton!
+
     @IBOutlet private var termsAndConditionsLabel: UILabel!
     @IBOutlet private var termsAndConditionsSwitch: UISwitch!
-    
+    @IBOutlet private var termsAndConditionsButton: MultilineButton!
+
     @IBOutlet private var registerButton: PrimaryMultilineButton!
 
     var userRoles: Set<Role> = []
@@ -57,9 +59,13 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         
         privacyPolicyLabel.text = "privacy_policy_label_text".localized
         privacyPolicyLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        privacyPolicyButton.setTitle(Topic.privacy.title, for: .normal)
+        privacyPolicyButton.underline()
         
         termsAndConditionsLabel.text = "terms_and_conditions_label_text".localized
         termsAndConditionsLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        termsAndConditionsButton.setTitle(Topic.terms.title, for: .normal)
+        termsAndConditionsButton.underline()
         
         registerButton.setTitle("complete_registration_button_title_text".localized, for: .normal)
         registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
@@ -114,13 +120,24 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
             }
         }
     }
-    
+
+
     @IBAction private func privacyPolicyValueChanged(_ sender: UISwitch) {
         registerButton.isEnabled = isRegistrationDataFilledIn
     }
-    
+
     @IBAction private func termsAndConditionsValueChanged(_ sender: UISwitch) {
         registerButton.isEnabled = isRegistrationDataFilledIn
+    }
+
+    @IBAction func showTermsAndConditions(_ sender: Any) {
+        let articleViewController = UIStoryboard.article(type: .page, slug: Topic.terms.slug)
+        navigationController?.pushViewController(articleViewController, animated: true)
+    }
+
+    @IBAction func showPrivacyPolicy(_ sender: Any) {
+        let articleViewController = UIStoryboard.article(type: .page, slug: Topic.privacy.slug)
+        navigationController?.pushViewController(articleViewController, animated: true)
     }
 
     private func showConfirmationAlert() {

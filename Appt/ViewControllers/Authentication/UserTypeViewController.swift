@@ -104,19 +104,7 @@ final class UserTypeViewController: TableViewController {
         cell.setup(role.title)
         cell.selectionStyle = .none
 
-        switch section {
-        case .user:
-            if selectedRoles.count == 0, indexPath.row == 0 {
-                selectedRoles.insert(role)
-                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                cell.accessoryType = .checkmark
-                return cell
-            } else {
-                cell.accessoryType = selectedRoles.contains(role) ? .checkmark : .none
-            }
-        case .professional:
-            cell.accessoryType = selectedRoles.contains(role) ? .checkmark : .none
-        }
+        cell.accessoryType = selectedRoles.contains(role) ? .checkmark : .none
 
         return cell
     }
@@ -144,6 +132,8 @@ final class UserTypeViewController: TableViewController {
 
         let role = sectionDataSource[indexPath.row]
         selectedRoles.insert(role)
+
+        self.nextButton.isEnabled = true
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

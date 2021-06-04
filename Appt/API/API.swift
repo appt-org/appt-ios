@@ -341,8 +341,12 @@ extension API {
             if response.error != nil {
                 callback(nil, response.error?.localizedDescription)
             } else if let data = response.data {
-                let subject = try? self.decoder.decode(Subject.self, from: data)
-                callback(subject, nil)
+                do {
+                    let subject = try self.decoder.decode(Subject.self, from: data)
+                    callback(subject, nil)
+                } catch {
+                    callback(nil, error.localizedDescription)
+                }
             }
         }
     }

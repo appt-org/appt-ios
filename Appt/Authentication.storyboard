@@ -594,7 +594,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-6S-5uV">
                                 <rect key="frame" x="0.0" y="128.5" width="414" height="633.5"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-Mh-pHL" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-Mh-pHL" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="24" y="798" width="366" height="48"/>
                                 <color key="backgroundColor" name="Foreground"/>
                                 <constraints>
@@ -602,6 +602,9 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                 </constraints>
                                 <state key="normal" title="Volgende">
                                     <color key="titleColor" name="Background"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" name="Disabled"/>
                                 </state>
                                 <connections>
                                     <segue destination="Oq3-Cr-7NY" kind="show" id="Dp5-CB-6c9"/>
@@ -743,27 +746,63 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met de privacyverklaring" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xde-m6-dD4">
-                                                <rect key="frame" x="16" y="413" width="313" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Foreground"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-eX-2dR">
+                                                <rect key="frame" x="16" y="413" width="323" height="64.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-r3-r24" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="bXk-Sb-0GI"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Privacyverklaring">
+                                                            <color key="titleColor" name="Primary"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="showPrivacyPolicy:" destination="Oq3-Cr-7NY" eventType="touchUpInside" id="kC2-WV-bBV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met de privacyverklaring" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xde-m6-dD4">
+                                                        <rect key="frame" x="0.0" y="44" width="323" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Foreground"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-9N-irL">
-                                                <rect key="frame" x="349" y="408" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="452" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="privacyPolicyValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="DEd-pk-LkC"/>
                                                 </connections>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met Algemene Voorwaarden" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-Yw-5z0">
-                                                <rect key="frame" x="16" y="458.5" width="313" height="41"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Foreground"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-jq-Bfg">
+                                                <rect key="frame" x="16" y="502.5" width="323" height="64.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tni-hV-AH4" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="UAE-yk-6uQ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Algemene Voorwaarden">
+                                                            <color key="titleColor" name="Primary"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="showTermsAndConditions:" destination="Oq3-Cr-7NY" eventType="touchUpInside" id="kt5-BN-PFw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Ik ga akkoord met Algemene Voorwaarden" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-Yw-5z0">
+                                                        <rect key="frame" x="0.0" y="44" width="323" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Foreground"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-s9-JZu">
-                                                <rect key="frame" x="349" y="463.5" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="541.5" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="termsAndConditionsValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="2ir-gm-Z5Z"/>
@@ -795,33 +834,33 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="leading" secondItem="IeB-Yw-5z0" secondAttribute="trailing" constant="20" id="1yX-RE-DOy"/>
                                             <constraint firstAttribute="trailing" secondItem="cS1-bu-n9W" secondAttribute="trailing" id="2WZ-JE-ATT"/>
                                             <constraint firstAttribute="trailing" secondItem="GVL-s9-JZu" secondAttribute="trailing" constant="16" id="2lZ-7n-zGe"/>
                                             <constraint firstItem="cHn-NH-xdo" firstAttribute="top" secondItem="Vo6-7r-eoZ" secondAttribute="bottom" constant="24" id="3rs-fv-skI"/>
-                                            <constraint firstItem="ywo-9N-irL" firstAttribute="leading" secondItem="xde-m6-dD4" secondAttribute="trailing" constant="20" id="7VE-04-Xcx"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="20" id="7tP-Jo-Y5c"/>
                                             <constraint firstItem="cHn-NH-xdo" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="8B0-Mt-pry"/>
-                                            <constraint firstItem="xde-m6-dD4" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="C21-Gl-oKx"/>
                                             <constraint firstAttribute="trailing" secondItem="Vo6-7r-eoZ" secondAttribute="trailing" constant="20" id="Cin-dH-TU5"/>
-                                            <constraint firstItem="ywo-9N-irL" firstAttribute="centerY" secondItem="xde-m6-dD4" secondAttribute="centerY" id="F8E-HE-Ggh"/>
+                                            <constraint firstItem="uV2-jq-Bfg" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Dga-in-1vt"/>
+                                            <constraint firstItem="FJQ-eX-2dR" firstAttribute="top" secondItem="Scq-lT-cd1" secondAttribute="bottom" constant="36.5" id="HE8-sY-6Al"/>
                                             <constraint firstItem="vuD-wL-1Ea" firstAttribute="top" secondItem="cS1-bu-n9W" secondAttribute="bottom" constant="4" id="LhQ-9M-VTH"/>
                                             <constraint firstAttribute="bottom" secondItem="vuD-wL-1Ea" secondAttribute="bottom" constant="16" id="Qok-Zn-HX0"/>
                                             <constraint firstAttribute="trailing" secondItem="Scq-lT-cd1" secondAttribute="trailing" constant="16" id="Sot-h6-d0v"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="top" secondItem="Ltj-b7-mpB" secondAttribute="bottom" constant="24" id="SpW-0n-eze"/>
+                                            <constraint firstItem="FJQ-eX-2dR" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Sxt-i6-hdS"/>
+                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uV2-jq-Bfg" secondAttribute="bottom" constant="20" id="VkG-3T-3bq"/>
                                             <constraint firstItem="Ltj-b7-mpB" firstAttribute="top" secondItem="cHn-NH-xdo" secondAttribute="bottom" constant="24" id="WPY-1E-Zbb"/>
                                             <constraint firstAttribute="trailing" secondItem="vuD-wL-1Ea" secondAttribute="trailing" constant="24" id="Xev-e7-D0H"/>
+                                            <constraint firstItem="ywo-9N-irL" firstAttribute="leading" secondItem="FJQ-eX-2dR" secondAttribute="trailing" constant="10" id="YQb-Up-wtx"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="bP7-TE-648"/>
                                             <constraint firstItem="cS1-bu-n9W" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" id="gYS-z6-kfI"/>
-                                            <constraint firstItem="xde-m6-dD4" firstAttribute="top" secondItem="Scq-lT-cd1" secondAttribute="bottom" constant="36.5" id="hAz-vq-SYK"/>
                                             <constraint firstItem="Ltj-b7-mpB" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="hvb-Hp-eCR"/>
-                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="centerY" secondItem="IeB-Yw-5z0" secondAttribute="centerY" id="ipH-Uv-ZUT"/>
+                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="centerY" secondItem="IeB-Yw-5z0" secondAttribute="centerY" id="jeg-vQ-0y1"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="centerX" secondItem="nvl-KS-Ppn" secondAttribute="centerX" id="k8F-wk-aww"/>
                                             <constraint firstAttribute="trailing" secondItem="ywo-9N-irL" secondAttribute="trailing" constant="16" id="oKh-sd-o8B"/>
-                                            <constraint firstItem="IeB-Yw-5z0" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="oWa-t7-kKU"/>
-                                            <constraint firstItem="IeB-Yw-5z0" firstAttribute="top" secondItem="xde-m6-dD4" secondAttribute="bottom" constant="25" id="ojp-Rs-hDu"/>
+                                            <constraint firstItem="GVL-s9-JZu" firstAttribute="leading" secondItem="uV2-jq-Bfg" secondAttribute="trailing" constant="10" id="qFm-vK-fWs"/>
+                                            <constraint firstItem="uV2-jq-Bfg" firstAttribute="top" secondItem="FJQ-eX-2dR" secondAttribute="bottom" constant="25" id="sdV-bF-Vsq"/>
                                             <constraint firstAttribute="trailing" secondItem="cHn-NH-xdo" secondAttribute="trailing" constant="16" id="ujl-lo-vCh"/>
-                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IeB-Yw-5z0" secondAttribute="bottom" constant="20" id="wKM-Vl-sMk"/>
+                                            <constraint firstItem="ywo-9N-irL" firstAttribute="centerY" secondItem="xde-m6-dD4" secondAttribute="centerY" id="vGq-hq-L10"/>
                                             <constraint firstAttribute="trailing" secondItem="Ltj-b7-mpB" secondAttribute="trailing" constant="16" id="xYd-Jp-wfg"/>
                                             <constraint firstItem="vuD-wL-1Ea" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="24" id="xyT-gU-PHD"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="top" secondItem="nvl-KS-Ppn" secondAttribute="top" constant="24" id="y2w-sN-ZZr"/>
@@ -856,9 +895,11 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                         <outlet property="passwordHintLabel" destination="gvn-ym-zIU" id="xok-fP-3Rg"/>
                         <outlet property="passwordLabel" destination="Llc-gv-f0H" id="jGV-uh-dh9"/>
                         <outlet property="passwordTextField" destination="xVc-ex-PoU" id="JXY-rU-Rl8"/>
+                        <outlet property="privacyPolicyButton" destination="O4W-r3-r24" id="muF-Fw-8xj"/>
                         <outlet property="privacyPolicyLabel" destination="xde-m6-dD4" id="IH4-Rg-Qm7"/>
                         <outlet property="privacyPolicySwitch" destination="ywo-9N-irL" id="LRn-1I-yH6"/>
                         <outlet property="registerButton" destination="vuD-wL-1Ea" id="tJ8-0o-FNu"/>
+                        <outlet property="termsAndConditionsButton" destination="tni-hV-AH4" id="0Bf-zW-ogc"/>
                         <outlet property="termsAndConditionsLabel" destination="IeB-Yw-5z0" id="yXU-Db-BYX"/>
                         <outlet property="termsAndConditionsSwitch" destination="GVL-s9-JZu" id="jSc-W5-WgK"/>
                     </connections>

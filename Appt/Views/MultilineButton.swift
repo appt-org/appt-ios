@@ -52,6 +52,15 @@ class MultilineButton: UIButton {
 
         titleLabel?.preferredMaxLayoutWidth = self.titleLabel!.frame.size.width
     }
+    
+    func underline() {
+        guard let text = self.titleLabel?.text else { return }
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(NSAttributedString.Key.underlineColor, value: self.titleColor(for: .normal)!, range: NSRange(location: 0, length: text.count))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: self.titleColor(for: .normal)!, range: NSRange(location: 0, length: text.count))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: text.count))
+        self.setAttributedTitle(attributedString, for: .normal)
+    }
 }
 
 class UnderlinedMultilineButton: MultilineButton {

@@ -96,6 +96,12 @@ class SubjectsViewController: ViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        (self.children.first as? SubjectBlocksViewController)?.collectionView?.collectionViewLayout.invalidateLayout()
+    }
 }
 
 extension SubjectsViewController: UITableViewDelegate {

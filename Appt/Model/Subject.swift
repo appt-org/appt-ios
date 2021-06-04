@@ -22,7 +22,9 @@ struct Subject: Decodable {
     private let url: String
 
     var imgURL: URL? {
-        URL(string: self.image)
+        guard !self.image.isEmpty else { return nil }
+        
+        return URL(string: self.image)
     }
 
     var webURL: URL? {
