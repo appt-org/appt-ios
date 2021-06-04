@@ -194,7 +194,25 @@ class API {
     }
 
     func initiatePasswordRetrieval(email: String, callback: @escaping (Bool, String?) -> ()) {
-        userRequest(path: "1/user/retrieve_password", method: .get, parameters: ["user_login": email, "insecure": "cool"], headers: superUserHeaders, encoding: URLEncoding.queryString) { response in
+        userRequest(path: "1/user/retrieve_password", method: .get, parameters: ["user_login": email], headers: superUserHeaders, encoding: URLEncoding.queryString) { response in
+            if let error = response.error {
+                callback(false, error.localizedDescription)
+            } else if let data = response.data {
+                do {
+                    let json = try self.decoder.decode([String: String].self, from: data)
+                    let message = json["msg"] ?? ""
+                    callback(true, message)
+                } catch {
+                    callback(false, error.localizedDescription)
+                }
+            } else {
+                callback(false, nil)
+            }
+        }
+    }
+
+    func setNewPassword(login: String, id: String?, password: String, key: String, callback: @escaping (Bool, String?) -> ()) {
+        userRequest(path: "change-password", method: .post, parameters: ["login": login, "id": id ?? "", "key": key, "new_password": password], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
             if let error = response.error {
                 callback(false, error.localizedDescription)
             } else if let data = response.data {
