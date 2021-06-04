@@ -32,9 +32,25 @@ final class ProfileViewController: ViewController {
     }
     
     @IBAction private func changeMyPasswordButtonAction(_ sender: Any) {
-        let viewController = UIStoryboard.newPassword()
-        
-        navigationController?.pushViewController(viewController, animated: true)
+        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+
+        self.isLoading = true
+
+        API.shared.initiatePasswordRetrieval(email: user.email) { succeed, message in
+            self.isLoading = false
+
+            switch succeed {
+            case true:
+                Alert.Builder()
+                    .title("change_my_password_title".localized)
+                    .message(message ?? "")
+                    .action("ok".localized) {
+                    }
+                    .present(in: self)
+            case false:
+                Alert.error(message ?? "", viewController: self)
+            }
+        }
     }
     
     @IBAction private func logoutButtonAction(_ sender: Any) {

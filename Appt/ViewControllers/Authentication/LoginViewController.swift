@@ -80,6 +80,8 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
             if let error = errorString {
                 Alert.error(error, viewController: self)
             } else {
+                self.view.endEditing(true)
+                
                 let viewController = UIStoryboard.main()
                 if #available(iOS 13.0, *) {
                     self.navigationController?.dismiss(animated: true) {

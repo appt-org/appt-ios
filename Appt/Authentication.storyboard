@@ -156,7 +156,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         <!--Login View Controller-->
         <scene sceneID="6BQ-61-F4S">
             <objects>
-                <viewController id="ZNq-3c-DoV" customClass="LoginViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="ZNq-3c-DoV" customClass="LoginViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vu-rJ-nQ5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -907,7 +907,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="SZW-i5-TdK"/>
+        <segue reference="jiE-hO-UVD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="2924" height="880"/>

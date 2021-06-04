@@ -113,4 +113,18 @@ extension UIStoryboard {
         
         return vc
     }
+
+    static func newPassword(resetPasswordData: [String: String]) -> NewPasswordViewController {
+        let vc = viewController(.authentication, identifier: NewPasswordViewController.self)
+
+        vc.resetPasswordData = resetPasswordData
+
+        return vc
+    }
+
+    static func login() -> LoginViewController {
+        let vc = viewController(.authentication, identifier: LoginViewController.self)
+
+        return vc
+    }
 }

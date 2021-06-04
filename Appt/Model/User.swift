@@ -42,6 +42,10 @@ class User: Codable {
     var isProfessional: Bool {
         !(roles.map { $0.type }.filter {$0 == .professional}.isEmpty)
     }
+
+    var idString: String {
+        "\(id)"
+    }
         
     private enum CodingKeys: String, CodingKey {
         case id

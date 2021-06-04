@@ -12,11 +12,12 @@ import IQKeyboardManagerSwift
 import SDWebImage
 import SDWebImageSVGKitPlugin
 
-
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
 
     var window: UIWindow?
+
+    var deepLinkManager = DeepLinkManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Crashlytics
@@ -95,6 +96,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showCreateNewPasswordFlow(_:)), name: NSNotification.Name(rawValue: DeepLinkAction.resetPassword.rawValue), object: nil)
+    }
+
+    @objc
+    private func showCreateNewPasswordFlow(_ notification: NSNotification) {
+        guard let resetPasswordData = notification.userInfo as? [String: String] else { return }
+        let viewController = UIStoryboard.newPassword(resetPasswordData: resetPasswordData)
+
+        UIApplication.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -112,4 +123,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        self.deepLinkManager.handleDeepLink(url: userActivity.webpageURL)
+
+        return true
+    }
+
 }

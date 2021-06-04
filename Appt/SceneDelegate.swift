@@ -12,6 +12,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    var deepLinkManager = DeepLinkManager()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
@@ -22,6 +24,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showCreateNewPasswordFlow(_:)), name: NSNotification.Name(rawValue: DeepLinkAction.resetPassword.rawValue), object: nil)
+
+        if let userActivity = connectionOptions.userActivities.first {
+            self.scene(scene, continue: userActivity)
+        }
+    }
+
+    @objc
+    private func showCreateNewPasswordFlow(_ notification: NSNotification) {
+        guard let resetPasswordData = notification.userInfo as? [String: String] else { return }
+        let viewController = UIStoryboard.newPassword(resetPasswordData: resetPasswordData)
+
+        UIApplication.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        self.deepLinkManager.handleDeepLink(url: userActivity.webpageURL)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

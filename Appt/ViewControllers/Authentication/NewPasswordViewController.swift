@@ -14,6 +14,8 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var newPasswordTextField: AuthenticationTextField!
     @IBOutlet private var passwordHintLabel: PaddingLabel!
     @IBOutlet private var loginButton: PrimaryMultilineButton!
+
+    var resetPasswordData: [String : String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,6 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
 
         loginButton.setTitle("login_password_button_title".localized, for: .normal)
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -66,16 +67,38 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     }
 
     @IBAction private  func loginButtonPressed(_ sender: Any) {
-        let viewController = UIStoryboard.main()
-        if #available(iOS 13.0, *) {
-            navigationController?.dismiss(animated: true) {
-                UIApplication.shared.windows.first?.rootViewController = viewController
+        self.isLoading = true
+
+        guard let password = self.newPasswordTextField.text, let login = self.resetPasswordData["login"], let key = self.resetPasswordData["key"] else { return }
+
+        let id = UserDefaultsStorage.shared.restoreUser()?.idString ?? ""
+        let isUserLoggedIn = UserDefaultsStorage.shared.restoreUser() != nil
+
+        API.shared.setNewPassword(login: login, id: id, password: password, key: key) { succeed, message in
+            self.isLoading = false
+
+            switch succeed {
+            case true:
+                Alert.Builder()
+                    .title("change_password_label_text".localized)
+                    .message(message ?? "")
+                    .action("ok".localized) {
+                        if isUserLoggedIn {
+                            self.navigationController?.popViewController(animated: true)
+                        } else {
+                            if let loginVC = self.navigationController?.viewControllers.first(where: { $0 is LoginViewController }) {
+                                self.navigationController?.popToViewController(loginVC, animated: true)
+                            } else {
+                                self.navigationController?.popToRootViewController(animated: true)
+                                let viewController = UIStoryboard.login()
+                                self.navigationController?.pushViewController(viewController, animated: true)
+                            }
+                        }
+                    }
+                    .present(in: self)
+            case false:
+                Alert.error(message ?? "", viewController: self)
             }
-        } else {
-            let window = UIWindow()
-            window.rootViewController = viewController
-            (UIApplication.shared.delegate as? AppDelegate)?.window = window
-            window.makeKeyAndVisible()
         }
     }
 

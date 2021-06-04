@@ -217,9 +217,8 @@ class API {
                 callback(false, error.localizedDescription)
             } else if let data = response.data {
                 do {
-                    let json = try self.decoder.decode([String: String].self, from: data)
-                    let message = json["msg"] ?? ""
-                    callback(true, message)
+                    let responseMessage = try self.decoder.decode(String.self, from: data)
+                    callback(true, responseMessage)
                 } catch {
                     callback(false, error.localizedDescription)
                 }
