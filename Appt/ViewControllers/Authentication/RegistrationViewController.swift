@@ -9,8 +9,6 @@
 import UIKit
 
 final class RegistrationViewController: ViewController, UITextFieldDelegate {
-    @IBOutlet private var descriptionLabel: UILabel!
-    
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var emailTextField: AuthenticationTextField!
     @IBOutlet private var emailHintLabel: UILabel!
@@ -36,9 +34,6 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         title = "account_creation_vc_title".localized
-        
-        descriptionLabel.text = "registration_vc_description_text".localized
-        descriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         emailLabel.text = "email_label_text".localized
         emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
@@ -72,28 +67,28 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
         
         passwordTextField.setSecureTextEntry()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
-    }
-
-    @objc func keyboardWillShow(sender: NSNotification) {
-        self.animateWithKeyboard(notification: sender) { keyboardSize in
-            self.registerButtonBottonConstraint.constant = keyboardSize.height - self.view.safeAreaInsets.bottom
-        }
-    }
-
-    @objc func keyboardWillHide(sender: NSNotification) {
-        self.animateWithKeyboard(notification: sender) { keyboardSize in
-            self.registerButtonBottonConstraint.constant = 0
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         emailTextField.becomeFirstResponder()
+    }
+
+    override func keyboardWillShow(frame: CGRect, notification: Notification) {
+        super.keyboardWillShow(frame: frame, notification: notification)
+
+        self.animateWithKeyboard(notification: notification) { keyboardSize in
+            self.registerButtonBottonConstraint.constant = keyboardSize.height - self.view.safeAreaInsets.bottom
+        }
+    }
+
+    override func keyboardWillHide(notification: Notification) {
+        super.keyboardWillHide(notification: notification)
+
+        self.animateWithKeyboard(notification: notification) { keyboardSize in
+            self.registerButtonBottonConstraint.constant = 0
+        }
     }
 
     private var isRegistrationDataFilledIn: Bool {

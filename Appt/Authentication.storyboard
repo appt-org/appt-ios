@@ -667,15 +667,8 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <constraint firstAttribute="height" constant="33" id="f83-c0-VTE"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHn-NH-xdo">
-                                                <rect key="frame" x="16" y="81" width="382" height="81.5"/>
-                                                <string key="text">Onze missie is om apps voor iedereen toegankelijk te maken. Dit bereiken we door kennis te delen, diensten te verlenen en gebruikers met een beperking te helpen.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Foreground"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ltj-b7-mpB">
-                                                <rect key="frame" x="16" y="186.5" width="382" height="82.5"/>
+                                                <rect key="frame" x="16" y="81" width="382" height="82.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mailadres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdS-fy-GpA">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -711,7 +704,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-lT-cd1">
-                                                <rect key="frame" x="16" y="293" width="382" height="83.5"/>
+                                                <rect key="frame" x="16" y="187.5" width="382" height="83.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-gv-f0H">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
@@ -747,7 +740,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-eX-2dR">
-                                                <rect key="frame" x="16" y="413" width="323" height="64.5"/>
+                                                <rect key="frame" x="16" y="307.5" width="323" height="64.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-r3-r24" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
@@ -771,14 +764,14 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-9N-irL">
-                                                <rect key="frame" x="349" y="452" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="346.5" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="privacyPolicyValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="DEd-pk-LkC"/>
                                                 </connections>
                                             </switch>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-jq-Bfg">
-                                                <rect key="frame" x="16" y="502.5" width="323" height="64.5"/>
+                                                <rect key="frame" x="16" y="397" width="323" height="64.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tni-hV-AH4" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
@@ -802,7 +795,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-s9-JZu">
-                                                <rect key="frame" x="349" y="541.5" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="436" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="termsAndConditionsValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="2ir-gm-Z5Z"/>
@@ -812,9 +805,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="GVL-s9-JZu" secondAttribute="trailing" constant="16" id="2lZ-7n-zGe"/>
-                                            <constraint firstItem="cHn-NH-xdo" firstAttribute="top" secondItem="Vo6-7r-eoZ" secondAttribute="bottom" constant="24" id="3rs-fv-skI"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="20" id="7tP-Jo-Y5c"/>
-                                            <constraint firstItem="cHn-NH-xdo" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="8B0-Mt-pry"/>
                                             <constraint firstAttribute="trailing" secondItem="Vo6-7r-eoZ" secondAttribute="trailing" constant="20" id="Cin-dH-TU5"/>
                                             <constraint firstItem="uV2-jq-Bfg" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Dga-in-1vt"/>
                                             <constraint firstItem="FJQ-eX-2dR" firstAttribute="top" secondItem="Scq-lT-cd1" secondAttribute="bottom" constant="36.5" id="HE8-sY-6Al"/>
@@ -822,16 +813,15 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                             <constraint firstAttribute="trailing" secondItem="Scq-lT-cd1" secondAttribute="trailing" constant="16" id="Sot-h6-d0v"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="top" secondItem="Ltj-b7-mpB" secondAttribute="bottom" constant="24" id="SpW-0n-eze"/>
                                             <constraint firstItem="FJQ-eX-2dR" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Sxt-i6-hdS"/>
-                                            <constraint firstItem="Ltj-b7-mpB" firstAttribute="top" secondItem="cHn-NH-xdo" secondAttribute="bottom" constant="24" id="WPY-1E-Zbb"/>
                                             <constraint firstItem="ywo-9N-irL" firstAttribute="leading" secondItem="FJQ-eX-2dR" secondAttribute="trailing" constant="10" id="YQb-Up-wtx"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="bP7-TE-648"/>
                                             <constraint firstItem="Ltj-b7-mpB" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="hvb-Hp-eCR"/>
                                             <constraint firstItem="GVL-s9-JZu" firstAttribute="centerY" secondItem="IeB-Yw-5z0" secondAttribute="centerY" id="jeg-vQ-0y1"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="centerX" secondItem="nvl-KS-Ppn" secondAttribute="centerX" id="k8F-wk-aww"/>
                                             <constraint firstAttribute="trailing" secondItem="ywo-9N-irL" secondAttribute="trailing" constant="16" id="oKh-sd-o8B"/>
+                                            <constraint firstItem="Ltj-b7-mpB" firstAttribute="top" secondItem="Vo6-7r-eoZ" secondAttribute="bottom" constant="24" id="ocS-lf-7hX"/>
                                             <constraint firstItem="GVL-s9-JZu" firstAttribute="leading" secondItem="uV2-jq-Bfg" secondAttribute="trailing" constant="10" id="qFm-vK-fWs"/>
                                             <constraint firstItem="uV2-jq-Bfg" firstAttribute="top" secondItem="FJQ-eX-2dR" secondAttribute="bottom" constant="25" id="sdV-bF-Vsq"/>
-                                            <constraint firstAttribute="trailing" secondItem="cHn-NH-xdo" secondAttribute="trailing" constant="16" id="ujl-lo-vCh"/>
                                             <constraint firstItem="ywo-9N-irL" firstAttribute="centerY" secondItem="xde-m6-dD4" secondAttribute="centerY" id="vGq-hq-L10"/>
                                             <constraint firstAttribute="trailing" secondItem="Ltj-b7-mpB" secondAttribute="trailing" constant="16" id="xYd-Jp-wfg"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="top" secondItem="nvl-KS-Ppn" secondAttribute="top" constant="24" id="y2w-sN-ZZr"/>
@@ -900,7 +890,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                     </view>
                     <navigationItem key="navigationItem" id="KUG-dS-ydb"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="cHn-NH-xdo" id="Rkl-5g-FlT"/>
                         <outlet property="emailHintLabel" destination="BXP-bx-wFx" id="s1o-Ch-HLO"/>
                         <outlet property="emailLabel" destination="HdS-fy-GpA" id="aWp-kj-UfW"/>
                         <outlet property="emailTextField" destination="rFH-hP-lGY" id="qMN-gi-xIn"/>

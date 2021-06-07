@@ -180,19 +180,19 @@ extension ViewController {
     // Keyboard: will show
     @objc private func keyboardWillShow(_ notification: Notification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        keyboardWillShow(frame: keyboardFrame.cgRectValue)
+        keyboardWillShow(frame: keyboardFrame.cgRectValue, notification: notification)
     }
     
-    @objc func keyboardWillShow(frame: CGRect) {
+    @objc func keyboardWillShow(frame: CGRect, notification: Notification) {
         // Can be overridden
     }
     
     // Keyboard: will hide
     @objc private func keyboardWillHide(_ notification: Notification) {
-        keyboardWillHide()
+        keyboardWillHide(notification: notification)
     }
 
-    @objc func keyboardWillHide() {
+    @objc func keyboardWillHide(notification: Notification) {
         // Can be overridden
     }
 }
