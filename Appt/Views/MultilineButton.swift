@@ -34,6 +34,7 @@ class MultilineButton: UIButton {
         self.titleLabel?.numberOfLines = 0
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.adjustsFontForContentSizeCategory = true
+        self.titleLabel?.lineBreakMode = .byTruncatingTail
 
         self.usedFont = .sourceSansPro(weight: .semibold, size: 17, style: .body)
     }

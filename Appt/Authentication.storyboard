@@ -656,10 +656,10 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqS-UI-Kmb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="717.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvl-KS-Ppn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="717.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-7r-eoZ">
                                                 <rect key="frame" x="20" y="24" width="374" height="33"/>
@@ -749,13 +749,13 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-eX-2dR">
                                                 <rect key="frame" x="16" y="413" width="323" height="64.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-r3-r24" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-r3-r24" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="bXk-Sb-0GI"/>
                                                         </constraints>
-                                                        <state key="normal" title="Privacyverklaring">
+                                                        <state key="normal">
                                                             <color key="titleColor" name="Primary"/>
                                                         </state>
                                                         <connections>
@@ -780,13 +780,13 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-jq-Bfg">
                                                 <rect key="frame" x="16" y="502.5" width="323" height="64.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tni-hV-AH4" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tni-hV-AH4" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="UAE-yk-6uQ"/>
                                                         </constraints>
-                                                        <state key="normal" title="Algemene Voorwaarden">
+                                                        <state key="normal">
                                                             <color key="titleColor" name="Primary"/>
                                                         </state>
                                                         <connections>
@@ -808,33 +808,9 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                     <action selector="termsAndConditionsValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="2ir-gm-Z5Z"/>
                                                 </connections>
                                             </switch>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-bu-n9W">
-                                                <rect key="frame" x="0.0" y="705.5" width="414" height="0.5"/>
-                                                <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="0.5" id="BBM-4q-fVy"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuD-wL-1Ea" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="710" width="366" height="48"/>
-                                                <color key="backgroundColor" name="Foreground"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="ko1-F1-btc"/>
-                                                </constraints>
-                                                <state key="normal" title="Registratie voltooien">
-                                                    <color key="titleColor" name="Background"/>
-                                                </state>
-                                                <state key="disabled">
-                                                    <color key="titleColor" name="Disabled"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="registerButtonPressed:" destination="Oq3-Cr-7NY" eventType="touchUpInside" id="eU7-pk-epm"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="cS1-bu-n9W" secondAttribute="trailing" id="2WZ-JE-ATT"/>
                                             <constraint firstAttribute="trailing" secondItem="GVL-s9-JZu" secondAttribute="trailing" constant="16" id="2lZ-7n-zGe"/>
                                             <constraint firstItem="cHn-NH-xdo" firstAttribute="top" secondItem="Vo6-7r-eoZ" secondAttribute="bottom" constant="24" id="3rs-fv-skI"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="20" id="7tP-Jo-Y5c"/>
@@ -842,17 +818,13 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                             <constraint firstAttribute="trailing" secondItem="Vo6-7r-eoZ" secondAttribute="trailing" constant="20" id="Cin-dH-TU5"/>
                                             <constraint firstItem="uV2-jq-Bfg" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Dga-in-1vt"/>
                                             <constraint firstItem="FJQ-eX-2dR" firstAttribute="top" secondItem="Scq-lT-cd1" secondAttribute="bottom" constant="36.5" id="HE8-sY-6Al"/>
-                                            <constraint firstItem="vuD-wL-1Ea" firstAttribute="top" secondItem="cS1-bu-n9W" secondAttribute="bottom" constant="4" id="LhQ-9M-VTH"/>
-                                            <constraint firstAttribute="bottom" secondItem="vuD-wL-1Ea" secondAttribute="bottom" constant="16" id="Qok-Zn-HX0"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uV2-jq-Bfg" secondAttribute="bottom" constant="20" id="NeZ-Wu-4qO"/>
                                             <constraint firstAttribute="trailing" secondItem="Scq-lT-cd1" secondAttribute="trailing" constant="16" id="Sot-h6-d0v"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="top" secondItem="Ltj-b7-mpB" secondAttribute="bottom" constant="24" id="SpW-0n-eze"/>
                                             <constraint firstItem="FJQ-eX-2dR" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="Sxt-i6-hdS"/>
-                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uV2-jq-Bfg" secondAttribute="bottom" constant="20" id="VkG-3T-3bq"/>
                                             <constraint firstItem="Ltj-b7-mpB" firstAttribute="top" secondItem="cHn-NH-xdo" secondAttribute="bottom" constant="24" id="WPY-1E-Zbb"/>
-                                            <constraint firstAttribute="trailing" secondItem="vuD-wL-1Ea" secondAttribute="trailing" constant="24" id="Xev-e7-D0H"/>
                                             <constraint firstItem="ywo-9N-irL" firstAttribute="leading" secondItem="FJQ-eX-2dR" secondAttribute="trailing" constant="10" id="YQb-Up-wtx"/>
                                             <constraint firstItem="Scq-lT-cd1" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="bP7-TE-648"/>
-                                            <constraint firstItem="cS1-bu-n9W" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" id="gYS-z6-kfI"/>
                                             <constraint firstItem="Ltj-b7-mpB" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="16" id="hvb-Hp-eCR"/>
                                             <constraint firstItem="GVL-s9-JZu" firstAttribute="centerY" secondItem="IeB-Yw-5z0" secondAttribute="centerY" id="jeg-vQ-0y1"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="centerX" secondItem="nvl-KS-Ppn" secondAttribute="centerX" id="k8F-wk-aww"/>
@@ -862,7 +834,6 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                             <constraint firstAttribute="trailing" secondItem="cHn-NH-xdo" secondAttribute="trailing" constant="16" id="ujl-lo-vCh"/>
                                             <constraint firstItem="ywo-9N-irL" firstAttribute="centerY" secondItem="xde-m6-dD4" secondAttribute="centerY" id="vGq-hq-L10"/>
                                             <constraint firstAttribute="trailing" secondItem="Ltj-b7-mpB" secondAttribute="trailing" constant="16" id="xYd-Jp-wfg"/>
-                                            <constraint firstItem="vuD-wL-1Ea" firstAttribute="leading" secondItem="nvl-KS-Ppn" secondAttribute="leading" constant="24" id="xyT-gU-PHD"/>
                                             <constraint firstItem="Vo6-7r-eoZ" firstAttribute="top" secondItem="nvl-KS-Ppn" secondAttribute="top" constant="24" id="y2w-sN-ZZr"/>
                                         </constraints>
                                     </view>
@@ -870,20 +841,61 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nvl-KS-Ppn" secondAttribute="trailing" id="ArG-I8-x1O"/>
                                     <constraint firstItem="nvl-KS-Ppn" firstAttribute="width" secondItem="jqS-UI-Kmb" secondAttribute="width" id="FhW-RG-W5A"/>
+                                    <constraint firstAttribute="bottom" secondItem="nvl-KS-Ppn" secondAttribute="bottom" id="JA0-S9-9Xw"/>
                                     <constraint firstItem="nvl-KS-Ppn" firstAttribute="leading" secondItem="jqS-UI-Kmb" secondAttribute="leading" id="KRO-Nn-CPR"/>
                                     <constraint firstItem="nvl-KS-Ppn" firstAttribute="top" secondItem="jqS-UI-Kmb" secondAttribute="top" id="Nrx-W6-0UH"/>
-                                    <constraint firstAttribute="bottom" secondItem="nvl-KS-Ppn" secondAttribute="bottom" id="Set-f4-IEE"/>
                                     <constraint firstItem="nvl-KS-Ppn" firstAttribute="height" secondItem="jqS-UI-Kmb" secondAttribute="height" priority="250" id="e1i-1a-KO5"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvg-ji-GYX">
+                                <rect key="frame" x="0.0" y="805.5" width="414" height="56.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-bu-n9W">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
+                                        <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="BBM-4q-fVy"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuD-wL-1Ea" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
+                                        <rect key="frame" x="44" y="4.5" width="326" height="48"/>
+                                        <color key="backgroundColor" name="Foreground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="ko1-F1-btc"/>
+                                        </constraints>
+                                        <state key="normal" title="Registratie voltooien">
+                                            <color key="titleColor" name="Background"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" name="Disabled"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonPressed:" destination="Oq3-Cr-7NY" eventType="touchUpInside" id="eU7-pk-epm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vuD-wL-1Ea" secondAttribute="bottom" constant="4" id="87r-ws-fDH"/>
+                                    <constraint firstItem="vuD-wL-1Ea" firstAttribute="leading" secondItem="yvg-ji-GYX" secondAttribute="leading" constant="44" id="Cjf-Mm-Wwh"/>
+                                    <constraint firstItem="vuD-wL-1Ea" firstAttribute="top" secondItem="cS1-bu-n9W" secondAttribute="bottom" constant="4" id="GIC-qg-omE"/>
+                                    <constraint firstAttribute="trailing" secondItem="vuD-wL-1Ea" secondAttribute="trailing" constant="44" id="d3X-Kx-yrP"/>
+                                    <constraint firstAttribute="trailing" secondItem="cS1-bu-n9W" secondAttribute="trailing" id="nMo-PU-9jA"/>
+                                    <constraint firstItem="cS1-bu-n9W" firstAttribute="top" secondItem="yvg-ji-GYX" secondAttribute="top" id="oeD-fc-SL6"/>
+                                    <constraint firstItem="cS1-bu-n9W" firstAttribute="leading" secondItem="yvg-ji-GYX" secondAttribute="leading" id="q4b-Tk-yAd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mmx-mT-mjz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mmx-mT-mjz" firstAttribute="bottom" secondItem="jqS-UI-Kmb" secondAttribute="bottom" id="6AE-IQ-0d4"/>
+                            <constraint firstItem="mmx-mT-mjz" firstAttribute="bottom" secondItem="yvg-ji-GYX" secondAttribute="bottom" id="AJO-Ch-ki4"/>
+                            <constraint firstItem="yvg-ji-GYX" firstAttribute="leading" secondItem="mmx-mT-mjz" secondAttribute="leading" id="M1w-p8-tcY"/>
                             <constraint firstItem="jqS-UI-Kmb" firstAttribute="leading" secondItem="Bvl-Wc-SbH" secondAttribute="leading" id="RUf-sI-rIk"/>
+                            <constraint firstItem="yvg-ji-GYX" firstAttribute="top" secondItem="jqS-UI-Kmb" secondAttribute="bottom" id="eCs-bX-TUm"/>
                             <constraint firstItem="jqS-UI-Kmb" firstAttribute="top" secondItem="mmx-mT-mjz" secondAttribute="top" id="fU7-6b-3WY"/>
                             <constraint firstAttribute="trailing" secondItem="jqS-UI-Kmb" secondAttribute="trailing" id="tIV-Ff-cel"/>
+                            <constraint firstAttribute="trailing" secondItem="yvg-ji-GYX" secondAttribute="trailing" id="vYO-Po-JGs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KUG-dS-ydb"/>
@@ -899,6 +911,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                         <outlet property="privacyPolicyLabel" destination="xde-m6-dD4" id="IH4-Rg-Qm7"/>
                         <outlet property="privacyPolicySwitch" destination="ywo-9N-irL" id="LRn-1I-yH6"/>
                         <outlet property="registerButton" destination="vuD-wL-1Ea" id="tJ8-0o-FNu"/>
+                        <outlet property="registerButtonBottonConstraint" destination="AJO-Ch-ki4" id="SFA-vF-G7Q"/>
                         <outlet property="termsAndConditionsButton" destination="tni-hV-AH4" id="0Bf-zW-ogc"/>
                         <outlet property="termsAndConditionsLabel" destination="IeB-Yw-5z0" id="yXU-Db-BYX"/>
                         <outlet property="termsAndConditionsSwitch" destination="GVL-s9-JZu" id="jSc-W5-WgK"/>
@@ -906,7 +919,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6d-b3-6QE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2323" y="147"/>
+            <point key="canvasLocation" x="2321.739130434783" y="146.65178571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgh-Q4-p7g">
@@ -929,22 +942,22 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
     </scenes>
     <designables>
         <designable name="8mP-Nv-LOp">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="BXP-bx-wFx">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="TAX-W7-6d4">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="TT3-hk-fGp">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="346.5" height="19"/>
         </designable>
         <designable name="Tmh-Cl-EJ2">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="346.5" height="19"/>
         </designable>
         <designable name="gvn-ym-zIU">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="346.5" height="19"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

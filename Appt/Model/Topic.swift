@@ -33,7 +33,6 @@ enum Topic: String {
             return "sidn_fonds_title".localized
         case .contact:
             return "contact_title".localized
-            
         case .privacy:
             return "privacy_title".localized
         case .accessibility:

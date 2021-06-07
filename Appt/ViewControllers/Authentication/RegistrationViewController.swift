@@ -21,13 +21,14 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     
     @IBOutlet private var privacyPolicyLabel: UILabel!
     @IBOutlet private var privacyPolicySwitch: UISwitch!
-    @IBOutlet private var privacyPolicyButton: MultilineButton!
+    @IBOutlet private var privacyPolicyButton: UnderlinedMultilineButton!
 
     @IBOutlet private var termsAndConditionsLabel: UILabel!
     @IBOutlet private var termsAndConditionsSwitch: UISwitch!
-    @IBOutlet private var termsAndConditionsButton: MultilineButton!
+    @IBOutlet private var termsAndConditionsButton: UnderlinedMultilineButton!
 
     @IBOutlet private var registerButton: PrimaryMultilineButton!
+    @IBOutlet private var registerButtonBottonConstraint: NSLayoutConstraint!
 
     var userRoles: Set<Role> = []
     
@@ -71,6 +72,22 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         registerButton.setTitle("complete_registration_button_title_text".localized, for: .disabled)
         
         passwordTextField.setSecureTextEntry()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+    }
+
+    @objc func keyboardWillShow(sender: NSNotification) {
+        self.animateWithKeyboard(notification: sender) { keyboardSize in
+            self.registerButtonBottonConstraint.constant = keyboardSize.height - self.view.safeAreaInsets.bottom
+        }
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+        self.animateWithKeyboard(notification: sender) { keyboardSize in
+            self.registerButtonBottonConstraint.constant = 0
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -196,3 +213,4 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         return true
     }
 }
+
