@@ -88,6 +88,8 @@ final class HomeViewController: ViewController {
         API.shared.getUser { user, error in
             if let user = user, user.isVerified {
                 self.hideVerificationView()
+            } else if user == nil, let error = error {
+                Alert.error(error, viewController: self)
             }
         }
     }

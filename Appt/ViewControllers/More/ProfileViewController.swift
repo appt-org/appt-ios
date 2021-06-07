@@ -71,7 +71,9 @@ final class ProfileViewController: ViewController {
                     if succeed {
                         self.goToAuthenticationFlow()
                     } else if let error = error {
-                        Alert.error(error, viewController: self)
+                        Alert.error(error, viewController: self) {
+                            self.goToAuthenticationFlow()
+                        }
                     }
                 }
             }
