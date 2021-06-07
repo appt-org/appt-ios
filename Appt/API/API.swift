@@ -187,8 +187,16 @@ class API {
     func createUser(username: String, email: String, password: String, userRolesIds: [String], callback: @escaping (User?, String?) -> ()) {
         userRequest(path: "users", method: .post, parameters: ["username": username, "email": email, "password": password, "roles": userRolesIds.joined(separator: ",")], headers: superUserHeaders, encoding: JSONEncoding.default) { response in
             
-            if response.error != nil {
+            if response.error != nil, response.data == nil {
                 callback(nil, response.error?.localizedDescription)
+            } else if let responseError = response.error, let responseData = response.data {
+                do {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+                    let jsonErrorMsg = jsonResponse?["message"] as? String
+                    callback(nil, jsonErrorMsg ?? responseError.localizedDescription)
+                } catch {
+                    callback(nil, error.localizedDescription)
+                }
             } else if let data = response.data {
                 do {
                     let user = try self.decoder.decode(User.self, from: data)
