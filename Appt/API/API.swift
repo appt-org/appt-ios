@@ -144,15 +144,19 @@ class API {
     // MARK: - User requests
     func login(email: String, password: String, callback: @escaping (User?, String?) -> ()) {
         userRequest(path: "login", method: .post, parameters: ["username": email, "password": password], headers: nil, encoding: JSONEncoding.default) { response in
-            
-            if response.error != nil {
+
+            if response.error != nil, response.data == nil {
                 callback(nil, response.error?.localizedDescription)
-            } else if let data = response.data {
-                if let user = try? self.decoder.decode(User.self, from: data) {
-                    UserDefaultsStorage.shared.storeUser(user)
+            } else if response.error != nil, let responseData = response.data {
+                let errorData = String(data: responseData, encoding: .utf8)
+                callback(nil, errorData)
+            } else if let data = response.data, response.error == nil {
+                do {
+                    let user = try self.decoder.decode(User.self, from: data)
+                    try UserDefaultsStorage.shared.storeUser(user)
                     callback(user, nil)
-                } else {
-                    callback(nil, nil)
+                } catch {
+                    callback(nil, error.localizedDescription)
                 }
             } else {
                 callback(nil, nil)
@@ -166,11 +170,16 @@ class API {
             return
         }
         userRequest(path: "logout", method: .get, parameters: ["id": user.id], headers: nil, encoding: URLEncoding.default) { response in
-            if response.error != nil {
-                callback(false, response.error?.localizedDescription)
+            if let error = response.error {
+                try? UserDefaultsStorage.shared.storeUser(nil)
+                callback(false, error.localizedDescription)
             } else {
-                UserDefaultsStorage.shared.storeUser(nil)
-                callback(true, nil)
+                do {
+                    try UserDefaultsStorage.shared.storeUser(nil)
+                    callback(true, nil)
+                } catch {
+                    callback(false, error.localizedDescription)
+                }
             }
         }
     }
@@ -181,11 +190,12 @@ class API {
             if response.error != nil {
                 callback(nil, response.error?.localizedDescription)
             } else if let data = response.data {
-                if let user = try? self.decoder.decode(User.self, from: data) {
-                    UserDefaultsStorage.shared.storeUser(user)
+                do {
+                    let user = try self.decoder.decode(User.self, from: data)
+                    try UserDefaultsStorage.shared.storeUser(user)
                     callback(user, nil)
-                } else {
-                    callback(nil, nil)
+                } catch {
+                    callback(nil, error.localizedDescription)
                 }
             } else {
                 callback(nil, nil)
@@ -235,14 +245,23 @@ class API {
         }
         
         userRequest(path: "users/\(user.id)", method: .get, parameters: ["context":"edit"], headers: superUserHeaders, encoding: URLEncoding.default) { response in
-            if response.error != nil {
+            if response.error != nil, response.data == nil {
                 callback(nil, response.error?.localizedDescription)
+            } else if response.error != nil, let responseData = response.data {
+                do {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+                    let jsonErrorMsg = jsonResponse?["message"] as? String
+                    callback(nil, jsonErrorMsg ?? response.error?.localizedDescription)
+                } catch {
+                    callback(nil, error.localizedDescription)
+                }
             } else if let data = response.data {
-                if let user = try? self.decoder.decode(User.self, from: data) {
-                    UserDefaultsStorage.shared.storeUser(user)
+                do {
+                    let user = try self.decoder.decode(User.self, from: data)
+                    try UserDefaultsStorage.shared.storeUser(user)
                     callback(user, nil)
-                } else {
-                    callback(nil, nil)
+                } catch {
+                    callback(nil, error.localizedDescription)
                 }
             } else {
                 callback(nil, nil)
@@ -257,10 +276,14 @@ class API {
         }
         
         userRequest(path: "users/\(user.id)", method: .delete, parameters: ["reassign": "", "force": "true"], headers: superUserHeaders, encoding: URLEncoding.queryString) { response in
-            if response.error != nil {
+            if response.error != nil, response.data == nil {
                 callback(false, response.error?.localizedDescription)
+            } else if response.error != nil, let responseData = response.data {
+                let json = try? self.decoder.decode([String: String].self, from: responseData)
+                let message = json?["message"]
+                callback(false, message ?? response.error?.localizedDescription)
             } else {
-                UserDefaultsStorage.shared.storeUser(nil)
+                try? UserDefaultsStorage.shared.storeUser(nil)
                 callback(true, nil)
             }
         }

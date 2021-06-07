@@ -21,11 +21,16 @@ class UserDefaultsStorage {
     private let decoder = JSONDecoder()
 
     
-    func storeUser(_ user: User?) {
+    func storeUser(_ user: User?) throws {
         if user == nil {
             defaults.set(nil, forKey: Keys.user.rawValue)
-        } else if let encoded = try? encoder.encode(user) {
-            defaults.set(encoded, forKey: Keys.user.rawValue)
+        } else {
+            do {
+                let encoded = try encoder.encode(user)
+                defaults.set(encoded, forKey: Keys.user.rawValue)
+            } catch {
+                throw error
+            }
         }
     }
     
