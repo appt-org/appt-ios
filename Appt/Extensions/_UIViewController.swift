@@ -41,7 +41,7 @@ extension UIViewController {
 
 extension ViewController {
     func animateWithKeyboard(
-        notification: NSNotification,
+        notification: Notification,
         animations: ((_ keyboardFrame: CGRect) -> Void)?
     ) {
         // Extract the duration of the keyboard animation

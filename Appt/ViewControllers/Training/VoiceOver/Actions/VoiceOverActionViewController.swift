@@ -62,13 +62,13 @@ class VoiceOverActionViewController: ScrollViewController {
 
 extension VoiceOverActionViewController {
     
-    override func keyboardWillShow(frame: CGRect) {
+    override func keyboardWillShow(frame: CGRect, notification: Notification) {
         var contentInset = scrollView.contentInset
         contentInset.bottom = frame.size.height
         scrollView.contentInset = contentInset
     }
     
-    override func keyboardWillHide() {
+    override func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
     }
