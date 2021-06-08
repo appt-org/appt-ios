@@ -11,7 +11,6 @@ import Accessibility
 
 class NewsViewController: TableViewController {
     @IBOutlet private var emailVerificationView: EmailVerificationView!
-    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
 
     @IBOutlet private var filterItem: UIBarButtonItem!
     
@@ -36,9 +35,9 @@ class NewsViewController: TableViewController {
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
 
         if !user.isVerified && self.navigationController?.viewControllers.count != 1 {
-            hideVerificationView()
+            emailVerificationView.hide()
         } else if user.isVerified {
-            hideVerificationView()
+            emailVerificationView.hide()
         }
     }
     
@@ -48,11 +47,6 @@ class NewsViewController: TableViewController {
         if articles.isEmpty {
             getArticles()
         }
-    }
-
-    private func hideVerificationView() {
-        emailVerificationViewheight.constant = 0.0
-        emailVerificationView.isHidden = true
     }
         
     private func reset() {
@@ -151,6 +145,6 @@ extension NewsViewController {
 
 extension NewsViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        hideVerificationView()
+        emailVerificationView.hide()
     }
 }

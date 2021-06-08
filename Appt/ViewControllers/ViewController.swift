@@ -204,6 +204,8 @@ extension ViewController {
     // Accessibility: register notifications
     private func registerAccessibilityNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(announcementFinished(_:)),name: UIAccessibility.announcementDidFinishNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector:#selector(contentSizeCategoryDidChange(notification:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     @objc private func announcementFinished(_ notification: Notification) {
@@ -213,6 +215,11 @@ extension ViewController {
         
         announcementFinished(success: success, announcement: announcement)
     }
+
+    @objc func contentSizeCategoryDidChange(notification: Notification) {
+        // Can be overridden
+    }
+    
     
     @objc func announcementFinished(success: Bool, announcement: String) {
         // Can be overridden

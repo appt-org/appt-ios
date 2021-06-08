@@ -12,7 +12,6 @@ final class HomeViewController: ViewController {
     @IBOutlet private var userProfSegmentedControl: UISegmentedControl!
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var emailVerificationView: EmailVerificationView!
-    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
     
     private var dataSource: [HomeItem] {
         guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
@@ -44,7 +43,6 @@ final class HomeViewController: ViewController {
         title = "home_vc_title".localized
 
         userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
-
         collectionView.registerNib(CategoryCollectionViewCell.self)
         
         collectionView.delegate = self
@@ -55,11 +53,15 @@ final class HomeViewController: ViewController {
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
         
         userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
+
+        Role.UserType.allCases.forEach({
+            self.userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
+        })
         
         if user.isVerified {
-            hideVerificationView()
+            emailVerificationView.hide()
         }
-        
+
         getUser()
     }
 
@@ -67,6 +69,12 @@ final class HomeViewController: ViewController {
         super.viewDidLayoutSubviews()
 
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        self.collectionView.reloadData()
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -79,15 +87,10 @@ final class HomeViewController: ViewController {
         collectionView.reloadSections(indexSet)
     }
     
-    private func hideVerificationView() {
-        emailVerificationViewheight.constant = 0.0
-        emailVerificationView.isHidden = true
-    }
-    
     private func getUser() {
         API.shared.getUser { user, error in
             if let user = user, user.isVerified {
-                self.hideVerificationView()
+                self.emailVerificationView.hide()
             } else if user == nil, let error = error {
                 Alert.error(error, viewController: self)
             }
@@ -196,6 +199,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        hideVerificationView()
+        emailVerificationView.hide()
     }
 }

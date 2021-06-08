@@ -17,6 +17,7 @@ class EmailVerificationView: UIView {
     @IBOutlet private var okLabel: UILabel!
     @IBOutlet private var okView: UIView!
     @IBOutlet private var view: UIView!
+    @IBOutlet private var zeroHeightConstraint: NSLayoutConstraint!
     
     weak var delegate: EmailVerificationViewDelegate?
     
@@ -24,6 +25,10 @@ class EmailVerificationView: UIView {
         super.init(frame: frame)
 
         self.setupUI()
+    }
+
+    func hide() {
+        self.zeroHeightConstraint.isActive = true
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +50,9 @@ class EmailVerificationView: UIView {
 
         titleLabel.text = "email_verification_view_title".localized
         okLabel.text = "ok".localized
+
+        self.titleLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.okLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
         
         okView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(okViewAction)))
         
@@ -53,5 +61,12 @@ class EmailVerificationView: UIView {
     
     @objc private func okViewAction() {
         delegate?.okViewAction()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.titleLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.okLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+
+        self.layoutIfNeeded()
     }
 }

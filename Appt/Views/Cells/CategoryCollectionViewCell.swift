@@ -44,7 +44,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
 
         self.background.layer.cornerRadius = 20
         self.categoryLabel.textColor = .foreground
-        self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.categoryLabel.adjustsFontForContentSizeCategory = true
         self.isAccessibilityElement = true
         
         if #available(iOS 13.0, *) {
@@ -58,12 +58,16 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         self.categoryLabel.text = subject.title
         self.accessibilityLabel = subject.title
 
+        self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+
         self.imgView.sd_setImage(with: subject.imgURL)
     }
     
     func setup(withTitle title: String, image: UIImage) {
         self.categoryLabel.text = title
         self.accessibilityLabel = title
+
+        self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
 
         self.imgView.image = image
     }

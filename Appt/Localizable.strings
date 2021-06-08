@@ -261,6 +261,9 @@
 "aanpak_home_title" = "Aanpak";
 "services_home_title" = "Diensten";
 
+"segmented_control_user_type_user_title_text" = "Gebruiker";
+"segmented_control_user_type_professional_title_text" = "Professional";
+
 /* MoreViewController */
 "more_vc_title" = "Meer";
 "my_profile_title" = "Mijn profiel";

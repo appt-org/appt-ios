@@ -10,6 +10,15 @@ struct Role: Hashable {
     enum UserType: Int, CaseIterable {
         case user
         case professional
+
+        var segmentedControlTitle: String {
+            switch self {
+            case .user:
+                return "segmented_control_user_type_user_title_text".localized
+            case .professional:
+                return "segmented_control_user_type_professional_title_text".localized
+            }
+        }
     }
     
     var type: UserType

@@ -34,6 +34,8 @@
 		2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */; };
 		238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */; };
 		239BF6FE264C2E490068EC13 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BF6FD264C2E490068EC13 /* Role.swift */; };
+		23C3D04E266FA2450044F56F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04D266FA2450044F56F /* TabBar.swift */; };
+		23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04F266FA3070044F56F /* SegmentedControl.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
@@ -161,6 +163,8 @@
 		2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEntryViewController.swift; sourceTree = "<group>"; };
 		238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		239BF6FD264C2E490068EC13 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		23C3D04D266FA2450044F56F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		23C3D04F266FA3070044F56F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				A83B07BF26665B9500EDCBD8 /* EmailVerification */,
 				2870FF1B2525FC0F00377B44 /* TextField.swift */,
 				233FB235263991150031E58C /* PaddingLabel.swift */,
+				23C3D04F266FA3070044F56F /* SegmentedControl.swift */,
+				23C3D04D266FA2450044F56F /* TabBar.swift */,
 				233FB2372639914D0031E58C /* AuthenticationTextField.swift */,
 				230BE9AC2636EEFE0026A90B /* MultilineButton.swift */,
 				2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */,
@@ -813,6 +819,7 @@
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				A8A30151265FCA1A00375B02 /* HomeItem.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
+				23C3D04E266FA2450044F56F /* TabBar.swift in Sources */,
 				2338B34C264D7F3200D47FC7 /* Subject.swift in Sources */,
 				232D74EA264E771200937E0D /* SubjectListViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
@@ -885,6 +892,7 @@
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
 				287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */,
 				232D74ED264E779400937E0D /* ImageTitleTableViewCell.swift in Sources */,
+				23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */,
 				28639F5125E3F9F200C29BB5 /* KnowledgeViewController.swift in Sources */,
 				A8A301532661295600375B02 /* SubjectsViewController.swift in Sources */,
 				2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */,
@@ -1046,7 +1054,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
+				DEVELOPMENT_TEAM = R6B6NE8GNK;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1054,7 +1062,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.5pro.enterprise.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1073,7 +1081,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
+				DEVELOPMENT_TEAM = R6B6NE8GNK;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1081,7 +1089,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.5pro.enterprise.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

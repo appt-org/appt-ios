@@ -10,7 +10,6 @@ import UIKit
 
 class KnowledgeViewController: SubjectsViewController {
     @IBOutlet private var emailVerificationView: EmailVerificationView!
-    @IBOutlet private var emailVerificationViewheight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,20 +22,15 @@ class KnowledgeViewController: SubjectsViewController {
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
 
         if !user.isVerified && self.navigationController?.viewControllers.count != 1 {
-            hideVerificationView()
+            emailVerificationView.hide()
         } else if user.isVerified {
-            hideVerificationView()
+            emailVerificationView.hide()
         }
-    }
-
-    private func hideVerificationView() {
-        emailVerificationViewheight.constant = 0.0
-        emailVerificationView.isHidden = true
     }
 }
 
 extension KnowledgeViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        hideVerificationView()
+        emailVerificationView.hide()
     }
 }

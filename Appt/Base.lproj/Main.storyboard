@@ -117,12 +117,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-zs-JR6" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-zs-JR6" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Vg6-tE-XOW"/>
-                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
                                 <rect key="frame" x="0.0" y="168" width="414" height="645"/>
@@ -144,7 +141,6 @@
                     <navigationItem key="navigationItem" title="Meer" id="j1G-uk-QOi"/>
                     <connections>
                         <outlet property="emailVerificationView" destination="yxj-zs-JR6" id="HRR-jw-6vI"/>
-                        <outlet property="emailVerificationViewheight" destination="Vg6-tE-XOW" id="JfN-rs-tld"/>
                         <outlet property="tableView" destination="H7A-DJ-NIb" id="naI-1F-9T4"/>
                     </connections>
                 </viewController>
@@ -292,12 +288,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgR-Xg-8hj" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="GgR-Xg-8hj" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ma2-xw-Pzb"/>
-                                </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-TN-kDu">
                                 <rect key="frame" x="0.0" y="168" width="414" height="645"/>
@@ -319,7 +312,6 @@
                     <connections>
                         <outlet property="container" destination="1gt-TN-kDu" id="1HK-BY-fOp"/>
                         <outlet property="emailVerificationView" destination="GgR-Xg-8hj" id="Qwp-1d-A3b"/>
-                        <outlet property="emailVerificationViewheight" destination="Ma2-xw-Pzb" id="HOC-ga-3Aq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrd-SI-LW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -351,12 +343,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-69-y7E" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-69-y7E" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="yT5-wP-a4A"/>
-                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yQ7-KK-qa2">
                                 <rect key="frame" x="0.0" y="168" width="414" height="645"/>
@@ -385,7 +374,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailVerificationView" destination="w2z-69-y7E" id="qoh-zP-7KM"/>
-                        <outlet property="emailVerificationViewheight" destination="yT5-wP-a4A" id="oac-JH-yFr"/>
                         <outlet property="filterItem" destination="NuM-BA-M8T" id="MgI-gN-ks8"/>
                         <outlet property="tableView" destination="yQ7-KK-qa2" id="Sir-OM-mfv"/>
                         <segue destination="atb-WW-ou0" kind="show" identifier="filter" id="3K9-nh-VFn"/>
@@ -479,7 +467,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -549,12 +537,9 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="XSy-5E-kaI"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3d-OJ-pDs"/>
@@ -571,7 +556,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb" customClass="SegmentedControl" customModule="Appt" customModuleProvider="target">
                             <rect key="frame" x="111.5" y="5.5" width="191" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -587,7 +572,6 @@
                     <connections>
                         <outlet property="collectionView" destination="hyp-3f-UtT" id="Ec2-fY-0xW"/>
                         <outlet property="emailVerificationView" destination="2An-YQ-fJo" id="VSr-Uf-ixs"/>
-                        <outlet property="emailVerificationViewheight" destination="XSy-5E-kaI" id="Dte-5J-2pp"/>
                         <outlet property="userProfSegmentedControl" destination="9rP-Of-Ksb" id="Cax-kh-Nh7"/>
                     </connections>
                 </viewController>
@@ -722,12 +706,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-Lo-0V2" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-Lo-0V2" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="aas-2c-zXs"/>
-                                </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-lT-gYq">
                                 <rect key="frame" x="0.0" y="168" width="414" height="645"/>
@@ -749,7 +730,6 @@
                     <connections>
                         <outlet property="container" destination="6Cl-lT-gYq" id="s5N-c0-Pef"/>
                         <outlet property="emailVerificationView" destination="t8l-Lo-0V2" id="RkH-Qg-ZZj"/>
-                        <outlet property="emailVerificationViewheight" destination="aas-2c-zXs" id="pKK-di-NSk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIC-5R-EBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
