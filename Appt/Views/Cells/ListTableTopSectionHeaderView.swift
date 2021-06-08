@@ -28,4 +28,8 @@ class ListTableTopSectionHeaderView: UITableViewHeaderFooterView {
         self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = subject.description
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+    }
 }

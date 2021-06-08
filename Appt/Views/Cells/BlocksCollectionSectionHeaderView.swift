@@ -34,4 +34,8 @@ class BlocksCollectionSectionHeaderView: UICollectionReusableView {
         self.titleLabel.text = title
         self.imgView.image = image
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+    }
 }
