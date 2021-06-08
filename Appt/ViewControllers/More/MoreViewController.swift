@@ -24,9 +24,9 @@ class MoreViewController: TableViewController {
                 .contact
             ],
             "legal_title".localized.uppercased(): [
+                .terms,
                 .privacy,
                 .accessibility,
-                .terms
             ]
         ]
     }
@@ -94,7 +94,14 @@ extension MoreViewController {
             let viewController = UIStoryboard.profile()
             navigationController?.pushViewController(viewController, animated: true)
         } else if indexPath.section == 1 {
-            openWebsite(topic.slug)
+            if indexPath.row == 2 {
+                guard let url = topic.slugURL else { return }
+                
+                let articleViewController = UIStoryboard.article(type: .page, completeUrl: url)
+                navigationController?.pushViewController(articleViewController, animated: true)
+            } else {
+                openWebsite(topic.slug)
+            }
         } else if indexPath.section == 2 {
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)

@@ -63,6 +63,10 @@ enum Topic: String {
             return "algemene-voorwaarden"
         }
     }
+
+    var slugURL: URL? {
+        URL(string: self.slug)
+    }
     
     /** Image */
     var image: UIImage {
