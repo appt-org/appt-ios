@@ -10,17 +10,22 @@ import NotificationCenter
 
 enum DeepLinkAction: String {
     case resetPassword = "rp"
+    case confirmEmail = "user_email_confirmation"
 }
 
 final class DeepLinkManager {
     func handleDeepLink(url: URL?) {
         guard let deepLink = url else { return }
-        let queries = deepLink.queryParameters
-        guard let actionString = queries?["action"], let action = DeepLinkAction(rawValue: actionString) else { return }
-
-        switch action {
-        case .resetPassword:
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: DeepLinkAction.resetPassword.rawValue), object: nil, userInfo: queries)
+        var queries = deepLink.queryParameters
+        if let actionString = queries?["action"], let action = DeepLinkAction(rawValue: actionString) {
+            switch action {
+            case .resetPassword:
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: DeepLinkAction.resetPassword.rawValue), object: nil, userInfo: queries)
+            default: break
+            }
+        } else if deepLink.pathComponents.contains(DeepLinkAction.confirmEmail.rawValue) {
+            queries?["url"] = deepLink.absoluteString
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: DeepLinkAction.confirmEmail.rawValue), object: nil, userInfo: queries)
         }
     }
 }

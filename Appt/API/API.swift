@@ -147,9 +147,14 @@ class API {
 
             if response.error != nil, response.data == nil {
                 callback(nil, response.error?.localizedDescription)
-            } else if response.error != nil, let responseData = response.data {
-                let errorData = String(data: responseData, encoding: .utf8)
-                callback(nil, errorData)
+            } else if let responseError = response.error?.localizedDescription, let responseData = response.data {
+                do {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+                    let jsonErrorMsg = jsonResponse?["message"] as? String
+                    callback(nil, jsonErrorMsg ?? responseError)
+                } catch {
+                    callback(nil, error.localizedDescription)
+                }
             } else if let data = response.data, response.error == nil {
                 do {
                     let user = try self.decoder.decode(User.self, from: data)
@@ -273,6 +278,25 @@ class API {
                 }
             } else {
                 callback(nil, nil)
+            }
+        }
+    }
+
+    func confirmUserEmail(userID: String, key: String, callback: @escaping (User?, String?) -> ()) {
+        userRequest(path: "update-user-verify", method: .post, parameters: ["id": userID, "key": key], encoding: URLEncoding.default) { response in
+            if let responseError = response.error?.localizedDescription, response.data == nil {
+                callback(nil, responseError)
+            } else if let responseData = response.data, let responseError = response.error?.localizedDescription {
+                let errorDataString = String(data: responseData, encoding: .utf8)
+                callback(nil, errorDataString ?? responseError)
+            } else if let responseData = response.data, response.error == nil {
+                do {
+                    let user = try self.decoder.decode(User.self, from: responseData)
+                    try UserDefaultsStorage.shared.storeUser(user)
+                    callback(user, nil)
+                } catch {
+                    callback(nil, error.localizedDescription)
+                }
             }
         }
     }

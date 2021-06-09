@@ -47,6 +47,10 @@ class NewsViewController: TableViewController {
         if articles.isEmpty {
             getArticles()
         }
+
+        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
+            self.hideVerificationView()
+        }
     }
         
     private func reset() {

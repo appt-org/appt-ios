@@ -3,11 +3,11 @@
         "apps": [],
         "details": [{
             "appID": "DP33D2CG8S.nl.appt",
-            "paths": ["*"]
+            "paths": ["/user_email_confirmation/", "/wp-login.php/"]
         },
         {
             "appID": "R6B6NE8GNK.com.5pro.enterprise.appt",
-            "paths": ["*"]
+            "paths": ["/user_email_confirmation/", "/wp-login.php/"]
         }]
     }
 }

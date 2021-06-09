@@ -33,7 +33,7 @@ final class ImageTitleTableViewCell: UITableViewCell {
         titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         titleLabel.text = subject.title
         accessibilityLabel = subject.title
-
+        
         self.imgView.sd_setImage(with: subject.imgURL)
     }
     

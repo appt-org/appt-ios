@@ -58,6 +58,13 @@ class EmailVerificationView: UIView {
         delegate?.okViewAction()
     }
 
+    private func openDefaultEmailApp() {
+        let mailURL = URL(string: "message://")!
+        if UIApplication.shared.canOpenURL(mailURL) {
+            UIApplication.shared.open(mailURL, options: [:], completionHandler: nil)
+        }
+    }
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.titleLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
         self.okLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)

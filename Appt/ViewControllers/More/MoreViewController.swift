@@ -47,6 +47,14 @@ class MoreViewController: TableViewController {
             hideVerificationView()
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
+            self.hideVerificationView()
+        }
+    }
 }
 
 // MARK: - UITableView

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
 
     var window: UIWindow?
 
-    var deepLinkManager = DeepLinkManager()
+    private var deepLinkManager = DeepLinkManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Crashlytics

@@ -28,6 +28,14 @@ class KnowledgeViewController: SubjectsViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
+            self.hideVerificationView()
+        }
+    }
+
     private func hideVerificationView() {
         NSLayoutConstraint(item: emailVerificationView!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true
     }
