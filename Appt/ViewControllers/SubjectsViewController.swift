@@ -163,19 +163,19 @@ extension SubjectsViewController: UITableViewDataSource {
         
         guard let subject = self.subject else { return UITableViewCell() }
 
-        let model = subject.children[indexPath.section]
+        let model = subject.children[indexPath.row]
         cell.setup(model)
         return cell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let subject = self.subject else { return 0 }
-        
-        return subject.children.count
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        guard let subject = self.subject else { return 0 }
+
+        return subject.children.count
     }
 }
 

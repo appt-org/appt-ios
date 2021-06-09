@@ -117,30 +117,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-zs-JR6" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="320" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
-                                <rect key="frame" x="0.0" y="124" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cmp-mH-dB3"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yxj-zs-JR6" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="3Eu-IT-WvC"/>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="bottom" secondItem="Cmp-mH-dB3" secondAttribute="bottom" id="5FU-49-tzQ"/>
-                            <constraint firstItem="H7A-DJ-NIb" firstAttribute="top" secondItem="yxj-zs-JR6" secondAttribute="bottom" id="6QS-eI-ldS"/>
-                            <constraint firstItem="yxj-zs-JR6" firstAttribute="trailing" secondItem="Cmp-mH-dB3" secondAttribute="trailing" id="Db7-iq-rVX"/>
-                            <constraint firstItem="yxj-zs-JR6" firstAttribute="leading" secondItem="Cmp-mH-dB3" secondAttribute="leading" id="J3H-iT-1Fn"/>
+                            <constraint firstItem="H7A-DJ-NIb" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="SBk-9g-2nG"/>
                             <constraint firstAttribute="trailing" secondItem="H7A-DJ-NIb" secondAttribute="trailing" id="Wdn-PO-V7x"/>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="leading" secondItem="7ZC-mj-Xf6" secondAttribute="leading" id="ci4-Zd-lRv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meer" id="j1G-uk-QOi"/>
                     <connections>
-                        <outlet property="emailVerificationView" destination="yxj-zs-JR6" id="HRR-jw-6vI"/>
                         <outlet property="tableView" destination="H7A-DJ-NIb" id="naI-1F-9T4"/>
                     </connections>
                 </viewController>
@@ -288,30 +280,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="GgR-Xg-8hj" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="320" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-TN-kDu">
-                                <rect key="frame" x="0.0" y="124" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nCb-uP-w70"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GgR-Xg-8hj" firstAttribute="top" secondItem="nCb-uP-w70" secondAttribute="top" id="AnW-T3-x3u"/>
                             <constraint firstItem="nCb-uP-w70" firstAttribute="bottom" secondItem="1gt-TN-kDu" secondAttribute="bottom" id="K9W-QT-Hdx"/>
                             <constraint firstItem="1gt-TN-kDu" firstAttribute="leading" secondItem="nCb-uP-w70" secondAttribute="leading" id="Qfg-35-Wsq"/>
                             <constraint firstItem="1gt-TN-kDu" firstAttribute="trailing" secondItem="nCb-uP-w70" secondAttribute="trailing" id="Uud-j4-8xU"/>
-                            <constraint firstItem="GgR-Xg-8hj" firstAttribute="trailing" secondItem="nCb-uP-w70" secondAttribute="trailing" id="bOG-ij-WrI"/>
-                            <constraint firstItem="1gt-TN-kDu" firstAttribute="top" secondItem="GgR-Xg-8hj" secondAttribute="bottom" id="qh9-gn-fco"/>
-                            <constraint firstItem="GgR-Xg-8hj" firstAttribute="leading" secondItem="nCb-uP-w70" secondAttribute="leading" id="xtN-y4-mZW"/>
+                            <constraint firstItem="1gt-TN-kDu" firstAttribute="top" secondItem="nCb-uP-w70" secondAttribute="top" id="b5J-u2-hcH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kennisbank" id="e63-75-o0N"/>
                     <connections>
                         <outlet property="container" destination="1gt-TN-kDu" id="1HK-BY-fOp"/>
-                        <outlet property="emailVerificationView" destination="GgR-Xg-8hj" id="Qwp-1d-A3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrd-SI-LW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -343,25 +327,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-69-y7E" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="320" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yQ7-KK-qa2">
-                                <rect key="frame" x="0.0" y="124" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="w2z-69-y7E" secondAttribute="bottom" id="4KQ-aZ-GCe"/>
-                            <constraint firstAttribute="trailing" secondItem="w2z-69-y7E" secondAttribute="trailing" id="5iR-eE-2cc"/>
+                            <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="Z6y-wz-2SK"/>
                             <constraint firstAttribute="trailing" secondItem="yQ7-KK-qa2" secondAttribute="trailing" id="hHA-zZ-EAA"/>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="hYS-qp-JZF"/>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="kFH-ge-phE"/>
-                            <constraint firstItem="w2z-69-y7E" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="pP2-Xx-4Dn"/>
-                            <constraint firstItem="w2z-69-y7E" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="uY1-RZ-grn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
@@ -373,7 +350,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailVerificationView" destination="w2z-69-y7E" id="qoh-zP-7KM"/>
                         <outlet property="filterItem" destination="NuM-BA-M8T" id="MgI-gN-ks8"/>
                         <outlet property="tableView" destination="yQ7-KK-qa2" id="Sir-OM-mfv"/>
                         <segue destination="atb-WW-ou0" kind="show" identifier="filter" id="3K9-nh-VFn"/>
@@ -539,7 +515,6 @@
                             </collectionView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="320" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3d-OJ-pDs"/>
@@ -707,12 +682,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-Lo-0V2" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="320" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-lT-gYq">
-                                <rect key="frame" x="0.0" y="124" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vXg-bL-1pN"/>
@@ -720,17 +691,13 @@
                         <constraints>
                             <constraint firstItem="vXg-bL-1pN" firstAttribute="bottom" secondItem="6Cl-lT-gYq" secondAttribute="bottom" id="Cia-Ku-zDx"/>
                             <constraint firstAttribute="trailing" secondItem="6Cl-lT-gYq" secondAttribute="trailing" id="IGG-PZ-GJK"/>
-                            <constraint firstItem="t8l-Lo-0V2" firstAttribute="trailing" secondItem="vXg-bL-1pN" secondAttribute="trailing" id="NLy-8R-NXU"/>
-                            <constraint firstItem="t8l-Lo-0V2" firstAttribute="top" secondItem="vXg-bL-1pN" secondAttribute="top" id="OIr-my-od6"/>
+                            <constraint firstItem="6Cl-lT-gYq" firstAttribute="top" secondItem="vXg-bL-1pN" secondAttribute="top" id="fOu-xm-cim"/>
                             <constraint firstItem="6Cl-lT-gYq" firstAttribute="leading" secondItem="vXg-bL-1pN" secondAttribute="leading" id="nMf-7N-enP"/>
-                            <constraint firstItem="t8l-Lo-0V2" firstAttribute="leading" secondItem="vXg-bL-1pN" secondAttribute="leading" id="q9G-cd-gIn"/>
-                            <constraint firstItem="6Cl-lT-gYq" firstAttribute="top" secondItem="t8l-Lo-0V2" secondAttribute="bottom" id="wlV-eq-Bcf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Diensten" id="Do9-la-MH4"/>
                     <connections>
                         <outlet property="container" destination="6Cl-lT-gYq" id="s5N-c0-Pef"/>
-                        <outlet property="emailVerificationView" destination="t8l-Lo-0V2" id="RkH-Qg-ZZj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIC-5R-EBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

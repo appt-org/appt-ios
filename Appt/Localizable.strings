@@ -246,7 +246,7 @@
 "new_password_vc_title" = "Nieuw paswoord";
 "new_password_label_text" = "Nieuw wachtwoord";
 "new_password_textfield_placeholder_text" = "Nieuw wachtwoord";
-"login_password_button_title" = "Inloggen";
+"change_password_button_title" = "Wachtwoord wijzigen";
 "new_password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
 
 /* HomeViewController */

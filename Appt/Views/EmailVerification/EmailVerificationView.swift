@@ -17,6 +17,7 @@ class EmailVerificationView: UIView {
     @IBOutlet private var okLabel: UILabel!
     @IBOutlet private var okView: UIView!
     @IBOutlet private var view: UIView!
+    @IBOutlet private var colouredView: UIView!
 
     weak var delegate: EmailVerificationViewDelegate?
     
@@ -51,7 +52,7 @@ class EmailVerificationView: UIView {
         
         okView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(okViewAction)))
         
-        view.layer.cornerRadius = 14.0
+        colouredView.layer.cornerRadius = 14.0
     }
     
     @objc private func okViewAction() {

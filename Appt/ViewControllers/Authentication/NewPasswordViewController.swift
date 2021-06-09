@@ -13,7 +13,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     @IBOutlet private var newPasswordLabel: UILabel!
     @IBOutlet private var newPasswordTextField: AuthenticationTextField!
     @IBOutlet private var passwordHintLabel: PaddingLabel!
-    @IBOutlet private var loginButton: PrimaryMultilineButton!
+    @IBOutlet private var changePasswordButton: PrimaryMultilineButton!
 
     var resetPasswordData: [String : String]!
     
@@ -35,7 +35,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         passwordHintLabel.text = "new_password_textfield_hint_text".localized
         passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
 
-        loginButton.setTitle("login_password_button_title".localized, for: .normal)
+        changePasswordButton.setTitle("change_password_button_title".localized, for: .normal)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -63,10 +63,10 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
     }
 
     private func configureLoginButtonState(isDataFilledIn: Bool) {
-        loginButton.isEnabled = isDataFilledIn
+        changePasswordButton.isEnabled = isDataFilledIn
     }
 
-    @IBAction private  func loginButtonPressed(_ sender: Any) {
+    @IBAction private func changePasswordPressed(_ sender: Any) {
         self.isLoading = true
 
         guard let password = self.newPasswordTextField.text, let login = self.resetPasswordData["login"], let key = self.resetPasswordData["key"] else { return }
@@ -104,10 +104,10 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
 
     @IBAction private  func editingChanged(_ sender: AuthenticationTextField) {
         guard let text = sender.text, !text.isEmpty else {
-            loginButton.isEnabled = false
+            changePasswordButton.isEnabled = false
             return
         }
 
-        loginButton.isEnabled = text.count >= Constants.passwordMinLength
+        changePasswordButton.isEnabled = text.count >= Constants.passwordMinLength
     }
 }
