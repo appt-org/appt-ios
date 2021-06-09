@@ -22,15 +22,19 @@ final class ServicesViewController: SubjectsViewController {
         guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
 
         if !user.isVerified && self.navigationController?.viewControllers.count != 1 {
-            emailVerificationView.hide()
+            hideVerificationView()
         } else if user.isVerified {
-            emailVerificationView.hide()
+            hideVerificationView()
         }
+    }
+
+    private func hideVerificationView() {
+        NSLayoutConstraint(item: emailVerificationView!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true
     }
 }
 
 extension ServicesViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        emailVerificationView.hide()
+        hideVerificationView()
     }
 }

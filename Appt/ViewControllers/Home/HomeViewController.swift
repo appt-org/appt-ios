@@ -59,7 +59,7 @@ final class HomeViewController: ViewController {
         })
         
         if user.isVerified {
-            emailVerificationView.hide()
+            hideVerificationView()
         }
 
         getUser()
@@ -90,7 +90,7 @@ final class HomeViewController: ViewController {
     private func getUser() {
         API.shared.getUser { user, error in
             if let user = user, user.isVerified {
-                self.emailVerificationView.hide()
+                self.hideVerificationView()
             } else if user == nil, let error = error {
                 Alert.error(error, viewController: self)
             }
@@ -137,6 +137,10 @@ extension HomeViewController: UICollectionViewDataSource {
         case .services:
             self.tabBarController?.selectedIndex = 3
         }
+    }
+
+    private func hideVerificationView() {
+        NSLayoutConstraint(item: emailVerificationView!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true
     }
 }
 
@@ -199,6 +203,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: EmailVerificationViewDelegate {
     func okViewAction() {
-        emailVerificationView.hide()
+        hideVerificationView()
     }
 }

@@ -19,7 +19,6 @@
                 <outlet property="okView" destination="6hu-aL-j7r" id="udi-1o-nGq"/>
                 <outlet property="titleLabel" destination="GSV-zU-f1u" id="dGg-TV-Lg2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UGf-d0-Duj"/>
-                <outlet property="zeroHeightConstraint" destination="Il2-wG-qIi" id="aW5-Qe-xnl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -66,7 +65,6 @@
                         <constraint firstItem="tgY-cH-oCn" firstAttribute="leading" secondItem="GSV-zU-f1u" secondAttribute="trailing" constant="16" id="11q-wa-yKc"/>
                         <constraint firstItem="tgY-cH-oCn" firstAttribute="top" secondItem="Tgv-mG-TAm" secondAttribute="top" id="4k4-VJ-QzT"/>
                         <constraint firstItem="6hu-aL-j7r" firstAttribute="leading" secondItem="tgY-cH-oCn" secondAttribute="trailing" id="H10-oV-odr"/>
-                        <constraint firstAttribute="height" priority="999" id="Il2-wG-qIi"/>
                         <constraint firstAttribute="bottom" secondItem="6hu-aL-j7r" secondAttribute="bottom" id="KLf-Df-5J6"/>
                         <constraint firstAttribute="bottom" secondItem="tgY-cH-oCn" secondAttribute="bottom" id="RLQ-7p-ggs"/>
                         <constraint firstAttribute="trailing" secondItem="6hu-aL-j7r" secondAttribute="trailing" id="RnS-Pe-kxg"/>
@@ -75,11 +73,6 @@
                         <constraint firstAttribute="bottom" secondItem="GSV-zU-f1u" secondAttribute="bottom" priority="750" constant="6" id="bGU-vw-1xC"/>
                         <constraint firstItem="GSV-zU-f1u" firstAttribute="leading" secondItem="Tgv-mG-TAm" secondAttribute="leading" constant="16" id="dCS-ej-qb5"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Il2-wG-qIi"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

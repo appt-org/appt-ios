@@ -17,18 +17,13 @@ class EmailVerificationView: UIView {
     @IBOutlet private var okLabel: UILabel!
     @IBOutlet private var okView: UIView!
     @IBOutlet private var view: UIView!
-    @IBOutlet private var zeroHeightConstraint: NSLayoutConstraint!
-    
+
     weak var delegate: EmailVerificationViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         self.setupUI()
-    }
-
-    func hide() {
-        self.zeroHeightConstraint.isActive = true
     }
 
     required init?(coder: NSCoder) {
