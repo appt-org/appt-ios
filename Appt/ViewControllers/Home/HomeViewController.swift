@@ -191,7 +191,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     private func hideVerificationView() {
-        NSLayoutConstraint(item: emailVerificationView!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true
+        emailVerificationView.isHidden = true
     }
 }
 
