@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,12 +38,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="H1O-Fn-HPp">
+                                <rect key="frame" x="67.5" y="52" width="20" height="20"/>
+                                <color key="color" name="Primary"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="H1O-Fn-HPp" firstAttribute="centerX" secondItem="9Ib-16-MWf" secondAttribute="centerX" id="09o-Xt-L3e"/>
                             <constraint firstItem="d4j-GA-6Fz" firstAttribute="top" secondItem="9Ib-16-MWf" secondAttribute="bottom" id="6id-Ya-fgO"/>
                             <constraint firstItem="9Ib-16-MWf" firstAttribute="centerX" secondItem="Ka6-Uu-Dft" secondAttribute="centerX" id="8On-uw-h9R"/>
                             <constraint firstAttribute="trailing" secondItem="d4j-GA-6Fz" secondAttribute="trailing" constant="16" id="Lsh-qv-cRS"/>
+                            <constraint firstItem="H1O-Fn-HPp" firstAttribute="centerY" secondItem="9Ib-16-MWf" secondAttribute="centerY" id="Og3-zl-bga"/>
                             <constraint firstAttribute="bottom" secondItem="d4j-GA-6Fz" secondAttribute="bottom" id="VFD-Tt-sT7"/>
                             <constraint firstItem="d4j-GA-6Fz" firstAttribute="leading" secondItem="Ka6-Uu-Dft" secondAttribute="leading" constant="16" id="WLr-eP-WNq"/>
                             <constraint firstItem="9Ib-16-MWf" firstAttribute="top" secondItem="Ka6-Uu-Dft" secondAttribute="top" constant="22" id="wxh-aP-FUO"/>
@@ -62,12 +69,16 @@
                 <outlet property="background" destination="Ka6-Uu-Dft" id="nhf-tf-Y1D"/>
                 <outlet property="categoryLabel" destination="d4j-GA-6Fz" id="4Tz-nQ-RuI"/>
                 <outlet property="imgView" destination="9Ib-16-MWf" id="8h2-h0-GXk"/>
+                <outlet property="loadingIndicator" destination="H1O-Fn-HPp" id="a7n-Xh-aay"/>
             </connections>
             <point key="canvasLocation" x="115.21739130434783" y="154.35267857142856"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="ic_hands_up" width="64" height="86"/>
+        <namedColor name="Primary">
+            <color red="0.81568627450980391" green="0.13725490196078433" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

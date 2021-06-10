@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var background: UIView!
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var categoryLabel: UILabel!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
@@ -60,7 +62,14 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
 
         self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
 
-        self.imgView.sd_setImage(with: subject.imgURL)
+        self.loadingIndicator.startAnimating()
+
+        self.imgView.sd_setImage(with: subject.imgURL) {image, _, _, _ in
+            self.loadingIndicator.stopAnimating()
+            if image == nil {
+                self.imgView.image = UIImage.blocksPlaceholder
+            }
+        }
     }
     
     func setup(withTitle title: String, image: UIImage) {

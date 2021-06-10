@@ -12,6 +12,7 @@ import SDWebImage
 final class ImageTitleTableViewCell: UITableViewCell {
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
@@ -34,7 +35,13 @@ final class ImageTitleTableViewCell: UITableViewCell {
         titleLabel.text = subject.title
         accessibilityLabel = subject.title
         
-        self.imgView.sd_setImage(with: subject.imgURL)
+        self.loadingIndicator.startAnimating()
+        self.imgView.sd_setImage(with: subject.imgURL) {image, _, _, _ in
+            self.loadingIndicator.stopAnimating()
+            if image == nil {
+                self.imgView.image = UIImage.listPlaceholder
+            }
+        }
     }
     
     func setup(withTitle title: String, image: UIImage) {
