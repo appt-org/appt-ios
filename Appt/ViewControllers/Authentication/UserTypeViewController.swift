@@ -108,15 +108,6 @@ final class UserTypeViewController: TableViewController {
 
         return cell
     }
- 
-    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-        if selectedRoles.count > 1 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            return indexPath
-        } else {
-            return nil
-        }
-    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else {
