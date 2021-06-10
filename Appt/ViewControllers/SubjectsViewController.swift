@@ -145,7 +145,8 @@ extension SubjectsViewController: UITableViewDelegate {
         let model = subject.children[indexPath.section]
 
         if model.children.isEmpty, let url = model.webURL {
-            let articleViewController = UIStoryboard.article(type: .page, completeUrl: url)
+            let slug = url.lastPathComponent
+            let articleViewController = UIStoryboard.article(type: .page, slug: slug)
             navigationController?.pushViewController(articleViewController, animated: true)
 
         } else {
@@ -210,7 +211,8 @@ extension SubjectsViewController: UICollectionViewDataSource {
         let model = subject.children[indexPath.item]
 
         if model.children.isEmpty, let url = model.webURL {
-            let articleViewController = UIStoryboard.article(type: .page, url: url)
+            let slug = url.lastPathComponent
+            let articleViewController = UIStoryboard.article(type: .page, slug: slug)
             navigationController?.pushViewController(articleViewController, animated: true)
         } else {
             pushNextSubject(model)

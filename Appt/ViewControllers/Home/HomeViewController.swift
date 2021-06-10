@@ -179,7 +179,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .training:
             let viewController = UIStoryboard.training()
             navigationController?.pushViewController(viewController, animated: true)
-        case .meldpunt, .community, .overAppt, .aanpak:
+        case .meldpunt, .overAppt, .aanpak:
+            guard let slug = item.slugURL?.lastPathComponent else { return }
+            let articleViewController = UIStoryboard.article(type: .page, slug: slug)
+            navigationController?.pushViewController(articleViewController, animated: true)
+        case .community:
             guard let url = item.slugURL else { return }
             let articleViewController = UIStoryboard.article(type: .page, completeUrl: url)
             navigationController?.pushViewController(articleViewController, animated: true)
