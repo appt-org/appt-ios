@@ -98,7 +98,7 @@
                 <navigationController id="CD2-N3-56b" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meer" image="tab_more" id="dKs-Kx-QzH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MdE-Hg-8EO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -286,7 +286,7 @@
                 <navigationController id="RNe-o6-JOa" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kennisbank" image="tab_knowledge" id="1uP-vB-cd7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Vs-9q-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -333,7 +333,7 @@
                 <navigationController id="6Zr-yC-6cu" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nieuws" image="tab_news" id="ZsM-Qc-Ia8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vWD-Rf-Q5r">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -558,7 +558,7 @@
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb" customClass="SegmentedControl" customModule="Appt" customModuleProvider="target">
-                            <rect key="frame" x="64.5" y="5.5" width="191" height="33"/>
+                            <rect key="frame" x="64.5" y="8.5" width="191" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Gebruiker"/>
@@ -688,7 +688,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="ic_tabbar_home" id="0Tq-vi-z2d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fqe-ce-jIv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

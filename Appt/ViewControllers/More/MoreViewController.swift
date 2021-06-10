@@ -59,7 +59,7 @@ extension MoreViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension - 16
+        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
