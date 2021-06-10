@@ -53,11 +53,11 @@ class API {
             "page": page
         ]
     
-        if let categoryIDs = categories?.selected.ids {
+        if let categoryIDs = categories?.selected.ids, !categoryIDs.isEmpty {
             parameters["categories"] = categoryIDs.joined(separator: ",")
         }
         
-        if let tagIDs = tags?.selected.ids {
+        if let tagIDs = tags?.selected.ids, !tagIDs.isEmpty {
             parameters["tags"] = tagIDs.joined(separator: ",")
         }
         
