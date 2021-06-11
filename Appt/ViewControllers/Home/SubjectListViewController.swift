@@ -15,7 +15,5 @@ final class SubjectListViewController: TableViewController {
 
         tableView.registerNib(ListTableTopSectionHeaderView.self)
         tableView.registerNib(ImageTitleTableViewCell.self)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .none
     }
 }

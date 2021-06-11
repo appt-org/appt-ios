@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOW-uV-FPr">
-                    <rect key="frame" x="0.0" y="0.0" width="418" height="278"/>
+                    <rect key="frame" x="0.0" y="0.0" width="418" height="286"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3b-zN-DVm">
-                            <rect key="frame" x="16" y="24" width="386" height="230"/>
+                            <rect key="frame" x="16" y="24" width="386" height="238"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bOW-uV-FPr" secondAttribute="bottom" constant="8" id="0H4-sq-I92"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bOW-uV-FPr" secondAttribute="bottom" id="0H4-sq-I92"/>
                 <constraint firstAttribute="trailing" secondItem="bOW-uV-FPr" secondAttribute="trailing" id="Y8y-bD-KrH"/>
                 <constraint firstItem="bOW-uV-FPr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Z2W-Jp-o0u"/>
                 <constraint firstItem="bOW-uV-FPr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kgG-UH-WsH"/>

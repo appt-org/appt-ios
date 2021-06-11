@@ -30,8 +30,6 @@ class SubjectsViewController: ViewController {
     
     var subject: Subject?
 
-    let tableViewCellSpacing: CGFloat = 8
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -117,7 +115,7 @@ extension SubjectsViewController: UITableViewDelegate {
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel).height
         } else {
-            return tableViewCellSpacing
+            return .zero
         }
     }
 
@@ -131,9 +129,7 @@ extension SubjectsViewController: UITableViewDelegate {
             
             return view
         } else {
-            let headerView = UIView()
-            headerView.backgroundColor = .clear
-            return headerView
+            return nil
         }
     }
     
@@ -142,7 +138,7 @@ extension SubjectsViewController: UITableViewDelegate {
 
         guard let subject = self.subject else { return }
         
-        let model = subject.children[indexPath.section]
+        let model = subject.children[indexPath.row]
 
         if model.children.isEmpty, let url = model.webURL {
             let slug = url.lastPathComponent
