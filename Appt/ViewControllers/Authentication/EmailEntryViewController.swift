@@ -28,6 +28,7 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         descriptionLabel.text = "email_entry_description_text".localized
 
         emailAddressLabel.text = "email_label_text".localized
+        emailAddressLabel.accessibilityHint = "reset_password_email_label_accessibility_hint".localized
         emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         emailTextField.delegate = self

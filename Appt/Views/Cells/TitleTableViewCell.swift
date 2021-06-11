@@ -33,7 +33,7 @@ class TitleTableViewCell: UITableViewCell {
     func setup(_ taxonomy: Taxonomy) {
         titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
         titleLabel.text = taxonomy.name
-        
+
         if taxonomy.selected {
             accessibilityLabel = "Geselecteerd. \(taxonomy.name)"
             accessoryType = .checkmark
@@ -41,7 +41,7 @@ class TitleTableViewCell: UITableViewCell {
             accessibilityLabel = taxonomy.name
             accessoryType = .disclosureIndicator
         }
-        
+
         accessibilityHint = "Dubbeltik met twee vingers om de geselecteerde filters toe te passen"
     }
     

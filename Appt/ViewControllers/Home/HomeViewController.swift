@@ -185,8 +185,7 @@ extension HomeViewController: UICollectionViewDataSource {
             navigationController?.pushViewController(articleViewController, animated: true)
         case .community:
             guard let url = item.slugURL else { return }
-            let articleViewController = UIStoryboard.article(type: .page, completeUrl: url)
-            navigationController?.pushViewController(articleViewController, animated: true)
+            openWebsite(url)
         case .knowledgeBase:
             self.tabBarController?.selectedIndex = 1
         case .services:

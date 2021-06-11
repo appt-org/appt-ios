@@ -36,6 +36,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         title = "account_creation_vc_title".localized
         
         emailLabel.text = "email_label_text".localized
+        emailLabel.accessibilityHint = "registration_email_label_accessibility_hint".localized
         emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         emailTextField.delegate = self
@@ -48,6 +49,7 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
         
         passwordLabel.text = "password_label_text".localized
+        passwordLabel.accessibilityHint = "registration_password_label_accessibility_hint".localized
         passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         passwordHintLabel.text = "password_textfield_hint_text".localized
