@@ -10,9 +10,8 @@ import UIKit
 
 class SegmentedControl: UISegmentedControl {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
 
-        let states: [UIControl.State] = [.disabled, .focused, .normal, .selected]
+        let states: [UIControl.State] = [.disabled, .focused, .normal, .selected, .highlighted]
         states.forEach({
             setTitleTextAttributes( [.font: UIFont.sourceSansPro(weight: .regular, size: 14, style: .body),
             ], for: $0)

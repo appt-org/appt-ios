@@ -31,7 +31,7 @@ extension UIImage {
     static var homeAanpak = UIImage(named: "ic_aanpak")!
     static var homeServices = UIImage(named: "ic_services")!
 
-    static let blocksPlaceholder = UIImage(named: "AppIcon")!
-    static let listPlaceholder = UIImage(named: "AppIcon")!
+    static let blocksPlaceholder = UIImage(named: "ic_tiles_placeholder_big")!
+    static let listPlaceholder = UIImage(named: "ic_fields_placeholder_small")!
 
 }
