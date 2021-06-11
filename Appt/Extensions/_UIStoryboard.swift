@@ -73,10 +73,10 @@ extension UIStoryboard {
         return vc
     }
     
-    static func main() -> UIViewController? {
+    static func main(isNewUser: Bool = false) -> UIViewController? {
         let storyboard = UIStoryboard(name: Name.main.rawValue, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
-        
+        (vc as? TabBarController)?.shouldShowEmailVerificationAlert = isNewUser
         return vc
     }
     

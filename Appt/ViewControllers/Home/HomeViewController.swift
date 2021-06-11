@@ -70,6 +70,18 @@ final class HomeViewController: ViewController {
         }
 
         getUser()
+
+        if (tabBarController as? TabBarController)?.shouldShowEmailVerificationAlert == true {
+            showEmailVerificationAlert()
+        }
+    }
+
+    private func showEmailVerificationAlert() {
+        Alert.Builder()
+            .title("confirmation_alert_title".localized)
+            .message("confirmation_alert_message".localized)
+            .action("ok".localized)
+            .present(in: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {

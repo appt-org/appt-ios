@@ -155,22 +155,17 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
     }
 
     private func showConfirmationAlert() {
-        Alert.Builder()
-            .title("confirmation_alert_title".localized)
-            .message("confirmation_alert_message".localized)
-            .action("ok".localized) {
-                let viewController = UIStoryboard.main()
-                if #available(iOS 13.0, *) {
-                    self.navigationController?.dismiss(animated: true) {
-                        UIApplication.shared.windows.first?.rootViewController = viewController
-                    }
-                } else {
-                    let window = UIWindow()
-                    window.rootViewController = viewController
-                    (UIApplication.shared.delegate as? AppDelegate)?.window = window
-                    window.makeKeyAndVisible()
-                }
-            }.present(in: self)
+        let viewController = UIStoryboard.main(isNewUser: true)
+        if #available(iOS 13.0, *) {
+            self.navigationController?.dismiss(animated: true) {
+                UIApplication.shared.windows.first?.rootViewController = viewController
+            }
+        } else {
+            let window = UIWindow()
+            window.rootViewController = viewController
+            (UIApplication.shared.delegate as? AppDelegate)?.window = window
+            window.makeKeyAndVisible()
+        }
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
