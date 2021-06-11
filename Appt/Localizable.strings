@@ -280,7 +280,7 @@
 "delete_my_account_title" = "Account verwijderen";
 "log_out_title" = "Uitloggen";
 "change_my_password_title" = "Wachtwoord wijzigen";
-"logout_alert_title" = "Do you really want to logout?";
+"logout_alert_title" = "Weet je zeker dat je je wilt uitloggen?";
 "delete_account_alert_title" = "Weet je zeker dat je je account wilt verwijderen?";
 "delete_account_alert_delete_button_text" = "Ja, verwijder mijn account";
 "delete_account_alert_cancel_button_text" = "Annuleren";

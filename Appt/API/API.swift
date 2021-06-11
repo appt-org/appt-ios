@@ -161,7 +161,9 @@ class API {
                     try UserDefaultsStorage.shared.storeUser(user)
                     callback(user, nil)
                 } catch {
-                    callback(nil, error.localizedDescription)
+                    let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    let jsonErrorMsg = jsonResponse?["message"] as? String
+                    callback(nil, jsonErrorMsg ?? error.localizedDescription)
                 }
             } else {
                 callback(nil, nil)

@@ -64,7 +64,7 @@ final class ProfileViewController: ViewController {
         Alert.Builder()
             .title("logout_alert_title".localized)
             .cancelAction("cancel".localized)
-            .action("ok".localized) {
+            .action("log_out_title".localized) {
                 self.isLoading = true
                 API.shared.logout { succeed, error in
                     self.isLoading = false
