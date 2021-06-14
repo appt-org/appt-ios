@@ -95,13 +95,32 @@ final class HomeViewController: ViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        collectionView.collectionViewLayout.invalidateLayout()
+        configureAlignedCollectionViewFlowLayout()
+    }
+
+    private func configureAlignedCollectionViewFlowLayout() {
+        guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
+
+        alignedFlowLayout.verticalAlignment = .top
+
+        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+
+        let totalSpace = alignedFlowLayout.sectionInset.left
+            + alignedFlowLayout.sectionInset.right
+            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+
+        let size = Int((collectionView.bounds.width - totalSpace) / noOfCellsInRow)
+
+        alignedFlowLayout.estimatedItemSize = CGSize(
+            width: size,
+            height: 200
+        )
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
-        self.collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -191,11 +210,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .training:
             let viewController = UIStoryboard.training()
             navigationController?.pushViewController(viewController, animated: true)
-        case .meldpunt, .overAppt, .aanpak:
+        case .overAppt, .aanpak:
             guard let slug = item.slugURL?.lastPathComponent else { return }
             let articleViewController = UIStoryboard.article(type: .page, slug: slug)
             navigationController?.pushViewController(articleViewController, animated: true)
-        case .community:
+        case .community, .meldpunt:
             guard let url = item.slugURL else { return }
             openWebsite(url)
         case .knowledgeBase:
@@ -211,20 +230,6 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let noOfCellsInRow = 2
-        
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-
-        let totalSpace = flowLayout.sectionInset.left
-            + flowLayout.sectionInset.right
-            + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
-
-        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
-
-        return CGSize(width: size, height: size)
-    }
-
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -238,7 +243,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
                 fatalError("Unable to determine UserType")
             }
-            
+
             var title = ""
             switch userType {
             case .user:
@@ -246,7 +251,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             case .professional:
                 title = "professional_header_title".localized
             }
-            
+
             headerView.setup(withTitle: title, image: .apptLogo)
 
             return headerView
@@ -260,10 +265,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
         let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
 
-        // Use this view to calculate the optimal size based on the collection view's width
         return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-                                                  withHorizontalFittingPriority: .required, // Width is fixed
-                                                  verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
+                                                  withHorizontalFittingPriority: .required,
+                                                  verticalFittingPriority: .fittingSizeLevel)
     }
 }
 

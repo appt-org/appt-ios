@@ -39,7 +39,7 @@ class SubjectsViewController: ViewController {
             embedViewController()
         }
     }
-    
+
     private func loadSubject() {
         let callback: (Subject?, String?) -> () = { subject, errorString in
             self.isLoading = false
@@ -94,23 +94,17 @@ class SubjectsViewController: ViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        (self.children.first as? SubjectBlocksViewController)?.collectionView?.collectionViewLayout.invalidateLayout()
-    }
 }
 
 extension SubjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            let view = tableView.cell(ListTableTopSectionHeaderView.self)
+            let view = tableView.headerFooter(ListTableTopSectionHeaderView.self)
 
             guard let subject = self.subject else { return 0.0 }
-            
+
             view.setup(subject)
-            
+
             return view.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel).height
@@ -121,12 +115,12 @@ extension SubjectsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let view = tableView.cell(ListTableTopSectionHeaderView.self)
-            
+            let view = tableView.headerFooter(ListTableTopSectionHeaderView.self)
+
             guard let subject = self.subject else { return nil }
-            
+
             view.setup(subject)
-            
+
             return view
         } else {
             return nil
@@ -152,7 +146,6 @@ extension SubjectsViewController: UITableViewDelegate {
 }
 
 extension SubjectsViewController: UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTitleTableViewCell.identifier, for: indexPath) as? ImageTitleTableViewCell else {
             fatalError("unable to dequeue ImageTitleTableViewCell")
@@ -206,7 +199,9 @@ extension SubjectsViewController: UICollectionViewDataSource {
         
         let model = subject.children[indexPath.item]
 
-        if model.children.isEmpty, let url = model.webURL {
+        if model.children.isEmpty, let url = model.webURL, self.viewControllerType == .services {
+            openWebsite(url)
+        } else if model.children.isEmpty, let url = model.webURL {
             let slug = url.lastPathComponent
             let articleViewController = UIStoryboard.article(type: .page, slug: slug)
             navigationController?.pushViewController(articleViewController, animated: true)
@@ -217,20 +212,6 @@ extension SubjectsViewController: UICollectionViewDataSource {
 }
 
 extension SubjectsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let noOfCellsInRow = 2
-        
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-
-        let totalSpace = flowLayout.sectionInset.left
-            + flowLayout.sectionInset.right
-            + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
-
-        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
-
-        return CGSize(width: size, height: size)
-    }
-
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -241,7 +222,7 @@ extension SubjectsViewController: UICollectionViewDelegateFlowLayout {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {
                 fatalError()
             }
-            
+
             guard let subject = self.subject else { return UICollectionReusableView() }
 
             headerView.setup(subject)

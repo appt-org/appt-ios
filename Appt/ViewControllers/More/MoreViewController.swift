@@ -84,14 +84,7 @@ extension MoreViewController {
             let viewController = UIStoryboard.profile()
             navigationController?.pushViewController(viewController, animated: true)
         } else if indexPath.section == 1 {
-            if indexPath.row == 2 {
-                guard let slug = topic.slugURL?.lastPathComponent else { return }
-                
-                let articleViewController = UIStoryboard.article(type: .page, slug: slug)
-                navigationController?.pushViewController(articleViewController, animated: true)
-            } else {
-                openWebsite(topic.slug)
-            }
+            openWebsite(topic.slug)
         } else if indexPath.section == 2 {
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)

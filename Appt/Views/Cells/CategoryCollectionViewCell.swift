@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-final class CategoryCollectionViewCell: UICollectionViewCell {
+final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
     @IBOutlet private var background: UIView!
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var categoryLabel: UILabel!

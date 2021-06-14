@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1863A164E9AC782E06E10985 /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */; };
+		23058FA02677760C008AA45A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */; };
+		23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */; };
 		230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineButton.swift */; };
 		231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 231F1FE7266A0194002524F0 /* apple-app-site-association */; };
 		231F1FEB266A2648002524F0 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F1FEA266A2648002524F0 /* DeepLink.swift */; };
@@ -136,6 +138,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 		230BE9AC2636EEFE0026A90B /* MultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineButton.swift; sourceTree = "<group>"; };
 		231F1FE7266A0194002524F0 /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		231F1FE9266A0604002524F0 /* Appt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appt.entitlements; sourceTree = "<group>"; };
@@ -384,6 +388,7 @@
 				A83B07BF26665B9500EDCBD8 /* EmailVerification */,
 				2870FF1B2525FC0F00377B44 /* TextField.swift */,
 				233FB235263991150031E58C /* PaddingLabel.swift */,
+				23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */,
 				23C3D04F266FA3070044F56F /* SegmentedControl.swift */,
 				23C3D04D266FA2450044F56F /* TabBarController.swift */,
 				233FB2372639914D0031E58C /* AuthenticationTextField.swift */,
@@ -422,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
+				23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */,
 				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
 				232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */,
 				232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */,
@@ -821,6 +827,7 @@
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				23C3D04E266FA2450044F56F /* TabBarController.swift in Sources */,
 				2338B34C264D7F3200D47FC7 /* Subject.swift in Sources */,
+				23058FA02677760C008AA45A /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				232D74EA264E771200937E0D /* SubjectListViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
@@ -838,6 +845,7 @@
 				2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */,
 				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
+				23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */,
 				A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */,
 				A89FD450265D66A4006ED9EE /* User.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,

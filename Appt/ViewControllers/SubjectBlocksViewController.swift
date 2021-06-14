@@ -31,4 +31,33 @@ class SubjectBlocksViewController: ViewController {
     func loadMore() {
         // Can be overridden to implement 'infinite scrolling'
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        configureAlignedCollectionViewFlowLayout()
+    }
+
+    private func configureAlignedCollectionViewFlowLayout() {
+        guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
+
+        alignedFlowLayout.verticalAlignment = .top
+
+        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+
+        let totalSpace = alignedFlowLayout.sectionInset.left
+            + alignedFlowLayout.sectionInset.right
+            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+
+        let size = Int((collectionView.bounds.width - totalSpace) / noOfCellsInRow)
+
+        alignedFlowLayout.estimatedItemSize = CGSize(
+            width: size,
+            height: 200
+        )
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.collectionView.collectionViewLayout.invalidateLayout()
+    }
 }

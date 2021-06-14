@@ -27,6 +27,10 @@ class NewsViewController: TableViewController {
         // Set-up UITableView
         tableView.registerNib(TitleTableViewCell.self)
         tableView.refreshControl = refreshControl
+
+        let size = CGRect(x: 0, y: 0, width: 0, height: 0.1)
+        self.tableView.tableHeaderView = UIView(frame: size)
+        self.tableView.tableFooterView = UIView(frame: size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
