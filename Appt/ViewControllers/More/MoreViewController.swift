@@ -13,9 +13,9 @@ class MoreViewController: TableViewController {
     
     private var topics: KeyValuePairs<String, [Topic]> {
         return [
-            "": [
-                .myprofile
-            ],
+//            "": [
+//                .myprofile
+//            ],
             "about_title".localized.uppercased(): [
                 .source,
                 .sidnfonds,
@@ -59,7 +59,8 @@ extension MoreViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension
+//        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension
+        UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

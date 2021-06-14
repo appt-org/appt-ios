@@ -52,50 +52,56 @@ final class HomeViewController: ViewController {
         collectionView.dataSource = self
         
         emailVerificationView.delegate = self
-        
-        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
-        
-        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
 
+        hideVerificationView()
+
+
+//        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+//
+//        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
+//
         Role.UserType.allCases.forEach({
             self.userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
         })
-        
-        if user.isVerified {
-            hideVerificationView()
-        } else {
-            self.emailConfirmationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: DeepLinkAction.confirmEmail.rawValue), object: nil, queue: nil, using: {
-                self.confirmEmail($0)
-            })
-        }
-
-        getUser()
-
-        if (tabBarController as? TabBarController)?.shouldShowEmailVerificationAlert == true {
-            showEmailVerificationAlert()
-        }
+//
+//        if user.isVerified {
+//            hideVerificationView()
+//        } else {
+//            self.emailConfirmationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: DeepLinkAction.confirmEmail.rawValue), object: nil, queue: nil, using: {
+//                self.confirmEmail($0)
+//            })
+//        }
+//
+//        getUser()
+//
+//        if (tabBarController as? TabBarController)?.shouldShowEmailVerificationAlert == true {
+//            showEmailVerificationAlert()
+//        }
     }
 
-    private func showEmailVerificationAlert() {
-        Alert.Builder()
-            .title("confirmation_alert_title".localized)
-            .message("confirmation_alert_message".localized)
-            .action("ok".localized)
-            .present(in: self)
-    }
+//    private func showEmailVerificationAlert() {
+//        Alert.Builder()
+//            .title("confirmation_alert_title".localized)
+//            .message("confirmation_alert_message".localized)
+//            .action("ok".localized)
+//            .present(in: self)
+//    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
-            self.hideVerificationView()
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
+//            self.hideVerificationView()
+//        }
+//    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         configureAlignedCollectionViewFlowLayout()
+
+
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func configureAlignedCollectionViewFlowLayout() {
@@ -118,6 +124,8 @@ final class HomeViewController: ViewController {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
@@ -131,51 +139,51 @@ final class HomeViewController: ViewController {
         collectionView.reloadSections(indexSet)
     }
     
-    private func getUser() {
-        API.shared.getUser { user, error in
-            if let user = user, user.isVerified {
-                self.emailConfirmationObserver = nil
-                self.hideVerificationView()
-            } else if user == nil, let error = error {
-                Alert.error(error, viewController: self)
-            }
-        }
-    }
+//    private func getUser() {
+//        API.shared.getUser { user, error in
+//            if let user = user, user.isVerified {
+//                self.emailConfirmationObserver = nil
+//                self.hideVerificationView()
+//            } else if user == nil, let error = error {
+//                Alert.error(error, viewController: self)
+//            }
+//        }
+//    }
 
-    private func confirmEmail(_ notification: Notification) {
-        guard let topViewController =  UIApplication.topViewController() else { return }
-        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
-        guard let emailConfirmData = notification.userInfo as? [String: String],
-              let userID = emailConfirmData["user_id"],
-              let key = emailConfirmData["activation_key"] else {
-            Alert.error("email_verification_failed".localized, viewController: topViewController)
-            return
-        }
-
-        guard "\(user.id)" == userID else {
-            Alert.error("email_verification_failed_wrong_user".localized, viewController: topViewController)
-            return
-        }
-
-        guard !user.isVerified else {
-            Alert.error("email_verification_failed_already_verified".localized, viewController: topViewController)
-            return
-        }
-
-        API.shared.confirmUserEmail(userID: userID, key: key) { user, error in
-            if user != nil, error == nil {
-                Alert.Builder()
-                    .title("email_verification_alert_title".localized)
-                    .message("email_verification_successful".localized)
-                    .action("ok".localized) {
-                        self.emailConfirmationObserver = nil
-                        self.hideVerificationView()
-                    }.present(in: self)
-            } else if let error = error, user == nil {
-                Alert.error(error, viewController: topViewController)
-            }
-        }
-    }
+//    private func confirmEmail(_ notification: Notification) {
+//        guard let topViewController =  UIApplication.topViewController() else { return }
+//        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
+//        guard let emailConfirmData = notification.userInfo as? [String: String],
+//              let userID = emailConfirmData["user_id"],
+//              let key = emailConfirmData["activation_key"] else {
+//            Alert.error("email_verification_failed".localized, viewController: topViewController)
+//            return
+//        }
+//
+//        guard "\(user.id)" == userID else {
+//            Alert.error("email_verification_failed_wrong_user".localized, viewController: topViewController)
+//            return
+//        }
+//
+//        guard !user.isVerified else {
+//            Alert.error("email_verification_failed_already_verified".localized, viewController: topViewController)
+//            return
+//        }
+//
+//        API.shared.confirmUserEmail(userID: userID, key: key) { user, error in
+//            if user != nil, error == nil {
+//                Alert.Builder()
+//                    .title("email_verification_alert_title".localized)
+//                    .message("email_verification_successful".localized)
+//                    .action("ok".localized) {
+//                        self.emailConfirmationObserver = nil
+//                        self.hideVerificationView()
+//                    }.present(in: self)
+//            } else if let error = error, user == nil {
+//                Alert.error(error, viewController: topViewController)
+//            }
+//        }
+//    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -198,6 +206,24 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.setup(withTitle: item.title, image: item.image)
         
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let alignedFlowLayout = collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return .zero }
+
+
+        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+
+        let totalSpace = alignedFlowLayout.sectionInset.left
+            + alignedFlowLayout.sectionInset.right
+            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+
+        let size = Int((collectionView.bounds.width - totalSpace) / noOfCellsInRow)
+
+       return CGSize(
+            width: size,
+            height: 200
+        )
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
