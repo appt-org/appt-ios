@@ -26,11 +26,11 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         changePasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
 
         newPasswordLabel.text = "new_password_label_text".localized
-        newPasswordLabel.accessibilityHint = "reset_password_password_label_accessibility_hint".localized
         newPasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
 
         newPasswordTextField.delegate = self
         newPasswordTextField.placeholder = "new_password_textfield_placeholder_text".localized
+        newPasswordTextField.accessibilityHint = "reset_password_password_label_accessibility_hint".localized
         newPasswordTextField.setSecureTextEntry()
 
         passwordHintLabel.text = "new_password_textfield_hint_text".localized

@@ -28,11 +28,11 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         descriptionLabel.text = "email_entry_description_text".localized
 
         emailAddressLabel.text = "email_label_text".localized
-        emailAddressLabel.accessibilityHint = "reset_password_email_label_accessibility_hint".localized
         emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         emailTextField.delegate = self
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
+        emailTextField.accessibilityHint = "reset_password_email_label_accessibility_hint".localized
 
         emailHintLabel.text = "email_textfield_hint_text".localized
         emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)

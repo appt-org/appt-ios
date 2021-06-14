@@ -28,19 +28,19 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         title = "login_vc_title".localized
 
         emailLabel.text = "email_label_text".localized
-        emailLabel.accessibilityHint = "login_email_label_accessibility_hint".localized
         emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
         passwordLabel.text = "password_label_text".localized
-        passwordLabel.accessibilityHint = "login_password_label_accessibility_hint".localized
         passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
         emailHintLabel.text = "email_textfield_hint_text".localized
         emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
 
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
+        emailTextField.accessibilityHint = "login_email_label_accessibility_hint".localized
 
         passwordTextField.placeholder = "password_textfield_placeholder_text".localized
+        passwordTextField.accessibilityHint = "login_password_label_accessibility_hint".localized
         passwordTextField.setSecureTextEntry()
 
         loginButton.setTitle("login_button_title".localized, for: .normal)
