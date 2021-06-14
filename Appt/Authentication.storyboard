@@ -30,16 +30,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-lU-LWB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="520.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welkom!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIw-Th-Yu0">
-                                                <rect key="frame" x="16" y="11" width="382" height="24"/>
+                                                <rect key="frame" x="16" y="11" width="382" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-DF-xNr">
-                                                <rect key="frame" x="16" y="46" width="382" height="122"/>
+                                                <rect key="frame" x="16" y="44.5" width="382" height="122"/>
                                                 <string key="text">Appt is het platform voor toegankelijkheid.
 
 
@@ -49,14 +49,14 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_hands_up" translatesAutoresizingMaskIntoConstraints="NO" id="1jm-vd-GpC">
-                                                <rect key="frame" x="175" y="204" width="64" height="86"/>
+                                                <rect key="frame" x="175" y="202.5" width="64" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="iYL-1n-zXe"/>
                                                     <constraint firstAttribute="width" constant="64" id="yME-g2-eHN"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-qz-b4d" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="339" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="337.5" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rdi-Dd-AAr"/>
@@ -69,7 +69,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-wG-W2h" customClass="SecondaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="404" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="402.5" width="366" height="50"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="u4j-UE-ZLD"/>
@@ -82,7 +82,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-BJ-oem" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="466" width="366" height="44"/>
+                                                <rect key="frame" x="24" y="464.5" width="366" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEr-Pk-Dpm"/>
@@ -165,7 +165,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0N-QY-j9G">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="461"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="459.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="VXe-n6-bkV">
                                                 <rect key="frame" x="20" y="24" width="374" height="33"/>
@@ -210,16 +210,16 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RuE-Dd-SFo">
-                                                <rect key="frame" x="16" y="214.5" width="382" height="83.5"/>
+                                                <rect key="frame" x="16" y="214.5" width="382" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxB-CL-PXP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                         <color key="textColor" name="Foreground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wachtwoord" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2ZU-7E-vKN" customClass="AuthenticationTextField" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.5" width="382" height="52"/>
+                                                        <rect key="frame" x="0.0" y="30" width="382" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="jMd-EL-B9x"/>
                                                         </constraints>
@@ -230,7 +230,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                         </connections>
                                                     </textField>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-hk-fGp" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="82" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                                         <color key="textColor" name="Primary"/>
                                                         <nil key="highlightedColor"/>
@@ -246,7 +246,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTH-tE-1Uv" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="334" width="366" height="48"/>
+                                                <rect key="frame" x="24" y="332.5" width="366" height="48"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="YkR-e8-GhP"/>
@@ -263,7 +263,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmH-BF-yte" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="32" y="397" width="350" height="44"/>
+                                                <rect key="frame" x="32" y="395.5" width="350" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="tpj-8G-q5O"/>
@@ -342,22 +342,22 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-ZG-Tzf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="355.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="354"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord vergeten?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-Wx-Ud5">
-                                                <rect key="frame" x="16" y="12" width="382" height="24"/>
+                                                <rect key="frame" x="16" y="12" width="382" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vul hier je e-mailadres in en wij sturen een e-mail met een link waarmee je je wachtwoord kan wijzigen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfv-gk-hZP">
-                                                <rect key="frame" x="16" y="72" width="382" height="61"/>
+                                                <rect key="frame" x="16" y="70.5" width="382" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rct-uG-93v">
-                                                <rect key="frame" x="16" y="169" width="382" height="82.5"/>
+                                                <rect key="frame" x="16" y="167.5" width="382" height="82.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mailadres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvL-xT-ByJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -393,7 +393,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLL-PD-VO2" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="287.5" width="366" height="48"/>
+                                                <rect key="frame" x="24" y="286" width="366" height="48"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="mpO-LJ-uCx"/>
@@ -473,25 +473,25 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmy-TK-KyO">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="244.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord wijzigen" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfD-PX-3cT">
-                                                <rect key="frame" x="16" y="12" width="382" height="24"/>
+                                                <rect key="frame" x="16" y="12" width="382" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-ZC-apl">
-                                                <rect key="frame" x="16" y="60" width="382" height="83.5"/>
+                                                <rect key="frame" x="16" y="58.5" width="382" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nieuw wachtwoord" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFS-cm-cLd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                         <color key="textColor" name="Foreground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nieuw wachtwoord" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="y5m-g7-aF3" customClass="AuthenticationTextField" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.5" width="382" height="52"/>
+                                                        <rect key="frame" x="0.0" y="30" width="382" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="z3R-mf-erQ"/>
                                                         </constraints>
@@ -502,7 +502,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                         </connections>
                                                     </textField>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmh-Cl-EJ2" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="82" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
@@ -518,7 +518,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blf-IS-nCb" customClass="PrimaryMultilineButton" customModule="Appt" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="179.5" width="366" height="48"/>
+                                                <rect key="frame" x="24" y="176.5" width="366" height="48"/>
                                                 <color key="backgroundColor" name="Foreground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="XIm-cV-GfW"/>
@@ -704,16 +704,16 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-lT-cd1">
-                                                <rect key="frame" x="16" y="187.5" width="382" height="83.5"/>
+                                                <rect key="frame" x="16" y="187.5" width="382" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-gv-f0H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                         <color key="textColor" name="Foreground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wachtwoord" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xVc-ex-PoU" customClass="AuthenticationTextField" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.5" width="382" height="52"/>
+                                                        <rect key="frame" x="0.0" y="30" width="382" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="shc-gp-zqz"/>
                                                         </constraints>
@@ -724,7 +724,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                         </connections>
                                                     </textField>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je wachtwoord moet bestaan uit minimaal 10 karakters" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvn-ym-zIU" customClass="PaddingLabel" customModule="Appt" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="83.5" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="82" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
@@ -740,7 +740,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-eX-2dR">
-                                                <rect key="frame" x="16" y="307.5" width="323" height="64.5"/>
+                                                <rect key="frame" x="16" y="306" width="323" height="64.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-r3-r24" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
@@ -764,14 +764,14 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-9N-irL">
-                                                <rect key="frame" x="349" y="346.5" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="345" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="privacyPolicyValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="DEd-pk-LkC"/>
                                                 </connections>
                                             </switch>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-jq-Bfg">
-                                                <rect key="frame" x="16" y="397" width="323" height="64.5"/>
+                                                <rect key="frame" x="16" y="395.5" width="323" height="64.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tni-hV-AH4" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
@@ -795,7 +795,7 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
                                                 </subviews>
                                             </stackView>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-s9-JZu">
-                                                <rect key="frame" x="349" y="436" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="434.5" width="51" height="31"/>
                                                 <color key="onTintColor" name="Primary"/>
                                                 <connections>
                                                     <action selector="termsAndConditionsValueChanged:" destination="Oq3-Cr-7NY" eventType="valueChanged" id="2ir-gm-Z5Z"/>
@@ -931,22 +931,22 @@ Maak een gratis account aan om toegang tot onze community te krijgen, onze train
     </scenes>
     <designables>
         <designable name="8mP-Nv-LOp">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="BXP-bx-wFx">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="TAX-W7-6d4">
-            <size key="intrinsicContentSize" width="407" height="18"/>
+            <size key="intrinsicContentSize" width="375" height="18"/>
         </designable>
         <designable name="TT3-hk-fGp">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="371" height="17.5"/>
         </designable>
         <designable name="Tmh-Cl-EJ2">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="371" height="17.5"/>
         </designable>
         <designable name="gvn-ym-zIU">
-            <size key="intrinsicContentSize" width="378.5" height="19"/>
+            <size key="intrinsicContentSize" width="371" height="17.5"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
