@@ -82,13 +82,26 @@ extension MoreViewController {
         let topic = topics[indexPath.section].value[indexPath.row]
         
         if indexPath.section == 0 {
-            let viewController = UIStoryboard.profile()
-            navigationController?.pushViewController(viewController, animated: true)
-        } else if indexPath.section == 1 {
             openWebsite(topic.slug)
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 1 {
             let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
             navigationController?.pushViewController(articleViewController, animated: true)
         }
     }
+
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        let topic = topics[indexPath.section].value[indexPath.row]
+//
+//        if indexPath.section == 0 {
+//            let viewController = UIStoryboard.profile()
+//            navigationController?.pushViewController(viewController, animated: true)
+//        } else if indexPath.section == 1 {
+//            openWebsite(topic.slug)
+//        } else if indexPath.section == 2 {
+//            let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
+//            navigationController?.pushViewController(articleViewController, animated: true)
+//        }
+//    }
 }
