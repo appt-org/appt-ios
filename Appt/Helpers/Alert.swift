@@ -120,7 +120,6 @@ class Alert {
             return self
         }
 
-        
         func build() -> UIAlertController {
             let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
             alert.view.tintColor = tintColor
