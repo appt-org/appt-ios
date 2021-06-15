@@ -295,11 +295,3 @@
 "email_verification_failed_already_verified" = "Email address is already verified";
 "email_verification_alert_title" = "Email verification";
 "email_verification_successful" = "Verification is successful";
-
-/* Authentication accessibility hints */
-"registration_email_label_accessibility_hint" = "Type in your email address in the text field below";
-"registration_password_label_accessibility_hint" = "Type in your password in the text field below";
-"login_email_label_accessibility_hint" = "Type in your email address in the text field below";
-"login_password_label_accessibility_hint" = "Type in your password in the text field below";
-"reset_password_email_label_accessibility_hint" = "Type in your email address in the text field below to proceed with password reset";
-"reset_password_password_label_accessibility_hint" = "Type in your new password in the text field below to complete password reset";

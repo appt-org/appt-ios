@@ -30,7 +30,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
 
         newPasswordTextField.delegate = self
         newPasswordTextField.placeholder = "new_password_textfield_placeholder_text".localized
-        newPasswordTextField.accessibilityHint = "reset_password_password_label_accessibility_hint".localized
+        newPasswordTextField.accessibilityLabel = newPasswordLabel.text
         newPasswordTextField.setSecureTextEntry()
 
         passwordHintLabel.text = "new_password_textfield_hint_text".localized

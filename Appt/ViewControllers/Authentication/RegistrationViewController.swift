@@ -40,17 +40,17 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
-        emailTextField.accessibilityHint = "registration_email_label_accessibility_hint".localized
+        emailTextField.accessibilityLabel = emailLabel.text
+
+        passwordLabel.text = "password_label_text".localized
+        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
 
         passwordTextField.delegate = self
         passwordTextField.placeholder = "password_textfield_placeholder_text".localized
-        passwordHintLabel.accessibilityHint = "registration_password_label_accessibility_hint".localized
-        
+        passwordTextField.accessibilityLabel = passwordLabel.text
+
         emailHintLabel.text = "email_textfield_hint_text".localized
         emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
-        
-        passwordLabel.text = "password_label_text".localized
-        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         
         passwordHintLabel.text = "password_textfield_hint_text".localized
         passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
