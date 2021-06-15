@@ -19,7 +19,7 @@ struct Subject: Decodable {
     let image: String
     var children: Array<Subject>
     private let type: String
-    private let url: String
+    let url: String
 
     var imgURL: URL? {
         guard !self.image.isEmpty else { return nil }

@@ -80,7 +80,7 @@ extension WebViewController: WKNavigationDelegate {
         }
         
         if navigationAction.navigationType == .linkActivated {
-            if url.absoluteString.contains("appt.nl/kennisbank/") {
+            if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
                 let articleViewController = UIStoryboard.article(type: .page, url: url)
                 navigationController?.pushViewController(articleViewController, animated: true)
             } else {

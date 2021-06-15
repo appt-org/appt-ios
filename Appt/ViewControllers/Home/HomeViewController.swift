@@ -108,6 +108,7 @@ final class HomeViewController: ViewController {
         guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
 
         alignedFlowLayout.verticalAlignment = .top
+        alignedFlowLayout.horizontalAlignment = .left
 
         let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
 

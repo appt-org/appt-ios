@@ -10,10 +10,15 @@ import UIKit
 import SafariServices
 
 extension UIViewController {
-    
+
     func openWebsite(_ urlString: String, delegate: SFSafariViewControllerDelegate? = nil) {
         if let url = URL(string: urlString) {
-            openWebsite(url, delegate: delegate)
+            if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
+                let articleViewController = UIStoryboard.article(type: .page, url: url)
+                navigationController?.pushViewController(articleViewController, animated: true)
+            } else {
+                openWebsite(url, delegate: delegate)
+            }
         }
     }
     
