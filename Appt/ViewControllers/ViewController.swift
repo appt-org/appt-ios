@@ -100,12 +100,6 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: self.navigationController);
-    }
 }
 
 // MARK: - State notifications
