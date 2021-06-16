@@ -51,6 +51,7 @@ final class HomeViewController: ViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.delaysContentTouches = false
         
         emailVerificationView.delegate = self
 
