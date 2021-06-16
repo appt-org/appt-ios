@@ -22,7 +22,6 @@ extension UIImage {
     static var passwordHidden = UIImage(named: "ic_hidden")!
     static var passwordVisible = UIImage(named: "ic_visible")!
     
-    static var apptLogo = UIImage(named: "Logo")!
     static var homeTraining = UIImage(named: "ic_training")!
     static var homeMeldpunt = UIImage(named: "ic_meldpunt")!
     static var homeCommunity = UIImage(named: "ic_community")!
@@ -34,4 +33,11 @@ extension UIImage {
     static let blocksPlaceholder = UIImage(named: "ic_tiles_placeholder_big")!
     static let listPlaceholder = UIImage(named: "ic_fields_placeholder_small")!
 
+//    static var apptLogo = UIImage(named: "Logo")!.accessibilityLabel =
+
+    static var apptLogo: UIImage = {
+        let image = UIImage(named: "Logo")!
+        image.accessibilityLabel = "appt_logo_accessibility_label".localized
+        return image
+    } ()
 }

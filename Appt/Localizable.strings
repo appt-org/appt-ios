@@ -295,3 +295,5 @@
 "email_verification_failed_already_verified" = "Email address is already verified";
 "email_verification_alert_title" = "Email verification";
 "email_verification_successful" = "Verification is successful";
+
+"appt_logo_accessibility_label" = "Appt logo";
