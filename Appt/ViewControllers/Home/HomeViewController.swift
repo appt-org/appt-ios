@@ -43,7 +43,8 @@ final class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "home_vc_title".localized
+        self.tabBarItem.title = "home_vc_title".localized
+        self.navigationItem.title = Role.UserType.user.segmentedControlTitle
 
         userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
         collectionView.registerNib(CategoryCollectionViewCell.self)
@@ -131,9 +132,11 @@ final class HomeViewController: ViewController {
     }
     
     @IBAction private func userProfessionalSegmentedControlValueChanged(_ sender: UISegmentedControl) {
-        guard let _ = Role.UserType(rawValue: sender.selectedSegmentIndex) else {
+        guard let roleSelected = Role.UserType(rawValue: sender.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
         }
+
+        self.navigationItem.title = roleSelected.segmentedControlTitle
 
         let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
         let indexSet = IndexSet(integersIn: range)
