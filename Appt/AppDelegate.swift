@@ -78,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
             .font: UIFont.sourceSansPro(weight: .bold, size: 14, style: .body),
+            .foregroundColor: UIColor.white
         ], for: .selected)
 
         // IQKeyboardManager
