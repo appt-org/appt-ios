@@ -26,6 +26,8 @@
                                 <rect key="frame" x="37.5" y="24" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Ib-16-MWf" secondAttribute="height" multiplier="1:1" id="epj-Uf-GLt"/>
+                                    <constraint firstAttribute="height" constant="80" id="kHy-Dx-ZKp"/>
+                                    <constraint firstAttribute="width" constant="80" id="kPH-G2-8rT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4j-GA-6Fz">
