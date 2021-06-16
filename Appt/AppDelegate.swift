@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.sourceSansPro(weight: .semibold, size: 14, style: .title1)
+                .font: UIFont.sourceSansPro(weight: .semibold, size: 14, style: .title1, scaled: false)
             ], for: state)
         }
         
