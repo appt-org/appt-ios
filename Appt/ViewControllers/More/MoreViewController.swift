@@ -18,8 +18,8 @@ class MoreViewController: TableViewController {
 //            ],
             "about_title".localized.uppercased(): [
                 .source,
-                .sidnfonds,
-                .contact
+                .contact,
+                .sidnfonds
             ],
             "legal_title".localized.uppercased(): [
                 .terms,

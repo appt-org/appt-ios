@@ -81,7 +81,7 @@
                 <navigationController id="aLi-jG-u1q" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trainingen" image="tab_training" id="Hxa-if-wVs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1EF-Ws-y0k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -286,7 +286,7 @@
                 <navigationController id="RNe-o6-JOa" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kennisbank" image="tab_knowledge" id="1uP-vB-cd7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Vs-9q-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -333,7 +333,7 @@
                 <navigationController id="6Zr-yC-6cu" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nieuws" image="tab_news" id="ZsM-Qc-Ia8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vWD-Rf-Q5r">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -354,11 +354,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yQ7-KK-qa2">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="Z6y-wz-2SK"/>
                             <constraint firstAttribute="trailing" secondItem="yQ7-KK-qa2" secondAttribute="trailing" id="hHA-zZ-EAA"/>
@@ -390,7 +389,7 @@
                 <navigationController id="DOL-iq-6Tt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diensten" image="tab_services" id="SqD-kj-diG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fq3-hC-ueR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -530,7 +529,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="Background"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="rF0-FE-WsH" secondAttribute="trailing" constant="16" id="4C9-NR-lZ4"/>
                                                 <constraint firstItem="L63-iL-s4h" firstAttribute="top" secondItem="gka-n2-rQY" secondAttribute="top" constant="24" id="4Ll-0U-pR7"/>
@@ -649,7 +647,6 @@
                                         </label>
                                     </subviews>
                                     <viewLayoutGuide key="safeArea" id="deA-kE-y2x"/>
-                                    <color key="backgroundColor" name="Background"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="b19-cf-gUE" secondAttribute="trailing" constant="16" id="5Mu-Mf-SWw"/>
                                         <constraint firstAttribute="bottom" secondItem="b19-cf-gUE" secondAttribute="bottom" constant="24" id="9fW-HG-wAT"/>
