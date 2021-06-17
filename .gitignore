@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 Appt/GoogleService-Info.plist
+Appt/Credential.plist

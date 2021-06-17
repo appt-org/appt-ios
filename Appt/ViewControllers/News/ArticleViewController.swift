@@ -49,7 +49,7 @@ class ArticleViewController: WebViewController {
                     self.showError(error) {
                         self.navigationController?.popViewController(animated: true)
                     }
-                } else{
+                } else {
                     self.showError("error_network".localized) {
                         self.navigationController?.popViewController(animated: true)
                     }

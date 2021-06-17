@@ -7,7 +7,7 @@
 	<key>BASE_CONTENT_PATH</key>
 	<string>wp-content/themes/appt/</string>
 	<key>BASE_URL</key>
-	<string>https://appt.crio-server.com/</string>
+	<string>https://appt.nl/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

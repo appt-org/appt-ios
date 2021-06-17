@@ -34,7 +34,7 @@ class API {
     ]
     
     private lazy var superUserHeaders: [String: String] = [
-        "Authorization": "Basic Ym9kaWExOTk0c2h2QGdtYWlsLmNvbTprYlNrSkdeeUlFTURTUUUmNygyS152MVQ="
+        "Authorization": "Basic \(Config.authorizationKey)"
     ]
     
     private init() {

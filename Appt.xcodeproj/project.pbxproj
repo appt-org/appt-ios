@@ -36,6 +36,7 @@
 		2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */; };
 		238BF9D1264C026E00F0CB0D /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */; };
 		239BF6FE264C2E490068EC13 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BF6FD264C2E490068EC13 /* Role.swift */; };
+		23AC122B267B515A006FFA8F /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23AC122A267B515A006FFA8F /* Credentials.plist */; };
 		23C3D04E266FA2450044F56F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04D266FA2450044F56F /* TabBarController.swift */; };
 		23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04F266FA3070044F56F /* SegmentedControl.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
@@ -167,6 +168,7 @@
 		2362C2FF264AC3A300C4FEE7 /* EmailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEntryViewController.swift; sourceTree = "<group>"; };
 		238BF9D0264C026E00F0CB0D /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		239BF6FD264C2E490068EC13 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		23AC122A267B515A006FFA8F /* Credentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		23C3D04D266FA2450044F56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		23C3D04F266FA3070044F56F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				2877F6E5247D725C00605677 /* SourceSansPro-SemiBold.ttf */,
 				2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */,
 				2869ABFC24F7C503004962A7 /* style.css */,
+				23AC122A267B515A006FFA8F /* Credentials.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
+				23AC122B267B515A006FFA8F /* Credentials.plist in Resources */,
 				A83B07C326665BC100EDCBD8 /* EmailVerificationView.xib in Resources */,
 				234059A82636C4E500C06463 /* Authentication.storyboard in Resources */,
 			);
