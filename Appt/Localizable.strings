@@ -251,8 +251,8 @@
 
 /* HomeViewController */
 "home_vc_title" = "Home";
-"user_header_title" = "Wij helpen je hoe je apps kunt gebruiken als je een beperking hebt";
-"professional_header_title" = "Wij helpen je hoe je apps kunt verbeteren";
+"user_header_title" = "We helpen gebruikers met een beperking bij het gebruiken van apps.";
+"professional_header_title" = "We helpen professionals bij het toegankelijker maken van hun apps.";
 "training_home_title" = "Training";
 "meldpunt_home_title" = "Meldpunt";
 "community_home_title" = "Community";
