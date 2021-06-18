@@ -182,7 +182,7 @@ extension SubjectsViewController: UICollectionViewDelegate {
 
         let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
 
-        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
 
         let totalSpace = alignedFlowLayout.sectionInset.left
             + alignedFlowLayout.sectionInset.right

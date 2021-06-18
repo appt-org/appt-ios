@@ -111,7 +111,7 @@ final class HomeViewController: ViewController {
         alignedFlowLayout.verticalAlignment = .top
         alignedFlowLayout.horizontalAlignment = .left
 
-        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
 
         let totalSpace = alignedFlowLayout.sectionInset.left
             + alignedFlowLayout.sectionInset.right
@@ -220,7 +220,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
         let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
 
-        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
 
         let totalSpace = alignedFlowLayout.sectionInset.left
             + alignedFlowLayout.sectionInset.right
