@@ -11,6 +11,7 @@ import Foundation
 class UserDefaultsStorage {
     enum Keys: String {
         case user
+        case segmentIndex
     }
     
     static let shared = UserDefaultsStorage()
@@ -31,6 +32,14 @@ class UserDefaultsStorage {
             } catch {
                 throw error
             }
+        }
+    }
+
+    var selectedIndex: Int {
+        get {
+            return defaults.object(forKey: Keys.segmentIndex.rawValue) as? Int ?? 0
+        } set {
+            defaults.set(newValue, forKey: Keys.segmentIndex.rawValue)
         }
     }
     

@@ -499,10 +499,10 @@
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     </view>
-                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
+                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
                                         <rect key="frame" x="0.0" y="80" width="320" height="307"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
                                             <size key="itemSize" width="155" height="155"/>
                                             <size key="headerReferenceSize" width="50" height="134"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -550,10 +550,10 @@
                         <viewLayoutGuide key="safeArea" id="z3d-OJ-pDs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="trailing" secondItem="z3d-OJ-pDs" secondAttribute="trailing" id="BKv-h7-T88"/>
+                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="trailing" secondItem="IVT-GH-CpO" secondAttribute="trailing" id="BKv-h7-T88"/>
                             <constraint firstItem="dZa-Lc-ArS" firstAttribute="bottom" secondItem="z3d-OJ-pDs" secondAttribute="bottom" id="Ivv-Ig-B7h"/>
                             <constraint firstItem="dZa-Lc-ArS" firstAttribute="top" secondItem="z3d-OJ-pDs" secondAttribute="top" id="Uek-nd-4Zx"/>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="leading" secondItem="z3d-OJ-pDs" secondAttribute="leading" id="eFl-pk-0Wg"/>
+                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="leading" secondItem="IVT-GH-CpO" secondAttribute="leading" id="eFl-pk-0Wg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
@@ -619,7 +619,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-FS-EoU">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-FS-EoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
@@ -667,9 +667,9 @@
                         <viewLayoutGuide key="safeArea" id="X8b-gW-Cci"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="X8b-gW-Cci" firstAttribute="trailing" secondItem="4Wc-FS-EoU" secondAttribute="trailing" id="OVr-Qg-M2E"/>
+                            <constraint firstAttribute="trailing" secondItem="4Wc-FS-EoU" secondAttribute="trailing" id="OVr-Qg-M2E"/>
                             <constraint firstItem="X8b-gW-Cci" firstAttribute="bottom" secondItem="4Wc-FS-EoU" secondAttribute="bottom" id="lOB-Wa-9te"/>
-                            <constraint firstItem="4Wc-FS-EoU" firstAttribute="leading" secondItem="X8b-gW-Cci" secondAttribute="leading" id="mPL-MA-Dz6"/>
+                            <constraint firstItem="4Wc-FS-EoU" firstAttribute="leading" secondItem="3Pv-pa-iLz" secondAttribute="leading" id="mPL-MA-Dz6"/>
                             <constraint firstItem="4Wc-FS-EoU" firstAttribute="top" secondItem="X8b-gW-Cci" secondAttribute="top" id="qpA-ol-Lqk"/>
                         </constraints>
                     </view>
@@ -716,7 +716,7 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vXg-bL-1pN" firstAttribute="bottom" secondItem="6Cl-lT-gYq" secondAttribute="bottom" id="Cia-Ku-zDx"/>
-                            <constraint firstAttribute="trailing" secondItem="6Cl-lT-gYq" secondAttribute="trailing" id="IGG-PZ-GJK"/>
+                            <constraint firstItem="vXg-bL-1pN" firstAttribute="trailing" secondItem="6Cl-lT-gYq" secondAttribute="trailing" id="IGG-PZ-GJK"/>
                             <constraint firstItem="6Cl-lT-gYq" firstAttribute="top" secondItem="vXg-bL-1pN" secondAttribute="top" id="fOu-xm-cim"/>
                             <constraint firstItem="6Cl-lT-gYq" firstAttribute="leading" secondItem="vXg-bL-1pN" secondAttribute="leading" id="nMf-7N-enP"/>
                         </constraints>

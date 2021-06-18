@@ -57,7 +57,6 @@ final class HomeViewController: ViewController {
 
         hideVerificationView()
 
-
 //        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
 //
 //        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
@@ -65,6 +64,7 @@ final class HomeViewController: ViewController {
         Role.UserType.allCases.forEach({
             self.userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
         })
+        self.userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
 //
 //        if user.isVerified {
 //            hideVerificationView()
@@ -102,7 +102,6 @@ final class HomeViewController: ViewController {
 
         configureAlignedCollectionViewFlowLayout()
 
-
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
@@ -124,6 +123,7 @@ final class HomeViewController: ViewController {
             width: size,
             height: 200
         )
+        // This is estimated height. It will be calculated automatically
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -136,6 +136,8 @@ final class HomeViewController: ViewController {
         guard let roleSelected = Role.UserType(rawValue: sender.selectedSegmentIndex) else {
             fatalError("Unable to determine UserType")
         }
+
+        UserDefaultsStorage.shared.selectedIndex = sender.selectedSegmentIndex
 
         self.navigationItem.title = roleSelected.segmentedControlTitle
 
@@ -216,6 +218,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let alignedFlowLayout = collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return .zero }
 
+        let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
 
         let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
 
@@ -223,12 +226,13 @@ extension HomeViewController: UICollectionViewDataSource {
             + alignedFlowLayout.sectionInset.right
             + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
 
-        let size = Int((collectionView.bounds.width - totalSpace) / noOfCellsInRow)
+        let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
 
-       return CGSize(
+        return CGSize(
             width: size,
-            height: 200
+            height: 155
         )
+        // This is estimated height. It will be calculated automatically
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -259,10 +263,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {

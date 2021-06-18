@@ -23,7 +23,7 @@ class SubjectsViewController: ViewController {
             }
         }
     }
-    
+
     @IBOutlet private var container: UIView!
     
     var viewControllerType: ViewControllerType = .knowledgeBase
@@ -32,7 +32,7 @@ class SubjectsViewController: ViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if subject == nil {
             loadSubject()
         } else {
@@ -61,7 +61,7 @@ class SubjectsViewController: ViewController {
     }
     
     private func embedViewController() {
-        guard let subject = self.subject else { return }
+        guard let subject = subject else { return }
         
         title = subject.title
         
@@ -176,6 +176,26 @@ extension SubjectsViewController: UICollectionViewDelegate {
         
         return subject.children.count
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let alignedFlowLayout = collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return .zero }
+
+        let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
+
+        let noOfCellsInRow: CGFloat = UIDevice.current.orientation.isLandscape ? 3 : 2
+
+        let totalSpace = alignedFlowLayout.sectionInset.left
+            + alignedFlowLayout.sectionInset.right
+            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+
+        let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
+
+        return CGSize(
+            width: size,
+            height: 155
+        )
+        // This is estimated height. It will be calculated automatically
+    }
 }
 
 extension SubjectsViewController: UICollectionViewDataSource {
@@ -231,7 +251,7 @@ extension SubjectsViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 
-        let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
+        let headerView = collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) ?? self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
 
         // Use this view to calculate the optimal size based on the collection view's width
         return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
