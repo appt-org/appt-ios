@@ -36,8 +36,17 @@ class SubjectBlocksViewController: ViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        configureAlignedCollectionViewFlowLayout()
         collectionView.collectionViewLayout.invalidateLayout()
-        (collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout)?.estimatedItemSize = .zero
+    }
+
+    private func configureAlignedCollectionViewFlowLayout() {
+        guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
+
+        alignedFlowLayout.verticalAlignment = .top
+        alignedFlowLayout.horizontalAlignment = .left
+
+        alignedFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

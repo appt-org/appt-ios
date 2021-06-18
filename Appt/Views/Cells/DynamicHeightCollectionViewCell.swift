@@ -14,9 +14,7 @@ class DynamicHeightCollectionViewCell: UICollectionViewCell {
         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
         verticalFittingPriority: UILayoutPriority) -> CGSize {
 
-        var targetSize = targetSize
-        targetSize.height = CGFloat.greatestFiniteMagnitude
-
+        let targetSize = targetSize
         let size = super.systemLayoutSizeFitting(
             targetSize,
             withHorizontalFittingPriority: .required,

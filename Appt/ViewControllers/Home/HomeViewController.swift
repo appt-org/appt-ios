@@ -64,6 +64,7 @@ final class HomeViewController: ViewController {
         Role.UserType.allCases.forEach({
             self.userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
         })
+
         self.userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
 //
 //        if user.isVerified {
@@ -100,9 +101,8 @@ final class HomeViewController: ViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        configureAlignedCollectionViewFlowLayout()
-
         collectionView.collectionViewLayout.invalidateLayout()
+        configureAlignedCollectionViewFlowLayout()
     }
 
     private func configureAlignedCollectionViewFlowLayout() {
@@ -111,19 +111,7 @@ final class HomeViewController: ViewController {
         alignedFlowLayout.verticalAlignment = .top
         alignedFlowLayout.horizontalAlignment = .left
 
-        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
-
-        let totalSpace = alignedFlowLayout.sectionInset.left
-            + alignedFlowLayout.sectionInset.right
-            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
-
-        let size = Int((collectionView.bounds.width - totalSpace) / noOfCellsInRow)
-
-        alignedFlowLayout.estimatedItemSize = CGSize(
-            width: size,
-            height: 200
-        )
-        // This is estimated height. It will be calculated automatically
+        alignedFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
