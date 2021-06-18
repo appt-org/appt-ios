@@ -622,8 +622,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-FS-EoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
                                     <size key="itemSize" width="155" height="155"/>
+                                    <size key="estimatedItemSize" width="155" height="155"/>
                                     <size key="headerReferenceSize" width="50" height="134"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="23" minY="16" maxX="23" maxY="16"/>

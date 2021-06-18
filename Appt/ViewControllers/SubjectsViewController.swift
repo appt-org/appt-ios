@@ -232,18 +232,14 @@ extension SubjectsViewController: UICollectionViewDelegateFlowLayout {
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
         switch kind {
-
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {
                 fatalError()
             }
-
             guard let subject = self.subject else { return UICollectionReusableView() }
 
             headerView.setup(subject)
-
             return headerView
-
         default:
             fatalError("Unexpected element kind")
         }
