@@ -129,9 +129,8 @@ final class HomeViewController: ViewController {
 
         self.navigationItem.title = roleSelected.segmentedControlTitle
 
-        let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
-        let indexSet = IndexSet(integersIn: range)
-        collectionView.reloadSections(indexSet)
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData()
     }
     
 //    private func getUser() {
