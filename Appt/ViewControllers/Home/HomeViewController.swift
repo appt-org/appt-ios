@@ -14,6 +14,11 @@ final class HomeViewController: ViewController {
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var emailVerificationView: EmailVerificationView!
 
+    // Fix to avoid header view text to create new instances that cause text overlapping
+    private lazy var headerView: UICollectionReusableView = {
+        collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
+    }()
+
     var emailConfirmationObserver: NSObjectProtocol?
     
     private var dataSource: [HomeItem] {
@@ -279,10 +284,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
-
-        return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
+        
+        return self.headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                   withHorizontalFittingPriority: .required,
                                                   verticalFittingPriority: .fittingSizeLevel)
     }
