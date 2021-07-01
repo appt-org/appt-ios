@@ -460,5 +460,4 @@ fileprivate extension UICollectionViewLayoutAttributes {
         let alignmentAxis = collectionViewLayout.verticalAlignmentAxis(for: self)
         align(toAlignmentAxis: alignmentAxis)
     }
-
 }

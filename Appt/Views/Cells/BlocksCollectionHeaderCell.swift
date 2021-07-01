@@ -1,14 +1,14 @@
 //
-//  BlocksCollectionSectionHeaderView.swift
+//  BlocksCollectionHeaderCell.swift
 //  Appt
 //
-//  Created by Yurii Kozlov on 5/14/21.
+//  Created by Yurii Kozlov on 6/29/21.
 //  Copyright © 2021 Stichting Appt. All rights reserved.
 //
 
 import UIKit
 
-class BlocksCollectionSectionHeaderView: UICollectionReusableView {
+final class BlocksCollectionHeaderCell: DynamicHeightCollectionViewCell {
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
 
@@ -23,10 +23,11 @@ class BlocksCollectionSectionHeaderView: UICollectionReusableView {
     func setup(_ subject: Subject) {
         self.accessibilityLabel = subject.description
 
+        self.imgView.isHidden = true
         self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = subject.description
     }
-    
+
     func setup(withTitle title: String, image: UIImage) {
         self.accessibilityLabel = title
 
@@ -38,4 +39,5 @@ class BlocksCollectionSectionHeaderView: UICollectionReusableView {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
     }
+
 }

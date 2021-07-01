@@ -15,9 +15,9 @@ final class HomeViewController: ViewController {
     @IBOutlet private var emailVerificationView: EmailVerificationView!
 
     // Fix to avoid header view text to create new instances that cause text overlapping
-    private lazy var headerView: UICollectionReusableView = {
-        collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
-    }()
+//    private lazy var headerView: UICollectionReusableView = {
+//        collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
+//    }()
 
     var emailConfirmationObserver: NSObjectProtocol?
     
@@ -53,6 +53,7 @@ final class HomeViewController: ViewController {
 
         userProfSegmentedControl.isHidden = navigationController?.viewControllers.count ?? 0 > 1
         collectionView.registerNib(CategoryCollectionViewCell.self)
+        collectionView.registerNib(BlocksCollectionHeaderCell.self)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -71,6 +72,12 @@ final class HomeViewController: ViewController {
         })
 
         self.userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
+
+        if #available(iOS 11.0, *) {
+            collectionView.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
 //
 //        if user.isVerified {
 //            hideVerificationView()
@@ -185,38 +192,79 @@ final class HomeViewController: ViewController {
 //    }
 }
 
+enum BlocksSections: Int, CaseIterable {
+    case headerCell = 0
+    case blocks
+}
+
 extension HomeViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        BlocksSections.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
+        guard let blocksSection = BlocksSections(rawValue: section) else { return .zero }
+        switch blocksSection {
+        case .blocks:
+            return dataSource.count
+        case .headerCell:
+            return 1
+        }
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
-            fatalError("unable to dequeue CategoryCollectionViewCell")
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section) else {
+            fatalError("Could not figure out what the section is")
         }
 
-        let item = dataSource[indexPath.item]
-        cell.setup(withTitle: item.title, image: item.image)
-        
-        return cell
+        switch blocksSection {
+        case .blocks:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
+                fatalError("unable to dequeue CategoryCollectionViewCell")
+            }
+
+            let item = dataSource[indexPath.item]
+            cell.setup(withTitle: item.title, image: item.image)
+
+            return cell
+        case .headerCell:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BlocksCollectionHeaderCell.identifier, for: indexPath) as? BlocksCollectionHeaderCell else {
+                fatalError("unable to dequeue CategoryCollectionViewCell")
+            }
+
+            guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
+                fatalError("Unable to determine UserType")
+            }
+
+            var title = ""
+            switch userType {
+            case .user:
+                title = "user_header_title".localized
+            case .professional:
+                title = "professional_header_title".localized
+            }
+
+            cell.setup(withTitle: title, image: .apptLogo)
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let alignedFlowLayout = collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return .zero }
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section) else {
+            fatalError("Could not figure out what the section is")
+        }
+
+        guard let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
 
         let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
 
-        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
+        let noOfCellsInRow: CGFloat = blocksSection == .blocks ? (UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2) : 1
 
-        let totalSpace = alignedFlowLayout.sectionInset.left
-            + alignedFlowLayout.sectionInset.right
-            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+        let totalSpace = collectionViewLayout.sectionInset.left
+            + collectionViewLayout.sectionInset.right
+            + (collectionViewLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
 
         let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
 
@@ -224,14 +272,16 @@ extension HomeViewController: UICollectionViewDataSource {
             width: size,
             height: 155
         )
-        // This is estimated height. It will be calculated automatically
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section), blocksSection == .blocks else {
+            return
+        }
+
         let item = dataSource[indexPath.item]
 
         switch item {
-        
         case .training:
             let viewController = UIStoryboard.training()
             navigationController?.pushViewController(viewController, animated: true)
@@ -251,43 +301,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
     private func hideVerificationView() {
         emailVerificationView.isHidden = true
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {
-                fatalError()
-            }
-
-            guard let userType = Role.UserType(rawValue: userProfSegmentedControl.selectedSegmentIndex) else {
-                fatalError("Unable to determine UserType")
-            }
-
-            var title = ""
-            switch userType {
-            case .user:
-                title = "user_header_title".localized
-            case .professional:
-                title = "professional_header_title".localized
-            }
-
-            headerView.setup(withTitle: title, image: .apptLogo)
-
-            return headerView
-
-        default:
-            fatalError("Unexpected element kind")
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        return self.headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-                                                  withHorizontalFittingPriority: .required,
-                                                  verticalFittingPriority: .fittingSizeLevel)
     }
 }
 

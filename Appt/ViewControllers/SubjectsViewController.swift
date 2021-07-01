@@ -168,25 +168,38 @@ extension SubjectsViewController: UITableViewDataSource {
 
 extension SubjectsViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        BlocksSections.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let blocksSection = BlocksSections(rawValue: section) else {
+            fatalError("Could not figure out what the section is")
+        }
+
         guard let subject = self.subject else { return 0 }
-        
-        return subject.children.count
+
+        switch blocksSection {
+        case .blocks:
+            return subject.children.count
+        case .headerCell:
+            return 1
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let alignedFlowLayout = collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return .zero }
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section) else {
+            fatalError("Could not figure out what the section is")
+        }
+
+        guard let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
 
         let availableWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
 
-        let noOfCellsInRow: CGFloat = UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2
+        let noOfCellsInRow: CGFloat = blocksSection == .blocks ? (UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2) : 1
 
-        let totalSpace = alignedFlowLayout.sectionInset.left
-            + alignedFlowLayout.sectionInset.right
-            + (alignedFlowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
+        let totalSpace = collectionViewLayout.sectionInset.left
+            + collectionViewLayout.sectionInset.right
+            + (collectionViewLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
 
         let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
 
@@ -194,24 +207,41 @@ extension SubjectsViewController: UICollectionViewDelegate {
             width: size,
             height: 155
         )
-        // This is estimated height. It will be calculated automatically
     }
 }
 
-extension SubjectsViewController: UICollectionViewDataSource {
+extension SubjectsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
-            fatalError("unable to dequeue CategoryCollectionViewCell")
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section) else {
+            fatalError("Could not figure out what the section is")
         }
-        
-        guard let subject = self.subject else { return UICollectionViewCell() }
 
-        let model = subject.children[indexPath.item]
-        cell.setup(model)
-        return cell
+        switch blocksSection {
+        case .blocks:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
+                fatalError("unable to dequeue CategoryCollectionViewCell")
+            }
+            guard let subject = self.subject else { return UICollectionViewCell() }
+
+            let model = subject.children[indexPath.item]
+            cell.setup(model)
+            return cell
+        case .headerCell:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BlocksCollectionHeaderCell.identifier, for: indexPath) as? BlocksCollectionHeaderCell else {
+                fatalError("unable to dequeue BlocksCollectionHeaderCell")
+            }
+            guard let subject = self.subject else { return UICollectionViewCell() }
+
+            cell.setup(subject)
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let blocksSection = BlocksSections(rawValue: indexPath.section), blocksSection == .blocks else {
+            return
+        }
+
         guard let subject = self.subject else { return }
         
         let model = subject.children[indexPath.item]
@@ -223,35 +253,5 @@ extension SubjectsViewController: UICollectionViewDataSource {
         } else {
             pushNextSubject(model)
         }
-    }
-}
-
-extension SubjectsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BlocksCollectionSectionHeaderView", for: indexPath) as? BlocksCollectionSectionHeaderView else {
-                fatalError()
-            }
-            guard let subject = self.subject else { return UICollectionReusableView() }
-
-            headerView.setup(subject)
-            return headerView
-        default:
-            fatalError("Unexpected element kind")
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        let headerView = collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) ?? self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0))
-
-        // Use this view to calculate the optimal size based on the collection view's width
-        return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-                                                  withHorizontalFittingPriority: .required, // Width is fixed
-                                                  verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
     }
 }

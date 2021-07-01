@@ -15,6 +15,7 @@ class SubjectBlocksViewController: ViewController {
         super.viewDidLoad()
 
         collectionView.registerNib(CategoryCollectionViewCell.self)
+        collectionView.registerNib(BlocksCollectionHeaderCell.self)
         collectionView.delaysContentTouches = false
     }
 

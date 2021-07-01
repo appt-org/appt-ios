@@ -18,7 +18,6 @@
 		232D74ED264E779400937E0D /* ImageTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */; };
 		232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */; };
 		232D74F1264E8ED500937E0D /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74F0264E8ED500937E0D /* ViewEmbedder.swift */; };
-		232D74F4264E979800937E0D /* BlocksCollectionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74F2264E979700937E0D /* BlocksCollectionSectionHeaderView.swift */; };
 		2338B342264D49C100D47FC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B341264D49C100D47FC7 /* HomeViewController.swift */; };
 		2338B344264D50BF00D47FC7 /* SubjectBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B343264D50BF00D47FC7 /* SubjectBlocksViewController.swift */; };
 		2338B349264D569C00D47FC7 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B347264D569C00D47FC7 /* CategoryCollectionViewCell.swift */; };
@@ -40,6 +39,8 @@
 		23C3D04E266FA2450044F56F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04D266FA2450044F56F /* TabBarController.swift */; };
 		23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04F266FA3070044F56F /* SegmentedControl.swift */; };
 		23CCFA05263813F000F9F4A9 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */; };
+		23FAE784268B5F1700A87328 /* BlocksCollectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FAE782268B5F1700A87328 /* BlocksCollectionHeaderCell.swift */; };
+		23FAE785268B5F1700A87328 /* BlocksCollectionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23FAE783268B5F1700A87328 /* BlocksCollectionHeaderCell.xib */; };
 		23FD95F626394CBB0029F77B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD95F526394CBB0029F77B /* RegistrationViewController.swift */; };
 		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
 		2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */; };
@@ -150,7 +151,6 @@
 		232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleTableViewCell.swift; sourceTree = "<group>"; };
 		232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTitleTableViewCell.xib; sourceTree = "<group>"; };
 		232D74F0264E8ED500937E0D /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
-		232D74F2264E979700937E0D /* BlocksCollectionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksCollectionSectionHeaderView.swift; sourceTree = "<group>"; };
 		2338B341264D49C100D47FC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2338B343264D50BF00D47FC7 /* SubjectBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectBlocksViewController.swift; sourceTree = "<group>"; };
 		2338B347264D569C00D47FC7 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +172,8 @@
 		23C3D04D266FA2450044F56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		23C3D04F266FA3070044F56F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		23CCFA04263813F000F9F4A9 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
+		23FAE782268B5F1700A87328 /* BlocksCollectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksCollectionHeaderCell.swift; sourceTree = "<group>"; };
+		23FAE783268B5F1700A87328 /* BlocksCollectionHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlocksCollectionHeaderCell.xib; sourceTree = "<group>"; };
 		23FD95F526394CBB0029F77B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
 		2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverSelectionView.xib; sourceTree = "<group>"; };
@@ -435,7 +437,8 @@
 				232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */,
 				2338B347264D569C00D47FC7 /* CategoryCollectionViewCell.swift */,
 				2338B348264D569C00D47FC7 /* CategoryCollectionViewCell.xib */,
-				232D74F2264E979700937E0D /* BlocksCollectionSectionHeaderView.swift */,
+				23FAE782268B5F1700A87328 /* BlocksCollectionHeaderCell.swift */,
+				23FAE783268B5F1700A87328 /* BlocksCollectionHeaderCell.xib */,
 				A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */,
 				A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */,
 			);
@@ -718,6 +721,7 @@
 				2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */,
 				287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */,
 				232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */,
+				23FAE785268B5F1700A87328 /* BlocksCollectionHeaderCell.xib in Resources */,
 				2869ABFD24F7C503004962A7 /* style.css in Resources */,
 				2338B34A264D569C00D47FC7 /* CategoryCollectionViewCell.xib in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
@@ -837,7 +841,6 @@
 				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				A83B07C126665BB500EDCBD8 /* EmailVerificationView.swift in Sources */,
-				232D74F4264E979800937E0D /* BlocksCollectionSectionHeaderView.swift in Sources */,
 				28FBED96251F6094009CA3FA /* Topic.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */,
 				2362C2FE264AAFE800C4FEE7 /* LoginViewController.swift in Sources */,
@@ -870,6 +873,7 @@
 				28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
 				2835A05E2524B47D0011C788 /* Direction.swift in Sources */,
+				23FAE784268B5F1700A87328 /* BlocksCollectionHeaderCell.swift in Sources */,
 				233FB2342639782E0031E58C /* _UITextField.swift in Sources */,
 				2362C300264AC3A300C4FEE7 /* EmailEntryViewController.swift in Sources */,
 				287FFBBB25092B1D0022CD5F /* VoiceOverPasteView.swift in Sources */,
@@ -1066,7 +1070,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
+				DEVELOPMENT_TEAM = R6B6NE8GNK;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1074,7 +1078,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.5pro.enterprise.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1093,7 +1097,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
+				DEVELOPMENT_TEAM = R6B6NE8GNK;
 				INFOPLIST_FILE = Appt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1101,7 +1105,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.5pro.enterprise.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
