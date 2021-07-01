@@ -68,16 +68,10 @@ final class HomeViewController: ViewController {
 //        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
 //
         Role.UserType.allCases.forEach({
-            self.userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
+            userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
         })
 
-        self.userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
-
-        if #available(iOS 11.0, *) {
-            collectionView.contentInsetAdjustmentBehavior = .never
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = false
-        }
+        userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
 //
 //        if user.isVerified {
 //            hideVerificationView()

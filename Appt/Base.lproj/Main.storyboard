@@ -507,7 +507,7 @@
                                             <size key="estimatedItemSize" width="155" height="155"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="23" minY="16" maxX="23" maxY="16"/>
+                                            <inset key="sectionInset" minX="23" minY="0.0" maxX="23" maxY="16"/>
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
@@ -594,7 +594,7 @@
                                     <size key="estimatedItemSize" width="155" height="155"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="23" minY="16" maxX="23" maxY="16"/>
+                                    <inset key="sectionInset" minX="23" minY="0.0" maxX="23" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
