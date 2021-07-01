@@ -389,7 +389,7 @@
                 <navigationController id="DOL-iq-6Tt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diensten" image="tab_services" id="SqD-kj-diG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fq3-hC-ueR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -504,10 +504,9 @@
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
                                             <size key="itemSize" width="155" height="155"/>
-                                            <size key="estimatedItemSize" width="155" height="155"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="23" minY="0.0" maxX="23" maxY="16"/>
+                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="16"/>
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>

@@ -9,6 +9,20 @@
 import UIKit
 import NotificationCenter
 
+enum BlocksSections: Int, CaseIterable {
+    case headerCell = 0
+    case blocks
+
+    var sectionInset: UIEdgeInsets {
+        switch self {
+        case .blocks:
+            return UIEdgeInsets(top: 0, left: 23, bottom: 16, right: 23)
+        case .headerCell:
+            return UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
+        }
+    }
+}
+
 final class HomeViewController: ViewController {
     @IBOutlet private var userProfSegmentedControl: UISegmentedControl!
     @IBOutlet private var collectionView: UICollectionView!
@@ -115,7 +129,7 @@ final class HomeViewController: ViewController {
         guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
 
         alignedFlowLayout.verticalAlignment = .top
-        alignedFlowLayout.horizontalAlignment = .left
+        alignedFlowLayout.horizontalAlignment = .justified
 
         alignedFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
@@ -186,11 +200,6 @@ final class HomeViewController: ViewController {
 //    }
 }
 
-enum BlocksSections: Int, CaseIterable {
-    case headerCell = 0
-    case blocks
-}
-
 extension HomeViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         BlocksSections.allCases.count
@@ -256,8 +265,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         let noOfCellsInRow: CGFloat = blocksSection == .blocks ? (UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2) : 1
 
-        let totalSpace = collectionViewLayout.sectionInset.left
-            + collectionViewLayout.sectionInset.right
+        let totalSpace = blocksSection.sectionInset.left
+            +  blocksSection.sectionInset.right
             + (collectionViewLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
 
         let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
@@ -266,6 +275,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             width: size,
             height: 155
         )
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard let blocksSection = BlocksSections(rawValue: section) else {
+            fatalError("Could not figure out what the section is")
+        }
+
+        return blocksSection.sectionInset
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

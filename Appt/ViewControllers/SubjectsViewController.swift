@@ -197,8 +197,8 @@ extension SubjectsViewController: UICollectionViewDelegate {
 
         let noOfCellsInRow: CGFloat = blocksSection == .blocks ? (UIApplication.shared.statusBarOrientation.isLandscape ? 3 : 2) : 1
 
-        let totalSpace = collectionViewLayout.sectionInset.left
-            + collectionViewLayout.sectionInset.right
+        let totalSpace = blocksSection.sectionInset.left
+            +  blocksSection.sectionInset.right
             + (collectionViewLayout.minimumInteritemSpacing * (noOfCellsInRow - 1))
 
         let size = Int((availableWidth - totalSpace) / noOfCellsInRow)
@@ -253,5 +253,13 @@ extension SubjectsViewController: UICollectionViewDataSource, UICollectionViewDe
         } else {
             pushNextSubject(model)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard let blocksSection = BlocksSections(rawValue: section) else {
+            fatalError("Could not figure out what the section is")
+        }
+
+        return blocksSection.sectionInset
     }
 }

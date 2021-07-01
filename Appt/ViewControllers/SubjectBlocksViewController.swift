@@ -45,7 +45,7 @@ class SubjectBlocksViewController: ViewController {
         guard let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout else { return }
 
         alignedFlowLayout.verticalAlignment = .top
-        alignedFlowLayout.horizontalAlignment = .left
+        alignedFlowLayout.horizontalAlignment = .justified
 
         alignedFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
