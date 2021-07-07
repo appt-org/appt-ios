@@ -8,6 +8,7 @@
 	<string>wp-content/themes/appt/</string>
 	<key>BASE_URL</key>
 	<string>https://appt.nl/</string>
+    <key>ITSAppUsesNonExemptEncryption</key><false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
