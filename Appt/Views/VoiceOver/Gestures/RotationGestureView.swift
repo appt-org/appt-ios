@@ -19,6 +19,7 @@ class RotationGestureView: GestureView {
         self.rotation = rotation
 
         let recognizer = UIRotationGestureRecognizer(target: self, action: #selector(onRotate(_:)))
+        recognizer.cancelsTouchesInView = false
         addGestureRecognizer(recognizer)
     }
     

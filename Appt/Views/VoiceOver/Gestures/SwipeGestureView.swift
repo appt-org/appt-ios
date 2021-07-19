@@ -23,6 +23,7 @@ class SwipeGestureView: GestureView {
         for direction in directions {
             for fingersRequired in 1...3 {
                 let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(onSwipe(_:)))
+                recognizer.cancelsTouchesInView = false
                 recognizer.direction = direction
                 recognizer.numberOfTouchesRequired = fingersRequired
                 recognizer.delegate = self

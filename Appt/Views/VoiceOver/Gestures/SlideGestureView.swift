@@ -11,7 +11,7 @@ import AVFoundation
 
 class SlideGestureView: LongPressGestureView {
 
-    private var THRESHOLD:CGFloat = 50
+    private var THRESHOLD:CGFloat = 25
     private var startLocation: CGPoint?
     
     convenience init(gesture: Gesture) {

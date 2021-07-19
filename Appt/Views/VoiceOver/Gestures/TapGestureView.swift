@@ -20,10 +20,17 @@ class TapGestureView: GestureView {
         self.fingers = fingers
         self.position = position
         
+//        let subview = UIView()
+//        subview.backgroundColor = .clear
+//        addSubview(subview)
+//        subview.constraintToSuperView()
+//        bringSubviewToFront(subview)
+        
         // Recognize multiple amount of fingers and multiple amount of taps for improved feedback
         for tapsRequired in 1...4 {
             for fingersRequired in 1...4 {
                 let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+                recognizer.cancelsTouchesInView = false
                 recognizer.numberOfTapsRequired = tapsRequired
                 recognizer.numberOfTouchesRequired = fingersRequired
                 recognizer.delegate = self
@@ -35,6 +42,14 @@ class TapGestureView: GestureView {
             UIAccessibility.registerGestureConflictWithZoom()
         }
     }
+//
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        let view = super.hitTest(point, with: event)
+//        if view == self {
+//            return nil
+//        }
+//        return view
+//    }
          
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         guard fingers == sender.numberOfTouchesRequired else {

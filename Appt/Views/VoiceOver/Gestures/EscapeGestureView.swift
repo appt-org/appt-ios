@@ -20,6 +20,7 @@ class EscapeGestureView: GestureView {
         self.fingers = fingers
         
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
+        recognizer.cancelsTouchesInView = false
         recognizer.minimumNumberOfTouches = fingers
         recognizer.maximumNumberOfTouches = fingers
         addGestureRecognizer(recognizer)
