@@ -71,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         
         // UISegmentedControl styles
         UISegmentedControl.appearance().backgroundColor = .background
+        UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
                 .font: UIFont.sourceSansPro(weight: .regular, size: 14, style: .body)
