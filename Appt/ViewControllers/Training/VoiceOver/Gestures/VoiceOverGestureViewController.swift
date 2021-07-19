@@ -12,10 +12,11 @@ import Accessibility
 
 class VoiceOverGestureViewController: ViewController {
     
-    @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var feedbackLabel: UILabel!
     @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var imageHeightConstraint: NSLayoutConstraint!
     
     var gesture: Gesture!
     var gestures: [Gesture]?
@@ -25,33 +26,46 @@ class VoiceOverGestureViewController: ViewController {
 
     private lazy var gestureView: GestureView = {
         let gestureView = gesture.view
-        gestureView.frame = view.frame
+        gestureView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gestureView)
+        
+        if let view = self.view {
+            NSLayoutConstraint(item: gestureView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint(item: gestureView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: gestureView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: gestureView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+        }
+        
         view.bringSubviewToFront(gestureView)
         return gestureView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = gesture.title
+        title = nil
         
-        descriptionLabel.font = .openSans(weight: .semibold, size: 20, style: .body)
+        titleLabel.accessibilityTraits = .header
+        titleLabel.font = .openSans(weight: .bold, size: 20, style: .body)
+        titleLabel.text = gesture.title
+        
+        descriptionLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         descriptionLabel.text = gesture.description
         
-        feedbackLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
+        feedbackLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         feedbackLabel.isHidden = true
         
-//        guard let image = gesture.image, let cgImage = image.cgImage else {
-//            fatalError("Missing image for gesture: \(gesture.id)")
-//        }
-//        imageView.image = UIImage(cgImage: cgImage, scale: image.size.width / imageView.frame.width, orientation: .up)
-//        imageView.contentMode = .scaleAspectFit
         imageView.image = gesture.image
+        imageHeightConstraint.constant = view.frame.height / 3
         view.sendSubviewToBack(imageView)
         
         gestureView.delegate = self
         view.accessibilityElements = [gestureView]
         Accessibility.layoutChanged(gestureView)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        imageHeightConstraint.constant = size.height / 3
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,7 +121,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         }
         
         Alert.toast("gesture_correct".localized, duration: 2.5, viewController: self) {
-            gestures.remove(at: 0)
+            gestures.removeFirst()
             viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[0], gestures: gestures)
             self.navigationController?.setViewControllers(viewControllers, animated: true)
         }
@@ -119,9 +133,12 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         // Announce & display feedback
         Accessibility.announce(feedback)
 
+        if feedbackLabel.isHidden {
+            feedbackLabel.text = nil
+            feedbackLabel.isHidden = false
+        }
         UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
-            self.feedbackLabel.isHidden = false
-            self.feedbackLabel.alpha = 0.1
+            self.feedbackLabel.alpha = 0
         }, completion: { _ in
             UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
                 self.feedbackLabel.text = feedback
@@ -133,14 +150,26 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
         if errorCount >= errorLimit {
             Alert.Builder()
                 .title("gesture_incorrect".localized(errorCount))
-                .action("stop".localized, style: .cancel) {
+                .action("stop".localized, style: .destructive) {
                     self.navigationController?.popViewController(animated: true)
+                }
+                .action("skip".localized) {
+                    guard var viewControllers = self.navigationController?.viewControllers,
+                          var gestures = self.gestures else {
+                        return
+                    }
+                    if gestures.count > 1 {
+                        gestures.removeFirst()
+                        viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[1], gestures: gestures)
+                        self.navigationController?.setViewControllers(viewControllers, animated: true)
+                    } else {
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
                 .action("continue".localized) {
                     self.errorLimit = self.errorLimit * 2
                     Accessibility.screenChanged(self.gestureView)
                 }.present(in: self)
-            
         }
     }
 }

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +21,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--VoiceOver gebaar-->
+        <!--Voice Over Gesture View Controller-->
         <scene sceneID="J8g-pz-9jk">
             <objects>
                 <viewController storyboardIdentifier="VoiceOverGestureViewController" hidesBottomBarWhenPushed="YES" id="PB1-eq-lMR" customClass="VoiceOverGestureViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,21 +29,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="top" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
-                                <rect key="frame" x="16" y="16" width="382" height="742"/>
+                            <stackView opaque="NO" contentMode="top" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
+                                <rect key="frame" x="16" y="99.5" width="382" height="609"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="742"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zba-ds-OpQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="23.5"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
-                                        <string key="text">Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Descript</string>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
                                         <color key="textColor" name="Foreground"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
+                                        <rect key="frame" x="0.0" y="39.5" width="382" height="116.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <string key="text">Description Description Description Description Description Description Description Description Description Description Description Description Description</string>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
+                                        <color key="textColor" name="Foreground"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="0.0" y="172" width="382" height="21"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -52,26 +60,32 @@
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gesture_escape" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-9f-Fdq">
+                                        <rect key="frame" x="0.0" y="209" width="382" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="i36-af-HGN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="alignBottom" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gwH-9f-Fdq" secondAttribute="trailing" id="PeU-rQ-I1I"/>
+                                    <constraint firstItem="gwH-9f-Fdq" firstAttribute="leading" secondItem="ZGs-5s-BAd" secondAttribute="leading" id="RPv-3A-xF3"/>
+                                </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gesture_escape" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-9f-Fdq">
-                                <rect key="frame" x="16" y="16" width="382" height="742"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="gwH-9f-Fdq" secondAttribute="trailing" constant="16" id="1NJ-vM-vCD"/>
-                            <constraint firstItem="4mA-DF-DD2" firstAttribute="bottom" secondItem="gwH-9f-Fdq" secondAttribute="bottom" constant="16" id="9FT-dK-F9F"/>
-                            <constraint firstItem="gwH-9f-Fdq" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="KSM-Aa-cq6"/>
-                            <constraint firstItem="gwH-9f-Fdq" firstAttribute="top" secondItem="4mA-DF-DD2" secondAttribute="top" constant="16" id="UTb-u7-Uwa"/>
-                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="top" secondItem="4mA-DF-DD2" secondAttribute="top" constant="16" id="UvG-fI-uen"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="S7O-hr-XLX"/>
                             <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="ZGs-5s-BAd" secondAttribute="trailing" constant="16" id="VPr-Vo-dQR"/>
-                            <constraint firstItem="4mA-DF-DD2" firstAttribute="bottom" secondItem="ZGs-5s-BAd" secondAttribute="bottom" constant="16" id="WZO-N3-5UC"/>
                             <constraint firstItem="ZGs-5s-BAd" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="aAx-zO-f9f"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="vT7-Gm-AtQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="VoiceOver gebaar" id="IwU-sV-rHn">
+                    <navigationItem key="navigationItem" id="IwU-sV-rHn">
                         <barButtonItem key="rightBarButtonItem" title="Uitleg" id="Knw-mt-D6g">
                             <connections>
                                 <action selector="onExplanationTapped:" destination="PB1-eq-lMR" id="5bF-1N-dBp"/>
@@ -81,8 +95,9 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="U2L-JA-94c" id="7vi-kK-dz1"/>
                         <outlet property="feedbackLabel" destination="Oz8-fT-zLt" id="Jit-Kh-1eZ"/>
+                        <outlet property="imageHeightConstraint" destination="i36-af-HGN" id="5cw-4Q-2zq"/>
                         <outlet property="imageView" destination="gwH-9f-Fdq" id="bSM-SI-4UD"/>
-                        <outlet property="stackView" destination="ZGs-5s-BAd" id="aeW-72-nUV"/>
+                        <outlet property="titleLabel" destination="zba-ds-OpQ" id="TCf-iV-Ago"/>
                         <segue destination="bcL-Kz-Vef" kind="unwind" identifier="gestureCompleted" unwindAction="gestureCompleted:" id="dEn-0e-Clx"/>
                     </connections>
                 </viewController>
@@ -250,6 +265,11 @@ Manier 3:
             <point key="canvasLocation" x="3291.304347826087" y="-855.13392857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="gwH-9f-Fdq">
+            <size key="intrinsicContentSize" width="154" height="154"/>
+        </designable>
+    </designables>
     <resources>
         <image name="gesture_escape" width="154" height="154"/>
         <namedColor name="Foreground">

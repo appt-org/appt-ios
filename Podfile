@@ -13,4 +13,5 @@ target 'Appt' do
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
   pod 'SDWebImageSVGKitPlugin'
+  pod 'UIImageViewAlignedSwift'
 end

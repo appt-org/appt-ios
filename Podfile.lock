@@ -113,6 +113,7 @@ PODS:
     - SVGKit (>= 2.1)
   - SVGKit (3.0.0):
     - CocoaLumberjack (~> 3.0)
+  - UIImageViewAlignedSwift (0.8.1)
 
 DEPENDENCIES:
   - Accessibility
@@ -123,6 +124,7 @@ DEPENDENCIES:
   - Kingfisher
   - SDWebImage
   - SDWebImageSVGKitPlugin
+  - UIImageViewAlignedSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -145,6 +147,7 @@ SPEC REPOS:
     - SDWebImage
     - SDWebImageSVGKitPlugin
     - SVGKit
+    - UIImageViewAlignedSwift
 
 SPEC CHECKSUMS:
   Accessibility: 8c43f92303cfa47764f0b59bfd37112257af75e9
@@ -166,7 +169,8 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageSVGKitPlugin: 8797e1c9b9baf80bd50d28e673e16a12359af1c9
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
+  UIImageViewAlignedSwift: e4f83530f90860aa31b6840bf570034a681bd2c4
 
-PODFILE CHECKSUM: 3402aa2e7d7e836a00fa4e3297237a70fc58cc72
+PODFILE CHECKSUM: 378fedf516ff02482255888f178e81f700ffcaf1
 
 COCOAPODS: 1.10.1
