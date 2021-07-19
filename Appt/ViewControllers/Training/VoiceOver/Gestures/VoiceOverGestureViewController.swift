@@ -45,13 +45,13 @@ class VoiceOverGestureViewController: ViewController {
         title = nil
         
         titleLabel.accessibilityTraits = .header
-        titleLabel.font = .openSans(weight: .bold, size: 20, style: .body)
+        titleLabel.font = .openSans(weight: .bold, size: 20, maxSize: 30)
         titleLabel.text = gesture.title
         
-        descriptionLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        descriptionLabel.font = .openSans(weight: .regular, size: 18, maxSize: 27)
         descriptionLabel.text = gesture.description
         
-        feedbackLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        feedbackLabel.font = .openSans(weight: .regular, size: 16, maxSize: 24)
         feedbackLabel.isHidden = true
         
         imageView.image = gesture.image
@@ -154,17 +154,13 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
                     self.navigationController?.popViewController(animated: true)
                 }
                 .action("skip".localized) {
-                    guard var viewControllers = self.navigationController?.viewControllers,
-                          var gestures = self.gestures else {
+                    guard var viewControllers = self.navigationController?.viewControllers, var gestures = self.gestures else {
+                        self.navigationController?.popViewController(animated: true)
                         return
                     }
-                    if gestures.count > 1 {
-                        gestures.removeFirst()
-                        viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[1], gestures: gestures)
-                        self.navigationController?.setViewControllers(viewControllers, animated: true)
-                    } else {
-                        self.navigationController?.popViewController(animated: true)
-                    }
+                    gestures.removeFirst()
+                    viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[1], gestures: gestures)
+                    self.navigationController?.setViewControllers(viewControllers, animated: true)
                 }
                 .action("continue".localized) {
                     self.errorLimit = self.errorLimit * 2

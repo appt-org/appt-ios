@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UINavigationBar.appearance().backgroundColor = .primary
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: UIFont.openSans(weight: .bold, size: 18, style: .title1),
+            .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ]
         UINavigationBar.appearance().largeTitleTextAttributes = [
-            .font: UIFont.openSans(weight: .bold, size: 27, style: .title1),
+            .font: UIFont.openSans(weight: .bold, size: 27, scaled: false),
             .foregroundColor: UIColor.white
         ]
         
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UIBarButtonItem.appearance().tintColor = .white
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .semibold, size: 16, style: .title1)
+                .font: UIFont.openSans(weight: .semibold, size: 16, scaled: false)
             ], for: state)
         }
         
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .semibold, size: 14, style: .title1, scaled: false)
+                .font: UIFont.openSans(weight: .semibold, size: 14, scaled: false)
             ], for: state)
         }
         
@@ -74,11 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .regular, size: 14, style: .body)
+                .font: UIFont.openSans(weight: .regular, size: 18, scaled: false)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.openSans(weight: .bold, size: 14, style: .body),
+            .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ], for: .selected)
 

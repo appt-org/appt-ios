@@ -42,7 +42,7 @@ class Alert {
         private var title: String?
         private var message: String?
         private var preferredStyle: UIAlertController.Style = .alert
-        private var tintColor: UIColor = .foreground
+        private var tintColor: UIColor = .primary
         private var backgroundColor: UIColor = .clear
         private var alpha: CGFloat = 1.0
         private var cornerRadius:CGFloat = 0.0
