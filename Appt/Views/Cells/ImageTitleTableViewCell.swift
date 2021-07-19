@@ -31,7 +31,7 @@ final class ImageTitleTableViewCell: UITableViewCell {
 
     func setup(_ subject: Subject) {
         self.accessoryType = .disclosureIndicator
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = subject.title
         accessibilityLabel = subject.title
         
@@ -46,7 +46,7 @@ final class ImageTitleTableViewCell: UITableViewCell {
     
     func setup(withTitle title: String, image: UIImage) {
         self.accessoryType = .disclosureIndicator
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
         accessibilityLabel = title
 

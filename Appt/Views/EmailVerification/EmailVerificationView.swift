@@ -47,8 +47,8 @@ class EmailVerificationView: UIView {
         titleLabel.text = "email_verification_view_title".localized
         okLabel.text = "ok".localized
 
-        self.titleLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
-        self.okLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
+        self.okLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
         
         okView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(okViewAction)))
         
@@ -67,8 +67,8 @@ class EmailVerificationView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.titleLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
-        self.okLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
+        self.okLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
 
         self.layoutIfNeeded()
     }

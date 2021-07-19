@@ -8,7 +8,8 @@
 	<string>wp-content/themes/appt/</string>
 	<key>BASE_URL</key>
 	<string>https://appt.nl/</string>
-    <key>ITSAppUsesNonExemptEncryption</key><false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -48,9 +49,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SourceSansPro-Regular.ttf</string>
-		<string>SourceSansPro-SemiBold.ttf</string>
-		<string>SourceSansPro-Bold.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-SemiBold.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

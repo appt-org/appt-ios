@@ -23,10 +23,10 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         title = "new_password_vc_title".localized
 
         newPasswordLabel.text = "change_password_label_text".localized
-        changePasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        changePasswordLabel.font = .openSans(weight: .bold, size: 19, style: .headline)
 
         newPasswordLabel.text = "new_password_label_text".localized
-        newPasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        newPasswordLabel.font = .openSans(weight: .bold, size: 19, style: .headline)
 
         newPasswordTextField.delegate = self
         newPasswordTextField.placeholder = "new_password_textfield_placeholder_text".localized
@@ -34,7 +34,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
         newPasswordTextField.setSecureTextEntry()
 
         passwordHintLabel.text = "new_password_textfield_hint_text".localized
-        passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        passwordHintLabel.font = .openSans(weight: .regular, size: 15, style: .body)
 
         changePasswordButton.setTitle("change_password_button_title".localized, for: .normal)
     }

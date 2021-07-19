@@ -18,9 +18,9 @@ class VoiceOverHeadingsView: VoiceOverView {
         stackView.subviews.forEach { (view) in
             if let label = view as? UILabel {
                 if label.accessibilityTraits.contains(.header) {
-                    label.font = .sourceSansPro(weight: .bold, size: 20, style: .headline)
+                    label.font = .openSans(weight: .bold, size: 20, style: .headline)
                 } else {
-                    label.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+                    label.font = .openSans(weight: .regular, size: 18, style: .body)
                 }
             }
         }

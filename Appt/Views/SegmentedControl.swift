@@ -13,10 +13,10 @@ class SegmentedControl: UISegmentedControl {
 
         let states: [UIControl.State] = [.disabled, .focused, .normal, .selected, .highlighted]
         states.forEach({
-            setTitleTextAttributes( [.font: UIFont.sourceSansPro(weight: .regular, size: 14, style: .body),
+            setTitleTextAttributes( [.font: UIFont.openSans(weight: .regular, size: 14, style: .body),
             ], for: $0)
         })
-        setTitleTextAttributes( [.font: UIFont.sourceSansPro(weight: .bold, size: 14, style: .body),
+        setTitleTextAttributes( [.font: UIFont.openSans(weight: .bold, size: 14, style: .body),
                                  .foregroundColor: UIColor.white], for: .selected)
         sizeToFit()
     }

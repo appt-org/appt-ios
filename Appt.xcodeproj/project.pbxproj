@@ -46,6 +46,9 @@
 		2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */; };
 		28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */; };
 		28051BDD24CB343D008EEB1E /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BDC24CB343D008EEB1E /* Position.swift */; };
+		28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACC26A567E600415285 /* OpenSans-Regular.ttf */; };
+		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
+		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
 		281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FF24A92DF500B556A7 /* TapGestureView.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
 		282F607224A3E688005B1279 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F607124A3E688005B1279 /* GestureView.swift */; };
@@ -84,9 +87,6 @@
 		2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6D8247D6E9600605677 /* Assets.xcassets */; };
 		2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */; };
 		2877F6E4247D71E600605677 /* _UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6E3247D71E600605677 /* _UIColor.swift */; };
-		2877F6E8247D725C00605677 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E5247D725C00605677 /* SourceSansPro-SemiBold.ttf */; };
-		2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */; };
-		2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */; };
 		2877F6F2247D7D9700605677 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6F1247D7D9700605677 /* API.swift */; };
 		287FFBB525090A0C0022CD5F /* VoiceOverCopyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FFBB425090A0C0022CD5F /* VoiceOverCopyView.swift */; };
 		287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287FFBB625090A190022CD5F /* VoiceOverCopyView.xib */; };
@@ -179,6 +179,9 @@
 		2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverSelectionView.xib; sourceTree = "<group>"; };
 		28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureView.swift; sourceTree = "<group>"; };
 		28051BDC24CB343D008EEB1E /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		28112ACC26A567E600415285 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		282F607124A3E688005B1279 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
@@ -217,9 +220,6 @@
 		2877F6D8247D6E9600605677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2877F6DD247D6E9600605677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2877F6E3247D71E600605677 /* _UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIColor.swift; sourceTree = "<group>"; };
-		2877F6E5247D725C00605677 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
-		2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
-		2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		2877F6F1247D7D9700605677 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		287FFBB425090A0C0022CD5F /* VoiceOverCopyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverCopyView.swift; sourceTree = "<group>"; };
 		287FFBB625090A190022CD5F /* VoiceOverCopyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverCopyView.xib; sourceTree = "<group>"; };
@@ -521,9 +521,9 @@
 				234059A72636C4E500C06463 /* Authentication.storyboard */,
 				288554FC251A01EE00392FC3 /* Localizable.strings */,
 				2885551C251B491500392FC3 /* Localizable.stringsdict */,
-				2877F6E6247D725C00605677 /* SourceSansPro-Bold.ttf */,
-				2877F6E5247D725C00605677 /* SourceSansPro-SemiBold.ttf */,
-				2877F6E7247D725C00605677 /* SourceSansPro-Regular.ttf */,
+				28112ACC26A567E600415285 /* OpenSans-Regular.ttf */,
+				28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */,
+				28112ACD26A567E600415285 /* OpenSans-Bold.ttf */,
 				2869ABFC24F7C503004962A7 /* style.css */,
 				23AC122A267B515A006FFA8F /* Credentials.plist */,
 			);
@@ -718,8 +718,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */,
-				2877F6EA247D725C00605677 /* SourceSansPro-Regular.ttf in Resources */,
 				287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */,
+				28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */,
 				232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */,
 				23FAE785268B5F1700A87328 /* BlocksCollectionHeaderCell.xib in Resources */,
 				2869ABFD24F7C503004962A7 /* style.css in Resources */,
@@ -728,20 +728,20 @@
 				A82ACD142653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib in Resources */,
 				2885551D251B491500392FC3 /* Localizable.stringsdict in Resources */,
 				287FFBB925092B130022CD5F /* VoiceOverPasteView.xib in Resources */,
-				2877F6E8247D725C00605677 /* SourceSansPro-SemiBold.ttf in Resources */,
 				231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */,
-				2877F6E9247D725C00605677 /* SourceSansPro-Bold.ttf in Resources */,
 				2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
 				288554FD251A01EE00392FC3 /* Localizable.strings in Resources */,
 				28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */,
 				2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */,
+				28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */,
 				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
 				23AC122B267B515A006FFA8F /* Credentials.plist in Resources */,
 				A83B07C326665BC100EDCBD8 /* EmailVerificationView.xib in Resources */,
 				234059A82636C4E500C06463 /* Authentication.storyboard in Resources */,
+				28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

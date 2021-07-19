@@ -15,7 +15,7 @@ class VoiceOverLinksView: VoiceOverView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        textView.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        textView.font = .openSans(weight: .regular, size: 18, style: .body)
         textView.delegate = self
     }
     

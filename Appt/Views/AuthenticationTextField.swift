@@ -27,7 +27,7 @@ final class AuthenticationTextField: UITextField {
         self.layer.cornerRadius = 14
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.textFieldDisabled.cgColor
-        self.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        self.font = .openSans(weight: .regular, size: 17, style: .body)
     }
 
     func setSecureTextEntry() {
@@ -93,7 +93,7 @@ final class AuthenticationTextField: UITextField {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if #available(iOS 13.0, *) {
-            self.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+            self.font = .openSans(weight: .regular, size: 17, style: .body)
 
             if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
                 if !self.isEditing {

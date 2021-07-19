@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         let states: [UIControl.State] = [.disabled, .focused, .normal, .selected]
         states.forEach { (state) in
             tabBar.items?.forEach({
-                $0.setTitleTextAttributes([.font: UIFont.sourceSansPro(weight: .semibold, size: 14, style: .title1, scaled: false)], for: state)
+                $0.setTitleTextAttributes([.font: UIFont.openSans(weight: .semibold, size: 14, style: .title1, scaled: false)], for: state)
             })
         }
     }

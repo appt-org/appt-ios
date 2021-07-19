@@ -22,20 +22,20 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
         title = "email_entry_vc_title".localized
 
         forgotPasswordLabel.text = "email_entry_forgot_password_text".localized
-        forgotPasswordLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        forgotPasswordLabel.font = .openSans(weight: .bold, size: 19, style: .headline)
 
-        descriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        descriptionLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         descriptionLabel.text = "email_entry_description_text".localized
 
         emailAddressLabel.text = "email_label_text".localized
-        emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailAddressLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         
         emailTextField.delegate = self
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
         emailTextField.accessibilityLabel = emailAddressLabel.text
 
         emailHintLabel.text = "email_textfield_hint_text".localized
-        emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        emailHintLabel.font = .openSans(weight: .regular, size: 15, style: .body)
         
         continueButton.setTitle("create_new_password_button_title".localized, for: .normal)
     }

@@ -60,7 +60,7 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
         self.categoryLabel.text = subject.title
         self.accessibilityLabel = subject.title
 
-        self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
 
         self.loadingIndicator.startAnimating()
 
@@ -76,7 +76,7 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
         self.categoryLabel.text = title
         self.accessibilityLabel = title
 
-        self.categoryLabel.font = .sourceSansPro(weight: .semibold, size: 17, style: .body)
+        self.categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
 
         self.imgView.image = image
     }

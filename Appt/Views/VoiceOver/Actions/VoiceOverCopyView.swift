@@ -18,11 +18,11 @@ class VoiceOverCopyView: VoiceOverView {
         
         stackView.subviews.forEach { (view) in
             if let label = view as? UILabel {
-                label.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+                label.font = .openSans(weight: .regular, size: 18, style: .body)
             }
         }
         
-        textField.font = .sourceSansPro(weight: .bold, size: 20, style: .body)
+        textField.font = .openSans(weight: .bold, size: 20, style: .body)
         textField.inputView = UIView()
     }
     

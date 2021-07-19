@@ -24,20 +24,20 @@ final class BlocksCollectionHeaderCell: DynamicHeightCollectionViewCell {
         self.accessibilityLabel = subject.description
 
         self.imgView.isHidden = true
-        self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = subject.description
     }
 
     func setup(withTitle title: String, image: UIImage) {
         self.accessibilityLabel = title
 
-        self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         self.titleLabel.text = title
         self.imgView.image = image
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.titleLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
     }
 
 }

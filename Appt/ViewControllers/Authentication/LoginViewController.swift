@@ -28,13 +28,13 @@ final class LoginViewController: ViewController, UITextFieldDelegate {
         title = "login_vc_title".localized
 
         emailLabel.text = "email_label_text".localized
-        emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailLabel.font = .openSans(weight: .regular, size: 17, style: .body)
 
         passwordLabel.text = "password_label_text".localized
-        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        passwordLabel.font = .openSans(weight: .regular, size: 17, style: .body)
 
         emailHintLabel.text = "email_textfield_hint_text".localized
-        emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        emailHintLabel.font = .openSans(weight: .regular, size: 15, style: .body)
 
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
         emailTextField.accessibilityLabel = emailLabel.text

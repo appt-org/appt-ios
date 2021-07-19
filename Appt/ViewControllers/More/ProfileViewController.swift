@@ -27,8 +27,8 @@ final class ProfileViewController: ViewController {
         logoutButton.setTitle("log_out_title".localized, for: .normal)
         deleteMyAccountButton.setTitle("delete_my_account_title".localized, for: .normal)
         
-        emailAddressTitleLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .headline)
-        emailAddressLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailAddressTitleLabel.font = .openSans(weight: .regular, size: 15, style: .headline)
+        emailAddressLabel.font = .openSans(weight: .regular, size: 17, style: .body)
     }
     
     @IBAction private func changeMyPasswordButtonAction(_ sender: Any) {

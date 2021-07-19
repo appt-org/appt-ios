@@ -54,7 +54,7 @@ extension MoreViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let headerView = view as? UITableViewHeaderFooterView else { return }
 
-        headerView.textLabel?.font = .sourceSansPro(weight: .regular, size: 15, style: .headline)
+        headerView.textLabel?.font = .openSans(weight: .regular, size: 15, style: .headline)
         headerView.textLabel?.text = self.tableView(tableView, titleForHeaderInSection: section)
     }
     

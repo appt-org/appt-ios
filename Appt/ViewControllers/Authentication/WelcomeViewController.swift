@@ -21,9 +21,9 @@ final class WelcomeViewController: ViewController {
         title = "Appt"
 
         welcomeLabel.text = "welcome_text".localized
-        welcomeLabel.font = .sourceSansPro(weight: .bold, size: 19, style: .headline)
+        welcomeLabel.font = .openSans(weight: .bold, size: 19, style: .headline)
         welcomeDescriptionLabel.text = "welcome_description_text".localized
-        welcomeDescriptionLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        welcomeDescriptionLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         resetPasswordButton.setTitle("forgot_password".localized, for: .normal)
         createAccountButton.setTitle("create_account_text".localized, for: .normal)
         loginButton.setTitle("login_account".localized, for: .normal)

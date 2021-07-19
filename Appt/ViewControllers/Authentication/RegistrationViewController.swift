@@ -36,32 +36,32 @@ final class RegistrationViewController: ViewController, UITextFieldDelegate {
         title = "account_creation_vc_title".localized
         
         emailLabel.text = "email_label_text".localized
-        emailLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        emailLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         
         emailTextField.delegate = self
         emailTextField.placeholder = "email_textfield_placeholder_text".localized
         emailTextField.accessibilityLabel = emailLabel.text
 
         passwordLabel.text = "password_label_text".localized
-        passwordLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        passwordLabel.font = .openSans(weight: .regular, size: 17, style: .body)
 
         passwordTextField.delegate = self
         passwordTextField.placeholder = "password_textfield_placeholder_text".localized
         passwordTextField.accessibilityLabel = passwordLabel.text
 
         emailHintLabel.text = "email_textfield_hint_text".localized
-        emailHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        emailHintLabel.font = .openSans(weight: .regular, size: 15, style: .body)
         
         passwordHintLabel.text = "password_textfield_hint_text".localized
-        passwordHintLabel.font = .sourceSansPro(weight: .regular, size: 15, style: .body)
+        passwordHintLabel.font = .openSans(weight: .regular, size: 15, style: .body)
         
         privacyPolicyLabel.text = "privacy_policy_label_text".localized
-        privacyPolicyLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        privacyPolicyLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         privacyPolicyButton.setTitle(Topic.privacy.title, for: .normal)
         privacyPolicyButton.underline()
         
         termsAndConditionsLabel.text = "terms_and_conditions_label_text".localized
-        termsAndConditionsLabel.font = .sourceSansPro(weight: .regular, size: 17, style: .body)
+        termsAndConditionsLabel.font = .openSans(weight: .regular, size: 17, style: .body)
         termsAndConditionsButton.setTitle(Topic.terms.title, for: .normal)
         termsAndConditionsButton.underline()
         

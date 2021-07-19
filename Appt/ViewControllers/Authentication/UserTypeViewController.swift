@@ -41,7 +41,7 @@ final class UserTypeViewController: TableViewController {
         screenHeaderLabel.text = "account_creation_role_text".localized
 
         nextButton.setTitle("next".localized, for: .normal)
-        screenHeaderLabel.font = .sourceSansPro(weight: .bold, size: 17, style: .headline)
+        screenHeaderLabel.font = .openSans(weight: .bold, size: 17, style: .headline)
 
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 25
@@ -82,7 +82,7 @@ final class UserTypeViewController: TableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let headerView = view as? UITableViewHeaderFooterView else { return }
 
-        headerView.textLabel?.font = .sourceSansPro(weight: .regular, size: 14, style: .body)
+        headerView.textLabel?.font = .openSans(weight: .regular, size: 14, style: .body)
         headerView.textLabel?.text = self.tableView(tableView, titleForHeaderInSection: section)
     }
 

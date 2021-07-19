@@ -25,13 +25,13 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ title: String) {
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
         accessibilityLabel = title
     }
 
     func setup(_ taxonomy: Taxonomy) {
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = taxonomy.name
 
         if taxonomy.selected {
@@ -46,7 +46,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ gesture: Gesture) {
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = gesture.title
         
         if gesture.completed {
@@ -59,7 +59,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ action: Action) {
-        titleLabel.font = .sourceSansPro(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = action.title
         
         if action.completed {

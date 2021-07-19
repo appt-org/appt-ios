@@ -10,18 +10,22 @@ import UIKit
 
 extension UIFont {
     
-    static func sourceSansPro(weight: UIFont.Weight, size: CGFloat, style: TextStyle, scaled: Bool = true) -> UIFont {
+    static let openSansRegular = "OpenSans-Regular"
+    static let openSansSemiBold = "OpenSans-SemiBold"
+    static let openSansBold = "OpenSans-Bold"
+    
+    static func openSans(weight: UIFont.Weight, size: CGFloat, style: TextStyle, scaled: Bool = true) -> UIFont {
         if UIAccessibility.isBoldTextEnabled {
-            return font(name: "SourceSansPro-Bold", size: size, style: style, scaled: scaled)
+            return font(name: openSansRegular, size: size, style: style, scaled: scaled)
         }
         
         switch weight {
             case .regular:
-                return font(name: "SourceSansPro-Regular", size: size, style: style, scaled: scaled)
+                return font(name: openSansRegular, size: size, style: style, scaled: scaled)
             case .semibold:
-                return font(name: "SourceSansPro-SemiBold", size: size, style: style, scaled: scaled)
+                return font(name: openSansSemiBold, size: size, style: style, scaled: scaled)
             case .bold:
-                return font(name: "SourceSansPro-Bold", size: size, style: style, scaled: scaled)
+                return font(name: openSansBold, size: size, style: style, scaled: scaled)
             default:
                 fatalError("Font weight \(weight) not supported")
         }

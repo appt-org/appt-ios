@@ -33,10 +33,10 @@ class VoiceOverGestureViewController: ViewController {
         super.viewDidLoad()
         title = gesture.title
         
-        headerLabel.font = .sourceSansPro(weight: .semibold, size: 20, style: .body)
+        headerLabel.font = .openSans(weight: .semibold, size: 20, style: .body)
         headerLabel.text = gesture.description
         
-        feedbackLabel.font = .sourceSansPro(weight: .semibold, size: 18, style: .body)
+        feedbackLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
         feedbackLabel.isHidden = true
         
         gestureView.delegate = self
