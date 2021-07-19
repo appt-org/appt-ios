@@ -6,45 +6,45 @@
 //  Copyright © 2020 Stichting Appt All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Gesture: String {
 
     // Navigation
-    case touch
-    case swipeRight
-    case swipeLeft
-    case fourFingerTapTop
-    case fourFingerTapBottom
-    case twoFingerSwipeDown
-    case twoFingerSwipeUp
-    case twoFingerTap
-    case threeFingerTap
+    case touch = "touch"
+    case swipeRight = "swipe_right"
+    case swipeLeft = "swipe_left"
+    case fourFingerTapTop = "four_finger_tap_top"
+    case fourFingerTapBottom = "four_finger_tap_bottom"
+    case twoFingerSwipeDown = "two_finger_swipe_down"
+    case twoFingerSwipeUp = "two_finger_swipe_up"
+    case twoFingerTap = "two_finger_tap"
+    case threeFingerTap = "three_finger_tap"
     
     // Scrolling
-    case scrollUp
-    case scrollRight
-    case scrollDown
-    case scrollLeft
+    case scrollUp = "scroll_up"
+    case scrollRight = "scroll_right"
+    case scrollDown = "scroll_down"
+    case scrollLeft = "scroll_left"
     
     // Actions
-    case doubleTap
-    case tripleTap
-    case slide
-    case magicTap
-    case escape
-    case label
+    case doubleTap = "double_tap"
+    case tripleTap = "triple_tap"
+    case slide = "slide"
+    case magicTap = "magic_tap"
+    case escape = "escape"
+    case label = "label"
     
     // Controls
-    case threeFingerDoubleTap
-    case threeFingerTripleTap
-    case doubleTapLongPress
-    case twoFingerTripleTap
+    case threeFingerDoubleTap = "three_finger_double_tap"
+    case threeFingerTripleTap = "three_finger_triple_tap"
+    case doubleTapLongPress = "double_tap_long_press"
+    case twoFingerTripleTap = "two_finger_triple_tap"
     
     // Rotor
-    case rotor
-    case swipeUp
-    case swipeDown
+    case rotor = "rotor"
+    case swipeUp = "swipe_up"
+    case swipeDown = "swipe_down"
     
     /** Identifier */
     var id: String {
@@ -64,6 +64,11 @@ enum Gesture: String {
     /** Explanation */
     var explanation: String {
         return NSLocalizedString("gesture_"+rawValue+"_explanation", comment: "")
+    }
+    
+    /** Image */
+    var image: UIImage? {
+        return UIImage(named: "gesture_" + rawValue)
     }
     
     /** View */

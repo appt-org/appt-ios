@@ -49,6 +49,7 @@
 		28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACC26A567E600415285 /* OpenSans-Regular.ttf */; };
 		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
 		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
+		28112AD326A58B7A00415285 /* AlignedAspectFitImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28112AD226A58B7A00415285 /* AlignedAspectFitImageView.swift */; };
 		281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FF24A92DF500B556A7 /* TapGestureView.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
 		282F607224A3E688005B1279 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F607124A3E688005B1279 /* GestureView.swift */; };
@@ -182,6 +183,7 @@
 		28112ACC26A567E600415285 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		28112AD226A58B7A00415285 /* AlignedAspectFitImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedAspectFitImageView.swift; sourceTree = "<group>"; };
 		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		282F607124A3E688005B1279 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */,
 				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
+				28112AD226A58B7A00415285 /* AlignedAspectFitImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
 				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */,
+				28112AD326A58B7A00415285 /* AlignedAspectFitImageView.swift in Sources */,
 				A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */,
 				A89FD450265D66A4006ED9EE /* User.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,

@@ -12,8 +12,10 @@ import Accessibility
 
 class VoiceOverGestureViewController: ViewController {
     
-    @IBOutlet private var headerLabel: UILabel!
+    @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var feedbackLabel: UILabel!
+    @IBOutlet private var imageView: UIImageView!
     
     var gesture: Gesture!
     var gestures: [Gesture]?
@@ -33,11 +35,19 @@ class VoiceOverGestureViewController: ViewController {
         super.viewDidLoad()
         title = gesture.title
         
-        headerLabel.font = .openSans(weight: .semibold, size: 20, style: .body)
-        headerLabel.text = gesture.description
+        descriptionLabel.font = .openSans(weight: .semibold, size: 20, style: .body)
+        descriptionLabel.text = gesture.description
         
         feedbackLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
         feedbackLabel.isHidden = true
+        
+//        guard let image = gesture.image, let cgImage = image.cgImage else {
+//            fatalError("Missing image for gesture: \(gesture.id)")
+//        }
+//        imageView.image = UIImage(cgImage: cgImage, scale: image.size.width / imageView.frame.width, orientation: .up)
+//        imageView.contentMode = .scaleAspectFit
+        imageView.image = gesture.image
+        view.sendSubviewToBack(imageView)
         
         gestureView.delegate = self
         view.accessibilityElements = [gestureView]

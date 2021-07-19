@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -30,20 +30,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
-                                <rect key="frame" x="16" y="392.5" width="382" height="23.5"/>
+                            <stackView opaque="NO" contentMode="top" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-5s-BAd">
+                                <rect key="frame" x="16" y="16" width="382" height="742"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
-                                        <rect key="frame" x="172.5" y="0.0" width="37.5" height="23.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-JA-94c">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="742"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
+                                        <string key="text">Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Descript</string>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
                                         <color key="textColor" name="Foreground"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
-                                        <rect key="frame" x="191" y="0.0" width="0.0" height="0.0"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-fT-zLt">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -53,14 +54,21 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gesture_escape" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-9f-Fdq">
+                                <rect key="frame" x="16" y="16" width="382" height="742"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4mA-DF-DD2"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="gwH-9f-Fdq" secondAttribute="trailing" constant="16" id="1NJ-vM-vCD"/>
+                            <constraint firstItem="4mA-DF-DD2" firstAttribute="bottom" secondItem="gwH-9f-Fdq" secondAttribute="bottom" constant="16" id="9FT-dK-F9F"/>
+                            <constraint firstItem="gwH-9f-Fdq" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="KSM-Aa-cq6"/>
+                            <constraint firstItem="gwH-9f-Fdq" firstAttribute="top" secondItem="4mA-DF-DD2" secondAttribute="top" constant="16" id="UTb-u7-Uwa"/>
+                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="top" secondItem="4mA-DF-DD2" secondAttribute="top" constant="16" id="UvG-fI-uen"/>
                             <constraint firstItem="4mA-DF-DD2" firstAttribute="trailing" secondItem="ZGs-5s-BAd" secondAttribute="trailing" constant="16" id="VPr-Vo-dQR"/>
+                            <constraint firstItem="4mA-DF-DD2" firstAttribute="bottom" secondItem="ZGs-5s-BAd" secondAttribute="bottom" constant="16" id="WZO-N3-5UC"/>
                             <constraint firstItem="ZGs-5s-BAd" firstAttribute="leading" secondItem="4mA-DF-DD2" secondAttribute="leading" constant="16" id="aAx-zO-f9f"/>
-                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerY" secondItem="mik-Nu-glv" secondAttribute="centerY" id="gmc-cC-1mf"/>
-                            <constraint firstItem="ZGs-5s-BAd" firstAttribute="centerX" secondItem="mik-Nu-glv" secondAttribute="centerX" id="njD-q5-WAc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="VoiceOver gebaar" id="IwU-sV-rHn">
@@ -71,8 +79,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLabel" destination="U2L-JA-94c" id="7vi-kK-dz1"/>
                         <outlet property="feedbackLabel" destination="Oz8-fT-zLt" id="Jit-Kh-1eZ"/>
-                        <outlet property="headerLabel" destination="U2L-JA-94c" id="6O1-wM-1BJ"/>
+                        <outlet property="imageView" destination="gwH-9f-Fdq" id="bSM-SI-4UD"/>
+                        <outlet property="stackView" destination="ZGs-5s-BAd" id="aeW-72-nUV"/>
                         <segue destination="bcL-Kz-Vef" kind="unwind" identifier="gestureCompleted" unwindAction="gestureCompleted:" id="dEn-0e-Clx"/>
                     </connections>
                 </viewController>
@@ -241,6 +251,7 @@ Manier 3:
         </scene>
     </scenes>
     <resources>
+        <image name="gesture_escape" width="154" height="154"/>
         <namedColor name="Foreground">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
