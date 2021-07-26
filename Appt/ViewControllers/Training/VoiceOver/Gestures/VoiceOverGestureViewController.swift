@@ -66,6 +66,7 @@ class VoiceOverGestureViewController: ViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         imageHeightConstraint.constant = size.height / 3
+        gestureView.setNeedsDisplay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
