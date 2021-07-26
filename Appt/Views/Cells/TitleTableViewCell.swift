@@ -28,19 +28,16 @@ class TitleTableViewCell: UITableViewCell {
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
         accessibilityLabel = title
+        isSelected = false
     }
 
     func setup(_ taxonomy: Taxonomy) {
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = taxonomy.name
 
-        if taxonomy.selected {
-            accessibilityLabel = "Geselecteerd. \(taxonomy.name)"
-            accessoryType = .checkmark
-        } else {
-            accessibilityLabel = taxonomy.name
-            accessoryType = .disclosureIndicator
-        }
+        accessibilityLabel = taxonomy.name
+        isSelected = taxonomy.selected
+        accessoryType = isSelected ? .checkmark : .disclosureIndicator
 
         accessibilityHint = "Dubbeltik met twee vingers om de geselecteerde filters toe te passen"
     }
@@ -49,25 +46,19 @@ class TitleTableViewCell: UITableViewCell {
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = gesture.title
         
-        if gesture.completed {
-            accessibilityLabel = "Afgerond. \(gesture.title)"
-            accessoryType = .checkmark
-        } else {
-            accessibilityLabel = gesture.title
-            accessoryType = .disclosureIndicator
-        }
+        accessibilityLabel = gesture.title
+        accessibilityValue = gesture.completed ? "Afgerond" : nil
+        accessoryType = gesture.completed ? .checkmark : .disclosureIndicator
+        accessibilityHint = "Dubbeltik met twee vingers om dit gebaar te oefenen"
     }
     
     func setup(_ action: Action) {
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = action.title
         
-        if action.completed {
-            accessibilityLabel = "Afgerond. \(action.title)"
-            accessoryType = .checkmark
-        } else {
-            accessibilityLabel = action.title
-            accessoryType = .disclosureIndicator
-        }
+        accessibilityLabel = action.title
+        accessibilityValue = action.completed ? "Afgerond" : nil
+        accessoryType = action.completed ? .checkmark : .disclosureIndicator
+        accessibilityHint = "Dubbeltik met twee vingers om deze actie te oefenen"
     }
 }

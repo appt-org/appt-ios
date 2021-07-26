@@ -38,8 +38,6 @@ class TapGestureView: GestureView {
     }
 
     @objc func onTap(_ sender: UITapGestureRecognizer) {
-        print("onTap")
-        
         showTouches(recognizer: sender, tapCount: sender.numberOfTapsRequired)
         
         guard fingers == sender.numberOfTouchesRequired else {

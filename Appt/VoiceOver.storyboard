@@ -195,10 +195,10 @@ Manier 3:
             </objects>
             <point key="canvasLocation" x="2521.2053571428569" y="-1555.072463768116"/>
         </scene>
-        <!--VoiceOver handelingen-->
+        <!--VoiceOver acties-->
         <scene sceneID="deJ-Du-teC">
             <objects>
-                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver handelingen" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceOverActionsViewController" title="VoiceOver acties" id="DK5-tT-V0C" customClass="VoiceOverActionsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96e-I0-Lme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@ Manier 3:
             </objects>
             <point key="canvasLocation" x="2518.840579710145" y="-854.46428571428567"/>
         </scene>
-        <!--VoiceOver handeling-->
+        <!--VoiceOver actie-->
         <scene sceneID="DvA-cr-CsQ">
             <objects>
                 <viewController storyboardIdentifier="VoiceOverActionViewController" hidesBottomBarWhenPushed="YES" id="DPB-Il-NPT" customClass="VoiceOverActionViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,7 +250,7 @@ Manier 3:
                             <constraint firstItem="RrL-jd-bhL" firstAttribute="top" secondItem="SwO-cd-kHF" secondAttribute="top" id="zfT-l1-h3O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="VoiceOver handeling" id="xBc-la-aFd"/>
+                    <navigationItem key="navigationItem" title="VoiceOver actie" id="xBc-la-aFd"/>
                     <connections>
                         <outlet property="scrollView" destination="RrL-jd-bhL" id="7uL-b9-Lrb"/>
                     </connections>

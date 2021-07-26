@@ -16,12 +16,12 @@ enum Course: String {
     /** Title */
     var title: String {
         switch self {
-        case .voiceOverEnable:
-            return "VoiceOver aanzetten"
         case .voiceOverGestures:
-            return "VoiceOver gebaren"
+            return "1. VoiceOver gebaren"
+        case .voiceOverEnable:
+            return "2. VoiceOver aanzetten"
         case .voiceOverActions:
-            return "VoiceOver handelingen"
+            return "3. VoiceOver acties"
         }
     }
 }
