@@ -41,9 +41,9 @@ class GestureView: UIView {
             
             setNeedsDisplay()
             
-            //delay(0.1) {
+            delay(0.1) {
                 self.delegate?.correct(self.gesture)
-            //}
+            }
         }
     }
     
@@ -74,27 +74,26 @@ class GestureView: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        print("touchesBegan")
+        //print("touchesBegan")
         map.removeAll()
         onTouches(touches)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
-        print("touchesMoved")
+        //print("touchesMoved")
         onTouches(touches)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print("touchesEnded")
+        //print("touchesEnded")
         onTouches(touches)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        print("touchesCancelled")
-        //onTouches(touches)
+        //print("touchesCancelled")
     }
     
     private func onTouches(_ touches: Set<UITouch>) {
