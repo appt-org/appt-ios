@@ -38,7 +38,7 @@ class VoiceOverActionViewController: ScrollViewController {
             Alert.Builder()
                 .title("action_voiceover_disabled".localized)
                 .message("action_voiceover_enable".localized)
-                .action("ok".localized) {
+                .okAction() {
                     self.navigationController?.popViewController(animated: true)
                 }.present(in: self)
             return

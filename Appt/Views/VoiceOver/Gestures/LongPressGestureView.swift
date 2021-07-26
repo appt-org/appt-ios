@@ -40,17 +40,19 @@ class LongPressGestureView: GestureView {
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer) {
-        onEvent(amountOfTaps: sender.numberOfTapsRequired, amountOfFingers: sender.numberOfTouchesRequired, longPress: false)
+        onEvent(recognizer: sender, amountOfTaps: sender.numberOfTapsRequired, amountOfFingers: sender.numberOfTouchesRequired, longPress: false)
     }
     
     @objc func onLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             // Add one to reflect the total amount of taps
-            onEvent(amountOfTaps: sender.numberOfTapsRequired + 1, amountOfFingers: sender.numberOfTouchesRequired, longPress: true)
+            onEvent(recognizer: sender, amountOfTaps: sender.numberOfTapsRequired + 1, amountOfFingers: sender.numberOfTouchesRequired, longPress: true)
         }
     }
     
-    func onEvent(amountOfTaps: Int, amountOfFingers: Int, longPress: Bool) {
+    func onEvent(recognizer: UIGestureRecognizer, amountOfTaps: Int, amountOfFingers: Int, longPress: Bool) {
+        showTouches(recognizer: recognizer, tapCount: amountOfTaps, longPress: longPress)
+        
         guard fingers == amountOfFingers else {
             // Incorrect amount of fingers
             incorrect("feedback_fingers".localized(fingers, amountOfFingers))

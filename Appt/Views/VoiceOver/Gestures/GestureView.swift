@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol GestureViewDelegate {
     func correct(_ gesture: Gesture)
@@ -26,7 +27,7 @@ class GestureView: UIView {
         isAccessibilityElement = true
         isMultipleTouchEnabled = true
         accessibilityTraits = .allowsDirectInteraction
-        accessibilityLabel = gesture.description
+        accessibilityLabel = String(format: "%@: %@", gesture.title, gesture.description)
         
         isOpaque = false
         clearsContextBeforeDrawing = false
@@ -36,12 +37,14 @@ class GestureView: UIView {
     func correct(_ recognizer: UIGestureRecognizer? = nil) {
         if !completed {
             completed = true
+            AudioServicesPlaySystemSound(SystemSoundID(1256))
             delegate?.correct(gesture)
         }
     }
     
     func incorrect(_ feedback: String) {
         if !completed {
+            AudioServicesPlaySystemSound(SystemSoundID(1257))
             delegate?.incorrect(gesture, feedback: feedback)
         }
     }
@@ -61,6 +64,7 @@ class GestureView: UIView {
     struct Point {
         var location: CGPoint
         var tapCount: Int
+        var longPress: Bool = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,7 +83,7 @@ class GestureView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         print("touchesEnded")
-        onTouches(touches)
+        //onTouches(touches)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -96,10 +100,6 @@ class GestureView: UIView {
             
             let point = Point(location: location, tapCount: touch.tapCount)
             
-            if touch.tapCount > 1 {
-                print("onTouches tap count > 1")
-            }
-            
             if var points = map[fingerprint], let lastPoint = points.last, lastPoint.location != point.location {
                 points.append(point)
                 map[fingerprint] = points
@@ -110,19 +110,16 @@ class GestureView: UIView {
         
         setNeedsDisplay()
     }
-    
-    func showTouches(recognizer: UIGestureRecognizer) {
+
+    func showTouches(recognizer: UIGestureRecognizer, tapCount: Int = 1, longPress: Bool = false) {
+        print("showTouches")
         map.removeAll()
-        
-        let circles = recognizer.isKind(of: UITapGestureRecognizer.self)
-        print("showTouches, circles: \(circles)")
         
         for i in 0...recognizer.numberOfTouches-1 {
             let fingerprint = String(i)
             let location = recognizer.location(ofTouch: i, in: self)
-            let tapCount = (recognizer as? UITapGestureRecognizer)?.numberOfTapsRequired ?? 1
             
-            let point = Point(location: location, tapCount: tapCount)
+            let point = Point(location: location, tapCount: tapCount, longPress: longPress)
             
             map[fingerprint] = [point]
         }
@@ -131,32 +128,33 @@ class GestureView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        let color = UIColor.primary.cgColor
+        
         let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor.primary.cgColor)
+        context?.setStrokeColor(color)
+        context?.setFillColor(color)
         context?.setLineCap(.round)
-        context?.beginPath()
-
+    
         for key in map.keys {
             guard let points = map[key],
                   let firstPoint = points.first else {
                 continue
             }
             
+            context?.beginPath()
+            
+            drawCircles(firstPoint, context: context)
+            
             if points.count > 1 {
                 context?.move(to: firstPoint.location)
+                
                 for point in points {
-                    if point.tapCount > 1 {
-                        drawCircles(point, context: context)
-                    } else {
-                        drawLine(point, context: context)
-                    }
+                    drawLine(point, context: context)
                 }
-            } else {
-                drawCircles(firstPoint, context: context)
             }
+            
+            context?.strokePath()
         }
-        
-        context?.strokePath()
     }
     
     private func drawLine(_ point: Point, context: CGContext?) {
@@ -169,37 +167,17 @@ class GestureView: UIView {
             context?.move(to: point.location)
             
             for i in 0...point.tapCount-1 {
-                context?.setLineWidth(5.0)
+                context?.setLineWidth(10.0)
                 
-                let size:CGFloat = 25 * CGFloat(i+1)
+                let size = CGFloat(50 + i * 50)
                 
                 let circle = CGRect(x: point.location.x - size/2, y: point.location.y - size/2, width: size, height: size)
                 context?.strokeEllipse(in: circle)
+                
+                if point.longPress, i == 0 {
+                    context?.fillEllipse(in: circle)
+                }
             }
         }
-    }
-}
-
-// MARK: - GestureRecognizerTouchesDelegate
-extension GestureView: GestureRecognizerTouchesDelegate {
-    
-    func onTouchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
-        print("onTouchesBegan")
-        touchesBegan(touches, with: event)
-    }
-    
-    func onTouchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
-        print("onTouchesMoved")
-        touchesMoved(touches, with: event)
-    }
-    
-    func onTouchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
-        print("onTouchesEnded")
-        touchesEnded(touches, with: event)
-    }
-    
-    func onTouchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
-        print("onTouchesCancelled")
-        touchesCancelled(touches, with: event)
     }
 }

@@ -59,7 +59,7 @@ final class EmailEntryViewController: ViewController, UITextFieldDelegate {
                 Alert.Builder()
                     .title("email_entry_vc_title".localized)
                     .message(message ?? "")
-                    .action("ok".localized) {
+                    .okAction() {
                         self.navigationController?.popViewController(animated: true)
                     }
                     .present(in: self)

@@ -84,9 +84,8 @@ class VoiceOverGestureViewController: ViewController {
         Alert.Builder()
             .title(gesture.title)
             .message(gesture.explanation)
-            .action("continue".localized) {
-                Accessibility.screenChanged(self.gestureView)
-            }.present(in: self)
+            .action("continue".localized)
+            .present(in: self)
     }
 }
 
@@ -163,7 +162,7 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
                     viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[1], gestures: gestures)
                     self.navigationController?.setViewControllers(viewControllers, animated: true)
                 }
-                .action("continue".localized) {
+                .action("continue".localized, style: .cancel) {
                     self.errorLimit = self.errorLimit * 2
                     Accessibility.screenChanged(self.gestureView)
                 }.present(in: self)

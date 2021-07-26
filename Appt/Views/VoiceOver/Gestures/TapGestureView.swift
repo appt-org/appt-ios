@@ -8,39 +8,6 @@
 
 import UIKit
 
-protocol GestureRecognizerTouchesDelegate {
-    func onTouchesBegan(_ touches: Set<UITouch>, with event: UIEvent)
-    func onTouchesMoved(_ touches: Set<UITouch>, with event: UIEvent)
-    func onTouchesEnded(_ touches: Set<UITouch>, with event: UIEvent)
-    func onTouchesCancelled(_ touches: Set<UITouch>, with event: UIEvent)
-}
-
-
-class TapGestureRecognizer: UITapGestureRecognizer {
-    
-    var touches: GestureRecognizerTouchesDelegate?
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
-        super.touchesBegan(touches, with: event)
-        self.touches?.onTouchesBegan(touches, with: event)
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
-        super.touchesMoved(touches, with: event)
-        self.touches?.onTouchesMoved(touches, with: event)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
-        super.touchesEnded(touches, with: event)
-        self.touches?.onTouchesEnded(touches, with: event)
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
-        super.touchesCancelled(touches, with: event)
-        self.touches?.onTouchesCancelled(touches, with: event)
-    }
-}
-
 class TapGestureView: GestureView {
     
     private var taps = 1
@@ -53,25 +20,15 @@ class TapGestureView: GestureView {
         self.fingers = fingers
         self.position = position
         
-//        let subview = UIView()
-//        subview.backgroundColor = .clear
-//        addSubview(subview)
-//        subview.constraintToSuperView()
-//        bringSubviewToFront(subview)
-        
         // Recognize multiple amount of fingers and multiple amount of taps for improved feedback
         for tapsRequired in 1...4 {
             for fingersRequired in 1...4 {
-                let recognizer = TapGestureRecognizer(target: self, action: #selector(onTap(_:)))
-                recognizer.cancelsTouchesInView = true
+                let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+                recognizer.cancelsTouchesInView = false
                 recognizer.numberOfTapsRequired = tapsRequired
                 recognizer.numberOfTouchesRequired = fingersRequired
                 recognizer.delegate = self
                 addGestureRecognizer(recognizer)
-                
-                if tapsRequired == 1 && fingersRequired == 1 {
-                    //recognizer.touches = self
-                }
             }
         }
         
@@ -79,19 +36,11 @@ class TapGestureView: GestureView {
             UIAccessibility.registerGestureConflictWithZoom()
         }
     }
-//
-//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//        let view = super.hitTest(point, with: event)
-//        if view == self {
-//            return nil
-//        }
-//        return view
-//    }
-         
+
     @objc func onTap(_ sender: UITapGestureRecognizer) {
         print("onTap")
         
-        showTouches(recognizer: sender)
+        showTouches(recognizer: sender, tapCount: sender.numberOfTapsRequired)
         
         guard fingers == sender.numberOfTouchesRequired else {
             // Incorrect amount of fingers

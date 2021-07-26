@@ -44,8 +44,7 @@ final class ProfileViewController: ViewController {
                 Alert.Builder()
                     .title("change_my_password_title".localized)
                     .message(message ?? "")
-                    .action("ok".localized) {
-                    }
+                    .okAction()
                     .present(in: self)
             case false:
                 Alert.error(message ?? "", viewController: self)

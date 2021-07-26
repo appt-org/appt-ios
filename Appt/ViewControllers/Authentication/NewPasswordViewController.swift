@@ -83,7 +83,7 @@ final class NewPasswordViewController: ViewController, UITextFieldDelegate {
                 Alert.Builder()
                     .title("change_password_label_text".localized)
                     .message(message ?? "")
-                    .action("ok".localized) {
+                    .okAction() {
                         if isUserLoggedIn {
                             self.navigationController?.popViewController(animated: true)
                         } else {

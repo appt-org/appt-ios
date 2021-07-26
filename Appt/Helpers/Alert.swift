@@ -42,7 +42,7 @@ class Alert {
         private var title: String?
         private var message: String?
         private var preferredStyle: UIAlertController.Style = .alert
-        private var tintColor: UIColor = .primary
+        private var tintColor: UIColor = .foreground
         private var backgroundColor: UIColor = .clear
         private var alpha: CGFloat = 1.0
         private var cornerRadius:CGFloat = 0.0
@@ -101,7 +101,7 @@ class Alert {
         
         
         func okAction(_ title: String = "ok".localized, callback: (() -> Void)? = nil) -> Builder {
-            return action(title, style: .default, callback: callback)
+            return action(title, style: .cancel, callback: callback)
         }
         
         func cancelAction(_ title: String = "cancel".localized, callback: (() -> Void)? = nil) -> Builder {

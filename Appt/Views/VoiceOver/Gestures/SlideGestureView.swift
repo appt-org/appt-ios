@@ -11,7 +11,7 @@ import AVFoundation
 
 class SlideGestureView: LongPressGestureView {
 
-    private var THRESHOLD:CGFloat = 25
+    private var THRESHOLD: CGFloat = 25
     private var startLocation: CGPoint?
     
     convenience init(gesture: Gesture) {
@@ -23,6 +23,8 @@ class SlideGestureView: LongPressGestureView {
         if completed {
             return
         }
+        
+        showTouches(recognizer: sender, tapCount: sender.numberOfTapsRequired+1, longPress: true)
         
         let location = sender.location(in: self)
         

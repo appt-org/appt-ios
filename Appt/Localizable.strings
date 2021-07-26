@@ -108,7 +108,7 @@
 "gesture_triple_tap_explanation" = "Dit gebaar wordt door sommige apps gebruikt om bijvoorbeeld een menu te tonen.";
 
 "gesture_slide_title" = "Een schuifknop slepen";
-"gesture_slide_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg vervolgens je vinger naar links of rechts.";
+"gesture_slide_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens naar links of rechts.";
 "gesture_slide_explanation" = "Met dit gebaar kun je bijvoorbeeld het volume op de exacte waarde instellen die je wilt.\n\nTip: je kunt ook omlaag of omhoog vegen om de waarde in stappen in te stellen.";
 
 "gesture_magic_tap_title" = "De actuele handeling starten of stoppen";
@@ -131,9 +131,9 @@
 "gesture_three_finger_triple_tap_description" = "Tik driemaal met drie vingers.\n\nLet op: als de zoomfunctie is ingeschakeld kan de app het gebaar helaas niet herkennen.";
 "gesture_three_finger_triple_tap_explanation" = "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken.";
 
-"gesture_double_tap_long_press_title" = "Een direct gebaar maken";
-"gesture_double_tap_long_press_description" = "Dubbeltik en houd vast tot je een toon hoort. Voer vervolgens het gebaar uit.";
-"gesture_double_tap_long_press_explanation" = "Soms is het nodig om een direct gebaar te maken. Hiermee wordt een gebaar buiten VoiceOver om bedoeld. Door dit gebaar te gebruiken, gaat de interactie direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten.";
+"gesture_double_tap_long_press_title" = "Directe aanraking maken";
+"gesture_double_tap_long_press_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens over het scherm.";
+"gesture_double_tap_long_press_explanation" = "Soms is het nodig om aanrakingen buiten VoiceOver om te maken. Door dit gebaar te maken gaat je aanraking direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten.";
 
 "gesture_two_finger_triple_tap_title" = "De onderdeelkiezer openen";
 "gesture_two_finger_triple_tap_description" = "Tik driemaal met twee vingers.";
