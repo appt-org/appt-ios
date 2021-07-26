@@ -24,7 +24,7 @@ class TapGestureView: GestureView {
         for tapsRequired in 1...4 {
             for fingersRequired in 1...4 {
                 let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
-                recognizer.cancelsTouchesInView = false
+                recognizer.cancelsTouchesInView = true
                 recognizer.numberOfTapsRequired = tapsRequired
                 recognizer.numberOfTouchesRequired = fingersRequired
                 recognizer.delegate = self

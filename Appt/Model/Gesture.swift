@@ -30,7 +30,6 @@ enum Gesture: String {
     // Actions
     case doubleTap = "double_tap"
     case tripleTap = "triple_tap"
-    case slide = "slide"
     case magicTap = "magic_tap"
     case escape = "escape"
     case label = "label"
@@ -38,8 +37,8 @@ enum Gesture: String {
     // Controls
     case threeFingerDoubleTap = "three_finger_double_tap"
     case threeFingerTripleTap = "three_finger_triple_tap"
-    case doubleTapLongPress = "double_tap_long_press"
     case twoFingerTripleTap = "two_finger_triple_tap"
+    case directInteraction = "direct_interaction"
     
     // Rotor
     case rotor = "rotor"
@@ -106,8 +105,6 @@ enum Gesture: String {
             return TapGestureView(gesture: self, taps: 2, fingers: 1)
         case .tripleTap:
             return TapGestureView(gesture: self, taps: 3, fingers: 1)
-        case .slide:
-            return SlideGestureView(gesture: self)
         case .magicTap:
             return TapGestureView(gesture: self, taps: 2, fingers: 2)
         case .escape:
@@ -119,13 +116,13 @@ enum Gesture: String {
             return TapGestureView(gesture: self, taps: 2, fingers: 3)
         case .threeFingerTripleTap:
             return TapGestureView(gesture: self, taps: 3, fingers: 3)
-        case .doubleTapLongPress:
-            return DefaultGestureView(gesture: self)
         case .twoFingerTripleTap:
             return TapGestureView(gesture: self, taps: 3, fingers: 2)
+        case .directInteraction:
+            return DirectGestureView(gesture: self)
             
         case .rotor:
-            return RotationGestureView(gesture: self, rotation: 0.5)
+            return RotationGestureView(gesture: self, fingers: 2, rotation: 0.5)
         case .swipeUp:
             return SwipeGestureView(gesture: self, direction: .up, fingers: 1)
         case .swipeDown:

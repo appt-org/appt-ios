@@ -1,5 +1,5 @@
 //
-//  DefaultGestureView.swift
+//  DirectGestureView.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 18/08/2020.
@@ -9,7 +9,7 @@
 import UIKit
 import AVKit
 
-class DefaultGestureView: LongPressGestureView {
+class DirectGestureView: LongPressGestureView {
 
     private var THRESHOLD = 25
     private var count = 0

@@ -107,10 +107,6 @@
 "gesture_triple_tap_description" = "Tik driemaal op het scherm.";
 "gesture_triple_tap_explanation" = "Dit gebaar wordt door sommige apps gebruikt om bijvoorbeeld een menu te tonen.";
 
-"gesture_slide_title" = "Een schuifknop slepen";
-"gesture_slide_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens naar links of rechts.";
-"gesture_slide_explanation" = "Met dit gebaar kun je bijvoorbeeld het volume op de exacte waarde instellen die je wilt.\n\nTip: je kunt ook omlaag of omhoog vegen om de waarde in stappen in te stellen.";
-
 "gesture_magic_tap_title" = "De actuele handeling starten of stoppen";
 "gesture_magic_tap_description" = "Tik tweemaal op het scherm met twee vingers.";
 "gesture_magic_tap_explanation" = "Dit gebaar is ook bekend als Magic Tap. Hiermee kun je bijvoorbeeld muziek op de achtergrond starten of stoppen. Sommige apps gebruiken dit ook gebaar om de belangrijkste actie op het scherm uit te voeren.";
@@ -131,17 +127,17 @@
 "gesture_three_finger_triple_tap_description" = "Tik driemaal met drie vingers.\n\nLet op: als de zoomfunctie is ingeschakeld kan de app het gebaar helaas niet herkennen.";
 "gesture_three_finger_triple_tap_explanation" = "Indien je geen zicht meer hebt, kun je het schermgordijn inschakelen. Hierdoor verbruikt je telefoon minder stroom en kan er niemand op je scherm meekijken.";
 
-"gesture_double_tap_long_press_title" = "Directe aanraking maken";
-"gesture_double_tap_long_press_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens over het scherm.";
-"gesture_double_tap_long_press_explanation" = "Soms is het nodig om aanrakingen buiten VoiceOver om te maken. Door dit gebaar te maken gaat je aanraking direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten.";
-
 "gesture_two_finger_triple_tap_title" = "De onderdeelkiezer openen";
 "gesture_two_finger_triple_tap_description" = "Tik driemaal met twee vingers.";
 "gesture_two_finger_triple_tap_explanation" = "De onderdeelkiezer kan het navigeren binnen een app makkelijker maken.\n\nTip: je kunt de onderdeelkiezer sluiten door met twee vingers te zigzaggen.";
 
+"gesture_direct_interaction_title" = "Directe aanraking maken";
+"gesture_direct_interaction_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens over het scherm.";
+"gesture_direct_interaction_explanation" = "Soms is het nodig om aanrakingen buiten VoiceOver om te maken. Door dit gebaar te maken gaat je aanraking direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten. Dit gebaar kan ook handig zijn om elementen opnieuw te rangschikken (drag and drop).";
+
 "gesture_rotor_title" = "Een rotorinstelling kiezen";
 "gesture_rotor_description" = "Maak een draaiende beweging met twee vingers.";
-"gesture_rotor_explanationr" = "Plaats twee vingers een stukje uit elkaar op het scherm. Maak vervolgens een draai beweging. Maak nog een draai beweging om naar het volgende onderdeel te gaan.\n\nHet kan lastig zijn om dit gebaar onder de knie te krijgen. De rotor is heel uitgebreid, dus onthoud dit gebaar goed!";
+"gesture_rotor_explanation" = "Plaats twee vingers een stukje uit elkaar op het scherm. Maak vervolgens een draai beweging. Maak nog een draai beweging om naar het volgende onderdeel te gaan.\n\nHet kan lastig zijn om dit gebaar onder de knie te krijgen. De rotor is heel uitgebreid, dus onthoud dit gebaar goed!";
 
 "gesture_swipe_up_title" = "Rotoronderdeel omhoog aanpassen";
 "gesture_swipe_up_description" = "Veeg met één vinger omhoog.";

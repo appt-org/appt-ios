@@ -15,7 +15,7 @@ protocol GestureViewDelegate {
 }
 
 class GestureView: UIView {
-    
+        
     var delegate: GestureViewDelegate?
     var gesture: Gesture!
     var completed = false
@@ -38,7 +38,12 @@ class GestureView: UIView {
         if !completed {
             completed = true
             AudioServicesPlaySystemSound(SystemSoundID(1256))
-            delegate?.correct(gesture)
+            
+            setNeedsDisplay()
+            
+            //delay(0.1) {
+                self.delegate?.correct(self.gesture)
+            //}
         }
     }
     
@@ -83,13 +88,12 @@ class GestureView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         print("touchesEnded")
-        //onTouches(touches)
+        onTouches(touches)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         print("touchesCancelled")
-        //map.removeAll()
         //onTouches(touches)
     }
     
@@ -112,7 +116,10 @@ class GestureView: UIView {
     }
 
     func showTouches(recognizer: UIGestureRecognizer, tapCount: Int = 1, longPress: Bool = false) {
-        print("showTouches")
+        guard recognizer.numberOfTouches > 0 else {
+            return
+        }
+        
         map.removeAll()
         
         for i in 0...recognizer.numberOfTouches-1 {
@@ -134,7 +141,7 @@ class GestureView: UIView {
         context?.setStrokeColor(color)
         context?.setFillColor(color)
         context?.setLineCap(.round)
-    
+        
         for key in map.keys {
             guard let points = map[key],
                   let firstPoint = points.first else {
@@ -151,25 +158,27 @@ class GestureView: UIView {
                 for point in points {
                     drawLine(point, context: context)
                 }
+                
+                drawArrow(points, context: context)
             }
             
             context?.strokePath()
         }
     }
     
-    private func drawLine(_ point: Point, context: CGContext?) {
-        context?.setLineWidth(15.0)
+    private func drawLine(_ point: Point, context: CGContext?, thickness: CGFloat = 15.0) {
+        context?.setLineWidth(thickness)
         context?.addLine(to: point.location)
     }
     
-    private func drawCircles(_ point: Point, context: CGContext?) {
+    private func drawCircles(_ point: Point, context: CGContext?, thickness: CGFloat = 10.0, size: CGFloat = 50.0) {
+        context?.setLineWidth(thickness)
+        
         if point.tapCount > 0 {
             context?.move(to: point.location)
             
             for i in 0...point.tapCount-1 {
-                context?.setLineWidth(10.0)
-                
-                let size = CGFloat(50 + i * 50)
+                let size = size + CGFloat(i) * size
                 
                 let circle = CGRect(x: point.location.x - size/2, y: point.location.y - size/2, width: size, height: size)
                 context?.strokeEllipse(in: circle)
@@ -179,5 +188,28 @@ class GestureView: UIView {
                 }
             }
         }
+    }
+    
+    private func drawArrow(_ points: [Point], context: CGContext?, thickness: CGFloat = 15.0, size: CGFloat = 50.0) {
+        let subset = points.suffix(5)
+        guard subset.count >= 2,
+              let start = subset.first?.location,
+              let end = subset.last?.location else {
+            return
+        }
+
+        let angle = CGFloat(Double.pi / 4)
+    
+        let startEndAngle = atan((end.y - start.y) / (end.x - start.x)) + ((end.x - start.x) < 0 ? CGFloat(Double.pi) : 0)
+        let top = CGPoint(x: end.x + size * cos(CGFloat(Double.pi) - startEndAngle + angle), y: end.y - size * sin(CGFloat(Double.pi) - startEndAngle + angle))
+        let bottom = CGPoint(x: end.x + size * cos(CGFloat(Double.pi) - startEndAngle - angle), y: end.y - size * sin(CGFloat(Double.pi) - startEndAngle - angle))
+
+        context?.setLineWidth(thickness)
+        
+        context?.move(to: end)
+        context?.addLine(to: top)
+        
+        context?.move(to: end)
+        context?.addLine(to: bottom)
     }
 }

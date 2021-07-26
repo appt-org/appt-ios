@@ -10,12 +10,13 @@ import UIKit
 
 class RotationGestureView: GestureView {
     
-    private let fingers = 2
-    private var rotation: CGFloat!
+    private var fingers = 2
+    private var rotation: CGFloat = 0.5
     private var detected = false
-        
-    convenience init(gesture: Gesture, rotation: CGFloat) {
+    
+    convenience init(gesture: Gesture, fingers: Int, rotation: CGFloat) {
         self.init(gesture: gesture)
+        self.fingers = fingers
         self.rotation = rotation
 
         let recognizer = UIRotationGestureRecognizer(target: self, action: #selector(onRotate(_:)))
@@ -28,7 +29,6 @@ class RotationGestureView: GestureView {
             return
         }
 
-        guard let rotation = rotation else { return }
         let rotated = abs(sender.rotation)
         
         guard rotated >= rotation else {

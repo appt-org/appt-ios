@@ -22,14 +22,14 @@ class LongPressGestureView: GestureView {
         for tapsRequired in 1...4 {
             for fingersRequired in 1...4 {
                 let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
-                tapRecognizer.cancelsTouchesInView = false
+                tapRecognizer.cancelsTouchesInView = true
                 tapRecognizer.numberOfTapsRequired = tapsRequired
                 tapRecognizer.numberOfTouchesRequired = fingersRequired
                 tapRecognizer.delegate = self
                 addGestureRecognizer(tapRecognizer)
                 
                 let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(_:)))
-                longPressRecognizer.cancelsTouchesInView = false
+                longPressRecognizer.cancelsTouchesInView = true
                 longPressRecognizer.numberOfTapsRequired = tapsRequired - 1 // Subtract one because it starts at zero.
                 longPressRecognizer.numberOfTouchesRequired = fingersRequired
                 longPressRecognizer.minimumPressDuration = duration

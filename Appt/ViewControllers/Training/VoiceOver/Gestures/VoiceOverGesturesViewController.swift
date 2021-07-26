@@ -32,7 +32,6 @@ class VoiceOverGesturesViewController: TableViewController {
             "gestures_actions".localized: [
                 .doubleTap,
                 .tripleTap,
-                .slide,
                 .magicTap,
                 .escape,
                 .label
@@ -40,8 +39,8 @@ class VoiceOverGesturesViewController: TableViewController {
             "gestures_controls".localized: [
                 .threeFingerDoubleTap,
                 .threeFingerTripleTap,
-                .doubleTapLongPress,
-                .twoFingerTripleTap
+                .twoFingerTripleTap,
+                .directInteraction
             ],
             "gestures_rotor".localized: [
                 .rotor,
