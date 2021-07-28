@@ -15,7 +15,9 @@ protocol GestureViewDelegate {
 }
 
 class GestureView: UIView {
-        
+    
+    private var observer: NSKeyValueObservation?
+    
     var delegate: GestureViewDelegate?
     var gesture: Gesture!
     var completed = false
@@ -32,6 +34,15 @@ class GestureView: UIView {
         isOpaque = false
         clearsContextBeforeDrawing = false
         backgroundColor = .clear
+        
+        observer = layer.observe(\.bounds) { object, _ in
+            self.map.removeAll()
+            self.setNeedsDisplay()
+        }
+    }
+    
+    deinit {
+        observer?.invalidate()
     }
     
     func correct(_ recognizer: UIGestureRecognizer? = nil) {
