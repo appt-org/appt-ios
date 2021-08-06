@@ -13,7 +13,7 @@ class VoiceOverGesturesViewController: TableViewController {
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "gestures_explore".localized: [
-                .oneFingerTap,
+                .oneFingerTouch,
                 .oneFingerSwipeRight,
                 .oneFingerSwipeLeft,
                 .fourFingerTapTop,

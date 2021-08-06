@@ -47,9 +47,9 @@
 "gestures_controls" = "Bediening";
 "gestures_rotor" = "Rotor";
 
-"gesture_one_finger_tap_title" = "Een onderdeel selecteren en uitspreken";
-"gesture_one_finger_tap_description" = "Raak het scherm aan.";
-"gesture_one_finger_tap_explanation" = "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit.";
+"gesture_one_finger_touch_title" = "Een onderdeel selecteren en uitspreken";
+"gesture_one_finger_touch_description" = "Raak het scherm aan.";
+"gesture_one_finger_touch_explanation" = "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit.";
 
 "gesture_one_finger_swipe_right_title" = "Naar het volgende onderdeel navigeren";
 "gesture_one_finger_swipe_right_description" = "Veeg met één vinger naar rechts.";

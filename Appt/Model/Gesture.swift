@@ -11,7 +11,7 @@ import UIKit
 enum Gesture: String {
 
     // Navigation
-    case oneFingerTap = "one_finger_tap"
+    case oneFingerTouch = "one_finger_touch"
     case oneFingerSwipeRight = "one_finger_swipe_right"
     case oneFingerSwipeLeft = "one_finger_swipe_left"
     case fourFingerTapTop = "four_finger_tap_top"
@@ -73,7 +73,7 @@ enum Gesture: String {
     /** View */
     var view: GestureView {
         switch self {
-        case .oneFingerTap:
+        case .oneFingerTouch:
             return TouchGestureView(gesture: self, taps: 1, fingers: 1)
         case .oneFingerSwipeRight:
             return SwipeGestureView(gesture: self, direction: .right, fingers: 1)
