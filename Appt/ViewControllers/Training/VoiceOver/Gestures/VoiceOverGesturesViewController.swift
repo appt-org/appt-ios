@@ -24,10 +24,10 @@ class VoiceOverGesturesViewController: TableViewController {
                 .threeFingerTap
             ],
             "gestures_scroll".localized: [
-                .oneFingerScrollUp,
-                .oneFingerScrollRight,
-                .oneFingerScrollDown,
-                .oneFingerScrollLeft
+                .threeFingerSwipeUp,
+                .threeFingerSwipeRight,
+                .threeFingerSwipeDown,
+                .threeFingerSwipeLeft
             ],
             "gestures_actions".localized: [
                 .oneFingerDoubleTap,

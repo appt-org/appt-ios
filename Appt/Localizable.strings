@@ -83,21 +83,21 @@
 "gesture_three_finger_tap_description" = "Tik met drie vingers op het scherm.";
 "gesture_three_finger_tap_explanation" = "Dit gebaar kan handig zijn ter oriëntatie waar je op het scherm bent.";
 
-"gesture_one_finger_scroll_up_title" = "Omhoog scrollen";
-"gesture_one_finger_scroll_up_description" = "Veeg met drie vingers omhoog.";
-"gesture_one_finger_scroll_up_explanation" = "Gebruik dit gebaar wanneer je omlaag wilt scrollen.";
+"gesture_three_finger_swipe_up_title" = "Omhoog scrollen";
+"gesture_three_finger_swipe_up_description" = "Veeg met drie vingers omhoog.";
+"gesture_three_finger_swipe_up_explanation" = "Gebruik dit gebaar wanneer je omlaag wilt scrollen.";
 
-"gesture_one_finger_scroll_right_title" = "Naar rechts scrollen";
-"gesture_one_finger_scroll_right_description" = "Veeg met drie vingers naar rechts.";
-"gesture_one_finger_scroll_right_explanation" = "Gebruik dit gebaar wanneer je naar rechts wilt scrollen.";
+"gesture_three_finger_swipe_right_title" = "Naar rechts scrollen";
+"gesture_three_finger_swipe_right_description" = "Veeg met drie vingers naar rechts.";
+"gesture_three_finger_swipe_right_explanation" = "Gebruik dit gebaar wanneer je naar rechts wilt scrollen.";
 
-"gesture_one_finger_scroll_down_title" = "Omlaag scrollen";
-"gesture_one_finger_scroll_down_description" = "Veeg met drie vingers omlaag.";
-"gesture_one_finger_scroll_down_explanation" = "Gebruik dit gebaar wanneer je omhoog wilt scrollen.";
+"gesture_three_finger_swipe_down_title" = "Omlaag scrollen";
+"gesture_three_finger_swipe_down_description" = "Veeg met drie vingers omlaag.";
+"gesture_three_finger_swipe_down_explanation" = "Gebruik dit gebaar wanneer je omhoog wilt scrollen.";
 
-"gesture_one_finger_scroll_left_title" = "Naar links scrollen";
-"gesture_one_finger_scroll_left_description" = "Veeg met drie vingers naar links.";
-"gesture_one_finger_scroll_left_explanation" = "Gebruik dit gebaar wanneer je naar links wilt scrollen.";
+"gesture_three_finger_swipe_left_title" = "Naar links scrollen";
+"gesture_three_finger_swipe_left_description" = "Veeg met drie vingers naar links.";
+"gesture_three_finger_swipe_left_explanation" = "Gebruik dit gebaar wanneer je naar links wilt scrollen.";
 
 "gesture_one_finger_double_tap_title" = "Het geselecteerde onderdeel activeren";
 "gesture_one_finger_double_tap_description" = "Tik tweemaal op het scherm.";

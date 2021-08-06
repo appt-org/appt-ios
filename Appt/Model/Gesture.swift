@@ -11,39 +11,39 @@ import UIKit
 enum Gesture: String {
 
     // Navigation
-    case oneFingerTouch = "one_finger_touch"
-    case oneFingerSwipeRight = "one_finger_swipe_right"
-    case oneFingerSwipeLeft = "one_finger_swipe_left"
-    case fourFingerTapTop = "four_finger_tap_top"
-    case fourFingerTapBottom = "four_finger_tap_bottom"
-    case twoFingerSwipeDown = "two_finger_swipe_down"
-    case twoFingerSwipeUp = "two_finger_swipe_up"
-    case twoFingerTap = "two_finger_tap"
-    case threeFingerTap = "three_finger_tap"
+    case oneFingerTouch         = "one_finger_touch"
+    case oneFingerSwipeRight    = "one_finger_swipe_right"
+    case oneFingerSwipeLeft     = "one_finger_swipe_left"
+    case fourFingerTapTop       = "four_finger_tap_top"
+    case fourFingerTapBottom    = "four_finger_tap_bottom"
+    case twoFingerSwipeDown     = "two_finger_swipe_down"
+    case twoFingerSwipeUp       = "two_finger_swipe_up"
+    case twoFingerTap           = "two_finger_tap"
+    case threeFingerTap         = "three_finger_tap"
     
     // Scrolling
-    case oneFingerScrollUp = "one_finger_scroll_up"
-    case oneFingerScrollRight = "one_finger_scroll_right"
-    case oneFingerScrollDown = "one_finger_scroll_down"
-    case oneFingerScrollLeft = "one_finger_scroll_left"
+    case threeFingerSwipeUp     = "three_finger_swipe_up"
+    case threeFingerSwipeRight  = "three_finger_swipe_right"
+    case threeFingerSwipeDown   = "three_finger_swipe_down"
+    case threeFingerSwipeLeft   = "three_finger_swipe_left"
     
     // Actions
-    case oneFingerDoubleTap = "one_finger_double_tap"
-    case oneFingerTripleTap = "one_finger_triple_tap"
-    case twoFingerDoubleTap = "two_finger_double_tap"
-    case twoFingerZShape = "two_finger_z_shape"
+    case oneFingerDoubleTap     = "one_finger_double_tap"
+    case oneFingerTripleTap     = "one_finger_triple_tap"
+    case twoFingerDoubleTap     = "two_finger_double_tap"
+    case twoFingerZShape        = "two_finger_z_shape"
     case twoFingerDoubleTapHold = "two_finger_double_tap_hold"
     
     // Controls
-    case threeFingerDoubleTap = "three_finger_double_tap"
-    case threeFingerTripleTap = "three_finger_triple_tap"
-    case twoFingerTripleTap = "two_finger_triple_tap"
+    case threeFingerDoubleTap   = "three_finger_double_tap"
+    case threeFingerTripleTap   = "three_finger_triple_tap"
+    case twoFingerTripleTap     = "two_finger_triple_tap"
     case oneFingerDoubleTapHold = "one_finger_double_tap_hold"
     
     // Rotor
-    case twoFingerRotate = "two_finger_rotate"
-    case oneFingerSwipeUp = "one_finger_swipe_up"
-    case oneFingerSwipeDown = "one_finger_swipe_down"
+    case twoFingerRotate        = "two_finger_rotate"
+    case oneFingerSwipeUp       = "one_finger_swipe_up"
+    case oneFingerSwipeDown     = "one_finger_swipe_down"
     
     /** Identifier */
     var id: String {
@@ -92,13 +92,13 @@ enum Gesture: String {
         case .threeFingerTap:
             return TapGestureView(gesture: self, taps: 1, fingers: 3)
         
-        case .oneFingerScrollUp:
+        case .threeFingerSwipeUp:
             return SwipeGestureView(gesture: self, direction: .up, fingers: 3)
-        case .oneFingerScrollRight:
+        case .threeFingerSwipeRight:
             return SwipeGestureView(gesture: self, direction: .right, fingers: 3)
-        case .oneFingerScrollDown:
+        case .threeFingerSwipeDown:
             return SwipeGestureView(gesture: self, direction: .down, fingers: 3)
-        case .oneFingerScrollLeft:
+        case .threeFingerSwipeLeft:
             return SwipeGestureView(gesture: self, direction: .left, fingers: 3)
             
         case .oneFingerDoubleTap:
