@@ -13,9 +13,9 @@ class VoiceOverGesturesViewController: TableViewController {
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
             "gestures_explore".localized: [
-                .touch,
-                .swipeRight,
-                .swipeLeft,
+                .oneFingerTap,
+                .oneFingerSwipeRight,
+                .oneFingerSwipeLeft,
                 .fourFingerTapTop,
                 .fourFingerTapBottom,
                 .twoFingerSwipeUp,
@@ -24,28 +24,28 @@ class VoiceOverGesturesViewController: TableViewController {
                 .threeFingerTap
             ],
             "gestures_scroll".localized: [
-                .scrollUp,
-                .scrollRight,
-                .scrollDown,
-                .scrollLeft
+                .oneFingerScrollUp,
+                .oneFingerScrollRight,
+                .oneFingerScrollDown,
+                .oneFingerScrollLeft
             ],
             "gestures_actions".localized: [
-                .doubleTap,
-                .tripleTap,
-                .magicTap,
-                .escape,
-                .label
+                .oneFingerDoubleTap,
+                .oneFingerTripleTap,
+                .twoFingerDoubleTap,
+                .twoFingerZShape,
+                .twoFingerDoubleTapHold
             ],
             "gestures_controls".localized: [
                 .threeFingerDoubleTap,
                 .threeFingerTripleTap,
                 .twoFingerTripleTap,
-                .directInteraction
+                .oneFingerDoubleTapHold
             ],
             "gestures_rotor".localized: [
-                .rotor,
-                .swipeUp,
-                .swipeDown
+                .twoFingerRotate,
+                .oneFingerSwipeUp,
+                .oneFingerSwipeDown
             ]
         ]
     }

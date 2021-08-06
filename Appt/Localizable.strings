@@ -47,17 +47,17 @@
 "gestures_controls" = "Bediening";
 "gestures_rotor" = "Rotor";
 
-"gesture_touch_title" = "Een onderdeel selecteren en uitspreken";
-"gesture_touch_description" = "Raak het scherm aan.";
-"gesture_touch_explanation" = "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit.";
+"gesture_one_finger_tap_title" = "Een onderdeel selecteren en uitspreken";
+"gesture_one_finger_tap_description" = "Raak het scherm aan.";
+"gesture_one_finger_tap_explanation" = "Wanneer je het scherm aanraakt wordt de inhoud onder je vinger voorgelezen.\n\nTip: als je vervolgens met een andere vinger op het scherm tikt, voer je direct een dubbeltik uit.";
 
-"gesture_swipe_right_title" = "Naar het volgende onderdeel navigeren";
-"gesture_swipe_right_description" = "Veeg met één vinger naar rechts.";
-"gesture_swipe_right_explanation" = "Door naar rechts te vegen verken je het scherm van links naar rechts en van boven naar beneden.";
+"gesture_one_finger_swipe_right_title" = "Naar het volgende onderdeel navigeren";
+"gesture_one_finger_swipe_right_description" = "Veeg met één vinger naar rechts.";
+"gesture_one_finger_swipe_right_explanation" = "Door naar rechts te vegen verken je het scherm van links naar rechts en van boven naar beneden.";
 
-"gesture_swipe_left_title" = "Naar het vorige onderdeel navigeren";
-"gesture_swipe_left_description" = "Veeg met één vinger naar links.";
-"gesture_swipe_left_explanation" = "Door naar links te vegen verken je het scherm van rechts naar links en van beneden naar boven.";
+"gesture_one_finger_swipe_left_title" = "Naar het vorige onderdeel navigeren";
+"gesture_one_finger_swipe_left_description" = "Veeg met één vinger naar links.";
+"gesture_one_finger_swipe_left_explanation" = "Door naar links te vegen verken je het scherm van rechts naar links en van beneden naar boven.";
 
 "gesture_four_finger_tap_top_title" = "Naar het eerste onderdeel gaan";
 "gesture_four_finger_tap_top_description" = "Tik met vier vingers bovenaan het scherm.";
@@ -83,41 +83,41 @@
 "gesture_three_finger_tap_description" = "Tik met drie vingers op het scherm.";
 "gesture_three_finger_tap_explanation" = "Dit gebaar kan handig zijn ter oriëntatie waar je op het scherm bent.";
 
-"gesture_scroll_up_title" = "Omhoog scrollen";
-"gesture_scroll_up_description" = "Veeg met drie vingers omhoog.";
-"gesture_scroll_up_explanation" = "Gebruik dit gebaar wanneer je omlaag wilt scrollen.";
+"gesture_one_finger_scroll_up_title" = "Omhoog scrollen";
+"gesture_one_finger_scroll_up_description" = "Veeg met drie vingers omhoog.";
+"gesture_one_finger_scroll_up_explanation" = "Gebruik dit gebaar wanneer je omlaag wilt scrollen.";
 
-"gesture_scroll_right_title" = "Naar rechts scrollen";
-"gesture_scroll_right_description" = "Veeg met drie vingers naar rechts.";
-"gesture_scroll_right_explanation" = "Gebruik dit gebaar wanneer je naar rechts wilt scrollen.";
+"gesture_one_finger_scroll_right_title" = "Naar rechts scrollen";
+"gesture_one_finger_scroll_right_description" = "Veeg met drie vingers naar rechts.";
+"gesture_one_finger_scroll_right_explanation" = "Gebruik dit gebaar wanneer je naar rechts wilt scrollen.";
 
-"gesture_scroll_down_title" = "Omlaag scrollen";
-"gesture_scroll_down_description" = "Veeg met drie vingers omlaag.";
-"gesture_scroll_down_explanation" = "Gebruik dit gebaar wanneer je omhoog wilt scrollen.";
+"gesture_one_finger_scroll_down_title" = "Omlaag scrollen";
+"gesture_one_finger_scroll_down_description" = "Veeg met drie vingers omlaag.";
+"gesture_one_finger_scroll_down_explanation" = "Gebruik dit gebaar wanneer je omhoog wilt scrollen.";
 
-"gesture_scroll_left_title" = "Naar links scrollen";
-"gesture_scroll_left_description" = "Veeg met drie vingers naar links.";
-"gesture_scroll_left_explanation" = "Gebruik dit gebaar wanneer je naar links wilt scrollen.";
+"gesture_one_finger_scroll_left_title" = "Naar links scrollen";
+"gesture_one_finger_scroll_left_description" = "Veeg met drie vingers naar links.";
+"gesture_one_finger_scroll_left_explanation" = "Gebruik dit gebaar wanneer je naar links wilt scrollen.";
 
-"gesture_double_tap_title" = "Het geselecteerde onderdeel activeren";
-"gesture_double_tap_description" = "Tik tweemaal op het scherm.";
-"gesture_double_tap_explanation" = "Dit gebaar gebruik je om bijvoorbeeld een knop te activeren.";
+"gesture_one_finger_double_tap_title" = "Het geselecteerde onderdeel activeren";
+"gesture_one_finger_double_tap_description" = "Tik tweemaal op het scherm.";
+"gesture_one_finger_double_tap_explanation" = "Dit gebaar gebruik je om bijvoorbeeld een knop te activeren.";
 
-"gesture_triple_tap_title" = "Dubbeltikken op het geselecteerde onderdeel";
-"gesture_triple_tap_description" = "Tik driemaal op het scherm.";
-"gesture_triple_tap_explanation" = "Dit gebaar wordt door sommige apps gebruikt om bijvoorbeeld een menu te tonen.";
+"gesture_one_finger_triple_tap_title" = "Dubbeltikken op het geselecteerde onderdeel";
+"gesture_one_finger_triple_tap_description" = "Tik driemaal op het scherm.";
+"gesture_one_finger_triple_tap_explanation" = "Dit gebaar wordt door sommige apps gebruikt om bijvoorbeeld een menu te tonen.";
 
-"gesture_magic_tap_title" = "De actuele handeling starten of stoppen";
-"gesture_magic_tap_description" = "Tik tweemaal op het scherm met twee vingers.";
-"gesture_magic_tap_explanation" = "Dit gebaar is ook bekend als Magic Tap. Hiermee kun je bijvoorbeeld muziek op de achtergrond starten of stoppen. Sommige apps gebruiken dit ook gebaar om de belangrijkste actie op het scherm uit te voeren.";
+"gesture_two_finger_double_tap_title" = "De actuele handeling starten of stoppen";
+"gesture_two_finger_double_tap_description" = "Tik tweemaal op het scherm met twee vingers.";
+"gesture_two_finger_double_tap_explanation" = "Dit gebaar is ook bekend als Magic Tap. Hiermee kun je bijvoorbeeld muziek op de achtergrond starten of stoppen. Sommige apps gebruiken dit ook gebaar om de belangrijkste actie op het scherm uit te voeren.";
 
-"gesture_escape_title" = "Een melding sluiten of teruggaan naar het vorige scherm";
-"gesture_escape_description" = "Zigzag met twee vingers in de vorm van de letter Z";
-"gesture_escape_explanation" =  "Dit gebaar is superhandig. Je kunt namelijk vanaf elke plek in een app terug navigeren. Daarnaast kun je meldingen sluiten.\n\nHet is vaak even wennen hoe je dit gebaar precies uitvoert. Je moet met twee vingers zigzaggen in de vorm van een Z.";
+"gesture_two_finger_z_shape_title" = "Een melding sluiten of teruggaan naar het vorige scherm";
+"gesture_two_finger_z_shape_description" = "Zigzag met twee vingers in de vorm van de letter Z";
+"gesture_two_finger_z_shape_explanation" =  "Dit gebaar is superhandig. Je kunt namelijk vanaf elke plek in een app terug navigeren. Daarnaast kun je meldingen sluiten.\n\nHet is vaak even wennen hoe je dit gebaar precies uitvoert. Je moet met twee vingers zigzaggen in de vorm van een Z.";
 
-"gesture_label_title" = "Het label van een onderdeel wijzigen";
-"gesture_label_description" = "Dubbeltik met twee vingers en houdt vast.";
-"gesture_label_explanation" = "Helaas zijn niet alle apps toegankelijk. Dankzij dit gebaar kun je je eigen labels toevoegen. Handig om bijvoorbeeld knoppen aan te geven.\n\nLet op: na elke app update zijn al je labels weg. De ontwikkelaar van de app kan hier niks aan doen.";
+"gesture_two_finger_double_tap_hold_title" = "Het label van een onderdeel wijzigen";
+"gesture_two_finger_double_tap_hold_description" = "Dubbeltik met twee vingers en houdt vast.";
+"gesture_two_finger_double_tap_hold_explanation" = "Helaas zijn niet alle apps toegankelijk. Dankzij dit gebaar kun je je eigen labels toevoegen. Handig om bijvoorbeeld knoppen aan te geven.\n\nLet op: na elke app update zijn al je labels weg. De ontwikkelaar van de app kan hier niks aan doen.";
 
 "gesture_three_finger_double_tap_title" = "Het geluid van VoiceOver in- of uitschakelen";
 "gesture_three_finger_double_tap_description" = "Tik tweemaal met drie vingers om het geluid van VoiceOver in- of uit te schakelen.\n\nLet op: als de zoomfunctie is ingeschakeld kan de app het gebaar helaas niet herkennen.";
@@ -131,21 +131,21 @@
 "gesture_two_finger_triple_tap_description" = "Tik driemaal met twee vingers.";
 "gesture_two_finger_triple_tap_explanation" = "De onderdeelkiezer kan het navigeren binnen een app makkelijker maken.\n\nTip: je kunt de onderdeelkiezer sluiten door met twee vingers te zigzaggen.";
 
-"gesture_direct_interaction_title" = "Directe aanraking maken";
-"gesture_direct_interaction_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens over het scherm.";
-"gesture_direct_interaction_explanation" = "Soms is het nodig om aanrakingen buiten VoiceOver om te maken. Door dit gebaar te maken gaat je aanraking direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten. Dit gebaar kan ook handig zijn om elementen opnieuw te rangschikken (drag and drop).";
+"gesture_one_finger_double_tap_hold_title" = "Directe aanraking maken";
+"gesture_one_finger_double_tap_hold_description" = "Dubbeltik en houd vast tot je een toon hoort. Beweeg je vinger vervolgens over het scherm.";
+"gesture_one_finger_double_tap_hold_explanation" = "Soms is het nodig om aanrakingen buiten VoiceOver om te maken. Door dit gebaar te maken gaat je aanraking direct naar de app en niet naar VoiceOver. Hierdoor is het bijvoorbeeld mogelijk om een handtekening te zetten. Dit gebaar kan ook handig zijn om elementen opnieuw te rangschikken (drag and drop).";
 
-"gesture_rotor_title" = "Een rotorinstelling kiezen";
-"gesture_rotor_description" = "Maak een draaiende beweging met twee vingers.";
-"gesture_rotor_explanation" = "Plaats twee vingers een stukje uit elkaar op het scherm. Maak vervolgens een draai beweging. Maak nog een draai beweging om naar het volgende onderdeel te gaan.\n\nHet kan lastig zijn om dit gebaar onder de knie te krijgen. De rotor is heel uitgebreid, dus onthoud dit gebaar goed!";
+"gesture_two_finger_rotate_title" = "Een rotorinstelling kiezen";
+"gesture_two_finger_rotate_description" = "Maak een draaiende beweging met twee vingers.";
+"gesture_two_finger_rotate_explanation" = "Plaats twee vingers een stukje uit elkaar op het scherm. Maak vervolgens een draai beweging. Maak nog een draai beweging om naar het volgende onderdeel te gaan.\n\nHet kan lastig zijn om dit gebaar onder de knie te krijgen. De rotor is heel uitgebreid, dus onthoud dit gebaar goed!";
 
-"gesture_swipe_up_title" = "Rotoronderdeel omhoog aanpassen";
-"gesture_swipe_up_description" = "Veeg met één vinger omhoog.";
-"gesture_swipe_up_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verhoogt, of ga je naar het volgende onderdeel.";
+"gesture_one_finger_swipe_up_title" = "Rotoronderdeel omhoog aanpassen";
+"gesture_one_finger_swipe_up_description" = "Veeg met één vinger omhoog.";
+"gesture_one_finger_swipe_up_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verhoogt, of ga je naar het volgende onderdeel.";
 
-"gesture_swipe_down_title" = "Rotoronderdeel omlaag aanpassen";
-"gesture_swipe_down_description" = "Veeg met één vinger omlaag.";
-"gesture_swipe_down_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel.";
+"gesture_one_finger_swipe_down_title" = "Rotoronderdeel omlaag aanpassen";
+"gesture_one_finger_swipe_down_description" = "Veeg met één vinger omlaag.";
+"gesture_one_finger_swipe_down_explanation" = "Afhankelijk van het type rotoronderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel.";
 
 /* Action */
 "action_headings_title" = "Navigeren via koppen";
