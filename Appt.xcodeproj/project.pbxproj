@@ -1064,7 +1064,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
@@ -1073,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1091,7 +1091,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
@@ -1100,7 +1100,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
