@@ -428,17 +428,17 @@
 		287468F0247E65450089BB32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
 				23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */,
 				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
-				232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */,
+				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
 				232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */,
-				2338B347264D569C00D47FC7 /* CategoryCollectionViewCell.swift */,
+				232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */,
 				2338B348264D569C00D47FC7 /* CategoryCollectionViewCell.xib */,
-				23FAE782268B5F1700A87328 /* BlocksCollectionHeaderCell.swift */,
+				2338B347264D569C00D47FC7 /* CategoryCollectionViewCell.swift */,
 				23FAE783268B5F1700A87328 /* BlocksCollectionHeaderCell.xib */,
-				A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */,
+				23FAE782268B5F1700A87328 /* BlocksCollectionHeaderCell.swift */,
 				A82ACD132653CD7900BBE8FA /* ListTableTopSectionHeaderView.xib */,
+				A82ACD112653CD6A00BBE8FA /* ListTableTopSectionHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 protocol GestureViewDelegate {
     func correct(_ gesture: Gesture)
@@ -48,7 +47,6 @@ class GestureView: UIView {
     func correct(_ recognizer: UIGestureRecognizer? = nil) {
         if !completed {
             completed = true
-            AudioServicesPlaySystemSound(SystemSoundID(1256))
             
             setNeedsDisplay()
             
@@ -60,7 +58,6 @@ class GestureView: UIView {
     
     func incorrect(_ feedback: String) {
         if !completed {
-            AudioServicesPlaySystemSound(SystemSoundID(1257))
             delegate?.incorrect(gesture, feedback: feedback)
         }
     }

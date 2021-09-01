@@ -75,11 +75,10 @@
             </objects>
             <point key="canvasLocation" x="6474" y="-1612"/>
         </scene>
-        <!--Trainingen-->
+        <!--Navigation Controller-->
         <scene sceneID="Feu-fu-Kzn">
             <objects>
                 <navigationController id="aLi-jG-u1q" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trainingen" image="tab_training" id="Hxa-if-wVs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1EF-Ws-y0k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -389,7 +388,7 @@
                 <navigationController id="DOL-iq-6Tt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diensten" image="tab_services" id="SqD-kj-diG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fq3-hC-ueR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -619,7 +618,7 @@
         <scene sceneID="Vwb-pz-QsZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KH8-vH-dzY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="ic_tabbar_home" id="0Tq-vi-z2d"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="tab_home" id="0Tq-vi-z2d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fqe-ce-jIv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -666,14 +665,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_tabbar_home" width="29" height="28"/>
         <image name="icon_filter" width="25" height="25"/>
         <image name="icon_share" width="25" height="25"/>
+        <image name="tab_home" width="25" height="25"/>
         <image name="tab_knowledge" width="25" height="25"/>
         <image name="tab_more" width="25" height="25"/>
         <image name="tab_news" width="25" height="25"/>
-        <image name="tab_services" width="31" height="28"/>
-        <image name="tab_training" width="25" height="25"/>
+        <image name="tab_services" width="25" height="25"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
