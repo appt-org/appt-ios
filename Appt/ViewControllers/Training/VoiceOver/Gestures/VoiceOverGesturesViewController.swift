@@ -9,43 +9,49 @@
 import UIKit
 
 class VoiceOverGesturesViewController: TableViewController {
- 
+
     private var gestures: KeyValuePairs<String, [Gesture]> {
         return [
-            "gestures_explore".localized: [
+            "gestures_one_finger_swipe".localized: [
                 .oneFingerTouch,
                 .oneFingerSwipeRight,
                 .oneFingerSwipeLeft,
-                .fourFingerTapTop,
-                .fourFingerTapBottom,
+                .oneFingerSwipeUp,
+                .oneFingerSwipeDown
+            ],
+            "gestures_two_finger_swipe".localized: [
                 .twoFingerSwipeUp,
                 .twoFingerSwipeDown,
-                .twoFingerTap,
-                .threeFingerTap
             ],
-            "gestures_scroll".localized: [
+            "gestures_three_finger_swipe".localized: [
                 .threeFingerSwipeUp,
                 .threeFingerSwipeRight,
                 .threeFingerSwipeDown,
                 .threeFingerSwipeLeft
             ],
-            "gestures_actions".localized: [
+            "gestures_one_finger_tap".localized: [
                 .oneFingerDoubleTap,
-                .oneFingerTripleTap,
-                .twoFingerDoubleTap,
-                .twoFingerZShape,
-                .twoFingerDoubleTapHold
+                .oneFingerTripleTap
             ],
-            "gestures_controls".localized: [
+            "gestures_two_finger_tap".localized: [
+                .twoFingerTap,
+                .twoFingerDoubleTap,
+                .twoFingerDoubleTapHold,
+                .twoFingerTripleTap,
+            ],
+            "gestures_three_finger_tap".localized: [
+                .threeFingerTap,
                 .threeFingerDoubleTap,
                 .threeFingerTripleTap,
-                .twoFingerTripleTap,
-                .oneFingerDoubleTapHold
             ],
-            "gestures_rotor".localized: [
+            "gestures_four_finger_tap".localized: [
+                .fourFingerTapTop,
+                .fourFingerTapBottom
+            ],
+            "gestures_shortcuts".localized: [
                 .twoFingerRotate,
-                .oneFingerSwipeUp,
-                .oneFingerSwipeDown
+                .twoFingerZShape,
+                .oneFingerDoubleTapHoldGesture,
             ]
         ]
     }
