@@ -61,28 +61,32 @@ class VoiceOverGesturesViewController: TableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
         
-        if let indexPath = lastSelectedRow {
-            tableView.reloadRows(at: [indexPath], with: .none)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? VoiceOverGestureViewController {
-            if let gesture = sender as? Gesture {
-                vc.gesture = gesture
-            } else if let gestures = sender as? [Gesture] {
-                vc.gesture = gestures.first
-                vc.gestures = gestures
-            }
-        }
-    }
-    
     @IBAction private func onPracticeTapped(_ sender: Any) {
-        let allGestures = gestures.flatMap { key, value -> [Gesture] in
-            return value
+        Alert.Builder()
+            .message("gestures_practice_message".localized)
+            .action("gestures_practice_positive".localized) {
+                self.practice(true)
+            }
+            .action("gestures_practice_negative".localized) {
+                self.practice(false)
+            }
+            .cancelAction()
+            .present(in: self)
+    }
+    
+    private func practice(_ instructions: Bool) {
+        let gestures = Gesture.shuffled()
+        
+        // Reset completion status
+        gestures.forEach { gesture in
+            UserDefaults.standard.setValue(false, forKey: gesture.id)
         }
-        performSegue(.voiceOverGesture, sender: allGestures)
+        
+        let vc = UIStoryboard.voiceOverGesture(gestures: gestures, instructions: instructions)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -121,6 +125,7 @@ extension VoiceOverGesturesViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let gesture = gestures[indexPath.section].value[indexPath.row]
-        performSegue(.voiceOverGesture, sender: gesture)
+        let vc = UIStoryboard.voiceOverGesture(gesture: gesture)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

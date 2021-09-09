@@ -17,12 +17,17 @@ class VoiceOverGestureViewController: ViewController {
     @IBOutlet private var feedbackLabel: UILabel!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var explanationItem: UIBarButtonItem!
     
     var gesture: Gesture!
     var gestures: [Gesture]?
+    var instructions: Bool = true
     
     private var errorLimit = 5
     private var errorCount = 0
+    
+    private var finished = false
+    private var incorrect = false
 
     private lazy var gestureView: GestureView = {
         let gestureView = gesture.view
@@ -58,6 +63,14 @@ class VoiceOverGestureViewController: ViewController {
         imageHeightConstraint.constant = view.frame.height / 3
         view.sendSubviewToBack(imageView)
         
+        if !instructions {
+            gestureView.accessibilityLabel = gesture.title
+            descriptionLabel.isHidden = true
+            imageView.isHidden = true
+            explanationItem.isEnabled = false
+            navigationItem.rightBarButtonItem = nil
+        }
+        
         gestureView.delegate = self
         view.accessibilityElements = [gestureView]
         Accessibility.layoutChanged(gestureView)
@@ -87,6 +100,20 @@ class VoiceOverGestureViewController: ViewController {
             .action("continue".localized)
             .present(in: self)
     }
+    
+    private func next() {
+        guard var viewControllers = self.navigationController?.viewControllers, var gestures = self.gestures else {
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+        gestures.removeFirst()
+        viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gestures: gestures, instructions: self.instructions)
+        self.navigationController?.setViewControllers(viewControllers, animated: true)
+    }
+    
+    private func finish() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - GestureViewDelegate
@@ -94,13 +121,16 @@ class VoiceOverGestureViewController: ViewController {
 extension VoiceOverGestureViewController: GestureViewDelegate {
     
     func correct(_ gesture: Gesture) {
+        if finished { return }
+        finished = true
+        
         self.gesture.completed = true
         Events.log(.gestureCompleted, identifier: gesture.id, value: errorCount)
         
         // Check if single gesture
-        guard var gestures = self.gestures else {
+        guard let gestures = self.gestures else {
             Alert.toast("gesture_correct".localized, duration: 2.5, viewController: self) {
-                self.navigationController?.popViewController(animated: true)
+                self.finish()
             }
             return
         }
@@ -110,25 +140,27 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             Alert.Builder()
                 .title("gesture_completed".localized)
                 .action("finish".localized) {
-                    self.navigationController?.popViewController(animated: true)
+                    self.finish()
                 }.present(in: self)
             return
         }
         
         // Continue to next gesture
-        guard var viewControllers = self.navigationController?.viewControllers else {
-            return
-        }
-        
         Alert.toast("gesture_correct".localized, duration: 2.5, viewController: self) {
-            gestures.removeFirst()
-            viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[0], gestures: gestures)
-            self.navigationController?.setViewControllers(viewControllers, animated: true)
+            self.next()
         }
     }
     
     func incorrect(_ gesture: Gesture, feedback: String) {
+        print("Incorrect: \(feedback)")
+        
+        if finished { return }
+        if incorrect { return }
+        
+        incorrect = true
         errorCount += 1
+        
+        let feedback = instructions ? feedback : "Fout"
         
         // Announce & display feedback
         Accessibility.announce(feedback)
@@ -141,26 +173,23 @@ extension VoiceOverGestureViewController: GestureViewDelegate {
             self.feedbackLabel.alpha = 0
         }, completion: { _ in
             UIView.transition(with: self.feedbackLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                if self.finished { return }
+                self.incorrect = false
+                
                 self.feedbackLabel.text = feedback
                 self.feedbackLabel.alpha = 1.0
             })
         })
-
+        
         // Provide an option to stop after each five attempts
         if errorCount >= errorLimit {
             Alert.Builder()
                 .title("gesture_incorrect".localized(errorCount))
                 .action("stop".localized, style: .destructive) {
-                    self.navigationController?.popViewController(animated: true)
+                    self.finish()
                 }
                 .action("skip".localized) {
-                    guard var viewControllers = self.navigationController?.viewControllers, var gestures = self.gestures else {
-                        self.navigationController?.popViewController(animated: true)
-                        return
-                    }
-                    gestures.removeFirst()
-                    viewControllers[viewControllers.count-1] = UIStoryboard.voiceOverGesture(gesture: gestures[1], gestures: gestures)
-                    self.navigationController?.setViewControllers(viewControllers, animated: true)
+                    self.next()
                 }
                 .action("continue".localized, style: .cancel) {
                     self.errorLimit = self.errorLimit * 2

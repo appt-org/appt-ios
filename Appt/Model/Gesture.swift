@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Gesture: String {
+enum Gesture: String, CaseIterable {
 
     // Navigation
     case oneFingerTouch         = "one_finger_touch"
@@ -138,5 +138,11 @@ enum Gesture: String {
         get {
             return UserDefaults.standard.bool(forKey: id)
         }
+    }
+    
+    static func shuffled() -> [Gesture] {
+        var gestures = allCases
+        gestures.shuffle()
+        return gestures
     }
 }

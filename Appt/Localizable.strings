@@ -41,6 +41,11 @@
 "gesture_incorrect" = "Je hebt het gebaar %d keer fout uitgevoerd. Wil je stoppen, overslaan of doorgaan?";
 "gesture_completed" = "Je hebt alle gebaren succesvol uitgevoerd!";
 
+"gestures_practice_title" = "Gebaren oefenen";
+"gestures_practice_message" = "Wil je oefenen met of zonder instructies?";
+"gestures_practice_positive" = "Met instructies";
+"gestures_practice_negative" = "Zonder instructies";
+
 "gestures_explore" = "Verkennen";
 "gestures_scroll" = "Scrollen";
 "gestures_actions" = "Handelingen";

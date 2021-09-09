@@ -89,6 +89,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="U2L-JA-94c" id="7vi-kK-dz1"/>
+                        <outlet property="explanationItem" destination="Knw-mt-D6g" id="B1l-IJ-0Hy"/>
                         <outlet property="feedbackLabel" destination="Oz8-fT-zLt" id="Jit-Kh-1eZ"/>
                         <outlet property="imageHeightConstraint" destination="i36-af-HGN" id="5cw-4Q-2zq"/>
                         <outlet property="imageView" destination="gwH-9f-Fdq" id="bSM-SI-4UD"/>
