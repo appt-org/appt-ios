@@ -68,13 +68,13 @@
 "gesture_one_finger_swipe_left_description" = "Veeg met 1 vinger naar links";
 "gesture_one_finger_swipe_left_explanation" = "Door naar links te vegen verken je het scherm van rechts naar links en van beneden naar boven.";
 
-"gesture_one_finger_swipe_up_title" = "Een onderdeel omhoog aanpassen";
+"gesture_one_finger_swipe_up_title" = "Instelling omhoog aanpassen";
 "gesture_one_finger_swipe_up_description" = "Veeg met 1 vinger omhoog";
-"gesture_one_finger_swipe_up_explanation" = "Afhankelijk van het type onderdeel wordt de waarde verhoogt, of ga je naar het volgende onderdeel.";
+"gesture_one_finger_swipe_up_explanation" = "Afhankelijk van het type onderdeel wordt de waarde omhoog aangepast, of ga je naar het volgende onderdeel.";
 
-"gesture_one_finger_swipe_down_title" = "Een onderdeel omlaag aanpassen";
+"gesture_one_finger_swipe_down_title" = "Instelling omlaag aanpassen";
 "gesture_one_finger_swipe_down_description" = "Veeg met 1 vinger omlaag";
-"gesture_one_finger_swipe_down_explanation" = "Afhankelijk van het type onderdeel wordt de waarde verlaagt, of ga je naar het vorige onderdeel.";
+"gesture_one_finger_swipe_down_explanation" = "Afhankelijk van het type onderdeel wordt de waarde omlaag aangepast, of ga je naar het vorige onderdeel.";
 
 /* Two finger swipe */
 "gesture_two_finger_swipe_up_title" = "Het volledige scherm laten voorlezen";
