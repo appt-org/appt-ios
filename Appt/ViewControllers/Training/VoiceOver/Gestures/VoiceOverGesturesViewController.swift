@@ -25,12 +25,13 @@ class VoiceOverGesturesViewController: TableViewController {
             ],
             "gestures_three_finger_swipe".localized: [
                 .threeFingerSwipeUp,
-                .threeFingerSwipeRight,
                 .threeFingerSwipeDown,
+                .threeFingerSwipeRight,
                 .threeFingerSwipeLeft
             ],
             "gestures_one_finger_tap".localized: [
                 .oneFingerDoubleTap,
+                .oneFingerDoubleTapHold,
                 .oneFingerTripleTap
             ],
             "gestures_two_finger_tap".localized: [
@@ -51,7 +52,7 @@ class VoiceOverGesturesViewController: TableViewController {
             "gestures_shortcuts".localized: [
                 .twoFingerRotate,
                 .twoFingerZShape,
-                .oneFingerDoubleTapHoldGesture,
+                .oneFingerInteraction,
             ]
         ]
     }

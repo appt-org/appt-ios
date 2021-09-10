@@ -23,12 +23,13 @@ enum Gesture: String, CaseIterable {
     
     // Three finger swipe
     case threeFingerSwipeUp     = "three_finger_swipe_up"
-    case threeFingerSwipeRight  = "three_finger_swipe_right"
     case threeFingerSwipeDown   = "three_finger_swipe_down"
+    case threeFingerSwipeRight  = "three_finger_swipe_right"
     case threeFingerSwipeLeft   = "three_finger_swipe_left"
     
     // One finger tap
     case oneFingerDoubleTap     = "one_finger_double_tap"
+    case oneFingerDoubleTapHold = "one_finger_double_tap_hold"
     case oneFingerTripleTap     = "one_finger_triple_tap"
     
     // Two finger tap
@@ -49,7 +50,7 @@ enum Gesture: String, CaseIterable {
     // Shortcuts
     case twoFingerRotate        = "two_finger_rotate"
     case twoFingerZShape        = "two_finger_z_shape"
-    case oneFingerDoubleTapHoldGesture = "one_finger_double_tap_hold_gesture"
+    case oneFingerInteraction   = "one_finger_interaction"
     
     /** Identifier */
     var id: String {
@@ -97,15 +98,17 @@ enum Gesture: String, CaseIterable {
             
         case .threeFingerSwipeUp:
             return SwipeGestureView(gesture: self, direction: .up, fingers: 3)
-        case .threeFingerSwipeRight:
-            return SwipeGestureView(gesture: self, direction: .right, fingers: 3)
         case .threeFingerSwipeDown:
             return SwipeGestureView(gesture: self, direction: .down, fingers: 3)
+        case .threeFingerSwipeRight:
+            return SwipeGestureView(gesture: self, direction: .right, fingers: 3)
         case .threeFingerSwipeLeft:
             return SwipeGestureView(gesture: self, direction: .left, fingers: 3)
             
         case .oneFingerDoubleTap:
             return TapGestureView(gesture: self, taps: 2, fingers: 1)
+        case .oneFingerDoubleTapHold:
+            return LongPressGestureView(gesture: self, taps: 2, fingers: 1)
         case .oneFingerTripleTap:
             return TapGestureView(gesture: self, taps: 3, fingers: 1)
             
@@ -134,7 +137,7 @@ enum Gesture: String, CaseIterable {
             return RotationGestureView(gesture: self, fingers: 2, rotation: 0.5)
         case .twoFingerZShape:
             return EscapeGestureView(gesture: self, fingers: 2)
-        case .oneFingerDoubleTapHoldGesture:
+        case .oneFingerInteraction:
             return DirectGestureView(gesture: self)
         }
     }
