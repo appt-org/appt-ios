@@ -6,10 +6,10 @@
 //  Copyright © 2020 Stichting Appt All rights reserved.
 //
 
-import Accessibility
 import UIKit
 import WebKit
 import SafariServices
+import Appt
 
 class ArticleViewController: WebViewController {
     

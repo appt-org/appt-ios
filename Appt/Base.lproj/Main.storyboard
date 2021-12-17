@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Trainingen-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="TrainingViewController" id="9pv-A4-QxB" customClass="TrainingViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingViewController" id="9pv-A4-QxB" customClass="TrainingViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Feu-fu-Kzn">
             <objects>
-                <navigationController id="aLi-jG-u1q" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="aLi-jG-u1q" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1EF-Ws-y0k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -94,7 +94,7 @@
         <!--Meer-->
         <scene sceneID="OvS-NA-TMT">
             <objects>
-                <navigationController id="CD2-N3-56b" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="CD2-N3-56b" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meer" image="tab_more" id="dKs-Kx-QzH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MdE-Hg-8EO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -111,7 +111,7 @@
         <!--Meer-->
         <scene sceneID="SbE-AX-sAz">
             <objects>
-                <viewController id="9ka-Zl-jpa" customClass="MoreViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9ka-Zl-jpa" customClass="MoreViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZC-mj-Xf6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
         <!--Profile View Controller-->
         <scene sceneID="nvy-xL-Wp1">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="52r-63-a9n" customClass="ProfileViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="52r-63-a9n" customClass="ProfileViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GMA-eH-bAN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,7 @@
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vGy-rj-gW9" secondAttribute="trailing" constant="20" symbolic="YES" id="ywh-V5-akY"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-jL-5m9" customClass="MultilineButton" customModule="Appt" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-jL-5m9" customClass="MultilineButton" customModule="ApptApp" customModuleProvider="target">
                                                 <rect key="frame" x="32" y="95" width="256" height="42"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -203,7 +203,7 @@
                                                     <action selector="changeMyPasswordButtonAction:" destination="52r-63-a9n" eventType="touchUpInside" id="4If-bG-imy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz7-Wb-ma1" customClass="SecondaryMultilineButton" customModule="Appt" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz7-Wb-ma1" customClass="SecondaryMultilineButton" customModule="ApptApp" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="152" width="272" height="48"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <constraints>
@@ -216,7 +216,7 @@
                                                     <action selector="logoutButtonAction:" destination="52r-63-a9n" eventType="touchUpInside" id="CCk-kC-Rlh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-2F-OWW" customClass="UnderlinedMultilineButton" customModule="Appt" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-2F-OWW" customClass="UnderlinedMultilineButton" customModule="ApptApp" customModuleProvider="target">
                                                 <rect key="frame" x="32" y="413.5" width="256" height="48"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -282,10 +282,10 @@
         <!--Kennisbank-->
         <scene sceneID="B0v-g0-n9B">
             <objects>
-                <navigationController id="RNe-o6-JOa" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="RNe-o6-JOa" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kennisbank" image="tab_knowledge" id="1uP-vB-cd7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Vs-9q-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -299,7 +299,7 @@
         <!--Kennisbank-->
         <scene sceneID="4bW-Qo-mCw">
             <objects>
-                <viewController storyboardIdentifier="KnowledgeViewController" id="bnO-2Z-JPM" customClass="KnowledgeViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KnowledgeViewController" id="bnO-2Z-JPM" customClass="KnowledgeViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xxg-El-ppV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,10 +329,10 @@
         <!--Nieuws-->
         <scene sceneID="jxs-6j-Mo2">
             <objects>
-                <navigationController id="6Zr-yC-6cu" customClass="NavigationController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="6Zr-yC-6cu" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nieuws" image="tab_news" id="ZsM-Qc-Ia8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vWD-Rf-Q5r">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -346,7 +346,7 @@
         <!--Nieuws-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="NewsViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="NewsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,7 +402,7 @@
         <!--Article View Controller-->
         <scene sceneID="lho-3g-jD1">
             <objects>
-                <viewController storyboardIdentifier="ArticleViewController" id="M9J-A7-CSC" customClass="ArticleViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="M9J-A7-CSC" customClass="ArticleViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IVs-ov-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,7 +427,7 @@
         <!--Filters-->
         <scene sceneID="AO4-V7-lVX">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="atb-WW-ou0" customClass="FiltersViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" id="atb-WW-ou0" customClass="FiltersViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug1-0x-YXE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -466,7 +466,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -487,7 +487,7 @@
         <!--Home View Controller-->
         <scene sceneID="9wx-bq-SRM">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="1xB-Zn-Npy" customClass="HomeViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="1xB-Zn-Npy" customClass="HomeViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IVT-GH-CpO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,13 +495,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-Lc-ArS">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="2An-YQ-fJo" customClass="EmailVerificationView" customModule="Appt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                                    </view>
                                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
-                                        <rect key="frame" x="0.0" y="80" width="320" height="307"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="387"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="ApptApp" customModuleProvider="target">
                                             <size key="itemSize" width="155" height="155"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -523,7 +520,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb" customClass="SegmentedControl" customModule="Appt" customModuleProvider="target">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb" customClass="SegmentedControl" customModule="ApptApp" customModuleProvider="target">
                             <rect key="frame" x="64.5" y="5.5" width="191" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -538,7 +535,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hyp-3f-UtT" id="Ec2-fY-0xW"/>
-                        <outlet property="emailVerificationView" destination="2An-YQ-fJo" id="VSr-Uf-ixs"/>
                         <outlet property="userProfSegmentedControl" destination="9rP-Of-Ksb" id="Cax-kh-Nh7"/>
                     </connections>
                 </viewController>
@@ -549,7 +545,7 @@
         <!--Subject List View Controller-->
         <scene sceneID="kwS-hg-yF7">
             <objects>
-                <viewController storyboardIdentifier="SubjectListViewController" id="c14-hK-hbT" customClass="SubjectListViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectListViewController" id="c14-hK-hbT" customClass="SubjectListViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dRO-wT-xFt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +575,7 @@
         <!--Subject Blocks View Controller-->
         <scene sceneID="oTl-Lh-JDH">
             <objects>
-                <viewController storyboardIdentifier="SubjectBlocksViewController" id="XWz-Fo-r58" customClass="SubjectBlocksViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectBlocksViewController" id="XWz-Fo-r58" customClass="SubjectBlocksViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Pv-pa-iLz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -587,7 +583,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-FS-EoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="Appt" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="ApptApp" customModuleProvider="target">
                                     <size key="itemSize" width="155" height="155"/>
                                     <size key="estimatedItemSize" width="155" height="155"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -621,7 +617,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="tab_home" id="0Tq-vi-z2d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fqe-ce-jIv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -636,7 +632,7 @@
         <!--Diensten-->
         <scene sceneID="wQD-Qv-VVd">
             <objects>
-                <viewController storyboardIdentifier="ServicesViewController" id="vJO-sl-6m9" customClass="ServicesViewController" customModule="Appt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServicesViewController" id="vJO-sl-6m9" customClass="ServicesViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlQ-Kd-Ror">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

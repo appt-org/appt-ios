@@ -40,25 +40,4 @@ class Config {
         }
         return baseUrl + baseApiPath
     }()
-
-    // MARK: - Credentials
-
-    private static var credentialsPlistDictionary: NSDictionary = {
-        guard let path = Bundle.main.path(forResource: "Credentials", ofType: "plist") else {
-            fatalError("Missing Credentials.plist")
-        }
-        guard let dictionary = NSDictionary(contentsOfFile: path) else {
-            fatalError("Unable to convert Credentials.plist at \(path) to NSDictionary")
-        }
-
-        return dictionary
-    }()
-
-    static var authorizationKey: String {
-        guard let authorizationKey = self.credentialsPlistDictionary["Authorization key Live"] as? String else {
-            fatalError("Unable to get value for key: Authorization key Live from Credentials.plist")
-        }
-
-        return authorizationKey
-    }
 }

@@ -204,68 +204,6 @@
 "feedback_position" = "Tik %@ het scherm in plaats van %@.";
 "feedback_gesture" = "Beweeg je vinger om een gebaar te maken.";
 
-/* WelcomeViewController */
-"welcome_text" = "Welkom!";
-"welcome_description_text" = "Appt is het platform voor toegankelijkheid.\n\nMaak een gratis account aan om toegang tot onze community te krijgen, onze trainingen te volgen en meer over toegankelijkheid te leren.";
-"create_account_text" = "Account aanmaken";
-"login_account" = "Ik heb al een account";
-"forgot_password" = "Wachtwoord vergeten?";
-
-/* UserTypeViewController */
-"account_creation_vc_title" = "Account aanmaken";
-"account_creation_role_text" = "Wat is jouw rol?";
-
-"account_creation_user_type_section0_title_text" = "App gebruiker";
-"account_creation_user_type_section0_row0_title_text" = "Ervaringsdeskundige";
-"account_creation_user_type_section0_row1_title_text" = "Geïnteresseerde";
-"account_creation_user_type_section0_row2_title_text" = "Ambassadeur";
-
-"account_creation_user_type_section1_title_text" = "Professional";
-"account_creation_user_type_section1_row0_title_text" = "Designer";
-"account_creation_user_type_section1_row1_title_text" = "Tester";
-"account_creation_user_type_section1_row2_title_text" = "Ontwikkelaar";
-"account_creation_user_type_section1_row3_title_text" = "Manager";
-"account_creation_user_type_section1_row4_title_text" = "Toegankelijkheidsexpert";
-"account_creation_user_type_section1_row5_title_text" = "Auditor";
-
-/* RegistrationViewController */
-"registration_vc_title" = "Account aanmaken";
-"registration_vc_description_text" = "Onze missie is om apps voor iedereen toegankelijk te maken. Dit bereiken we door kennis te delen, diensten te verlenen en gebruikers met een beperking te helpen.";
-"email_label_text" = "E-mailadres";
-"email_textfield_placeholder_text" = "E-mailadres";
-"email_textfield_hint_text" = "Voer een geldig e-mailadres in";
-"password_label_text" = "Wachtwoord";
-"password_textfield_placeholder_text" = "Wachtwoord";
-"password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
-"privacy_policy_label_text" = "Ik ga akkoord met de privacyverklaring";
-"terms_and_conditions_label_text" = "Ik ga akkoord met Algemene Voorwaarden";
-"complete_registration_button_title_text" = "Registratie voltooien";
-"toggle_password_visible_accessibility_title" = "Show password";
-"toggle_password_hidden_accessibility_title" = "Hide password";
-
-/* Registration confirmation alert */
-"confirmation_alert_title" = "Bedankt!";
-"confirmation_alert_message" = "Een activatielink was gestuurd op jouw e-mailadres. Je profiel wordt verifieerd nadat je op de activatielink klikt.";
-
-/* LoginViewController */
-"login_vc_title" = "Inloggen";
-"login_button_title" = "Inloggen";
-"reset_password_button_title" = "Wachtwoord vergeten?";
-
-/* EmailEntryViewController */
-"email_entry_vc_title" = "Wachtwoord herstel";
-"email_entry_forgot_password_text" = "Wachtwoord vergeten?";
-"email_entry_description_text" = "Vul hier je e-mailadres in en wij sturen een e-mail met een link waarmee je je wachtwoord kan wijzigen";
-"create_new_password_button_title" = "Nieuw wachtwoord aanvragen";
-
-/* NewPasswordViewController */
-"change_password_label_text" = "Wachtwoord wijzigen";
-"new_password_vc_title" = "Nieuw paswoord";
-"new_password_label_text" = "Nieuw wachtwoord";
-"new_password_textfield_placeholder_text" = "Nieuw wachtwoord";
-"change_password_button_title" = "Wachtwoord wijzigen";
-"new_password_textfield_hint_text" = "Je wachtwoord moet bestaan uit minimaal 10 karakters";
-
 /* HomeViewController */
 "home_vc_title" = "Home";
 "user_header_title" = "We helpen gebruikers met een beperking bij het gebruiken van apps.";
@@ -293,24 +231,5 @@
 "legal_title" = "Juridisch";
 "about_title" = "Over deze app";
 
-/* ProfileViewController */
-"delete_my_account_title" = "Account verwijderen";
-"log_out_title" = "Uitloggen";
-"change_my_password_title" = "Wachtwoord wijzigen";
-"logout_alert_title" = "Weet je zeker dat je je wilt uitloggen?";
-"delete_account_alert_title" = "Weet je zeker dat je je account wilt verwijderen?";
-"delete_account_alert_delete_button_text" = "Ja, verwijder mijn account";
-"delete_account_alert_cancel_button_text" = "Annuleren";
-
 /* ServicesViewController */
 "services_vc_title" = "Diensten";
-
-/* EmailVerificationView */
-"email_verification_view_title" = "Je hebt jouw account nog niet geverifieerd. Ga naar je e-mail om account te verifiëren.";
-"email_verification_failed" = "Email address verification failed";
-"email_verification_failed_wrong_user" = "Email address verification failed\nPlease sign in with different user";
-"email_verification_failed_already_verified" = "Email address is already verified";
-"email_verification_alert_title" = "Email verification";
-"email_verification_successful" = "Verification is successful";
-
-"appt_logo_accessibility_label" = "Appt logo";

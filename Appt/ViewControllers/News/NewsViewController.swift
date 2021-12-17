@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Accessibility
+import Appt
 
 class NewsViewController: TableViewController {
     @IBOutlet private var filterItem: UIBarButtonItem!

@@ -13,7 +13,6 @@ extension UIStoryboard {
     enum Name: String{
         case main = "Main"
         case voiceOver = "VoiceOver"
-        case authentication = "Authentication"
     }
     
     private static func viewController<T: UIViewController>(_ storyboard: UIStoryboard.Name, identifier : T.Type? = nil) -> T {
@@ -73,29 +72,10 @@ extension UIStoryboard {
         return vc
     }
     
-    static func welcome() -> UIViewController? {
-        let storyboard = UIStoryboard(name: Name.authentication.rawValue, bundle: nil)
-        let vc = storyboard.instantiateInitialViewController()
-        
-        return vc
-    }
-    
     static func main(isNewUser: Bool = false) -> UIViewController? {
         let storyboard = UIStoryboard(name: Name.main.rawValue, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
         (vc as? TabBarController)?.shouldShowEmailVerificationAlert = isNewUser
-        return vc
-    }
-    
-    static func newPassword() -> NewPasswordViewController {
-        let vc = viewController(.authentication, identifier: NewPasswordViewController.self)
-        
-        return vc
-    }
-    
-    static func profile() -> ProfileViewController {
-        let vc = viewController(.main, identifier: ProfileViewController.self)
-        
         return vc
     }
     
@@ -118,20 +98,6 @@ extension UIStoryboard {
         
         vc.subject = subject
         
-        return vc
-    }
-
-    static func newPassword(resetPasswordData: [String: String]) -> NewPasswordViewController {
-        let vc = viewController(.authentication, identifier: NewPasswordViewController.self)
-
-        vc.resetPasswordData = resetPasswordData
-
-        return vc
-    }
-
-    static func login() -> LoginViewController {
-        let vc = viewController(.authentication, identifier: LoginViewController.self)
-
         return vc
     }
 }

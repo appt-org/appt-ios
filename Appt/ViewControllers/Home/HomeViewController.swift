@@ -26,7 +26,6 @@ enum BlocksSections: Int, CaseIterable {
 final class HomeViewController: ViewController {
     @IBOutlet private var userProfSegmentedControl: UISegmentedControl!
     @IBOutlet private var collectionView: UICollectionView!
-    @IBOutlet private var emailVerificationView: EmailVerificationView!
 
     // Fix to avoid header view text to create new instances that cause text overlapping
 //    private lazy var headerView: UICollectionReusableView = {
@@ -73,50 +72,12 @@ final class HomeViewController: ViewController {
         collectionView.dataSource = self
         collectionView.delaysContentTouches = false
         
-        emailVerificationView.delegate = self
-
-        hideVerificationView()
-
-//        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
-//
-//        userProfSegmentedControl.selectedSegmentIndex = user.isProfessional ? 1 : 0
-//
         Role.UserType.allCases.forEach({
             userProfSegmentedControl.setTitle($0.segmentedControlTitle, forSegmentAt: $0.rawValue)
         })
 
         userProfSegmentedControl.selectedSegmentIndex = UserDefaultsStorage.shared.selectedIndex
-//
-//        if user.isVerified {
-//            hideVerificationView()
-//        } else {
-//            self.emailConfirmationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: DeepLinkAction.confirmEmail.rawValue), object: nil, queue: nil, using: {
-//                self.confirmEmail($0)
-//            })
-//        }
-//
-//        getUser()
-//
-//        if (tabBarController as? TabBarController)?.shouldShowEmailVerificationAlert == true {
-//            showEmailVerificationAlert()
-//        }
     }
-
-//    private func showEmailVerificationAlert() {
-//        Alert.Builder()
-//            .title("confirmation_alert_title".localized)
-//            .message("confirmation_alert_message".localized)
-//            .action("ok".localized)
-//            .present(in: self)
-//    }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        if UserDefaultsStorage.shared.restoreUser()?.isVerified == true {
-//            self.hideVerificationView()
-//        }
-//    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -152,52 +113,6 @@ final class HomeViewController: ViewController {
         collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
     }
-    
-//    private func getUser() {
-//        API.shared.getUser { user, error in
-//            if let user = user, user.isVerified {
-//                self.emailConfirmationObserver = nil
-//                self.hideVerificationView()
-//            } else if user == nil, let error = error {
-//                Alert.error(error, viewController: self)
-//            }
-//        }
-//    }
-
-//    private func confirmEmail(_ notification: Notification) {
-//        guard let topViewController =  UIApplication.topViewController() else { return }
-//        guard let user = UserDefaultsStorage.shared.restoreUser() else { return }
-//        guard let emailConfirmData = notification.userInfo as? [String: String],
-//              let userID = emailConfirmData["user_id"],
-//              let key = emailConfirmData["activation_key"] else {
-//            Alert.error("email_verification_failed".localized, viewController: topViewController)
-//            return
-//        }
-//
-//        guard "\(user.id)" == userID else {
-//            Alert.error("email_verification_failed_wrong_user".localized, viewController: topViewController)
-//            return
-//        }
-//
-//        guard !user.isVerified else {
-//            Alert.error("email_verification_failed_already_verified".localized, viewController: topViewController)
-//            return
-//        }
-//
-//        API.shared.confirmUserEmail(userID: userID, key: key) { user, error in
-//            if user != nil, error == nil {
-//                Alert.Builder()
-//                    .title("email_verification_alert_title".localized)
-//                    .message("email_verification_successful".localized)
-//                    .action("ok".localized) {
-//                        self.emailConfirmationObserver = nil
-//                        self.hideVerificationView()
-//                    }.present(in: self)
-//            } else if let error = error, user == nil {
-//                Alert.error(error, viewController: topViewController)
-//            }
-//        }
-//    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -308,15 +223,5 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case .services:
             self.tabBarController?.selectedIndex = 3
         }
-    }
-
-    private func hideVerificationView() {
-        emailVerificationView.isHidden = true
-    }
-}
-
-extension HomeViewController: EmailVerificationViewDelegate {
-    func okViewAction() {
-        hideVerificationView()
     }
 }

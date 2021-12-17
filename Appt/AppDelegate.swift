@@ -92,24 +92,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
     }
 
     private func configureWindow() {
-//        let viewController = UserDefaultsStorage.shared.restoreUser() != nil ? UIStoryboard.main() : UIStoryboard.welcome()
         let viewController = UIStoryboard.main()
 
         let window = UIWindow()
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
-
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.showCreateNewPasswordFlow(_:)), name: NSNotification.Name(rawValue: DeepLinkAction.resetPassword.rawValue), object: nil)
     }
 
-//    @objc
-//    private func showCreateNewPasswordFlow(_ notification: NSNotification) {
-//        guard let resetPasswordData = notification.userInfo as? [String: String] else { return }
-//        let viewController = UIStoryboard.newPassword(resetPasswordData: resetPasswordData)
-//
-//        UIApplication.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
-//    }
 
     // MARK: UISceneSession Lifecycle
 
