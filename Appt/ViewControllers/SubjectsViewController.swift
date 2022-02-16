@@ -25,11 +25,14 @@ enum BlocksSections: Int, CaseIterable {
 
 class SubjectsViewController: ViewController {
     enum ViewControllerType {
+        case home
         case knowledgeBase
         case services
         
         var title: String {
             switch self {
+            case .home:
+                return "home_vc_title".localized
             case .knowledgeBase:
                 return "kennisbank_appt_home_title".localized
             case .services:
@@ -67,6 +70,8 @@ class SubjectsViewController: ViewController {
         
         self.isLoading = true
         switch viewControllerType {
+        case .home:
+            API.shared.getHome(callback)
         case .knowledgeBase:
             API.shared.getKnowledgeBase(callback)
         case .services:
@@ -98,6 +103,8 @@ class SubjectsViewController: ViewController {
     private func pushNextSubject(_ subject: Subject) {
         var viewController: UIViewController?
         switch viewControllerType {
+        case .home:
+            viewController = UIStoryboard.home(subject: subject)
         case .knowledgeBase:
             viewController = UIStoryboard.knowledgeBase(subject: subject)
         case .services:

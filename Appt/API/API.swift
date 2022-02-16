@@ -11,11 +11,14 @@ import Alamofire
 
 class API {
     enum ContentType {
+        case home
         case knowledgeBase
         case services
         
         var path: String {
             switch self {
+            case .home:
+                return "home.json"
             case .knowledgeBase:
                 return "knowledgeBase.json"
             case .services:
@@ -138,6 +141,10 @@ class API {
     }
     
     // MARK: - Get content
+    
+    func getHome(_ callback: @escaping(Subject?, String?) -> ()) {
+        getContent(type: .home, callback: callback)
+    }
     
     func getKnowledgeBase(_ callback: @escaping(Subject?, String?) -> ()) {
         getContent(type: .knowledgeBase, callback: callback)
