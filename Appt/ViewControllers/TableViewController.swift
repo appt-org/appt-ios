@@ -9,6 +9,7 @@
 import UIKit
 
 class TableViewController: ViewController {
+    
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class TableViewController: ViewController {
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .primary
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()

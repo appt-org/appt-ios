@@ -37,23 +37,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .primary
-        UINavigationBar.appearance().backgroundColor = .primary
-        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = .background
+        UINavigationBar.appearance().backgroundColor = .background
+        UINavigationBar.appearance().tintColor = .foreground
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.foreground
         ]
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .font: UIFont.openSans(weight: .bold, size: 27, scaled: false),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.foreground
         ]
         
         // UIBarButtonItem style
-        UIBarButtonItem.appearance().tintColor = .white
+        UIBarButtonItem.appearance().tintColor = .foreground
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .semibold, size: 16, scaled: false)
+                .font: UIFont.openSans(weight: .regular, size: 16, scaled: false)
             ], for: state)
         }
         
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .semibold, size: 14, scaled: false)
+                .font: UIFont.openSans(weight: .bold, size: 12, scaled: false)
             ], for: state)
         }
         

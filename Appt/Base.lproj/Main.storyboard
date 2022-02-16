@@ -97,7 +97,7 @@
                 <navigationController id="CD2-N3-56b" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meer" image="tab_more" id="dKs-Kx-QzH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MdE-Hg-8EO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -116,13 +116,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cmp-mH-dB3"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="bottom" secondItem="Cmp-mH-dB3" secondAttribute="bottom" id="5FU-49-tzQ"/>
                             <constraint firstItem="H7A-DJ-NIb" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="SBk-9g-2nG"/>
@@ -306,10 +307,11 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-TN-kDu">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nCb-uP-w70"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="nCb-uP-w70" firstAttribute="bottom" secondItem="1gt-TN-kDu" secondAttribute="bottom" id="K9W-QT-Hdx"/>
                             <constraint firstItem="1gt-TN-kDu" firstAttribute="leading" secondItem="nCb-uP-w70" secondAttribute="leading" id="Qfg-35-Wsq"/>
@@ -332,7 +334,7 @@
                 <navigationController id="6Zr-yC-6cu" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nieuws" image="tab_news" id="ZsM-Qc-Ia8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vWD-Rf-Q5r">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -353,10 +355,12 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yQ7-KK-qa2">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="yQ7-KK-qa2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="Z6y-wz-2SK"/>
                             <constraint firstAttribute="trailing" secondItem="yQ7-KK-qa2" secondAttribute="trailing" id="hHA-zZ-EAA"/>
@@ -388,7 +392,7 @@
                 <navigationController id="DOL-iq-6Tt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diensten" image="tab_services" id="SqD-kj-diG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fq3-hC-ueR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -435,10 +439,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cjm-Pv-ci9">
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VnM-R3-Y2b"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="cjm-Pv-ci9" firstAttribute="top" secondItem="VnM-R3-Y2b" secondAttribute="top" id="6nv-Gf-eHm"/>
                             <constraint firstAttribute="bottom" secondItem="cjm-Pv-ci9" secondAttribute="bottom" id="Hpy-TU-yoC"/>
@@ -492,50 +497,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-Lc-ArS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LU-ig-26o">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
-                                <subviews>
-                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-3f-UtT">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="387"/>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="4Ex-IN-QuX" customClass="AlignedCollectionViewFlowLayout" customModule="ApptApp" customModuleProvider="target">
-                                            <size key="itemSize" width="155" height="155"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="16"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3d-OJ-pDs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="trailing" secondItem="IVT-GH-CpO" secondAttribute="trailing" id="BKv-h7-T88"/>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="bottom" secondItem="z3d-OJ-pDs" secondAttribute="bottom" id="Ivv-Ig-B7h"/>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="top" secondItem="z3d-OJ-pDs" secondAttribute="top" id="Uek-nd-4Zx"/>
-                            <constraint firstItem="dZa-Lc-ArS" firstAttribute="leading" secondItem="IVT-GH-CpO" secondAttribute="leading" id="eFl-pk-0Wg"/>
+                            <constraint firstItem="z3d-OJ-pDs" firstAttribute="trailing" secondItem="3LU-ig-26o" secondAttribute="trailing" id="W0m-oI-Eg4"/>
+                            <constraint firstItem="z3d-OJ-pDs" firstAttribute="bottom" secondItem="3LU-ig-26o" secondAttribute="bottom" id="fiI-WH-PDx"/>
+                            <constraint firstItem="3LU-ig-26o" firstAttribute="top" secondItem="z3d-OJ-pDs" secondAttribute="top" id="k1Y-UV-vgx"/>
+                            <constraint firstItem="3LU-ig-26o" firstAttribute="leading" secondItem="z3d-OJ-pDs" secondAttribute="leading" id="pg3-Gw-cEj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8M9-aF-tGX">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9rP-Of-Ksb" customClass="SegmentedControl" customModule="ApptApp" customModuleProvider="target">
-                            <rect key="frame" x="64.5" y="5.5" width="191" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Gebruiker"/>
-                                <segment title="Professional"/>
-                            </segments>
-                            <color key="selectedSegmentTintColor" name="Primary"/>
-                            <connections>
-                                <action selector="userProfessionalSegmentedControlValueChanged:" destination="1xB-Zn-Npy" eventType="valueChanged" id="HNq-Jg-zWv"/>
-                            </connections>
-                        </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="hyp-3f-UtT" id="Ec2-fY-0xW"/>
-                        <outlet property="userProfSegmentedControl" destination="9rP-Of-Ksb" id="Cax-kh-Nh7"/>
+                        <outlet property="container" destination="3LU-ig-26o" id="2R2-tP-Ez1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzy-fc-c24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -553,10 +534,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="48K-dL-DbE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sni-lG-ebR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="48K-dL-DbE" firstAttribute="leading" secondItem="Sni-lG-ebR" secondAttribute="leading" id="GOS-bL-tgo"/>
                             <constraint firstItem="Sni-lG-ebR" firstAttribute="trailing" secondItem="48K-dL-DbE" secondAttribute="trailing" id="eTZ-3T-mZV"/>
@@ -582,7 +564,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-FS-EoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="UjI-ux-UtT" customClass="AlignedCollectionViewFlowLayout" customModule="ApptApp" customModuleProvider="target">
                                     <size key="itemSize" width="155" height="155"/>
                                     <size key="estimatedItemSize" width="155" height="155"/>
@@ -594,7 +576,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8b-gW-Cci"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4Wc-FS-EoU" secondAttribute="trailing" id="OVr-Qg-M2E"/>
                             <constraint firstItem="X8b-gW-Cci" firstAttribute="bottom" secondItem="4Wc-FS-EoU" secondAttribute="bottom" id="lOB-Wa-9te"/>
@@ -608,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Cn-gI-49c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="-919"/>
+            <point key="canvasLocation" x="2239" y="-1056"/>
         </scene>
         <!--Home-->
         <scene sceneID="Vwb-pz-QsZ">
@@ -639,10 +621,11 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-lT-gYq">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vXg-bL-1pN"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
                         <constraints>
                             <constraint firstItem="vXg-bL-1pN" firstAttribute="bottom" secondItem="6Cl-lT-gYq" secondAttribute="bottom" id="Cia-Ku-zDx"/>
                             <constraint firstItem="vXg-bL-1pN" firstAttribute="trailing" secondItem="6Cl-lT-gYq" secondAttribute="trailing" id="IGG-PZ-GJK"/>
@@ -671,6 +654,9 @@
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="BackgroundSecondary">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Disabled">
             <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -691,9 +677,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

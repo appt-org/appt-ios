@@ -15,7 +15,7 @@ class ListTableTopSectionHeaderView: UITableViewHeaderFooterView {
         get {
             return .header
         } set {
-            // Ignored to maintain `button` trait at all times.
+            // Ignored to maintain `header` trait at all times.
         }
     }
     

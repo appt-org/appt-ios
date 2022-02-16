@@ -50,7 +50,7 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
         self.isAccessibilityElement = true
         
         if #available(iOS 13.0, *) {
-            background.backgroundColor = UIColor.categoryCellBackground
+            background.backgroundColor = UIColor.background
         } else {
             background.backgroundColor = UIColor.white
         }
@@ -60,7 +60,7 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
         self.categoryLabel.text = subject.title
         self.accessibilityLabel = subject.title
 
-        self.categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
+        self.categoryLabel.font = .openSans(weight: .regular, size: 17, style: .body)
 
         self.loadingIndicator.startAnimating()
 

@@ -9,6 +9,20 @@
 import UIKit
 import Accessibility
 
+enum BlocksSections: Int, CaseIterable {
+    case headerCell = 0
+    case blocks
+
+    var sectionInset: UIEdgeInsets {
+        switch self {
+        case .blocks:
+            return UIEdgeInsets(top: 0, left: 23, bottom: 16, right: 23)
+        case .headerCell:
+            return UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
+        }
+    }
+}
+
 class SubjectsViewController: ViewController {
     enum ViewControllerType {
         case knowledgeBase

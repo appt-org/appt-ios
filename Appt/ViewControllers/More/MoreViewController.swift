@@ -9,19 +9,15 @@
 import UIKit
 
 class MoreViewController: TableViewController {
-    let tableViewTopHeaderHeight: CGFloat = 8
     
     private var topics: KeyValuePairs<String, [Topic]> {
         return [
-//            "": [
-//                .myprofile
-//            ],
-            "about_title".localized.uppercased(): [
+            "about_title".localized: [
                 .source,
                 .contact,
                 .sidnfonds
             ],
-            "legal_title".localized.uppercased(): [
+            "legal_title".localized: [
                 .terms,
                 .privacy,
                 .accessibility,
@@ -51,18 +47,6 @@ extension MoreViewController {
         return topics[section].key
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let headerView = view as? UITableViewHeaderFooterView else { return }
-
-        headerView.textLabel?.font = .openSans(weight: .regular, size: 15, style: .headline)
-        headerView.textLabel?.text = self.tableView(tableView, titleForHeaderInSection: section)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        section == 0 ? tableViewTopHeaderHeight : UITableView.automaticDimension
-        UITableView.automaticDimension
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topics[section].value.count
     }
@@ -88,20 +72,4 @@ extension MoreViewController {
             navigationController?.pushViewController(articleViewController, animated: true)
         }
     }
-
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        let topic = topics[indexPath.section].value[indexPath.row]
-//
-//        if indexPath.section == 0 {
-//            let viewController = UIStoryboard.profile()
-//            navigationController?.pushViewController(viewController, animated: true)
-//        } else if indexPath.section == 1 {
-//            openWebsite(topic.slug)
-//        } else if indexPath.section == 2 {
-//            let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
-//            navigationController?.pushViewController(articleViewController, animated: true)
-//        }
-//    }
 }
