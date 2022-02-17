@@ -33,7 +33,7 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
                 }
             } else {
                 if #available(iOS 13.0, *) {
-                    background.backgroundColor = UIColor.categoryCellBackground
+                    background.backgroundColor = UIColor.background
                 } else {
                     background.backgroundColor = UIColor.white
                 }
@@ -44,7 +44,14 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.background.layer.cornerRadius = 20
+        self.layer.cornerRadius = 20
+        self.layer.borderWidth = 2
+        if #available(iOS 13.0, *) {
+            self.layer.borderColor = UIColor.separator.cgColor
+        } else {
+            self.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
         self.categoryLabel.textColor = .foreground
         self.categoryLabel.adjustsFontForContentSizeCategory = true
         self.isAccessibilityElement = true

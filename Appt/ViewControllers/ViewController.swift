@@ -57,32 +57,61 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // UINavigationBar style
+        navigationController?.navigationBar.isOpaque = true
         navigationController?.navigationBar.isTranslucent = false
-        tabBarController?.tabBar.isTranslucent = false
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.accessibilityLabel = "Terug"
-                
+        let backButton = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
+        backButton.accessibilityLabel = "Terug"
+        navigationItem.backBarButtonItem = backButton
+        
         if #available(iOS 13.0, *) {
-            isModalInPresentation = true
-            
             let button = UIBarButtonItemAppearance()
             button.disabled.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .disabled) ?? [:]
             button.focused.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .focused) ?? [:]
             button.highlighted.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .highlighted) ?? [:]
             button.normal.titleTextAttributes = UIBarButtonItem.appearance().titleTextAttributes(for: .normal) ?? [:]
-            
+
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UINavigationBar.appearance().backgroundColor
+            appearance.backgroundColor = .background
             appearance.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes ?? [:]
             appearance.largeTitleTextAttributes = UINavigationBar.appearance().largeTitleTextAttributes ?? [:]
             appearance.buttonAppearance = button
-            
+            appearance.doneButtonAppearance = button
+            appearance.setBackIndicatorImage(
+                UINavigationBar.appearance().backIndicatorImage,
+                transitionMaskImage: UINavigationBar.appearance().backIndicatorTransitionMaskImage
+            )
+
             if let navigationBar = navigationController?.navigationBar {
                 navigationBar.compactAppearance = appearance
-                navigationBar.standardAppearance = appearance
                 navigationBar.scrollEdgeAppearance = appearance
+                navigationBar.standardAppearance = appearance
+            }
+        }
+
+        // UITabBar style
+        tabBarController?.tabBar.isOpaque = true
+        tabBarController?.tabBar.isTranslucent = false
+        
+        if #available(iOS 15.0, *) {
+            let item = UITabBarItemAppearance()
+            item.disabled.titleTextAttributes = UITabBarItem.appearance().titleTextAttributes(for: .disabled) ?? [:]
+            item.focused.titleTextAttributes = UITabBarItem.appearance().titleTextAttributes(for: .focused) ?? [:]
+            item.normal.titleTextAttributes = UITabBarItem.appearance().titleTextAttributes(for: .normal) ?? [:]
+            item.selected.titleTextAttributes = UITabBarItem.appearance().titleTextAttributes(for: .selected) ?? [:]
+
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .background
+            appearance.compactInlineLayoutAppearance = item
+            appearance.inlineLayoutAppearance = item
+            appearance.stackedLayoutAppearance = item
+
+            if let tabBar = tabBarController?.tabBar {
+                tabBar.scrollEdgeAppearance = appearance
+                tabBar.standardAppearance = appearance
             }
         }
     }

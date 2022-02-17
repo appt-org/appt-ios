@@ -11,56 +11,62 @@ import Foundation
 
 enum Topic: String {
 
-    case myprofile
-    
     case source
-    case sidnfonds
     case contact
     
+    case appt
+    case abra
+    case sidnfonds
+    
+    case terms
     case privacy
     case accessibility
-    case terms
     
     /** Title */
     var title: String {
         switch self {
-        case .myprofile:
-            return "my_profile_title".localized
-        
         case .source:
             return "source_title".localized
-        case .sidnfonds:
-            return "sidn_fonds_title".localized
         case .contact:
             return "contact_title".localized
+            
+        case .appt:
+            return "appt_title".localized
+        case .abra:
+            return "abra_title".localized
+        case .sidnfonds:
+            return "sidn_fonds_title".localized
+       
+        case .terms:
+            return "terms_title".localized
         case .privacy:
             return "privacy_title".localized
         case .accessibility:
             return "accessability_title".localized
-        case .terms:
-            return "terms_title".localized
         }
     }
 
     /** Slug */
     var slug: String {
         switch self {
-        case .myprofile:
-            return ""
-            
         case .source:
-            return "https://github.com/appt-nl/appt-ios"
-        case .sidnfonds:
-            return "https://www.sidnfonds.nl"
+            return "https://github.com/appt-org/appt-ios"
         case .contact:
             return "https://appt.nl/contact"
             
-        case .privacy:
-            return "privacybeleid"
-        case .accessibility:
-            return "toegankelijkheidsverklaring"
+        case .appt:
+            return "https://appt.nl"
+        case .abra:
+            return "https://abra.nl"
+        case .sidnfonds:
+            return "https://www.sidnfonds.nl"
+            
         case .terms:
-            return "algemene-voorwaarden"
+            return "https://appt.nl/algemene-voorwaarden"
+        case .privacy:
+            return "https://appt.nl/privacybeleid"
+        case .accessibility:
+            return "https://appt.nl/toegankelijkheidsverklaring"
         }
     }
 
@@ -71,22 +77,24 @@ enum Topic: String {
     /** Image */
     var image: UIImage {
         switch self {
-        case .myprofile:
-            return .myprofile
-            
         case .source:
             return .sourceCode
-        case .sidnfonds:
-            return .sidnfonds
         case .contact:
             return .contact
             
+        case .appt:
+            return .appt
+        case .abra:
+            return .abra
+        case .sidnfonds:
+            return .sidnfonds
+            
+        case .terms:
+            return .terms
         case .privacy:
             return .privacy
         case .accessibility:
             return .accessibility
-        case .terms:
-            return .terms
         }
     }
 }

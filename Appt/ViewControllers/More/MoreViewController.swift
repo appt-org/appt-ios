@@ -14,7 +14,11 @@ class MoreViewController: TableViewController {
         return [
             "about_title".localized: [
                 .source,
-                .contact,
+                .contact
+            ],
+            "partners_title".localized: [
+                .appt,
+                .abra,
                 .sidnfonds
             ],
             "legal_title".localized: [
@@ -64,12 +68,6 @@ extension MoreViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let topic = topics[indexPath.section].value[indexPath.row]
-        
-        if indexPath.section == 0 {
-            openWebsite(topic.slug)
-        } else if indexPath.section == 1 {
-            let articleViewController = UIStoryboard.article(type: .page, slug: topic.slug)
-            navigationController?.pushViewController(articleViewController, animated: true)
-        }
+        openWebsite(topic.slug)
     }
 }

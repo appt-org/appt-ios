@@ -9,6 +9,7 @@
 import UIKit
 
 final class BlocksCollectionHeaderCell: DynamicHeightCollectionViewCell {
+    
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
 
@@ -39,5 +40,4 @@ final class BlocksCollectionHeaderCell: DynamicHeightCollectionViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
     }
-
 }

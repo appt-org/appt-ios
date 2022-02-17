@@ -13,8 +13,10 @@ extension UIImage {
     
     static var myprofile = UIImage(named: "ic_my_profile")!
     static var sourceCode = UIImage(named: "ic_source")!
-    static var sidnfonds = UIImage(named: "ic_sidnfonds")!
     static var contact = UIImage(named: "ic_contact")!
+    static var appt = UIImage(named: "ic_appt")!
+    static var abra = UIImage(named: "ic_abra")!
+    static var sidnfonds = UIImage(named: "ic_sidnfonds")!
     static var privacy = UIImage(named: "ic_privacy")!
     static var accessibility = UIImage(named: "ic_accessibility")!
     static var terms = UIImage(named: "ic_terms")!

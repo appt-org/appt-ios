@@ -1,18 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icFieldsToegankelijkheidsverklaring@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "icFieldsToegankelijkheidsverklaring@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Toegankelijkheidsverklaring.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

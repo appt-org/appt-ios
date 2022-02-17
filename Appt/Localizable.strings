@@ -223,13 +223,16 @@
 "more_vc_title" = "Meer";
 "my_profile_title" = "Mijn profiel";
 "source_title" = "Broncode";
+"contact_title" = "Contact opnemen";
+"appt_title" = "Stichting Appt";
+"abra_title" = "Abra";
 "sidn_fonds_title" = "SIDN fonds";
-"contact_title" = "Stichting Appt";
 "privacy_title" = "Privacybeleid";
 "accessability_title" = "Toegankelijkheidsverklaring";
 "terms_title" = "Algemene Voorwaarden";
-"legal_title" = "Juridisch";
 "about_title" = "Over de app";
+"partners_title" = "Partners";
+"legal_title" = "Juridisch";
 
 /* ServicesViewController */
 "services_vc_title" = "Diensten";

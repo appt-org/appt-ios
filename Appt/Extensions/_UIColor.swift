@@ -22,9 +22,6 @@ extension UIColor {
 
     static let primary = UIColor(named: "Primary")!
     static let background = UIColor(named: "Background")!
-    static let backgroundSecondary = UIColor(named: "BackgroundSecondary")!
     static let foreground = UIColor(named: "Foreground")!
     static let disabled = UIColor(named: "Disabled")!
-    static let textFieldDisabled = UIColor(named: "TextFieldDisabled")!
-    static let categoryCellBackground = UIColor(named: "CategoryCellBackground")!
 }

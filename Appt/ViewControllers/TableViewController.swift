@@ -70,7 +70,7 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView, let label = header.textLabel {
             label.text = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: section)
-            label.font = .openSans(weight: .bold, size: 18, style: .headline)
+            label.font = .openSans(weight: .bold, size: 17, style: .headline)
             label.textColor = .foreground
         }
     }
