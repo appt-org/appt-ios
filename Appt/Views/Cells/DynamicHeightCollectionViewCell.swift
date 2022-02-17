@@ -9,6 +9,7 @@
 import UIKit
 
 class DynamicHeightCollectionViewCell: UICollectionViewCell {
+    
     override func systemLayoutSizeFitting(
         _ targetSize: CGSize,
         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,

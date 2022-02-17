@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ListTableTopSectionHeaderView: UITableViewHeaderFooterView {
+class HeaderTableViewCell: UITableViewHeaderFooterView {
+    
     @IBOutlet private var titleLabel: UILabel!
     
     override var accessibilityTraits: UIAccessibilityTraits {

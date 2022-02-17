@@ -120,7 +120,7 @@ class SubjectsViewController: ViewController {
 extension SubjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            let view = tableView.headerFooter(ListTableTopSectionHeaderView.self)
+            let view = tableView.headerFooter(HeaderTableViewCell.self)
 
             guard let subject = self.subject else { return 0.0 }
 
@@ -136,7 +136,7 @@ extension SubjectsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let view = tableView.headerFooter(ListTableTopSectionHeaderView.self)
+            let view = tableView.headerFooter(HeaderTableViewCell.self)
 
             guard let subject = self.subject else { return nil }
 
@@ -239,8 +239,8 @@ extension SubjectsViewController: UICollectionViewDataSource, UICollectionViewDe
 
         switch blocksSection {
         case .blocks:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
-                fatalError("unable to dequeue CategoryCollectionViewCell")
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubjectCollectionViewCell.identifier, for: indexPath) as? SubjectCollectionViewCell else {
+                fatalError("unable to dequeue SubjectCollectionViewCell")
             }
             guard let subject = self.subject else { return UICollectionViewCell() }
 
@@ -248,8 +248,8 @@ extension SubjectsViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.setup(model)
             return cell
         case .headerCell:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BlocksCollectionHeaderCell.identifier, for: indexPath) as? BlocksCollectionHeaderCell else {
-                fatalError("unable to dequeue BlocksCollectionHeaderCell")
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell.identifier, for: indexPath) as? HeaderCollectionViewCell else {
+                fatalError("unable to dequeue HeaderCollectionViewCell")
             }
             guard let subject = self.subject else { return UICollectionViewCell() }
 

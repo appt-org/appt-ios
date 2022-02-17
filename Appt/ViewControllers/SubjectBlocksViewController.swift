@@ -14,8 +14,8 @@ class SubjectBlocksViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.registerNib(CategoryCollectionViewCell.self)
-        collectionView.registerNib(BlocksCollectionHeaderCell.self)
+        collectionView.registerNib(HeaderCollectionViewCell.self)
+        collectionView.registerNib(SubjectCollectionViewCell.self)
         collectionView.delaysContentTouches = false
     }
 

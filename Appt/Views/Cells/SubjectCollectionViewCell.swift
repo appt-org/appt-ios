@@ -1,5 +1,5 @@
 //
-//  CategoryCollectionViewCell.swift
+//  SubjectCollectionViewCell.swift
 //  Appt
 //
 //  Created by Yurii Kozlov on 5/13/21.
@@ -9,7 +9,8 @@
 import UIKit
 import SDWebImage
 
-final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
+final class SubjectCollectionViewCell: DynamicHeightCollectionViewCell {
+    
     @IBOutlet private var background: UIView!
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var categoryLabel: UILabel!
@@ -44,34 +45,35 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.layer.cornerRadius = 20
-        self.layer.borderWidth = 2
+        layer.cornerRadius = 20
+        layer.borderWidth = 2
         if #available(iOS 13.0, *) {
-            self.layer.borderColor = UIColor.separator.cgColor
+            layer.borderColor = UIColor.separator.cgColor
         } else {
-            self.layer.borderColor = UIColor.lightGray.cgColor
+            layer.borderColor = UIColor.lightGray.cgColor
         }
         
-        self.categoryLabel.textColor = .foreground
-        self.categoryLabel.adjustsFontForContentSizeCategory = true
-        self.isAccessibilityElement = true
+        categoryLabel.textColor = .foreground
+        categoryLabel.adjustsFontForContentSizeCategory = true
         
         if #available(iOS 13.0, *) {
             background.backgroundColor = UIColor.background
         } else {
             background.backgroundColor = UIColor.white
         }
+        
+        isAccessibilityElement = true
+        shouldGroupAccessibilityChildren = true
     }
 
     func setup(_ subject: Subject) {
-        self.categoryLabel.text = subject.title
-        self.accessibilityLabel = subject.title
+        categoryLabel.text = subject.title
+        accessibilityLabel = subject.title
 
-        self.categoryLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        categoryLabel.font = .openSans(weight: .regular, size: 17, style: .body)
 
-        self.loadingIndicator.startAnimating()
-
-        self.imgView.sd_setImage(with: subject.imgURL) {image, _, _, _ in
+        loadingIndicator.startAnimating()
+        imgView.sd_setImage(with: subject.imgURL) { image, _, _, _ in
             self.loadingIndicator.stopAnimating()
             if image == nil {
                 self.imgView.image = UIImage.blocksPlaceholder
@@ -80,11 +82,11 @@ final class CategoryCollectionViewCell: DynamicHeightCollectionViewCell {
     }
     
     func setup(withTitle title: String, image: UIImage) {
-        self.categoryLabel.text = title
-        self.accessibilityLabel = title
+        categoryLabel.text = title
+        accessibilityLabel = title
 
-        self.categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
+        categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
 
-        self.imgView.image = image
+        imgView.image = image
     }
 }
