@@ -13,7 +13,17 @@ import Accessibility
 class WebViewController: ViewController {
  
     private lazy var webView: WKWebView = {
+        let css = "#masthead, #breadcrumbs, .footer-sidebars-wrapper, .site-footer { display: none !important }"
+        
+        let source = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
+        
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+                    
+        let userContentController = WKUserContentController()
+        userContentController.addUserScript(script)
+                
         let configuration = WKWebViewConfiguration()
+        configuration.userContentController = userContentController
         
         let webView = WKWebView(frame: view.frame, configuration: configuration)
         webView.scrollView.maximumZoomScale = 10.0
@@ -49,6 +59,8 @@ class WebViewController: ViewController {
     }
 
     func load(_ url: URL) {
+        isLoading = true
+        
         let request = URLRequest(url: url)
         webView.load(request)
     }
@@ -80,12 +92,7 @@ extension WebViewController: WKNavigationDelegate {
         }
         
         if navigationAction.navigationType == .linkActivated {
-            if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
-                let articleViewController = UIStoryboard.article(type: .page, url: url)
-                navigationController?.pushViewController(articleViewController, animated: true)
-            } else {
-                openWebsite(url)
-            }
+            openWebsite(url)
             decisionHandler(.cancel)
         } else {
             decisionHandler(.allow)

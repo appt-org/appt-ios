@@ -12,28 +12,30 @@ import SafariServices
 extension UIViewController {
 
     func openWebsite(_ urlString: String, delegate: SFSafariViewControllerDelegate? = nil) {
-        if let url = URL(string: urlString) {
-            if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
-                let articleViewController = UIStoryboard.article(type: .page, url: url)
-                navigationController?.pushViewController(articleViewController, animated: true)
-            } else {
-                openWebsite(url, delegate: delegate)
-            }
-        }
+        guard let url = URL(string: urlString) else { return }
+        openWebsite(url)
     }
     
     func openWebsite(_ url: URL, delegate: SFSafariViewControllerDelegate? = nil) {
-        let configuration = SFSafariViewController.Configuration()
-        configuration.barCollapsingEnabled = false
-        configuration.entersReaderIfAvailable = false
-        
-        let safariViewController = SFSafariViewController(url: url, configuration: configuration)
-        safariViewController.delegate = delegate
-        safariViewController.preferredBarTintColor = .background
-        safariViewController.preferredControlTintColor = .foreground
-        safariViewController.dismissButtonStyle = .done
-        
-        present(safariViewController, animated: true)
+        if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
+            let articleViewController = UIStoryboard.article(type: .page, url: url)
+            navigationController?.pushViewController(articleViewController, animated: true)
+        } else if url.absoluteString.contains("appt.nl/") {
+            let articleViewController = UIStoryboard.article(type: .url, url: url)
+            navigationController?.pushViewController(articleViewController, animated: true)
+        } else {
+            let configuration = SFSafariViewController.Configuration()
+            configuration.barCollapsingEnabled = false
+            configuration.entersReaderIfAvailable = false
+            
+            let safariViewController = SFSafariViewController(url: url, configuration: configuration)
+            safariViewController.delegate = delegate
+            safariViewController.preferredBarTintColor = .background
+            safariViewController.preferredControlTintColor = .foreground
+            safariViewController.dismissButtonStyle = .done
+            
+            present(safariViewController, animated: true)
+        }
     }
 }
 

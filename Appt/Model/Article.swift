@@ -11,6 +11,7 @@ import Foundation
 enum ArticleType: String, Codable {
     case page = "page"
     case post = "post"
+    case url
     
     var path: String {
         return rawValue + "s"

@@ -12,8 +12,8 @@ class MoreViewController: TableViewController {
     
     private var topics: KeyValuePairs<String, [Topic]> {
         return [
-            "about_title".localized: [
-                .appt,
+            "information_title".localized: [
+                .about,
                 .contact,
                 .source,
             ],

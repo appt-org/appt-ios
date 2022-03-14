@@ -19,7 +19,6 @@ class ArticleViewController: WebViewController {
     var id: Int?
     var slug: String?
     var url: URL?
-    var completeURL: URL?
     
     var article: Article?
     
@@ -29,7 +28,11 @@ class ArticleViewController: WebViewController {
         shareItem.isEnabled = false
         shareItem.title = "article_share".localized
         
-        getArticle()
+        if type == .url, let url = url {
+            load(url)
+        } else {
+            getArticle()
+        }
     }
     
     private func getArticle() {
@@ -62,9 +65,7 @@ class ArticleViewController: WebViewController {
         } else if let slug = slug {
             API.shared.getArticle(type: type, slug: slug, callback: callback)
         } else if let url = url {
-            API.shared.getArticle(type: type, url: url, callback: callback)
-        } else if let completeURL = completeURL {
-            self.load(completeURL)
+           API.shared.getArticle(type: type, url: url, callback: callback)
         }
     }
     

@@ -47,12 +47,6 @@ extension UIStoryboard {
         articleViewController.url = url
         return articleViewController
     }
-
-    static func article(type: ArticleType, completeUrl: URL) -> ArticleViewController {
-        let articleViewController = article(type: type)
-        articleViewController.completeURL = completeUrl
-        return articleViewController
-    }
     
     static func voiceOverGestures() -> VoiceOverGesturesViewController {
         return viewController(.voiceOver, identifier: VoiceOverGesturesViewController.self)

@@ -222,15 +222,15 @@
 /* MoreViewController */
 "more_vc_title" = "Meer";
 "my_profile_title" = "Mijn profiel";
-"source_title" = "Broncode";
+"information_title" = "Informatie";
 "contact_title" = "Contact opnemen";
-"appt_title" = "Over ons";
+"source_title" = "Broncode";
 "abra_title" = "Abra";
 "sidn_fonds_title" = "SIDN fonds";
 "privacy_title" = "Privacybeleid";
-"accessability_title" = "Toegankelijkheidsverklaring";
+"accessibility_title" = "Toegankelijkheidsverklaring";
 "terms_title" = "Algemene voorwaarden";
-"about_title" = "Over de app";
+"about_title" = "Over ons";
 "partners_title" = "Partners";
 "legal_title" = "Juridisch";
 

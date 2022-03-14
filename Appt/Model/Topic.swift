@@ -14,7 +14,7 @@ enum Topic: String {
     case source
     case contact
     
-    case appt
+    case about
     case abra
     case sidnfonds
     
@@ -25,13 +25,13 @@ enum Topic: String {
     /** Title */
     var title: String {
         switch self {
-        case .source:
-            return "source_title".localized
+        case .about:
+            return "about_title".localized
         case .contact:
             return "contact_title".localized
-            
-        case .appt:
-            return "appt_title".localized
+        case .source:
+            return "source_title".localized
+        
         case .abra:
             return "abra_title".localized
         case .sidnfonds:
@@ -42,31 +42,31 @@ enum Topic: String {
         case .privacy:
             return "privacy_title".localized
         case .accessibility:
-            return "accessability_title".localized
+            return "accessibility_title".localized
         }
     }
 
     /** Slug */
     var slug: String {
         switch self {
+        case .about:
+            return "https://appt.nl/over#main"
+        case .contact:
+            return "https://appt.nl/contact#main"
         case .source:
             return "https://github.com/appt-org/appt-ios"
-        case .contact:
-            return "https://appt.nl/contact"
             
-        case .appt:
-            return "https://appt.nl"
         case .abra:
             return "https://abra.nl"
         case .sidnfonds:
             return "https://www.sidnfonds.nl"
             
         case .terms:
-            return "https://appt.nl/algemene-voorwaarden"
+            return "https://appt.nl/algemene-voorwaarden#main"
         case .privacy:
-            return "https://appt.nl/privacybeleid"
+            return "https://appt.nl/privacybeleid#main"
         case .accessibility:
-            return "https://appt.nl/toegankelijkheidsverklaring"
+            return "https://appt.nl/toegankelijkheidsverklaring#main"
         }
     }
 
@@ -82,7 +82,7 @@ enum Topic: String {
         case .contact:
             return .contact
             
-        case .appt:
+        case .about:
             return .appt
         case .abra:
             return .abra
