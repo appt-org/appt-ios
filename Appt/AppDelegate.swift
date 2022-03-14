@@ -50,10 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         ]
         
         // UIBarButtonItem style
-        UIBarButtonItem.appearance().tintColor = .primary
+        UIBarButtonItem.appearance().tintColor = .foreground
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .semibold, size: 16, scaled: false)
+                .font: UIFont.openSans(weight: .regular, size: 16, scaled: false)
             ], for: state)
         }
         
@@ -74,11 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .regular, size: 17, scaled: false)
+                .font: UIFont.openSans(weight: .regular, size: 18, scaled: false)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.openSans(weight: .bold, size: 17, scaled: false),
+            .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ], for: .selected)
 

@@ -21,13 +21,13 @@ final class HeaderCollectionViewCell: DynamicHeightCollectionViewCell {
     }
 
     func setup(_ subject: Subject) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = subject.description
         
         accessibilityLabel = subject.description
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
     }
 }

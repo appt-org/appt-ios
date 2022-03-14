@@ -25,7 +25,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ title: String) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
         
         accessibilityLabel = title
@@ -33,7 +33,7 @@ class TitleTableViewCell: UITableViewCell {
     }
 
     func setup(_ taxonomy: Taxonomy) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = taxonomy.name
 
         accessibilityLabel = taxonomy.name
@@ -43,7 +43,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ gesture: Gesture) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = gesture.title
         
         accessibilityLabel = gesture.title
@@ -53,7 +53,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     func setup(_ action: Action) {
-        titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = action.title
         
         accessibilityLabel = action.title

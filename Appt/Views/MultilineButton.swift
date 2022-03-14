@@ -36,7 +36,7 @@ class MultilineButton: UIButton {
         self.titleLabel?.adjustsFontForContentSizeCategory = true
         self.titleLabel?.lineBreakMode = .byTruncatingTail
 
-        self.usedFont = .openSans(weight: .semibold, size: 17, style: .body)
+        self.usedFont = .openSans(weight: .semibold, size: 18, style: .body)
     }
 
     override var intrinsicContentSize: CGSize {
@@ -71,7 +71,7 @@ class UnderlinedMultilineButton: MultilineButton {
             return
         }
         
-        let attrs = [NSAttributedString.Key.font : UIFont.openSans(weight: .semibold, size: 17, style: .body),
+        let attrs = [NSAttributedString.Key.font : UIFont.openSans(weight: .semibold, size: 18, style: .body),
                      NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue] as [NSAttributedString.Key : Any]
         let attributedTitle = NSMutableAttributedString(string: title, attributes:attrs)
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -428,7 +428,7 @@
             </objects>
             <point key="canvasLocation" x="3939" y="369"/>
         </scene>
-        <!--Filters-->
+        <!--Filteren-->
         <scene sceneID="AO4-V7-lVX">
             <objects>
                 <viewController storyboardIdentifier="FilterViewController" id="atb-WW-ou0" customClass="FiltersViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -451,7 +451,7 @@
                             <constraint firstItem="cjm-Pv-ci9" firstAttribute="leading" secondItem="Ug1-0x-YXE" secondAttribute="leading" id="ehr-wL-afA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Filters" id="sbV-8X-zOi">
+                    <navigationItem key="navigationItem" title="Filteren" id="sbV-8X-zOi">
                         <barButtonItem key="rightBarButtonItem" title="Toepassen" id="fAe-56-Afw">
                             <connections>
                                 <action selector="onSaveTapped:" destination="atb-WW-ou0" id="4TR-z9-E9t"/>

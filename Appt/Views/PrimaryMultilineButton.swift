@@ -12,7 +12,7 @@ final class PrimaryMultilineButton: MultilineButton {
     override func commonInit() {
         super.commonInit()
 
-        self.layer.cornerRadius = 17
+        self.layer.cornerRadius = 16
         self.setTitleColor(.background, for: .normal)
         self.backgroundColor = .foreground
     }

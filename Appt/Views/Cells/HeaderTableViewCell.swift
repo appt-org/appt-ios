@@ -26,11 +26,11 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
         
         self.accessibilityLabel = subject.description
 
-        self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         self.titleLabel.text = subject.description
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.titleLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        self.titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
     }
 }

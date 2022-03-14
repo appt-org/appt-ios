@@ -70,7 +70,7 @@ final class SubjectCollectionViewCell: DynamicHeightCollectionViewCell {
         categoryLabel.text = subject.title
         accessibilityLabel = subject.title
 
-        categoryLabel.font = .openSans(weight: .regular, size: 17, style: .body)
+        categoryLabel.font = .openSans(weight: .regular, size: 18, style: .body)
 
         loadingIndicator.startAnimating()
         imgView.sd_setImage(with: subject.imgURL) { image, _, _, _ in
@@ -85,7 +85,7 @@ final class SubjectCollectionViewCell: DynamicHeightCollectionViewCell {
         categoryLabel.text = title
         accessibilityLabel = title
 
-        categoryLabel.font = .openSans(weight: .semibold, size: 17, style: .body)
+        categoryLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
 
         imgView.image = image
     }

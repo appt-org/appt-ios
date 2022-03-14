@@ -12,7 +12,7 @@ final class SecondaryMultilineButton: MultilineButton {
     override func commonInit() {
         super.commonInit()
 
-        self.layer.cornerRadius = 17
+        self.layer.cornerRadius = 16
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.foreground.cgColor
     }

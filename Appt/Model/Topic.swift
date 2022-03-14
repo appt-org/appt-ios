@@ -50,9 +50,9 @@ enum Topic: String {
     var slug: String {
         switch self {
         case .about:
-            return "https://appt.nl/over#main"
+            return "https://appt.nl/over"
         case .contact:
-            return "https://appt.nl/contact#main"
+            return "https://appt.nl/contact"
         case .source:
             return "https://github.com/appt-org/appt-ios"
             
@@ -62,11 +62,11 @@ enum Topic: String {
             return "https://www.sidnfonds.nl"
             
         case .terms:
-            return "https://appt.nl/algemene-voorwaarden#main"
+            return "https://appt.nl/algemene-voorwaarden"
         case .privacy:
-            return "https://appt.nl/privacybeleid#main"
+            return "https://appt.nl/privacybeleid"
         case .accessibility:
-            return "https://appt.nl/toegankelijkheidsverklaring#main"
+            return "https://appt.nl/toegankelijkheidsverklaring"
         }
     }
 
