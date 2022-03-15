@@ -96,4 +96,10 @@ extension UIStoryboard {
         vc.subject = subject
         return vc
     }
+    
+    static func more(subject: Subject) -> MoreViewController {
+        let vc = viewController(.main, identifier: MoreViewController.self)
+        vc.subject = subject
+        return vc
+    }
 }

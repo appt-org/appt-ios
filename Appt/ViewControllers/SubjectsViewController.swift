@@ -28,6 +28,7 @@ class SubjectsViewController: ViewController {
         case home
         case knowledgeBase
         case services
+        case more
         
         var title: String {
             switch self {
@@ -37,6 +38,8 @@ class SubjectsViewController: ViewController {
                 return "kennisbank_appt_home_title".localized
             case .services:
                 return "services_vc_title".localized
+            case .more:
+                return "more_vc_title".localized
             }
         }
     }
@@ -76,6 +79,8 @@ class SubjectsViewController: ViewController {
             API.shared.getKnowledgeBase(callback)
         case .services:
             API.shared.getServices(callback)
+        case .more:
+            API.shared.getMore(callback)
         }
     }
     
@@ -109,6 +114,8 @@ class SubjectsViewController: ViewController {
             viewController = UIStoryboard.knowledgeBase(subject: subject)
         case .services:
             viewController = UIStoryboard.services(subject: subject)
+        case .more:
+            viewController = UIStoryboard.more(subject: subject)
         }
             
         if let viewController = viewController {
@@ -269,7 +276,7 @@ extension SubjectsViewController: UICollectionViewDataSource, UICollectionViewDe
 
         if model.children.isEmpty, self.viewControllerType == .services {
             openWebsite(model.url)
-        } else if model.children.isEmpty {
+        } else if !model.children.isEmpty {
             openWebsite(model.url)
         } else {
             pushNextSubject(model)

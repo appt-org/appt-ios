@@ -111,29 +111,28 @@
         <!--Meer-->
         <scene sceneID="SbE-AX-sAz">
             <objects>
-                <viewController id="9ka-Zl-jpa" customClass="MoreViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreViewController" id="9ka-Zl-jpa" customClass="MoreViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZC-mj-Xf6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-DJ-NIb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-mQ-sf4">
                                 <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cmp-mH-dB3"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="H7A-DJ-NIb" firstAttribute="bottom" secondItem="Cmp-mH-dB3" secondAttribute="bottom" id="5FU-49-tzQ"/>
-                            <constraint firstItem="H7A-DJ-NIb" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="SBk-9g-2nG"/>
-                            <constraint firstAttribute="trailing" secondItem="H7A-DJ-NIb" secondAttribute="trailing" id="Wdn-PO-V7x"/>
-                            <constraint firstItem="H7A-DJ-NIb" firstAttribute="leading" secondItem="7ZC-mj-Xf6" secondAttribute="leading" id="ci4-Zd-lRv"/>
+                            <constraint firstItem="Cmp-mH-dB3" firstAttribute="trailing" secondItem="JQk-mQ-sf4" secondAttribute="trailing" id="9U1-so-myX"/>
+                            <constraint firstItem="Cmp-mH-dB3" firstAttribute="bottom" secondItem="JQk-mQ-sf4" secondAttribute="bottom" id="Y9X-mw-db9"/>
+                            <constraint firstItem="JQk-mQ-sf4" firstAttribute="leading" secondItem="Cmp-mH-dB3" secondAttribute="leading" id="cbc-rs-Hwf"/>
+                            <constraint firstItem="JQk-mQ-sf4" firstAttribute="top" secondItem="Cmp-mH-dB3" secondAttribute="top" id="xGh-IB-DGJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meer" id="j1G-uk-QOi"/>
                     <connections>
-                        <outlet property="tableView" destination="H7A-DJ-NIb" id="naI-1F-9T4"/>
+                        <outlet property="container" destination="JQk-mQ-sf4" id="qCk-co-8f1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkW-hB-RjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

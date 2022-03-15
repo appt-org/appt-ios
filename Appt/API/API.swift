@@ -14,6 +14,7 @@ class API {
         case home
         case knowledgeBase
         case services
+        case more
         
         var path: String {
             switch self {
@@ -23,6 +24,8 @@ class API {
                 return "knowledgeBase.json"
             case .services:
                 return "services.json"
+            case .more:
+                return "more.json"
             }
         }
     }
@@ -152,6 +155,10 @@ class API {
     
     func getServices(_ callback: @escaping(Subject?, String?) -> ()) {
         getContent(type: .services, callback: callback)
+    }
+    
+    func getMore(_ callback: @escaping(Subject?, String?) -> ()) {
+        getContent(type: .more, callback: callback)
     }
 }
 
