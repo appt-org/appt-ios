@@ -20,9 +20,6 @@ extension UIViewController {
         if url.absoluteString.contains("appt.nl/kennisbank/") || url.absoluteString.contains("appt.crio-server.com/kennisbank/") {
             let articleViewController = UIStoryboard.article(type: .page, url: url)
             navigationController?.pushViewController(articleViewController, animated: true)
-        } else if url.absoluteString.contains("appt.nl/") {
-            let articleViewController = UIStoryboard.article(type: .url, url: url)
-            navigationController?.pushViewController(articleViewController, animated: true)
         } else {
             let configuration = SFSafariViewController.Configuration()
             configuration.barCollapsingEnabled = false

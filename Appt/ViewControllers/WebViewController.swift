@@ -13,14 +13,7 @@ import Accessibility
 class WebViewController: ViewController {
  
     private lazy var webView: WKWebView = {
-        let css = "#masthead, #breadcrumbs, .footer-sidebars-wrapper, .site-footer { display: none !important }"
-        
-        let source = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
-        
-        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-                    
         let userContentController = WKUserContentController()
-        userContentController.addUserScript(script)
                 
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = userContentController
