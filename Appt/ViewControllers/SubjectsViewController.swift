@@ -103,6 +103,31 @@ class SubjectsViewController: ViewController {
                 (self.children.first as? SubjectListViewController)?.tableView.dataSource = self
             }
         }
+        
+        // Add share item to navigation bar
+        guard !subject.url.isEmpty else {
+            return
+        }
+        
+        let shareItem = UIBarButtonItem(
+            image: UIImage(named: "icon_share"),
+            style: .plain,
+            target: self,
+            action: #selector(shareURL(sender:))
+        )
+        shareItem.accessibilityLabel = "article_share".localized
+        
+        navigationItem.rightBarButtonItem  = shareItem
+    }
+    
+    @objc private func shareURL(sender: UIBarButtonItem) {
+        guard let urlString = subject?.url, let url = URL(string: urlString) else {
+            return
+        }
+        
+        let shareViewController = UIActivityViewController(activityItems: [url], applicationActivities: [])
+        shareViewController.popoverPresentationController?.barButtonItem = sender
+        present(shareViewController, animated: true)
     }
     
     private func pushNextSubject(_ subject: Subject) {

@@ -19,10 +19,10 @@
 
     --color-primary: #d023be;
     --color-selection: #d023be80;
-    --color-background: #fff;
-    --color-foreground: #222;
-    --color-divider: #ddd;
-    
+    --color-background: #ffffff;
+    --color-foreground: #222222;
+    --color-divider: #eeeeee;
+
     --image-external: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyMiAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzIDNWNUgxOC41NjI1TDYuMjgxMjUgMTcuMjgxMkw3LjcxODc1IDE4LjcxODhMMjAgNi40Mzc1VjEySDIyVjNIMTNaTTAgN1YyNUgxOFYxMkwxNiAxNFYyM0gyVjlIMTFMMTMgN0gwWiIgZmlsbD0iI0QwMjNCRSIvPgo8L3N2Zz4K");
 }
 
@@ -170,10 +170,11 @@ ul li {
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --color-primary: #e773d9;
+        --color-selection: #e773d980;
         --color-background: #121212;
         --color-foreground: #ededed;
-        --color-divider: #222;
-        
+        --color-divider: #222222;
+
         --image-external: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyMiAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzIDNWNUgxOC41NjI1TDYuMjgxMjUgMTcuMjgxMkw3LjcxODc1IDE4LjcxODhMMjAgNi40Mzc1VjEySDIyVjNIMTNaTTAgN1YyNUgxOFYxMkwxNiAxNFYyM0gyVjlIMTFMMTMgN0gwWiIgZmlsbD0iI0U3NzNEOSIvPgo8L3N2Zz4K");
     }
 }
