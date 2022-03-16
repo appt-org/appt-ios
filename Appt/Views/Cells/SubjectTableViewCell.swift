@@ -1,5 +1,5 @@
 //
-//  ImageTitleTableViewCell.swift
+//  SubjectTableViewCell.swift
 //  Appt
 //
 //  Created by Yurii Kozlov on 5/14/21.
@@ -9,7 +9,8 @@
 import UIKit
 import SDWebImage
 
-final class ImageTitleTableViewCell: UITableViewCell {
+final class SubjectTableViewCell: UITableViewCell {
+    
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
@@ -38,18 +39,13 @@ final class ImageTitleTableViewCell: UITableViewCell {
         self.loadingIndicator.startAnimating()
         self.imgView.sd_setImage(with: subject.imgURL) {image, _, _, _ in
             self.loadingIndicator.stopAnimating()
-            if image == nil {
+            
+            if image != nil {
+                self.imgView.image = image?.withRenderingMode(.alwaysTemplate)
+                self.imgView.tintColor = .primary
+            } else if image == nil {
                 self.imgView.image = UIImage.listPlaceholder
             }
         }
-    }
-    
-    func setup(withTitle title: String, image: UIImage) {
-        self.accessoryType = .disclosureIndicator
-        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
-        titleLabel.text = title
-        accessibilityLabel = title
-
-        self.imgView.image = image
     }
 }

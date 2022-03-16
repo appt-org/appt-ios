@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .background
+        UINavigationBar.appearance().barTintColor = .primary
         UINavigationBar.appearance().backgroundColor = .background
-        UINavigationBar.appearance().tintColor = .foreground
+        UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont.openSans(weight: .bold, size: 20, scaled: false),
             .foregroundColor: UIColor.foreground
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         ]
         
         // UIBarButtonItem style
-        UIBarButtonItem.appearance().tintColor = .foreground
+        UIBarButtonItem.appearance().tintColor = .primary
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
                 .font: UIFont.openSans(weight: .regular, size: 16, scaled: false)

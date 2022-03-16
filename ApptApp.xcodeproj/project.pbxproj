@@ -15,8 +15,8 @@
 		231F1FEB266A2648002524F0 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F1FEA266A2648002524F0 /* DeepLink.swift */; };
 		231F1FED266A64FA002524F0 /* _UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F1FEC266A64FA002524F0 /* _UIApplication.swift */; };
 		232D74EA264E771200937E0D /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74E9264E771200937E0D /* SubjectListViewController.swift */; };
-		232D74ED264E779400937E0D /* ImageTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */; };
-		232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */; };
+		232D74ED264E779400937E0D /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74EB264E779400937E0D /* SubjectTableViewCell.swift */; };
+		232D74EE264E779400937E0D /* SubjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D74EC264E779400937E0D /* SubjectTableViewCell.xib */; };
 		232D74F1264E8ED500937E0D /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74F0264E8ED500937E0D /* ViewEmbedder.swift */; };
 		2338B342264D49C100D47FC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B341264D49C100D47FC7 /* HomeViewController.swift */; };
 		2338B344264D50BF00D47FC7 /* SubjectBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B343264D50BF00D47FC7 /* SubjectBlocksViewController.swift */; };
@@ -134,8 +134,8 @@
 		231F1FEA266A2648002524F0 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		231F1FEC266A64FA002524F0 /* _UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIApplication.swift; sourceTree = "<group>"; };
 		232D74E9264E771200937E0D /* SubjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubjectListViewController.swift; path = Home/SubjectListViewController.swift; sourceTree = "<group>"; };
-		232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleTableViewCell.swift; sourceTree = "<group>"; };
-		232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTitleTableViewCell.xib; sourceTree = "<group>"; };
+		232D74EB264E779400937E0D /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
+		232D74EC264E779400937E0D /* SubjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectTableViewCell.xib; sourceTree = "<group>"; };
 		232D74F0264E8ED500937E0D /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
 		2338B341264D49C100D47FC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2338B343264D50BF00D47FC7 /* SubjectBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectBlocksViewController.swift; sourceTree = "<group>"; };
@@ -390,8 +390,8 @@
 				287D43FB27BE8C9B00B9B997 /* HeaderCollectionViewCell.swift */,
 				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
 				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
-				232D74EC264E779400937E0D /* ImageTitleTableViewCell.xib */,
-				232D74EB264E779400937E0D /* ImageTitleTableViewCell.swift */,
+				232D74EC264E779400937E0D /* SubjectTableViewCell.xib */,
+				232D74EB264E779400937E0D /* SubjectTableViewCell.swift */,
 				A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */,
 				A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */,
 				2338B348264D569C00D47FC7 /* SubjectCollectionViewCell.xib */,
@@ -662,7 +662,7 @@
 				2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */,
 				287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */,
 				28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */,
-				232D74EE264E779400937E0D /* ImageTitleTableViewCell.xib in Resources */,
+				232D74EE264E779400937E0D /* SubjectTableViewCell.xib in Resources */,
 				2869ABFD24F7C503004962A7 /* style.css in Resources */,
 				2338B34A264D569C00D47FC7 /* SubjectCollectionViewCell.xib in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
@@ -834,7 +834,7 @@
 				231F1FED266A64FA002524F0 /* _UIApplication.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
 				287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */,
-				232D74ED264E779400937E0D /* ImageTitleTableViewCell.swift in Sources */,
+				232D74ED264E779400937E0D /* SubjectTableViewCell.swift in Sources */,
 				23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */,
 				28639F5125E3F9F200C29BB5 /* KnowledgeViewController.swift in Sources */,
 				A8A301532661295600375B02 /* SubjectsViewController.swift in Sources */,

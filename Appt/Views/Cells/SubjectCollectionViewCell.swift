@@ -75,18 +75,13 @@ final class SubjectCollectionViewCell: DynamicHeightCollectionViewCell {
         loadingIndicator.startAnimating()
         imgView.sd_setImage(with: subject.imgURL) { image, _, _, _ in
             self.loadingIndicator.stopAnimating()
-            if image == nil {
+            
+            if image != nil {
+                self.imgView.image = image?.withRenderingMode(.alwaysTemplate)
+                self.imgView.tintColor = .primary
+            } else if image == nil {
                 self.imgView.image = UIImage.blocksPlaceholder
             }
         }
-    }
-    
-    func setup(withTitle title: String, image: UIImage) {
-        categoryLabel.text = title
-        accessibilityLabel = title
-
-        categoryLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
-
-        imgView.image = image
     }
 }

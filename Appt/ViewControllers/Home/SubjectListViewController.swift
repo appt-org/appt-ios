@@ -14,7 +14,7 @@ final class SubjectListViewController: TableViewController {
         super.viewDidLoad()
 
         tableView.registerNib(HeaderTableViewCell.self)
-        tableView.registerNib(ImageTitleTableViewCell.self)
+        tableView.registerNib(SubjectTableViewCell.self)
 
         let size = CGRect(x: 0, y: 0, width: 0, height: 0.1)
         self.tableView.tableHeaderView = UIView(frame: size)

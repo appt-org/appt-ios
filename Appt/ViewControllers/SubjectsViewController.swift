@@ -171,9 +171,10 @@ extension SubjectsViewController: UITableViewDelegate {
 }
 
 extension SubjectsViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTitleTableViewCell.identifier, for: indexPath) as? ImageTitleTableViewCell else {
-            fatalError("unable to dequeue ImageTitleTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SubjectTableViewCell.identifier, for: indexPath) as? SubjectTableViewCell else {
+            fatalError("unable to dequeue SubjectTableViewCell")
         }
         
         guard let subject = self.subject else { return UITableViewCell() }
@@ -195,6 +196,7 @@ extension SubjectsViewController: UITableViewDataSource {
 }
 
 extension SubjectsViewController: UICollectionViewDelegate {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         BlocksSections.allCases.count
     }
