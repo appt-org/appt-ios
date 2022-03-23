@@ -32,6 +32,7 @@ extension UIViewController {
             safariViewController.dismissButtonStyle = .done
             safariViewController.modalPresentationCapturesStatusBarAppearance = true
             safariViewController.modalPresentationStyle = .pageSheet
+            safariViewController.dismissButtonStyle = .close
             
             present(safariViewController, animated: true)
         }
