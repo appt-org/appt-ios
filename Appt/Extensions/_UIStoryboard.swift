@@ -12,7 +12,6 @@ extension UIStoryboard {
     
     enum Name: String{
         case main = "Main"
-        case voiceOver = "VoiceOver"
     }
     
     private static func viewController<T: UIViewController>(_ storyboard: UIStoryboard.Name, identifier : T.Type? = nil) -> T {
@@ -47,35 +46,10 @@ extension UIStoryboard {
         articleViewController.url = url
         return articleViewController
     }
-    
-    static func voiceOverGestures() -> VoiceOverGesturesViewController {
-        return viewController(.voiceOver, identifier: VoiceOverGesturesViewController.self)
-    }
-    
-    static func voiceOverGesture(gesture: Gesture) -> VoiceOverGestureViewController {
-        let vc = viewController(.voiceOver, identifier: VoiceOverGestureViewController.self)
-        vc.gesture = gesture
-        return vc
-    }
-    
-    static func voiceOverGesture(gestures: [Gesture], instructions: Bool = true) -> VoiceOverGestureViewController {
-        let vc = viewController(.voiceOver, identifier: VoiceOverGestureViewController.self)
-        vc.gesture = gestures[0]
-        vc.gestures = gestures
-        vc.instructions = instructions
-        return vc
-    }
-    
-    static func main(isNewUser: Bool = false) -> UIViewController? {
+        
+    static func main() -> UIViewController? {
         let storyboard = UIStoryboard(name: Name.main.rawValue, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
-        (vc as? TabBarController)?.shouldShowEmailVerificationAlert = isNewUser
-        return vc
-    }
-    
-    static func training() -> TrainingViewController {
-        let vc = viewController(.main, identifier: TrainingViewController.self)
-        
         return vc
     }
     

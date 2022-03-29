@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		23058FA02677760C008AA45A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */; };
 		23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */; };
-		230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineButton.swift */; };
 		231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 231F1FE7266A0194002524F0 /* apple-app-site-association */; };
 		231F1FEB266A2648002524F0 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F1FEA266A2648002524F0 /* DeepLink.swift */; };
 		231F1FED266A64FA002524F0 /* _UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F1FEC266A64FA002524F0 /* _UIApplication.swift */; };
@@ -24,37 +23,19 @@
 		2338B34C264D7F3200D47FC7 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338B34B264D7F3200D47FC7 /* Subject.swift */; };
 		233FB2342639782E0031E58C /* _UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB2332639782E0031E58C /* _UITextField.swift */; };
 		233FB236263991150031E58C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB235263991150031E58C /* PaddingLabel.swift */; };
-		233FB23A263994990031E58C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB239263994990031E58C /* Constants.swift */; };
-		2362C2FA264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */; };
-		2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */; };
-		239BF6FE264C2E490068EC13 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BF6FD264C2E490068EC13 /* Role.swift */; };
 		23C3D04E266FA2450044F56F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04D266FA2450044F56F /* TabBarController.swift */; };
 		23C3D050266FA3070044F56F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3D04F266FA3070044F56F /* SegmentedControl.swift */; };
-		2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280415292518E89700B48F60 /* VoiceOverSelectionView.swift */; };
-		2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */; };
-		28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */; };
-		28051BDD24CB343D008EEB1E /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28051BDC24CB343D008EEB1E /* Position.swift */; };
 		28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACC26A567E600415285 /* OpenSans-Regular.ttf */; };
 		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
 		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
-		281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BD7FF24A92DF500B556A7 /* TapGestureView.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
-		282F607224A3E688005B1279 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F607124A3E688005B1279 /* GestureView.swift */; };
-		2835A05E2524B47D0011C788 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835A05D2524B47D0011C788 /* Direction.swift */; };
-		2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9C924D45808000FB3E6 /* TouchGestureView.swift */; };
-		2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */; };
 		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
 		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
 		28639F5125E3F9F200C29BB5 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28639F5025E3F9F200C29BB5 /* KnowledgeViewController.swift */; };
 		28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28639F7225E4047C00C29BB5 /* NavigationController.swift */; };
 		2869ABFD24F7C503004962A7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2869ABFC24F7C503004962A7 /* style.css */; };
-		2869ABFF24F7C84E004962A7 /* VoiceOverHeadingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */; };
-		2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */; };
-		2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AC0224F7CE35004962A7 /* VoiceOverView.swift */; };
-		286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */; };
 		287063C724A380F9004E87AF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C624A380F9004E87AF /* MoreViewController.swift */; };
-		287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */; };
 		2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2870FF1B2525FC0F00377B44 /* TextField.swift */; };
 		287468E2247E60BB0089BB32 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E1247E60BB0089BB32 /* Content.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
@@ -65,12 +46,9 @@
 		287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F1247E65620089BB32 /* TitleTableViewCell.swift */; };
 		287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287468F3247E65C80089BB32 /* TitleTableViewCell.xib */; };
 		287468F6247E675C0089BB32 /* _String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F5247E675C0089BB32 /* _String.swift */; };
-		2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */; };
-		2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */; };
 		2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CD247D6E9200605677 /* AppDelegate.swift */; };
 		2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CF247D6E9200605677 /* SceneDelegate.swift */; };
 		2877F6D2247D6E9200605677 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6D1247D6E9200605677 /* NewsViewController.swift */; };
-		2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6D3247D6E9200605677 /* TrainingViewController.swift */; };
 		2877F6D7247D6E9200605677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6D5247D6E9200605677 /* Main.storyboard */; };
 		2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6D8247D6E9600605677 /* Assets.xcassets */; };
 		2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */; };
@@ -78,27 +56,15 @@
 		2877F6F2247D7D9700605677 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6F1247D7D9700605677 /* API.swift */; };
 		287D43FD27BE8C9B00B9B997 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287D43FB27BE8C9B00B9B997 /* HeaderCollectionViewCell.swift */; };
 		287D43FE27BE8C9B00B9B997 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287D43FC27BE8C9B00B9B997 /* HeaderCollectionViewCell.xib */; };
-		287FFBB525090A0C0022CD5F /* VoiceOverCopyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FFBB425090A0C0022CD5F /* VoiceOverCopyView.swift */; };
-		287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287FFBB625090A190022CD5F /* VoiceOverCopyView.xib */; };
-		287FFBB925092B130022CD5F /* VoiceOverPasteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287FFBB825092B130022CD5F /* VoiceOverPasteView.xib */; };
-		287FFBBB25092B1D0022CD5F /* VoiceOverPasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FFBBA25092B1D0022CD5F /* VoiceOverPasteView.swift */; };
 		288554F62519EFD300392FC3 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288554F52519EFD300392FC3 /* ScrollViewController.swift */; };
 		288554FD251A01EE00392FC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 288554FC251A01EE00392FC3 /* Localizable.strings */; };
 		28855515251A44B600392FC3 /* _CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28855514251A44B600392FC3 /* _CGFloat.swift */; };
 		2885551D251B491500392FC3 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 2885551C251B491500392FC3 /* Localizable.stringsdict */; };
 		2885552C251B78F100392FC3 /* _Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885552B251B78F100392FC3 /* _Direction.swift */; };
-		2892317C24EAD90000ED006B /* EscapeGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317B24EAD90000ED006B /* EscapeGestureView.swift */; };
-		2892317E24EBBEB000ED006B /* VoiceOverEnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317D24EBBEB000ED006B /* VoiceOverEnableViewController.swift */; };
-		2892318024EC1BB900ED006B /* VoiceOverActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892317F24EC1BB900ED006B /* VoiceOverActionsViewController.swift */; };
-		2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */; };
-		2893227724C9844500EBB447 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893227624C9844500EBB447 /* Course.swift */; };
-		2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893227B24C9860400EBB447 /* VoiceOver.storyboard */; };
 		2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB52481125A009D8102 /* ArticleViewController.swift */; };
 		2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB7248112D6009D8102 /* _UIStoryboard.swift */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
 		28A1CF012521D27F009C2F44 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1CF002521D27F009C2F44 /* Response.swift */; };
-		28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */; };
-		28C5F82B24EC2A9000BA8F33 /* DirectGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5F82A24EC2A9000BA8F33 /* DirectGestureView.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C414247D8AB8008B3CAD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C413247D8AB8008B3CAD /* Article.swift */; };
 		28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C415247D8B33008B3CAD /* _Encodable.swift */; };
@@ -106,21 +72,17 @@
 		28E0C41A247D8B70008B3CAD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C419247D8B70008B3CAD /* Config.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
 		28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E1A0842525D6C300604CFF /* GoogleService-Info.plist */; };
-		28E267A524A5FF360025215C /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A424A5FF360025215C /* Gesture.swift */; };
 		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
 		28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB52732524E41D00DE4DE9 /* _CGPoint.swift */; };
 		28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA12487E90A0070879A /* FiltersViewController.swift */; };
 		28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA32487E9AA0070879A /* Taxonomy.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
-		28F42FAB24FF95860028E560 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F42FAA24FF95860028E560 /* Action.swift */; };
 		28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED8E251F5304009CA3FA /* WebViewController.swift */; };
-		28FBED96251F6094009CA3FA /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED95251F6094009CA3FA /* Topic.swift */; };
 		88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083B71E01292CF6078F049DD /* Pods_ApptApp.framework */; };
 		A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */; };
 		A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */; };
 		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
 		A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44D265C0121006ED9EE /* ServicesViewController.swift */; };
-		A89FD450265D66A4006ED9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44F265D66A4006ED9EE /* User.swift */; };
 		A8A301532661295600375B02 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A301522661295600375B02 /* SubjectsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +90,6 @@
 		083B71E01292CF6078F049DD /* Pods_ApptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
-		230BE9AC2636EEFE0026A90B /* MultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineButton.swift; sourceTree = "<group>"; };
 		231F1FE7266A0194002524F0 /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		231F1FE9266A0604002524F0 /* Appt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appt.entitlements; sourceTree = "<group>"; };
 		231F1FEA266A2648002524F0 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
@@ -144,37 +105,19 @@
 		2338B34B264D7F3200D47FC7 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		233FB2332639782E0031E58C /* _UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UITextField.swift; sourceTree = "<group>"; };
 		233FB235263991150031E58C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		233FB239263994990031E58C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryMultilineButton.swift; sourceTree = "<group>"; };
-		2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMultilineButton.swift; sourceTree = "<group>"; };
-		239BF6FD264C2E490068EC13 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		23C3D04D266FA2450044F56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		23C3D04F266FA3070044F56F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
-		280415292518E89700B48F60 /* VoiceOverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverSelectionView.swift; sourceTree = "<group>"; };
-		2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverSelectionView.xib; sourceTree = "<group>"; };
-		28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureView.swift; sourceTree = "<group>"; };
-		28051BDC24CB343D008EEB1E /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		28112ACC26A567E600415285 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		281BD7FF24A92DF500B556A7 /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		282F607124A3E688005B1279 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
-		2835A05D2524B47D0011C788 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		2840D9C924D45808000FB3E6 /* TouchGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureView.swift; sourceTree = "<group>"; };
-		2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
 		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
 		28639F5025E3F9F200C29BB5 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		28639F7225E4047C00C29BB5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2869ABFC24F7C503004962A7 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverHeadingsView.swift; sourceTree = "<group>"; };
-		2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverHeadingsView.xib; sourceTree = "<group>"; };
-		2869AC0224F7CE35004962A7 /* VoiceOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverView.swift; sourceTree = "<group>"; };
-		286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverActionViewController.swift; sourceTree = "<group>"; };
 		287063C624A380F9004E87AF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGestureViewController.swift; sourceTree = "<group>"; };
 		2870FF1B2525FC0F00377B44 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		287468E1247E60BB0089BB32 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
@@ -185,42 +128,27 @@
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
-		2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverLinksView.swift; sourceTree = "<group>"; };
-		2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverLinksView.xib; sourceTree = "<group>"; };
 		2877F6CA247D6E9200605677 /* ApptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2877F6D1247D6E9200605677 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		2877F6D3247D6E9200605677 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		2877F6D8247D6E9600605677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2877F6DD247D6E9600605677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2877F6E3247D71E600605677 /* _UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIColor.swift; sourceTree = "<group>"; };
 		2877F6F1247D7D9700605677 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		287D43FB27BE8C9B00B9B997 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		287D43FC27BE8C9B00B9B997 /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
-		287FFBB425090A0C0022CD5F /* VoiceOverCopyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverCopyView.swift; sourceTree = "<group>"; };
-		287FFBB625090A190022CD5F /* VoiceOverCopyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverCopyView.xib; sourceTree = "<group>"; };
-		287FFBB825092B130022CD5F /* VoiceOverPasteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceOverPasteView.xib; sourceTree = "<group>"; };
-		287FFBBA25092B1D0022CD5F /* VoiceOverPasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverPasteView.swift; sourceTree = "<group>"; };
 		288554F52519EFD300392FC3 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		288554FC251A01EE00392FC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		28855514251A44B600392FC3 /* _CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CGFloat.swift; sourceTree = "<group>"; };
 		2885551C251B491500392FC3 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		2885552B251B78F100392FC3 /* _Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Direction.swift; sourceTree = "<group>"; };
-		2892317B24EAD90000ED006B /* EscapeGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeGestureView.swift; sourceTree = "<group>"; };
-		2892317D24EBBEB000ED006B /* VoiceOverEnableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverEnableViewController.swift; sourceTree = "<group>"; };
-		2892317F24EC1BB900ED006B /* VoiceOverActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverActionsViewController.swift; sourceTree = "<group>"; };
-		2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverGesturesViewController.swift; sourceTree = "<group>"; };
-		2893227624C9844500EBB447 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		2893227B24C9860400EBB447 /* VoiceOver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoiceOver.storyboard; sourceTree = "<group>"; };
 		2899FFB52481125A009D8102 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		2899FFB7248112D6009D8102 /* _UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboard.swift; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28A1CF002521D27F009C2F44 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureView.swift; sourceTree = "<group>"; };
-		28C5F82A24EC2A9000BA8F33 /* DirectGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectGestureView.swift; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28E0C413247D8AB8008B3CAD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		28E0C415247D8B33008B3CAD /* _Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Encodable.swift; sourceTree = "<group>"; };
@@ -228,22 +156,18 @@
 		28E0C419247D8B70008B3CAD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		28E1A06F2525CC6100604CFF /* _URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _URL.swift; sourceTree = "<group>"; };
 		28E1A0842525D6C300604CFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		28E267A424A5FF360025215C /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		28EB52732524E41D00DE4DE9 /* _CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CGPoint.swift; sourceTree = "<group>"; };
 		28EFEBA12487E90A0070879A /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		28EFEBA32487E9AA0070879A /* Taxonomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxonomy.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
-		28F42FAA24FF95860028E560 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		28FBED8E251F5304009CA3FA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		28FBED95251F6094009CA3FA /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.debug.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.release.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.release.xcconfig"; sourceTree = "<group>"; };
 		A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		A89FD44A265BE43C006ED9EE /* _UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIImage.swift; sourceTree = "<group>"; };
 		A89FD44D265C0121006ED9EE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
-		A89FD44F265D66A4006ED9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A301522661295600375B02 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
 		B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.release.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.release.xcconfig"; sourceTree = "<group>"; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,7 +209,6 @@
 				2843827E24ED6D4F0015B2C5 /* Alert.swift */,
 				232D74F0264E8ED500937E0D /* ViewEmbedder.swift */,
 				2841518D2525DAE100CB3750 /* Events.swift */,
-				233FB239263994990031E58C /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -298,48 +221,14 @@
 			path = Knowledge;
 			sourceTree = "<group>";
 		};
-		286A093724FD35D000B4DBBE /* Gestures */ = {
-			isa = PBXGroup;
-			children = (
-				2893227324C9830000EBB447 /* VoiceOverGesturesViewController.swift */,
-				287063C824A38A37004E87AF /* VoiceOverGestureViewController.swift */,
-			);
-			path = Gestures;
-			sourceTree = "<group>";
-		};
-		286A093824FD35E600B4DBBE /* Enable */ = {
-			isa = PBXGroup;
-			children = (
-				2892317D24EBBEB000ED006B /* VoiceOverEnableViewController.swift */,
-			);
-			path = Enable;
-			sourceTree = "<group>";
-		};
-		286A093924FD35F300B4DBBE /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				2892317F24EC1BB900ED006B /* VoiceOverActionsViewController.swift */,
-				286A093A24FD38E600B4DBBE /* VoiceOverActionViewController.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
 		287468E3247E61740089BB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				28E0C413247D8AB8008B3CAD /* Article.swift */,
 				2338B34B264D7F3200D47FC7 /* Subject.swift */,
-				28F42FAA24FF95860028E560 /* Action.swift */,
 				287468E1247E60BB0089BB32 /* Content.swift */,
-				2893227624C9844500EBB447 /* Course.swift */,
-				2835A05D2524B47D0011C788 /* Direction.swift */,
-				28E267A424A5FF360025215C /* Gesture.swift */,
 				28A1CF002521D27F009C2F44 /* Response.swift */,
-				28FBED95251F6094009CA3FA /* Topic.swift */,
-				28051BDC24CB343D008EEB1E /* Position.swift */,
 				28EFEBA32487E9AA0070879A /* Taxonomy.swift */,
-				239BF6FD264C2E490068EC13 /* Role.swift */,
-				A89FD44F265D66A4006ED9EE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,10 +241,6 @@
 				23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */,
 				23C3D04F266FA3070044F56F /* SegmentedControl.swift */,
 				23C3D04D266FA2450044F56F /* TabBarController.swift */,
-				230BE9AC2636EEFE0026A90B /* MultilineButton.swift */,
-				2362C2FB264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift */,
-				2362C2F9264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift */,
-				28F42FA824FF91E50028E560 /* VoiceOver */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
 			path = Views;
@@ -365,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				2338B340264D49A900D47FC7 /* Home */,
-				2893227824C984CE00EBB447 /* Training */,
 				28639F4F25E3F9E000C29BB5 /* Knowledge */,
 				2893227924C984D700EBB447 /* News */,
 				2893227A24C984E000EBB447 /* More */,
@@ -373,11 +257,11 @@
 				28DF7C912480175700CB467A /* ViewController.swift */,
 				28639F7225E4047C00C29BB5 /* NavigationController.swift */,
 				288554F52519EFD300392FC3 /* ScrollViewController.swift */,
-				281F87FB24D172B5004AABC2 /* TableViewController.swift */,
+				A8A301522661295600375B02 /* SubjectsViewController.swift */,
 				2338B343264D50BF00D47FC7 /* SubjectBlocksViewController.swift */,
 				232D74E9264E771200937E0D /* SubjectListViewController.swift */,
+				281F87FB24D172B5004AABC2 /* TableViewController.swift */,
 				28FBED8E251F5304009CA3FA /* WebViewController.swift */,
-				A8A301522661295600375B02 /* SubjectsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,7 +355,6 @@
 				2877F6DD247D6E9600605677 /* Info.plist */,
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
 				2877F6D5247D6E9200605677 /* Main.storyboard */,
-				2893227B24C9860400EBB447 /* VoiceOver.storyboard */,
 				288554FC251A01EE00392FC3 /* Localizable.strings */,
 				2885551C251B491500392FC3 /* Localizable.stringsdict */,
 				28112ACC26A567E600415285 /* OpenSans-Regular.ttf */,
@@ -492,25 +375,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		2893227524C9830300EBB447 /* VoiceOver */ = {
-			isa = PBXGroup;
-			children = (
-				286A093924FD35F300B4DBBE /* Actions */,
-				286A093824FD35E600B4DBBE /* Enable */,
-				286A093724FD35D000B4DBBE /* Gestures */,
-			);
-			path = VoiceOver;
-			sourceTree = "<group>";
-		};
-		2893227824C984CE00EBB447 /* Training */ = {
-			isa = PBXGroup;
-			children = (
-				2877F6D3247D6E9200605677 /* TrainingViewController.swift */,
-				2893227524C9830300EBB447 /* VoiceOver */,
-			);
-			path = Training;
-			sourceTree = "<group>";
-		};
 		2893227924C984D700EBB447 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,48 +391,6 @@
 				287063C624A380F9004E87AF /* MoreViewController.swift */,
 			);
 			path = More;
-			sourceTree = "<group>";
-		};
-		28E267AA24A622D00025215C /* Gestures */ = {
-			isa = PBXGroup;
-			children = (
-				282F607124A3E688005B1279 /* GestureView.swift */,
-				28C5F82A24EC2A9000BA8F33 /* DirectGestureView.swift */,
-				2892317B24EAD90000ED006B /* EscapeGestureView.swift */,
-				28C5F82824EC233700BA8F33 /* LongPressGestureView.swift */,
-				2840D9CD24D45B34000FB3E6 /* RotationGestureView.swift */,
-				28051BD024CB11AC008EEB1E /* SwipeGestureView.swift */,
-				281BD7FF24A92DF500B556A7 /* TapGestureView.swift */,
-				2840D9C924D45808000FB3E6 /* TouchGestureView.swift */,
-			);
-			path = Gestures;
-			sourceTree = "<group>";
-		};
-		28F42FA824FF91E50028E560 /* VoiceOver */ = {
-			isa = PBXGroup;
-			children = (
-				28F42FA924FF91EF0028E560 /* Actions */,
-				28E267AA24A622D00025215C /* Gestures */,
-			);
-			path = VoiceOver;
-			sourceTree = "<group>";
-		};
-		28F42FA924FF91EF0028E560 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				2869AC0224F7CE35004962A7 /* VoiceOverView.swift */,
-				2869AC0024F7C865004962A7 /* VoiceOverHeadingsView.xib */,
-				2869ABFE24F7C84E004962A7 /* VoiceOverHeadingsView.swift */,
-				2875FF4024FFA5710049A6B9 /* VoiceOverLinksView.xib */,
-				2875FF3E24FFA5670049A6B9 /* VoiceOverLinksView.swift */,
-				287FFBB625090A190022CD5F /* VoiceOverCopyView.xib */,
-				287FFBB425090A0C0022CD5F /* VoiceOverCopyView.swift */,
-				287FFBB825092B130022CD5F /* VoiceOverPasteView.xib */,
-				287FFBBA25092B1D0022CD5F /* VoiceOverPasteView.swift */,
-				2804152C2518E8A300B48F60 /* VoiceOverSelectionView.xib */,
-				280415292518E89700B48F60 /* VoiceOverSelectionView.swift */,
-			);
-			path = Actions;
 			sourceTree = "<group>";
 		};
 		5F963E37E0FF08E157AB9853 /* Pods */ = {
@@ -652,8 +474,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2869AC0124F7C865004962A7 /* VoiceOverHeadingsView.xib in Resources */,
-				287FFBB725090A190022CD5F /* VoiceOverCopyView.xib in Resources */,
 				28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */,
 				232D74EE264E779400937E0D /* SubjectTableViewCell.xib in Resources */,
 				2869ABFD24F7C503004962A7 /* style.css in Resources */,
@@ -661,16 +481,12 @@
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */,
 				2885551D251B491500392FC3 /* Localizable.stringsdict in Resources */,
-				287FFBB925092B130022CD5F /* VoiceOverPasteView.xib in Resources */,
 				231F1FE8266A0194002524F0 /* apple-app-site-association in Resources */,
-				2875FF4124FFA5710049A6B9 /* VoiceOverLinksView.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
 				288554FD251A01EE00392FC3 /* Localizable.strings in Resources */,
 				28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */,
-				2804152D2518E8A300B48F60 /* VoiceOverSelectionView.xib in Resources */,
 				287D43FE27BE8C9B00B9B997 /* HeaderCollectionViewCell.xib in Resources */,
 				28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */,
-				2893227C24C9860400EBB447 /* VoiceOver.storyboard in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
 				28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */,
@@ -748,17 +564,12 @@
 			files = (
 				28EFEBA42487E9AA0070879A /* Taxonomy.swift in Sources */,
 				231F1FEB266A2648002524F0 /* DeepLink.swift in Sources */,
-				28F42FAB24FF95860028E560 /* Action.swift in Sources */,
-				2804152A2518E89700B48F60 /* VoiceOverSelectionView.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				28A1CF012521D27F009C2F44 /* Response.swift in Sources */,
-				2892317E24EBBEB000ED006B /* VoiceOverEnableViewController.swift in Sources */,
 				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
-				28051BDD24CB343D008EEB1E /* Position.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28855515251A44B600392FC3 /* _CGFloat.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
-				2840D9CE24D45B34000FB3E6 /* RotationGestureView.swift in Sources */,
 				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
 				A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
@@ -768,58 +579,32 @@
 				23058FA02677760C008AA45A /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				232D74EA264E771200937E0D /* SubjectListViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
-				2877F6D4247D6E9200605677 /* TrainingViewController.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
-				28FBED96251F6094009CA3FA /* Topic.swift in Sources */,
 				28EFEBA22487E90A0070879A /* FiltersViewController.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
-				286A093B24FD38E600B4DBBE /* VoiceOverActionViewController.swift in Sources */,
-				2362C2FA264AA0FF00C4FEE7 /* SecondaryMultilineButton.swift in Sources */,
-				282F607224A3E688005B1279 /* GestureView.swift in Sources */,
-				2362C2FC264AA1CA00C4FEE7 /* PrimaryMultilineButton.swift in Sources */,
-				2875FF3F24FFA5670049A6B9 /* VoiceOverLinksView.swift in Sources */,
-				28C5F82924EC233700BA8F33 /* LongPressGestureView.swift in Sources */,
 				23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */,
 				A89FD44E265C0121006ED9EE /* ServicesViewController.swift in Sources */,
-				A89FD450265D66A4006ED9EE /* User.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				2877F6D2247D6E9200605677 /* NewsViewController.swift in Sources */,
-				28E267A524A5FF360025215C /* Gesture.swift in Sources */,
-				287FFBB525090A0C0022CD5F /* VoiceOverCopyView.swift in Sources */,
-				2893227724C9844500EBB447 /* Course.swift in Sources */,
-				233FB23A263994990031E58C /* Constants.swift in Sources */,
 				2338B349264D569C00D47FC7 /* SubjectCollectionViewCell.swift in Sources */,
 				28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */,
 				2338B342264D49C100D47FC7 /* HomeViewController.swift in Sources */,
-				28051BD124CB11AC008EEB1E /* SwipeGestureView.swift in Sources */,
 				287468E2247E60BB0089BB32 /* Content.swift in Sources */,
-				2835A05E2524B47D0011C788 /* Direction.swift in Sources */,
 				233FB2342639782E0031E58C /* _UITextField.swift in Sources */,
-				287FFBBB25092B1D0022CD5F /* VoiceOverPasteView.swift in Sources */,
 				232D74F1264E8ED500937E0D /* ViewEmbedder.swift in Sources */,
 				28E0C414247D8AB8008B3CAD /* Article.swift in Sources */,
 				287063C724A380F9004E87AF /* MoreViewController.swift in Sources */,
 				287468F6247E675C0089BB32 /* _String.swift in Sources */,
 				A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */,
-				2869ABFF24F7C84E004962A7 /* VoiceOverHeadingsView.swift in Sources */,
-				2892318024EC1BB900ED006B /* VoiceOverActionsViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */,
-				239BF6FE264C2E490068EC13 /* Role.swift in Sources */,
 				2338B344264D50BF00D47FC7 /* SubjectBlocksViewController.swift in Sources */,
-				28C5F82B24EC2A9000BA8F33 /* DirectGestureView.swift in Sources */,
-				2893227424C9830000EBB447 /* VoiceOverGesturesViewController.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
 				2877F6F2247D7D9700605677 /* API.swift in Sources */,
-				2869AC0324F7CE35004962A7 /* VoiceOverView.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
-				230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */,
-				287063C924A38A37004E87AF /* VoiceOverGestureViewController.swift in Sources */,
 				28EB52742524E41D00DE4DE9 /* _CGPoint.swift in Sources */,
-				2840D9CA24D45808000FB3E6 /* TouchGestureView.swift in Sources */,
 				2885552C251B78F100392FC3 /* _Direction.swift in Sources */,
-				2892317C24EAD90000ED006B /* EscapeGestureView.swift in Sources */,
 				233FB236263991150031E58C /* PaddingLabel.swift in Sources */,
 				28E0C41A247D8B70008B3CAD /* Config.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
@@ -832,7 +617,6 @@
 				A8A301532661295600375B02 /* SubjectsViewController.swift in Sources */,
 				2899FFB62481125A009D8102 /* ArticleViewController.swift in Sources */,
 				287D43FD27BE8C9B00B9B997 /* HeaderCollectionViewCell.swift in Sources */,
-				281BD80024A92DF500B556A7 /* TapGestureView.swift in Sources */,
 				28E0C416247D8B33008B3CAD /* _Encodable.swift in Sources */,
 				2841518E2525DAE100CB3750 /* Events.swift in Sources */,
 				288554F62519EFD300392FC3 /* ScrollViewController.swift in Sources */,

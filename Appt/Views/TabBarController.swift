@@ -9,7 +9,6 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    var shouldShowEmailVerificationAlert = false
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         let states: [UIControl.State] = [.disabled, .focused, .normal, .selected]
