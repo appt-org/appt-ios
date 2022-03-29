@@ -744,7 +744,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
@@ -771,7 +771,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
