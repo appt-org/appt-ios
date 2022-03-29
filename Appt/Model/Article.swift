@@ -54,6 +54,3 @@ class Article: Codable {
         case categories
     }
 }
-
-typealias Page = Article
-typealias Post = Article

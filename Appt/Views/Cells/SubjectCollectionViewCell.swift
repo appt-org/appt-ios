@@ -73,14 +73,14 @@ final class SubjectCollectionViewCell: DynamicHeightCollectionViewCell {
         categoryLabel.font = .openSans(weight: .regular, size: 18, style: .body)
 
         loadingIndicator.startAnimating()
-        imgView.sd_setImage(with: subject.imgURL) { image, _, _, _ in
+        imgView.sd_setImage(with: subject.imageURL) { image, _, _, _ in
             self.loadingIndicator.stopAnimating()
             
             if image != nil {
                 self.imgView.image = image?.withRenderingMode(.alwaysTemplate)
                 self.imgView.tintColor = .primary
             } else if image == nil {
-                self.imgView.image = UIImage.blocksPlaceholder
+                self.imgView.image = UIImage(named: "ic_tiles_placeholder_big")
             }
         }
     }

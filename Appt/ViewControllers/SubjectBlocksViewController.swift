@@ -9,6 +9,7 @@
 import UIKit
 
 class SubjectBlocksViewController: ViewController {
+    
     @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {

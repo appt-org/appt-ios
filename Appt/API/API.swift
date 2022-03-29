@@ -44,11 +44,7 @@ class API {
     }
     
     // MARK: - Get articles
-    
-    func getArticles<T: Article>(type: ArticleType, parameters: [String: Any], callback: @escaping (Response<[T]>) -> ()) {
-        getObject(path: "\(type.path)?per_page=20", parameters: parameters, type: [T].self, callback: callback)
-    }
-    
+        
     func getArticles<T: Article>(type: ArticleType, page: Int = 1, categories: [Category]? = nil, tags: [Tag]? = nil, parentId: Int? = nil, slug: String? = nil, callback: @escaping (Response<[T]>) -> ()) {
         var parameters: [String: Any] = [
             "_fields": "type,id,date,title,link",
@@ -165,15 +161,7 @@ class API {
 // MARK: - Networking
 
 extension API {
-    private func postObject<T: Decodable>(path: String, data: Encodable?, headers: [String: String]?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
-        let parameters = data?.asDictionary ?? nil
-        postObject(path: path, parameters: parameters, headers: headers, type: type, callback: callback)
-    }
-    
-    private func postObject<T: Decodable>(path: String, parameters: [String: Any]?, headers: [String: String]?, type: T.Type, callback: @escaping(Response<T>) -> ()) {
-        retrieveObject(path: path, method: .post, parameters: parameters, encoding: JSONEncoding.default, type: type, callback: callback)
-    }
-    
+     
     private func getObject<T: Decodable>(path: String, parameters: Parameters?, type: T.Type, callback:   @escaping(Response<T>) -> ()) {
         retrieveObject(path: path, method: .get, parameters: parameters, encoding: URLEncoding.default, type: type, callback: callback)
     }

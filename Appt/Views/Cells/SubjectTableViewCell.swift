@@ -26,25 +26,25 @@ final class SubjectTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        self.titleLabel.text?.removeAll()
-        self.imgView.image = nil
+        titleLabel.text?.removeAll()
+        imgView.image = nil
     }
 
     func setup(_ subject: Subject) {
-        self.accessoryType = .disclosureIndicator
+        accessoryType = .disclosureIndicator
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = subject.title
         accessibilityLabel = subject.title
         
-        self.loadingIndicator.startAnimating()
-        self.imgView.sd_setImage(with: subject.imgURL) {image, _, _, _ in
+        loadingIndicator.startAnimating()
+        imgView.sd_setImage(with: subject.imageURL) {image, _, _, _ in
             self.loadingIndicator.stopAnimating()
             
             if image != nil {
                 self.imgView.image = image?.withRenderingMode(.alwaysTemplate)
                 self.imgView.tintColor = .primary
             } else if image == nil {
-                self.imgView.image = UIImage.listPlaceholder
+                self.imgView.image = UIImage(named: "ic_fields_placeholder_small")
             }
         }
     }

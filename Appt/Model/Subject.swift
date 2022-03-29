@@ -21,31 +21,16 @@ struct Subject: Decodable {
     private let type: String
     let url: String
 
-    var imgURL: URL? {
-        guard !self.image.isEmpty else { return nil }
-        
-        return URL(string: self.image)
-    }
-
-    var webURL: URL? {
-        URL(string: self.url)
+    var imageURL: URL? {
+        guard !image.isEmpty else {
+            return nil
+        }
+        return URL(string: image)
     }
 
     var subjectType: SubjectType {
         guard let type = SubjectType(rawValue: self.type) else { fatalError("unknown subjectType") }
 
         return type
-    }
-
-    static func loadJson() -> Subject {
-        guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else { fatalError() }
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let jsonData = try decoder.decode(Subject.self, from: data)
-            return jsonData
-        } catch {
-            fatalError()
-        }
     }
 }

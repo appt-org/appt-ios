@@ -9,18 +9,10 @@
 import UIKit
 
 extension UIStoryboardSegue {
+    
     enum Identifier: String {
         case article
-        
         case filter
         case applyFilters
-        
-        case voiceOverEnable
-        
-        case voiceOverGestures
-        case voiceOverGesture
-        
-        case voiceOverActions
-        case voiceOverAction
     }
 }
