@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .primary
+        UINavigationBar.appearance().barTintColor = .background
         UINavigationBar.appearance().backgroundColor = .background
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [

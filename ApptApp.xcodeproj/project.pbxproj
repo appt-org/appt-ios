@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1863A164E9AC782E06E10985 /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */; };
 		23058FA02677760C008AA45A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */; };
 		23058FA226779C01008AA45A /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */; };
 		230BE9AD2636EEFE0026A90B /* MultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BE9AC2636EEFE0026A90B /* MultilineButton.swift */; };
@@ -116,6 +115,7 @@
 		28F42FAB24FF95860028E560 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F42FAA24FF95860028E560 /* Action.swift */; };
 		28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED8E251F5304009CA3FA /* WebViewController.swift */; };
 		28FBED96251F6094009CA3FA /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED95251F6094009CA3FA /* Topic.swift */; };
+		88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083B71E01292CF6078F049DD /* Pods_ApptApp.framework */; };
 		A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */; };
 		A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */; };
 		A89FD44B265BE43C006ED9EE /* _UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FD44A265BE43C006ED9EE /* _UIImage.swift */; };
@@ -125,6 +125,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083B71E01292CF6078F049DD /* Pods_ApptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23058F9F2677760C008AA45A /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		23058FA126779C01008AA45A /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 		230BE9AC2636EEFE0026A90B /* MultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineButton.swift; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 		28F42FAA24FF95860028E560 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		28FBED8E251F5304009CA3FA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		28FBED95251F6094009CA3FA /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.debug.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.release.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.release.xcconfig"; sourceTree = "<group>"; };
 		A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -243,7 +245,7 @@
 		A89FD44D265C0121006ED9EE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		A89FD44F265D66A4006ED9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A301522661295600375B02 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
-		BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.release.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.release.xcconfig"; sourceTree = "<group>"; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */,
-				1863A164E9AC782E06E10985 /* Pods_Appt.framework in Frameworks */,
+				88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				2899FFB9248113E7009D8102 /* WebKit.framework */,
-				BBA31FA3AB2D3D421D9F9827 /* Pods_Appt.framework */,
+				083B71E01292CF6078F049DD /* Pods_ApptApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -574,6 +576,8 @@
 			children = (
 				D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */,
 				7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */,
+				49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */,
+				B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -711,7 +715,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Appt-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ApptApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -724,15 +728,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -978,7 +982,7 @@
 		};
 		2877F6E1247D6E9600605677 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */;
+			baseConfigurationReference = 49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
@@ -1005,7 +1009,7 @@
 		};
 		2877F6E2247D6E9600605677 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */;
+			baseConfigurationReference = B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
@@ -1024,6 +1028,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
 				PRODUCT_NAME = ApptApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

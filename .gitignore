@@ -88,5 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-Appt/GoogleService-Info.plist
-Appt/Credentials.plist
+*/GoogleService-Info.plist
+*/Credentials.plist
+*/.DS_Store

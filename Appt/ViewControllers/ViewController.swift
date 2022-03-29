@@ -61,8 +61,8 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isOpaque = true
         navigationController?.navigationBar.isTranslucent = false
         
-        let backButton = UIBarButtonItem(title: "Terug", style: .plain, target: nil, action: nil)
-        backButton.accessibilityLabel = "Terug"
+        let backButton = UIBarButtonItem(title: "back".localized, style: .plain, target: nil, action: nil)
+        backButton.accessibilityLabel = "back".localized
         navigationItem.backBarButtonItem = backButton
         
         if #available(iOS 13.0, *) {
