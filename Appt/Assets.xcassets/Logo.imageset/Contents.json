@@ -1,17 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Logo.pdf",
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "light"
-        }
-      ],
-      "filename" : "Logo-1.pdf",
+      "filename" : "Appt logo light.pdf",
       "idiom" : "universal"
     },
     {
@@ -21,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Logo-2.pdf",
+      "filename" : "Appt logo dark.pdf",
       "idiom" : "universal"
     }
   ],

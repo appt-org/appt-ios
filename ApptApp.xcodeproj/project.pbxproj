@@ -27,6 +27,7 @@
 		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
 		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
+		2835FB372822CB8B0074E6A4 /* ApptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835FB362822CB8B0074E6A4 /* ApptViewController.swift */; };
 		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
 		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
@@ -102,6 +103,7 @@
 		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2835FB362822CB8B0074E6A4 /* ApptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptViewController.swift; sourceTree = "<group>"; };
 		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		287468EF247E65320089BB32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2835FB362822CB8B0074E6A4 /* ApptViewController.swift */,
 				2338B340264D49A900D47FC7 /* Home */,
 				28639F4F25E3F9E000C29BB5 /* Knowledge */,
 				2893227924C984D700EBB447 /* News */,
@@ -573,6 +576,7 @@
 				287063C724A380F9004E87AF /* MoreViewController.swift in Sources */,
 				287468F6247E675C0089BB32 /* _String.swift in Sources */,
 				A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */,
+				2835FB372822CB8B0074E6A4 /* ApptViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2870FF1C2525FC0F00377B44 /* TextField.swift in Sources */,
 				2338B344264D50BF00D47FC7 /* SubjectBlocksViewController.swift in Sources */,

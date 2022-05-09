@@ -12,7 +12,7 @@ import Accessibility
 
 class WebViewController: ViewController {
  
-    private lazy var webView: WKWebView = {
+    lazy var webView: WKWebView = {
         let userContentController = WKUserContentController()
                 
         let configuration = WKWebViewConfiguration()
@@ -24,11 +24,26 @@ class WebViewController: ViewController {
         webView.isOpaque = false
         webView.backgroundColor = .clear
         webView.allowsLinkPreview = false
+        webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         return webView
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .primary
+        refreshControl.addTarget(self, action: #selector(refreshWebView(_:)), for: .valueChanged)
+        webView.scrollView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshWebView(_ sender: UIRefreshControl) {
+        webView.reload()
+        sender.endRefreshing()
+    }
 
     func load(_ content: String, title: String) {
         Events.log(.article, identifier: title)
@@ -72,8 +87,10 @@ extension WebViewController: WKNavigationDelegate {
             isLoading = false
             
             view.addSubview(webView)
-            webView.constraintToSafeArea()
-            view.bringSubviewToFront(webView)
+            //webView.constraintToSafeArea()
+            webView.constraintToSuperView()
+            view.sendSubviewToBack(webView)
+            //view.bringSubviewToFront(webView)
             
             onLoaded()
         }
