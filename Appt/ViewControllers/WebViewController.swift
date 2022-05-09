@@ -87,10 +87,9 @@ extension WebViewController: WKNavigationDelegate {
             isLoading = false
             
             view.addSubview(webView)
-            //webView.constraintToSafeArea()
-            webView.constraintToSuperView()
+            webView.constraint()
             view.sendSubviewToBack(webView)
-            //view.bringSubviewToFront(webView)
+            //view.bringSubviewToFront(webView)x
             
             onLoaded()
         }

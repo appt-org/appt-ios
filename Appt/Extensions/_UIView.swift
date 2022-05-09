@@ -48,6 +48,17 @@ extension UIView {
         bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor).isActive = true
         rightAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.rightAnchor).isActive = true
     }
+    
+    // Constraints a view to its superview left/right and safe area top/bottom
+    func constraint() {
+        guard let superview = superview else { return }
+        translatesAutoresizingMaskIntoConstraints = false
+
+        leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
+        rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
+        topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
 }
 
 // MARK: - Nib

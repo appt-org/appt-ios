@@ -47,4 +47,29 @@ class ApptViewController: WebViewController {
         shareViewController.popoverPresentationController?.barButtonItem = shareItem
         present(shareViewController, animated: true)
     }
+    
+    override func onLoaded() {
+        print("onLoaded")
+        
+        // Add sticky header
+        let javascript = """
+            function addStickyHeader() {
+                document.getElementsByTagName('header')[0].classList.add('sticky', 'top-0', 'z-50');
+            }
+        
+            addStickyHeader();
+        
+            let previousUrl = '';
+            const observer = new MutationObserver(function(mutations) {
+              if (location.href !== previousUrl) {
+                  previousUrl = location.href;
+                  setTimeout(function() { addStickyHeader(); }, 100);
+                }
+            });
+            const config = {subtree: true, childList: true};
+            observer.observe(document, config);
+        """
+
+        webView.evaluateJavaScript(javascript, completionHandler: nil)
+    }
 }
