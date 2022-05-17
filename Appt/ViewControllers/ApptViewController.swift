@@ -42,11 +42,19 @@ class ApptViewController: ViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
         
+        backItem.title = R.string.localizable.back()
         backItem.accessibilityLabel = R.string.localizable.back()
         backItem.isEnabled = false
         
-        forwardItem.accessibilityLabel = R.string.localizable.forward()
+        forwardItem.title = R.string.localizable.forward()
+        forwardItem.accessibilityLabel = forwardItem.title
         forwardItem.isEnabled = false
+        
+        shareItem.title = R.string.localizable.share()
+        shareItem.accessibilityLabel = shareItem.title
+        
+        settingsItem.title = R.string.localizable.settings()
+        settingsItem.accessibilityLabel = settingsItem.title
         
         load(R.string.localizable.appt_url())
     }

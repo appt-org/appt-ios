@@ -22,6 +22,8 @@
 "back" = "Back";
 "forward" = "Forward";
 "close" = "Close";
+"share" = "Share";
+"settings" = "Settings";
 
 /* Appt */
 "appt_title" = "Appt";
