@@ -56,7 +56,8 @@ class ApptViewController: ViewController {
         settingsItem.title = R.string.localizable.settings()
         settingsItem.accessibilityLabel = settingsItem.title
         
-        load(R.string.localizable.appt_url())
+        let url = Preferences.shared.url ?? R.string.localizable.appt_url()
+        load(url)
     }
     
     @objc func refresh(_ sender: UIRefreshControl) {
@@ -134,6 +135,10 @@ class ApptViewController: ViewController {
         
         backItem.isEnabled = webView.canGoBack
         forwardItem.isEnabled = webView.canGoForward
+        
+        if let url = webView.url?.absoluteString {
+            Preferences.shared.url = url
+        }
     }
     
     private func onEstimatedProgressChanged() {
