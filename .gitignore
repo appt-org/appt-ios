@@ -92,3 +92,6 @@ iOSInjectionProject/
 */Credentials.plist
 */.DS_Store
 .DS_Store
+
+# Rswift
+*.generated.swift

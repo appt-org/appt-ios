@@ -8,8 +8,6 @@
 
 import UIKit
 import Firebase
-import SDWebImage
-import SDWebImageSVGKitPlugin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
@@ -28,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // Global tint & language
         window?.tintColor = .primary
         window?.backgroundColor = .red
-        application.accessibilityLanguage = "language".localized
+        application.accessibilityLanguage = R.string.localizable.language()
                 
         // States
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]
@@ -84,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
     }
 
     private func configureWindow() {
-        let viewController = UIStoryboard.initial()
+        let viewController = R.storyboard.main.instantiateInitialViewController()
 
         let window = UIWindow()
         window.rootViewController = viewController

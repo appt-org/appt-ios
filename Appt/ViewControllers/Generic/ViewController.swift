@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Appt
 import FirebaseAnalytics
 
 class ViewController: UIViewController {
@@ -17,7 +16,8 @@ class ViewController: UIViewController {
         didSet {
             foreground {
                 if self.isLoading {
-                    Accessibility.announce("loading".localized)
+                    let loading = R.string.localizable.loading()
+                    UIAccessibility.post(notification: .announcement, argument: loading)
                     
                     let indicator = UIActivityIndicatorView()
                     if #available(iOS 13.0, *) {
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
                     } else {
                         indicator.style = .whiteLarge
                     }
-                    indicator.accessibilityLabel = "loading".localized
+                    indicator.accessibilityLabel = loading
                     
                     indicator.color = .primary
                     indicator.tintColor = .primary
@@ -61,8 +61,8 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isOpaque = true
         navigationController?.navigationBar.isTranslucent = false
         
-        let backButton = UIBarButtonItem(title: "back".localized, style: .plain, target: nil, action: nil)
-        backButton.accessibilityLabel = "back".localized
+        let backButton = UIBarButtonItem(title: R.string.localizable.back(), style: .plain, target: nil, action: nil)
+        backButton.accessibilityLabel = R.string.localizable.back()
         navigationItem.backBarButtonItem = backButton
         
         if #available(iOS 13.0, *) {

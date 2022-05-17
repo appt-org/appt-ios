@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
 
-        window.rootViewController = UIStoryboard.initial()
+        window.rootViewController = R.storyboard.main.instantiateInitialViewController()
         self.window = window
         window.makeKeyAndVisible()
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Rswift
 
 class ApptViewController: ViewController {
     
@@ -28,7 +29,7 @@ class ApptViewController: ViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Appt"
+        title = R.string.localizable.appt_title()
         
         webView.scrollView.maximumZoomScale = 10.0
         webView.tintColor = .primary
@@ -41,10 +42,13 @@ class ApptViewController: ViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
         
+        backItem.accessibilityLabel = R.string.localizable.back()
         backItem.isEnabled = false
+        
+        forwardItem.accessibilityLabel = R.string.localizable.forward()
         forwardItem.isEnabled = false
         
-        load("https://appt-dev-o4ale4roda-ez.a.run.app/en")
+        load(R.string.localizable.appt_url())
     }
     
     @objc func refresh(_ sender: UIRefreshControl) {
@@ -94,7 +98,10 @@ class ApptViewController: ViewController {
     }
     
     @IBAction private func onSettings(_ sender: Any) {
-        // TODO: Something
+        guard let viewController = R.storyboard.main.settingsViewController() else {
+            return
+        }
+        present(viewController, animated: true)
     }
     
     // MARK : - WebView changes

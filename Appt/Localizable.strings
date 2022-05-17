@@ -6,17 +6,26 @@
   Copyright © 2020 Stichting Appt All rights reserved.
 */
 
-"language" = "nl";
+"language" = "en-US";
 
 /* General */
-"loading" = "Aan het laden";
-"error" = "Foutmelding";
-"error_network" = "Het is niet gelukt om het artikel te laden. Controleer je internetverbinding en probeer het opnieuw.";
-"ok" = "Oké";
-"continue" = "Doorgaan";
-"finish" = "Afronden";
-"stop" = "Stoppen";
-"cancel" = "Annuleren";
-"next" = "Volgende";
-"skip" = "Overslaan";
-"back" = "Terug";
+"loading" = "Loading, please wait";
+"error" = "Error";
+"ok" = "Ok";
+"continue" = "Continue";
+"finish" = "Finish";
+"stop" = "Stop";
+"cancel" = "Cancel";
+"delete" = "Delete";
+"next" = "Next";
+"skip" = "Skip";
+"back" = "Back";
+"forward" = "Forward";
+"close" = "Close";
+
+/* Appt */
+"appt_title" = "Appt";
+"appt_url" = "https://appt-dev-o4ale4roda-ez.a.run.app/en";
+
+/* Settings */
+"settings_title" = "Settings";

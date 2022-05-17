@@ -8,6 +8,7 @@
 
 import UIKit
 import Accessibility
+import Rswift
 
 class Alert {
 
@@ -29,7 +30,7 @@ class Alert {
     
     public static func error(_ message: String, viewController: UIViewController, callback: (() -> Void)? = nil) {
         let alert = Builder()
-            .title("error".localized)
+            .title(R.string.localizable.error())
             .message(message)
             .okAction(callback: callback)
             .build()
@@ -100,15 +101,15 @@ class Alert {
         }
         
         
-        func okAction(_ title: String = "ok".localized, callback: (() -> Void)? = nil) -> Builder {
+        func okAction(_ title: String = R.string.localizable.ok(), callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .cancel, callback: callback)
         }
         
-        func cancelAction(_ title: String = "cancel".localized, callback: (() -> Void)? = nil) -> Builder {
+        func cancelAction(_ title: String = R.string.localizable.cancel(), callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .cancel, callback: callback)
         }
         
-        func destructiveAction(_ title: String = "delete".localized, callback: (() -> Void)? = nil) -> Builder {
+        func destructiveAction(_ title: String = R.string.localizable.delete(), callback: (() -> Void)? = nil) -> Builder {
             return action(title, style: .destructive, callback: callback)
         }
         

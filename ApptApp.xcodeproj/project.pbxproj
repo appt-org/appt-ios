@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
 		2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843827E24ED6D4F0015B2C5 /* Alert.swift */; };
 		2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2852CF052486AA820063F3E4 /* _UIAccessibility.swift */; };
+		28618BC52833F339001AE2BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618BC42833F339001AE2BE /* SettingsViewController.swift */; };
+		28618BC82833F627001AE2BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618BC72833F627001AE2BE /* R.generated.swift */; };
+		28618BCA2833FAAB001AE2BE /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618BC92833FAAB001AE2BE /* ModalViewController.swift */; };
 		28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28639F7225E4047C00C29BB5 /* NavigationController.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
@@ -24,7 +27,6 @@
 		287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468EC247E64F90089BB32 /* _DispatchQueue.swift */; };
 		287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F1247E65620089BB32 /* TitleTableViewCell.swift */; };
 		287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287468F3247E65C80089BB32 /* TitleTableViewCell.xib */; };
-		287468F6247E675C0089BB32 /* _String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468F5247E675C0089BB32 /* _String.swift */; };
 		2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CD247D6E9200605677 /* AppDelegate.swift */; };
 		2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6CF247D6E9200605677 /* SceneDelegate.swift */; };
 		2877F6D7247D6E9200605677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6D5247D6E9200605677 /* Main.storyboard */; };
@@ -32,13 +34,11 @@
 		2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */; };
 		2877F6E4247D71E600605677 /* _UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6E3247D71E600605677 /* _UIColor.swift */; };
 		288554FD251A01EE00392FC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 288554FC251A01EE00392FC3 /* Localizable.strings */; };
-		2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899FFB7248112D6009D8102 /* _UIStoryboard.swift */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
 		28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E1A0842525D6C300604CFF /* GoogleService-Info.plist */; };
-		28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
 		28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED8E251F5304009CA3FA /* WebViewController.swift */; };
 		88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083B71E01292CF6078F049DD /* Pods_ApptApp.framework */; };
@@ -58,6 +58,9 @@
 		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		2843827E24ED6D4F0015B2C5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2852CF052486AA820063F3E4 /* _UIAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAccessibility.swift; sourceTree = "<group>"; };
+		28618BC42833F339001AE2BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		28618BC72833F627001AE2BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		28618BC92833FAAB001AE2BE /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		28639F7225E4047C00C29BB5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		287468EC247E64F90089BB32 /* _DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DispatchQueue.swift; sourceTree = "<group>"; };
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
-		287468F5247E675C0089BB32 /* _String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _String.swift; sourceTree = "<group>"; };
 		2877F6CA247D6E9200605677 /* ApptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +76,6 @@
 		2877F6DD247D6E9600605677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2877F6E3247D71E600605677 /* _UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIColor.swift; sourceTree = "<group>"; };
 		288554FC251A01EE00392FC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		2899FFB7248112D6009D8102 /* _UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboard.swift; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		28E0C417247D8B46008B3CAD /* _NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NSObject.swift; sourceTree = "<group>"; };
 		28E1A06F2525CC6100604CFF /* _URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _URL.swift; sourceTree = "<group>"; };
 		28E1A0842525D6C300604CFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		28EFEBA9248923410070879A /* _UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIViewController.swift; sourceTree = "<group>"; };
 		28FBED8E251F5304009CA3FA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.debug.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 			children = (
 				28618BC32833EF6E001AE2BE /* Generic */,
 				2835FB362822CB8B0074E6A4 /* ApptViewController.swift */,
+				28618BC42833F339001AE2BE /* SettingsViewController.swift */,
+				28618BC92833FAAB001AE2BE /* ModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,13 +204,10 @@
 			children = (
 				287468EC247E64F90089BB32 /* _DispatchQueue.swift */,
 				28E0C417247D8B46008B3CAD /* _NSObject.swift */,
-				287468F5247E675C0089BB32 /* _String.swift */,
 				2877F6E3247D71E600605677 /* _UIColor.swift */,
 				287468E4247E63A50089BB32 /* _UICollectionView.swift */,
 				287468E6247E63CD0089BB32 /* _UIFont.swift */,
 				2852CF052486AA820063F3E4 /* _UIAccessibility.swift */,
-				2899FFB7248112D6009D8102 /* _UIStoryboard.swift */,
-				28E267A624A6020C0025215C /* _UIStoryboardSegue.swift */,
 				287468EA247E64A60089BB32 /* _UITableView.swift */,
 				287468E8247E64930089BB32 /* _UIView.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
@@ -229,6 +228,7 @@
 				28112ACC26A567E600415285 /* OpenSans-Regular.ttf */,
 				28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */,
 				28112ACD26A567E600415285 /* OpenSans-Bold.ttf */,
+				28618BC72833F627001AE2BE /* R.generated.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -252,6 +252,7 @@
 			buildConfigurationList = 2877F6E0247D6E9600605677 /* Build configuration list for PBXNativeTarget "ApptApp" */;
 			buildPhases = (
 				569406FEA48E95CE3D6B6218 /* [CP] Check Pods Manifest.lock */,
+				28618BC62833F594001AE2BE /* R.swift */,
 				2877F6C6247D6E9200605677 /* Sources */,
 				2877F6C7247D6E9200605677 /* Frameworks */,
 				2877F6C8247D6E9200605677 /* Resources */,
@@ -322,6 +323,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28618BC62833F594001AE2BE /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		28E1A0972525D7C100604CFF /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,10 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
-				2899FFB8248112D6009D8102 /* _UIStoryboard.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
-				28E267A724A6020C0025215C /* _UIStoryboardSegue.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
@@ -401,16 +420,18 @@
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */,
+				28618BCA2833FAAB001AE2BE /* ModalViewController.swift in Sources */,
 				232D74F1264E8ED500937E0D /* ViewEmbedder.swift in Sources */,
-				287468F6247E675C0089BB32 /* _String.swift in Sources */,
 				A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */,
 				2835FB372822CB8B0074E6A4 /* ApptViewController.swift in Sources */,
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
+				28618BC82833F627001AE2BE /* R.generated.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,
 				287468F2247E65620089BB32 /* TitleTableViewCell.swift in Sources */,
+				28618BC52833F339001AE2BE /* SettingsViewController.swift in Sources */,
 				2841518E2525DAE100CB3750 /* Events.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 			);
