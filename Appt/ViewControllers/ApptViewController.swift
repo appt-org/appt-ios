@@ -7,23 +7,63 @@
 //
 
 import UIKit
+import WebKit
 
-class ApptViewController: WebViewController {
+class ApptViewController: ViewController {
     
+    @IBOutlet private var webView: WKWebView!
     @IBOutlet private var toolbar: UIToolbar!
     
     @IBOutlet private var backItem: UIBarButtonItem!
     @IBOutlet private var forwardItem: UIBarButtonItem!
     @IBOutlet private var shareItem: UIBarButtonItem!
+    @IBOutlet private var settingsItem: UIBarButtonItem!
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .primary
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Appt"
         
-        guard let url = URL(string: "https://appt-dev-o4ale4roda-ez.a.run.app") else {
+        webView.scrollView.maximumZoomScale = 10.0
+        webView.tintColor = .primary
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
+        webView.allowsLinkPreview = false
+        webView.allowsBackForwardNavigationGestures = true
+        webView.navigationDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        webView.scrollView.refreshControl = refreshControl
+        
+        load("https://appt-dev-o4ale4roda-ez.a.run.app/en")
+    }
+    
+    @objc func refresh(_ sender: UIRefreshControl) {
+        webView.reload()
+    }
+    
+    
+    private func load(_ urlString: String) {
+        guard let url = URL(string: urlString) else {
             return
         }
         load(url)
+    }
+    
+    private func load(_ url: URL) {
+        isLoading = true
+        
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+    
+    private func onLoaded() {
+        // Can be overridden
     }
     
     @IBAction private func onBack(_ sender: Any) {
@@ -47,29 +87,31 @@ class ApptViewController: WebViewController {
         shareViewController.popoverPresentationController?.barButtonItem = shareItem
         present(shareViewController, animated: true)
     }
-    
-    override func onLoaded() {
-        print("onLoaded")
-        
-        // Add sticky header
-        let javascript = """
-            function addStickyHeader() {
-                document.getElementsByTagName('header')[0].classList.add('sticky', 'top-0', 'z-50');
-            }
-        
-            addStickyHeader();
-        
-            let previousUrl = '';
-            const observer = new MutationObserver(function(mutations) {
-              if (location.href !== previousUrl) {
-                  previousUrl = location.href;
-                  setTimeout(function() { addStickyHeader(); }, 100);
-                }
-            });
-            const config = {subtree: true, childList: true};
-            observer.observe(document, config);
-        """
+}
 
-        webView.evaluateJavaScript(javascript, completionHandler: nil)
+// MARK: - WKNavigationDelegate
+
+extension ApptViewController: WKNavigationDelegate {
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
+            isLoading = false
+            refreshControl.endRefreshing()
+            
+            onLoaded()
+        }
+    }
+            
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let url = navigationAction.request.url else {
+            return
+        }
+        
+        if navigationAction.navigationType == .linkActivated {
+            openWebsite(url)
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
     }
 }

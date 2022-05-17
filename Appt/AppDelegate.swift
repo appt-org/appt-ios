@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
 
         // Global tint & language
         window?.tintColor = .primary
+        window?.backgroundColor = .red
         application.accessibilityLanguage = "language".localized
                 
         // States
@@ -38,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .background
-        UINavigationBar.appearance().backgroundColor = .background
+        UINavigationBar.appearance().backgroundColor = .green
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont.openSans(weight: .bold, size: 20, scaled: false),
