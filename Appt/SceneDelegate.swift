@@ -13,14 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    private var deepLinkManager = DeepLinkManager()
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
 
-        window.rootViewController = UIStoryboard.main()
+        window.rootViewController = UIStoryboard.initial()
         self.window = window
         window.makeKeyAndVisible()
 
@@ -30,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        self.deepLinkManager.handleDeepLink(url: userActivity.webpageURL)
+        // Handle deeplink
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

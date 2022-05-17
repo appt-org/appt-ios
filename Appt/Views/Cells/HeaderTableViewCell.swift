@@ -20,17 +20,14 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
         }
     }
     
-    func setup(_ subject: Subject) {
-        self.backgroundView = UIView()
-        self.backgroundView?.backgroundColor = .clear
+    func setup(_ header: String) {
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        titleLabel.text = header
         
-        self.accessibilityLabel = subject.description
-
-        self.titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
-        self.titleLabel.text = subject.description
+        accessibilityLabel = header
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
     }
 }

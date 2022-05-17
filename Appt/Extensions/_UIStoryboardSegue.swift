@@ -11,8 +11,6 @@ import UIKit
 extension UIStoryboardSegue {
     
     enum Identifier: String {
-        case article
-        case filter
-        case applyFilters
+        case placeholder
     }
 }

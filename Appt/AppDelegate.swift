@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import IQKeyboardManagerSwift
 import SDWebImage
 import SDWebImageSVGKitPlugin
 
@@ -17,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
 
     var window: UIWindow?
 
-    private var deepLinkManager = DeepLinkManager()
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Crashlytics
         FirebaseApp.configure()
@@ -82,18 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
             .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ], for: .selected)
-
-        // IQKeyboardManager
-        IQKeyboardManager.shared.enable = true
-
-        let svgCoder = SDImageSVGKCoder.shared
-        SDImageCodersManager.shared.addCoder(svgCoder)
         
         return true
     }
 
     private func configureWindow() {
-        let viewController = UIStoryboard.main()
+        let viewController = UIStoryboard.initial()
 
         let window = UIWindow()
         window.rootViewController = viewController
@@ -119,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        self.deepLinkManager.handleDeepLink(url: userActivity.webpageURL)
+        // Handle deeplink
 
         return true
     }
