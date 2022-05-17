@@ -19,13 +19,13 @@ class ApptViewController: ViewController {
     @IBOutlet private var shareItem: UIBarButtonItem!
     @IBOutlet private var settingsItem: UIBarButtonItem!
     
-    lazy var refreshControl: UIRefreshControl = {
+    lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .primary
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Appt"
@@ -37,8 +37,12 @@ class ApptViewController: ViewController {
         webView.allowsLinkPreview = false
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
+        
+        backItem.isEnabled = false
+        forwardItem.isEnabled = false
         
         load("https://appt-dev-o4ale4roda-ez.a.run.app/en")
     }
@@ -46,7 +50,6 @@ class ApptViewController: ViewController {
     @objc func refresh(_ sender: UIRefreshControl) {
         webView.reload()
     }
-    
     
     private func load(_ urlString: String) {
         guard let url = URL(string: urlString) else {
@@ -65,6 +68,8 @@ class ApptViewController: ViewController {
     private func onLoaded() {
         // Can be overridden
     }
+    
+    // MARK: - Toolbar actions
     
     @IBAction private func onBack(_ sender: Any) {
         if webView.canGoBack {
@@ -87,21 +92,52 @@ class ApptViewController: ViewController {
         shareViewController.popoverPresentationController?.barButtonItem = shareItem
         present(shareViewController, animated: true)
     }
+    
+    @IBAction private func onSettings(_ sender: Any) {
+        // TODO: Something
+    }
+    
+    // MARK : - WebView changes
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath else {
+            return
+        }
+        
+        switch keyPath {
+        case #keyPath(WKWebView.estimatedProgress):
+            onEstimatedProgressChanged()
+        case #keyPath(WKWebView.url):
+            onUrlChanged()
+        default:
+            print("Missing handler for keyPath \(keyPath)")
+        }
+    }
+        
+    private func onUrlChanged() {
+        print("onUrlChanged")
+        
+        backItem.isEnabled = webView.canGoBack
+        forwardItem.isEnabled = webView.canGoForward
+    }
+    
+    private func onEstimatedProgressChanged() {
+        print("onEstimatedProgressChanged")
+        
+        if webView.estimatedProgress == 1.0 {
+            isLoading = false
+            refreshControl.endRefreshing()
+            
+            onLoaded()
+            onUrlChanged()
+        }
+    }
 }
 
 // MARK: - WKNavigationDelegate
 
 extension ApptViewController: WKNavigationDelegate {
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress", webView.estimatedProgress == 1.0 {
-            isLoading = false
-            refreshControl.endRefreshing()
-            
-            onLoaded()
-        }
-    }
-            
+                
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else {
             return
