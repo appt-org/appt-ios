@@ -162,12 +162,19 @@ extension ApptViewController: WKNavigationDelegate {
         guard let url = navigationAction.request.url else {
             return
         }
-        
-        if navigationAction.navigationType == .linkActivated {
-            openWebsite(url)
-            decisionHandler(.cancel)
-        } else {
+                
+        if navigationAction.navigationType != .linkActivated {
             decisionHandler(.allow)
+            return
         }
+        
+        if url.host == R.string.localizable.appt_domain() {
+            print("Action on own domain")
+            decisionHandler(.allow)
+            return
+        }
+        
+        openWebsite(url)
+        decisionHandler(.cancel)
     }
 }
