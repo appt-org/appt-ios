@@ -22,33 +22,41 @@
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <items>
-                                    <barButtonItem title="Back" image="icon_back" id="20Y-ez-CJq">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Jz-gt-7FV"/>
+                                    <barButtonItem enabled="NO" title="Back" image="icon_back" id="20Y-ez-CJq">
                                         <connections>
                                             <action selector="onBack:" destination="eaG-lF-Yrk" id="P2s-OT-mSC"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Lbm-hw-hs9"/>
-                                    <barButtonItem title="Forward" image="icon_forward" id="cVg-Kw-2JD">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UIN-bV-3g9"/>
+                                    <barButtonItem enabled="NO" title="Forward" image="icon_forward" id="cVg-Kw-2JD">
                                         <connections>
                                             <action selector="onForward:" destination="eaG-lF-Yrk" id="IRp-Uq-78u"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HWs-up-N7V"/>
-                                    <barButtonItem systemItem="action" id="fym-tm-0Zw">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="J2B-d7-15o"/>
+                                    <barButtonItem enabled="NO" title="Share" image="icon_share" id="fym-tm-0Zw">
                                         <connections>
                                             <action selector="onShare:" destination="eaG-lF-Yrk" id="ahL-pr-C5N"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RI2-oK-SvM"/>
-                                    <barButtonItem title="Settings" image="icon_settings" id="Hww-vp-C5I">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ion-Si-75a"/>
+                                    <barButtonItem enabled="NO" title="Bookmark" image="icon_bookmark" id="Ejx-Gv-YkR">
                                         <connections>
-                                            <action selector="onSettings:" destination="eaG-lF-Yrk" id="UuC-rI-bgn"/>
+                                            <action selector="onBookmark:" destination="eaG-lF-Yrk" id="xpz-Kh-h6n"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6sd-hS-5Lq"/>
+                                    <barButtonItem title="Menu" image="icon_menu" id="Hww-vp-C5I">
+                                        <connections>
+                                            <action selector="onMenu:" destination="eaG-lF-Yrk" id="Wrh-18-tHt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gZc-wc-Apa"/>
                                 </items>
                                 <color key="barTintColor" name="Background"/>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-V4-hp6">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-V4-hp6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -72,8 +80,9 @@
                     <navigationItem key="navigationItem" id="mmI-BD-9k4"/>
                     <connections>
                         <outlet property="backItem" destination="20Y-ez-CJq" id="ypr-FR-O8O"/>
+                        <outlet property="bookmarkItem" destination="Ejx-Gv-YkR" id="wY0-ju-Iwg"/>
                         <outlet property="forwardItem" destination="cVg-Kw-2JD" id="rc1-mJ-wWx"/>
-                        <outlet property="settingsItem" destination="Hww-vp-C5I" id="kgJ-q6-K9S"/>
+                        <outlet property="menuItem" destination="Hww-vp-C5I" id="Y0U-B4-faR"/>
                         <outlet property="shareItem" destination="fym-tm-0Zw" id="SoG-GM-aNO"/>
                         <outlet property="toolbar" destination="ecA-Vf-wrJ" id="6WM-sa-Po6"/>
                         <outlet property="webView" destination="O9l-V4-hp6" id="Gi9-eY-NdE"/>
@@ -88,6 +97,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHc-QV-XDd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -102,8 +112,8 @@
         <scene sceneID="UY6-G0-Arp">
             <objects>
                 <viewController id="huy-uN-cIj" customClass="SettingsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zcK-2v-7Pc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="zcK-2v-7Pc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UIq-D8-jJd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,14 +129,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_back" width="25" height="25"/>
-        <image name="icon_forward" width="25" height="25"/>
-        <image name="icon_settings" width="25" height="25"/>
+        <image name="icon_back" width="24" height="24"/>
+        <image name="icon_bookmark" width="24" height="24"/>
+        <image name="icon_forward" width="24" height="24"/>
+        <image name="icon_menu" width="24" height="24"/>
+        <image name="icon_share" width="24" height="24"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

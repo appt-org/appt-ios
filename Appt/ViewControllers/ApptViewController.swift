@@ -18,7 +18,8 @@ class ApptViewController: ViewController {
     @IBOutlet private var backItem: UIBarButtonItem!
     @IBOutlet private var forwardItem: UIBarButtonItem!
     @IBOutlet private var shareItem: UIBarButtonItem!
-    @IBOutlet private var settingsItem: UIBarButtonItem!
+    @IBOutlet private var bookmarkItem: UIBarButtonItem!
+    @IBOutlet private var menuItem: UIBarButtonItem!
     
     lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -44,17 +45,18 @@ class ApptViewController: ViewController {
         
         backItem.title = R.string.localizable.back()
         backItem.accessibilityLabel = R.string.localizable.back()
-        backItem.isEnabled = false
         
         forwardItem.title = R.string.localizable.forward()
         forwardItem.accessibilityLabel = forwardItem.title
-        forwardItem.isEnabled = false
         
         shareItem.title = R.string.localizable.share()
         shareItem.accessibilityLabel = shareItem.title
         
-        settingsItem.title = R.string.localizable.settings()
-        settingsItem.accessibilityLabel = settingsItem.title
+        bookmarkItem.title = R.string.localizable.bookmark()
+        bookmarkItem.accessibilityLabel = bookmarkItem.title
+        
+        menuItem.title = R.string.localizable.menu()
+        menuItem.accessibilityLabel = menuItem.title
         
         let url = Preferences.shared.url ?? R.string.localizable.appt_url()
         load(url)
@@ -106,11 +108,59 @@ class ApptViewController: ViewController {
         present(shareViewController, animated: true)
     }
     
-    @IBAction private func onSettings(_ sender: Any) {
-        guard let viewController = R.storyboard.main.settingsViewController() else {
+    private var bookmarks = [String: Bool]()
+    
+    @IBAction private func onBookmark(_ sender: Any) {
+        guard let url = webView.url?.absoluteString else {
             return
         }
-        present(viewController, animated: true)
+        
+        let bookmarked = !(bookmarks[url] ?? false)
+        bookmarks[url] = bookmarked
+        
+        updateBookmark(bookmarked)
+    }
+    
+    private func updateBookmark(_ url: String) {
+        let bookmarked = bookmarks[url] ?? false
+        updateBookmark(bookmarked)
+    }
+    
+    private func updateBookmark(_ bookmarked: Bool) {
+        let icon = bookmarked ? R.image.icon_bookmarked() : R.image.icon_bookmark()
+        let text = bookmarked ? R.string.localizable.bookmarked() : R.string.localizable.bookmark()
+        
+        bookmarkItem.image = icon
+        bookmarkItem.title = text
+        bookmarkItem.accessibilityLabel = text
+    }
+    
+    @IBAction private func onMenu(_ sender: Any) {
+        let vc = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let bookmarksAction = UIAlertAction(title: R.string.localizable.bookmarks(), style: .default) { action in
+            // Ignored
+        }
+        vc.addAction(bookmarksAction)
+        
+        let historyAction = UIAlertAction(title: R.string.localizable.history(), style: .default) { action in
+            // Ignored
+        }
+        vc.addAction(historyAction)
+        
+        let settingsAction = UIAlertAction(title: R.string.localizable.settings(), style: .default) { action in
+            // Ignored
+        }
+        vc.addAction(settingsAction)
+        
+        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
+        vc.addAction(cancelAction)
+        
+        present(vc, animated: true)
     }
     
     // MARK : - WebView changes
@@ -137,6 +187,11 @@ class ApptViewController: ViewController {
         forwardItem.isEnabled = webView.canGoForward
         
         if let url = webView.url?.absoluteString {
+            shareItem.isEnabled = true
+            
+            bookmarkItem.isEnabled = true
+            updateBookmark(url)
+            
             Preferences.shared.url = url
         }
     }

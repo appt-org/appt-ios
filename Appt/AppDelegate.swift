@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
 
         // Global tint & language
         window?.tintColor = .primary
-        window?.backgroundColor = .red
+        window?.backgroundColor = .background
         application.accessibilityLanguage = R.string.localizable.language()
                 
         // States
@@ -77,6 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
             .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ], for: .selected)
+        
+        // UIAlertController style
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .foreground
         
         return true
     }

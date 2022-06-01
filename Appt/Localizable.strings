@@ -24,6 +24,11 @@
 "close" = "Close";
 "share" = "Share";
 "settings" = "Settings";
+"bookmark" = "Bookmark";
+"bookmarked" = "Bookmarked";
+"menu" = "Menu";
+"bookmarks" = "Bookmarks";
+"history" = "History";
 
 /* Appt */
 "appt_title" = "Appt";
