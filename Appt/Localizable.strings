@@ -30,6 +30,7 @@
 "bookmarks" = "Bookmarks";
 "history" = "History";
 "home" = "Home";
+"refresh" = "Refresh";
 
 /* Appt */
 "appt_title" = "Appt";
