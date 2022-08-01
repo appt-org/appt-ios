@@ -142,6 +142,12 @@ class ApptViewController: ViewController {
             preferredStyle: .actionSheet
         )
         
+        let homeAction = UIAlertAction(title: R.string.localizable.home(), style: .default) { action in
+            let homeUrl = R.string.localizable.appt_url()
+            self.load(homeUrl)
+        }
+        vc.addAction(homeAction)
+                
         let bookmarksAction = UIAlertAction(title: R.string.localizable.bookmarks(), style: .default) { action in
             // Ignored
         }

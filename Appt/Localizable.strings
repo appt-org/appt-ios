@@ -29,11 +29,12 @@
 "menu" = "Menu";
 "bookmarks" = "Bookmarks";
 "history" = "History";
+"home" = "Home";
 
 /* Appt */
 "appt_title" = "Appt";
-"appt_url" = "https://appt-acceptance-o4ale4roda-ez.a.run.app/en";
-"appt_domain" = "appt-acceptance-o4ale4roda-ez.a.run.app";
+"appt_url" = "https://appt-production-o4ale4roda-ez.a.run.app/en";
+"appt_domain" = "appt-production-o4ale4roda-ez.a.run.app";
 
 /* Settings */
 "settings_title" = "Settings";
