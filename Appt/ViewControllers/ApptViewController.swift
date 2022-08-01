@@ -163,7 +163,7 @@ class ApptViewController: ViewController {
         }
         vc.addAction(settingsAction)
         
-        let refreshAction = UIAlertAction(title: R.string.localizable.refresh(), style: .default) { action in
+        let refreshAction = UIAlertAction(title: R.string.localizable.reload(), style: .default) { action in
             UIAccessibility.post(notification: .announcement, argument: R.string.localizable.loading())
             self.webView.reload()
         }
