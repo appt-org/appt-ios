@@ -36,6 +36,7 @@
 "appt_title" = "Appt";
 "appt_url" = "https://beta.appt.org/en";
 "appt_domain" = "beta.appt.org";
+"appt_suffix" = " — Appt";
 
 /* Settings */
 "settings_title" = "Settings";

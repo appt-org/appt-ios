@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import Rswift
+import CoreData
 
 class ApptViewController: ViewController {
     
@@ -27,6 +28,15 @@ class ApptViewController: ViewController {
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()
+    
+    lazy private var titleSuffix: String = {
+        return R.string.localizable.appt_suffix()
+    }()
+    
+    lazy var stack: CoreDataStack = {
+        return CoreDataStack()
+    }()
+    var pages: [NSManagedObject] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +51,7 @@ class ApptViewController: ViewController {
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
         
         backItem.title = R.string.localizable.back()
@@ -149,17 +160,17 @@ class ApptViewController: ViewController {
         vc.addAction(homeAction)
                 
         let bookmarksAction = UIAlertAction(title: R.string.localizable.bookmarks(), style: .default) { action in
-            // Ignored
+            self.showBookmarks()
         }
         vc.addAction(bookmarksAction)
         
         let historyAction = UIAlertAction(title: R.string.localizable.history(), style: .default) { action in
-            // Ignored
+            self.showHistory()
         }
         vc.addAction(historyAction)
         
         let settingsAction = UIAlertAction(title: R.string.localizable.settings(), style: .default) { action in
-            // Ignored
+            self.showError("Not implemented")
         }
         vc.addAction(settingsAction)
         
@@ -185,6 +196,14 @@ class ApptViewController: ViewController {
         present(vc, animated: true)
     }
     
+    private func showBookmarks() {
+        
+    }
+    
+    private func showHistory() {
+        
+    }
+    
     // MARK : - WebView changes
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -197,6 +216,8 @@ class ApptViewController: ViewController {
             onEstimatedProgressChanged()
         case #keyPath(WKWebView.url):
             onUrlChanged()
+        case #keyPath(WKWebView.title):
+            onTitleChanged()
         default:
             print("Missing handler for keyPath \(keyPath)")
         }
@@ -208,13 +229,43 @@ class ApptViewController: ViewController {
         backItem.isEnabled = webView.canGoBack
         forwardItem.isEnabled = webView.canGoForward
         
-        if let url = webView.url?.absoluteString {
-            shareItem.isEnabled = true
-            
-            bookmarkItem.isEnabled = true
-            updateBookmark(url)
-            
-            Preferences.shared.url = url
+        guard let url = webView.url?.absoluteString else {
+            return
+        }
+        
+        shareItem.isEnabled = true
+        
+        bookmarkItem.isEnabled = true
+        updateBookmark(url)
+        
+        Preferences.shared.url = url
+    }
+    
+    private func onTitleChanged() {
+        guard var title = webView.title,
+              let url = webView.url?.absoluteString else {
+            return
+        }
+        
+        if title.hasSuffix(titleSuffix) {
+            title = title.dropLast(titleSuffix.count).description
+        }
+        
+        print("Title changed to: '\(title)' for url: \(url)")
+        
+        // Store history
+        guard let entity = NSEntityDescription.entity(forEntityName: "HistoryPage", in: stack.objectContext) else {
+            return
+        }
+        let page = NSManagedObject(entity: entity, insertInto: stack.objectContext)
+        page.setValue(url, forKey: "url")
+        page.setValue(title, forKey: "title")
+        
+        do {
+            try stack.objectContext.save()
+            print("Saved!")
+        } catch let error as NSError {
+            print("Failed to save: \(error) --> \(error.userInfo)")
         }
     }
     

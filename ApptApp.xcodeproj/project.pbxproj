@@ -11,6 +11,8 @@
 		28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACC26A567E600415285 /* OpenSans-Regular.ttf */; };
 		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
 		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
+		28169E4028C25014000C1D5D /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28169E3E28C25014000C1D5D /* Database.xcdatamodeld */; };
+		28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28169E4228C251B7000C1D5D /* CoreDataStack.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
 		2835FB372822CB8B0074E6A4 /* ApptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835FB362822CB8B0074E6A4 /* ApptViewController.swift */; };
 		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
@@ -54,6 +56,8 @@
 		28112ACC26A567E600415285 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		28169E3F28C25014000C1D5D /* Appt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appt.xcdatamodel; sourceTree = "<group>"; };
+		28169E4228C251B7000C1D5D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2835FB362822CB8B0074E6A4 /* ApptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptViewController.swift; sourceTree = "<group>"; };
 		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -115,6 +119,14 @@
 				083B71E01292CF6078F049DD /* Pods_ApptApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28169E4128C251AC000C1D5D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				28169E4228C251B7000C1D5D /* CoreDataStack.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2843828024ED6D7A0015B2C5 /* Helpers */ = {
@@ -190,7 +202,9 @@
 		2877F6CC247D6E9200605677 /* Appt */ = {
 			isa = PBXGroup;
 			children = (
+				28169E4128C251AC000C1D5D /* Data */,
 				231F1FE9266A0604002524F0 /* Appt.entitlements */,
+				28169E3E28C25014000C1D5D /* Database.xcdatamodeld */,
 				2877F6CD247D6E9200605677 /* AppDelegate.swift */,
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
 				2877F6EC247D727D00605677 /* Extensions */,
@@ -419,6 +433,7 @@
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
+				28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
@@ -438,6 +453,7 @@
 				28618BC52833F339001AE2BE /* SettingsViewController.swift in Sources */,
 				2841518E2525DAE100CB3750 /* Events.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
+				28169E4028C25014000C1D5D /* Database.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		28169E3E28C25014000C1D5D /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				28169E3F28C25014000C1D5D /* Appt.xcdatamodel */,
+			);
+			currentVersion = 28169E3F28C25014000C1D5D /* Appt.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2877F6C2247D6E9100605677 /* Project object */;
 }
