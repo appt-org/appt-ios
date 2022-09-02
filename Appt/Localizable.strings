@@ -34,8 +34,8 @@
 
 /* Appt */
 "appt_title" = "Appt";
-"appt_url" = "https://appt-production-o4ale4roda-ez.a.run.app/en";
-"appt_domain" = "appt-production-o4ale4roda-ez.a.run.app";
+"appt_url" = "https://beta.appt.org/en";
+"appt_domain" = "beta.appt.org";
 
 /* Settings */
 "settings_title" = "Settings";

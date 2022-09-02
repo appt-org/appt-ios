@@ -173,6 +173,15 @@ class ApptViewController: ViewController {
         let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
         vc.addAction(cancelAction)
         
+        // iPad
+        if let popoverController = vc.popoverPresentationController {
+            if let item = sender as? UIBarButtonItem {
+                popoverController.barButtonItem = item
+            } else {
+                popoverController.sourceView = view
+            }
+        }
+        
         present(vc, animated: true)
     }
     

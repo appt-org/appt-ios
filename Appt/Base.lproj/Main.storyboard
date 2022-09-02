@@ -97,7 +97,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHc-QV-XDd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -112,8 +112,8 @@
         <scene sceneID="UY6-G0-Arp">
             <objects>
                 <viewController id="huy-uN-cIj" customClass="SettingsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="zcK-2v-7Pc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                    <view key="view" contentMode="scaleToFill" id="zcK-2v-7Pc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UIq-D8-jJd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
