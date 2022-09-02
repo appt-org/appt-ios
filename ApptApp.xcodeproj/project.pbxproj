@@ -13,6 +13,7 @@
 		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
 		28169E4028C25014000C1D5D /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28169E3E28C25014000C1D5D /* Database.xcdatamodeld */; };
 		28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28169E4228C251B7000C1D5D /* CoreDataStack.swift */; };
+		28169E4528C25A7B000C1D5D /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28169E4428C25A7B000C1D5D /* WebPage.swift */; };
 		281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F87FB24D172B5004AABC2 /* TableViewController.swift */; };
 		2835FB372822CB8B0074E6A4 /* ApptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835FB362822CB8B0074E6A4 /* ApptViewController.swift */; };
 		2841518E2525DAE100CB3750 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841518D2525DAE100CB3750 /* Events.swift */; };
@@ -58,6 +59,7 @@
 		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		28169E3F28C25014000C1D5D /* Appt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appt.xcdatamodel; sourceTree = "<group>"; };
 		28169E4228C251B7000C1D5D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		28169E4428C25A7B000C1D5D /* WebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPage.swift; sourceTree = "<group>"; };
 		281F87FB24D172B5004AABC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2835FB362822CB8B0074E6A4 /* ApptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptViewController.swift; sourceTree = "<group>"; };
 		2841518D2525DAE100CB3750 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				28169E4228C251B7000C1D5D /* CoreDataStack.swift */,
+				28169E4428C25A7B000C1D5D /* WebPage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28169E4528C25A7B000C1D5D /* WebPage.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,

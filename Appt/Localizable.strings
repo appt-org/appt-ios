@@ -31,6 +31,7 @@
 "history" = "History";
 "home" = "Home";
 "reload" = "Reload";
+"unknown" = "Unknown";
 
 /* Appt */
 "appt_title" = "Appt";

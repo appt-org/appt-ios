@@ -25,13 +25,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Jz-gt-7FV"/>
                                     <barButtonItem enabled="NO" title="Back" image="icon_back" id="20Y-ez-CJq">
                                         <connections>
-                                            <action selector="onBack:" destination="eaG-lF-Yrk" id="P2s-OT-mSC"/>
+                                            <action selector="onBack:for:" destination="eaG-lF-Yrk" id="ygf-yV-qB9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UIN-bV-3g9"/>
                                     <barButtonItem enabled="NO" title="Forward" image="icon_forward" id="cVg-Kw-2JD">
                                         <connections>
-                                            <action selector="onForward:" destination="eaG-lF-Yrk" id="IRp-Uq-78u"/>
+                                            <action selector="onForward:for:" destination="eaG-lF-Yrk" id="5nN-rr-Col"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="J2B-d7-15o"/>
@@ -43,7 +43,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ion-Si-75a"/>
                                     <barButtonItem enabled="NO" title="Bookmark" image="icon_bookmark" id="Ejx-Gv-YkR">
                                         <connections>
-                                            <action selector="onBookmark:" destination="eaG-lF-Yrk" id="xpz-Kh-h6n"/>
+                                            <action selector="onBookmark:for:" destination="eaG-lF-Yrk" id="Wmw-ur-hAu"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6sd-hS-5Lq"/>

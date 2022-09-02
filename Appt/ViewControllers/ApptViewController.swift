@@ -57,6 +57,24 @@ class ApptViewController: ViewController {
         backItem.title = R.string.localizable.back()
         backItem.accessibilityLabel = R.string.localizable.back()
         
+        if let image = R.image.icon_back() {
+            let imageView = UIImageView(image: image)
+            imageView.isUserInteractionEnabled = true
+            imageView.accessibilityTraits = .button
+            imageView.tintColor = .primary
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(onBackTapped))
+            imageView.addGestureRecognizer(tap)
+            
+            let press = UILongPressGestureRecognizer(target: self, action: #selector(onBackPressed))
+            imageView.addGestureRecognizer(press)
+            
+            backItem.customView = imageView
+        }
+       
+        //backItem.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(showHistoryBack)))
+        
+        
         forwardItem.title = R.string.localizable.forward()
         forwardItem.accessibilityLabel = forwardItem.title
         
@@ -72,7 +90,7 @@ class ApptViewController: ViewController {
         let url = Preferences.shared.url ?? R.string.localizable.appt_url()
         load(url)
     }
-    
+        
     @objc func refresh(_ sender: UIRefreshControl) {
         webView.reload()
     }
@@ -97,13 +115,32 @@ class ApptViewController: ViewController {
     
     // MARK: - Toolbar actions
     
-    @IBAction private func onBack(_ sender: Any) {
+    @objc private func onBackTapped() {
         if webView.canGoBack {
             webView.goBack()
         }
     }
     
-    @IBAction private func onForward(_ sender: Any) {
+    @objc private func onBackPressed() {
+        showHistoryBack()
+    }
+    
+    @IBAction private func onBack(_ sender: Any, for event: UIEvent) {
+        
+        
+        print("onBack, event=\(event)")
+        print("Touches", event.allTouches?.count)
+        
+        
+        let longPress = (event.allTouches?.first?.tapCount ?? 1) == 0
+        print("Long press", longPress)
+        
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @IBAction private func onForward(_ sender: Any, for event: UIEvent) {
         if webView.canGoForward {
             webView.goForward()
         }
@@ -121,7 +158,7 @@ class ApptViewController: ViewController {
     
     private var bookmarks = [String: Bool]()
     
-    @IBAction private func onBookmark(_ sender: Any) {
+    @IBAction private func onBookmark(_ sender: Any, for event: UIEvent) {
         guard let url = webView.url?.absoluteString else {
             return
         }
@@ -197,11 +234,59 @@ class ApptViewController: ViewController {
     }
     
     private func showBookmarks() {
-        
+        self.showError("Not implemented")
     }
     
     private func showHistory() {
+        showHistoryBack()
+    }
         
+    @objc private func showHistoryBack() {
+        guard webView.canGoBack else {
+            self.showError("Cannot go back")
+            return
+        }
+        showPages(webView.backForwardList.backList, at: backItem)
+    }
+    
+    private func showHistoryForward() {
+        guard webView.canGoForward else {
+            self.showError("Cannot go forward")
+            return
+        }
+        showPages(webView.backForwardList.forwardList, at: forwardItem)
+    }
+    
+    private func showPages(_ items: [WKBackForwardListItem], at item: UIBarButtonItem) {
+        let pages = items.prefix(5).map { item in
+            return WebPage(item: item)
+        }
+        showPages(pages, at: item)
+    }
+    
+    private func showPages(_ pages: [WebPage], at item: UIBarButtonItem) {
+        let vc = UIAlertController(
+            title: "History",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        for page in pages {
+            let action = UIAlertAction(title: page.title, style: .default) { action in
+                self.load(page.url)
+            }
+            vc.addAction(action)
+        }
+        
+        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
+        vc.addAction(cancelAction)
+        
+        // iPad
+        if let popoverController = vc.popoverPresentationController {
+            popoverController.barButtonItem = item
+        }
+        
+        present(vc, animated: true)
     }
     
     // MARK : - WebView changes
