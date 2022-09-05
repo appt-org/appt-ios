@@ -90,6 +90,8 @@ enum Item {
         switch self {
         case .back:
             return .jumpBack
+        case .bookmark, .bookmarked:
+            return .bookmarks
         case .forward:
             return .jumpForward
         default:

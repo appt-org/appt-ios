@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				28169E4228C251B7000C1D5D /* CoreDataStack.swift */,
-				28169E4428C25A7B000C1D5D /* WebPage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -266,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				28A1273328C61C9500D4E55F /* Item.swift */,
+				28169E4428C25A7B000C1D5D /* WebPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

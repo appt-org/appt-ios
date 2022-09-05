@@ -20,10 +20,19 @@ class ToolbarItem: UIBarButtonItem {
         didSet {
             guard let item = item else { return }
             
-            self.image = item.image
-            self.title = item.title
-            self.accessibilityLabel = self.title
-            
+            let view = UIImageView(image: item.image)
+            view.isAccessibilityElement = true
+            view.accessibilityTraits = .button
+            view.accessibilityLabel = item.title
+            view.isUserInteractionEnabled = true
+            view.tintColor = .primary
+                        
+            let tap = UITapGestureRecognizer(target: self, action: #selector(onTapAction))
+            view.addGestureRecognizer(tap)
+
+            let press = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressAction))
+            view.addGestureRecognizer(press)
+
             if let secondary = item.secondary {
                 let action = UIAccessibilityCustomAction(
                     name: secondary.title,
@@ -31,55 +40,46 @@ class ToolbarItem: UIBarButtonItem {
                     selector: #selector(onLongPressAction)
                 )
                 action.image = secondary.image
-                self.accessibilityCustomActions = [action]
+                view.accessibilityCustomActions = [action]
+                
+                self.secondaryAction = action
             }
+            
+            self.customView = view
+            self.accessibilityLabel = view.accessibilityLabel
+            self.title = view.accessibilityLabel
         }
     }
     
-    override var image: UIImage? {
-        didSet {
-            print("Did set image")
-            
-            guard let image = image else { return }
-            
-            let imageView = UIImageView(image: image)
-            imageView.isUserInteractionEnabled = true
-            imageView.accessibilityTraits = .button
-            imageView.tintColor = .primary
-
-            let tap = UITapGestureRecognizer(target: self, action: #selector(onTapAction))
-            imageView.addGestureRecognizer(tap)
-
-            let press = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressAction))
-            imageView.addGestureRecognizer(press)
-
-            self.customView = imageView
-        }
-    }
+    private var secondaryAction: UIAccessibilityCustomAction? = nil
     
     override var isEnabled: Bool {
         didSet {
-            print("Did set isEnabled")
-            
             guard let view = customView else { return }
             
-            view.isUserInteractionEnabled = isEnabled
-            view.tintColor = isEnabled ? .primary : .disabled
-            
-//            if isEnabled {
-//                view.accessibilityTraits = .button
-//            } else {
-//                view.accessibilityTraits = [.button, .notEnabled]
-//            }
+            if isEnabled {
+                view.accessibilityTraits = .button
+                view.isUserInteractionEnabled = true
+                view.tintColor = .primary
+                
+                if let secondaryAction = secondaryAction {
+                    view.accessibilityCustomActions = [secondaryAction]
+                }
+            } else {
+                view.accessibilityTraits = [.button, .notEnabled]
+                view.isUserInteractionEnabled = false
+                view.tintColor = .disabled
+                view.accessibilityCustomActions = []
+            }
         }
     }
-    
     
     @objc private func onTapAction() {
         onTap?(self)
     }
     
-    @objc private func onLongPressAction() {
+    @objc private func onLongPressAction() -> Bool {
         onLongPress?(self)
+        return true
     }
 }

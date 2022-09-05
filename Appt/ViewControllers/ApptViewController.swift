@@ -29,10 +29,6 @@ class ApptViewController: ViewController {
         return refreshControl
     }()
     
-    lazy private var titleSuffix: String = {
-        return R.string.localizable.appt_suffix()
-    }()
-    
     lazy var stack: CoreDataStack = {
         return CoreDataStack()
     }()
@@ -75,7 +71,7 @@ class ApptViewController: ViewController {
             self.onShare()
         }
         
-        bookmarkItem.item = .bookmark
+        bookmarkItem.item = .bookmarked
         bookmarkItem.onTap = { item in
             self.onBookmark()
         }
@@ -157,14 +153,9 @@ class ApptViewController: ViewController {
                 stack.objectContext.delete(bookmark)
             } else {
                 // Insert bookmark
-                var title: String? = nil
-                if let webViewTitle = webView.title, webViewTitle.hasSuffix(titleSuffix) {
-                    title = webViewTitle.dropLast(titleSuffix.count).description
-                }
-                
                 let bookmark = BookmarkedPage(context: stack.objectContext)
                 bookmark.url = url
-                bookmark.title = title
+                bookmark.title = webView.title
                 bookmark.created_at = Date()
                 bookmark.updated_at = Date()
                 
@@ -198,12 +189,11 @@ class ApptViewController: ViewController {
     }
     
     private func updateBookmark(_ bookmarked: Bool) {
-        let icon = bookmarked ? R.image.icon_bookmarked() : R.image.icon_bookmark()
-        let text = bookmarked ? R.string.localizable.bookmarked() : R.string.localizable.bookmark()
-        
-        bookmarkItem.image = icon
-        bookmarkItem.title = text
-        bookmarkItem.accessibilityLabel = text
+        if bookmarked {
+            bookmarkItem.item = .bookmarked
+        } else {
+            bookmarkItem.item = .bookmark
+        }
     }
     
     private func onMenu() {
@@ -369,15 +359,11 @@ class ApptViewController: ViewController {
     }
     
     private func onTitleChanged() {
-        guard var title = webView.title,
+        guard let title = webView.title,
               let url = webView.url?.absoluteString else {
             return
         }
-        
-        if title.hasSuffix(titleSuffix) {
-            title = title.dropLast(titleSuffix.count).description
-        }
-        
+                
         print("Title changed to: '\(title)' for url: \(url)")
         
         // Store visited page
@@ -404,6 +390,21 @@ class ApptViewController: ViewController {
             onLoaded()
             onUrlChanged()
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension ApptViewController {
+ 
+    override func accessibilityPerformEscape() -> Bool {
+        goBack()
+        return true
+    }
+    
+    override func accessibilityPerformMagicTap() -> Bool {
+        onShare()
+        return true
     }
 }
 

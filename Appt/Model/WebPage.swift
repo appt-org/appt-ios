@@ -11,13 +11,22 @@ import WebKit
 
 class WebPage {
     
+    private static var suffix: String = {
+        return R.string.localizable.appt_suffix()
+    }()
+    
     var url: String
     var title: String
     
     init(url: String, title: String?) {
         self.url = url
         if let title = title, !title.isEmpty {
-            self.title = title
+            if title.hasSuffix(WebPage.suffix) {
+                self.title = title.dropLast(WebPage.suffix.count).description
+            } else {
+                self.title = title
+            }
+            
         } else {
             self.title = R.string.localizable.unknown()
         }
