@@ -138,21 +138,62 @@ class ApptViewController: ViewController {
         present(shareViewController, animated: true)
     }
     
-    private var bookmarks = [String: Bool]()
-    
     private func onBookmark() {
         guard let url = webView.url?.absoluteString else {
             return
         }
         
-        let bookmarked = !(bookmarks[url] ?? false)
-        bookmarks[url] = bookmarked
+        var bookmarked = false
+        
+        // Insert or delete bookmark
+        do {
+            let fetchRequest = BookmarkedPage.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
+            fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
+            fetchRequest.fetchLimit = 1
+
+            if let bookmark = try stack.objectContext.fetch(fetchRequest).first {
+                // Remove bookmark
+                stack.objectContext.delete(bookmark)
+            } else {
+                // Insert bookmark
+                var title: String? = nil
+                if let webViewTitle = webView.title, webViewTitle.hasSuffix(titleSuffix) {
+                    title = webViewTitle.dropLast(titleSuffix.count).description
+                }
+                
+                let bookmark = BookmarkedPage(context: stack.objectContext)
+                bookmark.url = url
+                bookmark.title = title
+                bookmark.created_at = Date()
+                bookmark.updated_at = Date()
+                
+                bookmarked = true
+            }
+ 
+            try stack.objectContext.save()
+        } catch let error as NSError {
+            print("Failed to save bookmark: \(error) --> \(error.userInfo)")
+        }
         
         updateBookmark(bookmarked)
     }
     
     private func updateBookmark(_ url: String) {
-        let bookmarked = bookmarks[url] ?? false
+        var bookmarked = false
+        
+        // Get bookmark state
+        do {
+            let fetchRequest = BookmarkedPage.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
+            fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
+            fetchRequest.fetchLimit = 1
+            
+            bookmarked = try stack.objectContext.fetch(fetchRequest).count > 0
+        } catch let error as NSError {
+            print("Failed to fetch bookmark: \(error) --> \(error.userInfo)")
+        }
+        
         updateBookmark(bookmarked)
     }
     
@@ -211,11 +252,28 @@ class ApptViewController: ViewController {
     }
     
     private func showBookmarks() {
-        self.showError("Not implemented")
+        do {
+            let fetchRequest = BookmarkedPage.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
+                return WebPage(item: item)
+            })
+            showPages(pages, title: R.string.localizable.bookmarks(), at: menuItem)
+        } catch let error as NSError {
+            print("Failed to fetch: \(error) --> \(error.userInfo)")
+        }
     }
     
     private func showHistory() {
-        showHistoryBack()
+        do {
+            let fetchRequest = VisitedPage.fetchRequest()
+            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
+                return WebPage(item: item)
+            })
+            showPages(pages, title: R.string.localizable.history(), at: menuItem)
+        } catch let error as NSError {
+            print("Failed to fetch: \(error) --> \(error.userInfo)")
+        }
     }
         
     @objc private func showHistoryBack() {
@@ -223,7 +281,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go back")
             return
         }
-        showPages(webView.backForwardList.backList, title: R.string.localizable.history(), at: backItem)
+        showPages(webView.backForwardList.backList, title: R.string.localizable.jump_back(), at: backItem)
     }
     
     private func showHistoryForward() {
@@ -231,7 +289,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go forward")
             return
         }
-        showPages(webView.backForwardList.forwardList, title: R.string.localizable.future(), at: forwardItem)
+        showPages(webView.backForwardList.forwardList, title: R.string.localizable.jump_forward(), at: forwardItem)
     }
     
     private func showPages(_ items: [WKBackForwardListItem], title: String, at item: UIBarButtonItem) {
@@ -249,7 +307,10 @@ class ApptViewController: ViewController {
         )
         
         for page in pages {
-            let action = UIAlertAction(title: page.title, style: .default) { action in
+            let action = UIAlertAction(
+                title: String(format: "%@\n%@", page.title, page.url),
+                style: .default
+            ) { action in
                 self.load(page.url)
             }
             vc.addAction(action)
@@ -319,19 +380,17 @@ class ApptViewController: ViewController {
         
         print("Title changed to: '\(title)' for url: \(url)")
         
-        // Store history
-        guard let entity = NSEntityDescription.entity(forEntityName: "HistoryPage", in: stack.objectContext) else {
-            return
-        }
-        let page = NSManagedObject(entity: entity, insertInto: stack.objectContext)
-        page.setValue(url, forKey: "url")
-        page.setValue(title, forKey: "title")
-        
+        // Store visited page
+        let page = VisitedPage(context: stack.objectContext)
+        page.url = url
+        page.title = title
+        page.created_at = Date()
+        page.updated_at = Date()
+                
         do {
             try stack.objectContext.save()
-            print("Saved!")
         } catch let error as NSError {
-            print("Failed to save: \(error) --> \(error.userInfo)")
+            print("Failed to save history: \(error) --> \(error.userInfo)")
         }
     }
     

@@ -15,9 +15,10 @@ enum Item {
          bookmarked,
          bookmarks,
          forward,
-         future,
          home,
          history,
+         jumpBack,
+         jumpForward,
          menu,
          reload,
          settings,
@@ -35,8 +36,10 @@ enum Item {
             return R.image.icon_bookmarked()
         case .forward:
             return R.image.icon_forward()
-        case .future:
-            return R.image.icon_future()
+        case .jumpBack:
+            return R.image.icon_jump_back()
+        case .jumpForward:
+            return R.image.icon_jump_forward()
         case .history:
             return R.image.icon_history()
         case .home:
@@ -64,10 +67,12 @@ enum Item {
             return R.string.localizable.bookmarks()
         case .forward:
             return R.string.localizable.forward()
-        case .future:
-            return R.string.localizable.future()
         case .history:
             return R.string.localizable.history()
+        case .jumpBack:
+            return R.string.localizable.jump_back()
+        case .jumpForward:
+            return R.string.localizable.jump_forward()
         case .home:
             return R.string.localizable.home()
         case .menu:
@@ -84,9 +89,9 @@ enum Item {
     var secondary: Item? {
         switch self {
         case .back:
-            return .history
+            return .jumpBack
         case .forward:
-            return .future
+            return .jumpForward
         default:
             return nil
         }

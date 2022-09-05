@@ -26,4 +26,12 @@ class WebPage {
     convenience init(item: WKBackForwardListItem) {
         self.init(url: item.url.absoluteString, title: item.title)
     }
+    
+    convenience init(item: VisitedPage) {
+        self.init(url: item.url ?? "", title: item.title)
+    }
+    
+    convenience init(item: BookmarkedPage) {
+        self.init(url: item.url ?? "", title: item.title)
+    }
 }

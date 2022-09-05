@@ -33,6 +33,8 @@
 "reload" = "Reload";
 "unknown" = "Unknown";
 "future" = "Future";
+"jump_forward" = "Jump forward";
+"jump_back" = "Jump back";
 
 /* Appt */
 "appt_title" = "Appt";

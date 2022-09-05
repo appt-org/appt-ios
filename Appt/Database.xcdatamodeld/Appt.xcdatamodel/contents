@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="HistoryPage" representedClassName="HistoryPage" syncable="YES" codeGenerationType="class">
-        <attribute name="bookmarked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    <entity name="BookmarkedPage" representedClassName="BookmarkedPage" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="VisitedPage" representedClassName="VisitedPage" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="HistoryPage" positionX="548.07421875" positionY="717.87890625" width="128" height="118"/>
+        <element name="VisitedPage" positionX="548.07421875" positionY="717.87890625" width="128" height="103"/>
+        <element name="BookmarkedPage" positionX="966.75390625" positionY="723.734375" width="128" height="103"/>
     </elements>
 </model>
