@@ -16,11 +16,11 @@ class ApptViewController: ViewController {
     @IBOutlet private var webView: WKWebView!
     @IBOutlet private var toolbar: UIToolbar!
     
-    @IBOutlet private var backItem: UIBarButtonItem!
-    @IBOutlet private var forwardItem: UIBarButtonItem!
-    @IBOutlet private var shareItem: UIBarButtonItem!
-    @IBOutlet private var bookmarkItem: UIBarButtonItem!
-    @IBOutlet private var menuItem: UIBarButtonItem!
+    @IBOutlet private var backItem: ToolbarItem!
+    @IBOutlet private var forwardItem: ToolbarItem!
+    @IBOutlet private var shareItem: ToolbarItem!
+    @IBOutlet private var bookmarkItem: ToolbarItem!
+    @IBOutlet private var menuItem: ToolbarItem!
     
     lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -54,38 +54,39 @@ class ApptViewController: ViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
         
-        backItem.title = R.string.localizable.back()
-        backItem.accessibilityLabel = R.string.localizable.back()
-        
-        if let image = R.image.icon_back() {
-            let imageView = UIImageView(image: image)
-            imageView.isUserInteractionEnabled = true
-            imageView.accessibilityTraits = .button
-            imageView.tintColor = .primary
-            
-            let tap = UITapGestureRecognizer(target: self, action: #selector(onBackTapped))
-            imageView.addGestureRecognizer(tap)
-            
-            let press = UILongPressGestureRecognizer(target: self, action: #selector(onBackPressed))
-            imageView.addGestureRecognizer(press)
-            
-            backItem.customView = imageView
+        backItem.item = .back
+        backItem.onTap = { item in
+            self.goBack()
         }
-       
-        //backItem.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(showHistoryBack)))
+        backItem.onLongPress = { item in
+            self.showHistoryBack()
+        }        
         
+        forwardItem.item = .forward
+        forwardItem.onTap = { item in
+            self.goForward()
+        }
+        forwardItem.onLongPress = { item in
+            self.showHistoryForward()
+        }
         
-        forwardItem.title = R.string.localizable.forward()
-        forwardItem.accessibilityLabel = forwardItem.title
+        shareItem.item = .share
+        shareItem.onTap = { item in
+            self.onShare()
+        }
         
-        shareItem.title = R.string.localizable.share()
-        shareItem.accessibilityLabel = shareItem.title
-        
-        bookmarkItem.title = R.string.localizable.bookmark()
-        bookmarkItem.accessibilityLabel = bookmarkItem.title
-        
-        menuItem.title = R.string.localizable.menu()
-        menuItem.accessibilityLabel = menuItem.title
+        bookmarkItem.item = .bookmark
+        bookmarkItem.onTap = { item in
+            self.onBookmark()
+        }
+        bookmarkItem.onLongPress = { item in
+            self.showBookmarks()
+        }
+                
+        menuItem.item = .menu
+        menuItem.onTap = { item in
+            self.onMenu()
+        }
         
         let url = Preferences.shared.url ?? R.string.localizable.appt_url()
         load(url)
@@ -115,38 +116,19 @@ class ApptViewController: ViewController {
     
     // MARK: - Toolbar actions
     
-    @objc private func onBackTapped() {
+    private func goBack() {
         if webView.canGoBack {
             webView.goBack()
         }
     }
     
-    @objc private func onBackPressed() {
-        showHistoryBack()
-    }
-    
-    @IBAction private func onBack(_ sender: Any, for event: UIEvent) {
-        
-        
-        print("onBack, event=\(event)")
-        print("Touches", event.allTouches?.count)
-        
-        
-        let longPress = (event.allTouches?.first?.tapCount ?? 1) == 0
-        print("Long press", longPress)
-        
-        if webView.canGoBack {
-            webView.goBack()
-        }
-    }
-    
-    @IBAction private func onForward(_ sender: Any, for event: UIEvent) {
+    private func goForward() {
         if webView.canGoForward {
             webView.goForward()
         }
     }
-    
-    @IBAction private func onShare(_ sender: Any) {
+
+    private func onShare() {
         guard let url = webView.url else {
             return
         }
@@ -158,7 +140,7 @@ class ApptViewController: ViewController {
     
     private var bookmarks = [String: Bool]()
     
-    @IBAction private func onBookmark(_ sender: Any, for event: UIEvent) {
+    private func onBookmark() {
         guard let url = webView.url?.absoluteString else {
             return
         }
@@ -183,12 +165,14 @@ class ApptViewController: ViewController {
         bookmarkItem.accessibilityLabel = text
     }
     
-    @IBAction private func onMenu(_ sender: Any) {
+    private func onMenu() {
         let vc = UIAlertController(
-            title: nil,
+            title: R.string.localizable.menu(),
             message: nil,
             preferredStyle: .actionSheet
         )
+        
+        vc.popoverPresentationController?.barButtonItem = menuItem
         
         let homeAction = UIAlertAction(title: R.string.localizable.home(), style: .default) { action in
             let homeUrl = R.string.localizable.appt_url()
@@ -221,15 +205,6 @@ class ApptViewController: ViewController {
         let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
         vc.addAction(cancelAction)
         
-        // iPad
-        if let popoverController = vc.popoverPresentationController {
-            if let item = sender as? UIBarButtonItem {
-                popoverController.barButtonItem = item
-            } else {
-                popoverController.sourceView = view
-            }
-        }
-        
         present(vc, animated: true)
     }
     
@@ -246,7 +221,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go back")
             return
         }
-        showPages(webView.backForwardList.backList, at: backItem)
+        showPages(webView.backForwardList.backList, title: R.string.localizable.back(), at: backItem)
     }
     
     private func showHistoryForward() {
@@ -254,19 +229,19 @@ class ApptViewController: ViewController {
             self.showError("Cannot go forward")
             return
         }
-        showPages(webView.backForwardList.forwardList, at: forwardItem)
+        showPages(webView.backForwardList.forwardList, title: R.string.localizable.forward(), at: forwardItem)
     }
     
-    private func showPages(_ items: [WKBackForwardListItem], at item: UIBarButtonItem) {
+    private func showPages(_ items: [WKBackForwardListItem], title: String, at item: UIBarButtonItem) {
         let pages = items.prefix(5).map { item in
             return WebPage(item: item)
         }
-        showPages(pages, at: item)
+        showPages(pages, title: title, at: item)
     }
     
-    private func showPages(_ pages: [WebPage], at item: UIBarButtonItem) {
+    private func showPages(_ pages: [WebPage], title: String, at item: UIBarButtonItem) {
         let vc = UIAlertController(
-            title: "History",
+            title: title,
             message: nil,
             preferredStyle: .actionSheet
         )

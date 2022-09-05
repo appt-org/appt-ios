@@ -39,6 +39,8 @@
 		2877F6E4247D71E600605677 /* _UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6E3247D71E600605677 /* _UIColor.swift */; };
 		288554FD251A01EE00392FC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 288554FC251A01EE00392FC3 /* Localizable.strings */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
+		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
+		28A1273428C61C9500D4E55F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273328C61C9500D4E55F /* Item.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
@@ -85,6 +87,8 @@
 		2877F6E3247D71E600605677 /* _UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIColor.swift; sourceTree = "<group>"; };
 		288554FC251A01EE00392FC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
+		28A1273328C61C9500D4E55F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28A1273028C6185700D4E55F /* ToolbarItem.swift */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
 			path = Views;
@@ -212,6 +217,7 @@
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
 				2877F6EC247D727D00605677 /* Extensions */,
 				2843828024ED6D7A0015B2C5 /* Helpers */,
+				28A1273228C61C8200D4E55F /* Model */,
 				2877F6ED247D72B200605677 /* Resources */,
 				287468EF247E65320089BB32 /* ViewControllers */,
 				287468EE247E65280089BB32 /* Views */,
@@ -251,6 +257,14 @@
 				28618BC72833F627001AE2BE /* R.generated.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		28A1273228C61C8200D4E55F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28A1273328C61C9500D4E55F /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5F963E37E0FF08E157AB9853 /* Pods */ = {
@@ -430,11 +444,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				28169E4528C25A7B000C1D5D /* WebPage.swift in Sources */,
+				28A1273428C61C9500D4E55F /* Item.swift in Sources */,
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
+				28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */,
