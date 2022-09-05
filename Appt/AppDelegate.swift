@@ -80,6 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         
         // UIAlertController style
         UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .foreground
+        UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).numberOfLines = 0
+        UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).font = .openSans(weight: .regular, size: 20)
         
         return true
     }

@@ -174,38 +174,40 @@ class ApptViewController: ViewController {
         
         vc.popoverPresentationController?.barButtonItem = menuItem
         
-        let homeAction = UIAlertAction(title: R.string.localizable.home(), style: .default) { action in
-            let homeUrl = R.string.localizable.appt_url()
-            self.load(homeUrl)
+        vc.addItem(.home) { action in
+            self.home()
         }
-        vc.addAction(homeAction)
-                
-        let bookmarksAction = UIAlertAction(title: R.string.localizable.bookmarks(), style: .default) { action in
+        
+        vc.addItem(.reload) { action in
+            self.reload()
+        }
+
+        vc.addItem(.bookmarks) { action in
             self.showBookmarks()
         }
-        vc.addAction(bookmarksAction)
-        
-        let historyAction = UIAlertAction(title: R.string.localizable.history(), style: .default) { action in
+
+        vc.addItem(.history) { action in
             self.showHistory()
         }
-        vc.addAction(historyAction)
         
-        let settingsAction = UIAlertAction(title: R.string.localizable.settings(), style: .default) { action in
-            self.showError("Not implemented")
+        vc.addItem(.settings) { action in
+            self.showSettings()
         }
-        vc.addAction(settingsAction)
-        
-        let refreshAction = UIAlertAction(title: R.string.localizable.reload(), style: .default) { action in
-            UIAccessibility.post(notification: .announcement, argument: R.string.localizable.loading())
-            self.webView.reload()
-        }
-        
-        vc.addAction(refreshAction)
         
         let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
         vc.addAction(cancelAction)
         
         present(vc, animated: true)
+    }
+    
+    private func home() {
+        let homeUrl = R.string.localizable.appt_url()
+        self.load(homeUrl)
+    }
+    
+    private func reload() {
+        UIAccessibility.post(notification: .announcement, argument: R.string.localizable.loading())
+        webView.reload()
     }
     
     private func showBookmarks() {
@@ -221,7 +223,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go back")
             return
         }
-        showPages(webView.backForwardList.backList, title: R.string.localizable.back(), at: backItem)
+        showPages(webView.backForwardList.backList, title: R.string.localizable.history(), at: backItem)
     }
     
     private func showHistoryForward() {
@@ -229,7 +231,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go forward")
             return
         }
-        showPages(webView.backForwardList.forwardList, title: R.string.localizable.forward(), at: forwardItem)
+        showPages(webView.backForwardList.forwardList, title: R.string.localizable.future(), at: forwardItem)
     }
     
     private func showPages(_ items: [WKBackForwardListItem], title: String, at item: UIBarButtonItem) {
@@ -262,6 +264,10 @@ class ApptViewController: ViewController {
         }
         
         present(vc, animated: true)
+    }
+    
+    private func showSettings() {
+        showError("Not implemented")
     }
     
     // MARK : - WebView changes

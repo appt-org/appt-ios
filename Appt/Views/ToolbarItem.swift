@@ -25,7 +25,12 @@ class ToolbarItem: UIBarButtonItem {
             self.accessibilityLabel = self.title
             
             if let secondary = item.secondary {
-                let action = UIAccessibilityCustomAction(name: secondary, target: self, selector: #selector(onLongPressAction))
+                let action = UIAccessibilityCustomAction(
+                    name: secondary.title,
+                    target: self,
+                    selector: #selector(onLongPressAction)
+                )
+                action.image = secondary.image
                 self.accessibilityCustomActions = [action]
             }
         }

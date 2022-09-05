@@ -41,6 +41,7 @@
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
 		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
 		28A1273428C61C9500D4E55F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273328C61C9500D4E55F /* Item.swift */; };
+		28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273528C62B3600D4E55F /* _UIAlertController.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
@@ -89,6 +90,7 @@
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
 		28A1273328C61C9500D4E55F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		28A1273528C62B3600D4E55F /* _UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAlertController.swift; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				287468E6247E63CD0089BB32 /* _UIFont.swift */,
 				2852CF052486AA820063F3E4 /* _UIAccessibility.swift */,
 				287468EA247E64A60089BB32 /* _UITableView.swift */,
+				28A1273528C62B3600D4E55F /* _UIAlertController.swift */,
 				287468E8247E64930089BB32 /* _UIView.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
 				28E1A06F2525CC6100604CFF /* _URL.swift */,
@@ -455,6 +458,7 @@
 				287468ED247E64F90089BB32 /* _DispatchQueue.swift in Sources */,
 				28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
+				28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
 				28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */,
