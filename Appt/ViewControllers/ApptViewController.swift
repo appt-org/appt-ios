@@ -84,6 +84,29 @@ class ApptViewController: ViewController {
             self.onMenu()
         }
         
+//        if #available(iOS 15.0, *) {
+//            var items: [Item] = [.home, .reload, .bookmarks, .history, .settings]
+//            items.reverse()
+//            
+//            var actions = [UIAction]()
+//            for item in items {
+//                let action = UIAction(
+//                    title: item.title,
+//                    subtitle: nil,
+//                    image: item.image,
+//                    discoverabilityTitle: nil,
+//                    attributes: []
+//                ) { action in
+//                    print("Action \(item.title) clicked")
+//                }
+//                actions.append(action)
+//            }
+//            
+//            let menu = UIMenu(title: Item.menu.title, subtitle: nil, image: Item.menu.image, identifier: nil, options: .destructive, children: actions)
+//            
+//            menuItem.menu = menu
+//        }
+        
         let url = Preferences.shared.url ?? R.string.localizable.appt_url()
         load(url)
     }
