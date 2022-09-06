@@ -12,18 +12,11 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     
     @IBOutlet private var titleLabel: UILabel!
     
-    override var accessibilityTraits: UIAccessibilityTraits {
-        get {
-            return .header
-        } set {
-            // Ignored to maintain `header` trait at all times.
-        }
-    }
-    
     func setup(_ header: String) {
         titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
         titleLabel.text = header
         
+        accessibilityTraits = .header
         accessibilityLabel = header
     }
 

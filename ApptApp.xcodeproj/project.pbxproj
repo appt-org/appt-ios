@@ -37,6 +37,9 @@
 		2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6D8247D6E9600605677 /* Assets.xcassets */; };
 		2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */; };
 		2877F6E4247D71E600605677 /* _UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877F6E3247D71E600605677 /* _UIColor.swift */; };
+		28836A8328C7A25200AB2A63 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28836A8228C7A25200AB2A63 /* BookmarksViewController.swift */; };
+		28836A8528C7A5E900AB2A63 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */; };
+		28836A8728C7A5F700AB2A63 /* SubtitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */; };
 		288554FD251A01EE00392FC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 288554FC251A01EE00392FC3 /* Localizable.strings */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
 		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
@@ -86,6 +89,9 @@
 		2877F6D8247D6E9600605677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2877F6DD247D6E9600605677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2877F6E3247D71E600605677 /* _UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIColor.swift; sourceTree = "<group>"; };
+		28836A8228C7A25200AB2A63 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubtitleTableViewCell.xib; sourceTree = "<group>"; };
 		288554FC251A01EE00392FC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 				2835FB362822CB8B0074E6A4 /* ApptViewController.swift */,
 				28618BC42833F339001AE2BE /* SettingsViewController.swift */,
 				28618BC92833FAAB001AE2BE /* ModalViewController.swift */,
+				28836A8228C7A25200AB2A63 /* BookmarksViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,10 +189,12 @@
 		287468F0247E65450089BB32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
-				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
 				A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */,
 				A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */,
+				287468F3247E65C80089BB32 /* TitleTableViewCell.xib */,
+				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
+				28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */,
+				28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28836A8728C7A5F700AB2A63 /* SubtitleTableViewCell.xib in Resources */,
 				28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */,
@@ -451,7 +461,9 @@
 				2852CF062486AA820063F3E4 /* _UIAccessibility.swift in Sources */,
 				287468E9247E64930089BB32 /* _UIView.swift in Sources */,
 				28DF7C922480175700CB467A /* ViewController.swift in Sources */,
+				28836A8528C7A5E900AB2A63 /* SubtitleTableViewCell.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
+				28836A8328C7A25200AB2A63 /* BookmarksViewController.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="75" id="MVs-hY-Osa" customClass="SubtitleTableViewCell" customModule="ApptApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MVs-hY-Osa" id="ZcE-16-kWy">
+                <rect key="frame" x="0.0" y="0.0" width="346.5" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-aV-tWe">
+                        <rect key="frame" x="16" y="16" width="314.5" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-FW-9x9">
+                        <rect key="frame" x="16" y="40" width="314.5" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="7kF-FW-9x9" firstAttribute="leading" secondItem="ZcE-16-kWy" secondAttribute="leading" constant="16" id="2PY-Fd-QS4"/>
+                    <constraint firstAttribute="trailing" secondItem="7kF-FW-9x9" secondAttribute="trailing" constant="16" id="2Zb-l9-h0Z"/>
+                    <constraint firstItem="7kF-FW-9x9" firstAttribute="top" secondItem="3Wd-aV-tWe" secondAttribute="bottom" constant="2" id="HBE-v2-dBS"/>
+                    <constraint firstAttribute="trailing" secondItem="3Wd-aV-tWe" secondAttribute="trailing" constant="16" id="KHj-pI-6iy"/>
+                    <constraint firstItem="3Wd-aV-tWe" firstAttribute="leading" secondItem="ZcE-16-kWy" secondAttribute="leading" constant="16" id="Ovg-Su-S3G"/>
+                    <constraint firstItem="3Wd-aV-tWe" firstAttribute="top" secondItem="ZcE-16-kWy" secondAttribute="top" constant="16" id="Vtp-I4-olO"/>
+                    <constraint firstAttribute="bottom" secondItem="7kF-FW-9x9" secondAttribute="bottom" constant="16" id="bE3-Ex-pwa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="Background"/>
+            <color key="tintColor" name="Primary"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" button="YES"/>
+            </accessibility>
+            <connections>
+                <outlet property="subtitleLabel" destination="7kF-FW-9x9" id="214-Pq-Nge"/>
+                <outlet property="titleLabel" destination="3Wd-aV-tWe" id="Mdc-fm-93X"/>
+            </connections>
+            <point key="canvasLocation" x="-105.07246376811595" y="60.602678571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.80000000000000004" green="0.0" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

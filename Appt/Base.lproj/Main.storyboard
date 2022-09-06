@@ -77,7 +77,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHc-QV-XDd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -93,7 +93,7 @@
             <objects>
                 <viewController id="huy-uN-cIj" customClass="SettingsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" misplaced="YES" id="zcK-2v-7Pc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UIq-D8-jJd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -106,6 +106,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oa-2K-MKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1564" y="-2620"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="V3Q-yZ-Lrv">
+            <objects>
+                <viewController id="eaG-ZJ-86j" customClass="BookmarksViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uhI-ZN-2jU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CEq-ah-Rh1">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yQQ-7A-Ecb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CEq-ah-Rh1" firstAttribute="top" secondItem="yQQ-7A-Ecb" secondAttribute="top" id="6gs-HF-0S6"/>
+                            <constraint firstItem="CEq-ah-Rh1" firstAttribute="leading" secondItem="yQQ-7A-Ecb" secondAttribute="leading" id="7TV-Sf-z7e"/>
+                            <constraint firstItem="yQQ-7A-Ecb" firstAttribute="trailing" secondItem="CEq-ah-Rh1" secondAttribute="trailing" id="Lok-oZ-0Iz"/>
+                            <constraint firstItem="yQQ-7A-Ecb" firstAttribute="bottom" secondItem="CEq-ah-Rh1" secondAttribute="bottom" id="znX-mW-Mq7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="U2d-mK-v8f"/>
+                    <connections>
+                        <outlet property="tableView" destination="CEq-ah-Rh1" id="pdN-l0-dxv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwY-SD-CAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="-1839"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZPa-sk-rLj">
+            <objects>
+                <navigationController storyboardIdentifier="BookmarksViewController" id="r1Z-Rh-eBo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgJ-PS-Wrw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eaG-ZJ-86j" kind="relationship" relationship="rootViewController" id="EvD-qv-ZCy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHf-Jh-dnx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="-1839"/>
         </scene>
     </scenes>
     <resources>

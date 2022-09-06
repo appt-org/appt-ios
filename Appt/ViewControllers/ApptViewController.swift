@@ -265,16 +265,23 @@ class ApptViewController: ViewController {
     }
     
     private func showBookmarks() {
-        do {
-            let fetchRequest = BookmarkedPage.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
-                return WebPage(item: item)
-            })
-            showPages(pages, title: R.string.localizable.bookmarks(), at: menuItem)
-        } catch let error as NSError {
-            print("Failed to fetch: \(error) --> \(error.userInfo)")
+        guard let vc = R.storyboard.main.bookmarksViewController(),
+              let topVC = vc.topViewController as? BookmarksViewController else {
+            return
         }
+        topVC.stack = self.stack
+        present(vc, animated: true)
+        
+//        do {
+//            let fetchRequest = BookmarkedPage.fetchRequest()
+//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+//            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
+//                return WebPage(item: item)
+//            })
+//            showPages(pages, title: R.string.localizable.bookmarks(), at: menuItem)
+//        } catch let error as NSError {
+//            print("Failed to fetch: \(error) --> \(error.userInfo)")
+//        }
     }
     
     private func showHistory() {
