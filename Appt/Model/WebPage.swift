@@ -21,12 +21,7 @@ class WebPage {
     init(url: String, title: String?) {
         self.url = url
         if let title = title, !title.isEmpty {
-            if title.hasSuffix(WebPage.suffix) {
-                self.title = title.dropLast(WebPage.suffix.count).description
-            } else {
-                self.title = title
-            }
-            
+            self.title = title.replacingOccurrences(of: WebPage.suffix, with: "", options: [.regularExpression])            
         } else {
             self.title = R.string.localizable.unknown()
         }
