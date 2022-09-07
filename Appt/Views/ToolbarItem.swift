@@ -19,19 +19,18 @@ class ToolbarItem: UIBarButtonItem {
     var item: Item? = nil {
         didSet {
             guard let item = item else { return }
-            
-            let view = UIImageView(image: item.image)
-            view.isAccessibilityElement = true
-            view.accessibilityTraits = .button
-            view.accessibilityLabel = item.title
-            view.isUserInteractionEnabled = true
-            view.tintColor = .primary
-                        
+
+            let button = UIButton()
+            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+            button.setImage(item.image, for: .normal)
+            button.accessibilityLabel = item.title
+            button.tintColor = .primary
+
             let tap = UITapGestureRecognizer(target: self, action: #selector(onTapAction))
-            view.addGestureRecognizer(tap)
+            button.addGestureRecognizer(tap)
 
             let press = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressAction))
-            view.addGestureRecognizer(press)
+            button.addGestureRecognizer(press)
 
             if let secondary = item.secondary {
                 let action = UIAccessibilityCustomAction(
@@ -40,14 +39,15 @@ class ToolbarItem: UIBarButtonItem {
                     selector: #selector(onLongPressAction)
                 )
                 action.image = secondary.image
-                view.accessibilityCustomActions = [action]
-                
+                button.accessibilityCustomActions = [action]
+
                 self.secondaryAction = action
             }
             
-            self.customView = view
-            self.accessibilityLabel = view.accessibilityLabel
-            self.title = view.accessibilityLabel
+            self.customView?.removeFromSuperview()
+            self.customView = button
+            self.accessibilityLabel = button.accessibilityLabel
+            self.title = button.accessibilityLabel
         }
     }
     
