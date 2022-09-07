@@ -265,20 +265,20 @@ class ApptViewController: ViewController {
         webView.reload()
     }
     
-    private func showBookmarks() {
-        showPages(.bookmarks)
-    }
-    
     private func showHistory() {
         showPages(.history)
     }
-        
+    
+    private func showBookmarks() {
+        showPages(.bookmarks)
+    }
+
     @objc private func showHistoryBack() {
         guard webView.canGoBack else {
             self.showError("Cannot go back")
             return
         }
-        showItems(.jumpBack, items: webView.backForwardList.backList)
+        showItems(.jumpBack, items: webView.backForwardList.backList.reversed())
     }
     
     private func showHistoryForward() {
@@ -290,7 +290,7 @@ class ApptViewController: ViewController {
     }
     
     private func showItems(_ item: Item, items: [WKBackForwardListItem]) {
-        let pages = items.prefix(5).map { item in
+        let pages = items.map { item in
             return MemoryPage(url: item.url.absoluteString, title: item.title)
         }
         showPages(item, pages: pages)
@@ -301,11 +301,12 @@ class ApptViewController: ViewController {
               let pagesViewController = navigationViewController.topViewController as? PagesViewController else {
             return
         }
-        navigationViewController.modalPresentationStyle = .pageSheet
+        pagesViewController.delegate = self
         pagesViewController.stack = self.stack
         pagesViewController.item = item
         pagesViewController.pages = pages
         
+        navigationViewController.modalPresentationStyle = .pageSheet
         if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
             switch item {
             case .jumpBack, .jumpForward:
@@ -431,5 +432,14 @@ extension ApptViewController: WKNavigationDelegate {
         
         openWebsite(url)
         decisionHandler(.cancel)
+    }
+}
+
+// MARK: - PagesViewControllerDelegate
+
+extension ApptViewController: PagesViewControllerDelegate {
+    
+    func didSelectPage(_ page: Page) {
+        load(page.url)
     }
 }

@@ -10,8 +10,15 @@ import Foundation
 import UIKit
 import Rswift
 import WebKit
+import CoreData
+
+protocol PagesViewControllerDelegate {
+    func didSelectPage(_ page: Page)
+}
 
 class PagesViewController: TableViewController {
+    
+    var delegate: PagesViewControllerDelegate?
     
     var stack: CoreDataStack!
     var item: Item!
@@ -24,14 +31,34 @@ class PagesViewController: TableViewController {
         tableView.registerNib(SubtitleTableViewCell.self)
         
         if pages.isEmpty {
-            do {
-                let fetchRequest = BookmarkedPage.createFetchRequest()
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-                self.pages = try stack.objectContext.fetch(fetchRequest)
-                tableView.reloadData()
-            } catch let error as NSError {
-                print("Failed to fetch: \(error) --> \(error.userInfo)")
+            // TODO: Merge fetch logic
+            if item == .history {
+                fetchHistory()
+            } else {
+                fetchBookmarks()
             }
+        }
+    }
+        
+    private func fetchHistory() {
+        do {
+            let fetchRequest = VisitedPage.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+            self.pages = try stack.objectContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("Failed to fetch: \(error) --> \(error.userInfo)")
+        }
+    }
+    
+    private func fetchBookmarks() {
+        do {
+            let fetchRequest = BookmarkedPage.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+            self.pages = try stack.objectContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("Failed to fetch: \(error) --> \(error.userInfo)")
         }
     }
     
@@ -50,8 +77,8 @@ class PagesViewController: TableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let page = pages[indexPath.row]
-        dismiss(animated: true)
+        delegate?.didSelectPage(page)
         
-        // TODO: Pass back page
+        dismiss(animated: true)
     }
 }

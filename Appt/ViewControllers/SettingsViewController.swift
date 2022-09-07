@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Rswift
 
-class SettingsViewController: ModalViewController {
+class SettingsViewController: ViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()

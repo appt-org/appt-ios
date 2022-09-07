@@ -114,6 +114,17 @@ class ViewController: UIViewController {
                 tabBar.standardAppearance = appearance
             }
         }
+        
+        // Modal?
+        if isModal {
+            let closeItem = UIBarButtonItem(
+                title: R.string.localizable.close(),
+                style: .done,
+                target: self,
+                action: #selector(onClose)
+            )
+            navigationItem.setLeftBarButton(closeItem, animated: true)
+        }
     }
     
     // View will appear: register notifications
@@ -128,6 +139,10 @@ class ViewController: UIViewController {
     // View will disappear: deregister notifications
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func onClose() {
+        dismiss(animated: true)
     }
 }
 
