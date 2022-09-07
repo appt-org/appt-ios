@@ -25,4 +25,12 @@ class SubtitleTableViewCell: UITableViewCell {
         accessibilityTraits = .button
         isSelected = false
     }
+    
+    func setup(_ page: Page) {
+        guard let title = page.title, !title.isEmpty else {
+            setup(title: R.string.localizable.unknown(), subtitle: page.url)
+            return
+        }
+        setup(title: title, subtitle: page.url)
+    }
 }

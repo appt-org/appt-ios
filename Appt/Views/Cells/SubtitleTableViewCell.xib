@@ -33,7 +33,7 @@
                             <bool key="isElement" value="NO"/>
                         </accessibility>
                         <fontDescription key="fontDescription" name="Rubik-SemiBold" family="Rubik" pointSize="18"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="Foreground"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-FW-9x9">
@@ -44,7 +44,7 @@
                             <bool key="isElement" value="NO"/>
                         </accessibility>
                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="ForegroundSecondary"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -74,6 +74,12 @@
     <resources>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ForegroundSecondary">
+            <color red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.80000000000000004" green="0.0" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

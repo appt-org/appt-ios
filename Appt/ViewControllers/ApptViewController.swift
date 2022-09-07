@@ -38,6 +38,7 @@ class ApptViewController: ViewController {
         super.viewDidLoad()
         title = R.string.localizable.appt_title()
         
+        webView.scrollView.minimumZoomScale = 0.25
         webView.scrollView.maximumZoomScale = 10.0
         webView.tintColor = .primary
         webView.isOpaque = false
@@ -76,7 +77,7 @@ class ApptViewController: ViewController {
             self.onBookmark()
         }
         bookmarkItem.onLongPress = { item in
-            self.showBookmarks(fullScreen: false)
+            self.showBookmarks()
         }
                 
         menuItem.item = .menu
@@ -166,7 +167,7 @@ class ApptViewController: ViewController {
         
         // Insert or delete bookmark
         do {
-            let fetchRequest = BookmarkedPage.fetchRequest()
+            let fetchRequest = BookmarkedPage.createFetchRequest()
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
             fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
             fetchRequest.fetchLimit = 1
@@ -198,7 +199,7 @@ class ApptViewController: ViewController {
         
         // Get bookmark state
         do {
-            let fetchRequest = BookmarkedPage.fetchRequest()
+            let fetchRequest = BookmarkedPage.createFetchRequest()
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
             fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
             fetchRequest.fetchLimit = 1
@@ -264,46 +265,12 @@ class ApptViewController: ViewController {
         webView.reload()
     }
     
-    private func showBookmarks(fullScreen: Bool = true) {
-        guard let navigationViewController = R.storyboard.main.bookmarksViewController(),
-              let bookmarksViewController = navigationViewController.topViewController as? BookmarksViewController else {
-            return
-        }
-        navigationViewController.modalPresentationStyle = .pageSheet
-        
-        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
-            if fullScreen {
-                sheet.detents = [.large()]
-            } else {
-                sheet.detents = [.medium()]
-            }
-        }
-        
-        bookmarksViewController.stack = self.stack
-        present(navigationViewController, animated: true)
-        
-//        do {
-//            let fetchRequest = BookmarkedPage.fetchRequest()
-//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-//            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
-//                return WebPage(item: item)
-//            })
-//            showPages(pages, title: R.string.localizable.bookmarks(), at: menuItem)
-//        } catch let error as NSError {
-//            print("Failed to fetch: \(error) --> \(error.userInfo)")
-//        }
+    private func showBookmarks() {
+        showPages(.bookmarks)
     }
     
     private func showHistory() {
-        do {
-            let fetchRequest = VisitedPage.fetchRequest()
-            let pages = try stack.objectContext.fetch(fetchRequest).map({ item in
-                return WebPage(item: item)
-            })
-            showPages(pages, title: R.string.localizable.history(), at: menuItem)
-        } catch let error as NSError {
-            print("Failed to fetch: \(error) --> \(error.userInfo)")
-        }
+        showPages(.history)
     }
         
     @objc private func showHistoryBack() {
@@ -311,7 +278,7 @@ class ApptViewController: ViewController {
             self.showError("Cannot go back")
             return
         }
-        showPages(webView.backForwardList.backList, title: R.string.localizable.jump_back(), at: backItem)
+        showItems(.jumpBack, items: webView.backForwardList.backList)
     }
     
     private func showHistoryForward() {
@@ -319,42 +286,36 @@ class ApptViewController: ViewController {
             self.showError("Cannot go forward")
             return
         }
-        showPages(webView.backForwardList.forwardList, title: R.string.localizable.jump_forward(), at: forwardItem)
+        showItems(.jumpForward, items: webView.backForwardList.forwardList)
     }
     
-    private func showPages(_ items: [WKBackForwardListItem], title: String, at item: UIBarButtonItem) {
+    private func showItems(_ item: Item, items: [WKBackForwardListItem]) {
         let pages = items.prefix(5).map { item in
-            return WebPage(item: item)
+            return MemoryPage(url: item.url.absoluteString, title: item.title)
         }
-        showPages(pages, title: title, at: item)
+        showPages(item, pages: pages)
     }
     
-    private func showPages(_ pages: [WebPage], title: String, at item: UIBarButtonItem) {
-        let vc = UIAlertController(
-            title: title,
-            message: nil,
-            preferredStyle: .actionSheet
-        )
+    private func showPages(_ item: Item, pages: [Page] = [Page]()) {
+        guard let navigationViewController = R.storyboard.main.pagesNavigationViewController(),
+              let pagesViewController = navigationViewController.topViewController as? PagesViewController else {
+            return
+        }
+        navigationViewController.modalPresentationStyle = .pageSheet
+        pagesViewController.stack = self.stack
+        pagesViewController.item = item
+        pagesViewController.pages = pages
         
-        for page in pages {
-            let action = UIAlertAction(
-                title: String(format: "%@\n%@", page.title, page.url),
-                style: .default
-            ) { action in
-                self.load(page.url)
+        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
+            switch item {
+            case .jumpBack, .jumpForward:
+                sheet.detents = [.medium()]
+            default:
+                sheet.detents = [.large()]
             }
-            vc.addAction(action)
         }
         
-        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
-        vc.addAction(cancelAction)
-        
-        // iPad
-        if let popoverController = vc.popoverPresentationController {
-            popoverController.barButtonItem = item
-        }
-        
-        present(vc, animated: true)
+        present(navigationViewController, animated: true)
     }
     
     private func showSettings() {

@@ -2,40 +2,19 @@
 //  WebPage.swift
 //  ApptApp
 //
-//  Created by Jan Jaap de Groot on 02/09/2022.
+//  Created by Jan Jaap de Groot on 07/09/2022.
 //  Copyright © 2022 Stichting Appt. All rights reserved.
 //
 
 import Foundation
+import CoreData
 import WebKit
 
-class WebPage {
+public class WebPage: NSManagedObject, Page {
     
-    private static var suffix: String = {
-        return R.string.localizable.appt_suffix()
-    }()
+    @NSManaged public var created_at: Date
+    @NSManaged public var updated_at: Date
+    @NSManaged public var url: String
+    @NSManaged public var title: String?
     
-    var url: String
-    var title: String
-    
-    init(url: String, title: String?) {
-        self.url = url
-        if let title = title, !title.isEmpty {
-            self.title = title.replacingOccurrences(of: WebPage.suffix, with: "", options: [.regularExpression])            
-        } else {
-            self.title = R.string.localizable.unknown()
-        }
-    }
-    
-    convenience init(item: WKBackForwardListItem) {
-        self.init(url: item.url.absoluteString, title: item.title)
-    }
-    
-    convenience init(item: VisitedPage) {
-        self.init(url: item.url ?? "", title: item.title)
-    }
-    
-    convenience init(item: BookmarkedPage) {
-        self.init(url: item.url ?? "", title: item.title)
-    }
 }

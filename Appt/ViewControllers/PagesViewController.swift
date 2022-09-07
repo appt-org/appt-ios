@@ -9,27 +9,29 @@
 import Foundation
 import UIKit
 import Rswift
+import WebKit
 
-class BookmarksViewController: TableViewController {
+class PagesViewController: TableViewController {
     
     var stack: CoreDataStack!
-    private var pages = [WebPage]()
+    var item: Item!
+    var pages = [Page]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = R.string.localizable.bookmarks()
+        self.title = item.title
         
         tableView.registerNib(SubtitleTableViewCell.self)
         
-        do {
-            let fetchRequest = BookmarkedPage.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-            self.pages = try stack.objectContext.fetch(fetchRequest).map({ item in
-                return WebPage(item: item)
-            })
-            tableView.reloadData()
-        } catch let error as NSError {
-            print("Failed to fetch: \(error) --> \(error.userInfo)")
+        if pages.isEmpty {
+            do {
+                let fetchRequest = BookmarkedPage.createFetchRequest()
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+                self.pages = try stack.objectContext.fetch(fetchRequest)
+                tableView.reloadData()
+            } catch let error as NSError {
+                print("Failed to fetch: \(error) --> \(error.userInfo)")
+            }
         }
     }
     
@@ -41,7 +43,7 @@ class BookmarksViewController: TableViewController {
         let cell = tableView.cell(SubtitleTableViewCell.self, at: indexPath)
         
         let page = pages[indexPath.row]
-        cell.setup(title: page.title, subtitle: page.url)
+        cell.setup(page)
         
         return cell
     }

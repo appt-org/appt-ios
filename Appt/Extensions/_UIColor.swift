@@ -20,9 +20,10 @@ extension UIColor {
         self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff)
     }
 
-    static let primary = UIColor(named: "Primary")!
-    static let background = UIColor(named: "Background")!
-    static let backgroundSecondary = UIColor(named: "BackgroundSecondary")!
-    static let foreground = UIColor(named: "Foreground")!
-    static let disabled = UIColor(named: "Disabled")!
+    static let primary = R.color.primary()!
+    static let background = R.color.background()!
+    static let backgroundSecondary = R.color.backgroundSecondary()!
+    static let foreground = R.color.foreground()!
+    static let foregroundSecondary = R.color.foregroundSecondary()!
+    static let disabled = R.color.disabled()!
 }

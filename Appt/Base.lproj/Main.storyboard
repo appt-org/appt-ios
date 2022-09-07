@@ -75,9 +75,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ngt-lN-Dae">
             <objects>
-                <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHc-QV-XDd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1564" y="-2620"/>
         </scene>
-        <!--Title-->
+        <!--Pages-->
         <scene sceneID="V3Q-yZ-Lrv">
             <objects>
-                <viewController id="eaG-ZJ-86j" customClass="BookmarksViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eaG-ZJ-86j" customClass="PagesViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhI-ZN-2jU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
                             <constraint firstAttribute="bottom" secondItem="CEq-ah-Rh1" secondAttribute="bottom" id="znX-mW-Mq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="U2d-mK-v8f"/>
+                    <navigationItem key="navigationItem" title="Pages" id="U2d-mK-v8f"/>
                     <connections>
                         <outlet property="tableView" destination="CEq-ah-Rh1" id="pdN-l0-dxv"/>
                     </connections>
@@ -141,9 +141,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ZPa-sk-rLj">
             <objects>
-                <navigationController storyboardIdentifier="BookmarksViewController" id="r1Z-Rh-eBo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PagesNavigationViewController" id="r1Z-Rh-eBo" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgJ-PS-Wrw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
