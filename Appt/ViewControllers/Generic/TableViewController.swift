@@ -70,7 +70,7 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView, let label = header.textLabel {
             label.text = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: section)
-            label.font = .openSans(weight: .bold, size: 18, style: .headline)
+            label.font = .rubik(weight: .bold, size: 18, style: .headline)
             label.textColor = .foreground
         }
     }
@@ -78,7 +78,7 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if let footer = view as? UITableViewHeaderFooterView, let label = footer.textLabel {
             label.text = tableView.dataSource?.tableView?(tableView, titleForFooterInSection: section)
-            label.font = .openSans(weight: .regular, size: 14, style: .footnote)
+            label.font = .rubik(weight: .regular, size: 14, style: .footnote)
             label.textColor = .foreground
         }
     }

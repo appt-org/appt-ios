@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		232D74F1264E8ED500937E0D /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D74F0264E8ED500937E0D /* ViewEmbedder.swift */; };
-		28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACC26A567E600415285 /* OpenSans-Regular.ttf */; };
-		28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACD26A567E600415285 /* OpenSans-Bold.ttf */; };
-		28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */; };
 		28169E4028C25014000C1D5D /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28169E3E28C25014000C1D5D /* Database.xcdatamodeld */; };
 		28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28169E4228C251B7000C1D5D /* CoreDataStack.swift */; };
 		28169E4528C25A7B000C1D5D /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28169E4428C25A7B000C1D5D /* WebPage.swift */; };
@@ -45,6 +42,9 @@
 		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
 		28A1273428C61C9500D4E55F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273328C61C9500D4E55F /* Item.swift */; };
 		28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273528C62B3600D4E55F /* _UIAlertController.swift */; };
+		28BC8C6828C8D2B7008F9A64 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BC8C6728C8D0B1008F9A64 /* Rubik-Regular.ttf */; };
+		28BC8C6928C8D2B7008F9A64 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */; };
+		28BC8C6A28C8D2B7008F9A64 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BC8C6528C8D0B1008F9A64 /* Rubik-Bold.ttf */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
@@ -60,9 +60,6 @@
 		083B71E01292CF6078F049DD /* Pods_ApptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231F1FE9266A0604002524F0 /* Appt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appt.entitlements; sourceTree = "<group>"; };
 		232D74F0264E8ED500937E0D /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
-		28112ACC26A567E600415285 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		28112ACD26A567E600415285 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		28169E3F28C25014000C1D5D /* Appt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appt.xcdatamodel; sourceTree = "<group>"; };
 		28169E4228C251B7000C1D5D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		28169E4428C25A7B000C1D5D /* WebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPage.swift; sourceTree = "<group>"; };
@@ -97,6 +94,9 @@
 		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
 		28A1273328C61C9500D4E55F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		28A1273528C62B3600D4E55F /* _UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAlertController.swift; sourceTree = "<group>"; };
+		28BC8C6528C8D0B1008F9A64 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		28BC8C6728C8D0B1008F9A64 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -220,11 +220,11 @@
 		2877F6CC247D6E9200605677 /* Appt */ = {
 			isa = PBXGroup;
 			children = (
-				28169E4128C251AC000C1D5D /* Data */,
 				231F1FE9266A0604002524F0 /* Appt.entitlements */,
 				28169E3E28C25014000C1D5D /* Database.xcdatamodeld */,
 				2877F6CD247D6E9200605677 /* AppDelegate.swift */,
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
+				28169E4128C251AC000C1D5D /* Data */,
 				2877F6EC247D727D00605677 /* Extensions */,
 				2843828024ED6D7A0015B2C5 /* Helpers */,
 				28A1273228C61C8200D4E55F /* Model */,
@@ -262,9 +262,9 @@
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
 				2877F6D5247D6E9200605677 /* Main.storyboard */,
 				288554FC251A01EE00392FC3 /* Localizable.strings */,
-				28112ACC26A567E600415285 /* OpenSans-Regular.ttf */,
-				28112ACE26A567E600415285 /* OpenSans-SemiBold.ttf */,
-				28112ACD26A567E600415285 /* OpenSans-Bold.ttf */,
+				28BC8C6728C8D0B1008F9A64 /* Rubik-Regular.ttf */,
+				28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */,
+				28BC8C6528C8D0B1008F9A64 /* Rubik-Bold.ttf */,
 				28618BC72833F627001AE2BE /* R.generated.swift */,
 			);
 			name = Resources;
@@ -353,17 +353,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BC8C6A28C8D2B7008F9A64 /* Rubik-Bold.ttf in Resources */,
 				28836A8728C7A5F700AB2A63 /* SubtitleTableViewCell.xib in Resources */,
-				28112AD026A568D000415285 /* OpenSans-Bold.ttf in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
+				28BC8C6828C8D2B7008F9A64 /* Rubik-Regular.ttf in Resources */,
 				288554FD251A01EE00392FC3 /* Localizable.strings in Resources */,
 				28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */,
-				28112AD126A568D000415285 /* OpenSans-SemiBold.ttf in Resources */,
+				28BC8C6928C8D2B7008F9A64 /* Rubik-SemiBold.ttf in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
 				2877F6D7247D6E9200605677 /* Main.storyboard in Resources */,
-				28112ACF26A568D000415285 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

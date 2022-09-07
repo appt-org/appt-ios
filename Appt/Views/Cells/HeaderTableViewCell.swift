@@ -13,7 +13,7 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet private var titleLabel: UILabel!
     
     func setup(_ header: String) {
-        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = header
         
         accessibilityTraits = .header
@@ -21,6 +21,6 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
     }
 }

@@ -13,7 +13,7 @@ class TitleTableViewCell: UITableViewCell {
     @IBOutlet private var titleLabel: UILabel!
     
     func setup(_ title: String) {
-        titleLabel.font = .openSans(weight: .regular, size: 18, style: .body)
+        titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
         
         accessibilityLabel = title

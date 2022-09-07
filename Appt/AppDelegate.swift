@@ -34,14 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UINavigationBar styles
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .background
-        UINavigationBar.appearance().backgroundColor = .green
+        UINavigationBar.appearance().backgroundColor = .background
         UINavigationBar.appearance().tintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: UIFont.openSans(weight: .bold, size: 20, scaled: false),
+            .font: UIFont.rubik(weight: .bold, size: 20, scaled: false),
             .foregroundColor: UIColor.foreground
         ]
         UINavigationBar.appearance().largeTitleTextAttributes = [
-            .font: UIFont.openSans(weight: .bold, size: 27, scaled: false),
+            .font: UIFont.rubik(weight: .bold, size: 27, scaled: false),
             .foregroundColor: UIColor.foreground
         ]
         
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UIBarButtonItem.appearance().tintColor = .primary
         states.forEach { (state) in
             UIBarButtonItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .regular, size: 16, scaled: false)
+                .font: UIFont.rubik(weight: .regular, size: 16, scaled: false)
             ], for: state)
         }
         
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .bold, size: 12, scaled: false)
+                .font: UIFont.rubik(weight: .bold, size: 12, scaled: false)
             ], for: state)
         }
         
@@ -70,18 +70,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         UISegmentedControl.appearance().tintColor = .primary
         states.forEach { (state) in
             UISegmentedControl.appearance().setTitleTextAttributes([
-                .font: UIFont.openSans(weight: .regular, size: 18, scaled: false)
+                .font: UIFont.rubik(weight: .regular, size: 18, scaled: false)
             ], for: state)
         }
         UISegmentedControl.appearance().setTitleTextAttributes([
-            .font: UIFont.openSans(weight: .bold, size: 18, scaled: false),
+            .font: UIFont.rubik(weight: .bold, size: 18, scaled: false),
             .foregroundColor: UIColor.white
         ], for: .selected)
         
         // UIAlertController style
         UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .foreground
         UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).numberOfLines = 2
-        UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).font = .openSans(weight: .regular, size: 20)
+        UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).font = .rubik(weight: .regular, size: 20)
         
         return true
     }

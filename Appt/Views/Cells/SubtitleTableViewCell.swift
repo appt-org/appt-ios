@@ -14,10 +14,10 @@ class SubtitleTableViewCell: UITableViewCell {
     @IBOutlet private var subtitleLabel: UILabel!
         
     func setup(title: String, subtitle: String) {
-        titleLabel.font = .openSans(weight: .semibold, size: 18, style: .body)
+        titleLabel.font = .rubik(weight: .semibold, size: 18, style: .body)
         titleLabel.text = title
         
-        subtitleLabel.font = .openSans(weight: .regular, size: 14, style: .body)
+        subtitleLabel.font = .rubik(weight: .regular, size: 14, style: .body)
         subtitleLabel.text = subtitle
         
         accessibilityLabel = title

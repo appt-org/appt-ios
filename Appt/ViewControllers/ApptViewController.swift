@@ -76,7 +76,7 @@ class ApptViewController: ViewController {
             self.onBookmark()
         }
         bookmarkItem.onLongPress = { item in
-            self.showBookmarks()
+            self.showBookmarks(fullScreen: false)
         }
                 
         menuItem.item = .menu
@@ -264,13 +264,23 @@ class ApptViewController: ViewController {
         webView.reload()
     }
     
-    private func showBookmarks() {
-        guard let vc = R.storyboard.main.bookmarksViewController(),
-              let topVC = vc.topViewController as? BookmarksViewController else {
+    private func showBookmarks(fullScreen: Bool = true) {
+        guard let navigationViewController = R.storyboard.main.bookmarksViewController(),
+              let bookmarksViewController = navigationViewController.topViewController as? BookmarksViewController else {
             return
         }
-        topVC.stack = self.stack
-        present(vc, animated: true)
+        navigationViewController.modalPresentationStyle = .pageSheet
+        
+        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
+            if fullScreen {
+                sheet.detents = [.large()]
+            } else {
+                sheet.detents = [.medium()]
+            }
+        }
+        
+        bookmarksViewController.stack = self.stack
+        present(navigationViewController, animated: true)
         
 //        do {
 //            let fetchRequest = BookmarkedPage.fetchRequest()
