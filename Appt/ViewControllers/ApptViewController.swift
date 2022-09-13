@@ -82,7 +82,7 @@ class ApptViewController: ViewController {
                 
         menuItem.item = .menu
         menuItem.onTap = { item in
-            self.onMenu()
+            self.showMenu()
         }
         
 //        if #available(iOS 15.0, *) {
@@ -167,26 +167,26 @@ class ApptViewController: ViewController {
         
         // Insert or delete bookmark
         do {
-            let fetchRequest = BookmarkedPage.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
+            let fetchRequest = Bookmark.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
             fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
             fetchRequest.fetchLimit = 1
 
-            if let bookmark = try stack.objectContext.fetch(fetchRequest).first {
+            if let bookmark = try stack.context.fetch(fetchRequest).first {
                 // Remove bookmark
-                stack.objectContext.delete(bookmark)
+                stack.context.delete(bookmark)
             } else {
                 // Insert bookmark
-                let bookmark = BookmarkedPage(context: stack.objectContext)
+                let bookmark = Bookmark(context: stack.context)
                 bookmark.url = url
                 bookmark.title = webView.title
-                bookmark.created_at = Date()
-                bookmark.updated_at = Date()
+                bookmark.createdAt = Date()
+                bookmark.updatedAt = Date()
                 
                 bookmarked = true
             }
  
-            try stack.objectContext.save()
+            try stack.context.save()
         } catch let error as NSError {
             print("Failed to save bookmark: \(error) --> \(error.userInfo)")
         }
@@ -199,12 +199,12 @@ class ApptViewController: ViewController {
         
         // Get bookmark state
         do {
-            let fetchRequest = BookmarkedPage.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: true)]
+            let fetchRequest = Bookmark.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
             fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
             fetchRequest.fetchLimit = 1
             
-            bookmarked = try stack.objectContext.fetch(fetchRequest).count > 0
+            bookmarked = try stack.context.fetch(fetchRequest).count > 0
         } catch let error as NSError {
             print("Failed to fetch bookmark: \(error) --> \(error.userInfo)")
         }
@@ -220,7 +220,7 @@ class ApptViewController: ViewController {
         }
     }
     
-    private func onMenu() {
+    private func showMenu() {
         let vc = UIAlertController(
             title: R.string.localizable.menu(),
             message: nil,
@@ -291,7 +291,7 @@ class ApptViewController: ViewController {
     
     private func showItems(_ item: Item, items: [WKBackForwardListItem]) {
         let pages = items.map { item in
-            return MemoryPage(url: item.url.absoluteString, title: item.title)
+            return WebViewPage(url: item.url.absoluteString, title: item.title)
         }
         showPages(item, pages: pages)
     }
@@ -369,14 +369,14 @@ class ApptViewController: ViewController {
         print("Title changed to: '\(title)' for url: \(url)")
         
         // Store visited page
-        let page = VisitedPage(context: stack.objectContext)
+        let page = History(context: stack.context)
         page.url = url
         page.title = title
-        page.created_at = Date()
-        page.updated_at = Date()
+        page.createdAt = Date()
+        page.updatedAt = Date()
                 
         do {
-            try stack.objectContext.save()
+            try stack.context.save()
         } catch let error as NSError {
             print("Failed to save history: \(error) --> \(error.userInfo)")
         }

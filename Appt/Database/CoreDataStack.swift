@@ -12,29 +12,29 @@ class CoreDataStack: NSObject {
     
     let moduleName = "Database"
 
-    func saveToMainContext() { // Just a helper method for removing boilerplate code when you want to save. Remember this will be done on the main thread if called.
-        if objectContext.hasChanges {
+    func save() {
+        if context.hasChanges {
             do {
-                try objectContext.save()
+                try context.save()
             } catch {
                 print("Error saving main ManagedObjectContext: \(error)")
             }
         }
     }
 
-    lazy var managedObjectModel: NSManagedObjectModel = {
+    lazy var model: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: moduleName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
 
-    lazy var applicationDocumentsDirectory: URL = {
+    lazy var directory: URL = {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     }()
 
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+    lazy var coordinator: NSPersistentStoreCoordinator = {
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.model)
 
-        let persistenStoreURL = self.applicationDocumentsDirectory.appendingPathComponent("\(moduleName).sqlite")
+        let persistenStoreURL = self.directory.appendingPathComponent("\(moduleName).sqlite")
 
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistenStoreURL, options: [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption : true])
@@ -44,10 +44,9 @@ class CoreDataStack: NSObject {
         return coordinator
     }()
 
-    lazy var objectContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType) // As stated in the documentation change this depending on your need, but i recommend sticking to main thread if possible.
-
-        context.persistentStoreCoordinator = self.persistentStoreCoordinator
+    lazy var context: NSManagedObjectContext = {
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.persistentStoreCoordinator = self.coordinator
         return context
     }()
 }

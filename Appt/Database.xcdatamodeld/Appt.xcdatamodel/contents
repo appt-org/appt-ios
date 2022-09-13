@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BookmarkedPage" representedClassName=".BookmarkedPage" syncable="YES">
-        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    <entity name="Bookmark" representedClassName=".Bookmark" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="VisitedPage" representedClassName=".VisitedPage" syncable="YES">
-        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    <entity name="History" representedClassName=".History" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="BookmarkedPage" positionX="966.75390625" positionY="723.734375" width="128" height="103"/>
-        <element name="VisitedPage" positionX="548.07421875" positionY="717.87890625" width="128" height="103"/>
+        <element name="Bookmark" positionX="160" positionY="192" width="128" height="89"/>
+        <element name="History" positionX="160" positionY="192" width="128" height="89"/>
     </elements>
 </model>

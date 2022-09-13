@@ -12,8 +12,8 @@ import WebKit
 
 public class WebPage: NSManagedObject, Page {
     
-    @NSManaged public var created_at: Date
-    @NSManaged public var updated_at: Date
+    @NSManaged public var createdAt: Date
+    @NSManaged public var updatedAt: Date
     @NSManaged public var url: String
     @NSManaged public var title: String?
     

@@ -42,9 +42,9 @@ class PagesViewController: TableViewController {
         
     private func fetchHistory() {
         do {
-            let fetchRequest = VisitedPage.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-            self.pages = try stack.objectContext.fetch(fetchRequest)
+            let fetchRequest = History.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
+            self.pages = try stack.context.fetch(fetchRequest)
             tableView.reloadData()
         } catch let error as NSError {
             print("Failed to fetch: \(error) --> \(error.userInfo)")
@@ -53,9 +53,9 @@ class PagesViewController: TableViewController {
     
     private func fetchBookmarks() {
         do {
-            let fetchRequest = BookmarkedPage.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
-            self.pages = try stack.objectContext.fetch(fetchRequest)
+            let fetchRequest = Bookmark.createFetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
+            self.pages = try stack.context.fetch(fetchRequest)
             tableView.reloadData()
         } catch let error as NSError {
             print("Failed to fetch: \(error) --> \(error.userInfo)")

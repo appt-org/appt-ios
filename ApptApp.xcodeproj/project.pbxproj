@@ -44,10 +44,10 @@
 		28BC8C6928C8D2B7008F9A64 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */; };
 		28BC8C6A28C8D2B7008F9A64 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BC8C6528C8D0B1008F9A64 /* Rubik-Bold.ttf */; };
 		28BC8C6C28C8DC56008F9A64 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6B28C8DC56008F9A64 /* WebPage.swift */; };
-		28BC8C6E28C8DE82008F9A64 /* VisitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6D28C8DE82008F9A64 /* VisitedPage.swift */; };
-		28BC8C7028C8DE8A008F9A64 /* BookmarkedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6F28C8DE8A008F9A64 /* BookmarkedPage.swift */; };
+		28BC8C6E28C8DE82008F9A64 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6D28C8DE82008F9A64 /* History.swift */; };
+		28BC8C7028C8DE8A008F9A64 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6F28C8DE8A008F9A64 /* Bookmark.swift */; };
 		28BC8C7228C8E0BB008F9A64 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C7128C8E0BB008F9A64 /* Page.swift */; };
-		28BC8C7428C8E46E008F9A64 /* MemoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C7328C8E46E008F9A64 /* MemoryPage.swift */; };
+		28BC8C7428C8E46E008F9A64 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C7328C8E46E008F9A64 /* WebViewPage.swift */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
@@ -99,10 +99,10 @@
 		28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		28BC8C6728C8D0B1008F9A64 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		28BC8C6B28C8DC56008F9A64 /* WebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPage.swift; sourceTree = "<group>"; };
-		28BC8C6D28C8DE82008F9A64 /* VisitedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPage.swift; sourceTree = "<group>"; };
-		28BC8C6F28C8DE8A008F9A64 /* BookmarkedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedPage.swift; sourceTree = "<group>"; };
+		28BC8C6D28C8DE82008F9A64 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		28BC8C6F28C8DE8A008F9A64 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		28BC8C7128C8E0BB008F9A64 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		28BC8C7328C8E46E008F9A64 /* MemoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPage.swift; sourceTree = "<group>"; };
+		28BC8C7328C8E46E008F9A64 /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,12 +141,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28169E4128C251AC000C1D5D /* Data */ = {
+		28169E4128C251AC000C1D5D /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				28169E4228C251B7000C1D5D /* CoreDataStack.swift */,
 			);
-			path = Data;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		2843828024ED6D7A0015B2C5 /* Helpers */ = {
@@ -229,7 +229,7 @@
 				28169E3E28C25014000C1D5D /* Database.xcdatamodeld */,
 				2877F6CD247D6E9200605677 /* AppDelegate.swift */,
 				2877F6CF247D6E9200605677 /* SceneDelegate.swift */,
-				28169E4128C251AC000C1D5D /* Data */,
+				28169E4128C251AC000C1D5D /* Database */,
 				2877F6EC247D727D00605677 /* Extensions */,
 				2843828024ED6D7A0015B2C5 /* Helpers */,
 				28A1273228C61C8200D4E55F /* Model */,
@@ -278,12 +278,12 @@
 		28A1273228C61C8200D4E55F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				28BC8C6F28C8DE8A008F9A64 /* Bookmark.swift */,
+				28BC8C6D28C8DE82008F9A64 /* History.swift */,
 				28A1273328C61C9500D4E55F /* Item.swift */,
 				28BC8C7128C8E0BB008F9A64 /* Page.swift */,
 				28BC8C6B28C8DC56008F9A64 /* WebPage.swift */,
-				28BC8C6D28C8DE82008F9A64 /* VisitedPage.swift */,
-				28BC8C6F28C8DE8A008F9A64 /* BookmarkedPage.swift */,
-				28BC8C7328C8E46E008F9A64 /* MemoryPage.swift */,
+				28BC8C7328C8E46E008F9A64 /* WebViewPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,9 +479,9 @@
 				28BC8C7228C8E0BB008F9A64 /* Page.swift in Sources */,
 				28169E4328C251B7000C1D5D /* CoreDataStack.swift in Sources */,
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
-				28BC8C6E28C8DE82008F9A64 /* VisitedPage.swift in Sources */,
+				28BC8C6E28C8DE82008F9A64 /* History.swift in Sources */,
 				28BC8C6C28C8DC56008F9A64 /* WebPage.swift in Sources */,
-				28BC8C7028C8DE8A008F9A64 /* BookmarkedPage.swift in Sources */,
+				28BC8C7028C8DE8A008F9A64 /* Bookmark.swift in Sources */,
 				28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,
 				281F87FC24D172B5004AABC2 /* TableViewController.swift in Sources */,
@@ -492,7 +492,7 @@
 				28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */,
 				2877F6CE247D6E9200605677 /* AppDelegate.swift in Sources */,
 				287468EB247E64A60089BB32 /* _UITableView.swift in Sources */,
-				28BC8C7428C8E46E008F9A64 /* MemoryPage.swift in Sources */,
+				28BC8C7428C8E46E008F9A64 /* WebViewPage.swift in Sources */,
 				28618BC82833F627001AE2BE /* R.generated.swift in Sources */,
 				28EFEBAA248923410070879A /* _UIViewController.swift in Sources */,
 				2877F6D0247D6E9200605677 /* SceneDelegate.swift in Sources */,

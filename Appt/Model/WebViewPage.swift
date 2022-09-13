@@ -1,5 +1,5 @@
 //
-//  MemoryPage.swift
+//  WebViewPage.swift
 //  ApptApp
 //
 //  Created by Jan Jaap de Groot on 07/09/2022.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MemoryPage: Page {
+class WebViewPage: Page {
     
     var url: String
     var title: String?

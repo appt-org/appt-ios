@@ -143,7 +143,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PagesNavigationViewController" id="r1Z-Rh-eBo" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgJ-PS-Wrw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
