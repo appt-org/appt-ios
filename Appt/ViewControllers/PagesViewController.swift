@@ -31,7 +31,6 @@ class PagesViewController: TableViewController {
         tableView.registerNib(SubtitleTableViewCell.self)
         
         if pages.isEmpty {
-            // TODO: Merge fetch logic
             if item == .history {
                 fetchHistory()
             } else {
@@ -39,23 +38,18 @@ class PagesViewController: TableViewController {
             }
         }
     }
-        
+    
     private func fetchHistory() {
-        do {
-            let fetchRequest = History.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
-            self.pages = try stack.context.fetch(fetchRequest)
-            tableView.reloadData()
-        } catch let error as NSError {
-            print("Failed to fetch: \(error) --> \(error.userInfo)")
-        }
+        fetchPages(History.createFetchRequest())
     }
     
     private func fetchBookmarks() {
+        fetchPages(Bookmark.createFetchRequest())
+    }
+    
+    private func fetchPages<T: WebPage>(_ request: NSFetchRequest<T>) {
         do {
-            let fetchRequest = Bookmark.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
-            self.pages = try stack.context.fetch(fetchRequest)
+            self.pages = try stack.fetch(request)
             tableView.reloadData()
         } catch let error as NSError {
             print("Failed to fetch: \(error) --> \(error.userInfo)")

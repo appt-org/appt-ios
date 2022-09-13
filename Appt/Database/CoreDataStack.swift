@@ -50,3 +50,20 @@ class CoreDataStack: NSObject {
         return context
     }()
 }
+
+// MARK: - WebPage
+
+extension CoreDataStack {
+    
+    func fetch<T: WebPage>(_ request: NSFetchRequest<T>, url: String) throws -> T? {
+        request.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
+        request.predicate = NSPredicate(format: "url LIKE %@", url)
+        request.fetchLimit = 1
+        return try context.fetch(request).first
+    }
+    
+    func fetch<T: WebPage>(_ request: NSFetchRequest<T>) throws -> [T] {
+        request.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
+        return try context.fetch(request)
+    }
+}

@@ -167,12 +167,7 @@ class ApptViewController: ViewController {
         
         // Insert or delete bookmark
         do {
-            let fetchRequest = Bookmark.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
-            fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
-            fetchRequest.fetchLimit = 1
-
-            if let bookmark = try stack.context.fetch(fetchRequest).first {
+            if let bookmark = try stack.fetch(Bookmark.createFetchRequest(), url: url) {
                 // Remove bookmark
                 stack.context.delete(bookmark)
             } else {
@@ -185,7 +180,7 @@ class ApptViewController: ViewController {
                 
                 bookmarked = true
             }
- 
+            
             try stack.context.save()
         } catch let error as NSError {
             print("Failed to save bookmark: \(error) --> \(error.userInfo)")
@@ -199,12 +194,9 @@ class ApptViewController: ViewController {
         
         // Get bookmark state
         do {
-            let fetchRequest = Bookmark.createFetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: true)]
-            fetchRequest.predicate = NSPredicate(format: "url LIKE %@", url)
-            fetchRequest.fetchLimit = 1
-            
-            bookmarked = try stack.context.fetch(fetchRequest).count > 0
+            if let _ = try stack.fetch(Bookmark.createFetchRequest(), url: url) {
+                bookmarked = true
+            }
         } catch let error as NSError {
             print("Failed to fetch bookmark: \(error) --> \(error.userInfo)")
         }
