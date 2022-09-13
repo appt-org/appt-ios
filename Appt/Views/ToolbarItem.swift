@@ -38,7 +38,9 @@ class ToolbarItem: UIBarButtonItem {
                     target: self,
                     selector: #selector(onLongPressAction)
                 )
-                action.image = secondary.image
+                if #available(iOS 14.0, *) {
+                    action.image = secondary.image
+                }
                 button.accessibilityCustomActions = [action]
 
                 self.secondaryAction = action
