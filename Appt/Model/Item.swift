@@ -19,7 +19,7 @@ enum Item {
          history,
          jumpBack,
          jumpForward,
-         menu,
+         more,
          reload,
          settings,
          share
@@ -44,8 +44,8 @@ enum Item {
             return R.image.icon_history()
         case .home:
             return R.image.icon_home()
-        case .menu:
-            return R.image.icon_menu()
+        case .more:
+            return R.image.icon_more()
         case .reload:
             return R.image.icon_reload()
         case .settings:
@@ -75,8 +75,8 @@ enum Item {
             return R.string.localizable.jump_forward()
         case .home:
             return R.string.localizable.home()
-        case .menu:
-            return R.string.localizable.menu()
+        case .more:
+            return R.string.localizable.more()
         case .reload:
             return R.string.localizable.reload()
         case .settings:

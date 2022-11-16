@@ -20,7 +20,7 @@ class ApptViewController: ViewController {
     @IBOutlet private var forwardItem: ToolbarItem!
     @IBOutlet private var shareItem: ToolbarItem!
     @IBOutlet private var bookmarkItem: ToolbarItem!
-    @IBOutlet private var menuItem: ToolbarItem!
+    @IBOutlet private var moreItem: ToolbarItem!
     
     lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -38,6 +38,9 @@ class ApptViewController: ViewController {
         super.viewDidLoad()
         title = R.string.localizable.appt_title()
         
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        
         webView.scrollView.minimumZoomScale = 0.25
         webView.scrollView.maximumZoomScale = 10.0
         webView.tintColor = .primary
@@ -45,11 +48,11 @@ class ApptViewController: ViewController {
         webView.backgroundColor = .clear
         webView.allowsLinkPreview = false
         webView.allowsBackForwardNavigationGestures = true
-        webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
+        webView.setValue(1.0, forKey: "viewScale")
         
         backItem.item = .back
         backItem.onTap = { item in
@@ -79,39 +82,54 @@ class ApptViewController: ViewController {
         bookmarkItem.onLongPress = { item in
             self.showBookmarks()
         }
-                
-        menuItem.item = .menu
-        menuItem.onTap = { item in
-            self.showMenu()
+
+        if #available(iOS 15.0, *) {
+            var items: [Item] = [.home, .reload, .bookmarks, .history, .settings]
+            items.reverse()
+            
+            var actions = [UIAction]()
+            for item in items {
+                let action = UIAction(
+                    title: item.title,
+                    subtitle: nil,
+                    image: item.image,
+                    discoverabilityTitle: nil,
+                    attributes: []
+                ) { action in
+                    print("More item '\(item.title)' clicked")
+                    
+                    switch item {
+                        case .home: self.home()
+                        case .reload: self.reload()
+                        case .bookmarks: self.showBookmarks()
+                        case .history: self.showHistory()
+                        case .settings: self.showSettings()
+                        default: print("Missing action for more item '\(item)'")
+                    }
+                }
+                actions.append(action)
+            }
+            
+            moreItem.menu = UIMenu(
+                title: "",
+                subtitle: nil,
+                image: nil,
+                identifier: nil,
+                options: .destructive,
+                children: actions
+            )
+            moreItem.image = Item.more.image
+        } else {
+            moreItem.item = .more
+            moreItem.onTap = { item in
+                self.showMore()
+            }
         }
-        
-//        if #available(iOS 15.0, *) {
-//            var items: [Item] = [.home, .reload, .bookmarks, .history, .settings]
-//            items.reverse()
-//            
-//            var actions = [UIAction]()
-//            for item in items {
-//                let action = UIAction(
-//                    title: item.title,
-//                    subtitle: nil,
-//                    image: item.image,
-//                    discoverabilityTitle: nil,
-//                    attributes: []
-//                ) { action in
-//                    print("Action \(item.title) clicked")
-//                }
-//                actions.append(action)
-//            }
-//            
-//            let menu = UIMenu(title: Item.menu.title, subtitle: nil, image: Item.menu.image, identifier: nil, options: .destructive, children: actions)
-//            
-//            menuItem.menu = menu
-//        }
         
         let url = Preferences.shared.url ?? R.string.localizable.appt_url()
         load(url)
     }
-        
+    
     @objc func refresh(_ sender: UIRefreshControl) {
         webView.reload()
     }
@@ -212,14 +230,14 @@ class ApptViewController: ViewController {
         }
     }
     
-    private func showMenu() {
+    private func showMore() {
         let vc = UIAlertController(
-            title: R.string.localizable.menu(),
+            title: nil,
             message: nil,
             preferredStyle: .actionSheet
         )
         
-        vc.popoverPresentationController?.barButtonItem = menuItem
+        vc.popoverPresentationController?.barButtonItem = moreItem
         
         vc.addItem(.home) { action in
             self.home()
@@ -424,6 +442,21 @@ extension ApptViewController: WKNavigationDelegate {
         
         openWebsite(url)
         decisionHandler(.cancel)
+    }
+}
+
+// MARK: - WKUIDelegate
+
+extension ApptViewController: WKUIDelegate {
+    
+    private func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo) {
+        print("runJavaScriptAlertPanelWithMessage")
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        print("runJavaScriptAlertPanelWithMessage")
+        
+        completionHandler()
     }
 }
 
