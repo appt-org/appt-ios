@@ -14,6 +14,7 @@ enum Item {
          bookmark,
          bookmarked,
          bookmarks,
+         close,
          forward,
          home,
          history,
@@ -28,6 +29,8 @@ enum Item {
         switch self {
         case .back:
             return R.image.icon_back()
+        case .close:
+            return R.image.icon_close()
         case .bookmark:
             return R.image.icon_bookmark()
         case .bookmarks:
@@ -65,6 +68,8 @@ enum Item {
             return R.string.localizable.bookmarked()
         case .bookmarks:
             return R.string.localizable.bookmarks()
+        case .close:
+            return R.string.localizable.close()
         case .forward:
             return R.string.localizable.forward()
         case .history:
