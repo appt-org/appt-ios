@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Rswift
 
-class SettingsViewController: ViewController {
+class SettingsViewController: TableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()

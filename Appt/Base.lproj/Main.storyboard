@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eaG-lF-Yrk">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,11 +14,11 @@
             <objects>
                 <viewController id="eaG-lF-Yrk" customClass="ApptViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i5H-wi-ggG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-Vf-wrJ">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Jz-gt-7FV"/>
@@ -35,7 +36,7 @@
                                 <color key="barTintColor" name="Background"/>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-V4-hp6">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -70,51 +71,16 @@
             </objects>
             <point key="canvasLocation" x="50.625" y="-2620"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ngt-lN-Dae">
-            <objects>
-                <navigationController storyboardIdentifier="SettingsViewController" id="itE-7e-ecb" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHc-QV-XDd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="huy-uN-cIj" kind="relationship" relationship="rootViewController" id="mwm-zn-fly"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o0g-AK-VFn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="878" y="-2620"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="UY6-G0-Arp">
-            <objects>
-                <viewController id="huy-uN-cIj" customClass="SettingsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="zcK-2v-7Pc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="UIq-D8-jJd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Nk3-Dx-lXq"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8oa-2K-MKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1564" y="-2620"/>
-        </scene>
         <!--Pages-->
         <scene sceneID="V3Q-yZ-Lrv">
             <objects>
                 <viewController id="eaG-ZJ-86j" customClass="PagesViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhI-ZN-2jU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CEq-ah-Rh1">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -134,14 +100,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwY-SD-CAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-1839"/>
+            <point key="canvasLocation" x="1691" y="-2907"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZPa-sk-rLj">
             <objects>
                 <navigationController storyboardIdentifier="PagesNavigationViewController" id="r1Z-Rh-eBo" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgJ-PS-Wrw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -150,7 +116,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHf-Jh-dnx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="-1839"/>
+            <point key="canvasLocation" x="917" y="-2907"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="jTa-v6-RSq">
+            <objects>
+                <viewController id="mbX-ar-Ukv" customClass="SettingsViewController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyk-xZ-cbx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-iC-se2">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rn7-0N-tZr"/>
+                        <color key="backgroundColor" name="BackgroundSecondary"/>
+                        <constraints>
+                            <constraint firstItem="WSz-iC-se2" firstAttribute="top" secondItem="rn7-0N-tZr" secondAttribute="top" id="bl0-N3-lTk"/>
+                            <constraint firstItem="WSz-iC-se2" firstAttribute="leading" secondItem="pyk-xZ-cbx" secondAttribute="leading" id="c8D-ab-uT4"/>
+                            <constraint firstAttribute="trailing" secondItem="WSz-iC-se2" secondAttribute="trailing" id="o38-zk-H9g"/>
+                            <constraint firstAttribute="bottom" secondItem="WSz-iC-se2" secondAttribute="bottom" id="vya-tr-ZIv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="RRs-hC-4P8"/>
+                    <connections>
+                        <outlet property="tableView" destination="WSz-iC-se2" id="66e-V6-s1L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ya-Nq-aaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-2206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pce-7m-eua">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsNavigationViewController" id="Fxf-E9-Xf5" customClass="NavigationController" customModule="ApptApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g1N-xJ-UQu">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mbX-ar-Ukv" kind="relationship" relationship="rootViewController" id="Do4-nW-NSm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-uc-Pk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="-2205"/>
         </scene>
     </scenes>
     <resources>
@@ -165,8 +178,5 @@
         <namedColor name="BackgroundSecondary">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -330,7 +330,11 @@ class ApptViewController: ViewController {
     }
     
     private func showSettings() {
-        showError("Not implemented")
+        guard let navigationViewController = R.storyboard.main.settingsNavigationViewController(),
+              let settingsViewController = navigationViewController.topViewController as? SettingsViewController else {
+            return
+        }
+        present(navigationViewController, animated: true)
     }
     
     // MARK : - WebView changes
