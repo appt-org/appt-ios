@@ -316,16 +316,6 @@ class ApptViewController: ViewController {
         pagesViewController.item = item
         pagesViewController.pages = pages
         
-        navigationViewController.modalPresentationStyle = .pageSheet
-        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
-            switch item {
-            case .jumpBack, .jumpForward:
-                sheet.detents = [.medium()]
-            default:
-                sheet.detents = [.large()]
-            }
-        }
-        
         present(navigationViewController, animated: true)
     }
     
@@ -334,11 +324,7 @@ class ApptViewController: ViewController {
               let settingsViewController = navigationViewController.topViewController as? SettingsViewController else {
             return
         }
-        
-        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-        
+                
         settingsViewController.delegate = self
         
         present(navigationViewController, animated: true)

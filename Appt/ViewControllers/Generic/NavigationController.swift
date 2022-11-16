@@ -13,5 +13,11 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
+        
+        modalPresentationStyle = .pageSheet
+        
+        if #available(iOS 15.0, *), let sheet = sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+        }
     }
 }
