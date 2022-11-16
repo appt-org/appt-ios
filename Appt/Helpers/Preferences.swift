@@ -31,6 +31,23 @@ class Preferences {
         }
     }
     
+    // MARK: - URL
+    
+    private let KEY_ZOOM_SCALE = "zoom_scale"
+    
+    var zoomScale: Double {
+        get {
+            let value = defaults.double(forKey: KEY_ZOOM_SCALE)
+            guard value > 0 else {
+                return 1.0
+            }
+            return value
+        }
+        set {
+            defaults.setValue(newValue, forKey: KEY_ZOOM_SCALE)
+        }
+    }
+    
     // MARK: - Clear
     
     func clear() {

@@ -43,6 +43,7 @@ class ApptViewController: ViewController {
         
         webView.scrollView.minimumZoomScale = 0.25
         webView.scrollView.maximumZoomScale = 10.0
+        webView.zoomScale = Preferences.shared.zoomScale
         webView.tintColor = .primary
         webView.isOpaque = false
         webView.backgroundColor = .clear
@@ -52,7 +53,6 @@ class ApptViewController: ViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         webView.scrollView.refreshControl = refreshControl
-        webView.setValue(1.0, forKey: "viewScale")
         
         backItem.item = .back
         backItem.onTap = { item in
@@ -470,10 +470,8 @@ extension ApptViewController: PagesViewControllerDelegate {
 
 extension ApptViewController: SettingsViewControllerDelegate {
     
-    func onZoomLevelChanged(_ value: Double) {
-        print("onZoomLevelChanged")
-        
-        let scale = value / 100
-        webView.setValue(scale, forKey: "viewScale")
+    func onZoomChanged(_ scale: Double) {
+        webView.zoomScale = scale
+        Preferences.shared.zoomScale = scale
     }
 }

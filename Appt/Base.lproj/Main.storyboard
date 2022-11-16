@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-Vf-wrJ">
-                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Jz-gt-7FV"/>
@@ -30,13 +30,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ion-Si-75a"/>
                                     <barButtonItem enabled="NO" title="Bookmark" image="icon_bookmark" id="Ejx-Gv-YkR" customClass="ToolbarItem" customModule="ApptApp" customModuleProvider="target"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6sd-hS-5Lq"/>
-                                    <barButtonItem title="Menu" image="icon_menu" id="Hww-vp-C5I" customClass="ToolbarItem" customModule="ApptApp" customModuleProvider="target"/>
+                                    <barButtonItem title="More" image="icon_more" id="Hww-vp-C5I" customClass="ToolbarItem" customModule="ApptApp" customModuleProvider="target"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gZc-wc-Apa"/>
                                 </items>
                                 <color key="barTintColor" name="Background"/>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-V4-hp6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -170,7 +170,7 @@
         <image name="icon_back" width="24" height="24"/>
         <image name="icon_bookmark" width="24" height="24"/>
         <image name="icon_forward" width="24" height="24"/>
-        <image name="icon_menu" width="24" height="24"/>
+        <image name="icon_more" width="24" height="24"/>
         <image name="icon_share" width="24" height="24"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

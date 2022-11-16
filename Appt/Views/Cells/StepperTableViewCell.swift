@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StepperTableViewCellDelegate {
-    func stepperValueChanged(_ value: Double)
+    func onStepperValueChanged(_ value: Double)
 }
 
 class StepperTableViewCell: UITableViewCell {
@@ -20,17 +20,18 @@ class StepperTableViewCell: UITableViewCell {
     var delegate: StepperTableViewCellDelegate?
     
     private var title: String? = nil
+    private let MULTIPLIER = 100.0
         
-    func setup(title: String, value: Int, min: Int, max: Int, step: Int) {
+    func setup(title: String, value: Double, min: Double, max: Double, step: Double) {
         self.title = title
         
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = "\(title) \(value)%"
         
-        stepper.value = Double(value)
-        stepper.minimumValue = Double(min)
-        stepper.maximumValue = Double(max)
-        stepper.stepValue = Double(step)
+        stepper.value = value
+        stepper.minimumValue = min
+        stepper.maximumValue = max
+        stepper.stepValue = step
 
         isAccessibilityElement = true
         shouldGroupAccessibilityChildren = true
@@ -38,6 +39,8 @@ class StepperTableViewCell: UITableViewCell {
         accessibilityLabel = title
         accessibilityValue = "\(value) %"
         accessibilityTraits = .adjustable
+        
+        update()
     }
         
     override func accessibilityIncrement() {
@@ -54,7 +57,7 @@ class StepperTableViewCell: UITableViewCell {
     }
     
     private func update() {
-        let value = Int(stepper.value)
+        let value = Int(stepper.value * MULTIPLIER)
         accessibilityValue = "\(value) %"
         
         if let title = self.title {
@@ -65,6 +68,6 @@ class StepperTableViewCell: UITableViewCell {
     @IBAction private func onStepperChanged(_ sender: Any) {
         update()
         
-        delegate?.stepperValueChanged(stepper.value)
+        delegate?.onStepperValueChanged(stepper.value)
     }
 }

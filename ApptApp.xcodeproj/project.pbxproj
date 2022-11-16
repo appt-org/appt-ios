@@ -21,6 +21,7 @@
 		28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28639F7225E4047C00C29BB5 /* NavigationController.swift */; };
 		286C8E3C292531EA00865E64 /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C8E3B292531EA00865E64 /* StepperTableViewCell.swift */; };
 		286C8E3E292531F500865E64 /* StepperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286C8E3D292531F500865E64 /* StepperTableViewCell.xib */; };
+		286C8E402925406B00865E64 /* _WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C8E3F2925406B00865E64 /* _WKWebView.swift */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
 		287468E9247E64930089BB32 /* _UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E8247E64930089BB32 /* _UIView.swift */; };
@@ -78,6 +79,7 @@
 		28639F7225E4047C00C29BB5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		286C8E3B292531EA00865E64 /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
 		286C8E3D292531F500865E64 /* StepperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperTableViewCell.xib; sourceTree = "<group>"; };
+		286C8E3F2925406B00865E64 /* _WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _WKWebView.swift; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
 		287468E8247E64930089BB32 /* _UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				287468E8247E64930089BB32 /* _UIView.swift */,
 				28EFEBA9248923410070879A /* _UIViewController.swift */,
 				28E1A06F2525CC6100604CFF /* _URL.swift */,
+				286C8E3F2925406B00865E64 /* _WKWebView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				28836A8528C7A5E900AB2A63 /* SubtitleTableViewCell.swift in Sources */,
 				28E1A0702525CC6100604CFF /* _URL.swift in Sources */,
 				28836A8328C7A25200AB2A63 /* PagesViewController.swift in Sources */,
+				286C8E402925406B00865E64 /* _WKWebView.swift in Sources */,
 				28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */,
 				28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */,
 				2877F6E4247D71E600605677 /* _UIColor.swift in Sources */,

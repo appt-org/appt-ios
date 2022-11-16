@@ -11,7 +11,7 @@ import UIKit
 import Rswift
 
 protocol SettingsViewControllerDelegate {
-    func onZoomLevelChanged(_ value: Double)
+    func onZoomChanged(_ scale: Double)
 }
 
 class SettingsViewController: TableViewController {
@@ -32,7 +32,7 @@ class SettingsViewController: TableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(StepperTableViewCell.self, at: indexPath)
         
-        cell.setup(title: R.string.localizable.settings_zoom(), value: 100, min: 50, max: 200, step: 25)
+        cell.setup(title: R.string.localizable.settings_zoom(), value: Preferences.shared.zoomScale, min: 0.5, max: 2.0, step: 0.25)
         cell.delegate = self
         
         return cell
@@ -43,8 +43,8 @@ class SettingsViewController: TableViewController {
 
 extension SettingsViewController: StepperTableViewCellDelegate {
     
-    func stepperValueChanged(_ value: Double) {
+    func onStepperValueChanged(_ value: Double) {
         print("Stepper value changed: \(value)")
-        delegate?.onZoomLevelChanged(value)
+        delegate?.onZoomChanged(value)
     }
 }
