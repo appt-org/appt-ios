@@ -334,6 +334,13 @@ class ApptViewController: ViewController {
               let settingsViewController = navigationViewController.topViewController as? SettingsViewController else {
             return
         }
+        
+        if #available(iOS 15.0, *), let sheet = navigationViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        
+        settingsViewController.delegate = self
+        
         present(navigationViewController, animated: true)
     }
     
@@ -470,5 +477,17 @@ extension ApptViewController: PagesViewControllerDelegate {
     
     func didSelectPage(_ page: Page) {
         load(page.url)
+    }
+}
+
+// MARK: - SettingsViewControllerDelegate
+
+extension ApptViewController: SettingsViewControllerDelegate {
+    
+    func onZoomLevelChanged(_ value: Double) {
+        print("onZoomLevelChanged")
+        
+        let scale = value / 100
+        webView.setValue(scale, forKey: "viewScale")
     }
 }

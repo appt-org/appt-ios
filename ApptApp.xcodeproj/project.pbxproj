@@ -19,6 +19,8 @@
 		28618BC82833F627001AE2BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618BC72833F627001AE2BE /* R.generated.swift */; };
 		28618BCC283401C1001AE2BE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618BCB283401C1001AE2BE /* Preferences.swift */; };
 		28639F7325E4047C00C29BB5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28639F7225E4047C00C29BB5 /* NavigationController.swift */; };
+		286C8E3C292531EA00865E64 /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C8E3B292531EA00865E64 /* StepperTableViewCell.swift */; };
+		286C8E3E292531F500865E64 /* StepperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286C8E3D292531F500865E64 /* StepperTableViewCell.xib */; };
 		287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E4247E63A50089BB32 /* _UICollectionView.swift */; };
 		287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E6247E63CD0089BB32 /* _UIFont.swift */; };
 		287468E9247E64930089BB32 /* _UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287468E8247E64930089BB32 /* _UIView.swift */; };
@@ -74,6 +76,8 @@
 		28618BC72833F627001AE2BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		28618BCB283401C1001AE2BE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		28639F7225E4047C00C29BB5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		286C8E3B292531EA00865E64 /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
+		286C8E3D292531F500865E64 /* StepperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperTableViewCell.xib; sourceTree = "<group>"; };
 		287468E4247E63A50089BB32 /* _UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UICollectionView.swift; sourceTree = "<group>"; };
 		287468E6247E63CD0089BB32 /* _UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIFont.swift; sourceTree = "<group>"; };
 		287468E8247E64930089BB32 /* _UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				287468F1247E65620089BB32 /* TitleTableViewCell.swift */,
 				28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */,
 				28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */,
+				286C8E3D292531F500865E64 /* StepperTableViewCell.xib */,
+				286C8E3B292531EA00865E64 /* StepperTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 			files = (
 				28BC8C6A28C8D2B7008F9A64 /* Rubik-Bold.ttf in Resources */,
 				28836A8728C7A5F700AB2A63 /* SubtitleTableViewCell.xib in Resources */,
+				286C8E3E292531F500865E64 /* StepperTableViewCell.xib in Resources */,
 				2877F6DC247D6E9600605677 /* LaunchScreen.storyboard in Resources */,
 				A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
@@ -481,6 +488,7 @@
 				287468E5247E63A50089BB32 /* _UICollectionView.swift in Sources */,
 				28BC8C6E28C8DE82008F9A64 /* History.swift in Sources */,
 				28BC8C6C28C8DC56008F9A64 /* WebPage.swift in Sources */,
+				286C8E3C292531EA00865E64 /* StepperTableViewCell.swift in Sources */,
 				28BC8C7028C8DE8A008F9A64 /* Bookmark.swift in Sources */,
 				28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */,
 				2843827F24ED6D4F0015B2C5 /* Alert.swift in Sources */,

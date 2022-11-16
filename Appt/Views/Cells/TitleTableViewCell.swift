@@ -10,7 +10,7 @@ import UIKit
 
 class TitleTableViewCell: UITableViewCell {
     
-    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     
     func setup(_ title: String) {
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
