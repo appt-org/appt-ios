@@ -440,6 +440,51 @@ extension ApptViewController: WKNavigationDelegate {
         openWebsite(url)
         decisionHandler(.cancel)
     }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("didFail")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        guard let code = (error as? NSError)?.code else {
+            return
+        }
+        print("didFailProvisionalNavigation: \(code)")
+        
+        let error = URLError.Code(rawValue: code)
+        
+        // Show error based on error code
+        switch error {
+        case .notConnectedToInternet:
+            showError(R.string.localizable.error_network())
+        default:
+            showError(R.string.localizable.error_something())
+            break
+        }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) async -> WKNavigationResponsePolicy {
+        guard let statusCode = (navigationResponse.response as? HTTPURLResponse)?.statusCode else {
+            print("No response")
+            return .allow
+        }
+        
+        if statusCode == 200 || statusCode == 301 || statusCode == 302 {
+            return .allow
+        }
+        
+        // Show error based on status code
+        if statusCode == 404 {
+            showError(R.string.localizable.error_404())
+        } else if statusCode >= 500 && statusCode <= 600 {
+            showError(R.string.localizable.error_server())
+        } else {
+            print("Status code \(statusCode) is unhandled")
+            showError(R.string.localizable.error_something())
+        }
+
+        return .allow
+    }
 }
 
 // MARK: - WKUIDelegate
@@ -455,6 +500,8 @@ extension ApptViewController: WKUIDelegate {
         
         completionHandler()
     }
+    
+
 }
 
 // MARK: - PagesViewControllerDelegate

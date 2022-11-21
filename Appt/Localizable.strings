@@ -8,40 +8,38 @@
 
 "language" = "en-US";
 
-/* General */
-"loading" = "Loading, please wait";
-"error" = "Error";
-"ok" = "Ok";
-"continue" = "Continue";
-"finish" = "Finish";
-"stop" = "Stop";
-"cancel" = "Cancel";
-"delete" = "Delete";
-"next" = "Next";
-"skip" = "Skip";
-"back" = "Back";
-"forward" = "Forward";
-"close" = "Close";
-"share" = "Share";
-"settings" = "Settings";
-"bookmark" = "Bookmark";
-"bookmarked" = "Bookmarked";
-"more" = "More";
-"bookmarks" = "Bookmarks";
-"history" = "History";
-"home" = "Home";
-"reload" = "Reload";
-"unknown" = "Unknown";
-"future" = "Future";
-"jump_forward" = "Jump forward";
-"jump_back" = "Jump back";
-
 /* Appt */
 "appt_title" = "Appt";
-"appt_url" = "https://beta.appt.org/en";
+"appt_url" = "https://beta.appt.org/en/asdsad";
 "appt_domain" = "beta.appt.org";
-"appt_suffix" = " — Appt([\\w\\s]?)+$";
+
+/* Errors */
+"error_something" = "Something went wrong. Try again later.";
+"error_network" = "You are not connected to the internet. Try again later.";
+"error_server" = "Sorry, something went wrong on our server. Try again later.";
+"error_404" = "The page you're looking for has been moved, deleted, or never existed.";
+
+/* Words */
+"back" = "Back";
+"bookmark" = "Bookmark";
+"bookmarked" = "Bookmarked";
+"bookmarks" = "Bookmarks";
+"cancel" = "Cancel";
+"close" = "Close";
+"delete" = "Delete";
+"error" = "Error";
+"forward" = "Forward";
+"history" = "History";
+"home" = "Home";
+"jump_back" = "Jump back";
+"jump_forward" = "Jump forward";
+"loading" = "Loading";
+"more" = "More";
+"ok" = "Ok";
+"reload" = "Reload";
+"settings" = "Settings";
+"share" = "Share";
+"unknown" = "Unknown";
 
 /* Settings */
-"settings_title" = "Settings";
 "settings_zoom" = "Zoom level";

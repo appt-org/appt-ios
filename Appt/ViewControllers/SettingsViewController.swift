@@ -20,7 +20,7 @@ class SettingsViewController: TableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = R.string.localizable.settings_title()
+        title = R.string.localizable.settings()
         
         tableView.registerNib(StepperTableViewCell.self)
     }
