@@ -463,16 +463,18 @@ extension ApptViewController: WKNavigationDelegate {
         }
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) async -> WKNavigationResponsePolicy {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let statusCode = (navigationResponse.response as? HTTPURLResponse)?.statusCode else {
             print("No response")
-            return .allow
+            decisionHandler(.allow)
+            return
         }
-        
+
         if statusCode == 200 || statusCode == 301 || statusCode == 302 {
-            return .allow
+            decisionHandler(.allow)
+            return
         }
-        
+
         // Show error based on status code
         if statusCode == 404 {
             showError(R.string.localizable.error_404())
@@ -483,7 +485,7 @@ extension ApptViewController: WKNavigationDelegate {
             showError(R.string.localizable.error_something())
         }
 
-        return .allow
+        decisionHandler(.allow)
     }
 }
 
