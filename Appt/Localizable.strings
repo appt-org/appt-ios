@@ -10,8 +10,8 @@
 
 /* Appt */
 "appt_title" = "Appt";
-"appt_url" = "https://beta.appt.org/en/asdsad";
-"appt_domain" = "beta.appt.org";
+"appt_url" = "https://appt.org/en";
+"appt_domain" = "appt.org";
 
 /* Errors */
 "error_something" = "Something went wrong. Try again later.";
