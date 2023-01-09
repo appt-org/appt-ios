@@ -365,6 +365,7 @@ class ApptViewController: ViewController {
         updateBookmark(url)
         
         Preferences.shared.url = url
+        Events.log(.url, identifier: url)
     }
     
     private func onTitleChanged() {
@@ -451,9 +452,14 @@ extension ApptViewController: WKNavigationDelegate {
         }
         print("didFailProvisionalNavigation: \(code)")
         
-        let error = URLError.Code(rawValue: code)
+        // Log error
+        if let url = webView.url?.absoluteString {
+            Events.log(.error, identifier: url, value: code)
+        }
         
         // Show error based on error code
+        let error = URLError.Code(rawValue: code)
+        
         switch error {
         case .notConnectedToInternet:
             showError(R.string.localizable.error_network())
@@ -502,8 +508,6 @@ extension ApptViewController: WKUIDelegate {
         
         completionHandler()
     }
-    
-
 }
 
 // MARK: - PagesViewControllerDelegate

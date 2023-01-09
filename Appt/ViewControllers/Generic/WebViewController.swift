@@ -45,27 +45,6 @@ class WebViewController: ViewController {
         sender.endRefreshing()
     }
 
-    func load(_ content: String, title: String) {
-        Events.log(.article, identifier: title)
-        
-        let html = """
-            <html lang="nl">
-                <head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                    <link rel="stylesheet" type="text/css" href="style.css">
-                </head>
-            <body>
-            <h1>
-            """ + title + """
-            </h1>
-            """ + content + """
-            </body>
-            </html>
-        """
-
-        webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
-    }
-
     func load(_ url: URL) {
         isLoading = true
         

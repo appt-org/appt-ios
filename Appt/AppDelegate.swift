@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Crashlytics
         FirebaseApp.configure()
-        Events.property(.voiceover, value: UIAccessibility.isVoiceOverRunning)
 
         if #available(iOS 13.0, *) {} else {
             self.configureWindow()

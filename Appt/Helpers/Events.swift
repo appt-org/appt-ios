@@ -11,31 +11,15 @@ import FirebaseAnalytics
 
 class Events {
     
-    // MARK: - Property
-    
-    enum Property: String {
-        case voiceover
-    }
-    
-    public static func property(_ property: Property, value: String) {
-        Analytics.setUserProperty(value, forName: property.rawValue)
-    }
-    
-    public static func property(_ property: Property, value: Bool) {
-        Events.property(property, value: value ? "1" : "0")
-    }
-    
     // MARK: - Event
     
     enum Category: String {
-        case article
-        case filters
-        case actionCompleted
-        case gestureCompleted
+        case error
+        case url
     }
     
     public static func log(_ category: Category, identifier: String, value: Int? = nil) {
-        print("Log event, category: \(category), identifier: \(identifier), value: \(value ?? -1)")
+        print("Log event, category: \(category), identifier: \(identifier), value: \(value)")
         
         var parameters: [String: Any] = [
             AnalyticsParameterItemID: identifier
