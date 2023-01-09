@@ -1,0 +1,38 @@
+/*  Language */
+"language" = "nl-NL";
+
+/* Appt */
+"appt_title" = "Appt";
+"appt_url" = "https://appt.org/nl";
+"appt_domain" = "appt.org";
+
+/* Errors */
+"error_something" = "Er is iets fout gegaan. Probeer het later opnieuw.";
+"error_network" = "Je bent niet verbonden met het internet. Probeer het later opnieuw.";
+"error_server" = "Sorry, er ging iets mis op onze server. Probeer het later opnieuw.";
+"error_404" = "De pagina die je zoekt is verplaatst, verwijderd of heeft nooit bestaan.";
+
+/* Words */
+"back" = "Terug";
+"bookmark" = "Bladwijzer";
+"bookmarked" = "Bladwijzer gemaakt";
+"bookmarks" = "Bladwijzers";
+"cancel" = "Annuleren";
+"close" = "Sluiten";
+"delete" = "Verwijderen";
+"error" = "Foutmelding";
+"forward" = "Vooruit";
+"history" = "Geschiedenis";
+"home" = "Home";
+"jump_back" = "Spring terug";
+"jump_forward" = "Spring vooruit";
+"loading" = "Aan het laden";
+"more" = "Meer";
+"ok" = "Oké";
+"reload" = "Opnieuw laden";
+"settings" = "Instellingen";
+"share" = "Delen";
+"unknown" = "Onbekend";
+
+/* Settings */
+"settings_zoom" = "Zoomniveau";

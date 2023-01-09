@@ -1,11 +1,4 @@
-/* 
-  Localizable.strings
-  Appt
-
-  Created by Jan Jaap de Groot on 22/09/2020.
-  Copyright © 2020 Stichting Appt All rights reserved.
-*/
-
+/*  Language */
 "language" = "en-US";
 
 /* Appt */

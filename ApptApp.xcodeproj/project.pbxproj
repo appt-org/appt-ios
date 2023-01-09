@@ -38,7 +38,6 @@
 		28836A8328C7A25200AB2A63 /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28836A8228C7A25200AB2A63 /* PagesViewController.swift */; };
 		28836A8528C7A5E900AB2A63 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */; };
 		28836A8728C7A5F700AB2A63 /* SubtitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */; };
-		288554FD251A01EE00392FC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 288554FC251A01EE00392FC3 /* Localizable.strings */; };
 		2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FFB9248113E7009D8102 /* WebKit.framework */; };
 		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
 		28A1273428C61C9500D4E55F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273328C61C9500D4E55F /* Item.swift */; };
@@ -51,6 +50,7 @@
 		28BC8C7028C8DE8A008F9A64 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C6F28C8DE8A008F9A64 /* Bookmark.swift */; };
 		28BC8C7228C8E0BB008F9A64 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C7128C8E0BB008F9A64 /* Page.swift */; };
 		28BC8C7428C8E46E008F9A64 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC8C7328C8E46E008F9A64 /* WebViewPage.swift */; };
+		28C22D72296C65C4007DEF25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28C22D74296C65C4007DEF25 /* Localizable.strings */; };
 		28DF7C922480175700CB467A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7C912480175700CB467A /* ViewController.swift */; };
 		28E0C418247D8B46008B3CAD /* _NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0C417247D8B46008B3CAD /* _NSObject.swift */; };
 		28E1A0702525CC6100604CFF /* _URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1A06F2525CC6100604CFF /* _URL.swift */; };
@@ -96,7 +96,6 @@
 		28836A8228C7A25200AB2A63 /* PagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
 		28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubtitleTableViewCell.xib; sourceTree = "<group>"; };
-		288554FC251A01EE00392FC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
 		28A1273328C61C9500D4E55F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -109,6 +108,8 @@
 		28BC8C6F28C8DE8A008F9A64 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		28BC8C7128C8E0BB008F9A64 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		28BC8C7328C8E46E008F9A64 /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
+		28C22D73296C65C4007DEF25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		28C22D75296C65C8007DEF25 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		28C5F82624EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C5F82724EC1FFD00BA8F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28DF7C912480175700CB467A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +276,7 @@
 				2877F6DD247D6E9600605677 /* Info.plist */,
 				2877F6DA247D6E9600605677 /* LaunchScreen.storyboard */,
 				2877F6D5247D6E9200605677 /* Main.storyboard */,
-				288554FC251A01EE00392FC3 /* Localizable.strings */,
+				28C22D74296C65C4007DEF25 /* Localizable.strings */,
 				28BC8C6728C8D0B1008F9A64 /* Rubik-Regular.ttf */,
 				28BC8C6628C8D0B1008F9A64 /* Rubik-SemiBold.ttf */,
 				28BC8C6528C8D0B1008F9A64 /* Rubik-Bold.ttf */,
@@ -378,7 +379,7 @@
 				A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */,
 				287468F4247E65C80089BB32 /* TitleTableViewCell.xib in Resources */,
 				28BC8C6828C8D2B7008F9A64 /* Rubik-Regular.ttf in Resources */,
-				288554FD251A01EE00392FC3 /* Localizable.strings in Resources */,
+				28C22D72296C65C4007DEF25 /* Localizable.strings in Resources */,
 				28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */,
 				28BC8C6928C8D2B7008F9A64 /* Rubik-SemiBold.ttf in Resources */,
 				2877F6D9247D6E9600605677 /* Assets.xcassets in Resources */,
@@ -536,6 +537,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		28C22D74296C65C4007DEF25 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28C22D73296C65C4007DEF25 /* en */,
+				28C22D75296C65C8007DEF25 /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -671,6 +681,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -699,6 +710,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
