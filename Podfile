@@ -3,11 +3,10 @@ platform :ios, '12.0'
 
 use_frameworks!
 
-target 'ApptApp' do
+target 'Appt' do
   #use_frameworks!
   pod 'Alamofire'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
-  pod 'Kingfisher'
   pod 'R.swift'
 end

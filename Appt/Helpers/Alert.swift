@@ -8,7 +8,6 @@
 
 import UIKit
 import Accessibility
-import Rswift
 
 class Alert {
 

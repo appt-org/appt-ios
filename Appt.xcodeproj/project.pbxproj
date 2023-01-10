@@ -57,13 +57,12 @@
 		28E1A0852525D6C300604CFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E1A0842525D6C300604CFF /* GoogleService-Info.plist */; };
 		28EFEBAA248923410070879A /* _UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEBA9248923410070879A /* _UIViewController.swift */; };
 		28FBED8F251F5304009CA3FA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FBED8E251F5304009CA3FA /* WebViewController.swift */; };
-		88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083B71E01292CF6078F049DD /* Pods_ApptApp.framework */; };
+		7D4321D52F60AF5A70140EA7 /* Pods_Appt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD068174AA1A85C6B3BE8E4E /* Pods_Appt.framework */; };
 		A82ACD122653CD6A00BBE8FA /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */; };
 		A82ACD142653CD7900BBE8FA /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		083B71E01292CF6078F049DD /* Pods_ApptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231F1FE9266A0604002524F0 /* Appt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appt.entitlements; sourceTree = "<group>"; };
 		232D74F0264E8ED500937E0D /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
 		28169E3F28C25014000C1D5D /* Appt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appt.xcdatamodel; sourceTree = "<group>"; };
@@ -87,7 +86,7 @@
 		287468EC247E64F90089BB32 /* _DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DispatchQueue.swift; sourceTree = "<group>"; };
 		287468F1247E65620089BB32 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		287468F3247E65C80089BB32 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
-		2877F6CA247D6E9200605677 /* ApptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2877F6CA247D6E9200605677 /* Appt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2877F6CD247D6E9200605677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2877F6CF247D6E9200605677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2877F6D8247D6E9600605677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		A82ACD112653CD6A00BBE8FA /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A82ACD132653CD7900BBE8FA /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApptApp.release.xcconfig"; path = "Target Support Files/Pods-ApptApp/Pods-ApptApp.release.xcconfig"; sourceTree = "<group>"; };
+		BD068174AA1A85C6B3BE8E4E /* Pods_Appt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appt.debug.xcconfig"; path = "Target Support Files/Pods-Appt/Pods-Appt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2899FFBA248113E7009D8102 /* WebKit.framework in Frameworks */,
-				88979DFD49B87527FAFBD628 /* Pods_ApptApp.framework in Frameworks */,
+				7D4321D52F60AF5A70140EA7 /* Pods_Appt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				2899FFB9248113E7009D8102 /* WebKit.framework */,
-				083B71E01292CF6078F049DD /* Pods_ApptApp.framework */,
+				BD068174AA1A85C6B3BE8E4E /* Pods_Appt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 		2877F6CB247D6E9200605677 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2877F6CA247D6E9200605677 /* ApptApp.app */,
+				2877F6CA247D6E9200605677 /* Appt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,9 +312,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2877F6C9247D6E9200605677 /* ApptApp */ = {
+		2877F6C9247D6E9200605677 /* Appt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2877F6E0247D6E9600605677 /* Build configuration list for PBXNativeTarget "ApptApp" */;
+			buildConfigurationList = 2877F6E0247D6E9600605677 /* Build configuration list for PBXNativeTarget "Appt" */;
 			buildPhases = (
 				569406FEA48E95CE3D6B6218 /* [CP] Check Pods Manifest.lock */,
 				28618BC62833F594001AE2BE /* R.swift */,
@@ -328,9 +328,9 @@
 			);
 			dependencies = (
 			);
-			name = ApptApp;
+			name = Appt;
 			productName = Appt;
-			productReference = 2877F6CA247D6E9200605677 /* ApptApp.app */;
+			productReference = 2877F6CA247D6E9200605677 /* Appt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2877F6C5247D6E9100605677 /* Build configuration list for PBXProject "ApptApp" */;
+			buildConfigurationList = 2877F6C5247D6E9100605677 /* Build configuration list for PBXProject "Appt" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = nl;
 			hasScannedForEncodings = 0;
@@ -362,7 +362,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2877F6C9247D6E9200605677 /* ApptApp */,
+				2877F6C9247D6E9200605677 /* Appt */,
 			);
 		};
 /* End PBXProject section */
@@ -445,7 +445,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ApptApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Appt-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -458,15 +458,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApptApp/Pods-ApptApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Appt/Pods-Appt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -669,27 +669,29 @@
 		};
 		2877F6E1247D6E9600605677 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49DF1B50805E932783FB1E91 /* Pods-ApptApp.debug.xcconfig */;
+			baseConfigurationReference = D42E7B11D61BB525BAE85022 /* Pods-Appt.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Appt;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
-				PRODUCT_NAME = ApptApp;
+				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -699,26 +701,28 @@
 		};
 		2877F6E2247D6E9600605677 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B223BB737AF3D999F4801BEA /* Pods-ApptApp.release.xcconfig */;
+			baseConfigurationReference = 7D62BB23F0FE76F21FDA1BE2 /* Pods-Appt.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Appt/Appt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38ZQQ7P8N4;
 				INFOPLIST_FILE = Appt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Appt;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appt;
-				PRODUCT_NAME = ApptApp;
+				PRODUCT_NAME = Appt;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -730,7 +734,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2877F6C5247D6E9100605677 /* Build configuration list for PBXProject "ApptApp" */ = {
+		2877F6C5247D6E9100605677 /* Build configuration list for PBXProject "Appt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2877F6DE247D6E9600605677 /* Debug */,
@@ -739,7 +743,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2877F6E0247D6E9600605677 /* Build configuration list for PBXNativeTarget "ApptApp" */ = {
+		2877F6E0247D6E9600605677 /* Build configuration list for PBXNativeTarget "Appt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2877F6E1247D6E9600605677 /* Debug */,

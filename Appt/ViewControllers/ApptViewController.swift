@@ -1,6 +1,6 @@
 //
 //  ApptViewController.swift
-//  ApptApp
+//  Appt
 //
 //  Created by Jan Jaap de Groot on 04/05/2022.
 //  Copyright © 2022 Stichting Appt. All rights reserved.
@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import Rswift
 import CoreData
 
 class ApptViewController: ViewController {
@@ -84,7 +83,7 @@ class ApptViewController: ViewController {
         }
 
         if #available(iOS 15.0, *) {
-            var items: [Item] = [.home, .reload, .bookmarks, .history, .settings]
+            var items: [Item] = [.home, .reload, .bookmarks, .history, .settings, .close]
             items.reverse()
             
             var actions = [UIAction]()
@@ -104,6 +103,7 @@ class ApptViewController: ViewController {
                         case .bookmarks: self.showBookmarks()
                         case .history: self.showHistory()
                         case .settings: self.showSettings()
+                        case .close: print("Close menu")
                         default: print("Missing action for more item '\(item)'")
                     }
                 }

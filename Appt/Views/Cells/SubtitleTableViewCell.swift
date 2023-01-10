@@ -1,6 +1,6 @@
 //
 //  WebPageTableViewCell.swift
-//  ApptApp
+//  Appt
 //
 //  Created by Jan Jaap de Groot on 06/09/2022.
 //  Copyright © 2022 Stichting Appt. All rights reserved.

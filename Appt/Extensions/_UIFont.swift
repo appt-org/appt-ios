@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Rswift
+import RswiftResources
 
 extension UIFont {
 
@@ -29,7 +29,7 @@ extension UIFont {
     }
 
     private static func font(_ resource: FontResource, size: CGFloat, style: TextStyle, scaled: Bool, maxSize: CGFloat) -> UIFont {
-        guard let font = UIFont(name: resource.fontName, size: size) else {
+        guard let font = UIFont(name: resource.name, size: size) else {
             fatalError("Font \(resource) does not exist")
         }
         guard scaled else {

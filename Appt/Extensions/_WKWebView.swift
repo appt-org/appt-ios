@@ -1,6 +1,6 @@
 //
 //  _UIWebView.swift
-//  ApptApp
+//  Appt
 //
 //  Created by Jan Jaap de Groot on 16/11/2022.
 //  Copyright © 2022 Stichting Appt. All rights reserved.
