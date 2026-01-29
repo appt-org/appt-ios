@@ -27,6 +27,8 @@ class StepperTableViewCell: UITableViewCell {
         
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = "\(title) \(value)%"
+        titleLabel.adjustsFontForContentSizeCategory = true
+        titleLabel.numberOfLines = 0
         
         stepper.value = value
         stepper.minimumValue = min

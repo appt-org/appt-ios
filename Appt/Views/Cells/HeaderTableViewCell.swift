@@ -1,5 +1,5 @@
 //
-//  ListTableTopSectionHeaderView.swift
+//  HeaderTableViewCell.swift
 //  Appt
 //
 //  Created by Yulian Baranetskyy on 18.05.2021.
@@ -15,6 +15,8 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     func setup(_ header: String) {
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = header
+        titleLabel.adjustsFontForContentSizeCategory = true
+        titleLabel.numberOfLines = 0
         
         accessibilityTraits = .header
         accessibilityLabel = header

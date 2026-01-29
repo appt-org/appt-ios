@@ -56,13 +56,12 @@ class ViewController: UIViewController {
     // View did load: style
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .background
         
         // UINavigationBar style
-        navigationController?.navigationBar.isOpaque = true
-        navigationController?.navigationBar.isTranslucent = false
-        
         let backButton = UIBarButtonItem(title: R.string.localizable.back(), style: .plain, target: nil, action: nil)
         backButton.accessibilityLabel = R.string.localizable.back()
+        backButton.tintColor = .primary
         navigationItem.backBarButtonItem = backButton
         
         if #available(iOS 13.0, *) {
@@ -118,11 +117,11 @@ class ViewController: UIViewController {
         // Modal?
         if isModal {
             let closeItem = UIBarButtonItem(
-                title: R.string.localizable.close(),
-                style: .done,
+                barButtonSystemItem: .close,
                 target: self,
                 action: #selector(onClose)
             )
+            closeItem.tintColor = .primary
             navigationItem.setLeftBarButton(closeItem, animated: true)
         }
     }

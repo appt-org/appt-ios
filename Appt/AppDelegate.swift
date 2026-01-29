@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         let states: [UIControl.State] = [.disabled, .focused, .highlighted, .normal, .selected]
         
         // UINavigationBar styles
+        UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .background
         UINavigationBar.appearance().backgroundColor = .background
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
             .foregroundColor: UIColor.foreground
         ]
         UINavigationBar.appearance().largeTitleTextAttributes = [
-            .font: UIFont.rubik(weight: .bold, size: 27, scaled: false),
+            .font: UIFont.rubik(weight: .bold, size: 40, scaled: false),
             .foregroundColor: UIColor.foreground
         ]
         
@@ -53,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         }
         
         // UITabBar styles
+        UITabBar.appearance().isOpaque = true
+        UITabBar.appearance().isTranslucent = true
         UITabBar.appearance().barTintColor = .background
         UITabBar.appearance().tintColor = .primary
         UITabBar.appearance().unselectedItemTintColor = .disabled
@@ -60,9 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         // UITabBarItem style
         states.forEach { (state) in
             UITabBarItem.appearance().setTitleTextAttributes([
-                .font: UIFont.rubik(weight: .bold, size: 12, scaled: false)
+                .font: UIFont.rubik(weight: .bold, size: 14, scaled: false)
             ], for: state)
         }
+        UITabBarItem.appearance().setTitleTextAttributes([
+            .font: UIFont.rubik(weight: .bold, size: 14, scaled: false)
+        ], for: .selected)
         
         // UISegmentedControl styles
         UISegmentedControl.appearance().backgroundColor = .background
@@ -78,9 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISceneDelegate {
         ], for: .selected)
         
         // UIAlertController style
-        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .foreground
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .primary
         UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).numberOfLines = 2
         UILabel.appearance(whenContainedInInstancesOf: [UIAlertController.self]).font = .rubik(weight: .regular, size: 20)
+        
+        // UIActivityIndicatorView
+        UIActivityIndicatorView.appearance().tintColor = .primary
         
         return true
     }

@@ -1,5 +1,5 @@
 //
-//  WebPageTableViewCell.swift
+//  SubtitleTableViewCell.swift
 //  Appt
 //
 //  Created by Jan Jaap de Groot on 06/09/2022.
@@ -16,9 +16,13 @@ class SubtitleTableViewCell: UITableViewCell {
     func setup(title: String, subtitle: String) {
         titleLabel.font = .rubik(weight: .semibold, size: 18, style: .body)
         titleLabel.text = title
+        titleLabel.adjustsFontForContentSizeCategory = true
+        titleLabel.numberOfLines = 0
         
         subtitleLabel.font = .rubik(weight: .regular, size: 14, style: .body)
         subtitleLabel.text = subtitle
+        subtitleLabel.adjustsFontForContentSizeCategory = true
+        subtitleLabel.numberOfLines = 0
         
         accessibilityLabel = title
         accessibilityValue = subtitle
