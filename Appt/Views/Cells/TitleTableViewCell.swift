@@ -15,8 +15,6 @@ class TitleTableViewCell: UITableViewCell {
     func setup(_ title: String) {
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = title
-        titleLabel.adjustsFontForContentSizeCategory = true
-        titleLabel.numberOfLines = 0
         
         accessibilityLabel = title
         accessibilityTraits = .button

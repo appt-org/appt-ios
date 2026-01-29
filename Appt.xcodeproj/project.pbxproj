@@ -42,6 +42,7 @@
 		28A094412F2B96C600F51AC0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 28A094402F2B96C600F51AC0 /* FirebaseAnalytics */; };
 		28A094432F2B96C600F51AC0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 28A094422F2B96C600F51AC0 /* FirebaseCrashlytics */; };
 		28A094462F2B96F200F51AC0 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 28A094452F2B96F200F51AC0 /* RswiftLibrary */; };
+		28A0944A2F2B9D2900F51AC0 /* ApptLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A094492F2B9D2700F51AC0 /* ApptLabel.swift */; };
 		28A1273128C6185700D4E55F /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273028C6185700D4E55F /* ToolbarItem.swift */; };
 		28A1273428C61C9500D4E55F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273328C61C9500D4E55F /* Item.swift */; };
 		28A1273628C62B3600D4E55F /* _UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1273528C62B3600D4E55F /* _UIAlertController.swift */; };
@@ -98,6 +99,7 @@
 		28836A8428C7A5E900AB2A63 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		28836A8628C7A5F700AB2A63 /* SubtitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubtitleTableViewCell.xib; sourceTree = "<group>"; };
 		2899FFB9248113E7009D8102 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		28A094492F2B9D2700F51AC0 /* ApptLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptLabel.swift; sourceTree = "<group>"; };
 		28A1273028C6185700D4E55F /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
 		28A1273328C61C9500D4E55F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		28A1273528C62B3600D4E55F /* _UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIAlertController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		287468EE247E65280089BB32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28A094492F2B9D2700F51AC0 /* ApptLabel.swift */,
 				28A1273028C6185700D4E55F /* ToolbarItem.swift */,
 				287468F0247E65450089BB32 /* Cells */,
 			);
@@ -420,6 +423,7 @@
 				2841518E2525DAE100CB3750 /* Events.swift in Sources */,
 				287468E7247E63CD0089BB32 /* _UIFont.swift in Sources */,
 				28169E4028C25014000C1D5D /* Database.xcdatamodeld in Sources */,
+				28A0944A2F2B9D2900F51AC0 /* ApptLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,8 +15,6 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     func setup(_ header: String) {
         titleLabel.font = .rubik(weight: .regular, size: 18, style: .body)
         titleLabel.text = header
-        titleLabel.adjustsFontForContentSizeCategory = true
-        titleLabel.numberOfLines = 0
         
         accessibilityTraits = .header
         accessibilityLabel = header
